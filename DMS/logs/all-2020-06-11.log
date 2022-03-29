@@ -1,0 +1,1360 @@
+[2020-06-11 08:23:44,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 302 0
+[2020-06-11 08:23:44,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-11 08:23:45,105] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 08:23:45,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-06-11 08:23:45,217] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-11 08:23:47,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-06-11 08:23:47,415] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34361
+[2020-06-11 08:23:47,626] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34361
+[2020-06-11 08:23:47,665] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 08:23:47,744] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 08:23:48,235] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 08:23:48,475] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 08:23:54,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 36379
+[2020-06-11 08:23:54,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 08:23:54,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 08:23:54,881] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 144
+[2020-06-11 08:23:54,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 08:23:54,890] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 08:23:54,893] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 08:23:57,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4800
+[2020-06-11 08:24:05,690] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 787, in TestPlanSW_summary
+    for j in Top10["Execution_key"]:
+KeyError: 'Execution_key'
+[2020-06-11 08:24:05,694] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 98962
+[2020-06-11 08:26:02,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5123
+[2020-06-11 08:27:46,626] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 08:27:53,058] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 6014
+[2020-06-11 08:30:40,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 08:30:47,334] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 792, in TestPlanSW_summary
+    if TestPlanSW.objects.filter(**check_dic_E):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Project' into field. Choices are: AttendTimeOptimize, BaseAotomationTime1SKU, BaseTime, BaseTimeSupport, Category, Category2, Chramshell, CommentsLeverage, CommentsSmart, ConfigAutomationItem, ConfigAutomationTime, ConfigLeverageItem, ConfigLeverageTime, ConfigRetestCycle, ConfigRetestSKU, ConfigRetestTime, ConfigSmartItem, ConfigSmartItemPer, ConfigSmartTime, ConvertibaleNBMode, ConvertibaleYogaPadMode, Coverage, Customer, DetachablePadMode, DetachableWDockmode, FeatureSupport, ItemNo_d, Item_d, Items, Items_id, Owner, Phase, PhaseFFRT, PhaseFVT, PhaseSIT, Priority, ProjectTestSKUOptimize, ProjectTestSKUfollowMatrix, Projectinfo, Projectinfo_id, ReleaseDate, SKU1, SKU10, SKU11, SKU12, SKU13, SKU14, SKU15, SKU16, SKU17, SKU18, SKU19, SKU2, SKU20, SKU3, SKU4, SKU5, SKU6, SKU7, SKU8, SKU9, Schedule, TDMSTotalTime, TDMSUnattendedTime, TE, TestItems, TimewConfigFollowmatrix, Version, edit_time, editor, id
+[2020-06-11 08:30:47,340] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 149997
+[2020-06-11 08:32:56,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 08:45:35,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 36379
+[2020-06-11 08:45:35,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 08:45:35,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 08:45:41,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 08:45:49,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 08:56:34,999] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 36379
+[2020-06-11 08:56:35,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 08:56:35,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 08:56:38,703] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 08:56:46,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:17:08,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 36379
+[2020-06-11 09:17:09,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 09:17:09,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:17:11,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:17:19,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:26:17,396] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37141
+[2020-06-11 09:26:18,103] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 09:26:18,197] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:26:21,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:26:30,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:26:36,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:32:57,704] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:32:57,709] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:32:57,709] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:32:57,932] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:33:00,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:33:08,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:34:34,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:34:43,647] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:40:16,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37231
+[2020-06-11 09:40:16,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 09:40:16,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 09:40:16,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 09:40:16,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 09:40:16,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 09:40:16,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 09:40:16,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 09:40:16,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 09:40:16,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 09:40:16,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 09:40:16,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 09:40:16,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 09:40:16,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 09:40:16,841] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-06-11 09:40:16,923] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 09:40:16,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 09:40:16,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 09:40:17,000] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 09:40:17,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 09:40:17,033] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 09:40:17,034] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 09:40:17,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 09:40:17,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 09:40:17,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 09:40:17,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 09:40:17,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 09:40:17,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 09:40:17,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 09:40:17,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 09:40:17,108] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 09:40:17,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 09:40:17,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 09:40:17,130] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 09:40:17,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 09:40:17,151] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:40:17,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 09:40:17,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 09:40:17,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 09:40:17,229] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 09:40:17,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 09:40:17,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 09:40:17,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 09:40:17,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 09:40:17,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 09:40:17,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 09:40:17,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 09:40:17,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:40:17,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 09:40:17,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 09:40:17,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 09:40:17,542] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 09:40:17,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 09:40:17,700] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:40:17,776] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:40:18,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 09:40:18,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.woff HTTP/1.1" 200 28200
+[2020-06-11 09:40:18,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:40:20,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:40:28,464] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:43:46,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 09:43:46,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 09:43:46,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 09:43:46,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 09:43:46,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 09:43:46,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 09:43:46,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 09:43:46,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 09:43:46,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 09:43:46,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 09:43:46,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 09:43:46,806] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 09:43:46,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 09:43:46,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 09:43:46,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-06-11 09:43:46,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 09:43:46,840] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 09:43:46,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 09:43:46,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 09:43:46,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 09:43:46,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 09:43:46,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 09:43:46,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 09:43:46,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 09:43:46,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 09:43:46,892] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 09:43:46,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 09:43:46,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 09:43:46,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 09:43:46,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 09:43:46,932] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 09:43:46,932] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 09:43:46,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 09:43:46,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 09:43:46,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 09:43:46,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 09:43:46,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 09:43:46,967] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 09:43:46,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 09:43:46,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 09:43:46,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 09:43:46,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 09:43:46,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 09:43:47,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 09:43:47,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 09:43:47,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 09:43:47,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 09:43:47,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 09:43:47,087] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:43:47,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 09:43:47,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:43:47,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 09:43:47,404] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:43:47,462] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:43:47,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 09:43:47,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.woff HTTP/1.1" 200 28200
+[2020-06-11 09:43:47,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 09:43:47,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:43:53,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 09:44:02,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 09:44:42,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:44:43,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 09:44:43,690] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:44:43,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 09:44:43,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:44:47,657] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:44:47,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:44:47,667] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:44:48,032] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:45:00,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:45:00,287] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:45:00,317] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:45:00,481] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:45:00,783] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:45:01,214] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 09:45:01,220] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:45:01,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:48:58,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:48:58,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:48:58,335] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:48:58,545] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:48:58,848] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:48:59,271] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 09:48:59,289] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:48:59,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:51:01,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 09:51:01,700] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 09:51:01,768] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 09:51:01,966] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 09:51:02,268] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 09:51:02,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 09:51:02,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 74
+[2020-06-11 09:51:02,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 09:52:51,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 777
+[2020-06-11 09:52:52,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category= HTTP/1.1" 200 4383
+[2020-06-11 10:03:50,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 10:03:50,896] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:03:50,957] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:03:51,215] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:03:51,515] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:03:52,085] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:03:52,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 75
+[2020-06-11 10:03:52,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:04:42,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 75
+[2020-06-11 10:07:34,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2472
+[2020-06-11 10:07:45,840] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 96
+[2020-06-11 10:09:44,390] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2472
+[2020-06-11 10:09:45,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 192
+[2020-06-11 10:15:39,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2484
+[2020-06-11 10:15:41,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 342
+[2020-06-11 10:16:05,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=14 HTTP/1.1" 200 838
+[2020-06-11 10:16:05,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=14&category= HTTP/1.1" 200 599
+[2020-06-11 10:30:58,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 302 0
+[2020-06-11 10:30:58,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/app01/userinfo/ HTTP/1.1" 200 1851
+[2020-06-11 10:30:58,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[2020-06-11 10:30:58,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/responsive.css HTTP/1.1" 200 17976
+[2020-06-11 10:30:58,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/base.css HTTP/1.1" 200 16225
+[2020-06-11 10:30:58,917] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[2020-06-11 10:30:58,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[2020-06-11 10:31:00,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2020-06-11 10:31:00,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2020-06-11 10:31:05,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2020-06-11 10:31:05,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 20940
+[2020-06-11 10:31:05,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[2020-06-11 10:31:05,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[2020-06-11 10:31:05,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2020-06-11 10:31:05,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2020-06-11 10:32:53,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 16416
+[2020-06-11 10:32:53,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[2020-06-11 10:32:53,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[2020-06-11 10:32:53,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[2020-06-11 10:32:53,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:32:53,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2020-06-11 10:32:53,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[2020-06-11 10:32:53,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[2020-06-11 10:32:53,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[2020-06-11 10:32:53,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[2020-06-11 10:32:53,825] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/actions.js HTTP/1.1" 200 6538
+[2020-06-11 10:32:53,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[2020-06-11 10:32:53,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[2020-06-11 10:32:53,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[2020-06-11 10:32:55,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 20940
+[2020-06-11 10:33:04,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/ HTTP/1.1" 200 11399
+[2020-06-11 10:33:04,345] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:33:09,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/2/change/ HTTP/1.1" 200 21015
+[2020-06-11 10:33:09,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:33:09,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/forms.css HTTP/1.1" 200 8505
+[2020-06-11 10:33:09,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[2020-06-11 10:33:09,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20281
+[2020-06-11 10:33:09,180] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[2020-06-11 10:33:09,189] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/calendar.js HTTP/1.1" 200 7777
+[2020-06-11 10:33:09,193] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[2020-06-11 10:33:09,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+[2020-06-11 10:33:09,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[2020-06-11 10:33:24,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/TestPlanSW/testprojectsw/2/change/ HTTP/1.1" 302 0
+[2020-06-11 10:33:24,282] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/ HTTP/1.1" 200 11589
+[2020-06-11 10:33:24,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:33:24,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2020-06-11 10:33:27,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2484
+[2020-06-11 10:33:28,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 342
+[2020-06-11 10:33:36,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/3/change/ HTTP/1.1" 200 20994
+[2020-06-11 10:33:36,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:33:52,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/TestPlanSW/testprojectsw/3/change/ HTTP/1.1" 302 0
+[2020-06-11 10:33:53,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/ HTTP/1.1" 200 11587
+[2020-06-11 10:33:53,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:33:55,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/1/change/ HTTP/1.1" 200 21015
+[2020-06-11 10:33:55,108] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:34:01,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/TestPlanSW/testprojectsw/1/change/ HTTP/1.1" 302 0
+[2020-06-11 10:34:01,911] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/ HTTP/1.1" 200 11589
+[2020-06-11 10:34:01,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-11 10:34:05,157] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 10:34:05,383] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:34:05,449] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:34:05,947] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:34:05,948] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:34:06,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:34:06,293] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 108
+[2020-06-11 10:34:06,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:34:08,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2484
+[2020-06-11 10:34:12,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 342
+[2020-06-11 10:43:43,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 10:43:43,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 10:43:43,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 10:43:43,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 10:43:43,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 10:43:43,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 10:43:43,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 10:43:43,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 10:43:43,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 10:43:43,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 10:43:43,357] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 10:43:43,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 10:43:43,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 10:43:43,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 10:43:43,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 200 2137
+[2020-06-11 10:43:43,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-06-11 10:43:43,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 10:43:43,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2020-06-11 10:43:43,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 10:43:43,426] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 10:43:43,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 10:43:43,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 10:43:43,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 10:43:43,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 10:43:43,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 10:43:43,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 10:43:43,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 10:43:43,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 10:43:43,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 10:43:43,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 10:43:43,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 10:43:43,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 10:43:43,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 10:43:43,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 10:43:43,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 10:43:43,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 10:43:43,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 10:43:43,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 10:43:43,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 10:43:43,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 10:43:43,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 10:43:43,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 10:43:43,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 10:43:43,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 10:43:43,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 10:43:43,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 10:43:43,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2020-06-11 10:43:43,599] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2020-06-11 10:43:43,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2020-06-11 10:43:43,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 200 11942
+[2020-06-11 10:43:43,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2020-06-11 10:43:43,637] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:43:43,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2020-06-11 10:43:43,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 200 186049
+[2020-06-11 10:43:43,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 200 8439
+[2020-06-11 10:43:43,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 200 22168
+[2020-06-11 10:43:43,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 10:43:43,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2020-06-11 10:43:43,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 10:43:43,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 10:43:43,664] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 10:43:43,670] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:43:43,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:43:43,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:43:44,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:43:44,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:43:44,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:43:44,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 108
+[2020-06-11 10:43:44,591] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 10:43:44,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 10:43:44,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:43:48,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2484
+[2020-06-11 10:43:50,965] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 342
+[2020-06-11 10:46:35,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81728
+[2020-06-11 10:46:35,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 10:46:35,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 10:46:35,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 10:46:35,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 10:46:35,759] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 10:46:35,759] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 10:46:35,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 10:46:35,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 10:46:35,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 10:46:35,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 10:46:35,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 10:46:35,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 10:46:35,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 10:46:35,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-06-11 10:46:35,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 200 2137
+[2020-06-11 10:46:35,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2020-06-11 10:46:35,809] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 10:46:35,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 10:46:35,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 10:46:35,835] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 10:46:35,841] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 10:46:35,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 10:46:35,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 10:46:35,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 10:46:35,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 10:46:35,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 10:46:35,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 10:46:35,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 10:46:35,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 10:46:35,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 10:46:35,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 10:46:35,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 10:46:35,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 10:46:35,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 10:46:35,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 10:46:35,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 10:46:35,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 10:46:35,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 10:46:36,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 10:46:36,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 10:46:36,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 10:46:36,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 10:46:36,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2020-06-11 10:46:36,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2020-06-11 10:46:36,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2020-06-11 10:46:36,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2020-06-11 10:46:36,066] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2020-06-11 10:46:36,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 200 186049
+[2020-06-11 10:46:36,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 200 11942
+[2020-06-11 10:46:36,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2020-06-11 10:46:36,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 200 8439
+[2020-06-11 10:46:36,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 10:46:36,142] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 200 22168
+[2020-06-11 10:46:36,152] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 10:46:36,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 10:46:36,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 10:46:36,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 10:46:36,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 10:46:39,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 10:46:39,076] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:46:39,144] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:46:39,367] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:46:39,368] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:46:39,771] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:46:39,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 108
+[2020-06-11 10:46:39,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:46:39,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 10:46:39,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:46:39,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 10:46:39,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:46:41,911] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2484
+[2020-06-11 10:46:44,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 342
+[2020-06-11 10:47:18,314] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 81729
+[2020-06-11 10:47:18,531] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:47:18,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:47:18,995] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:47:19,298] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:47:19,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:47:19,727] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 109
+[2020-06-11 10:47:19,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:47:24,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2485
+[2020-06-11 10:47:26,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 343
+[2020-06-11 10:47:32,622] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 777
+[2020-06-11 10:47:33,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category= HTTP/1.1" 200 4383
+[2020-06-11 10:49:14,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 109
+[2020-06-11 10:49:20,753] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:49:20,759] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:49:21,060] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:49:21,120] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:49:22,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 109
+[2020-06-11 10:50:02,086] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'Customer' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 5025, in TestPlanSW_search
+    FFRTByRD.objects.create(**createFFRT)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'Customer' cannot be null")
+[2020-06-11 10:50:02,093] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 500 233422
+[2020-06-11 10:55:44,764] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'Customer' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 5025, in TestPlanSW_search
+    FFRTByRD.objects.create(**createFFRT)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'Customer' cannot be null")
+[2020-06-11 10:55:44,767] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 500 233422
+[2020-06-11 10:59:25,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82004
+[2020-06-11 10:59:25,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 10:59:25,126] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 10:59:25,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 10:59:25,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 10:59:25,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 10:59:25,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 10:59:25,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 10:59:25,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 10:59:25,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 10:59:25,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 10:59:25,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 10:59:25,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 10:59:25,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 10:59:25,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-06-11 10:59:25,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 200 2137
+[2020-06-11 10:59:25,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2020-06-11 10:59:25,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 10:59:25,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 10:59:25,218] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 10:59:25,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 10:59:25,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 10:59:25,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 10:59:25,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 10:59:25,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 10:59:25,275] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 10:59:25,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 10:59:25,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 10:59:25,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 10:59:25,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 10:59:25,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 10:59:25,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 10:59:25,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 10:59:25,346] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 10:59:25,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 10:59:25,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 10:59:25,377] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 10:59:25,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 10:59:25,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 10:59:25,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 10:59:25,466] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 10:59:25,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 10:59:25,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 10:59:25,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2020-06-11 10:59:25,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2020-06-11 10:59:25,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2020-06-11 10:59:25,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2020-06-11 10:59:25,528] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2020-06-11 10:59:25,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 200 186049
+[2020-06-11 10:59:25,549] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 200 11942
+[2020-06-11 10:59:25,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2020-06-11 10:59:25,561] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 200 8439
+[2020-06-11 10:59:25,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 10:59:25,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 200 22168
+[2020-06-11 10:59:25,602] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 10:59:25,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 10:59:25,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 10:59:25,647] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 10:59:25,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 10:59:27,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 10:59:27,433] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 10:59:27,505] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 10:59:27,754] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 10:59:27,754] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 10:59:28,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 10:59:28,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 109
+[2020-06-11 10:59:28,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:59:28,199] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 10:59:28,218] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 10:59:28,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 10:59:28,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 10:59:30,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2485
+[2020-06-11 10:59:32,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 343
+[2020-06-11 11:01:04,157] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82004
+[2020-06-11 11:01:04,388] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:01:04,506] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:01:04,945] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:01:05,247] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:01:05,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:01:05,889] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:01:06,038] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 5059, in TestPlanSW_search
+    "rdchangelist": rdchangelist,
+UnboundLocalError: local variable 'rdchangelist' referenced before assignment
+[2020-06-11 11:01:06,042] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 500 79115
+[2020-06-11 11:02:00,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82004
+[2020-06-11 11:02:00,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:02:00,490] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:02:00,651] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:02:00,952] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:02:01,413] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:02:01,417] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:02:01,429] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:02:03,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:02:05,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:06:53,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82004
+[2020-06-11 11:06:53,658] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:06:53,691] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:06:53,833] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:06:54,135] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:06:54,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:06:54,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:06:54,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:06:56,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:07:00,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:08:08,281] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=1 HTTP/1.1" 200 777
+[2020-06-11 11:08:09,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=1&category= HTTP/1.1" 200 4379
+[2020-06-11 11:09:28,009] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82112
+[2020-06-11 11:09:28,236] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:09:28,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:09:28,743] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:09:28,743] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:09:29,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:09:29,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:09:29,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:09:31,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:09:34,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:09:37,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:10:13,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:10:20,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:11:08,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:11:18,111] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 5074, in TestPlanSW_search
+    {"Functionteam":"EC","Quantity":FFRTByRDinfo.EC},
+AttributeError: 'NoneType' object has no attribute 'EC'
+[2020-06-11 11:11:18,114] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 500 81509
+[2020-06-11 11:14:31,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82202
+[2020-06-11 11:14:31,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 11:14:31,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 11:14:31,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 11:14:31,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 11:14:31,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 11:14:31,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 11:14:31,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 11:14:31,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 11:14:31,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 11:14:31,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 11:14:31,779] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 11:14:31,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 11:14:31,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 11:14:31,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 200 2137
+[2020-06-11 11:14:31,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-06-11 11:14:31,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2020-06-11 11:14:31,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 11:14:31,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 11:14:31,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 11:14:31,846] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 11:14:31,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 11:14:31,863] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 11:14:31,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 11:14:31,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 11:14:31,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 11:14:31,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 11:14:31,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 11:14:31,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 11:14:31,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 11:14:31,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 11:14:31,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 11:14:31,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 11:14:31,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 11:14:31,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 11:14:31,963] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 11:14:31,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 11:14:31,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 11:14:31,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 11:14:31,973] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 11:14:31,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 11:14:31,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 11:14:31,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 11:14:31,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 11:14:31,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 11:14:31,995] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2020-06-11 11:14:31,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2020-06-11 11:14:31,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2020-06-11 11:14:32,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2020-06-11 11:14:32,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2020-06-11 11:14:32,011] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 200 11942
+[2020-06-11 11:14:32,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 200 186049
+[2020-06-11 11:14:32,015] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 200 8439
+[2020-06-11 11:14:32,015] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2020-06-11 11:14:32,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 200 22168
+[2020-06-11 11:14:32,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 11:14:32,031] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 11:14:32,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 11:14:32,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 11:14:32,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 11:14:32,053] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:14:32,106] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:14:32,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 11:14:32,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 11:14:32,457] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:14:32,458] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:14:32,953] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:14:32,957] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:14:32,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 11:14:32,976] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 11:14:33,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:14:35,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:14:38,446] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:14:39,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:14:48,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 831
+[2020-06-11 11:18:12,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:18:13,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:18:59,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82202
+[2020-06-11 11:19:00,170] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:19:00,264] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:19:00,669] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:19:00,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:19:01,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:19:01,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:19:01,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:19:02,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:19:05,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:19:10,747] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:19:15,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 802
+[2020-06-11 11:19:20,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:19:21,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:27:29,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:27:36,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 802
+[2020-06-11 11:30:06,565] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:31:31,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82203
+[2020-06-11 11:31:31,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-06-11 11:31:31,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-06-11 11:31:31,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-06-11 11:31:31,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-06-11 11:31:31,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-06-11 11:31:31,426] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-06-11 11:31:31,431] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-06-11 11:31:31,432] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-06-11 11:31:31,437] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-06-11 11:31:31,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-06-11 11:31:31,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-06-11 11:31:31,446] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-06-11 11:31:31,447] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-06-11 11:31:31,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 200 2137
+[2020-06-11 11:31:31,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-06-11 11:31:31,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2020-06-11 11:31:31,463] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-06-11 11:31:31,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-06-11 11:31:31,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-06-11 11:31:31,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-06-11 11:31:31,494] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-06-11 11:31:31,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-06-11 11:31:31,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-06-11 11:31:31,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-06-11 11:31:31,518] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-06-11 11:31:31,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-06-11 11:31:31,530] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-06-11 11:31:31,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-06-11 11:31:31,542] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-06-11 11:31:31,549] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-06-11 11:31:31,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-06-11 11:31:31,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-06-11 11:31:31,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-06-11 11:31:31,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-06-11 11:31:31,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-06-11 11:31:31,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-06-11 11:31:31,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-06-11 11:31:31,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-06-11 11:31:31,665] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-06-11 11:31:31,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-06-11 11:31:31,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-06-11 11:31:31,696] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-06-11 11:31:31,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2020-06-11 11:31:31,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2020-06-11 11:31:31,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2020-06-11 11:31:31,724] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2020-06-11 11:31:31,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2020-06-11 11:31:31,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 200 11942
+[2020-06-11 11:31:31,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 200 8439
+[2020-06-11 11:31:31,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2020-06-11 11:31:31,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 200 22168
+[2020-06-11 11:31:31,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 200 186049
+[2020-06-11 11:31:31,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-06-11 11:31:31,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-06-11 11:31:31,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-06-11 11:31:31,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-06-11 11:31:31,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-06-11 11:31:31,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2020-06-11 11:31:31,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-06-11 11:31:31,932] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:31:32,025] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:31:32,210] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:31:32,211] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:31:32,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-06-11 11:31:32,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-06-11 11:31:32,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 11:31:32,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 11:31:32,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-06-11 11:31:33,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-06-11 11:31:33,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:31:42,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 11:31:50,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:31:51,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 363
+[2020-06-11 11:31:54,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:32:07,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 798
+[2020-06-11 11:32:32,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=1 HTTP/1.1" 200 777
+[2020-06-11 11:32:33,330] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=1&category= HTTP/1.1" 200 4379
+[2020-06-11 11:33:08,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 568
+[2020-06-11 11:33:21,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 795
+[2020-06-11 11:33:34,809] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 799
+[2020-06-11 11:33:54,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 570
+[2020-06-11 11:34:18,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 11:34:18,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-06-11 11:34:18,540] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 11:34:18,632] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 11:34:19,112] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 11:34:19,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.woff HTTP/1.1" 200 28200
+[2020-06-11 11:34:19,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 11:34:19,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 11:34:19,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 11:34:21,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 11:34:32,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 12:15:15,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 12:15:16,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 12:15:16,193] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 12:15:16,329] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 12:15:16,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 12:15:16,675] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 12:15:16,680] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 12:15:21,437] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 12:15:31,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 12:15:56,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 12:15:56,232] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 12:15:56,286] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 12:15:56,439] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 12:15:56,771] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 12:15:56,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 12:15:56,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 12:16:00,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 12:16:11,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 13:30:58,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 13:30:58,591] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 13:30:58,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 13:30:58,781] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 13:30:59,103] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 13:30:59,114] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 13:30:59,366] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 13:31:11,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 13:31:31,330] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 13:35:29,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 13:35:33,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 13:35:33,723] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 13:35:33,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 13:35:34,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 13:35:34,289] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 13:35:34,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 13:35:34,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 13:35:37,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 13:35:46,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 13:36:06,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:36:14,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4156
+[2020-06-11 13:36:30,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 13:36:39,417] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5942
+[2020-06-11 13:36:55,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:37:11,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:37:17,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4156
+[2020-06-11 13:43:52,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:44:00,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4006
+[2020-06-11 13:44:25,530] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 13:44:25,694] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 13:44:25,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 13:44:26,174] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 13:44:26,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 13:44:26,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 13:44:26,243] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 13:44:31,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:44:38,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4006
+[2020-06-11 13:51:17,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 13:51:18,157] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 13:51:18,203] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 13:51:18,349] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 13:51:18,682] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 13:51:18,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 13:51:18,706] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 13:51:23,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 13:51:31,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4250
+[2020-06-11 14:03:05,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:03:05,267] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:03:05,303] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:03:05,564] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:03:05,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:03:05,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:03:05,899] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:03:13,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:03:28,649] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 7258
+[2020-06-11 14:05:06,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:05:20,229] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 7258
+[2020-06-11 14:08:22,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:08:28,012] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 686, in TestPlanSW_summary
+    {"Project": i["name"], "Phase": j.Phase, "CaseLibrarytime": CodeBS+CodeBS_R, "ProjectBasetime": CodeFS+CodeFS_R,
+AttributeError: 'NoneType' object has no attribute 'Phase'
+[2020-06-11 14:08:28,016] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 86487
+[2020-06-11 14:10:36,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:10:36,574] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:10:36,701] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:10:37,069] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:10:37,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:10:37,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:10:37,478] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:10:41,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:10:46,282] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 686, in TestPlanSW_summary
+    {"Project": i["name"], "Phase": j.Phase, "CaseLibrarytime": CodeBS+CodeBS_R, "ProjectBasetime": CodeFS+CodeFS_R,
+AttributeError: 'NoneType' object has no attribute 'Phase'
+[2020-06-11 14:10:46,286] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 86487
+[2020-06-11 14:13:44,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:13:45,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:13:45,032] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:13:45,238] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:13:45,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:13:45,591] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:13:45,595] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:13:50,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:13:54,326] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 686, in TestPlanSW_summary
+    {"Project": i["name"], "Phase": j.Phase, "CaseLibrarytime": CodeBS+CodeBS_R, "ProjectBasetime": CodeFS+CodeFS_R,
+AttributeError: 'NoneType' object has no attribute 'Phase'
+[2020-06-11 14:13:54,330] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 86435
+[2020-06-11 14:15:27,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:15:27,606] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:15:27,632] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:15:27,796] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:15:28,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:15:28,156] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:15:28,165] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:15:33,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:15:37,095] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 684, in TestPlanSW_summary
+    print(type(j), j, j.Phase)
+AttributeError: 'NoneType' object has no attribute 'Phase'
+[2020-06-11 14:15:37,098] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 86277
+[2020-06-11 14:17:14,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 7246
+[2020-06-11 14:20:09,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:21:38,413] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 3165
+[2020-06-11 14:30:02,256] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 189, in TestPlanSW_summary
+    for j in TestProjectSW.objects.filter(Customer=Customer,Project=i.Project):
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-06-11 14:30:02,263] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 78210
+[2020-06-11 14:31:22,568] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:31:29,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:31:29,319] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:31:29,381] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:31:30,000] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:31:30,005] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:31:30,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:31:30,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:31:32,907] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 14:32:34,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 10576
+[2020-06-11 14:33:40,975] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:33:41,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:33:41,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:33:41,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:33:48,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:34:13,806] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:34:13,984] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:34:14,072] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:34:14,526] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:34:14,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:34:14,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:34:14,588] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:34:19,213] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:36:52,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:36:53,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:36:53,124] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:36:53,308] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:36:53,614] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:36:53,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:36:54,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:36:56,669] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 141, in TestPlanSW_summary
+    for i in TestProjectSW.objects.filter(Customer=Customer).filter(Gerber__range=timerange).values("Project").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 210, in get_prep_lookup
+    rhs_value = self.lhs.output_field.get_prep_value(rhs_value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2020-06-11 14:36:56,675] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 127156
+[2020-06-11 14:37:38,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:37:38,335] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:37:38,389] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:37:38,554] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:37:38,897] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:37:38,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:37:38,927] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:37:40,695] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:38:33,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:38:34,172] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:38:34,221] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:38:34,394] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:38:34,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:38:34,736] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:38:34,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:38:37,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:40:03,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:40:04,287] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:40:04,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:40:04,559] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:40:04,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:40:04,904] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:40:05,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:40:06,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:40:41,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:40:42,312] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:40:42,429] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:40:42,627] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:40:42,949] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:40:42,958] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:40:43,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:40:45,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:45:52,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:45:52,974] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-11 14:45:53,033] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-11 14:45:53,221] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-11 14:45:53,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:45:53,560] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-11 14:45:53,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:45:56,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 14:46:26,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 10576
+[2020-06-11 14:48:19,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 14:48:29,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 10576
+[2020-06-11 14:54:47,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37233
+[2020-06-11 14:54:47,569] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 14:54:47,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 14:54:54,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-11 14:55:22,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5432
+[2020-06-11 15:33:03,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19733
+[2020-06-11 15:33:03,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/kiwi.jpg HTTP/1.1" 200 83786
+[2020-06-11 15:33:03,542] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/sunny.jpg HTTP/1.1" 200 136474
+[2020-06-11 15:33:03,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/chrome.jpg HTTP/1.1" 200 57817
+[2020-06-11 15:33:03,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/yellow.jpg HTTP/1.1" 200 81394
+[2020-06-11 15:33:03,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 15:33:05,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Change_Skin/ HTTP/1.1" 302 0
+[2020-06-11 15:33:05,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19735
+[2020-06-11 15:33:05,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:07,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Change_Skin/ HTTP/1.1" 302 0
+[2020-06-11 15:33:07,951] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19733
+[2020-06-11 15:33:08,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16430
+[2020-06-11 15:33:11,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Change_Skin/ HTTP/1.1" 302 0
+[2020-06-11 15:33:11,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19734
+[2020-06-11 15:33:12,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16431
+[2020-06-11 15:33:13,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Change_Skin/ HTTP/1.1" 302 0
+[2020-06-11 15:33:13,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19734
+[2020-06-11 15:33:13,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16431
+[2020-06-11 15:33:15,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Change_Skin/ HTTP/1.1" 302 0
+[2020-06-11 15:33:15,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Change_Skin/ HTTP/1.1" 200 19735
+[2020-06-11 15:33:15,217] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:20,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:22,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:23,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:24,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:24,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:25,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 37256
+[2020-06-11 15:33:26,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 191
+[2020-06-11 15:33:26,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 15:33:35,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-11 15:34:01,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5784
+[2020-06-11 16:51:40,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82205
+[2020-06-11 16:51:41,363] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-11 16:51:41,366] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-11 16:51:41,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-11 16:51:43,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-11 16:51:47,626] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-11 16:52:27,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 777
+[2020-06-11 16:52:28,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category= HTTP/1.1" 200 4383
+[2020-06-11 16:57:49,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=14 HTTP/1.1" 200 838
+[2020-06-11 16:57:51,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=14&category= HTTP/1.1" 200 599
+[2020-06-11 16:57:54,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=14&category= HTTP/1.1" 200 599
+[2020-06-11 16:57:58,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=14&category= HTTP/1.1" 200 599
+[2020-06-11 16:58:05,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=1 HTTP/1.1" 200 777
+[2020-06-11 16:58:07,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLMA0&phase=1&category= HTTP/1.1" 200 4379
+[2020-06-12 08:05:13,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 302 0
+[2020-06-12 08:05:13,415] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-12 08:05:29,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 302 0
+[2020-06-12 08:05:29,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-12 08:05:29,976] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-06-12 08:05:29,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-12 08:05:31,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-06-12 08:05:31,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34361
+[2020-06-12 08:05:32,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34361
+[2020-06-12 08:05:32,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2020-06-12 08:05:32,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:05:35,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 18071
+[2020-06-12 08:05:35,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+[2020-06-12 08:05:35,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+[2020-06-12 08:05:35,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+[2020-06-12 08:05:35,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+[2020-06-12 08:05:35,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,389] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+[2020-06-12 08:05:35,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+[2020-06-12 08:05:35,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:06:27,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 18071
+[2020-06-12 08:06:27,917] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:06:30,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=json HTTP/1.1" 200 2509
+[2020-06-12 08:06:30,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:06:59,629] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:03,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 18071
+[2020-06-12 08:07:03,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:05,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 18137
+[2020-06-12 08:07:05,310] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:07,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 18137
+[2020-06-12 08:07:07,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:08,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:10,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:10,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:10,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:11,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 18137
+[2020-06-12 08:07:11,760] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:13,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:13,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 18137
+[2020-06-12 08:07:13,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432
+[2020-06-12 08:07:14,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "OPTIONS /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 17004
+[2020-06-12 08:07:16,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/?format=api HTTP/1.1" 200 18137
+[2020-06-12 08:07:17,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16432

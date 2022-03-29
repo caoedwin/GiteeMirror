@@ -1,0 +1,360 @@
+[2021-06-28 11:53:29,592] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2567, in M_edit
+    for m in DeviceDevpropertiesList.objects.filter(DevCtgry_P__DevCtgry=j['DevCtgry']).Values('Devproperties').distinct().order_by('Devproperties'):
+AttributeError: 'QuerySet' object has no attribute 'Values'
+[2021-06-28 11:53:29,595] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 82511
+[2021-06-28 14:15:55,048] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2656, in M_edit
+    for i in DeviceDevVendorList.objects.filter(Devproperties_P__Devproperties=Devproperties, Devproperties_P__Devproperties__DevCtgry=DevCtgry):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1090, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1126, in try_transform
+    (name, lhs.output_field.__class__.__name__))
+django.core.exceptions.FieldError: Unsupported lookup 'DevCtgry' for CharField or join on the field not permitted.
+[2021-06-28 14:15:55,051] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 127374
+[2021-06-28 14:35:57,236] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2660, in M_edit
+    print(Devpropertiessearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:35:57,240] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139803
+[2021-06-28 14:35:58,422] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2660, in M_edit
+    print(Devpropertiessearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:35:58,423] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139803
+[2021-06-28 14:37:21,922] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2661, in M_edit
+    for i in Devpropertiessearch:
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:37:21,925] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 136194
+[2021-06-28 14:37:22,846] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2661, in M_edit
+    for i in Devpropertiessearch:
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:37:22,848] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 136194
+[2021-06-28 14:38:05,741] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2657, in M_edit
+    print(DevCtgrysearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:38:05,744] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139797
+[2021-06-28 14:38:06,900] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2657, in M_edit
+    print(DevCtgrysearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:38:06,902] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139797
+[2021-06-28 14:38:18,745] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2657, in M_edit
+    print(DevCtgrysearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 14:38:18,751] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139797
+[2021-06-28 15:07:45,891] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2660, in M_edit
+    print(Devpropertiessearch)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 244, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2021-06-28 15:07:45,895] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 139739
+[2021-06-28 15:28:31,290] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2666, in M_edit
+    for j in DeviceDevsizeList.objects.filter(DevVendor_P__DevVendor=i.DevVendor).values('Devsize').distinct().order_by('Devsize'):#其实去不去重无所谓，都是唯一的
+AttributeError: 'dict' object has no attribute 'DevVendor'
+[2021-06-28 15:28:31,292] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 86164
+[2021-06-28 16:05:19,597] [exception.py:77] [exception:response_for_exception] [ERROR]- The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+[2021-06-28 16:05:19,677] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/Summary/ HTTP/1.1" 500 59

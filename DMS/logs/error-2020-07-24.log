@@ -1,0 +1,97 @@
+[2020-07-24 08:45:22,112] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 260, in QIL_projectresult
+    if Project & Customer:
+TypeError: unsupported operand type(s) for &: 'str' and 'str'
+[2020-07-24 08:45:22,114] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80216
+[2020-07-24 09:12:39,223] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:12:39,225] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80951
+[2020-07-24 09:13:30,460] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:13:30,461] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80943
+[2020-07-24 09:14:01,662] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:14:01,664] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80943
+[2020-07-24 09:32:52,988] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 308, in QIL_projectresult
+NameError: name 'edit' is not defined
+[2020-07-24 09:32:52,989] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 78077
+[2020-07-24 11:22:50,609] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_searchbyproject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 376, in QIL_searchbyproject
+    'select': select
+NameError: name 'select' is not defined
+[2020-07-24 11:22:50,611] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 500 77930
+[2020-07-24 11:25:00,370] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_searchbyproject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 373, in QIL_searchbyproject
+    selectItem.append(i['Customer'])
+AttributeError: 'dict' object has no attribute 'append'
+[2020-07-24 11:25:00,372] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 500 78482

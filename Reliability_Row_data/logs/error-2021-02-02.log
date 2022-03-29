@@ -1,0 +1,140 @@
+[2021-02-02 13:48:14,415] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4487, in Summary2
+    DateNow_begin = datetime.datetime.strptime(YearNow + "-" + j[1].split[1] + "-1", '%Y-%m-%d')
+TypeError: 'builtin_function_or_method' object is not subscriptable
+[2021-02-02 13:48:14,422] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 85285
+[2021-02-02 15:21:06,303] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 234, in Infos_upload
+    modeldata[headermodel_MajorIfo[key]] = value
+KeyError: '職等'
+[2021-02-02 15:21:06,312] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 22433
+[2021-02-02 15:51:41,070] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4383, in Summary2
+    "daLei": MajorIfo.objects.filter(Education=i["Education"], Major=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 15:51:41,078] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 103922
+[2021-02-02 15:52:45,688] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4384, in Summary2
+    "daLei": MajorIfo.objects.filter(Education=i["Education"], Major=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 15:52:45,697] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 103940
+[2021-02-02 16:10:56,895] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4384, in Summary2
+    "daLei": MajorIfo.objects.filter(Education=i["Education"], Major__contains=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 16:10:56,908] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 103960
+[2021-02-02 16:12:40,378] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4386, in Summary2
+    Major=i["Major"]).first().MajorForExcel,
+AttributeError: 'NoneType' object has no attribute 'MajorForExcel'
+[2021-02-02 16:12:40,389] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 103928
+[2021-02-02 16:13:05,390] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4390, in Summary2
+    professionTableData[j] = PersonalInfo.objects.filter(MajorAscription=i["MajorAscription"],
+KeyError: 'MajorAscription'
+[2021-02-02 16:13:05,401] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 103889
+[2021-02-02 16:15:11,144] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4384, in Summary2
+    "daLei": MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 16:15:11,156] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 104508
+[2021-02-02 16:15:38,121] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4384, in Summary2
+    "daLei": MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 16:15:38,137] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 104506
+[2021-02-02 16:19:09,398] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4384, in Summary2
+    "daLei": MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first().Categories,
+AttributeError: 'NoneType' object has no attribute 'Categories'
+[2021-02-02 16:19:09,399] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 104819

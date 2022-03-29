@@ -1,0 +1,47 @@
+[2021-12-28 14:59:46,943] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-28 15:17:54,045] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-28 17:00:55,821] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 967, in AutoResult_summary
+    AutoResult.objects.filter(ProjectName=j, Number=i["Number"]).first().Cycles)*float(
+AttributeError: 'NoneType' object has no attribute 'Cycles'
+[2021-12-28 17:00:55,822] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-28 17:00:55,823] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_summary/ HTTP/1.1" 500 100745
+[2021-12-28 17:03:47,249] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 979, in AutoResult_summary
+    if ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().SS.split("/")[2][:4] == Year:
+AttributeError: 'NoneType' object has no attribute 'SS'
+[2021-12-28 17:03:47,251] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-28 17:03:47,251] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_summary/ HTTP/1.1" 500 101283
+[2021-12-28 17:05:02,528] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 980, in AutoResult_summary
+    if ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().SS.split("/")[2][:4] == Year:
+AttributeError: 'NoneType' object has no attribute 'SS'
+[2021-12-28 17:05:02,530] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-28 17:05:02,531] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_summary/ HTTP/1.1" 500 101337

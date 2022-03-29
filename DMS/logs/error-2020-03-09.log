@@ -1,0 +1,43 @@
+[2020-03-09 11:59:09,239] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2020-03-09 11:59:25,924] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/blue.jpg HTTP/1.1" 500 59
+[2020-03-09 12:02:06,108] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/blue.jpg HTTP/1.1" 500 59
+[2020-03-09 12:04:08,442] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/blue.jpg HTTP/1.1" 500 59
+[2020-03-09 12:04:37,496] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2020-03-09 12:05:39,013] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2020-03-09 12:10:07,045] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2020-03-09 14:33:06,206] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1957, in TestPlanSW_search
+    BTSSum += i.BaseTimeSupport
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2020-03-09 14:33:06,226] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Basic HTTP/1.1" 500 27
+[2020-03-09 14:35:32,365] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1956, in TestPlanSW_search
+    BTSSum += i.BaseTimeSupport
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-03-09 14:35:32,376] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Basic HTTP/1.1" 500 27
+[2020-03-09 14:36:16,089] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1957, in TestPlanSW_search
+    BTSSum += i.BaseTimeSupport
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-03-09 14:36:16,093] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Basic HTTP/1.1" 500 27

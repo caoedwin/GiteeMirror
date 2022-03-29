@@ -1,0 +1,90 @@
+[2020-03-27 10:26:46,983] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 420, in DriverList_search
+    Prolist.append(i.Project)
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-03-27 10:26:47,020] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 500 27
+[2020-03-27 11:41:36,415] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 87, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-03-27 11:41:36,417] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&phase=0&csrfmiddlewaretoken=FhHxXNzjxXEZrQgzxht7dj9ZkehBeLU6xDdImuuW9vM2pOzFzP4Pexop3aPuwVO6 HTTP/1.1" 500 27
+[2020-03-27 11:41:36,429] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 87, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-03-27 11:41:36,429] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&phase=0&csrfmiddlewaretoken=FhHxXNzjxXEZrQgzxht7dj9ZkehBeLU6xDdImuuW9vM2pOzFzP4Pexop3aPuwVO6 HTTP/1.1" 500 27
+[2020-03-27 11:41:38,393] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 87, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-03-27 11:41:38,394] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&phase=0&csrfmiddlewaretoken=FhHxXNzjxXEZrQgzxht7dj9ZkehBeLU6xDdImuuW9vM2pOzFzP4Pexop3aPuwVO6 HTTP/1.1" 500 27
+[2020-03-27 11:41:38,403] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 87, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-03-27 11:41:38,404] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&phase=0&csrfmiddlewaretoken=FhHxXNzjxXEZrQgzxht7dj9ZkehBeLU6xDdImuuW9vM2pOzFzP4Pexop3aPuwVO6 HTTP/1.1" 500 27
+[2020-03-27 11:51:01,120] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 39, in Lesson_project
+    for m in TestProjectME.objects.filter(**dic).values('Phase').distinct().order_by('Phase'):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'project' into field. Choices are: Customer, Owner, Phase, Project, id, lessonlearn_project, testplanme
+[2020-03-27 11:51:01,156] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 500 27

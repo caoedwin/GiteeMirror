@@ -1,0 +1,212 @@
+[2020-09-14 13:35:58,331] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 288, in FilesDownload
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 143, in ImportProjectinfoFromDCT
+    "CusPrjCode": json.loads(newstr9)['CusPrjCode'],
+KeyError: 'CusPrjCode'
+[2020-09-14 13:35:58,336] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 93093
+[2020-09-14 13:39:53,267] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_searchbyproject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 467, in QIL_searchbyproject
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:39:53,269] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 500 80177
+[2020-09-14 13:41:22,727] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 419, in Lesson_project_Search
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:41:22,729] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_SearchByProject/?action=search&customer=C38(NB)&csrfmiddlewaretoken=pe5lPdrlXOUlhdvnXqswZAJLmBXCSNOkqZ572YXX0lonKGN4uiuZIjhwWg174Hmr HTTP/1.1" 500 82165
+[2020-09-14 13:42:10,437] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1589, in TestPlanME_search
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:42:10,440] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 500 81388
+[2020-09-14 13:42:26,794] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1589, in TestPlanME_search
+    "PrjEngCode1": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().PrjEngCode1,
+AttributeError: 'NoneType' object has no attribute 'PrjEngCode1'
+[2020-09-14 13:42:26,796] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 500 81305
+[2020-09-14 13:44:10,507] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 554, in TestPlanME_Summary
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:44:10,509] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 80033
+[2020-09-14 13:45:40,581] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 5451, in TestPlanSW_search
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:45:40,588] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 500 82550
+[2020-09-14 13:46:23,306] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 499, in TestPlanSW_summary
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i["Project"]).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:46:23,312] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 81080
+[2020-09-14 13:46:55,184] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 321, in INVGantt_edit
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:46:55,186] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-edit/ HTTP/1.1" 500 81658
+[2020-09-14 13:48:56,408] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 334, in INVGantt_edit
+    if len(i['Project']) > 5:
+TypeError: string indices must be integers
+[2020-09-14 13:48:56,411] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-edit/ HTTP/1.1" 500 80918
+[2020-09-14 13:50:04,329] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 419, in CQM_edit
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:50:04,331] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_edit/ HTTP/1.1" 500 83136
+[2020-09-14 13:51:15,431] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/ToolList_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 830, in ToolList_search
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:51:15,433] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/ToolList_search/ HTTP/1.1" 500 83092
+[2020-09-14 13:51:40,701] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 428, in DriverList_search
+    "CUSPRJCODE": ProjectinfoinDCT.objects.filter(ComPrjCode=i).first().CusPrjCode,
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'CusPrjCode'
+[2020-09-14 13:51:40,703] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 500 83282
+[2020-09-14 16:50:48,142] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 334, in INVGantt_edit
+    if len(i['Project']) > 5:
+TypeError: string indices must be integers
+[2020-09-14 16:50:48,146] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-edit/ HTTP/1.1" 500 80918
+[2020-09-14 16:52:59,734] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 334, in INVGantt_edit
+    print(len(i['Project']))
+TypeError: string indices must be integers
+[2020-09-14 16:52:59,736] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-edit/ HTTP/1.1" 500 80917
+[2020-09-14 16:54:29,364] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 405, in INVGantt_edit
+    "YEAR": "", "COMPRJCODE": i["Project"],
+TypeError: string indices must be integers
+[2020-09-14 16:54:29,365] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-edit/ HTTP/1.1" 500 83107

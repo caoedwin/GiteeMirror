@@ -1,0 +1,60 @@
+[2022-03-22 14:50:35,171] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:50:59,230] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:51:57,034] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:53:14,737] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:54:03,011] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:54:56,161] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:55:33,298] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:56:05,610] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:57:12,818] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:57:27,832] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 14:57:53,218] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:00:21,450] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:03:14,676] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:05:42,105] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:05:48,961] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:05:53,732] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:06:00,960] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:06:14,384] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:13:09,275] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Change_Skin/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 576, in Change_Skin
+    Render = render(request, 'ChangeSkin.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChangeSkin.html
+[2022-03-22 15:13:09,278] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /Change_Skin/ HTTP/1.1" 500 96578
+[2022-03-22 15:13:17,099] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-22 15:13:27,814] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Change_Skin/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 576, in Change_Skin
+    Render = render(request, 'ChangeSkin.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChangeSkin.html
+[2022-03-22 15:13:27,815] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /Change_Skin/ HTTP/1.1" 500 96611
+[2022-03-22 15:19:25,765] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

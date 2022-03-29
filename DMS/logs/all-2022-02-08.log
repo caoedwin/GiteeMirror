@@ -1,0 +1,204 @@
+[2022-02-08 08:24:22,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2022-02-08 08:24:22,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-08 08:24:23,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-08 08:24:23,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-08 08:24:26,436] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 08:24:26,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-08 08:24:26,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-08 08:24:26,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 304 0
+[2022-02-08 08:24:27,039] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-08 08:24:27,260] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d HTTP/1.1" 304 0
+[2022-02-08 08:24:27,651] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-08 08:24:27 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-08 08:24:27,665] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-08 08:24:27,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-08 08:24:27,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-08 08:52:14,916] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 46952
+[2022-02-08 08:52:14,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 46952
+[2022-02-08 08:52:15,379] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-08 08:52:15 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-08 08:52:15,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 206
+[2022-02-08 08:52:15,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-08 13:26:40,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 20078
+[2022-02-08 13:26:40,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2022-02-08 13:26:40,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-08 13:42:49,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 54345
+[2022-02-08 13:42:49,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 54345
+[2022-02-08 13:42:50,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-08 13:42:50,090] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 372, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 13:42:50,093] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 13:42:50,094] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 81062
+[2022-02-08 15:34:08,146] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:08,147] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:08,147] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-08 15:34:08,973] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:08,974] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:08,975] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-08 15:34:09,271] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:09,272] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:09,273] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-08 15:34:11,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-08 15:34:11,951] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-08 15:34:12,187] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-08 15:34:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-08 15:34:12,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-08 15:34:12,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137119
+[2022-02-09 14:25:44,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 302 0
+[2022-02-09 14:25:44,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-09 14:25:44,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-09 14:25:44,682] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-09 14:25:49,002] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-09 14:25:49,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-09 14:25:49,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-09 14:25:49,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_menu.css HTTP/1.1" 304 0
+[2022-02-09 14:25:49,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 304 0
+[2022-02-09 14:25:49,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-09 14:25:49,334] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-09 14:25:49 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-09 14:25:49,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-09 14:25:49,357] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-09 14:25:49,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-09 14:26:14,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 54345
+[2022-02-09 14:26:14,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 54345
+[2022-02-09 14:26:15,078] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 372, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-09 14:26:15,079] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-09 14:26:15,081] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 81062
+[2022-02-09 14:26:15,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-09 14:26:18,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-09 14:26:18,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-09 14:26:19,087] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-09 14:26:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-09 14:26:19,100] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137073
+[2022-02-09 14:26:19,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:24:21,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 302 0
+[2022-02-10 10:24:21,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-10 10:24:21,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-10 10:24:21,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-10 10:24:23,183] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-10 10:24:23,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-10 10:24:23,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-10 10:24:23,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-10 10:24:23,770] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:24:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-10 10:24:23,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-10 10:24:23,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:24:23,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-10 10:24:34,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 46952
+[2022-02-10 10:24:34,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 46952
+[2022-02-10 10:24:34,758] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:24:34 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-10 10:24:34,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:24:34,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 206
+[2022-02-10 10:24:41,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28574
+[2022-02-10 10:24:41,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28574
+[2022-02-10 10:24:41,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:24:41,744] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:24:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Return/ POST
+[2022-02-10 10:24:41,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Return/ HTTP/1.1" 200 2062
+[2022-02-10 10:24:44,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Destine/ HTTP/1.1" 200 28585
+[2022-02-10 10:24:44,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Destine/ HTTP/1.1" 200 28585
+[2022-02-10 10:24:44,271] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:24:44,367] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:24:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Destine/ POST
+[2022-02-10 10:24:44,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Destine/ HTTP/1.1" 200 1115
+[2022-02-10 10:24:45,153] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2744, in R_Transfer
+    return render(request, 'ComputerMS/R_Transfer.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ComputerMS/R_Transfer.html
+[2022-02-10 10:24:45,154] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 500 96625
+[2022-02-10 10:24:45,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:25:11,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:25:11,857] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:25:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Destine/ POST
+[2022-02-10 10:25:11,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Destine/ HTTP/1.1" 200 1115
+[2022-02-10 10:25:15,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-10 10:25:15,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-10 10:25:15,810] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:25:15 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-10 10:25:15,829] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137082
+[2022-02-10 10:25:15,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:25:17,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 36237
+[2022-02-10 10:25:17,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 36237
+[2022-02-10 10:25:17,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:25:18,036] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:25:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Borrowed/ POST
+[2022-02-10 10:25:18,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Borrowed/ HTTP/1.1" 200 1115
+[2022-02-10 10:26:25,152] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28564
+[2022-02-10 10:26:25,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28564
+[2022-02-10 10:26:25,426] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 10:26:25,549] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 10:26:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Keep/ POST
+[2022-02-10 10:26:25,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Keep/ HTTP/1.1" 200 1115
+[2022-02-10 11:23:31,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-10 11:23:31,649] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-10 11:23:31,681] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-10 11:23:34,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28564
+[2022-02-10 11:23:34,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28564
+[2022-02-10 11:23:34,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-10 11:23:34,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-10 11:23:34,352] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-10 11:23:34,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-10 11:23:34,634] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-10 11:23:34 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/R_Keep/ POST
+[2022-02-10 11:23:34,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Keep/ HTTP/1.1" 200 1115

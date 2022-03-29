@@ -1,0 +1,312 @@
+[2020-03-25 08:24:37,495] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 2085, in TestPlanSW_search
+    Sums['basetimeASum'] = RetestItemSW.objects.filter(**dic_Project).aggregate()(Sum('BaseAotomationTime1SKU'))[
+TypeError: 'dict' object is not callable
+[2020-03-25 08:24:37,506] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-25 08:26:57,812] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 2084, in TestPlanSW_search
+    Sums['basetimeASum'] = RetestItemSW.objects.filter(**dic_Project).aggregate()(Sum('BaseAotomationTime1SKU'))['BaseAotomationTime1SKU__sum']
+TypeError: 'dict' object is not callable
+[2020-03-25 08:26:57,815] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-25 11:22:25,691] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 145, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 41, in ImportProjectinfoFromDCT
+    ProjectNameList.append(i.Project)
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-03-25 11:22:25,694] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:23:16,708] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 146, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 42, in ImportProjectinfoFromDCT
+    ProjectNameList.append(i.Project)
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-03-25 11:23:16,710] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:24:10,697] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 146, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 58, in ImportProjectinfoFromDCT
+    ProjectNameList = list(set(ProjectNameList))
+TypeError: unhashable type: 'dict'
+[2020-03-25 11:24:10,699] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:24:19,263] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 146, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 58, in ImportProjectinfoFromDCT
+    ProjectNameList = list(set(ProjectNameList))
+TypeError: unhashable type: 'dict'
+[2020-03-25 11:24:19,264] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:26:59,410] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 146, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 41, in ImportProjectinfoFromDCT
+    print(i.Project)
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-03-25 11:26:59,414] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:27:39,703] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 147, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 42, in ImportProjectinfoFromDCT
+    print(i.Project)
+AttributeError: 'dict' object has no attribute 'Project'
+[2020-03-25 11:27:39,705] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:54:21,629] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Python372\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python372\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python372\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python372\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Python372\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017B2C7ABDA0>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python372\mecheck\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.1.10', port=80): Max retries exceeded with url: /dct/api/ClientSvc/getProjectInfo (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017B2C7ABDA0>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 71, in ImportProjectinfoFromDCT
+    r = requests.get(url, headers=headers)
+  File "C:\Python372\mecheck\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='192.168.1.10', port=80): Max retries exceeded with url: /dct/api/ClientSvc/getProjectInfo (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017B2C7ABDA0>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 187, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 76, in ImportProjectinfoFromDCT
+    print(getTestSpec.url)
+UnboundLocalError: local variable 'getTestSpec' referenced before assignment
+[2020-03-25 11:54:21,697] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:56:51,379] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 187, in index
+    ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 77, in ImportProjectinfoFromDCT
+    targetURL = getTestSpec.url
+UnboundLocalError: local variable 'getTestSpec' referenced before assignment
+[2020-03-25 11:56:51,382] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 27
+[2020-03-25 11:58:09,685] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 500 59
+[2020-03-25 11:58:09,691] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 500 59
+[2020-03-25 12:05:31,684] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 59
+[2020-03-25 12:05:35,272] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 59
+[2020-03-25 16:32:17,618] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 212, in FilesDownload
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 94, in ImportProjectinfoFromDCT
+    print(json.loads(getTestSpec.text))
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 12 (char 11)
+[2020-03-25 16:32:17,641] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 27
+[2020-03-25 16:38:44,774] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 213, in FilesDownload
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 95, in ImportProjectinfoFromDCT
+    print(json.loads(getTestSpec.text))
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 12 (char 11)
+[2020-03-25 16:38:44,776] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 27
+[2020-03-25 16:40:10,979] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 213, in FilesDownload
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 95, in ImportProjectinfoFromDCT
+    print(json.loads(getTestSpec.text))
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 16 (char 15)
+[2020-03-25 16:40:10,981] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 27
+[2020-03-25 16:42:35,417] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 213, in FilesDownload
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 107, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.create(**localPrjCre)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1288, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in as_sql
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in <listcomp>
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1240, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1182, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1429, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1393, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'9/30/2019 12:00:00 AM' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] format."]
+[2020-03-25 16:42:35,455] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 27

@@ -1,0 +1,24 @@
+[2020-09-21 09:28:23,557] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1636, in TestPlanME_search
+    if i['Sample_Size_d']:
+KeyError: 'Sample_Size_d'
+[2020-09-21 09:28:23,560] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=ELY5U&phase=0 HTTP/1.1" 500 96312
+[2020-09-21 09:29:27,067] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1637, in TestPlanME_search
+    SampleTotal = SampleTotal + float(i['Sample Size'])
+ValueError: could not convert string to float: 'All units'
+[2020-09-21 09:29:27,069] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=ELY5U&phase=0 HTTP/1.1" 500 96608

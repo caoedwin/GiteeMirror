@@ -1,0 +1,55 @@
+[2020-07-15 11:49:14,998] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/login/?next=/admin/ HTTP/1.1" 500 59
+[2020-07-15 14:35:40,187] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 463, in Lesson_upload
+    cleanData = lesson.errors
+UnboundLocalError: local variable 'lesson' referenced before assignment
+[2020-07-15 14:35:40,198] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 78825
+[2020-07-15 14:36:42,027] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 395, in Lesson_upload
+    Category = lesson.cleaned_data['Category']
+UnboundLocalError: local variable 'lesson' referenced before assignment
+[2020-07-15 14:36:42,028] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 79665
+[2020-07-15 14:46:42,167] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 463, in Lesson_upload
+    cleanData = lesson.errors
+UnboundLocalError: local variable 'lesson' referenced before assignment
+[2020-07-15 14:46:42,169] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 77972
+[2020-07-15 15:04:50,758] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 15:05:40,254] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 15:05:54,088] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 15:07:46,228] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:18:36,821] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:25:15,587] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:25:47,003] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:29:39,021] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:41:42,576] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:43:03,736] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:57:12,280] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59
+[2020-07-15 16:59:11,971] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_upload/ HTTP/1.1" 500 59

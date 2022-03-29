@@ -1,0 +1,92 @@
+[2021-03-01 08:51:10,452] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 250, in BorrowedAdapter
+    print(json.loads(BorrowedID))
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 2 (char 1)
+[2021-03-01 08:51:10,455] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 93486
+[2021-03-01 08:52:41,629] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 250, in BorrowedAdapter
+    print(json.loads(BorrowedID))
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 2 (char 1)
+[2021-03-01 08:52:41,631] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 93486
+[2021-03-01 09:04:58,567] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 254, in BorrowedAdapter
+    AdapterPowerCode.objects.filter(id=i).first().update()
+AttributeError: 'AdapterPowerCode' object has no attribute 'update'
+[2021-03-01 09:04:58,570] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 84486
+[2021-03-01 09:15:33,083] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 256, in BorrowedAdapter
+    AdapterPowerCode.objects.filter(id=i).first().update()
+AttributeError: 'AdapterPowerCode' object has no attribute 'update'
+[2021-03-01 09:15:33,087] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 84821
+[2021-03-01 09:17:07,948] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 256, in BorrowedAdapter
+    AdapterPowerCode.objects.filter(id=i).first().update()
+AttributeError: 'AdapterPowerCode' object has no attribute 'update'
+[2021-03-01 09:17:07,951] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 84851
+[2021-03-01 14:40:59,498] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/M_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 1246, in M_Borrow
+    if responseData('Borrower'):
+TypeError: 'dict' object is not callable
+[2021-03-01 14:40:59,500] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/M_Borrow/ HTTP/1.1" 500 78904

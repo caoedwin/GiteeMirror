@@ -1,0 +1,74 @@
+[2022-01-05 10:50:33,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/12/change/ HTTP/1.1" 302 0
+[2022-01-05 10:50:33,344] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/AutoResult/autoresult/12/change/ HTTP/1.1" 200 1885
+[2022-01-05 10:50:33,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-05 10:50:33,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-05 10:50:35,390] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-05 10:50:35,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/AutoResult/autoresult/12/change/ HTTP/1.1" 302 0
+[2022-01-05 10:50:35,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/12/change/ HTTP/1.1" 200 29806
+[2022-01-05 10:50:35,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-05 10:50:35,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-05 10:50:35,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-05 15:09:48,469] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /admin/AutoResult/autoitems/1/delete/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1828, in delete_view
+    return self._delete_view(request, object_id, extra_context)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1849, in _delete_view
+    deleted_objects, model_count, perms_needed, protected = self.get_deleted_objects([obj], request)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1823, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\utils.py", line 134, in get_deleted_objects
+    collector.collect(objs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\utils.py", line 197, in collect
+    return super().collect(objs, source_attr=source_attr, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 221, in collect
+    field.remote_field.on_delete(self, field, sub_objs, self.using)
+TypeError: 'bool' object is not callable
+[2022-01-05 15:09:48,471] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/AutoResult/autoitems/1/delete/?_to_field=id&_popup=1 HTTP/1.1" 500 131735
+[2022-01-05 15:09:48,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-05 15:09:48,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-05 15:09:52,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoitems/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8179
+[2022-01-05 15:09:52,256] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-05 15:09:52,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-05 15:09:52,327] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:35:09,292] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 12:35:09,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 12:35:09,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+[2022-01-06 12:35:09,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+[2022-01-06 12:35:09,321] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1131
+[2022-01-06 12:35:09,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+[2022-01-06 12:35:09,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+[2022-01-06 12:35:09,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+[2022-01-06 12:35:09,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 200 88145
+[2022-01-06 12:35:09,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+[2022-01-06 12:35:09,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+[2022-01-06 12:35:09,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+[2022-01-06 12:35:09,342] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+[2022-01-06 12:35:09,400] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:35:09,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:38:12,295] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 12:38:12,295] [basehttp.py:154] [basehttp:log_message] [WARNING]- "OPTIONS /CQM/CQMSeriv/ HTTP/1.1" 403 5198
+[2022-01-06 12:38:33,835] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 200 2
+[2022-01-06 12:38:33,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:38:33,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:52:19,178] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 12:52:19,178] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 12:52:19,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:52:19,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677

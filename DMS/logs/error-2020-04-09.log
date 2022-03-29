@@ -1,0 +1,174 @@
+[2020-04-09 14:10:08,481] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2020-04-09 14:10:11,936] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/9.jfif HTTP/1.1" 500 59
+[2020-04-09 14:10:11,961] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/4.jpg HTTP/1.1" 500 59
+[2020-04-09 14:10:11,978] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/7.jpg HTTP/1.1" 500 59
+[2020-04-09 14:10:11,982] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/8.jpg HTTP/1.1" 500 59
+[2020-04-09 14:10:11,990] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/1.jpg HTTP/1.1" 500 59
+[2020-04-09 15:37:09,797] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 363, in Lesson_project_Search
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-04-09 15:37:09,813] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:39:49,333] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:39:49,335] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:42:24,827] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:42:24,829] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:44:42,089] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:44:42,091] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:45:24,918] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:45:24,919] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:46:11,573] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:46:11,574] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 15:54:14,247] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 358, in Lesson_project_Search
+    dic_Project = {'Customer': Customer, 'Project': Project}
+NameError: name 'Project' is not defined
+[2020-04-09 15:54:14,249] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 16:25:00,287] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 348, in Lesson_project_Search
+    for k in i.lesson_set.filter(Projectinfo=j):
+AttributeError: 'lesson_learn' object has no attribute 'lesson_set'
+[2020-04-09 16:25:00,289] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 16:27:38,339] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 352, in Lesson_project_Search
+    projectresult.append({"projectname": j, "result": lessonlearn_Projectinfo.result, "comment": lessonlearn_Projectinfo.Comment})
+AttributeError: 'QuerySet' object has no attribute 'result'
+[2020-04-09 16:27:38,340] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 16:28:12,703] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 356, in Lesson_project_Search
+    Photolist.append("/media/" + str(j.img))
+AttributeError: 'str' object has no attribute 'img'
+[2020-04-09 16:28:12,705] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-09 16:28:44,851] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 367, in Lesson_project_Search
+    "project": projectresult,
+TypeError: unhashable type: 'dict'
+[2020-04-09 16:28:44,853] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-10 08:36:03,677] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 353, in Lesson_project_Search
+    projectresult.append({"projectname": j, "result": lessonlearn_Projectinfo.result, "comment": lessonlearn_Projectinfo.Comment})
+AttributeError: 'NoneType' object has no attribute 'result'
+[2020-04-10 08:36:03,695] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-10 08:36:07,051] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 353, in Lesson_project_Search
+    projectresult.append({"projectname": j, "result": lessonlearn_Projectinfo.result, "comment": lessonlearn_Projectinfo.Comment})
+AttributeError: 'NoneType' object has no attribute 'result'
+[2020-04-10 08:36:07,052] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27
+[2020-04-10 08:36:45,068] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 353, in Lesson_project_Search
+    projectresult.append({"projectname": j, "result": lessonlearn_Projectinfo.result, "comment": lessonlearn_Projectinfo.Comment})
+AttributeError: 'NoneType' object has no attribute 'result'
+[2020-04-10 08:36:45,069] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 27

@@ -1,0 +1,14 @@
+[2020-07-07 16:42:39,988] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 566, in Lesson_search
+    return HttpResponse(json.dumps(data), content_type="application/json")
+UnboundLocalError: local variable 'data' referenced before assignment
+[2020-07-07 16:42:39,990] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 79530

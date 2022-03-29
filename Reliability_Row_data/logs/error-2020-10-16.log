@@ -1,0 +1,67 @@
+[2020-10-16 11:07:35,268] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/SpecDownload/files_specd/ HTTP/1.1" 500 59
+[2020-10-16 11:15:18,174] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SpecDownload/SpecDownload-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\SpecDownload\views.py", line 228, in SpecDownload_summary
+    SpecDownload.objects.get(id=id).files_Spec.all().delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+SpecDownload.models.SpecDownload.DoesNotExist: SpecDownload matching query does not exist.
+[2020-10-16 11:15:18,187] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SpecDownload/SpecDownload-summary/ HTTP/1.1" 500 90606
+[2020-10-16 11:16:53,843] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SpecDownload/SpecDownload-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\SpecDownload\views.py", line 228, in SpecDownload_summary
+    SpecDownload.objects.get(id=id).files_Spec.all().delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 663, in delete
+    deleted, _rows_count = collector.delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 277, in delete
+    sender=model, instance=obj, using=self.using
+  File "C:\Python372\mecheck\lib\site-packages\django\dispatch\dispatcher.py", line 175, in send
+    for receiver in self._live_receivers(sender)
+  File "C:\Python372\mecheck\lib\site-packages\django\dispatch\dispatcher.py", line 175, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "C:\djangoproject\Reliability_Row_data\SpecDownload\models.py", line 15, in file_delete
+    print('进入文件删除方法，删的是',instance.alter_file)
+AttributeError: 'files_SpecD' object has no attribute 'alter_file'
+[2020-10-16 11:16:53,848] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SpecDownload/SpecDownload-summary/ HTTP/1.1" 500 104006
+[2020-10-16 11:18:51,538] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SpecDownload/SpecDownload-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\SpecDownload\views.py", line 228, in SpecDownload_summary
+    SpecDownload.objects.get(id=id).files_Spec.all().delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 663, in delete
+    deleted, _rows_count = collector.delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 277, in delete
+    sender=model, instance=obj, using=self.using
+  File "C:\Python372\mecheck\lib\site-packages\django\dispatch\dispatcher.py", line 175, in send
+    for receiver in self._live_receivers(sender)
+  File "C:\Python372\mecheck\lib\site-packages\django\dispatch\dispatcher.py", line 175, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "C:\djangoproject\Reliability_Row_data\SpecDownload\models.py", line 15, in file_delete
+    print('进入文件删除方法，删的是',instance.alter_file)
+AttributeError: 'files_SpecD' object has no attribute 'alter_file'
+[2020-10-16 11:18:51,544] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SpecDownload/SpecDownload-summary/ HTTP/1.1" 500 104049

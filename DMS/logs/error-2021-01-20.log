@@ -1,0 +1,140 @@
+[2021-01-20 07:52:08,778] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3135, in Summary1
+    monthSummaryValue += i[j[0]]
+KeyError: 'Feb'
+[2021-01-20 07:52:08,783] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 95321
+[2021-01-20 08:57:08,070] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3181, in Summary1
+    i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi , 2) * 100)
+ZeroDivisionError: division by zero
+[2021-01-20 08:57:08,075] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 99290
+[2021-01-20 08:57:09,438] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3181, in Summary1
+    i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi , 2) * 100)
+ZeroDivisionError: division by zero
+[2021-01-20 08:57:09,439] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 99290
+[2021-01-20 10:18:46,825] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3247, in Summary1
+    monthDiagram1Data_data.append(monthTable[j[0]])
+TypeError: list indices must be integers or slices, not str
+[2021-01-20 10:18:46,830] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 98370
+[2021-01-20 10:23:41,216] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3247, in Summary1
+    monthDiagram1Data_data.append(monthTable[j[0]])
+TypeError: list indices must be integers or slices, not str
+[2021-01-20 10:23:41,217] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 98370
+[2021-01-20 10:39:16,504] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3247, in Summary1
+    print(monthTable[j[0]])
+TypeError: list indices must be integers or slices, not str
+[2021-01-20 10:39:16,509] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 98368
+[2021-01-20 13:33:48,116] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3593, in Summary1
+    "Title": Positions.objects.filter(Year=YearSearch, Positions_Code=i["PositionNow"]).first().Positions_Name, }
+AttributeError: 'NoneType' object has no attribute 'Positions_Name'
+[2021-01-20 13:33:48,124] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103035
+[2021-01-20 13:35:05,984] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3593, in Summary1
+    "Title": Positions.objects.filter(Positions_Code=i["PositionNow"]).first().Positions_Name, }#Year=YearSearch,
+AttributeError: 'NoneType' object has no attribute 'Positions_Name'
+[2021-01-20 13:35:05,992] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103035
+[2021-01-20 13:36:08,200] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3593, in Summary1
+    "Title": Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name, }#Year=YearSearch,
+AttributeError: 'NoneType' object has no attribute 'Positions_Name'
+[2021-01-20 13:36:08,206] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103015
+[2021-01-20 13:38:47,510] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3594, in Summary1
+    "Title": Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name, }#Year=YearSearch,
+AttributeError: 'NoneType' object has no attribute 'Positions_Name'
+[2021-01-20 13:38:47,517] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103022

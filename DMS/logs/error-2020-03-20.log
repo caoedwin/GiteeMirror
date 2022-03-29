@@ -1,0 +1,108 @@
+[2020-03-20 10:49:19,751] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 423, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(Sum("price"))
+TypeError: 'dict' object is not callable
+[2020-03-20 10:49:19,764] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 10:49:23,220] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 423, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(Sum("price"))
+TypeError: 'dict' object is not callable
+[2020-03-20 10:49:23,220] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 10:50:04,652] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 423, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(Sum("NormalAmount"))
+TypeError: 'dict' object is not callable
+[2020-03-20 10:50:04,654] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 10:54:10,987] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 423, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(Sum('NormalAmount'))
+TypeError: 'dict' object is not callable
+[2020-03-20 10:54:10,989] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 10:54:31,619] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 424, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(Sum('NormalAmount'))
+TypeError: 'dict' object is not callable
+[2020-03-20 10:54:31,621] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 11:02:39,802] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 424, in TestPlanME_search
+    NTUSum = TestPlanMEs.aggregate(total=Sum('NormalAmount'))
+TypeError: 'dict' object is not callable
+[2020-03-20 11:02:39,803] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 11:05:55,285] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 441, in TestPlanME_search
+    NTUSum += i.NormalAmount
+TypeError: unsupported operand type(s) for +=: 'dict' and 'float'
+[2020-03-20 11:05:55,288] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 11:08:15,634] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 424, in TestPlanME_search
+    NTUSums = TestPlanMEs.aggregate(Sum('NormalAmount'))
+TypeError: 'dict' object is not callable
+[2020-03-20 11:08:15,636] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27
+[2020-03-20 11:16:43,365] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 428, in TestPlanME_search
+    Sums['RTRSum'] = TestPlanMEs.aggregate(Max('RegCycles')['RegCycles__max'])
+TypeError: 'Max' object is not subscriptable
+[2020-03-20 11:16:43,366] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanME/TestPlanME-search/?action=search&customer=C38(NB)&project=EL532&phase=0 HTTP/1.1" 500 27

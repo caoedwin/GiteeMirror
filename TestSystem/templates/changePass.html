@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密碼</title>
+    <link rel="shortcut icon" href="/static/css/images/gt_favicon.png">
+    <link rel="stylesheet" href="/static/css/log.css">
+    <link rel="stylesheet" href="/static/css/semantic.css">
+</head>
+<body class="changePass">
+    <div class="ui center aligned grid" style="margin-top: 200px">
+        <div class="ui six wide column">
+            <h1 class="ui teal header">修改密碼</h1>
+            <div class="ui segment">
+                <div class="ui content">
+                    <form class="ui form" method="post" action="{%url 'changPass'%}"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="field">
+                            <input type="password" id="inputoldPassword" name="inputoldPassword" placeholder="请输入旧密码"><br>
+                        </div>
+                        <div class="field">
+                            <input type="password" id="inputnewPassword1" name="inputnewPassword1" placeholder="请输入新密码"><br>
+                        </div>
+                        <div class="field">
+                            <input type="password" id="inputnewPassword2" name="inputnewPassword2" placeholder="请确认新密码"><br>
+                        </div>
+                        <div style="color: red">{{ error }}</div><br>
+                        <button class="ui fluid large teal button" type="submit">确定</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

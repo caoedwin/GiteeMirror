@@ -1,0 +1,82 @@
+[2022-01-20 14:20:13,383] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/BorrowedComputer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 402, in BorrowedComputer
+    "errMessage": errMessage,
+NameError: name 'errMessage' is not defined
+[2022-01-20 14:20:13,388] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:20:13,390] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 500 104458
+[2022-01-20 14:20:49,109] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:49:54,060] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/BorrowedComputer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 202, in BorrowedComputer
+    for i in BorrowedID.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2022-01-20 14:49:54,062] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:49:54,062] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 500 87662
+[2022-01-20 14:51:31,276] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/BorrowedComputer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 202, in BorrowedComputer
+    for i in BorrowedID.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2022-01-20 14:51:31,279] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:51:31,279] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 500 87662
+[2022-01-20 14:53:36,926] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/BorrowedComputer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 202, in BorrowedComputer
+    for i in BorrowedID.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2022-01-20 14:53:36,928] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:53:36,929] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 500 87662
+[2022-01-20 14:56:38,665] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/BorrowedComputer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 202, in BorrowedComputer
+    for i in BorrowedID.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2022-01-20 14:56:38,666] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 14:56:38,667] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 500 88118
+[2022-01-20 15:00:19,408] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-20 15:00:51,118] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-21 08:20:48,427] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-21 16:52:33,808] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-24 10:43:06,009] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-28 10:35:20,916] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

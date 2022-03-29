@@ -1,0 +1,91 @@
+[2020-10-28 08:37:45,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 302 0
+[2020-10-28 08:37:46,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-10-28 08:37:46,127] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-10-28 08:37:46,159] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-10-28 08:37:48,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-10-28 08:37:49,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41181
+[2020-10-28 08:37:49,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41181
+[2020-10-28 08:37:49,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 08:37:54,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-28 08:37:55,542] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 682
+[2020-10-28 08:37:55,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 08:38:03,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLAT4&phase=1 HTTP/1.1" 200 757
+[2020-10-28 08:38:07,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLAT4&phase=1&category=%20NA%20 HTTP/1.1" 200 20769
+[2020-10-28 08:38:28,394] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3899, in TestPlanSW_Edit
+    updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
+ValueError: could not convert string to float: '1900/1/9'
+[2020-10-28 08:38:28,399] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 98624
+[2020-10-28 11:10:25,918] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-28 11:10:28,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 682
+[2020-10-28 11:10:28,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 11:10:39,338] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLAT4&phase=1 HTTP/1.1" 200 757
+[2020-10-28 11:10:43,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLAT4&phase=1&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 11221
+[2020-10-28 11:11:07,260] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3899, in TestPlanSW_Edit
+    updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
+ValueError: could not convert string to float: '1901/4/24'
+[2020-10-28 11:11:07,261] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 98924
+[2020-10-28 11:29:37,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-28 11:29:38,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 682
+[2020-10-28 11:29:38,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 11:29:47,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLAT4&phase=0 HTTP/1.1" 200 757
+[2020-10-28 11:29:51,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLAT4&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 11212
+[2020-10-28 11:30:10,275] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3904, in TestPlanSW_Edit
+    updatedic["BaseAotomationTime1SKU"] = float(i['BaseAotomationTime1SKU'])
+ValueError: could not convert string to float: '上午 12:00:00'
+[2020-10-28 11:30:10,276] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 99091
+[2020-10-28 11:35:28,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-28 11:35:29,603] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 682
+[2020-10-28 11:35:29,771] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 11:35:38,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLAT4&phase=0 HTTP/1.1" 200 757
+[2020-10-28 11:35:42,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLAT4&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 11212
+[2020-10-28 11:36:11,757] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3904, in TestPlanSW_Edit
+    updatedic["BaseAotomationTime1SKU"] = float(i['BaseAotomationTime1SKU'])
+ValueError: could not convert string to float: '上午 12:00:00'
+[2020-10-28 11:36:11,757] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 99012
+[2020-10-28 11:38:27,606] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-28 11:38:28,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 682
+[2020-10-28 11:38:29,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298
+[2020-10-28 11:38:53,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 757
+[2020-10-28 11:38:56,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 9483
+[2020-10-28 11:39:56,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 100648
+[2020-10-29 08:43:17,707] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 302 0
+[2020-10-29 08:43:17,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-10-29 08:43:17,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-10-29 08:43:17,957] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-10-29 08:43:20,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-10-29 08:43:20,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41181
+[2020-10-29 08:43:21,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 304 0
+[2020-10-29 08:43:21,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41181
+[2020-10-29 08:43:21,727] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18298

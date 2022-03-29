@@ -1,0 +1,647 @@
+[2020-07-24 08:45:03,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 302 0
+[2020-07-24 08:45:03,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-24 08:45:03,547] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-07-24 08:45:03,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-24 08:45:03,577] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 08:45:06,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-07-24 08:45:06,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 38515
+[2020-07-24 08:45:06,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 38515
+[2020-07-24 08:45:06,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 08:45:06,911] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 08:45:07,049] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 08:45:07,172] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 08:45:07,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17127
+[2020-07-24 08:45:14,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 30887
+[2020-07-24 08:45:14,879] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 08:45:14,915] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 08:45:15,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 08:45:15,284] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 08:45:15,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17127
+[2020-07-24 08:45:22,112] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 260, in QIL_projectresult
+    if Project & Customer:
+TypeError: unsupported operand type(s) for &: 'str' and 'str'
+[2020-07-24 08:45:22,114] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80216
+[2020-07-24 08:47:19,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1599
+[2020-07-24 08:48:13,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_search/ HTTP/1.1" 200 42310
+[2020-07-24 08:48:14,105] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 08:48:14,160] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 08:48:14,289] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 08:48:14,290] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 08:48:14,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 7325
+[2020-07-24 08:48:14,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17127
+[2020-07-24 08:48:21,629] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 7325
+[2020-07-24 08:48:30,410] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 66172
+[2020-07-24 09:00:41,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_search/ HTTP/1.1" 200 42262
+[2020-07-24 09:00:41,571] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:00:41,646] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:00:42,006] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:00:42,007] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 09:00:42,440] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 7325
+[2020-07-24 09:00:42,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17079
+[2020-07-24 09:01:19,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_search/ HTTP/1.1" 200 42262
+[2020-07-24 09:01:20,055] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:01:20,146] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:01:20,426] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:01:20,427] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 09:01:20,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 7325
+[2020-07-24 09:01:20,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17079
+[2020-07-24 09:03:44,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_search/ HTTP/1.1" 200 42261
+[2020-07-24 09:03:44,732] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:03:44,754] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:03:44,882] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:03:44,884] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 09:03:45,234] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 7325
+[2020-07-24 09:03:45,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:03:49,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 66172
+[2020-07-24 09:12:33,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31474
+[2020-07-24 09:12:33,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:12:33,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:12:39,223] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:12:39,225] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80951
+[2020-07-24 09:12:43,156] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:12:46,080] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:12:50,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2020-07-24 09:12:51,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2020-07-24 09:12:51,103] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:12:53,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2020-07-24 09:12:53,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 23844
+[2020-07-24 09:12:53,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:12:56,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-24 09:12:56,584] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:12:56,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:13:11,268] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/1/change/ HTTP/1.1" 200 8402
+[2020-07-24 09:13:11,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:13:11,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:13:17,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/LessonProjectME/testprojectll/1/change/ HTTP/1.1" 302 0
+[2020-07-24 09:13:17,600] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9215
+[2020-07-24 09:13:17,635] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:13:17,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:13:21,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:13:24,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31474
+[2020-07-24 09:13:24,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:13:24,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:13:30,460] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:13:30,461] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80943
+[2020-07-24 09:13:49,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/1/change/ HTTP/1.1" 200 8411
+[2020-07-24 09:13:49,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:13:49,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:13:53,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-24 09:13:53,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:14:00,196] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:14:00,199] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:14:00,233] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:14:01,662] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 280, in QIL_projectresult
+    existQIL.append(i.lesson.id)
+AttributeError: 'QIL_Project' object has no attribute 'lesson'
+[2020-07-24 09:14:01,664] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 80943
+[2020-07-24 09:15:11,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31474
+[2020-07-24 09:15:11,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:15:11,502] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:15:11,650] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:15:11,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:15:12,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:15:19,426] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:19:33,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31474
+[2020-07-24 09:19:33,873] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:19:33,896] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:19:34,025] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:19:34,396] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:19:34,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:19:39,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:21:28,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31520
+[2020-07-24 09:21:28,473] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:21:28,539] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:21:28,902] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:21:29,226] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:21:29,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:21:33,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:23:47,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31472
+[2020-07-24 09:23:47,736] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:23:47,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:23:48,114] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:23:48,494] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:23:48,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:23:56,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:24:10,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:26:48,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:26:53,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:28:40,671] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:28:46,058] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:32:33,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31551
+[2020-07-24 09:32:33,912] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:32:33,937] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:32:34,093] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:32:34,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:32:34,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:32:37,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1599
+[2020-07-24 09:32:40,591] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:32:44,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:32:46,418] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:32:48,232] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:32:52,988] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_projectresult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 308, in QIL_projectresult
+NameError: name 'edit' is not defined
+[2020-07-24 09:32:52,989] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 500 78077
+[2020-07-24 09:33:14,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:36:23,447] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:37:12,321] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31551
+[2020-07-24 09:37:12,497] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:37:12,522] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:37:12,640] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:37:12,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:37:12,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:37:16,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:37:20,346] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:37:58,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:39:37,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 23862
+[2020-07-24 09:39:37,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:39:42,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_m/ HTTP/1.1" 200 10012
+[2020-07-24 09:39:42,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:39:42,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:39:45,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_m/5/change/ HTTP/1.1" 200 9212
+[2020-07-24 09:39:45,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:39:45,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:39:47,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_m/ HTTP/1.1" 200 10012
+[2020-07-24 09:39:47,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:41:17,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_m/5/change/ HTTP/1.1" 200 9212
+[2020-07-24 09:41:17,999] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:41:18,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:41:22,009] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_m/ HTTP/1.1" 200 10012
+[2020-07-24 09:41:22,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:41:22,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 23862
+[2020-07-24 09:41:22,544] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:41:24,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/QIL/qil_project/ HTTP/1.1" 200 12217
+[2020-07-24 09:41:24,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-24 09:41:24,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:43:57,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31551
+[2020-07-24 09:43:57,259] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:43:57,327] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:43:57,565] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:43:57,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:43:57,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:44:02,407] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:44:06,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:45:16,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1600
+[2020-07-24 09:47:09,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:47:47,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:47:53,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:48:36,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:49:12,911] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:53:13,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:53:22,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 09:54:41,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 31551
+[2020-07-24 09:54:41,869] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 09:54:41,938] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 09:54:42,226] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 09:54:42,675] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 09:54:42,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 09:54:46,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1609
+[2020-07-24 09:54:51,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1609
+[2020-07-24 09:57:03,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1612
+[2020-07-24 10:30:10,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_projectresult/ HTTP/1.1" 200 32588
+[2020-07-24 10:30:10,526] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 10:30:10,569] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 10:30:10,694] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 10:30:10,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 10:30:10,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 10:30:16,258] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 10:30:21,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 226
+[2020-07-24 10:30:25,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1604
+[2020-07-24 10:30:35,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1608
+[2020-07-24 10:30:56,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1612
+[2020-07-24 10:31:04,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1614
+[2020-07-24 10:31:10,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1616
+[2020-07-24 11:05:57,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_projectresult/ HTTP/1.1" 200 1620
+[2020-07-24 11:06:11,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:06:11,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:06:11,602] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:11:11,517] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:11:11,527] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:11:11,527] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:11:11,561] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:11:14,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:11:14,333] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:11:14,366] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:11:14,476] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:11:14,478] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:11:14,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:11:14,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:22:49,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:22:50,075] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:22:50,106] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:22:50,224] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:22:50,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:22:50,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:22:50,609] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_searchbyproject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 376, in QIL_searchbyproject
+    'select': select
+NameError: name 'select' is not defined
+[2020-07-24 11:22:50,611] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 500 77930
+[2020-07-24 11:23:57,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:23:57,177] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:23:57,217] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:23:57,350] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:23:57,354] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:23:57,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 44
+[2020-07-24 11:23:57,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:24:10,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:24:10,634] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:24:10,658] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:24:10,783] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:24:10,784] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:24:11,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 48
+[2020-07-24 11:24:11,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:25:00,370] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /QIL/QIL_searchbyproject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\QIL\views.py", line 373, in QIL_searchbyproject
+    selectItem.append(i['Customer'])
+AttributeError: 'dict' object has no attribute 'append'
+[2020-07-24 11:25:00,372] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 500 78482
+[2020-07-24 11:25:00,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:25:55,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:25:56,084] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:25:56,124] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:25:56,357] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:25:56,394] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:25:56,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 69
+[2020-07-24 11:25:56,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:26:10,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:26:11,058] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:26:11,089] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:26:11,207] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:26:11,208] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:26:11,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 65
+[2020-07-24 11:26:11,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:26:17,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 65
+[2020-07-24 11:33:12,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 853
+[2020-07-24 11:33:19,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 84
+[2020-07-24 11:41:34,635] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 11:41:34,836] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 11:41:34,884] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 11:41:35,127] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 11:41:35,129] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 11:41:35,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 84
+[2020-07-24 11:41:35,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:41:38,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 853
+[2020-07-24 11:41:41,373] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 2020
+[2020-07-24 11:55:05,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 36996
+[2020-07-24 11:55:06,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=get&csrfmiddlewaretoken=DWA7RzzvaDRpyAgOcwUYi8ZVs1IjBrn63rF4QPYu3Sl3vFpligAOpfa8xGekEI8X HTTP/1.1" 200 108
+[2020-07-24 11:55:06,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 11:55:09,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=search&customer=C38(NB)&csrfmiddlewaretoken=DWA7RzzvaDRpyAgOcwUYi8ZVs1IjBrn63rF4QPYu3Sl3vFpligAOpfa8xGekEI8X HTTP/1.1" 200 871
+[2020-07-24 11:55:13,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 80101
+[2020-07-24 11:55:13,999] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1.jpg
+[2020-07-24 11:55:14,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1.jpg HTTP/1.1" 404 1767
+[2020-07-24 11:55:14,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/test/Screenshot_13_HbHQkWX.png HTTP/1.1" 200 501639
+[2020-07-24 11:55:14,010] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_eiPmC9F.jpg
+[2020-07-24 11:55:14,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_eiPmC9F.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,027] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5.jpg
+[2020-07-24 11:55:14,030] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5.jpg HTTP/1.1" 404 1767
+[2020-07-24 11:55:14,033] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_aAYec09.jpg
+[2020-07-24 11:55:14,036] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_aAYec09.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,038] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_xjt6Ker.jpg
+[2020-07-24 11:55:14,042] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_xjt6Ker.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,051] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_13Mnq7g.jpg
+[2020-07-24 11:55:14,055] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_13Mnq7g.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,060] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_FXHldYM.jpg
+[2020-07-24 11:55:14,062] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_FXHldYM.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,065] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7.jpg
+[2020-07-24 11:55:14,066] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7.jpg HTTP/1.1" 404 1767
+[2020-07-24 11:55:14,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/test/Screenshot_8_8ZSSuzM.png HTTP/1.1" 200 699708
+[2020-07-24 11:55:14,078] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9.jpg
+[2020-07-24 11:55:14,081] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9.jpg HTTP/1.1" 404 1767
+[2020-07-24 11:55:14,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/test/Screenshot_33.png HTTP/1.1" 200 768470
+[2020-07-24 11:55:14,083] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/11.jpg
+[2020-07-24 11:55:14,085] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/10.jpg
+[2020-07-24 11:55:14,086] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/10.jpg HTTP/1.1" 404 1770
+[2020-07-24 11:55:14,086] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/11.jpg HTTP/1.1" 404 1770
+[2020-07-24 11:55:14,099] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/12.jpg
+[2020-07-24 11:55:14,100] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/12.jpg HTTP/1.1" 404 1770
+[2020-07-24 11:55:14,104] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_l88aXoy.jpg
+[2020-07-24 11:55:14,105] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_l88aXoy.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,117] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_JmnKEV2.jpg
+[2020-07-24 11:55:14,118] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_JmnKEV2.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,120] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/13.jpg
+[2020-07-24 11:55:14,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/13.jpg HTTP/1.1" 404 1770
+[2020-07-24 11:55:14,122] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_j9Jj9v3.jpg
+[2020-07-24 11:55:14,125] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_j9Jj9v3.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,137] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_wmAjvLf.jpg
+[2020-07-24 11:55:14,137] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_MDIb8TN.jpg
+[2020-07-24 11:55:14,138] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_wmAjvLf.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,139] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_MDIb8TN.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,142] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9_7iKrxXA.jpg
+[2020-07-24 11:55:14,143] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9_7iKrxXA.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,155] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_FRQgnzm.jpg
+[2020-07-24 11:55:14,156] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_cGVxvOt.jpg
+[2020-07-24 11:55:14,156] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_FRQgnzm.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,157] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_cGVxvOt.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,160] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_UHeKmkN.jpg
+[2020-07-24 11:55:14,162] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_UHeKmkN.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,172] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_qt1j1N1.jpg
+[2020-07-24 11:55:14,173] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_qt1j1N1.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,175] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_x1XB0pK.jpg
+[2020-07-24 11:55:14,177] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_x1XB0pK.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,190] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_ZhWDnfZ.jpg
+[2020-07-24 11:55:14,192] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_ZhWDnfZ.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,193] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_SmICjjd.jpg
+[2020-07-24 11:55:14,196] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_SmICjjd.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,196] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_4Q3G8DV.jpg
+[2020-07-24 11:55:14,197] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_4Q3G8DV.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,225] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_wBid37f.jpg
+[2020-07-24 11:55:14,232] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_wBid37f.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,236] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_9GLoPlC.jpg
+[2020-07-24 11:55:14,238] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_9GLoPlC.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,241] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_wWKrVWx.jpg
+[2020-07-24 11:55:14,243] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_wWKrVWx.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,263] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_Pvd2bGU.jpg
+[2020-07-24 11:55:14,265] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_Pvd2bGU.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,282] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_8aGoZBN.jpg
+[2020-07-24 11:55:14,284] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_8aGoZBN.jpg HTTP/1.1" 404 1791
+[2020-07-24 11:55:14,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/test/Screenshot_21.png HTTP/1.1" 200 3438198
+[2020-07-24 12:00:53,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 37063
+[2020-07-24 12:00:54,440] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=get&csrfmiddlewaretoken=gJUZ8piSaoN39m8rDx6Fwjpkyqfm8WCoGeZW7FHR3DhH6rhYJhMvDqAxD5Lnbdnf HTTP/1.1" 200 108
+[2020-07-24 12:00:54,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 12:01:06,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=search&customer=C38(NB)&csrfmiddlewaretoken=gJUZ8piSaoN39m8rDx6Fwjpkyqfm8WCoGeZW7FHR3DhH6rhYJhMvDqAxD5Lnbdnf HTTP/1.1" 200 871
+[2020-07-24 12:01:09,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 80101
+[2020-07-24 12:01:10,129] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_eiPmC9F.jpg
+[2020-07-24 12:01:10,130] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_eiPmC9F.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,132] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_aAYec09.jpg
+[2020-07-24 12:01:10,134] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_aAYec09.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,136] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1.jpg
+[2020-07-24 12:01:10,140] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:01:10,150] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5.jpg
+[2020-07-24 12:01:10,151] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:01:10,154] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_xjt6Ker.jpg
+[2020-07-24 12:01:10,156] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_xjt6Ker.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,167] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_FXHldYM.jpg
+[2020-07-24 12:01:10,170] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_FXHldYM.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,171] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_13Mnq7g.jpg
+[2020-07-24 12:01:10,172] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_13Mnq7g.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,176] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7.jpg
+[2020-07-24 12:01:10,176] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:01:10,191] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/10.jpg
+[2020-07-24 12:01:10,191] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/10.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:01:10,192] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9.jpg
+[2020-07-24 12:01:10,192] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:01:10,196] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/11.jpg
+[2020-07-24 12:01:10,196] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/11.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:01:10,207] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/12.jpg
+[2020-07-24 12:01:10,207] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/12.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:01:10,209] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_l88aXoy.jpg
+[2020-07-24 12:01:10,211] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_l88aXoy.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,219] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/13.jpg
+[2020-07-24 12:01:10,224] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/13.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:01:10,227] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_j9Jj9v3.jpg
+[2020-07-24 12:01:10,228] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_JmnKEV2.jpg
+[2020-07-24 12:01:10,228] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_j9Jj9v3.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_JmnKEV2.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,243] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9_7iKrxXA.jpg
+[2020-07-24 12:01:10,244] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9_7iKrxXA.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,249] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_wmAjvLf.jpg
+[2020-07-24 12:01:10,251] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_wmAjvLf.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,259] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_MDIb8TN.jpg
+[2020-07-24 12:01:10,260] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_MDIb8TN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,264] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_cGVxvOt.jpg
+[2020-07-24 12:01:10,265] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_cGVxvOt.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,268] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_FRQgnzm.jpg
+[2020-07-24 12:01:10,273] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_FRQgnzm.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,279] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_UHeKmkN.jpg
+[2020-07-24 12:01:10,280] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_UHeKmkN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,281] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_qt1j1N1.jpg
+[2020-07-24 12:01:10,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_qt1j1N1.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,296] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_x1XB0pK.jpg
+[2020-07-24 12:01:10,297] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_x1XB0pK.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,297] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_ZhWDnfZ.jpg
+[2020-07-24 12:01:10,298] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_ZhWDnfZ.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,302] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_SmICjjd.jpg
+[2020-07-24 12:01:10,303] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_SmICjjd.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,314] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_wWKrVWx.jpg
+[2020-07-24 12:01:10,315] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_wWKrVWx.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,319] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_4Q3G8DV.jpg
+[2020-07-24 12:01:10,321] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_4Q3G8DV.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,325] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_wBid37f.jpg
+[2020-07-24 12:01:10,328] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_wBid37f.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,333] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_9GLoPlC.jpg
+[2020-07-24 12:01:10,336] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_9GLoPlC.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,340] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_Pvd2bGU.jpg
+[2020-07-24 12:01:10,341] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_Pvd2bGU.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:10,344] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_8aGoZBN.jpg
+[2020-07-24 12:01:10,345] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_8aGoZBN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:01:20,985] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 12:01:20,992] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 12:01:20,993] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 12:01:21,054] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 12:03:04,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 37325
+[2020-07-24 12:03:05,111] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-24 12:03:05,185] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-24 12:03:05,436] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-24 12:03:05,436] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-24 12:03:05,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=get&csrfmiddlewaretoken=t9u2nQDG5GAOxlid7O7tCwhdFBp1TvHpTEzZm62FYV4suqrKdyNjJDsqKgV2WMsg HTTP/1.1" 200 108
+[2020-07-24 12:03:05,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 12:03:08,262] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_SearchByProject/?action=search&customer=C38(NB)&csrfmiddlewaretoken=t9u2nQDG5GAOxlid7O7tCwhdFBp1TvHpTEzZm62FYV4suqrKdyNjJDsqKgV2WMsg HTTP/1.1" 200 871
+[2020-07-24 12:03:13,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 200 80101
+[2020-07-24 12:03:13,428] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5.jpg
+[2020-07-24 12:03:13,432] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:03:13,437] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_13Mnq7g.jpg
+[2020-07-24 12:03:13,438] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_xjt6Ker.jpg
+[2020-07-24 12:03:13,439] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_13Mnq7g.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,439] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_xjt6Ker.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,444] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_aAYec09.jpg
+[2020-07-24 12:03:13,448] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_eiPmC9F.jpg
+[2020-07-24 12:03:13,449] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_aAYec09.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_eiPmC9F.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,454] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1.jpg
+[2020-07-24 12:03:13,456] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_FXHldYM.jpg
+[2020-07-24 12:03:13,459] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:03:13,463] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_FXHldYM.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,465] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7.jpg
+[2020-07-24 12:03:13,474] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:03:13,487] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9.jpg
+[2020-07-24 12:03:13,490] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/10.jpg
+[2020-07-24 12:03:13,492] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:03:13,494] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/11.jpg
+[2020-07-24 12:03:13,495] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/10.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:03:13,501] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/12.jpg
+[2020-07-24 12:03:13,502] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/11.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:03:13,505] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/12.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:03:13,506] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/13.jpg
+[2020-07-24 12:03:13,511] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/13.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:03:13,512] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_l88aXoy.jpg
+[2020-07-24 12:03:13,516] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_l88aXoy.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,529] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_j9Jj9v3.jpg
+[2020-07-24 12:03:13,533] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_j9Jj9v3.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,533] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_wmAjvLf.jpg
+[2020-07-24 12:03:13,535] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_JmnKEV2.jpg
+[2020-07-24 12:03:13,540] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9_7iKrxXA.jpg
+[2020-07-24 12:03:13,544] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_wmAjvLf.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9_7iKrxXA.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,548] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_cGVxvOt.jpg
+[2020-07-24 12:03:13,548] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_JmnKEV2.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,550] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_MDIb8TN.jpg
+[2020-07-24 12:03:13,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_cGVxvOt.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,558] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_MDIb8TN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,565] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_FRQgnzm.jpg
+[2020-07-24 12:03:13,567] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_FRQgnzm.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,568] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_UHeKmkN.jpg
+[2020-07-24 12:03:13,577] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_x1XB0pK.jpg
+[2020-07-24 12:03:13,578] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_UHeKmkN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,580] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_qt1j1N1.jpg
+[2020-07-24 12:03:13,582] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_x1XB0pK.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,582] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_qt1j1N1.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,583] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_SmICjjd.jpg
+[2020-07-24 12:03:13,588] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_SmICjjd.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,593] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_ZhWDnfZ.jpg
+[2020-07-24 12:03:13,595] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_ZhWDnfZ.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,598] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_4Q3G8DV.jpg
+[2020-07-24 12:03:13,607] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_4Q3G8DV.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,609] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_wWKrVWx.jpg
+[2020-07-24 12:03:13,610] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_9GLoPlC.jpg
+[2020-07-24 12:03:13,611] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_wBid37f.jpg
+[2020-07-24 12:03:13,614] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_wWKrVWx.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,614] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_9GLoPlC.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,616] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_wBid37f.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,620] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_Pvd2bGU.jpg
+[2020-07-24 12:03:13,621] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_Pvd2bGU.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:03:13,622] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_8aGoZBN.jpg
+[2020-07-24 12:03:13,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_8aGoZBN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,924] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_eiPmC9F.jpg
+[2020-07-24 12:07:12,926] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_eiPmC9F.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,928] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_aAYec09.jpg
+[2020-07-24 12:07:12,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_aAYec09.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,933] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_13Mnq7g.jpg
+[2020-07-24 12:07:12,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_13Mnq7g.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,937] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_4Q3G8DV.jpg
+[2020-07-24 12:07:12,946] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_xjt6Ker.jpg
+[2020-07-24 12:07:12,948] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_4Q3G8DV.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,950] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_xjt6Ker.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,953] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7.jpg
+[2020-07-24 12:07:12,962] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:07:12,964] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_wBid37f.jpg
+[2020-07-24 12:07:12,964] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_peT8EY0.jpg
+[2020-07-24 12:07:12,967] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_peT8EY0.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,969] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_wBid37f.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,969] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/123.jpg
+[2020-07-24 12:07:12,978] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/123.jpg HTTP/1.1" 404 1773
+[2020-07-24 12:07:12,981] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_x1XB0pK.jpg
+[2020-07-24 12:07:12,984] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_7IjUNGp.jpg
+[2020-07-24 12:07:12,985] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_x1XB0pK.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,990] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/speaker.JPG
+[2020-07-24 12:07:12,990] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_7IjUNGp.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:12,995] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/speaker.JPG HTTP/1.1" 404 1785
+[2020-07-24 12:07:12,996] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Logo_5KPDpvE.JPG
+[2020-07-24 12:07:13,000] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Logo_5KPDpvE.JPG HTTP/1.1" 404 1800
+[2020-07-24 12:07:13,002] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Package.JPG
+[2020-07-24 12:07:13,006] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Back_cover.JPG
+[2020-07-24 12:07:13,007] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Package.JPG HTTP/1.1" 404 1785
+[2020-07-24 12:07:13,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Back_cover.JPG HTTP/1.1" 404 1794
+[2020-07-24 12:07:13,019] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_SKjiyAm.jpg
+[2020-07-24 12:07:13,024] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_SKjiyAm.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,025] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_JmnKEV2.jpg
+[2020-07-24 12:07:13,034] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_JmnKEV2.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,037] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_8aGoZBN.jpg
+[2020-07-24 12:07:13,038] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_SmICjjd.jpg
+[2020-07-24 12:07:13,044] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_j9Jj9v3.jpg
+[2020-07-24 12:07:13,044] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_SmICjjd.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,044] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_8aGoZBN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,047] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_cGVxvOt.jpg
+[2020-07-24 12:07:13,048] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_j9Jj9v3.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,055] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_cGVxvOt.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,069] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_Fyv6m9P.jpg
+[2020-07-24 12:07:13,087] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_Fyv6m9P.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,093] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/13.jpg
+[2020-07-24 12:07:13,097] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_l88aXoy.jpg
+[2020-07-24 12:07:13,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/13.jpg HTTP/1.1" 404 1770
+[2020-07-24 12:07:13,099] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_l88aXoy.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,101] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5.jpg
+[2020-07-24 12:07:13,111] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_Zmxy1rm.jpg
+[2020-07-24 12:07:13,113] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:07:13,114] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9.jpg
+[2020-07-24 12:07:13,117] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_Zmxy1rm.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:07:13,135] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_wmAjvLf.jpg
+[2020-07-24 12:07:13,142] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_wmAjvLf.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,144] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1.jpg
+[2020-07-24 12:07:13,145] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1.jpg HTTP/1.1" 404 1767
+[2020-07-24 12:07:13,147] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_UHeKmkN.jpg
+[2020-07-24 12:07:13,148] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_UHeKmkN.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,150] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_yFStONJ.jpg
+[2020-07-24 12:07:13,150] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_yFStONJ.jpg HTTP/1.1" 404 1791
+[2020-07-24 12:07:13,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/test/Screenshot_1_pah7JVH.png HTTP/1.1" 200 839347
+[2020-07-24 16:56:40,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_search/ HTTP/1.1" 200 28501
+[2020-07-24 16:56:40,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_search/ HTTP/1.1" 200 50
+[2020-07-24 16:56:40,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 16:56:44,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /QIL/QIL_searchbyproject/ HTTP/1.1" 200 32204
+[2020-07-24 16:56:44,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 84
+[2020-07-24 16:56:44,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 17078
+[2020-07-24 16:56:50,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 2565
+[2020-07-24 16:56:55,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 853
+[2020-07-24 16:57:03,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /QIL/QIL_searchbyproject/ HTTP/1.1" 200 2020

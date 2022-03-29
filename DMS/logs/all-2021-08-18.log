@@ -1,0 +1,452 @@
+[2021-08-18 13:18:32,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2021-08-18 13:18:32,724] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4676
+[2021-08-18 13:18:32,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2021-08-18 13:18:32,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4676
+[2021-08-18 13:18:35,658] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 13:18:35,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2021-08-18 13:18:35,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22950
+[2021-08-18 13:18:35,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22950
+[2021-08-18 13:18:36,033] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 13:18:36 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2021-08-18 13:18:36,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1302
+[2021-08-18 13:18:36,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2021-08-18 13:18:36,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 13:19:16,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 13:19:16,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 13:19:17,231] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 13:19:17,305] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 527, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='已借出')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 13:19:17,309] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 13:19:17,310] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 122366
+[2021-08-18 13:20:51,342] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 13:20:51,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 13:20:51,358] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 13:20:54,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 13:20:54,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 13:20:54,238] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 13:20:54,242] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 13:20:54,336] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 13:20:54,581] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 527, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='已借出')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 13:20:54,584] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 13:20:54,585] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 122366
+[2021-08-18 13:20:54,600] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:20:01,226] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:20:01,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:20:01,339] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:20:01,366] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:20:01,571] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:20:01,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:20:01,931] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 546, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='已借出')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 16:20:01,935] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:20:01,936] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 124368
+[2021-08-18 16:23:16,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:23:16,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:23:16,745] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:23:16,756] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:23:16,940] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:23:17,111] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:23:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:23:17,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:23:17,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:23:17,150] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:23:17,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:23:35,856] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:23:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:23:35,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:23:41,430] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:23:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:23:41,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 474
+[2021-08-18 16:23:43,931] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:23:43 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:23:43,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:24:20,676] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:24:20 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:24:20,690] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:24:47,742] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:24:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:24:47,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:26:32,395] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:26:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:26:32,410] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:26:48,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:26:48,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:26:48,934] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:26:48,941] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:26:49,162] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:26:49,364] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:26:49 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:26:49,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:26:49,411] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:26:49,418] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:26:49,433] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:26:58,083] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:26:58 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:26:58,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:27:02,911] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:27:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:27:02,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 1368
+[2021-08-18 16:27:51,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:27:51,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:27:51,925] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:27:51,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:27:52,048] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:27:52,305] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:27:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:27:52,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:27:52,353] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:27:52,355] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:27:52,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:36:25,561] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 646, in R_Borrowed
+    if 'change5' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-08-18 16:36:25,563] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:36:25,564] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 86419
+[2021-08-18 16:39:29,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:39:29,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:39:30,027] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:39:30,061] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:39:30,272] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:39:30,491] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:39:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:39:30,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:39:30,545] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:39:30,550] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:39:30,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:40:10,008] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 544, in R_Borrowed
+    if 'first' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-08-18 16:40:10,011] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:40:10,011] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 86006
+[2021-08-18 16:43:06,635] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:43:06 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:43:06,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:44:43,049] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 815, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 16:44:43,052] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:44:43,053] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 127008
+[2021-08-18 16:45:21,452] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:45:21 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:45:21,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 474
+[2021-08-18 16:45:26,456] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:45:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:45:26,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:45:32,397] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:45:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:45:32,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 16:45:38,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:45:39,007] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:45:39,036] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:45:39,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:45:39,236] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:45:39,418] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:45:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:45:39,433] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:45:39,489] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:45:39,489] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:45:39,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:46:13,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 113633
+[2021-08-18 16:46:13,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 113633
+[2021-08-18 16:46:13,995] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:46:14,010] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:46:14,223] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:46:14,540] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:46:14 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:46:14,549] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1708
+[2021-08-18 16:46:14,565] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:46:24,082] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:46:24 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:46:24,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-18 16:46:39,021] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:46:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:46:39,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1813
+[2021-08-18 16:46:39,055] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:46:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:46:39,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 308
+[2021-08-18 16:47:56,415] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 113633
+[2021-08-18 16:47:56,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 113633
+[2021-08-18 16:47:56,513] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:47:56,519] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:47:56,606] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:47:56,956] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:47:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:47:56,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1708
+[2021-08-18 16:47:57,001] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:48:16,006] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:48:16,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 308
+[2021-08-18 16:48:16,710] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:48:16,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 405
+[2021-08-18 16:48:31,907] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:48:31,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 312
+[2021-08-18 16:48:50,963] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:48:50,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1830
+[2021-08-18 16:48:50,992] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-18 16:48:51,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 316
+[2021-08-18 16:48:56,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:48:56,205] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:48:56,211] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:48:56,294] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:48:56,495] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:48:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:48:56,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:48:56,512] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:48:56,527] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:48:56,527] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:49:01,405] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:49:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:49:01,415] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 474
+[2021-08-18 16:49:04,096] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:49:04 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:49:04,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 1368
+[2021-08-18 16:49:19,637] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 815, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 16:49:19,639] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:49:19,639] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 127016
+[2021-08-18 16:49:28,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:49:28,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 16:49:29,004] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 16:49:29,011] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 16:49:29,107] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 16:49:29,288] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:49:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:49:29,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 2277
+[2021-08-18 16:49:29,310] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-18 16:49:29,323] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1514.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:49:29,324] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 16:49:32,780] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:49:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:49:32,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 474
+[2021-08-18 16:49:34,256] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 16:49:34 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 16:49:34,264] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 1368
+[2021-08-18 16:49:48,742] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 815, in R_Borrowed
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Predict_return, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-18 16:49:48,743] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 16:49:48,744] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 127014
+[2021-08-18 17:03:32,783] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 823, in R_Borrowed
+    if i.Predict_return and not i.Return_date:
+AttributeError: 'DeviceLNV' object has no attribute 'Predict_return'
+[2021-08-18 17:03:32,786] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-18 17:03:32,786] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 84252
+[2021-08-18 17:08:07,968] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 17:08:07 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 17:08:07,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 458
+[2021-08-18 17:08:10,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 17:08:10,809] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-18 17:08:10,841] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-18 17:08:10,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-18 17:08:11,020] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-18 17:08:11,200] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-18 17:08:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-18 17:08:11,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 1365
+[2021-08-18 17:08:11,233] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-18 17:08:11,255] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-19 08:43:10,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 302 0
+[2021-08-19 08:43:10,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4676
+[2021-08-19 08:43:10,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2021-08-19 08:43:10,366] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-19 08:43:10,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2021-08-19 08:43:10,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4676
+[2021-08-19 08:43:12,355] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 08:43:12,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2021-08-19 08:43:12,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22950
+[2021-08-19 08:43:12,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22950
+[2021-08-19 08:43:12,566] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-19 08:43:12,575] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-19 08:43:12,773] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-19 08:43:12,774] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-19 08:43:12,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2021-08-19 08:43:12,858] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-19 08:43:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2021-08-19 08:43:12,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1302
+[2021-08-19 08:43:12,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2021-08-19 08:43:12,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-19 08:43:20,700] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-19 08:43:20,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 43259
+[2021-08-19 08:43:20,815] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-19 08:43:20,823] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-19 08:43:21,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-19 08:43:21,187] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-19 08:43:21 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/R_Borrowed/ POST
+[2021-08-19 08:43:21,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 200 1366
+[2021-08-19 08:43:21,234] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/images/1515.jpg HTTP/1.1" 404 1770
+[2021-08-19 08:43:21,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14289
+[2021-08-19 08:43:32,392] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 932, in R_Borrowed
+    Changjiasearch = responseData['Changjia']
+KeyError: 'Changjia'
+[2021-08-19 08:43:32,395] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 08:43:32,395] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 81104

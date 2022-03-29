@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    <a class="navbar-brand">资讯分享专栏</a>
+                </div>
+                <div class="collapse navbar-collapse bs-js-navbar-scrollspy" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{% url 'index' %}">首页</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">分类<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                {% for categoryInfo in category %}
+                                <li>
+                                    <a href="{% url 'category' categoryInfo.id %}">{{ categoryInfo.name }}</a>
+                                </li>
+                                {% endfor %}
+{#                                <li>#}
+{#                                    <a href="{% url 'category' 1%}">新闻</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="{% url 'category' 2%}">娱乐</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="{% url 'category' 3%}">体育</a>#}
+{#                                </li>#}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% url 'index' %}?order=total_views">热门文章</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right " style="padding-right: 20px">
+                        <li>
+                            <a style="font-size: 15px"  href="{%url 'addArticle'%}">新增</a>
+                        </li>
+                        <li>
+                            <a href="{%url 'myArticle'%}">我的文章</a>
+                        </li>
+                        {% if request.session.canEdit == 0 %}
+                        <li>
+                            <a href="{%url 'auditing' %}">待审核文章</a>
+                        </li>
+                        {% endif %}
+{#                        <li class="active">#}
+{#                            <a href="admin/">后台</a>#}
+{#                        </li>#}
+{#                        <li class="active">#}
+{#                            <a href="#"> {{request.session.nickname}}</a>#}
+{#                        </li>#}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{request.session.nickname}}<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{% url 'logout'%}">登出</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'changPass'%}">修改密码</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

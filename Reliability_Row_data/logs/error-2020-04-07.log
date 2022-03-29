@@ -1,0 +1,90 @@
+[2020-04-07 16:24:27,045] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 100, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-04-07 16:24:27,072] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&csrfmiddlewaretoken=bF0M7ICrgjH159EmbRftlGKp9MnmEf7j4bDEl5Xi1cTHiUUKDYpBhHTAV4WPZRPG HTTP/1.1" 500 27
+[2020-04-07 16:24:27,084] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 100, in Lesson_project
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-04-07 16:24:27,086] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=undefined&csrfmiddlewaretoken=bF0M7ICrgjH159EmbRftlGKp9MnmEf7j4bDEl5Xi1cTHiUUKDYpBhHTAV4WPZRPG HTTP/1.1" 500 27
+[2020-04-07 16:50:47,787] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 154, in Lesson_project
+    responseData = json.loads(request.body)
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-04-07 16:50:47,823] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 500 27
+[2020-04-07 17:02:51,057] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 165, in Lesson_project
+    learninfo = lesson_learn.objects.get(id=request.POST.get("lesson_id"))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+app01.models.lesson_learn.DoesNotExist: lesson_learn matching query does not exist.
+[2020-04-07 17:02:51,076] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 500 27
+[2020-04-08 08:04:20,387] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 165, in Lesson_project
+    learninfo = lesson_learn.objects.get(id=request.POST.get("lesson_id"))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+app01.models.lesson_learn.DoesNotExist: lesson_learn matching query does not exist.
+[2020-04-08 08:04:20,388] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 500 27
+[2020-04-08 08:06:08,467] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 165, in Lesson_project
+    learninfo = lesson_learn.objects.get(id=request.POST.get("lesson_id"))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+app01.models.lesson_learn.DoesNotExist: lesson_learn matching query does not exist.
+[2020-04-08 08:06:08,468] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 500 27

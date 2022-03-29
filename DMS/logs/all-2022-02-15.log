@@ -1,0 +1,1338 @@
+[2022-02-15 13:58:25,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 13:58:25,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 13:58:25,790] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 13:58:25,837] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 13:58:25,953] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 13:58:25,954] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 13:58:26,122] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 13:58:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 13:58:26,132] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 13:58:26,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:04:03,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:04:03,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:04:03,131] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:04:03,159] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:04:03,341] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:04:03,344] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:04:03,478] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:04:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:04:03,486] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:04:03,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:04:23,073] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2188, in M_Return
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-15 14:04:23,075] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:04:23,076] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_Return/ HTTP/1.1" 500 80533
+[2022-02-15 14:05:42,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:05:42,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:05:42,253] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:05:42,290] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:05:42,536] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:05:42,537] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:05:42,709] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:05:42 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:05:42,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:05:42,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:07:36,898] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:07:36 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:07:36,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:08:18,948] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:08:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:08:18,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:08:38,563] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:08:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:08:38,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:21:23,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:21:23,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:21:23,634] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:21:23,636] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:21:23,819] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:21:23,820] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:21:23,951] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:21:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:21:23,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:21:24,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:21:26,336] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:21:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:21:26,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:21:30,820] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2273, in M_Return
+    "ProjectCode": Devicebyid.Last_ProjectCode, "Phase": Devicebyid.Last_Phase,
+AttributeError: 'ComputerLNV' object has no attribute 'Last_ProjectCode'
+[2022-02-15 14:21:30,823] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:21:30,823] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_Return/ HTTP/1.1" 500 81013
+[2022-02-15 14:22:05,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:05,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:05,401] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:22:05,436] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:22:05,661] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:22:05,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:22:05,817] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:05,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:05,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:22:07,832] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:07 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:07,840] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:10,601] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2312, in M_Return
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-15 14:22:10,603] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:22:10,603] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_Return/ HTTP/1.1" 500 81955
+[2022-02-15 14:22:40,342] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:40,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:40,451] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:22:40,468] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:22:40,584] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:22:40,586] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:22:40,743] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:40,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:40,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:22:43,179] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:43 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:43,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:46,823] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:46 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:46,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:52,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:52,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:22:52,499] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:22:52,517] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:22:52,607] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:22:52,607] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:22:52,731] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:22:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:22:52,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:22:52,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:24:18,130] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:24:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:24:18,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:24:33,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:24:33,255] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:24:33,298] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:24:33,326] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:24:33,449] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:24:33,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:24:33,625] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:24:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:24:33,635] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:24:33,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:24:37,082] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:24:37 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:24:37,089] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:25:08,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:25:08,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:25:08,234] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:25:08,252] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:25:08,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:25:08,363] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:25:08,509] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:25:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:25:08,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:25:08,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:25:10,862] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:25:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:25:10,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:28:08,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:28:08,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:28:08,244] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:28:08,271] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:28:08,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:28:08,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:28:08,590] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:28:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:28:08,599] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:28:08,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:28:14,026] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:28:14 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:28:14,034] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:28:18,248] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:28:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:28:18,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:28:52,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:28:52,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:28:52,754] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:28:52,784] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:28:53,031] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:28:53,031] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:28:53,199] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:28:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:28:53,208] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:28:53,268] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:28:56,510] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:28:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:28:56,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:29:11,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:29:11,603] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:29:11,650] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:29:11,670] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:29:11,774] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:29:11,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:29:11,920] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:29:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:29:11,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:29:12,001] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:29:13,667] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:29:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:29:13,675] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:29:16,085] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:29:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:29:16,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:30:09,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:09,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:09,953] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:30:09,973] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:30:10,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:30:10,089] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:30:10,247] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:10,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:30:10,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:30:13,647] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:13,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:30:32,697] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:32,771] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:32,804] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:30:32,830] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:30:32,935] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:30:32,941] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:30:33,095] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:33,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:30:33,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:30:35,753] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:35,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:30:56,539] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:56,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:30:56,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:30:56,665] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:30:56,762] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:30:56,763] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:30:56,916] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:56,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:30:56,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:30:59,385] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:30:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:30:59,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:31:54,315] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:31:54,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:31:54,437] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:31:54,462] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:31:54,587] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:31:54,587] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:31:54,752] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:31:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:31:54,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:31:54,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:31:57,368] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:31:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:31:57,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:34:17,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:34:17,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:34:17,678] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:34:17,696] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:34:17,811] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:34:17,816] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:34:17,956] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:34:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:34:17,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:34:18,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:34:21,603] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:34:21 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:34:21,610] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:34:57,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:34:57,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:34:58,175] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:34:58 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:34:58,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:34:58,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:35:00,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-02-15 14:35:00,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2022-02-15 14:35:00,911] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:35:03,791] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:35:03,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-02-15 14:35:03,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21912
+[2022-02-15 14:35:03,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:35:07,269] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /admin/ComputerMS/computerlnvhis/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'ComputerMS_computerlnvhis.Transefer_per_code' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1793, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'ComputerMS_computerlnvhis.Transefer_per_code' in 'field list'")
+[2022-02-15 14:35:07,278] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 500 238048
+[2022-02-15 14:35:07,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:35:56,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 4190
+[2022-02-15 14:35:56,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:35:56,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:35:58,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21912
+[2022-02-15 14:35:58,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:00,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 4190
+[2022-02-15 14:36:00,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:36:00,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:02,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21912
+[2022-02-15 14:36:02,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:03,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/ HTTP/1.1" 200 609476
+[2022-02-15 14:36:04,015] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:36:04,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:07,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:36:08,066] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:36:08,104] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:36:08,104] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:36:08,195] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:36:08,195] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:36:08,323] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:36:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:36:08,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:36:08,383] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:11,546] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:36:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:36:11,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 523
+[2022-02-15 14:36:14,662] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:36:14 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:36:14,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:36:39,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21912
+[2022-02-15 14:36:39,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:42,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 7306
+[2022-02-15 14:36:42,206] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:36:42,236] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:43,429] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/1/change/ HTTP/1.1" 200 7353
+[2022-02-15 14:36:43,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:36:43,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:48,023] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 7306
+[2022-02-15 14:36:48,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:36:55,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/1/change/ HTTP/1.1" 200 7353
+[2022-02-15 14:36:55,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:36:56,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:38:54,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/1/change/ HTTP/1.1" 200 8845
+[2022-02-15 14:38:54,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:38:54,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:38:57,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 8107
+[2022-02-15 14:38:57,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:39:30,918] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33611
+[2022-02-15 14:39:30,987] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33611
+[2022-02-15 14:39:31,014] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:39:31,042] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:39:31,221] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:39:31,222] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:39:31,380] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:39:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceABO/M_Borrow/ POST
+[2022-02-15 14:39:31,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:39:31,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/M_Borrow/ HTTP/1.1" 200 29
+[2022-02-15 14:40:51,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:40:51,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:40:51,819] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:40:51,847] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:40:52,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:40:52,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:40:52,274] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:40:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:40:52,282] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 29
+[2022-02-15 14:40:52,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:41:03,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-15 14:41:03,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-15 14:41:03,237] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:41:03,257] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:41:03,345] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:41:03,506] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:41:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:41:03,518] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137170
+[2022-02-15 14:41:03,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:41:09,679] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:41:09 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:41:09,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 7309
+[2022-02-15 14:41:23,371] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:41:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:41:23,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 6871
+[2022-02-15 14:41:30,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:41:30,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:41:30,176] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:41:30,194] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:41:30,279] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:41:30,279] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:41:30,414] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:41:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:41:30,423] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 75
+[2022-02-15 14:41:30,466] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:43:36,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:43:36,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:43:36,586] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:43:36,613] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:43:36,733] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:43:36,734] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:43:36,910] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:43:36 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:43:36,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:43:36,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:43:43,602] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 1855, in M_Borrow
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-15 14:43:43,604] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:43:43,605] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 500 80524
+[2022-02-15 14:50:11,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:50:11,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:50:11,798] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:50:11,822] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:50:12,005] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:50:12,006] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:50:12,133] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:50:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:50:12,142] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:50:12,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:50:15,114] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 1855, in M_Borrow
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-15 14:50:15,116] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 14:50:15,116] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 500 80524
+[2022-02-15 14:51:55,413] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:51:55,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:51:55,515] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:51:55,545] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:51:55,766] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:51:55,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:51:55,909] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:51:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:51:55,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:51:55,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:51:58,161] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:51:58 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:51:58,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:52:04,753] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:52:04 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:52:04,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 75
+[2022-02-15 14:55:04,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:55:04,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:55:04,464] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:55:04,464] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:55:04,557] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:55:04,557] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:55:04,714] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:04 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:55:04,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:55:04,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:55:08,868] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:55:08,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 75
+[2022-02-15 14:55:11,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:55:11,155] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:55:11,182] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:55:11,202] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:55:11,287] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:55:11,287] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:55:11,409] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:55:11,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 29
+[2022-02-15 14:55:11,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:55:16,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:55:16,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:55:16,145] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:55:16,161] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:55:16,230] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:55:16,368] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 14:55:16,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 14:55:16,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:55:44,986] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 14:55:44,997] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 337
+[2022-02-15 14:55:53,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28576
+[2022-02-15 14:55:54,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28576
+[2022-02-15 14:55:54,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:55:54,101] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:55:54,181] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:55:54,278] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Return/ POST
+[2022-02-15 14:55:54,287] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Return/ HTTP/1.1" 200 473
+[2022-02-15 14:55:54,330] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:55:57,941] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:55:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Return/ POST
+[2022-02-15 14:55:57,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Return/ HTTP/1.1" 200 15
+[2022-02-15 14:56:02,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:56:02,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:56:02,891] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:56:02,908] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:56:02,991] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:56:03,134] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 14:56:03,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 14:56:03,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:05,289] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 14:56:05,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 337
+[2022-02-15 14:56:11,574] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28576
+[2022-02-15 14:56:11,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Return/ HTTP/1.1" 200 28576
+[2022-02-15 14:56:11,667] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:56:11,684] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:56:11,761] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:56:11,859] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Return/ POST
+[2022-02-15 14:56:11,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Return/ HTTP/1.1" 200 473
+[2022-02-15 14:56:11,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:21,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:56:21,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-15 14:56:21,175] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:56:21,193] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:56:21,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:56:21,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:56:21,449] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:21 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:56:21,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 533
+[2022-02-15 14:56:21,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:25,313] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-15 14:56:25,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-15 14:56:33,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:56:33,224] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 14:56:33,249] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:56:33,266] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:56:33,349] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:56:33,492] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 14:56:33,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 315
+[2022-02-15 14:56:33,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:37,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-15 14:56:37,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-15 14:56:37,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:56:37,812] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:56:37,892] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:56:38,079] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:56:38,089] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137180
+[2022-02-15 14:56:38,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:40,815] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:56:40,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 7319
+[2022-02-15 14:56:44,170] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:56:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-15 14:56:44,180] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 6871
+[2022-02-15 14:56:48,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/ HTTP/1.1" 200 2994
+[2022-02-15 14:56:48,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:49,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 9305
+[2022-02-15 14:56:49,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:56:49,574] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:56:53,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/2/change/ HTTP/1.1" 200 8898
+[2022-02-15 14:56:53,039] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 14:56:53,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:57:11,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 9305
+[2022-02-15 14:57:11,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:57:25,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:57:25,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-15 14:57:25,179] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 14:57:25,179] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 14:57:25,267] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 14:57:25,267] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 14:57:25,412] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:57:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:57:25,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 523
+[2022-02-15 14:57:25,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 14:57:28,751] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 14:57:28 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-15 14:57:28,760] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 75
+[2022-02-15 15:19:37,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:19:37,881] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:19:37,909] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:19:37,931] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:19:38,096] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:19:38,232] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:19:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 15:19:38,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 15:19:38,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:26:12,476] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:26:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 15:26:12,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 337
+[2022-02-15 15:26:17,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 15:26:17,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 15:26:17,335] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:26:17,365] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:26:17,553] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:26:17,663] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:26:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 15:26:17,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 937
+[2022-02-15 15:26:17,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:26:29,151] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:26:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 15:26:29,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 487
+[2022-02-15 15:26:32,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:26:32,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:26:32,917] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:26:32,935] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:26:33,015] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:26:33,168] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:26:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 15:26:33,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 15:26:33,223] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:26:38,013] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 15:26:38,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 15:26:38,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:26:38,115] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:26:38,192] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:26:38,300] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:26:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 15:26:38,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 487
+[2022-02-15 15:26:38,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:27:19,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:27:19,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:27:19,465] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:27:19,476] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:27:19,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:27:19,490] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:27:29,638] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:27:29,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:27:29,690] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22198
+[2022-02-15 15:27:29,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22198
+[2022-02-15 15:27:29,812] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:27:29,854] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:27:29,963] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:27:29,963] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:27:29,963] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:27:30,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13120
+[2022-02-15 15:27:30,076] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:27:30 123456789>Erin_Sun None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:27:30,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-15 15:27:30,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 15:27:35,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-02-15 15:27:35,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2022-02-15 15:27:35,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13120
+[2022-02-15 15:27:37,346] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:27:37,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-02-15 15:27:37,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21912
+[2022-02-15 15:27:37,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13120
+[2022-02-15 15:27:39,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 12484
+[2022-02-15 15:27:39,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:27:39,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13120
+[2022-02-15 15:27:51,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:27:51,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:27:51,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:27:51,454] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:27:51,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:27:51,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:27:56,762] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:27:56,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:27:56,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 20648
+[2022-02-15 15:27:56,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 20648
+[2022-02-15 15:27:56,926] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:27:56,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:27:57,151] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:27:57,151] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:27:57,154] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:27:57,235] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:27:57 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:27:57,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-15 15:27:57,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:27:57,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 15:28:04,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 302 0
+[2022-02-15 15:28:04,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/app01/userinfo/ HTTP/1.1" 200 1851
+[2022-02-15 15:28:04,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:06,591] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:28:06,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/app01/userinfo/ HTTP/1.1" 302 0
+[2022-02-15 15:28:06,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 12484
+[2022-02-15 15:28:06,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:28:06,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:09,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/4/change/ HTTP/1.1" 200 9721
+[2022-02-15 15:28:09,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+[2022-02-15 15:28:09,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12712
+[2022-02-15 15:28:09,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:28:09,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[2022-02-15 15:28:09,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[2022-02-15 15:28:09,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[2022-02-15 15:28:09,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:20,925] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:28:20,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/4/change/ HTTP/1.1" 302 0
+[2022-02-15 15:28:21,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 12651
+[2022-02-15 15:28:21,034] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:28:21,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:26,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:28:26,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:28:26,991] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:28:27,009] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:28:27,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:28:27,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:28:31,444] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:28:31,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:28:31,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 20648
+[2022-02-15 15:28:31,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 20648
+[2022-02-15 15:28:31,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:28:31,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:28:31,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:28:31,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:28:31,851] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:28:32,003] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:28:32 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:28:32,011] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1360
+[2022-02-15 15:28:32,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:46,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/4/change/ HTTP/1.1" 302 0
+[2022-02-15 15:28:46,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/app01/userinfo/4/change/ HTTP/1.1" 200 1869
+[2022-02-15 15:28:46,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:48,518] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:28:48,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/app01/userinfo/4/change/ HTTP/1.1" 302 0
+[2022-02-15 15:28:48,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/4/change/ HTTP/1.1" 200 9721
+[2022-02-15 15:28:48,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:28:48,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:28:59,354] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:28:59,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/4/change/ HTTP/1.1" 302 0
+[2022-02-15 15:28:59,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 12651
+[2022-02-15 15:28:59,470] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:28:59,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 11571
+[2022-02-15 15:29:12,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:29:12,370] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:29:12,430] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:29:12,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:29:12,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:29:12,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:29:16,006] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:29:16,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 4841
+[2022-02-15 15:29:16,053] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:29:16,075] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:29:16,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:29:16,085] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:29:20,451] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:29:20,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 4841
+[2022-02-15 15:29:20,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:29:20,515] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:29:20,517] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:29:20,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:29:29,453] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:29:29,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:29:29,528] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 15:29:29,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 15:29:29,654] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:29:29,688] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:29:29,803] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:29:29,807] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:29:29,808] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:29:29,900] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:29:29 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:29:29,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 15:29:29,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 15:29:29,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:29:37,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:29:37,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:29:37,255] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:29:37,282] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:29:37,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:29:37,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/R_Accepted/ HTTP/1.1" 200 13444
+[2022-02-15 15:29:37,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:30:02,260] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:30:02,350] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:30:02,364] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:30:02,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:30:02,469] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:30:02,620] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:30:02 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:30:02,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 262
+[2022-02-15 15:30:02,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:15,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:35:15,287] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:35:15,337] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:35:15,384] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:35:15,590] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:35:15,738] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:35:15 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:35:15,746] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 550
+[2022-02-15 15:35:15,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:25,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 302 0
+[2022-02-15 15:35:25,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/app01/userinfo/ HTTP/1.1" 200 1851
+[2022-02-15 15:35:25,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:27,206] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:35:27,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/app01/userinfo/ HTTP/1.1" 302 0
+[2022-02-15 15:35:27,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 12479
+[2022-02-15 15:35:27,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:35:27,373] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:29,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21909
+[2022-02-15 15:35:29,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:31,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ChairCabinetMS/chaircabinetlnv/ HTTP/1.1" 200 4216
+[2022-02-15 15:35:31,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:35:31,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:36,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21909
+[2022-02-15 15:35:36,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:37,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/ HTTP/1.1" 200 609476
+[2022-02-15 15:35:38,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:35:38,206] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:42,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/?q=GI014509 HTTP/1.1" 200 67942
+[2022-02-15 15:35:42,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:35:42,407] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:43,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18361
+[2022-02-15 15:35:43,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 15:35:43,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:35:50,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/?q=GI014509 HTTP/1.1" 200 67942
+[2022-02-15 15:35:50,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:36:04,250] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:36:04 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:36:04,258] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:36:28,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:36:28,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:36:28,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:36:28,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:36:28,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:36:28,156] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:36:31,209] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:36:31,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:36:31,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 15:36:31,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 15:36:31,459] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:36:31,466] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:36:31,723] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:36:31,725] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:36:31,727] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:36:31,818] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:36:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:36:31,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 15:36:31,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:36:31,881] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 15:36:35,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:36:35,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 15:36:35,748] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:36:35,748] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:36:35,826] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:36:35,970] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:36:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 15:36:35,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 15:36:36,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 15:36:40,981] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:36:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 15:36:40,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 337
+[2022-02-15 15:36:49,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 15:36:49,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:36:49,803] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:36:49,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 15:36:49,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 15:36:49,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 15:36:55,499] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 15:36:55,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 15:36:55,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 15:36:55,629] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 15:36:55,658] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:36:55,668] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:36:55,800] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:36:55,801] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:36:55,803] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:36:55,888] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:36:55 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 15:36:55,896] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 15:36:55,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:36:55,957] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 15:37:01,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:37:01,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:37:01,342] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:37:01,357] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:37:01,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:37:01,553] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:37:01 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:37:01,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1000
+[2022-02-15 15:37:01,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:37:42,768] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:37:42 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:37:42,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:39:17,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:39:17,211] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:39:17,241] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:39:17,259] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:39:17,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:39:17,514] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:39:17 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:39:17,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1000
+[2022-02-15 15:39:17,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:39:26,089] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:39:26 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:39:26,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:46:18,949] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:46:19,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:46:19,055] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:46:19,074] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:46:19,249] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:46:19,378] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:46:19 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:46:19,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1000
+[2022-02-15 15:46:19,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:46:25,292] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:46:25 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:46:25,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:46:28,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:46:28,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:46:28,736] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:46:28,755] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:46:28,988] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:46:29,117] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:46:29 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:46:29,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1000
+[2022-02-15 15:46:29,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:47:04,236] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:47:04 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:47:04,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:47:34,934] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:47:34,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:47:35,028] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:47:35,045] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:47:35,136] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:47:35,304] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:47:35 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:47:35,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1000
+[2022-02-15 15:47:35,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:47:39,788] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:47:39 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:47:39,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 526
+[2022-02-15 15:48:03,819] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26949
+[2022-02-15 15:48:03,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26949
+[2022-02-15 15:48:03,911] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:48:03,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:48:04,020] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:48:04,024] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:48:04,174] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceABO/M_Transfer/ HTTP/1.1" 200 13444
+[2022-02-15 15:48:04,217] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:48:53,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:48:53,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:48:53,875] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:48:53,892] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:48:53,988] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:48:53,994] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:48:54,139] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:48:54 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:48:54,155] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 29
+[2022-02-15 15:48:54,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:50:16,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:50:16,470] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:50:16,531] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:50:16,542] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:50:16,651] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:50:16,662] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:50:16,872] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:50:16 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:50:16,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 75
+[2022-02-15 15:50:16,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:52:00,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:52:00,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:52:00,579] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:52:00,601] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:52:00,711] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:52:00,715] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:52:00,886] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:52:00 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:52:00,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 565
+[2022-02-15 15:52:00,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:52:18,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:52:19,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 15:52:19,038] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:52:19,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:52:19,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:52:19,325] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:52:19 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:52:19,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 526
+[2022-02-15 15:52:19,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:52:23,659] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:52:23 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 15:52:23,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 15:52:29,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:52:29,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 15:52:29,276] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 15:52:29,290] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 15:52:29,382] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 15:52:29,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 15:52:29,547] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:52:29 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:52:29,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 1015
+[2022-02-15 15:52:29,568] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 15:52:34,460] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:52:34 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:52:34,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 75
+[2022-02-15 15:54:07,909] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:54:07 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:54:07,917] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 1015
+[2022-02-15 15:54:31,319] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 15:54:31 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 15:54:31,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 75
+[2022-02-15 16:14:59,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 16:14:59,155] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 16:14:59,190] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:14:59,197] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:14:59,374] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:14:59,377] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:14:59,522] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:14:59 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 16:14:59,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 1015
+[2022-02-15 16:14:59,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:15:02,328] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:15:02 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 16:15:02,336] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 75
+[2022-02-15 16:15:04,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 16:15:04,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 26952
+[2022-02-15 16:15:04,738] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:15:04,766] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:15:04,966] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:15:04,969] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:15:05,107] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:15:05 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 16:15:05,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 29
+[2022-02-15 16:15:05,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:15:07,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 28798
+[2022-02-15 16:15:08,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 28798
+[2022-02-15 16:15:08,028] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:15:08,047] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:15:08,119] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:15:08,285] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:15:08 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:15:08,293] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 1298
+[2022-02-15 16:15:08,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:15:15,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/?q=GI014509 HTTP/1.1" 302 0
+[2022-02-15 16:15:15,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ComputerMS/computerlnv/%3Fq%3DGI014509 HTTP/1.1" 200 1893
+[2022-02-15 16:15:15,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:15:18,915] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:15:18,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ComputerMS/computerlnv/%3Fq%3DGI014509 HTTP/1.1" 302 0
+[2022-02-15 16:15:19,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/?q=GI014509 HTTP/1.1" 200 67975
+[2022-02-15 16:15:19,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:15:19,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:15:21,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18400
+[2022-02-15 16:15:21,889] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:15:21,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:16:15,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18916
+[2022-02-15 16:16:15,464] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:16:15,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:18:14,977] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:18:14 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:18:14,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 807
+[2022-02-15 16:18:36,445] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:18:36 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:18:36,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 337
+[2022-02-15 16:18:40,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 16:18:40,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:18:40,508] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:18:40,518] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 16:18:40,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 16:18:40,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:18:44,143] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:18:44,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 16:18:44,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 16:18:44,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 16:18:44,340] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:18:44,346] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:18:44,557] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:18:44,557] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:18:44,559] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:18:44,637] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:18:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 16:18:44,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 16:18:44,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:18:44,683] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 16:18:48,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:18:48,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:18:48,825] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:18:48,829] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:18:49,010] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:18:49,143] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:18:49 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:18:49,157] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 315
+[2022-02-15 16:18:49,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:18:51,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 29955
+[2022-02-15 16:18:51,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 29955
+[2022-02-15 16:18:51,688] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:18:51,723] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:18:51,814] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:18:51,956] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:18:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 16:18:51,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 1020
+[2022-02-15 16:18:52,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:19:05,796] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:19:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 16:19:05,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 527
+[2022-02-15 16:19:13,909] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:19:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 16:19:13,917] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 16:19:22,193] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 33586
+[2022-02-15 16:19:22,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Transfer/ HTTP/1.1" 200 33586
+[2022-02-15 16:19:22,291] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:19:22,307] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:19:22,401] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:19:22,405] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:19:22,544] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:19:22 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 16:19:22,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 1018
+[2022-02-15 16:19:22,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:19:25,105] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:19:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Transfer/ POST
+[2022-02-15 16:19:25,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Transfer/ HTTP/1.1" 200 76
+[2022-02-15 16:19:27,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:19:28,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:19:28,095] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:19:28,096] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:19:28,179] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:19:28,319] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:19:28 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:19:28,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 1296
+[2022-02-15 16:19:28,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:19:31,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 302 0
+[2022-02-15 16:19:31,581] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 200 1961
+[2022-02-15 16:19:31,610] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:19:34,497] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:19:34,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 302 0
+[2022-02-15 16:19:34,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18931
+[2022-02-15 16:19:34,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:19:34,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:20:55,794] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:20:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:20:55,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 806
+[2022-02-15 16:21:04,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:21:04,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:21:04,822] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:04,845] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:04,928] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:21:05,051] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:21:05,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 505
+[2022-02-15 16:21:05,108] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:21:12,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 16:21:12,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:21:13,066] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:13,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 16:21:13,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 16:21:13,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:21:18,973] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:21:18,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 4841
+[2022-02-15 16:21:19,052] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:19,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 16:21:19,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 16:21:19,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:21:23,041] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:21:23,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 16:21:23,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 16:21:23,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 22521
+[2022-02-15 16:21:23,211] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:23,230] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:23,338] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:23,340] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:21:23,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:21:23,452] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:23 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 16:21:23,464] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 16:21:23,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:21:23,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 16:21:27,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 16:21:27,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 23321
+[2022-02-15 16:21:27,430] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:27,431] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:27,503] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:21:27,617] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:27 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 16:21:27,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 568
+[2022-02-15 16:21:27,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 13444
+[2022-02-15 16:21:32,300] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:32 12345678>Edwin_Cao None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-15 16:21:32,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-15 16:21:35,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-02-15 16:21:35,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:21:35,384] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:35,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-15 16:21:35,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-15 16:21:35,403] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-15 16:21:38,850] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:21:38,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-15 16:21:38,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 16:21:38,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-15 16:21:39,020] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:39,025] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:39,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:39,153] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-15 16:21:39,153] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:21:39,233] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-15 16:21:39,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-15 16:21:39,281] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-15 16:21:39,294] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:21:53,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:21:53,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:21:53,870] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:21:53,894] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:21:53,984] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:21:54,101] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:21:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:21:54,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 15
+[2022-02-15 16:21:54,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:25:02,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:25:02,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:25:02,693] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:25:02,715] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:25:02,826] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:25:02,981] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:25:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:25:02,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 505
+[2022-02-15 16:25:03,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:25:22,439] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:25:22 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:25:22,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 15
+[2022-02-15 16:25:31,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:25:31,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:25:31,494] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:25:31,518] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:25:31,607] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:25:31,780] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:25:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:25:31,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 1296
+[2022-02-15 16:25:31,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:25:41,053] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 302 0
+[2022-02-15 16:25:41,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 200 1961
+[2022-02-15 16:25:41,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:25:43,920] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-15 16:25:43,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 302 0
+[2022-02-15 16:25:44,011] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18898
+[2022-02-15 16:25:44,033] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:25:44,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:26:38,442] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:26:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:26:38,450] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 806
+[2022-02-15 16:27:05,156] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:27:05,224] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:27:05,247] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:27:05,272] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:27:05,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:27:05,481] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:27:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:27:05,490] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 505
+[2022-02-15 16:27:05,547] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:27:07,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18912
+[2022-02-15 16:27:07,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-15 16:27:07,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:27:47,389] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:27:47,497] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:27:47,500] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:27:47,594] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:27:47,744] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:27:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:27:47,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 783
+[2022-02-15 16:27:47,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:37:52,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:37:52,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-15 16:37:52,647] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:37:52,675] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:37:52,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:37:53,012] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:37:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-15 16:37:53,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 735
+[2022-02-15 16:37:53,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-15 16:38:12,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:38:12,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 28590
+[2022-02-15 16:38:12,371] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-15 16:38:12,379] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-15 16:38:12,572] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-15 16:38:12,679] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-15 16:38:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2022-02-15 16:38:12,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 505
+[2022-02-15 16:38:12,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 09:22:26,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2022-02-16 09:22:26,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-16 09:22:26,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2022-02-16 09:22:26,893] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 09:22:26,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-02-16 09:22:26,907] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2022-02-16 09:23:09,973] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-16 09:23:09,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-02-16 09:23:10,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-16 09:23:10,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 29154
+[2022-02-16 09:23:10,161] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 09:23:10,179] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 09:23:10,294] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 09:23:10,295] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 09:23:10,295] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-16 09:23:10,387] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 09:23:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /index/ POST
+[2022-02-16 09:23:10,396] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1533
+[2022-02-16 09:23:10,418] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 09:23:10,434] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /media/img/UserInfo/u2393454652578938553fm26gp0.jpg HTTP/1.1" 200 34852
+[2022-02-16 09:23:15,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 29955
+[2022-02-16 09:23:15,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Receive/ HTTP/1.1" 200 29955
+[2022-02-16 09:23:15,728] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 09:23:15,744] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 09:23:15,817] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 09:23:15,921] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 09:23:15 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Receive/ POST
+[2022-02-16 09:23:15,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Receive/ HTTP/1.1" 200 78
+[2022-02-16 09:23:15,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 09:23:19,486] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-16 09:23:19,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-16 09:23:19,585] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 09:23:19,602] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 09:23:19,674] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 09:23:19,813] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 09:23:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-16 09:23:19,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 736
+[2022-02-16 09:23:19,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:09:26,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 302 0
+[2022-02-16 12:09:26,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 200 1961
+[2022-02-16 12:09:26,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:09:29,890] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-16 12:09:29,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 302 0
+[2022-02-16 12:09:29,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnv/306/change/?_changelist_filters=q%3DGI014509 HTTP/1.1" 200 18912
+[2022-02-16 12:09:30,025] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-16 12:09:30,080] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:09:42,326] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ComputerMS/computerlnv/306/change/%3F_changelist_filters%3Dq%253DGI014509 HTTP/1.1" 302 0
+[2022-02-16 12:09:42,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21909
+[2022-02-16 12:09:42,440] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:09:45,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 13856
+[2022-02-16 12:09:45,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-16 12:09:45,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:10:30,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-16 12:10:30,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-16 12:10:30,165] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:10:30,180] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:10:30,259] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:10:30,420] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:10:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-16 12:10:30,434] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137199
+[2022-02-16 12:10:30,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:10:35,865] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:10:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-16 12:10:35,881] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 6871
+[2022-02-16 12:10:40,542] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:10:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-16 12:10:40,549] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 6480
+[2022-02-16 12:10:59,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-16 12:10:59,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Borrow/ HTTP/1.1" 200 33614
+[2022-02-16 12:10:59,931] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:10:59,952] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:11:00,054] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:11:00,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-16 12:11:00,200] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-16 12:11:00,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 493
+[2022-02-16 12:11:00,261] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:11:05,305] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Borrow/ POST
+[2022-02-16 12:11:05,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Borrow/ HTTP/1.1" 200 75
+[2022-02-16 12:11:12,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 13856
+[2022-02-16 12:11:12,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-16 12:11:12,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:11:25,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-16 12:11:26,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 35432
+[2022-02-16 12:11:26,073] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:11:26,092] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:11:26,178] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:11:26,327] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-16 12:11:26,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 1177
+[2022-02-16 12:11:26,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:11:38,194] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2022-02-16 12:11:38,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 759
+[2022-02-16 12:11:45,423] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-16 12:11:45,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_Return/ HTTP/1.1" 200 33616
+[2022-02-16 12:11:45,518] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:11:45,539] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:11:45,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:11:45,632] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-16 12:11:45,777] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-16 12:11:45,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 503
+[2022-02-16 12:11:45,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:11:50,392] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:11:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_Return/ POST
+[2022-02-16 12:11:50,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_Return/ HTTP/1.1" 200 75
+[2022-02-16 12:11:52,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ComputerMS/computerlnvhis/ HTTP/1.1" 200 15039
+[2022-02-16 12:11:53,031] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-02-16 12:11:53,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:12:22,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-16 12:12:23,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 33495
+[2022-02-16 12:12:23,047] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:12:23,073] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:12:23,242] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:12:23,405] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:12:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-16 12:12:23,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 137224
+[2022-02-16 12:12:23,431] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:12:29,633] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:12:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2022-02-16 12:12:29,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 6896
+[2022-02-16 12:12:41,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_edit/ HTTP/1.1" 200 77348
+[2022-02-16 12:12:41,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/M_edit/ HTTP/1.1" 200 77348
+[2022-02-16 12:12:41,801] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-02-16 12:12:41,830] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-02-16 12:12:42,022] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-02-16 12:12:42,027] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-02-16 12:12:42,339] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:12:42 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_edit/ POST
+[2022-02-16 12:12:42,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 20078
+[2022-02-16 12:12:42,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_edit/ HTTP/1.1" 200 6958
+[2022-02-16 12:12:46,277] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:12:46 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_edit/ POST
+[2022-02-16 12:12:46,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_edit/ HTTP/1.1" 200 7374
+[2022-02-16 12:12:51,644] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:12:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_edit/ POST
+[2022-02-16 12:12:51,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_edit/ HTTP/1.1" 200 7192
+[2022-02-16 12:13:05,071] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-02-16 12:13:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ComputerMS/M_edit/ POST
+[2022-02-16 12:13:05,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/M_edit/ HTTP/1.1" 200 7374

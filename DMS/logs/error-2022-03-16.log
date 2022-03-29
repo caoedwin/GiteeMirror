@@ -1,0 +1,75 @@
+[2022-03-16 08:50:53,038] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 76, in login
+    init_permission(request, user_obj)  # 调用init_permission，初始化权限
+  File "C:\djangoproject\DMS\service\init_permission.py", line 23, in init_permission
+    print(item)
+OSError: [Errno 22] Invalid argument
+[2022-03-16 08:50:53,041] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:50:53,042] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 86328
+[2022-03-16 08:51:44,039] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 76, in login
+    init_permission(request, user_obj)  # 调用init_permission，初始化权限
+  File "C:\djangoproject\DMS\service\init_permission.py", line 23, in init_permission
+    print(item)
+OSError: [Errno 22] Invalid argument
+[2022-03-16 08:51:44,040] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:51:44,041] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 86328
+[2022-03-16 08:54:40,871] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 76, in login
+    init_permission(request, user_obj)  # 调用init_permission，初始化权限
+  File "C:\djangoproject\DMS\service\init_permission.py", line 23, in init_permission
+    print(item)
+OSError: [Errno 22] Invalid argument
+[2022-03-16 08:54:40,876] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:54:40,877] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 86328
+[2022-03-16 08:54:49,093] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 76, in login
+    init_permission(request, user_obj)  # 调用init_permission，初始化权限
+  File "C:\djangoproject\DMS\service\init_permission.py", line 23, in init_permission
+    print(item)
+OSError: [Errno 22] Invalid argument
+[2022-03-16 08:54:49,096] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:54:49,096] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 86325
+[2022-03-16 08:56:58,189] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:57:38,263] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:57:59,564] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 08:58:13,655] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 09:34:57,417] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 09:37:05,687] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-16 09:37:35,799] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

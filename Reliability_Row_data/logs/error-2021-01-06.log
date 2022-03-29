@@ -1,0 +1,970 @@
+[2021-01-06 10:01:45,720] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 664, in PersonalInfo_edit
+    Seniority = round(float(datetime.datetime.now() - i.RegistrationDate)/365, 1)
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+[2021-01-06 10:01:45,724] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85803
+[2021-01-06 10:02:35,731] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round(float(datetime.datetime.now() - i.RegistrationDate)/365, 1)
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+[2021-01-06 10:02:35,735] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85808
+[2021-01-06 10:03:13,018] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round(float(datetime.datetime.now() - i.RegistrationDate)/365, 1)
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+[2021-01-06 10:03:13,022] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85854
+[2021-01-06 10:04:03,838] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 664, in PersonalInfo_edit
+    print(type(datetime.date.now()),datetime.datetime.now(), type(i.RegistrationDate), i.RegistrationDate)
+AttributeError: type object 'datetime.date' has no attribute 'now'
+[2021-01-06 10:04:03,842] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85820
+[2021-01-06 10:04:45,380] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round(float(datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: float() argument must be a string or a number, not 'datetime.timedelta'
+[2021-01-06 10:04:45,384] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85831
+[2021-01-06 10:05:28,903] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round(float(datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: float() argument must be a string or a number, not 'datetime.timedelta'
+[2021-01-06 10:05:28,908] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85838
+[2021-01-06 10:06:01,800] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round(datetime.datetime.now().date() - i.RegistrationDate/365, 1)
+TypeError: unsupported operand type(s) for /: 'datetime.date' and 'int'
+[2021-01-06 10:06:01,804] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85814
+[2021-01-06 10:06:23,308] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 665, in PersonalInfo_edit
+    Seniority = round((datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: type datetime.timedelta doesn't define __round__ method
+[2021-01-06 10:06:23,312] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85750
+[2021-01-06 10:07:08,492] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 666, in PersonalInfo_edit
+    Seniority = round((datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: type datetime.timedelta doesn't define __round__ method
+[2021-01-06 10:07:08,496] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85839
+[2021-01-06 10:14:34,768] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 666, in PersonalInfo_edit
+    Seniority = round((datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: type datetime.timedelta doesn't define __round__ method
+[2021-01-06 10:14:34,772] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85843
+[2021-01-06 10:15:12,749] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 666, in PersonalInfo_edit
+    Seniority = round((datetime.datetime.now().date() - i.RegistrationDate)/365, 1)
+TypeError: type datetime.timedelta doesn't define __round__ method
+[2021-01-06 10:15:12,753] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85847
+[2021-01-06 10:16:31,701] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 667, in PersonalInfo_edit
+    Seniority = float(Seniority)
+TypeError: float() argument must be a string or a number, not 'datetime.timedelta'
+[2021-01-06 10:16:31,705] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85992
+[2021-01-06 10:17:05,074] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 667, in PersonalInfo_edit
+    Seniority = float(str(Seniority))
+ValueError: could not convert string to float: '16 days, 10:35:10.684932'
+[2021-01-06 10:17:05,079] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85968
+[2021-01-06 10:17:45,679] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 668, in PersonalInfo_edit
+    Seniority = float(str(Seniority))
+ValueError: could not convert string to float: '16 days, 10:35:10.684932'
+[2021-01-06 10:17:45,683] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85953
+[2021-01-06 10:21:41,209] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 1063, in PersonalInfo_edit
+    return HttpResponse(json.dumps(data), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type date is not JSON serializable
+[2021-01-06 10:21:41,214] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 119660
+[2021-01-06 10:38:43,836] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 666, in PersonalInfo_edit
+    print(str((datetime.datetime.now().date() - i.RegistrationDate)).split('')[0])
+ValueError: empty separator
+[2021-01-06 10:38:43,839] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 85616
+[2021-01-06 10:48:57,134] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 694, in PersonalInfo_edit
+    for i in PersonalInfo.objects.filter(**checkPerdic):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Year' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, Portrait_id, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, id, personalinfohisbyper
+[2021-01-06 10:48:57,139] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 132982
+[2021-01-06 11:34:28,263] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 728, in PersonalInfo_edit
+    if 'MUTIDELETE' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 11:34:28,268] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87285
+[2021-01-06 11:35:15,823] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 728, in PersonalInfo_edit
+    if 'MUTIDELETE' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 11:35:15,824] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87285
+[2021-01-06 11:37:59,339] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 728, in PersonalInfo_edit
+    if 'MUTIDELETE' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 11:37:59,341] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87284
+[2021-01-06 11:38:42,805] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 639, in PersonalInfo_edit
+    print(request.body)
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 11:38:42,810] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87288
+[2021-01-06 11:47:18,083] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 639, in PersonalInfo_edit
+    print(request.body)
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 11:47:18,084] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87287
+[2021-01-06 11:50:25,772] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /media/img/test/sdf_RJ00621.mp4 HTTP/1.1" 500 59
+[2021-01-06 11:50:25,773] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /media/videos/sdf_qEvmZMO.mp4 HTTP/1.1" 500 59
+[2021-01-06 11:50:25,774] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /media/videos/sdf_DGNWO3F.mp4 HTTP/1.1" 500 59
+[2021-01-06 11:50:25,775] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /media/img/test/sdf_ZZywdmV.mp4 HTTP/1.1" 500 59
+[2021-01-06 12:02:06,703] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 731, in PersonalInfo_edit
+    if 'MUTIDELETE' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 12:02:06,707] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87297
+[2021-01-06 12:02:31,327] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 731, in PersonalInfo_edit
+    if 'MUTIDELETE' in str(request.body):
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 12:02:31,332] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87297
+[2021-01-06 12:03:12,314] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 640, in PersonalInfo_edit
+    print(request.body)
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 12:03:12,318] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87294
+[2021-01-06 12:04:02,019] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 640, in PersonalInfo_edit
+    print(request.body)
+  File "C:\Python372\mecheck\lib\site-packages\django\http\request.py", line 275, in body
+    raise RawPostDataException("You cannot access body after reading from request's data stream")
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+[2021-01-06 12:04:02,024] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 87294
+[2021-01-06 12:40:24,676] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 873, in PersonalInfo_edit
+    YearSearch = responseData['Year']
+KeyError: 'Year'
+[2021-01-06 12:40:24,680] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 94886
+[2021-01-06 12:44:05,895] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 874, in PersonalInfo_edit
+    CustomerSearch = responseData['Customer']
+KeyError: 'Customer'
+[2021-01-06 12:44:05,899] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 95087
+[2021-01-06 12:45:48,342] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 877, in PersonalInfo_edit
+    GroupEmployeesSearch = responseData['GroupEmployees']
+KeyError: 'GroupEmployees'
+[2021-01-06 12:45:48,344] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 95611
+[2021-01-06 13:04:20,349] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 1227, in PersonalInfo_edit
+    for i in PersonalInfo.objects.filter(**checkPerdic):
+UnboundLocalError: local variable 'checkPerdic' referenced before assignment
+[2021-01-06 13:04:20,353] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 110356
+[2021-01-06 15:16:14,844] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 811, in PersonalInfo_edit
+    PersonalInfoHisByPer.objects.create(**PersonalInfoHisByPerCreate)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1288, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in as_sql
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in <listcomp>
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1240, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1182, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’None‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 15:16:14,852] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 190875
+[2021-01-06 15:24:41,507] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 824, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’None‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 15:24:41,508] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140344
+[2021-01-06 15:33:36,604] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 812, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 15:33:36,605] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 142150
+[2021-01-06 15:46:06,285] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 814, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 15:46:06,290] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 142152
+[2021-01-06 16:07:35,516] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 826, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:07:35,520] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140586
+[2021-01-06 16:16:09,527] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 826, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:16:09,529] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140586
+[2021-01-06 16:17:33,656] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 826, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:17:33,657] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140586
+[2021-01-06 16:21:50,336] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 755, in PersonalInfo_edit
+    print(ExpectedDepartureDate,type(ExpectedDepartureDate))
+NameError: name 'ExpectedDepartureDate' is not defined
+[2021-01-06 16:21:50,340] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 97156
+[2021-01-06 16:23:00,373] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 827, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:23:00,380] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140587
+[2021-01-06 16:23:39,987] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 828, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Mon Sep 10 2018 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:23:39,992] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140587
+[2021-01-06 16:33:40,155] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 842, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Invalid Date‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:33:40,160] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 141095
+[2021-01-06 16:42:34,161] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 841, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:42:34,166] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 105618
+[2021-01-06 16:44:01,897] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 853, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:44:01,906] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104736
+[2021-01-06 16:47:08,451] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 844, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’Wed Jan 06 2021 00:00:00 GMT+0800 (中國標準時間)‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:47:08,454] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 141621
+[2021-01-06 16:48:05,775] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 844, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).update(**updatadivPer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’null‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-01-06 16:48:05,776] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 140971
+[2021-01-06 16:50:03,367] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 853, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:50:03,372] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104713
+[2021-01-06 16:50:38,471] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 854, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:50:38,476] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104713
+[2021-01-06 16:51:36,628] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 854, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).Portrait.add(empt)
+AttributeError: 'QuerySet' object has no attribute 'Portrait'
+[2021-01-06 16:51:36,632] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104717
+[2021-01-06 16:52:24,762] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 854, in PersonalInfo_edit
+    PersonalInfo.objects.get(id=id).Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:52:24,767] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104691
+[2021-01-06 16:55:08,401] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 854, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 16:55:08,406] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104713
+[2021-01-06 17:01:22,512] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 854, in PersonalInfo_edit
+    PersonalInfo.objects.filter(id=id).first().Portrait.add(empt)
+AttributeError: 'NoneType' object has no attribute 'add'
+[2021-01-06 17:01:22,516] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 104713

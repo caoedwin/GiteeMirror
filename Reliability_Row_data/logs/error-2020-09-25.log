@@ -1,0 +1,70 @@
+[2020-09-25 12:12:04,624] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-top/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 1485, in INVGantt_top
+    Totaltime = Standardtime + Retesttime
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
+[2020-09-25 12:12:04,626] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-top/ HTTP/1.1" 500 82961
+[2020-09-25 15:11:32,722] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-top/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 1626, in INVGantt_top
+    for i in mock_data2_Total:
+TypeError: 'NoneType' object is not iterable
+[2020-09-25 15:11:32,724] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-top/ HTTP/1.1" 500 83389
+[2020-09-25 15:12:34,188] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-top/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 1627, in INVGantt_top
+    for i in mock_data2_Total:
+TypeError: 'NoneType' object is not iterable
+[2020-09-25 15:12:34,191] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-top/ HTTP/1.1" 500 83300
+[2020-09-25 15:13:01,631] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-top/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 1627, in INVGantt_top
+    for i in mock_data2_Total:
+TypeError: 'NoneType' object is not iterable
+[2020-09-25 15:13:01,632] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-top/ HTTP/1.1" 500 85690
+[2020-09-25 15:13:28,354] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-top/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 1627, in INVGantt_top
+    for i in mock_data2_Total:
+TypeError: 'NoneType' object is not iterable
+[2020-09-25 15:13:28,355] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-top/ HTTP/1.1" 500 85972

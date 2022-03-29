@@ -1,0 +1,187 @@
+[2021-01-27 08:15:58,978] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5528, in Summary3
+    titleDiagram2Data["LIZHIBI"] = round(float(LIZHIBI_titleDiagram2Data.split("%")[0]) / 100, 2)
+AttributeError: 'list' object has no attribute 'split'
+[2021-01-27 08:15:58,984] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 112877
+[2021-01-27 09:49:31,134] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword '-PositionNow' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5447, in Summary3
+    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values("-PositionNow").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword '-PositionNow' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+[2021-01-27 09:49:31,144] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 150731
+[2021-01-27 11:19:21,185] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5805, in Summary3
+    i["seniorityDeparture"] = round(float(i[senioritySummary] / senioritySummary_Total * 100), 1)
+KeyError: 0
+[2021-01-27 11:19:21,191] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 115261
+[2021-01-27 11:53:33,876] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5754, in Summary3
+    seniorityTable1_Position.append(Positions.objects.filter(Item=i["PositionNow"]).Positions_Name)
+AttributeError: 'QuerySet' object has no attribute 'Positions_Name'
+[2021-01-27 11:53:33,881] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 109687
+[2021-01-27 11:54:58,475] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5860, in Summary3
+    '20年以上': number20,
+AttributeError: 'QuerySet' object has no attribute 'Positions_Name'
+[2021-01-27 11:54:58,482] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 113470
+[2021-01-27 12:18:58,726] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6012, in Summary3
+    SeniorityTitleDiagram0[i] = seniorityTable1[0][i]
+TypeError: list indices must be integers or slices, not str
+[2021-01-27 12:18:58,734] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 119293
+[2021-01-27 13:38:17,136] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 5758, in Summary3
+    seniorityDiagramData1["LIZHIBI"] = round(float(LIZHIBI_seniorityDiagramData1.split("%")[0]) / 100, 3)
+AttributeError: 'list' object has no attribute 'split'
+[2021-01-27 13:38:17,142] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 119152
+[2021-01-27 15:02:06,623] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6309, in Summary3
+    i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+TypeError: 'int' object is not subscriptable
+[2021-01-27 15:02:06,632] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 119976
+[2021-01-27 15:17:27,010] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6309, in Summary3
+    print(i["educationSummary"])
+TypeError: 'int' object is not subscriptable
+[2021-01-27 15:17:27,020] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 119936
+[2021-01-27 15:18:01,832] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6310, in Summary3
+    i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+TypeError: 'int' object is not subscriptable
+[2021-01-27 15:18:01,843] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 119870
+[2021-01-27 15:23:49,064] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6384, in Summary3
+    i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+TypeError: 'int' object is not subscriptable
+[2021-01-27 15:23:49,071] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 120361
+[2021-01-27 15:24:02,011] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6384, in Summary3
+    i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+TypeError: 'int' object is not subscriptable
+[2021-01-27 15:24:02,012] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 120361

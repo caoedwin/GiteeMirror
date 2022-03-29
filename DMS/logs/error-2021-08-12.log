@@ -1,0 +1,220 @@
+[2021-08-12 08:13:22,648] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-12 08:29:30,374] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 105, in BorrowedDeviceLNV
+    if i.Predict_return and not i.Return_date:
+AttributeError: 'DeviceLNV' object has no attribute 'Predict_return'
+[2021-08-12 08:29:30,379] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-12 08:29:30,380] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 80886
+[2021-08-12 10:40:10,635] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4021, in M_edit
+    print(DeviceLNV._meta.get_field())
+TypeError: get_field() missing 1 required positional argument: 'field_name'
+[2021-08-12 10:40:10,638] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83200
+[2021-08-12 10:54:01,360] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4020, in M_edit
+    print([field.name for i in DeviceLNV._meta.fields()])
+TypeError: 'ImmutableList' object is not callable
+[2021-08-12 10:54:01,362] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83068
+[2021-08-12 10:59:04,000] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4020, in M_edit
+    print(DeviceLNV._meta.fields.name)
+AttributeError: 'ImmutableList' object has no attribute 'name'
+[2021-08-12 10:59:04,005] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83068
+[2021-08-12 11:03:37,631] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4021, in M_edit
+    print(getattr(DeviceLNV._meta.fields, 'field_name'))
+AttributeError: 'ImmutableList' object has no attribute 'field_name'
+[2021-08-12 11:03:37,634] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83179
+[2021-08-12 11:04:08,026] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4021, in M_edit
+    print(getattr(DeviceLNV, 'field_name'))
+AttributeError: type object 'DeviceLNV' has no attribute 'field_name'
+[2021-08-12 11:04:08,029] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83157
+[2021-08-12 11:05:36,167] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4021, in M_edit
+    print(getattr(DeviceLNV._meta.fields, 'field_name'))
+AttributeError: 'ImmutableList' object has no attribute 'field_name'
+[2021-08-12 11:05:36,169] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83180
+[2021-08-12 11:18:22,567] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4978, in M_edit
+    **Check_dic).update(**i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-08-12 11:18:22,571] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-12 11:18:22,571] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 137819
+[2021-08-12 11:21:09,816] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4979, in M_edit
+    **Check_dic).update(**i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2021-08-12 11:21:09,819] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-12 11:21:09,820] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 137819
+[2021-08-12 11:26:11,330] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4023, in M_edit
+    print(i.name,i.value)
+AttributeError: 'AutoField' object has no attribute 'value'
+[2021-08-12 11:26:11,334] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83233
+[2021-08-12 11:30:10,537] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4023, in M_edit
+    print(i.name, i.type)
+AttributeError: 'AutoField' object has no attribute 'type'
+[2021-08-12 11:30:10,541] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83229
+[2021-08-12 11:31:19,202] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4023, in M_edit
+    print(i.name, i.widget)
+AttributeError: 'AutoField' object has no attribute 'widget'
+[2021-08-12 11:31:19,205] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_edit/ HTTP/1.1" 500 83241
+[2021-08-12 11:43:39,284] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 4960, in M_edit
+    i[j] = ''
+TypeError: unhashable type: 'list'
+[2021-08-12 11:43:39,287] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-12 11:43:39,288] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_edit/ HTTP/1.1" 500 100147
+[2021-08-12 14:21:48,120] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /media/DeviceLNV/Device/33333.jpg HTTP/1.1" 500 59
