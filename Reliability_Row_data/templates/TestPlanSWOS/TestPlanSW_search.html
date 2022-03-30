@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}TestPlan_SW{% endblock %}
+{% block title %}TestPlanOS_SW_search{% endblock %}
 
 {% block css %}
  <link rel="stylesheet" href="/static/css/ElementUI.css">
@@ -580,17 +580,17 @@ p a{
           <el-table-column width="170" label="Case ID"  prop="caseid" align="left" fixed></el-table-column>
           <el-table-column width="120" label="Case Name" prop="casename" fixed></el-table-column>
           <!--:key="Math.random()" => 为了解决数据错位 即前一列覆盖掉后一列 -->
-          <el-table-column width="120" label="Test Items" prop="testitem" fixed  v-if="showPhase === 3||showPhase === 15||showPhase === 16||showPhase === 17||showPhase === 18||showPhase === 19||showPhase === 20" :key="Math.random()" v-cloak></el-table-column>
+          <el-table-column width="120" label="Test Items" prop="testitem" fixed {% comment %} v-if="showPhase === 3||showPhase === 15||showPhase === 16||showPhase === 17||showPhase === 18||showPhase === 19||showPhase === 20" :key="Math.random()" {% endcomment %} v-cloak></el-table-column>
           <el-table-column width="120" label="Version" prop="version"></el-table-column>
           <el-table-column width="120" label="Release Date"prop="releasedate"></el-table-column>
           <el-table-column width="120" label="Owner" prop="owner"></el-table-column>
           <el-table-column width="120" label="priority" prop="priority"></el-table-column>
           <!--:key="1" => 为了解决数据错位 （即前一列覆盖掉后一列）且使用Math.random()会产生抖动 ，换成固定值则正常 -->
-          <el-table-column width="120"  v-if="showPhase !== 3&&showPhase !== 15&&showPhase !== 16&&showPhase !== 17&&showPhase !== 18&&showPhase !== 19&&showPhase !== 20"  label="TDMS Total Time"  :key="1" >
-              <template slot-scope="scope">
-                  <span v-if="scope.row.id " v-cloak >${ scope.row.basetime + scope.row.unattendedtime }</span>
-              </template>
-          </el-table-column>
+{#          <el-table-column width="120"  v-if="showPhase !== 3&&showPhase !== 15&&showPhase !== 16&&showPhase !== 17&&showPhase !== 18&&showPhase !== 19&&showPhase !== 20"  label="TDMS Total Time"  :key="1" >#}
+{#              <template slot-scope="scope">#}
+{#                  <span v-if="scope.row.id " v-cloak >${ scope.row.basetime + scope.row.unattendedtime }</span>#}
+{#              </template>#}
+{#          </el-table-column>#}
           <el-table-column width="120"  label="Base Time" prop="basetime"></el-table-column>
           <el-table-column width="120"  label="(TDMS)UnAttended Time" prop="unattendedtime"></el-table-column>
           <el-table-column width="120"  label="Base Automation Time(1SKU)" prop="basetimeA"></el-table-column>
@@ -978,7 +978,7 @@ p a{
     },
     //首先获取customer ，project ，phase 搜索信息
     created(){
-        axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action=first" ,{
+        axios.get("/TestPlanSW/TestPlanSW-search/?action=first" ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.selectMsg=res.data;
@@ -998,7 +998,7 @@ p a{
                  },
       getdata:function(e){
                 let _this=this;
-                axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action="+e ,{
+                axios.get("/TestPlanSW/TestPlanSW-search/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.loading = false;
@@ -1027,7 +1027,7 @@ p a{
             },
         getdata1: function (e) {
                 let data = {"isGetData": e,};
-                axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
+                axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
                 }).then((res) => {
                     this.selectItem1 = res.data.select1;
@@ -1043,7 +1043,7 @@ p a{
                         "Project": Project,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
+                    axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                     this.rdchangelist = res.data.rdchangelist;
@@ -1069,7 +1069,7 @@ p a{
                         "Project": Project,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
+                    axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                     this.rdchangelist = res.data.rdchangelist;
@@ -1271,7 +1271,7 @@ p a{
                          "Customer": Customer,
                          "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                      }
-                     axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
+                     axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
                          headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                      }).then((res) => {
                          this.proinfomation = res.data.proinfomation;
@@ -1288,7 +1288,7 @@ p a{
                 let Customer = this.$refs.Customer1.value;
                 this.showProject1=row.COMPRJCODE;
            let data ={"isGetData":"SELECTPRO","Customer":Customer,"COMPRJCODE":row.COMPRJCODE,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-           axios.post("/TestPlanSWOS/TestPlanSWOS-search/",Qs.stringify(data), {
+           axios.post("/TestPlanSW/TestPlanSW-search/",Qs.stringify(data), {
            headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                         this.Sum1 =res.data['Sum1'];
@@ -1485,7 +1485,7 @@ p a{
             let Project = this.$refs.project.value;
             let Phase = this.$refs.phase.value;
            let data ={"isGetData":"SEARCH","Customer":Customer,"Project":Project,"Phase":Phase,"category":row.category,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-           axios.post("/TestPlanSWOS/TestPlanSWOS-search/",Qs.stringify(data), {
+           axios.post("/TestPlanSW/TestPlanSW-search/",Qs.stringify(data), {
            headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                this.tableData=res.data['content'];
@@ -1830,7 +1830,7 @@ p a{
            if(newValue !== ''){
                if(this.customer !== '' && this.project !== ''  && this.phase !== ''  ){
                  let parameter = ""+this.customer+"&project="+this.project+"&phase="+this.phase;
-                 axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
+                 axios.get("/TestPlanSW/TestPlanSW-search/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.categoryItem = res.data['MockData'];

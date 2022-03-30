@@ -6,7 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/templates/ChairCabinetMS/M_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/templates/ChairCabinetMS/M_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPlanSWOS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestPlanSWOS/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../me" beforeDir="false" afterPath="$PROJECT_DIR$/../me" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rbac" beforeDir="false" afterPath="$PROJECT_DIR$/../rbac" afterDir="false" />
     </list>
@@ -43,32 +48,7 @@
     <favorites_list name="DDIS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="1348" lean-forward="true" selection-start-line="1348" selection-end-line="1348" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#62198#63292#0" />
-                <element signature="e#63461#65672#0" />
-                <element signature="e#65745#69074#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Desktop/新建 文本文档.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="10038" column="40" selection-start-line="10038" selection-end-line="10038" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,11 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>projects</find>
-      <find>editor</find>
-      <find>selectCustomer</find>
-      <find>UnionFieldListFilter</find>
-      <find>CQM</find>
       <find>ManyToManyField</find>
       <find>Status</find>
       <find># mock_datalist = AutoItems.objects.all()</find>
@@ -112,6 +87,11 @@
       <find>models</find>
       <find>.zip</find>
       <find>fb4d180ec04ba4b8cf48d731b8457258c85f7ff6</find>
+      <find>FFRT</find>
+      <find>fresh</find>
+      <find>OSRefresh</find>
+      <find>True</find>
+      <find>True</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -170,18 +150,18 @@
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_Summary.html" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/urls.py" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/admin.py" />
-        <option value="$PROJECT_DIR$/TestPlanSWOS/views.py" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/models.py" />
         <option value="D:/views.py" />
         <option value="$USER_HOME$/Desktop/新建 文本文档.txt" />
+        <option value="$PROJECT_DIR$/TestPlanSWOS/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="6" />
-    <option name="width" value="1938" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-10" />
+    <option name="y" value="5" />
+    <option name="width" value="1939" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectId" id="1Td4In4Uk9cLegXCQfBqS8KHbx0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -190,6 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,18 +178,22 @@
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
+              <item name="TestPlanSWOS" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/views.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DMS" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -593,6 +578,7 @@
       <workItem from="1647507074958" duration="27567000" />
       <workItem from="1647929378338" duration="4661000" />
       <workItem from="1647934306590" duration="49433000" />
+      <workItem from="1648602246932" duration="5622000" />
     </task>
     <servers />
   </component>
@@ -611,7 +597,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4932468000" />
+    <option name="totallyTimeSpent" value="4938090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,16 +609,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="5" width="1550" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="4" width="1551" height="831" extended-state="1" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
       <window_info id="Favorites" order="0" sideWeight="0.50877196" side_tool="true" weight="0.17107001" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.49122807" weight="0.17173052" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.49122807" visible="true" weight="0.17161717" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Docker" order="3" weight="0.3293944" />
+      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" weight="0.3293944" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.497979" weight="0.2437223" />
       <window_info anchor="bottom" id="Structure" order="6" sideWeight="0.502994" weight="0.23485968" />
@@ -645,7 +630,7 @@
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50317967" weight="0.20555556" />
       <window_info anchor="bottom" id="SciView" order="15" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
-      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="16" sideWeight="0.5006605" visible="true" weight="0.21319018" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="16" sideWeight="0.5006605" visible="true" weight="0.2128637" />
       <window_info anchor="bottom" id="TypeScript" order="17" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -1149,16 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestPlanSWOS/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="5864" column="24" selection-start-line="5864" selection-start-column="24" selection-end-line="5864" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1178,19 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="1348" lean-forward="true" selection-start-line="1348" selection-end-line="1348" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#62198#63292#0" />
-            <element signature="e#63461#65672#0" />
-            <element signature="e#65745#69074#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../.git/COMMIT_EDITMSG">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1205,6 +1167,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="10038" column="40" selection-start-line="10038" selection-end-line="10038" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="1348" selection-start-line="1348" selection-end-line="1348" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#62198#63292#0" />
+            <element signature="e#63461#65672#0" />
+            <element signature="e#65745#69074#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPlanSWOS/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="5722" column="99" selection-start-line="5722" selection-start-column="99" selection-end-line="5722" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#591#107311#0" />
+            <element signature="e#840#3184#0" />
+            <element signature="e#3276#4015#0" />
+            <element signature="e#4036#4405#0" />
+            <element signature="e#4417#4878#0" />
+            <element signature="e#4912#5296#0" />
+            <element signature="e#5307#5637#0" />
+            <element signature="e#5660#6051#0" />
+            <element signature="e#6075#6477#0" />
+            <element signature="e#7353#26395#0" />
+            <element signature="e#26774#49944#0" />
+            <element signature="e#49979#72979#0" />
+            <element signature="e#73363#86845#0" />
+            <element signature="e#86880#106673#0" />
+            <element signature="e#107347#334255#0" />
+            <element signature="e#107580#107594#0" />
+            <element signature="e#163140#166225#0" />
+            <element signature="e#166238#167103#0" />
+            <element signature="e#167114#167659#0" />
+            <element signature="e#167674#168286#0" />
+            <element signature="e#168423#170720#0" />
+            <element signature="e#171076#177397#0" />
+            <element signature="e#177406#177451#0" />
+            <element signature="e#181717#198525#0" />
+            <element signature="e#186735#186747#0" />
+            <element signature="e#198679#209462#0" />
+            <element signature="e#209719#218252#0" />
+            <element signature="e#222145#324303#0" />
+            <element signature="e#222452#255596#0" />
+            <element signature="e#258467#274659#0" />
+            <element signature="e#274734#291321#0" />
+            <element signature="e#291350#291385#0" />
+            <element signature="e#329525#329537#0" />
+            <element signature="e#334579#339326#0" />
+            <element signature="e#339355#341753#0" />
+            <element signature="e#341774#342143#0" />
+            <element signature="e#342154#342678#0" />
+            <element signature="e#342693#343305#0" />
+            <element signature="e#343317#343527#0" />
+            <element signature="e#343540#344001#0" />
+            <element signature="e#344019#344074#0" />
+            <element signature="e#344094#344464#0" />
+            <element signature="e#347830#352114#0" />
+            <element signature="e#351394#351409#0" />
+            <element signature="e#352123#352168#0" />
+            <element signature="e#358334#358366#0" />
+            <element signature="e#374646#374666#0" />
+            <element signature="e#389217#389261#0" />
+            <element signature="e#389901#403501#0" />
+            <element signature="e#395136#398989#0" />
+            <element signature="e#403573#412976#0" />
+            <element signature="e#420753#420805#0" />
+            <element signature="e#430357#517890#0" />
+            <element signature="e#430590#430604#0" />
+            <element signature="e#486150#487020#0" />
+            <element signature="e#487658#488203#0" />
+            <element signature="e#488218#488830#0" />
+            <element signature="e#491499#491544#0" />
+            <element signature="e#517964#557113#0" />
+          </folding>
         </state>
       </provider>
     </entry>

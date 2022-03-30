@@ -416,7 +416,7 @@ def TestPlanSW_summary(request):
                     if j["Project"] == i:
                         ProjecttotalATO += j["Attendtime-Optimize"] + j["Config-Retesttime"]
                         datainphase_normal[j['Phase']] = j["Attendtime-Optimize"] + j["Config-Retesttime"]
-                        if j['Phase'] in ["FFRT2", "FFRT3", "FFRT4", "FFRT5", "FFRT6", "FFRT7", "FFRT8"]:
+                        if j['Phase'] in ["FFRT2", "FFRT3", "FFRT4", "FFRT5", "FFRT6", "FFRT7", "FFRT8"]:#(OSRefresh,应该也是，除了FFRT其他的，FFRT都算在retest里面)
                             ProjecttotalRe += j["Config-Retesttime"] + j["Attendtime-Optimize"]
                             datainphase_retest[j['Phase']] = j["Config-Retesttime"] + j["Attendtime-Optimize"]
                         else:
@@ -3941,7 +3941,7 @@ def TestPlanSW_Edit(request):
                                 check_dic_inplan = {'Customer': responseData['customer'], 'Phase': Phase,
                                                     'ItemNo_d': i['ItemNo_d'], 'Item_d': i['Item_d'],
                                                     'TestItems': i['TestItems']}
-                            else:#B或C的Testcase
+                            else:#B或C的Testcase(OSRefresh 上传时肯定会有TestItems，所以不需要修改)
                                 if "Phase_Case" in i.keys():
                                     check_dic = {'Customer': responseData['customer'], 'Phase': i['Phase_Case'],
                                                 'ItemNo_d': i['ItemNo_d'], 'Item_d': i['Item_d']}
@@ -5604,7 +5604,8 @@ def TestPlanSW_search(request):
                                'HC': HC, 'HCOT': round(HC * 6 / 7, 2)})
                 Num += 1
 
-            if 'FFRT' in Phase:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算
+            # if 'FFRT' in Phase:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算
+            if True:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算（OSRefresh都按照FFRT方式算）
                 if Retestitems:
                     # dicSum_check = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
                     dicSum_check = {'Projectinfo': ProjectSum}
@@ -5718,7 +5719,8 @@ def TestPlanSW_search(request):
                 CRT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigRetestTime'))['ConfigRetestTime__sum']/60, 0)
             else:
                 CRT1_Total = 0
-            if 'FFRT' in Phase:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算
+            # if 'FFRT' in Phase:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算
+            if True:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算（OSRefresh都按照FFRT方式算）
                 if Retestitems:
                     basetime_Total = basetime_Total+ basetimeR
                     BTS1_Total = BTS1_Total + BTSR
