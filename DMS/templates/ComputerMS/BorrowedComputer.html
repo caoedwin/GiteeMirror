@@ -83,9 +83,9 @@
      </div>
 <br>
     <div class="tableAround" v-cloak >
-        <div class="111" style="margin-bottom:20px;">
+        {% comment %}<div class="111" style="margin-bottom:20px;">
       <span class="showNum">已選 <span id="selectNum">0</span> 條</span> <el-button @click="ensureInfo()" v-cloak size="medium" style="background-color:#9df387d4; border-color:black;color:black;margin-left: 50px">借用</el-button>
-      </div>
+      </div>{% endcomment %}
     <el-input type="text" v-model="search"  id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
     <el-table id="out-table" border  stripe ref="multipleTable"  tooltip-effect="dark"  height="700"
      :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"

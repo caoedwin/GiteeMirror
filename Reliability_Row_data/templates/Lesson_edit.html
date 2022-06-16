@@ -353,7 +353,10 @@
           console.log("上传成功" + fileList.length,files,"tt",fileList);
 
           for(var i=0; i<this.fileList.length; i++){
-                this.formData.append('fileList', fileList[i].raw)//fileList里面raw才是文件对象，与files一样
+                if (i != "undefined") {
+            this.formData.append('fileList', fileList[i].raw)//fileList里面raw才是文件对象，与files一样
+          }
+                {#this.formData.append('fileList', fileList[i].raw)//fileList里面raw才是文件对象，与files一样#}
           }
 
 

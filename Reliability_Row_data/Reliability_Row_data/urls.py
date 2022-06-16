@@ -27,6 +27,11 @@ from app01 import views
 from django.conf.urls import url
 
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,10 +40,16 @@ urlpatterns = [
     # 1.
     # 为了显示登录退出按钮，在helloworld / urls.py里面加入
     # `url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')), `因此helloworld / urls / py里面的内容如下：
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # path('api/token/', CustomJwtTokenView.as_view(), name='token_obtain_pair'),
     # url(r'^api-token-auth/', views.obtain_auth_token),
-    path(r'api-token-auth/', obtain_jwt_token),
-    path(r'api-token-verify/', verify_jwt_token),
+    # path(r'api-token-auth/', obtain_jwt_token),#貌似不需要数据库加Tokoen字段自带的auth_User
+    # path(r'api-token-verify/', verify_jwt_token),
+    # path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # path('api/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('ueditor/', include('DjangoUeditor.urls')), #添加DjangoUeditor的URL
     path(r'login/', views.login),
     path(r'', views.login),

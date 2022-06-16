@@ -2560,21 +2560,21 @@ def TestPlanSW_Edit(request):
             # print(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').distinct().count())
 
 
-            if TestItemSW.objects.count()>0:
-                for h in PhaseinItem:
-                    # dic_Item = {'Customer': Customer, 'Phase': h}
-                    # for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
-                    #     title.append({"caseid": i['Category2']})
-                    dic_ItemP = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
-                    # dic_Item = {'Customer': Customer, 'Projectinfo': TestProjectSW.objects.filter(**dic_ItemP).first(), 'Phase': Phase}
-                    dic_Item = {'Projectinfo': TestProjectSW.objects.filter(**dic_ItemP).first()}
-                    if TestPlanSW.objects.filter(**dic_Item):
-                        for i in TestPlanSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
-                            title.append({"caseid": i['Category2']})
-                            # print(TestPlanSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2').count())
-                    if RetestItemSW.objects.filter(**dic_Item):
-                        for i in RetestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
-                            title.append({"caseid": i['Category2']})
+            # if TestItemSW.objects.count()>0:
+            for h in PhaseinItem:
+                # dic_Item = {'Customer': Customer, 'Phase': h}
+                # for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
+                #     title.append({"caseid": i['Category2']})
+                dic_ItemP = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+                # dic_Item = {'Customer': Customer, 'Projectinfo': TestProjectSW.objects.filter(**dic_ItemP).first(), 'Phase': Phase}
+                dic_Item = {'Projectinfo': TestProjectSW.objects.filter(**dic_ItemP).first()}
+                if TestPlanSW.objects.filter(**dic_Item):
+                    for i in TestPlanSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
+                        title.append({"caseid": i['Category2']})
+                        # print(TestPlanSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2').count())
+                if RetestItemSW.objects.filter(**dic_Item):
+                    for i in RetestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
+                        title.append({"caseid": i['Category2']})
                 # print(title)
                 seen = set()
                 new_l = []
@@ -2586,9 +2586,12 @@ def TestPlanSW_Edit(request):
                 title = new_l
                 # print(title)
             if not title:
-                dic_Item = {'Customer': Customer, 'Phase': h}
-                for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
-                    title.append({"caseid": i['Category2']})
+                for h in PhaseinItem:
+                    dic_Item = {'Customer': Customer, 'Phase': h}
+                    for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
+                        title.append({"caseid": i['Category2']})
+            if not title:
+                title.append({"caseid": "NA"})
             # if 'FFRT' in Phase:
             #     title.append({"caseid": "Others (Project Leader update)(1. Base on Golden BIOS/Image's change list)(2. Retest for w/o solution's issue ) for full function test"})
             # print (title)

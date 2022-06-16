@@ -1200,7 +1200,7 @@
     },
     //首先获取customer ，project ，phase 搜索信息
     created(){
-        axios.get("/TestPlanSW/TestPlanSW-edit/?action=first" ,{
+        axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=first" ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.selectMsg=res.data;
@@ -1225,7 +1225,7 @@
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
                 let _this=this;
-                axios.get("/TestPlanSW/TestPlanSW-edit/?action="+e ,{
+                axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.loading=false;
@@ -1295,7 +1295,7 @@
                         this.formData.append('SKU1', this.$refs.formappend.model.CPU1+'/'+this.$refs.formappend.model.VGA1)
                         this.formData.append('SKU2', this.$refs.formappend.model.CPU2+'/'+this.$refs.formappend.model.VGA2)
                         console.log(this.formData)
-                        axios.post("/TestPlanSW/TestPlanSW-edit/", this.formData,{
+                        axios.post("/TestPlanSWOS/TestPlanSWOS-edit/", this.formData,{
                                     headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                                 }).then((res)=>{
                                 this.tableData=res.data['content'];
@@ -1455,7 +1455,7 @@
               return false;
           }else{
               let result =  {'action':'edit','customer':this.showCustomer,'project':this.showProject,'phase':this.showPhase,'category':this.showCategory,'ID':row.id,'FS':this.FS[index],'BTS':this.BTS[index],'TFC':this.TFC[index],'starttime':this.starttime[index],'TE':this.TE[index],'schedule':this.schedule[index],'conAitem':this.conAitem[index],'conLitem':this.conLitem[index],'conSitem':this.conSitem[index],'CAT':this.CAT[index],'CLT':this.CLT[index],'CST':this.CST[index],'proTS':this.proTS[index],'ATO':this.ATO[index],'planOptimize':this.planOptimize[index],'comments1':this.comments1[index],'comments2':this.comments2[index],'CRC':this.CRC[index],'CRS':this.CRS[index],'CRT':this.CRT[index],'conSitemInAll':this.conSitemInAll[index]}
-              axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(result, {indices:false}),{
+              axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(result, {indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     //flag:editResult
@@ -1589,7 +1589,7 @@
                    //将之前张开的树形结构收起
                       //_this.reset();
                    //2.上傳數據
-                    axios.post("/TestPlanSW/TestPlanSW-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
+                    axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
                     //console.log(res.data,"first");//上传成功的操作
@@ -1932,7 +1932,7 @@
           submitData['Phase'] = this.showPhase;
           submitData['category'] = this.showCategory;
           submitData['action'] = 'submitFFRTData';
-          axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(submitData ,{indices:false}),{
+          axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(submitData ,{indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res)=>{
                     if(res.data.submitResult === 1){
@@ -2051,7 +2051,7 @@
            if(newValue !== ''){
                if(this.customer !== '' && this.project !== ''  && this.phase !== ''  ){
                  let parameter = ""+this.customer+"&project="+this.project+"&phase="+this.phase;
-                 axios.get("/TestPlanSW/TestPlanSW-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
+                 axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.categoryItem = res.data['MockData'];

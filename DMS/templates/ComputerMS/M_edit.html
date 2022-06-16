@@ -791,6 +791,7 @@
              allMachineStatus:[],
              sectionIdleState:[],
              number:"",
+             selectName:[],
              insert:false,
              update:false,
              StateFlag:true,
@@ -937,6 +938,9 @@
                 this.allMachineStatus=res.data.allMachineStatus;
                 this.selectUnifiedNumber=res.data.selectUnifiedNumber;
                 this.selectNumber=res.data.selectNumber;
+                for(var i=0;i<this.selectNumber.length;i++){
+                    this.selectName.push(this.selectNumber[i].value);
+                }
                 this.sectionIdleState=res.data.sectionIdleState;
                 this.tableContent = res.data.content;
                 this.totalNum=this.tableContent.length;
@@ -958,6 +962,23 @@
             // 调用 callback 返回建议列表的数据
                 {#console.log(this.selectItem,'111');#}
             cb(results);
+            if(this.insert == true){
+                  {#this.form.Name = this.number;#}
+                  if(this.form.Number == ""){
+                      this.form.Name = "";
+                  }else{
+                      this.form.Name = results[0].number;
+                  }
+            }
+            if(this.update == true){
+                  {#this.form1.Name = this.number;#}
+                  if(this.form1.Number == ""){
+                      this.form1.Name = "";
+                  }else{
+                      this.form1.Name = results[0].number;
+                  }
+            }
+
           },
 
           createFilter(queryString) {
@@ -972,6 +993,7 @@
           },
 
           handleSelectNumber(item) {
+            console.log(item,item.number);
               this.number = item.number;
               if(this.insert == true){
                   this.form.Name = this.number;
@@ -1309,126 +1331,150 @@
       },
 
          onSubmit(formName) {
-            this.$refs[formName].validate((valid) => {
-              if (valid) {
-                let Name = (this.$refs.Number.value == "")?"":this.number;
-                if (this.formData.length==0){this.formData = new FormData();}
-                  this.formData.append('UnifiedNumberSearch', this.$refs.UnifiedNumber.value);
-                  this.formData.append('MachineStatusSearch', this.$refs.MachineStatus.value);
-                  this.formData.append('NumberSearch', this.$refs.Number.value);
-                  this.formData.append('NameSearch', Name);
+            var res = this.selectName.indexOf(this.$refs.form.model.Number)
+            if(res == -1){
+                  this.$alert("無此人員工號", '提示', {
+                        type: 'warning',
+                  });
+                  this.insert = true;
+            }else {
+                    this.$refs[formName].validate((valid) => {
+                        if (valid) {
+                            let Name = (this.$refs.Number.value == "") ? "" : this.number;
+                            if (this.formData.length == 0) {
+                                this.formData = new FormData();
+                            }
+                            this.formData.append('UnifiedNumberSearch', this.$refs.UnifiedNumber.value);
+                            this.formData.append('MachineStatusSearch', this.$refs.MachineStatus.value);
+                            this.formData.append('NumberSearch', this.$refs.Number.value);
+                            this.formData.append('NameSearch', Name);
 
-                  this.formData.append('CollectDate', this.$refs.form.model.CollectDate);
-                  this.formData.append('UnifiedNumber', this.$refs.form.model.UnifiedNumber);
-                  this.formData.append('Number', this.$refs.form.model.Number);
-                  this.formData.append('Name', this.$refs.form.model.Name);
-                  this.formData.append('MaterialPN', this.$refs.form.model.MaterialPN);
-                  this.formData.append('CPU', this.$refs.form.model.CPU);
-                  this.formData.append('RAM', this.$refs.form.model.RAM);
-                  this.formData.append('HDD', this.$refs.form.model.HDD);
-                  this.formData.append('Wireless', this.$refs.form.model.Wireless);
-                  this.formData.append('LCD', this.$refs.form.model.LCD);
-                  this.formData.append('OCR', this.$refs.form.model.OCR);
-                  this.formData.append('Battery', this.$refs.form.model.Battery);
-                  this.formData.append('Adaptor', this.$refs.form.model.Adaptor);
-                  this.formData.append('Region', this.$refs.form.model.Region);
-                  this.formData.append('Factory', this.$refs.form.model.Factory);
-                  this.formData.append('OutPlant', this.$refs.form.model.OutPlant);
-                  this.formData.append('ComputerUse', this.$refs.form.model.ComputerUse);
-                  this.formData.append('Category', this.$refs.form.model.Category);
-                  this.formData.append('MachineStatus', this.$refs.form.model.MachineStatus);
-                  this.formData.append('IdleState', this.$refs.form.model.IdleState);
-                  this.formData.append('FormNumber', this.$refs.form.model.FormNumber);
-                  this.formData.append("action",'addSubmit');
-                  console.log(this.formData);
-                  axios.post("/ComputerMS/M_edit/", this.formData,{
-                              headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
-                          }).then((res)=>{
-                              this.tableContent = res.data.content;
-                              this.totalNum=this.tableContent.length;
-                              this.errMsgNumber=res.data.errMsgNumber;
-                              this.allMachineStatus=res.data.allMachineStatus;
-                              this.selectUnifiedNumber=res.data.selectUnifiedNumber;
-                              this.selectNumber=res.data.selectNumber;
-                              this.formData = new FormData();
-                              if(this.errMsgNumber){
-                                  this.$alert(this.errMsgNumber, '提示', {
+                            this.formData.append('CollectDate', this.$refs.form.model.CollectDate);
+                            this.formData.append('UnifiedNumber', this.$refs.form.model.UnifiedNumber);
+                            this.formData.append('Number', this.$refs.form.model.Number);
+                            this.formData.append('Name', this.$refs.form.model.Name);
+                            this.formData.append('MaterialPN', this.$refs.form.model.MaterialPN);
+                            this.formData.append('CPU', this.$refs.form.model.CPU);
+                            this.formData.append('RAM', this.$refs.form.model.RAM);
+                            this.formData.append('HDD', this.$refs.form.model.HDD);
+                            this.formData.append('Wireless', this.$refs.form.model.Wireless);
+                            this.formData.append('LCD', this.$refs.form.model.LCD);
+                            this.formData.append('OCR', this.$refs.form.model.OCR);
+                            this.formData.append('Battery', this.$refs.form.model.Battery);
+                            this.formData.append('Adaptor', this.$refs.form.model.Adaptor);
+                            this.formData.append('Region', this.$refs.form.model.Region);
+                            this.formData.append('Factory', this.$refs.form.model.Factory);
+                            this.formData.append('OutPlant', this.$refs.form.model.OutPlant);
+                            this.formData.append('ComputerUse', this.$refs.form.model.ComputerUse);
+                            this.formData.append('Category', this.$refs.form.model.Category);
+                            this.formData.append('MachineStatus', this.$refs.form.model.MachineStatus);
+                            this.formData.append('IdleState', this.$refs.form.model.IdleState);
+                            this.formData.append('FormNumber', this.$refs.form.model.FormNumber);
+                            this.formData.append("action", 'addSubmit');
+                            console.log(this.formData);
+                            axios.post("/ComputerMS/M_edit/", this.formData, {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data',
+                                    'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                                } //改变头格式，原生默认上传json格式
+                            }).then((res) => {
+                                this.tableContent = res.data.content;
+                                this.totalNum = this.tableContent.length;
+                                this.errMsgNumber = res.data.errMsgNumber;
+                                this.allMachineStatus = res.data.allMachineStatus;
+                                this.selectUnifiedNumber = res.data.selectUnifiedNumber;
+                                this.selectNumber = res.data.selectNumber;
+                                this.formData = new FormData();
+                                if (this.errMsgNumber) {
+                                    this.$alert(this.errMsgNumber, '提示', {
                                         type: 'warning',
-                                  });
-                                  this.insert = true;
-                              }else{
-                                  try {
-                                          this.$refs.form.resetFields();
-                                          {#this.$refs.upload.clearFiles();#}
-                                  } catch (e) {
+                                    });
+                                    this.insert = true;
+                                } else {
+                                    try {
+                                        this.$refs.form.resetFields();
+                                        {#this.$refs.upload.clearFiles();#}
+                                    } catch (e) {
 
-                                  }
-                                  this.insert = false;
-                              }
-                  })
-                } else {
-                  console.log('error submit!!');
-                  return false;
-                }
-              });
+                                    }
+                                    this.insert = false;
+                                }
+                            })
+                        } else {
+                            console.log('error submit!!');
+                            return false;
+                        }
+                    });
+             }
             },
 
         onSubmit1() {
+            var res = this.selectName.indexOf(this.$refs.form1.model.Number)
+            if(res == -1){
+                  this.$alert("無此人員工號", '提示', {
+                        type: 'warning',
+                  });
+                  this.update = true;
+            }else{
+                let Name = (this.$refs.Number.value == "")?"":this.number;
+                if (this.formData1.length==0){this.formData1 = new FormData();}
+                      this.formData1.append('id', this.editid);
+                      this.formData1.append('UnifiedNumberSearch', this.$refs.UnifiedNumber.value);
+                      this.formData1.append('MachineStatusSearch', this.$refs.MachineStatus.value);
+                      this.formData1.append('NumberSearch', this.$refs.Number.value);
+                      this.formData1.append('NameSearch', Name);
+
+                      this.formData1.append('CollectDate', this.$refs.form1.model.CollectDate);
+                      this.formData1.append('UnifiedNumber', this.$refs.form1.model.UnifiedNumber);
+                      this.formData1.append('Number', this.$refs.form1.model.Number);
+                      this.formData1.append('Name', this.$refs.form1.model.Name);
+                      this.formData1.append('MaterialPN', this.$refs.form1.model.MaterialPN);
+                      this.formData1.append('CPU', this.$refs.form1.model.CPU);
+                      this.formData1.append('RAM', this.$refs.form1.model.RAM);
+                      this.formData1.append('HDD', this.$refs.form1.model.HDD);
+                      this.formData1.append('Wireless', this.$refs.form1.model.Wireless);
+                      this.formData1.append('LCD', this.$refs.form1.model.LCD);
+                      this.formData1.append('OCR', this.$refs.form1.model.OCR);
+                      this.formData1.append('Battery', this.$refs.form1.model.Battery);
+                      this.formData1.append('Adaptor', this.$refs.form1.model.Adaptor);
+                      this.formData1.append('Region', this.$refs.form1.model.Region);
+                      this.formData1.append('Factory', this.$refs.form1.model.Factory);
+                      this.formData1.append('OutPlant', this.$refs.form1.model.OutPlant);
+                      this.formData1.append('ComputerUse', this.$refs.form1.model.ComputerUse);
+                      this.formData1.append('Category', this.$refs.form1.model.Category);
+                      this.formData1.append('MachineStatus', this.$refs.form1.model.MachineStatus);
+                      this.formData1.append('IdleState', this.$refs.form1.model.IdleState);
+                      this.formData1.append('FormNumber', this.$refs.form1.model.FormNumber);
+                      this.formData1.append("action",'updateSubmit');
+                      console.log(this.formData1);
+                      axios.post("/ComputerMS/M_edit/", this.formData1,{
+                                headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
+                            }).then((res)=>{
+                                this.tableContent = res.data.content;
+                                this.totalNum=this.tableContent.length;
+                                this.allMachineStatus=res.data.allMachineStatus;
+                                this.selectUnifiedNumber=res.data.selectUnifiedNumber;
+                                this.selectNumber=res.data.selectNumber;
+                                this.errMsgNumber=res.data.errMsgNumber;
+                                this.formData1 = new FormData();
+                                if(this.errMsgNumber){
+                                      this.$alert(this.errMsgNumber, '提示', {
+                                            type: 'warning',
+                                      });
+                                      this.update = true;
+                                }else{
+
+                                      try {
+                                              this.$refs.form1.resetFields();
+                                      } catch (e) {
+
+                                      }
+                                      this.update = false;
+                                }
+                      })
+            }
             {#console.log('submit!',this.$refs.form1.model,typeof (this.$refs.form1.model),this.formData1);#}
-            let Name = (this.$refs.Number.value == "")?"":this.number;
-            if (this.formData1.length==0){this.formData1 = new FormData();}
-                  this.formData1.append('id', this.editid);
-                  this.formData1.append('UnifiedNumberSearch', this.$refs.UnifiedNumber.value);
-                  this.formData1.append('MachineStatusSearch', this.$refs.MachineStatus.value);
-                  this.formData1.append('NumberSearch', this.$refs.Number.value);
-                  this.formData1.append('NameSearch', Name);
 
-                  this.formData1.append('CollectDate', this.$refs.form1.model.CollectDate);
-                  this.formData1.append('UnifiedNumber', this.$refs.form1.model.UnifiedNumber);
-                  this.formData1.append('Number', this.$refs.form1.model.Number);
-                  this.formData1.append('Name', this.$refs.form1.model.Name);
-                  this.formData1.append('MaterialPN', this.$refs.form1.model.MaterialPN);
-                  this.formData1.append('CPU', this.$refs.form1.model.CPU);
-                  this.formData1.append('RAM', this.$refs.form1.model.RAM);
-                  this.formData1.append('HDD', this.$refs.form1.model.HDD);
-                  this.formData1.append('Wireless', this.$refs.form1.model.Wireless);
-                  this.formData1.append('LCD', this.$refs.form1.model.LCD);
-                  this.formData1.append('OCR', this.$refs.form1.model.OCR);
-                  this.formData1.append('Battery', this.$refs.form1.model.Battery);
-                  this.formData1.append('Adaptor', this.$refs.form1.model.Adaptor);
-                  this.formData1.append('Region', this.$refs.form1.model.Region);
-                  this.formData1.append('Factory', this.$refs.form1.model.Factory);
-                  this.formData1.append('OutPlant', this.$refs.form1.model.OutPlant);
-                  this.formData1.append('ComputerUse', this.$refs.form1.model.ComputerUse);
-                  this.formData1.append('Category', this.$refs.form1.model.Category);
-                  this.formData1.append('MachineStatus', this.$refs.form1.model.MachineStatus);
-                  this.formData1.append('IdleState', this.$refs.form1.model.IdleState);
-                  this.formData1.append('FormNumber', this.$refs.form1.model.FormNumber);
-                  this.formData1.append("action",'updateSubmit');
-                  console.log(this.formData1);
-                  axios.post("/ComputerMS/M_edit/", this.formData1,{
-                            headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
-                        }).then((res)=>{
-                            this.tableContent = res.data.content;
-                            this.totalNum=this.tableContent.length;
-                            this.allMachineStatus=res.data.allMachineStatus;
-                            this.selectUnifiedNumber=res.data.selectUnifiedNumber;
-                            this.selectNumber=res.data.selectNumber;
-                            this.formData1 = new FormData();
-                            if(this.errMsgNumber){
-                                  this.$alert(this.errMsgNumber, '提示', {
-                                        type: 'warning',
-                                  });
-                                  this.update = true;
-                            }else{
-                                  try {
-                                          this.$refs.form1.resetFields();
-                                  } catch (e) {
-
-                                  }
-                                  this.update = false;
-                            }
-                  })
           },
 
         alertData:function(id,pid){

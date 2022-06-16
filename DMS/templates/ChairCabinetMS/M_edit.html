@@ -389,13 +389,11 @@
   <el-col span="10">
     <el-form-item label="保管人工號" prop="BorrowerNum">
        <el-autocomplete
-              clearable
               class="inline-input"
               v-model="form.BorrowerNum"
               :fetch-suggestions="querySearchNumber"
               placeholder="请输入"
-              @select="handleSelectBorrowerNum"
-              @clear="clearBorrower">
+              @select="handleSelectBorrowerNum">
        </el-autocomplete>
     {#        <el-input v-model="form.Number"></el-input>#}
     </el-form-item>
@@ -410,13 +408,11 @@
   <el-col span="10">
     <el-form-item label="使用人工號" prop="UserNumber">
        <el-autocomplete
-              clearable
               class="inline-input"
               v-model="form.UserNumber"
-              :fetch-suggestions="querySearchNumber"
+              :fetch-suggestions="querySearchUser"
               placeholder="请输入"
-              @select="handleSelectNumber"
-              @clear="clearUser">
+              @select="handleSelectNumber">
        </el-autocomplete>
     {#        <el-input v-model="form.Number"></el-input>#}
     </el-form-item>
@@ -497,13 +493,11 @@
   <el-col span="10">
     <el-form-item label="保管人工號" prop="BorrowerNum">
        <el-autocomplete
-              clearable
               class="inline-input"
               v-model="form1.BorrowerNum"
               :fetch-suggestions="querySearchNumber"
               placeholder="请输入"
-              @select="handleSelectBorrowerNum"
-              @clear="clearBorrower">
+              @select="handleSelectBorrowerNum">
        </el-autocomplete>
     {#        <el-input v-model="form.Number"></el-input>#}
     </el-form-item>
@@ -518,13 +512,11 @@
   <el-col span="10">
     <el-form-item label="使用人工號" prop="UserNumber">
        <el-autocomplete
-              clearable
               class="inline-input"
               v-model="form1.UserNumber"
-              :fetch-suggestions="querySearchNumber"
+              :fetch-suggestions="querySearchUser"
               placeholder="请输入"
-              @select="handleSelectNumber"
-              @clear="clearUser">
+              @select="handleSelectNumber">
        </el-autocomplete>
     {#        <el-input v-model="form.Number"></el-input>#}
     </el-form-item>
@@ -625,6 +617,7 @@
              selectedCategory:"",
              selectGYNumber:[],
              selectNumber:[],
+             selectName:[],
              allUseStatus:[],
              allCategory:[],
              sectionIdleState:[],
@@ -712,6 +705,9 @@
                 this.allCategory=res.data.allCategory;
                 this.selectGYNumber=res.data.selectGYNumber;
                 this.selectNumber=res.data.selectNumber;
+                for(var i=0;i<this.selectNumber.length;i++){
+                    this.selectName.push(this.selectNumber[i].value);
+                }
                 this.tableContent = res.data.content;
                 this.totalNum=this.tableContent.length;
          });
@@ -724,12 +720,52 @@
             cb(results);
           },
 
+          querySearchUser(queryString, cb) {
+            var Number = this.selectNumber;
+            var results = queryString ? Number.filter(this.createFilter(queryString)) : Number;
+            // 调用 callback 返回建议列表的数据
+                {#console.log(this.selectItem,'111');#}
+            cb(results);
+            if(this.insert == true){
+                  {#this.form.Name = this.number;#}
+                if(this.form.UserNumber == ""){
+                    this.form.User = ""
+                }else{
+                    this.form.User = results[0].number;
+                }
+            }
+            if(this.update == true){
+                  {#this.form1.Name = this.number;#}
+                if(this.form1.UserNumber == ""){
+                    this.form1.User = ""
+                }else{
+                    this.form1.User = results[0].number;
+                }
+            }
+          },
+
           querySearchNumber(queryString, cb) {
             var Number = this.selectNumber;
             var results = queryString ? Number.filter(this.createFilter(queryString)) : Number;
             // 调用 callback 返回建议列表的数据
                 {#console.log(this.selectItem,'111');#}
             cb(results);
+            if(this.insert == true){
+                  {#this.form.Name = this.number;#}
+                if(this.form.BorrowerNum == ""){
+                    this.form.Borrower = "";
+                }else{
+                    this.form.Borrower = results[0].number;
+                }
+            }
+            if(this.update == true){
+                  {#this.form1.Name = this.number;#}
+                if(this.form1.BorrowerNum == ""){
+                    this.form1.Borrower = "";
+                }else{
+                    this.form1.Borrower = results[0].number;
+                }
+            }
           },
 
           createFilter(queryString) {
@@ -742,24 +778,6 @@
           handleSelect(item) {
               {#this.number = item.number;#}
           },
-
-         clearBorrower(val){
-              if(this.insert == true){
-                   this.form.Borrower = "";
-              }
-              if(this.update == true){
-                   this.form1.Borrower = "";
-              }
-         },
-
-         clearUser(val){
-              if(this.insert == true){
-                   this.form.User = "";
-              }
-              if(this.update == true){
-                   this.form1.User = "";
-              }
-         },
 
         handleSelectBorrowerNum(item){
               this.number = item.number;
@@ -1103,118 +1121,141 @@
       },
 
          onSubmit(formName) {
-            this.$refs[formName].validate((valid) => {
-              if (valid) {
-                let Name = (this.$refs.Number.value == "")?"":this.number;
-                if (this.formData.length==0){this.formData = new FormData();}
-                  this.formData.append('GYNumberSearch', this.$refs.GYNumber.value);
-                  this.formData.append('UseStatusSearch', this.$refs.UseStatus.value);
-                  this.formData.append('CategorySearch', this.$refs.Category.value);
-                  this.formData.append('NumberSearch', this.$refs.Number.value);
-                  this.formData.append('NameSearch', Name);
+            var UserNum = this.selectName.indexOf(this.$refs.form.model.UserNumber);
+            var BorrowNum = this.selectName.indexOf(this.$refs.form.model.BorrowerNum);
+            if(UserNum == -1 || BorrowNum == -1){
+                  this.$alert("無此人員工號", '提示', {
+                        type: 'warning',
+                  });
+                  this.insert = true;
+            }else {
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        let Name = (this.$refs.Number.value == "") ? "" : this.number;
+                        if (this.formData.length == 0) {
+                            this.formData = new FormData();
+                        }
+                        this.formData.append('GYNumberSearch', this.$refs.GYNumber.value);
+                        this.formData.append('UseStatusSearch', this.$refs.UseStatus.value);
+                        this.formData.append('CategorySearch', this.$refs.Category.value);
+                        this.formData.append('NumberSearch', this.$refs.Number.value);
+                        this.formData.append('NameSearch', Name);
 
-                  this.formData.append('GYNumber', this.$refs.form.model.GYNumber);
-                  this.formData.append('Category', this.$refs.form.model.Category);
-                  this.formData.append('User', this.$refs.form.model.User);
-                  this.formData.append('Position', this.$refs.form.model.Position);
-                  this.formData.append('UserNumber', this.$refs.form.model.UserNumber);
-                  this.formData.append('Borrower', this.$refs.form.model.Borrower);
-                  this.formData.append('BorrowerNum', this.$refs.form.model.BorrowerNum);
-                  this.formData.append('CollectDate', this.$refs.form.model.CollectDate);
-                  this.formData.append('UseStatus', this.$refs.form.model.UseStatus);
-                  this.formData.append('Purpose', this.$refs.form.model.Purpose);
-                  this.formData.append("action",'addSubmit');
-                  console.log(this.formData);
-                  axios.post("/ChairCabinetMS/M_edit/", this.formData,{
-                              headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
-                          }).then((res)=>{
-                              this.tableContent = res.data.content;
-                              this.totalNum=this.tableContent.length;
-                              this.errMsgNumber=res.data.errMsgNumber;
-                              this.allUseStatus=res.data.allUseStatus;
-                              this.selectGYNumber=res.data.selectGYNumber;
-                              this.selectNumber=res.data.selectNumber;
-                              this.formData = new FormData();
-                              if(this.errMsgNumber){
-                                  this.$alert(this.errMsgNumber, '提示', {
-                                        type: 'warning',
-                                  });
-                                  this.insert = true;
-                              }else{
-                                  try {
-                                          this.$refs.form.resetFields();
-                                          {#this.$refs.upload.clearFiles();#}
-                                  } catch (e) {
+                        this.formData.append('GYNumber', this.$refs.form.model.GYNumber);
+                        this.formData.append('Category', this.$refs.form.model.Category);
+                        this.formData.append('User', this.$refs.form.model.User);
+                        this.formData.append('Position', this.$refs.form.model.Position);
+                        this.formData.append('UserNumber', this.$refs.form.model.UserNumber);
+                        this.formData.append('Borrower', this.$refs.form.model.Borrower);
+                        this.formData.append('BorrowerNum', this.$refs.form.model.BorrowerNum);
+                        this.formData.append('CollectDate', this.$refs.form.model.CollectDate);
+                        this.formData.append('UseStatus', this.$refs.form.model.UseStatus);
+                        this.formData.append('Purpose', this.$refs.form.model.Purpose);
+                        this.formData.append("action", 'addSubmit');
+                        console.log(this.formData);
+                        axios.post("/ChairCabinetMS/M_edit/", this.formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                            } //改变头格式，原生默认上传json格式
+                        }).then((res) => {
+                            this.tableContent = res.data.content;
+                            this.totalNum = this.tableContent.length;
+                            this.errMsgNumber = res.data.errMsgNumber;
+                            this.allUseStatus = res.data.allUseStatus;
+                            this.selectGYNumber = res.data.selectGYNumber;
+                            this.selectNumber = res.data.selectNumber;
+                            this.formData = new FormData();
+                            if (this.errMsgNumber) {
+                                this.$alert(this.errMsgNumber, '提示', {
+                                    type: 'warning',
+                                });
+                                this.insert = true;
+                            } else {
+                                try {
+                                    this.$refs.form.resetFields();
+                                    {#this.$refs.upload.clearFiles();#}
+                                } catch (e) {
 
-                                  }
-                                  this.insert = false;
-                              }
-                  })
-                } else {
-                  console.log('error submit!!');
-                  return false;
-                }
-              });
-            },
+                                }
+                                this.insert = false;
+                            }
+                        })
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            }
+         },
 
         onSubmit1() {
-          this.$refs.form1.validate((valid) => {
-          if (valid) {
-              let Name = (this.$refs.Number.value == "") ? "" : this.number;
-              if (this.formData1.length == 0) {
-                  this.formData1 = new FormData();
-              }
-              this.formData1.append('id', this.editid);
-              this.formData1.append('GYNumberSearch', this.$refs.GYNumber.value);
-              this.formData1.append('UseStatusSearch', this.$refs.UseStatus.value);
-              this.formData1.append('CategorySearch', this.$refs.Category.value);
-              this.formData1.append('NumberSearch', this.$refs.Number.value);
-              this.formData1.append('NameSearch', Name);
+            var UserNum = this.selectName.indexOf(this.$refs.form1.model.UserNumber);
+            var BorrowNum = this.selectName.indexOf(this.$refs.form1.model.BorrowerNum);
+            if(UserNum == -1 || BorrowNum == -1){
+                  this.$alert("無此人員工號", '提示', {
+                        type: 'warning',
+                  });
+                  this.update = true;
+            }else {
+                this.$refs.form1.validate((valid) => {
+                    if (valid) {
+                        let Name = (this.$refs.Number.value == "") ? "" : this.number;
+                        if (this.formData1.length == 0) {
+                            this.formData1 = new FormData();
+                        }
+                        this.formData1.append('id', this.editid);
+                        this.formData1.append('GYNumberSearch', this.$refs.GYNumber.value);
+                        this.formData1.append('UseStatusSearch', this.$refs.UseStatus.value);
+                        this.formData1.append('CategorySearch', this.$refs.Category.value);
+                        this.formData1.append('NumberSearch', this.$refs.Number.value);
+                        this.formData1.append('NameSearch', Name);
 
-              this.formData1.append('GYNumber', this.$refs.form1.model.GYNumber);
-              this.formData1.append('Category', this.$refs.form1.model.Category);
-              this.formData1.append('User', this.$refs.form1.model.User);
-              this.formData1.append('Position', this.$refs.form1.model.Position);
-              this.formData1.append('UserNumber', this.$refs.form1.model.UserNumber);
-              this.formData1.append('Borrower', this.$refs.form1.model.Borrower);
-              this.formData1.append('BorrowerNum', this.$refs.form1.model.BorrowerNum);
-              this.formData1.append('CollectDate', this.$refs.form1.model.CollectDate);
-              this.formData1.append('UseStatus', this.$refs.form1.model.UseStatus);
-              this.formData1.append('Purpose', this.$refs.form1.model.Purpose);
-              this.formData1.append("action", 'updateSubmit');
-              console.log(this.formData1);
-              axios.post("/ChairCabinetMS/M_edit/", this.formData1, {
-                  headers: {
-                      'Content-Type': 'multipart/form-data',
-                      'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                  } //改变头格式，原生默认上传json格式
-              }).then((res) => {
-                  this.tableContent = res.data.content;
-                  this.totalNum = this.tableContent.length;
-                  this.errMsgNumber=res.data.errMsgNumber;
-                  this.allUseStatus = res.data.allUseStatus;
-                  this.selectGYNumber = res.data.selectGYNumber;
-                  this.selectNumber = res.data.selectNumber;
-                  this.formData1 = new FormData();
-                  if (this.errMsgNumber) {
-                      this.$alert(this.errMsgNumber, '提示', {
-                          type: 'warning',
-                      });
-                      this.update = true;
-                  } else {
-                      try {
-                          this.$refs.form1.resetFields();
-                      } catch (e) {
+                        this.formData1.append('GYNumber', this.$refs.form1.model.GYNumber);
+                        this.formData1.append('Category', this.$refs.form1.model.Category);
+                        this.formData1.append('User', this.$refs.form1.model.User);
+                        this.formData1.append('Position', this.$refs.form1.model.Position);
+                        this.formData1.append('UserNumber', this.$refs.form1.model.UserNumber);
+                        this.formData1.append('Borrower', this.$refs.form1.model.Borrower);
+                        this.formData1.append('BorrowerNum', this.$refs.form1.model.BorrowerNum);
+                        this.formData1.append('CollectDate', this.$refs.form1.model.CollectDate);
+                        this.formData1.append('UseStatus', this.$refs.form1.model.UseStatus);
+                        this.formData1.append('Purpose', this.$refs.form1.model.Purpose);
+                        this.formData1.append("action", 'updateSubmit');
+                        console.log(this.formData1);
+                        axios.post("/ChairCabinetMS/M_edit/", this.formData1, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                            } //改变头格式，原生默认上传json格式
+                        }).then((res) => {
+                            this.tableContent = res.data.content;
+                            this.totalNum = this.tableContent.length;
+                            this.errMsgNumber = res.data.errMsgNumber;
+                            this.allUseStatus = res.data.allUseStatus;
+                            this.selectGYNumber = res.data.selectGYNumber;
+                            this.selectNumber = res.data.selectNumber;
+                            this.formData1 = new FormData();
+                            if (this.errMsgNumber) {
+                                this.$alert(this.errMsgNumber, '提示', {
+                                    type: 'warning',
+                                });
+                                this.update = true;
+                            } else {
+                                try {
+                                    this.$refs.form1.resetFields();
+                                } catch (e) {
 
-                      }
-                      this.update = false;
-                  }
-              })
-          }else {
-                  console.log('error submit!!');
-                  return false;
-                }
-              });
+                                }
+                                this.update = false;
+                            }
+                        })
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            }
           },
 
         alertData:function(id,pid){

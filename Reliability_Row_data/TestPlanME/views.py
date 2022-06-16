@@ -312,7 +312,7 @@ def TestPlanME_Summary(request):
             # print(Projectlist)
 
             # 之后的跟getMsg里面的一样
-            if "C38(AIO)" in Customer:
+            if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                 for i in Projectlist:
                     check_dic_Project = {"Customer": Customer, "Project": i["name"], "Phase": i["value"]}
                     if KeypartAIO.objects.filter(**check_dic_Project).first():
@@ -448,7 +448,7 @@ def TestPlanME_Summary(request):
                 ProjecttotalRe = 0.00
                 datainphase_normal = {}
                 datainphase_retest = {}
-                if "C38(AIO)" in Customer:
+                if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                     for j in AIO_tableData:  # 尽量减少数据库 的遍历次数，增加每次遍历的内容，提升性能
                         if j["Project"] == i:
                             ProjecttotalATO += j["RegularAttendTime"] + j["RegressiveAttendTime"]
@@ -913,7 +913,7 @@ def TestPlanME_Summary(request):
             Customer = getdata['customer']
             Projectlist = getdata["searchalert"]
             # print(Projectlist)
-            if "C38(AIO)" in Customer:
+            if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                 for i in Projectlist:
                     check_dic_Project = {"Customer": Customer, "Project": i["name"], "Phase": i["value"]}
                     if KeypartAIO.objects.filter(**check_dic_Project).first():
@@ -1036,7 +1036,7 @@ def TestPlanME_Summary(request):
                 ProjecttotalRe = 0.00
                 datainphase_normal = {}
                 datainphase_retest = {}
-                if "C38(AIO)" in Customer:
+                if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                     for j in AIO_tableData:#尽量减少数据库 的遍历次数，增加每次遍历的内容，提升性能
                         if j["Project"] == i:
                             ProjecttotalATO += j["RegularAttendTime"] + j["RegressiveAttendTime"]
@@ -1993,7 +1993,7 @@ def TestPlanME_search(request):
                 Phase = 'Others'
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
-            if "C38(AIO)" in Customer:
+            if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                 if KeypartAIO.objects.filter(**dic_Project).first():
                     KeyPart = KeypartAIO.objects.filter(**dic_Project).first()
                     Keypartlist = [
@@ -2112,7 +2112,7 @@ def TestPlanME_search(request):
             Keypartvalue = request.POST.get("rows[Keypartvalue]")
             # print(Customer)
 
-            if "C38(AIO)" in Customer:
+            if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
                 updatedic = {}
                 updatedic[Keypartname] = Keypartvalue
                 if KeypartAIO.objects.filter(**dic_Project).first():#edit

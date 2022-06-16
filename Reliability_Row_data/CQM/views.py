@@ -10,6 +10,7 @@ from .forms import CQM_F
 from django.forms.models import model_to_dict
 
 
+
 headermodel_CQM = {
     'Customer':'Customer','Project':'Project','Phase':'Phase',
                       'Material_Group': 'Material_Group',
@@ -1081,78 +1082,146 @@ def CQM_search(request):
 # 3
 from rest_framework.renderers import JSONRenderer
 from .serializers import *
-from rest_framework.authentication import BaseAuthentication #  导入认证类
+from rest_framework import HTTP_HEADER_ENCODING, exceptions
+import base64
+import binascii
+from django.contrib.auth import authenticate, get_user_model
+from django.utils.translation import gettext_lazy as _
+from rest_framework.authentication import BaseAuthentication,get_authorization_header #  导入认证类
 from rest_framework.exceptions import AuthenticationFailed # 用于抛出错误信息
 from app01.models import UserInfo # 导入用户信息表
 
-class MyAuth(BaseAuthentication):
-  def authenticate(self, request):
-    # """自定义的认证类中必须有此方法以及如下的判断和两个返回值"""
-    # # 1. 获取token
-    # # print(request,1)
-    # # print(request.query_params,2)
-    # token = request.query_params.get('token')
-    # # print(token)
-    # # 2. 判断是否成功获取token
-    # if not token:
-    #   raise AuthenticationFailed("缺少token")
-    # # 3. 判断token是否合法
-    # try:
-    #   user_obj = UserInfo.objects.filter(token=token).first()
-    # except Exception:
-    #   raise AuthenticationFailed("token不合法")
-    # # 4. 判断token在数据库中是否存在
-    # if not user_obj:
-    #   raise AuthenticationFailed("token不存在")
-    # # 5. 认证通过
-    # return (user_obj, token)	# 两个值user_obj赋值给了request.user；token赋值给了request.auth
-    # # 注意，权限组件会用到这两个返回值
-
-    # print(request.query_params)
-    # username = request.data.get('username', '')
-    # password = request.data.get('password', '')
-    username = request.query_params.get('username', '')
-    password = request.query_params.get('password', '')
-    token = request.query_params.get('token', '')
-    # print(token)
-    # print(username, password)
-    # if request.session.get('is_login', None):
-    #     # print('1',request.session.get('account'))
-    #     user_obj = UserInfo.objects.filter(account=request.session.get('account')).first()
-    # else:
-    #     user_obj = UserInfo.objects.filter(account=username, password=password).first()
-    group = Role.objects.filter(name="API_CQM").first()
-    user_obj = None
-    if UserInfo.objects.filter(account=username, password=password).first():
-        groups = UserInfo.objects.filter(account=username, password=password).first().role.all()
-        if group in groups:
-            user_obj = UserInfo.objects.filter(account=username, password=password).first()
-    # print(user_obj)
-    if user_obj:
-        pass
-    else:
-        raise AuthenticationFailed("账户密码不正确")
-    return (user_obj, token)# 必须要返回两个值，两个值user_obj赋值给了request.user；token赋值给了request.auth
+# class MyAuth(BaseAuthentication):
+#   def authenticate(self, request):
+#     # """自定义的认证类中必须有此方法以及如下的判断和两个返回值"""
+#     # # 1. 获取token
+#     # # print(request,1)
+#     # # print(request.query_params,2)
+#     # token = request.query_params.get('token')
+#     # # print(token)
+#     # # 2. 判断是否成功获取token
+#     # if not token:
+#     #   raise AuthenticationFailed("缺少token")
+#     # # 3. 判断token是否合法
+#     # try:
+#     #   user_obj = UserInfo.objects.filter(token=token).first()
+#     # except Exception:
+#     #   raise AuthenticationFailed("token不合法")
+#     # # 4. 判断token在数据库中是否存在
+#     # if not user_obj:
+#     #   raise AuthenticationFailed("token不存在")
+#     # # 5. 认证通过
+#     # return (user_obj, token)	# 两个值user_obj赋值给了request.user；token赋值给了request.auth
+#     # # 注意，权限组件会用到这两个返回值
+#
+#     # print(request.query_params)
+#     # username = request.data.get('username', '')
+#     # password = request.data.get('password', '')
+#     username = request.query_params.get('username', '')
+#     password = request.query_params.get('password', '')
+#     token = request.query_params.get('token', '')
+#     # print(token)
+#     # print(username, password)
+#     # if request.session.get('is_login', None):
+#     #     # print('1',request.session.get('account'))
+#     #     user_obj = UserInfo.objects.filter(account=request.session.get('account')).first()
+#     # else:
+#     #     user_obj = UserInfo.objects.filter(account=username, password=password).first()
+#     group = Role.objects.filter(name="API_CQM").first()
+#     user_obj = None
+#     if UserInfo.objects.filter(account=username, password=password).first():
+#         groups = UserInfo.objects.filter(account=username, password=password).first().role.all()
+#         # print(groups)
+#         if group in groups:
+#             user_obj = UserInfo.objects.filter(account=username, password=password).first()
+#     # print(user_obj)
+#     if user_obj:
+#         pass
+#     else:
+#         raise AuthenticationFailed("账户密码不正确")
+#     return (user_obj, token)# 必须要返回两个值，两个值user_obj赋值给了request.user；token赋值给了request.auth
+#
+#
+#
+#   # #   auth自带的BasicAuthentication
+#   # """
+#   #     HTTP Basic authentication against username/password.
+#   #     """
+#   # www_authenticate_realm = 'api'
+#   #
+#   # def authenticate(self, request):
+#   #     """
+#   #     Returns a `User` if a correct username and password have been supplied
+#   #     using HTTP Basic authentication.  Otherwise returns `None`.
+#   #     """
+#   #     auth = get_authorization_header(request).split()
+#   #     print(auth)
+#   #
+#   #     if not auth or auth[0].lower() != b'basic':
+#   #         return None
+#   #
+#   #     if len(auth) == 1:
+#   #         msg = _('Invalid basic header. No credentials provided.')
+#   #         raise exceptions.AuthenticationFailed(msg)
+#   #     elif len(auth) > 2:
+#   #         msg = _('Invalid basic header. Credentials string should not contain spaces.')
+#   #         raise exceptions.AuthenticationFailed(msg)
+#   #
+#   #     try:
+#   #         auth_parts = base64.b64decode(auth[1]).decode(HTTP_HEADER_ENCODING).partition(':')
+#   #         print(auth_parts,base64)
+#   #     except (TypeError, UnicodeDecodeError, binascii.Error):
+#   #         msg = _('Invalid basic header. Credentials not correctly base64 encoded.')
+#   #         raise exceptions.AuthenticationFailed(msg)
+#   #
+#   #     userid, password = auth_parts[0], auth_parts[2]
+#   #     return self.authenticate_credentials(userid, password, request)
+#   #
+#   # def authenticate_credentials(self, userid, password, request=None):
+#   #     """
+#   #     Authenticate the userid and password against username and password
+#   #     with optional request for context.
+#   #     """
+#   #     credentials = {
+#   #         get_user_model().USERNAME_FIELD: userid,
+#   #         'password': password
+#   #     }
+#   #     print(credentials)
+#   #     user = authenticate(request=request, **credentials)
+#   #     print(user)
+#   #
+#   #     if user is None:
+#   #         raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
+#   #
+#   #     if not user.is_active:
+#   #         raise exceptions.AuthenticationFailed(_('User inactive or deleted.'))
+#   #
+#   #     return (user, None)
+#   #
+#   # def authenticate_header(self, request):
+#   #     return 'Basic realm="%s"' % self.www_authenticate_realm
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import uuid
-class LoginView(APIView):
-
-    def post(self, request):
-        username = request.data.get('username', '')
-        password = request.data.get('password', '')
-        user_obj = UserInfo.objects.filter(account= username, password = password).first()
-        if user_obj:
-            user_obj.token = uuid.uuid4()
-            user_obj.save()
-            return Response(user_obj.token)
-        else:
-            return Response('the username or password was wrong')
 
 # 游客只读，登录用户只读，只有登录用户属于 管理员 分组，才可以增删改
-from INVGantt.permissions import MyPermission
+# from .permissions import CustomIsAuthenticated
+# from .authentication import MyOwnTokenAuthentication
+from rest_framework_simplejwt.views import TokenViewBase
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+from .permissions import MyPermission
+from .authentication import MyJWTAuthentication
+class UserViewSet(ModelViewSet):#这是一个虚拟 API
+    queryset = UserInfo.objects.all().order_by('id')
+    serializer_class = CQMserilizer
+    permission_classes = MyPermission
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+
 class CQMSeriView(APIView):
-    authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+    # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
     permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
     # 所有用户都可以访问
     # def get(self, request, *args, **kwargs):
@@ -1183,3 +1252,4 @@ class CQMSeriView(APIView):
         jsondata = JSONRenderer().render(ser.data)
         return HttpResponse(jsondata, content_type='application/json', status=200)
         # return Response('测试认证组件')
+

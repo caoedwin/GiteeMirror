@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os,sys
 import time, datetime
+from datetime import timedelta
 
 # 管理员邮箱
 ADMINS = (
@@ -138,6 +139,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 INSTALLED_APPS = [
     # 'mongonaut',
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     # 'mongoengine.django.mongo_auth',
@@ -146,6 +148,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     # 'rest_framework.authtoken'# TokenAuthentication认证模式，在settings.py中添加这个app后，它会帮我们在数据库中生成一张authtoken表，所以我们要确保manage.py migrate在更改设置后运行。该rest_framework.authtoken应用程序提供Django数据库迁移。
     # 1.用户向登陆时服务会创建一个token值返回给用户，同时也将这个token值保存到了服务器数据库表中，如果是一个分布式系统的话，想通过一套认证系统的token表用来验证用户登陆，就会出现问题。
     # 2.authtoken表中存放的token值没有过期时间字段，如果token值一旦泄露，非常危险。
@@ -279,59 +282,100 @@ DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+
+# 允许跨域源
+CORS_ORIGIN_ALLOW_ALL = False
+# 配置指定跨域域名
+CORS_ORIGIN_WHITELIST = []
+
+# 允许ajax请求携带cookie
+CORS_ALLOW_CREDENTIALS = True
+
+# must inherit from AbstractUsers (django)
+# AUTH_USER_MODEL = 'custom_auth.users'
 REST_FRAMEWORK = {
-# # 身份认证
-    'DEFAULT_AUTHENTICATION_CLASSES': (#（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
-#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-#         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',#Django自带的用户reliabilityrowdata.auth_user（edwin，DCT@2019）
-        # 'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',#Django自带的用户reliabilityrowdata.auth_user（edwin，DCT@2019）
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (#（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
-        # 'rest_framework.permissions.IsAuthenticated',#如果未指定，则此设置默认为允许无限制访问'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAdminUser',
-    ),
+    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10,
+    # 用户登陆认证方式
+    # SessionAuthentication, BasicAuthentication，为了兼容drf自带的页面认证方式
+    # 若使用drf默认登录认证，不能使用自定义表的用户信息，只可以用默认User表用户登录，通过python manage.py createsuperuser创建
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework.authentication.SessionAuthentication',
+    #     'rest_framework.authentication.BasicAuthentication',
+    # )
 }
-JWT_AUTH = {
-               'JWT_ENCODE_HANDLER':
-                   'rest_framework_jwt.utils.jwt_encode_handler',
-
-               'JWT_DECODE_HANDLER':
-                   'rest_framework_jwt.utils.jwt_decode_handler',
-
-               'JWT_PAYLOAD_HANDLER':
-                   'rest_framework_jwt.utils.jwt_payload_handler',
-
-               'JWT_PAYLOAD_GET_USER_ID_HANDLER':
-                   'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
-
-               'JWT_RESPONSE_PAYLOAD_HANDLER':
-                   'rest_framework_jwt.utils.jwt_response_payload_handler',
-
-           # 这是用于签署JWT的密钥，确保这是安全的，不共享不公开的
-                # 'JWT_SECRET_KEY': settings.SECRET_KEY,
-                'JWT_GET_USER_SECRET_KEY': None,
-                'JWT_PUBLIC_KEY': None,
-                'JWT_PRIVATE_KEY': None,
-                'JWT_ALGORITHM': 'HS256',
-                # 如果秘钥是错误的，它会引发一个jwt.DecodeError
-                'JWT_VERIFY': True,
-                'JWT_VERIFY_EXPIRATION': True,
-                'JWT_LEEWAY': 0,
-                # Token过期时间设置
-                'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300),
-                'JWT_AUDIENCE': None,
-                'JWT_ISSUER': None,
-
-                # 是否开启允许Token刷新服务，及限制Token刷新间隔时间，从原始Token获取开始计算
-                'JWT_ALLOW_REFRESH': False,
-                'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
-
-                # 定义与令牌一起发送的Authorization标头值前缀
-                'JWT_AUTH_HEADER_PREFIX': 'JWT',
-                'JWT_AUTH_COOKIE': None,
+# jwt
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(minutes=20),
+    # 'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
+#
+# AUTHENTICATION_BACKENDS = (
+#     "django.contrib.auth.backends.ModelBackend",
+#     # "allauth.account.auth_backends.AuthenticationBackend",
+#     # "master_password.auth.ModelBackend"
+#     'CQM.authentication.CustomAuthBackend',
+# )
+
+
+
+# REST_FRAMEWORK = {
+# # # 身份认证
+#     'DEFAULT_AUTHENTICATION_CLASSES': (#（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+#         # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#         # 'rest_framework.authentication.SessionAuthentication',
+#         # 'rest_framework.authentication.BasicAuthentication',#Django自带的用户reliabilityrowdata.auth_user（edwin，DCT@2019）
+#         # 'rest_framework.authentication.TokenAuthentication',
+#         # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',#Django自带的用户reliabilityrowdata.auth_user（edwin，DCT@2019）
+#         # 'CQM.authentication.MyOwnTokenAuthentication',# 全局自定义Token认证（基于传统的 token 认证，JWT也是基于auth.user，并且可以自动分发token，不需要手动）
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (#（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+#         'rest_framework.permissions.IsAuthenticated',#(有效打勾的就有权限)如果未指定，则此设置默认为允许无限制访问'rest_framework.permissions.AllowAny',
+#         # 'rest_framework.permissions.IsAdminUser',#(职员状态打勾的才有权限)
+#     ),
+# }
+# JWT_AUTH = {
+#                'JWT_ENCODE_HANDLER':
+#                    'rest_framework_jwt.utils.jwt_encode_handler',
+#
+#                'JWT_DECODE_HANDLER':
+#                    'rest_framework_jwt.utils.jwt_decode_handler',
+#
+#                'JWT_PAYLOAD_HANDLER':
+#                    'rest_framework_jwt.utils.jwt_payload_handler',
+#
+#                'JWT_PAYLOAD_GET_USER_ID_HANDLER':
+#                    'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
+#
+#                'JWT_RESPONSE_PAYLOAD_HANDLER':
+#                    'rest_framework_jwt.utils.jwt_response_payload_handler',
+#
+#            # 这是用于签署JWT的密钥，确保这是安全的，不共享不公开的
+#                 # 'JWT_SECRET_KEY': settings.SECRET_KEY,
+#                 'JWT_GET_USER_SECRET_KEY': None,
+#                 'JWT_PUBLIC_KEY': None,
+#                 'JWT_PRIVATE_KEY': None,
+#                 'JWT_ALGORITHM': 'HS256',
+#                 # 如果秘钥是错误的，它会引发一个jwt.DecodeError
+#                 'JWT_VERIFY': True,
+#                 'JWT_VERIFY_EXPIRATION': True,
+#                 'JWT_LEEWAY': 0,
+#                 # Token过期时间设置
+#                 'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300),
+#                 'JWT_AUDIENCE': None,
+#                 'JWT_ISSUER': None,
+#
+#                 # 是否开启允许Token刷新服务，及限制Token刷新间隔时间，从原始Token获取开始计算
+#                 'JWT_ALLOW_REFRESH': False,
+#                 'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
+#
+#                 # 定义与令牌一起发送的Authorization标头值前缀
+#                 'JWT_AUTH_HEADER_PREFIX': 'JWT',
+#                 'JWT_AUTH_COOKIE': None,
+# }
 
 
 
@@ -417,7 +461,11 @@ SAFE_URL = [
     '/INVGantt/INVGantSerire/.*',
     '/INVGantt/INVGantSeriv/.*',
     '/INVGantt/apilogin/.*',
-    '/CQM/CQMSeriv/.*',
+    '/CQM/CQMapi/.*',
+    '/CQM/CQMapi1/.*',
+    '/api-auth/.*',
+    '/api/token/.*',
+    '/CQM/api/.*',
     # '/redit_Lesson/.*',
     # r'/CDM/CDM-upload/',
     # r'/CDM/CDM-edit/',

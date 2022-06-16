@@ -673,6 +673,12 @@ $(document).ready(function() {
                 else{
                     rows.Testresult=rows.Compatibility;
                 }
+
+                if(rows.Testresult == 'Qd_L' || rows.Testresult == 'Qd_C'){
+                    rows.Testresult = 'Qd'
+                }
+
+
             },
          //颜色变化
           addClass({row, column, rowIndex, columnIndex}) {

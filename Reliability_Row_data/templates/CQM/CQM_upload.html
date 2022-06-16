@@ -292,6 +292,11 @@
             else {
                 Testresult.value = Compatibility.value;
             }
+
+            if(Testresult.value == 'Qd_L' || Testresult.value == 'Qd_C'){
+                Testresult.value = 'Qd'
+            }
+
         });
         $('#Reliability').change(function () {
             if (Reliability.value == 'No Build' || Compatibility.value == 'No Build') {
@@ -320,6 +325,10 @@
             }
             else {
                 Testresult.value = Compatibility.value;
+            }
+
+            if(Testresult.value == 'Qd_L' || Testresult.value == 'Qd_C'){
+                Testresult.value = 'Qd'
             }
         });
     })

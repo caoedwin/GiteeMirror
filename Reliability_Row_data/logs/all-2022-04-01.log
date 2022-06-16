@@ -1,0 +1,116 @@
+[2022-04-01 12:00:16,121] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSWOS/TestPlanSWOS-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSWOS\views.py", line 2589, in TestPlanSW_Edit
+    dic_Item = {'Customer': Customer, 'Phase': h}
+UnboundLocalError: local variable 'h' referenced before assignment
+[2022-04-01 12:00:16,126] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 500 83003
+[2022-04-01 12:06:00,412] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:06:00,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:06:01,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:06:02,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 43947
+[2022-04-01 12:06:02,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:06:14,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSWOS/testitemsw/ HTTP/1.1" 200 6490
+[2022-04-01 12:06:14,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-04-01 12:06:14,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:06:18,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSWOS/testitemsw/add/ HTTP/1.1" 200 16430
+[2022-04-01 12:06:18,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-04-01 12:06:18,265] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:06:22,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSWOS/testitemsw/ HTTP/1.1" 200 6490
+[2022-04-01 12:06:22,294] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:08:31,530] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:08:31,725] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:08:31,814] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:08:32,115] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:08:32,117] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:08:32,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:08:32,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:08:37,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 16
+[2022-04-01 12:09:41,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:09:42,080] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:09:42,185] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:09:42,538] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:09:42,542] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:09:43,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:09:43,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:09:48,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 32
+[2022-04-01 12:09:50,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=0&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:10:40,919] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-04-01 12:10:40,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:10:45,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 200 32
+[2022-04-01 12:10:48,359] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=1&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:11:12,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=15 HTTP/1.1" 200 32
+[2022-04-01 12:11:15,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=15&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:11:18,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 200 32
+[2022-04-01 12:11:23,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=1&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:11:38,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 32
+[2022-04-01 12:11:40,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=0&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:11:44,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:11:44,486] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:11:44,530] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:11:44,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:11:44,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:11:44,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:11:45,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:11:48,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 32
+[2022-04-01 12:11:53,986] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSWOS/ HTTP/1.1" 200 5417
+[2022-04-01 12:11:54,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:11:57,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSWOS/testplansw/ HTTP/1.1" 200 781590
+[2022-04-01 12:11:57,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-04-01 12:11:59,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:13:45,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 200 32
+[2022-04-01 12:13:47,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 726
+[2022-04-01 12:13:49,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=0&category=Accessories%20for%20compatibility%20test HTTP/1.1" 200 9540
+[2022-04-01 12:13:53,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 200 32
+[2022-04-01 12:13:57,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=1&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:14:26,901] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-04-01 12:14:26,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:38:00,276] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=15 HTTP/1.1" 200 32
+[2022-04-01 12:38:02,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=15&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:38:12,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:38:12,549] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:38:12,600] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:38:12,796] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:38:12,800] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:38:13,132] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:38:13,232] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:38:18,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=15 HTTP/1.1" 200 32
+[2022-04-01 12:38:20,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=15&category=NA HTTP/1.1" 200 362
+[2022-04-01 12:38:32,218] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-04-01 12:38:32,236] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-edit/ HTTP/1.1" 200 109253
+[2022-04-01 12:38:38,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=1 HTTP/1.1" 200 726
+[2022-04-01 12:38:46,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=1&category=Accessories%20for%20compatibility%20test HTTP/1.1" 200 9553
+[2022-04-01 12:42:19,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 726
+[2022-04-01 12:42:23,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-edit/?action=getContent&customer=C38(NB)&project=TEST1&phase=0&category=Application HTTP/1.1" 200 93707
+[2022-04-01 12:56:23,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 94003
+[2022-04-01 12:56:23,695] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:56:23,727] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:56:23,925] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:56:23,928] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:56:24,250] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-04-01 12:56:24 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2022-04-01 12:56:24,276] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 145
+[2022-04-01 12:56:24,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=first HTTP/1.1" 200 56
+[2022-04-01 12:56:24,330] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:56:33,321] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-04-01 12:56:33 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2022-04-01 12:56:33,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 381
+[2022-04-01 12:56:35,742] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-04-01 12:56:35 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2022-04-01 12:56:35,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 419
+[2022-04-01 12:56:42,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=getCategory&customer=C38(NB)&project=TEST1&phase=0 HTTP/1.1" 200 16
+[2022-04-01 12:56:44,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=getContent&customer=C38(NB)&project=TEST1&phase=0&category= HTTP/1.1" 200 4157
+[2022-04-01 12:56:46,859] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-04-01 12:56:46 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2022-04-01 12:56:46,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 93812
+[2022-04-01 12:57:04,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-summary/ HTTP/1.1" 200 57289
+[2022-04-01 12:57:04,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2022-04-01 12:57:04,321] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-04-01 12:57:04,346] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-04-01 12:57:04,593] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-04-01 12:57:04,594] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-04-01 12:57:04,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.woff HTTP/1.1" 200 28200
+[2022-04-01 12:57:04,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-04-01 12:57:05,186] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-04-01 12:57:05 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-summary/ POST
+[2022-04-01 12:57:05,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-summary/ HTTP/1.1" 200 1678

@@ -503,7 +503,7 @@ def Summary(request):
 
             check_dic2_1 = {'Usrname': Borrower,
                           'BR_per_code': BorrowerNum,
-                          'BrwStatus__in': ['使用中', '申請確認中', '轉帳確認中', '接收確認中']
+                          'BrwStatus__in': ['使用中', '閑置中', '申請確認中', '轉帳確認中', '接收確認中']
                             }
             mock_datalist2_1 = ComputerLNV.objects.filter(**check_dic2_1)
             for i in mock_datalist2_1:

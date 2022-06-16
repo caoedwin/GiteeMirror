@@ -2,20 +2,48 @@
 from django.db import models
 import django.utils.timezone as timezone
 from DjangoUeditor.models import UEditorField #头部增加这行代码导入UEditorField
-
+import datetime
 # Create your models here.
 from django.contrib.auth.models import User
 
 #导入Django自带用户模块
 
+# class UserToken(models.Model):
+#     """
+#     用户：划分角色
+#     """
+#     account = models.OneToOneField('UserInfo', on_delete=models.CASCADE,related_name='auth_token',verbose_name="User", primary_key=True)
+#     token = models.CharField(max_length=64, blank=True, )
+#     # created = models.DateTimeField(auto_now_add=True, null=False)
+#
+#
+#     class Meta:
+#         verbose_name = 'UserToken'#不写verbose_name, admin中默认的注册名会加s
+#         verbose_name_plural = verbose_name
+#
+#     def __str__(self):
+#         return self.username
+
 class UserInfo(models.Model):
     """
     用户：划分角色
     """
+    DEPARTMENT_CHOICES = {
+        (1, '测试部门'),
+        (2, '开发部门'),
+        (3, 'PM'),
+        (4, '其它部门'),
+    }
     account = models.CharField(max_length=32,unique=True)
     password = models.CharField(max_length=64)
     username = models.CharField(max_length=32)
     email = models.EmailField()
+    department = models.IntegerField(verbose_name='部门', choices=DEPARTMENT_CHOICES, default=1)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_SVPuser = models.BooleanField(default=False)
+    # created = models.DateTimeField(auto_now_add=True, null=False)
+    # updated = models.DateTimeField(auto_now=True, null=False)
     role = models.ManyToManyField("Role")
 
     class Meta:
@@ -24,6 +52,14 @@ class UserInfo(models.Model):
 
     def __str__(self):
         return self.username
+
+    @property
+    def is_authenticated(self):
+        """
+        Always return True. This is a way to tell if the user has been
+        authenticated in templates.
+        """
+        return True
 
 class Role(models.Model):
     """

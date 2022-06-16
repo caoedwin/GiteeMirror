@@ -138,6 +138,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 INSTALLED_APPS = [
     # 'mongonaut',
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     # 'mongoengine.django.mongo_auth',

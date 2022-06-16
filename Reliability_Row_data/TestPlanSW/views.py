@@ -2586,9 +2586,10 @@ def TestPlanSW_Edit(request):
                 title = new_l
                 # print(title)
             if not title:
-                dic_Item = {'Customer': Customer, 'Phase': h}
-                for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
-                    title.append({"caseid": i['Category2']})
+                for h in PhaseinItem:
+                    dic_Item = {'Customer': Customer, 'Phase': h}
+                    for i in TestItemSW.objects.filter(**dic_Item).values('Category2').distinct().order_by('Category2'):
+                        title.append({"caseid": i['Category2']})
             # if 'FFRT' in Phase:
             #     title.append({"caseid": "Others (Project Leader update)(1. Base on Golden BIOS/Image's change list)(2. Retest for w/o solution's issue ) for full function test"})
             # print (title)

@@ -135,6 +135,7 @@
                                     <el-option label="A39" value="A39"></el-option>
                                     <el-option label="C38(AIO)" value="C38(AIO)"></el-option>
                                     <el-option label="T88(AIO)" value="T88(AIO)"></el-option>
+                                    <el-option label="C38(NB)-SMB" value="C38(NB)-SMB"></el-option>
                               </el-select>
                           </el-form-item>
                           <el-form-item label="Category">
@@ -199,6 +200,7 @@
                                     <el-option label="A39" value="A39"></el-option>
                                     <el-option label="C38(AIO)" value="C38(AIO)"></el-option>
                                     <el-option label="T88(AIO)" value="T88(AIO)"></el-option>
+                                    <el-option label="C38(NB)-SMB" value="C38(NB)-SMB"></el-option>
                       </el-select>
                   <span v-else="showEdit[scope.$index]"  >${ scope.row.Customer }</span>
                 </template>
@@ -505,22 +507,22 @@ new Vue ({
 
           console.log(this.formData,typeof (this.formData))
         },
-        {% comment %}beforeImageUpload(file) {
+        beforeImageUpload(file) {
           // 上传前格式与大小校验
 
-          const isJPG = file.type === "image/jpeg"|| file.type == 'image/png'|| file.type == 'video/mp4';
-          const isLt2M = file.size / 1024 / 1024 < 5;
+          {#const isJPG = file.type === "image/jpeg"|| file.type == 'image/png'|| file.type == 'video/mp4';#}
+          const isLt2M = file.size / 1024 / 1024 < 500;
 
-          if (!isJPG) {
+          {% comment %}if (!isJPG) {
             this.$message.error("上传头像图片只能是 JPG/PNG 格式，视频为mp4格式!");
-          }
+          }{% endcomment %}
           if (!isLt2M) {
-            this.$message.error("上传头像图片大小不能超过 5MB!");
+            this.$message.error("上传头像图片大小不能超过 500MB!");
           }
           return isJPG && isLt2M;
             console.log("before" )
             //也是成功的
-        },{% endcomment %}
+        },
         // 下载
         downloadFile(fileName, content) {
           let aLink = document.createElement("a");
