@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}主界面{% endblock %}
+
+{% block content %}
+        <!-- 幾台與phase選擇 -->
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+
+        <!-- Breadcrumbs-->
+            <form class='form-Test' action="/SearchExport/" method="POST">
+               <ol class="breadcrumb">
+                <!-- <li class="breadcrumb-item">
+                 <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li> -->
+                 <div class="input-group-sm">
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Customer</span><select class="form-control-sm" name="Customer">
+                                            <option value="Selected Customer">Selected Customer</option>
+                                            <option value="C38(NB)">C38(NB)</option>
+                                            <option value="C38(AIO)">C38(AIO)</option>
+                                            <option value="A39">A39</option>
+                                            <option value="Other">Other</option>
+                                          </select>
+{#                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Project</span><input type="text" class="form-control-sm" name="Project" >#}
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Project</span><select class="form-control-sm" name="Project" >
+                                            {% for line in project_list %}
+                                                <option value={{line.Project}}>{{line.Project}}</option>
+                                            {% endfor %}
+                                          </select>
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Phase</span><select class="form-control-sm" name="Phase">
+                                            <option value="Selected Phase">Selected Phase</option>
+                                            <option value="B(FVT)">B(FVT)</option>
+                                            <option value="C(SIT)">C(SIT)</option>
+                                            <option value="INV">INV</option>
+                                            <option value="Other">Other</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-success "style="margin-left: 25px;" name="Search">Search</button>
+                                          {% csrf_token %}
+                        </div>
+               </ol>
+               <!-- <div class="container-fluid"> -->
+            <div class="breadcrumb">
+                <!-- <div class="row"> -->
+
+                    <div class="col-md-12" style="padding-top: 30px;">
+{#                      <meta http-equiv="Refresh" content="60">#}
+
+                        <div class="card-header">
+
+                        <i class="fas fa-table"></i>
+
+                        TestLog list
+{#                                chrom 下将当前页面导出到Exel#}
+{#                            <script type="text/javascript">#}
+{#                                var tableToExcel = (function () {#}
+{#                                    var uri = 'data:application/vnd.ms-excel;base64,',#}
+{#                                        template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',#}
+{#                                        base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) },#}
+{#                                        format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };#}
+{#                                    return function (table, name, filename) {#}
+{#                                        if (!table.nodeType) table = document.getElementById(table)#}
+{#                                        var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }#}
+{##}
+{#                                        document.getElementById("dlink").href = uri + base64(format(template, ctx));#}
+{#                                        document.getElementById("dlink").download = filename;#}
+{#                                        document.getElementById("dlink").click();#}
+{#                                    }#}
+{#                                })()#}
+{#                            </script>#}
+{#                        <a id="dlink"  style="display:none;"></a>#}
+{#                        <input type="button" onclick="tableToExcel('dataTable', 'name', 'myfile.xls')" value="Export to Excel">#}
+                        <button type="submit" class="btn btn-success" style="float: right;padding-top: 0%" name="Export">Export</button>
+                        {% csrf_token %}
+                        </div>
+                        <div class="col-md-1 offset-2" style="padding-top: 30px;">
+
+                        </div>
+
+                        <div class="card-body">
+
+                        <div class="table-responsive" style="max-height: 500px;">
+
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                            <thead>
+
+                              <tr>
+
+                                <th>Customer</th>
+                                <th>Project</th>
+                                <th>Phase</th>
+                                <th>Unit</th>
+                                <th>Tester</th>
+                                <th>Item</th>
+                                <th>Result</th>
+                                <th>Start_time</th>
+                                <th>End_time</th>
+                                <th>Result_time</th>
+                                <th>Comments</th>
+                                <th>Item_Des</th>
+                              </tr>
+                            </thead>
+
+                              <tbody>
+
+                                  {% for line in test_list %}
+                                        <tr>
+                                            <td>{{line.Customer}}</td>
+                                            <td>{{line.Project}}</td>
+                                            <td>{{line.Phase}}</td>
+                                            <td>{{line.Unit}}</td>
+                                            <td>{{line.Tester}}</td>
+                                            <td>{{line.Testitem}}</td>
+                                            <td>{{line.Result}}</td>
+                                            <td>{{line.Start_time}}</td>
+                                            <td>{{line.End_time}}</td>
+                                            <td>{{line.Result_time}}</td>
+                                            <td>{{line.Comments}}</td>
+                                            <td>{{line.Item_Des}}</td>
+                                        </tr>
+                                  {% endfor %}
+
+                              </tbody>
+
+                          </table>
+
+                        </div>
+
+                      </div>
+
+
+
+                    </div>
+
+    </div>
+
+    </form>
+
+      </div>
+
+    </div>
+
+{% endblock %}
+{#<script type="text/javascript"　src="../static/vendor/datatables/exportExel.js"></script>#}

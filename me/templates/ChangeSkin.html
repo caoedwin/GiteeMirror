@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}主界面{% endblock %}
+
+
+{% block dashboard-project %}{% endblock %}
+{% block mini-dashboard-project %}{% endblock %}
+{% block dashboard-units %}{% endblock %}
+{% block Test_plan%}{% endblock %}
+{% block Search %}{% endblock %}
+
+{% block content %}
+        <!-- 幾台與phase選擇 -->
+
+    <div id="content-wrapper">
+      {% comment %}<div id="stars"></div>
+      <div id="stars2"></div>{% endcomment %}
+
+      <div class="container-fluid">
+
+
+        <!-- Breadcrumbs-->
+            <form class='form-Test' action="/Change_Skin/" method="POST">
+               <ol style="background-color:rgba(255,255,255,0.2)" class="breadcrumb">
+                <!-- <li class="breadcrumb-item">
+                 <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li> -->
+                 <div class="input-group-sm">
+{#                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Project</span><input type="text" class="form-control-sm" name="Project" >#}
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px;color:#FFF">Skin</span><select style="background-color:rgba(81,145,211,0.7);color:#FFF" class="form-control-sm" name="Skin">
+                                            <option value="Selected Phase">Selected Skin</option>
+                                            <option value="blue">blue</option>
+                                            <option value="kiwi">kiwi</option>
+                                            <option value="sunny">sunny</option>
+                                            <option value="yellow">yellow</option>
+                                          </select>
+                                          <button type="submit" id="Change" name="Change" class="btn btn-info "style="margin-right: 0px;">Change</button>
+                                          {% csrf_token %}
+                        </div>
+               </ol>
+
+
+    </form>
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{#<script type="text/javascript"　src="../static/vendor/datatables/exportExel.js"></script>#}

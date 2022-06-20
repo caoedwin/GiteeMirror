@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content=""> -->
+
+  {% block title %}dashboard mini{% endblock %}
+
+
+  {% block css %}
+  <link rel = "stylesheet"  type = "text/css"  href = "../static/css/layer.css" >
+  <link rel = "stylesheet"  type = "text/css"  href = "../static/css/tooltip.min.css" >
+
+
+
+  {% endblock %}
+ 
+  <!--  <link rel="stylesheet" type="text/css" href="../static/css/css/myTheme.css"> -->
+
+{% block dashboard-project %}{% endblock %}
+{% block mini-dashboard-project %}style="background-color: rgba(0,153,255,0.5)"{% endblock %}
+{% block dashboard-units %}{% endblock %}
+{% block Test_plan%}{% endblock %}
+{% block Search %}{% endblock %}
+
+
+{% block style %}
+<style type="text/css" >
+ 
+tr {
+margin:0;
+padding:0;
+table-layout: fixed;
+/*height:20px;*/
+
+
+}
+
+html, body {
+-ms-overflow-style: scrollbar;
+}
+
+
+
+
+ /* th{
+   
+  }
+  td{
+   
+    
+    
+    
+  }*/
+
+  
+  
+</style>
+{% endblock %}
+
+        {% block content %}
+
+        <div id="content-wrapper">
+         {% comment %} <div id="stars"></div>
+          <div id="stars2"></div>{% endcomment %}
+
+          <div class="container-fluid">
+
+
+        <!-- Breadcrumbs-->
+           <ol class="breadcrumb" style="background-color:rgba(255,255,255,0.2);">
+            <!-- <li class="breadcrumb-item">
+             <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li> -->
+           
+               <form id='units' method="POST">
+                    {% csrf_token %}
+                 <div class="input-group-sm">
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px;color:#FFF">Customer</span><select style="background-color:rgba(81,145,211,0.7);color:#FFF" class="form-control-sm" id="Customer">
+                                            <option value="Selected Customer">Selected Customer</option>
+                                            <option value="C38(NB)">C38(NB)</option>
+                                            <option value="C38(AIO)">C38(AIO)</option>
+                                            <option value="A39">A39</option>
+                                            <option value="Other">Other</option>
+                                          </select>
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px;color:#FFF">Project</span><select style="background-color:rgba(81,145,211,0.7);color:#FFF" class="form-control-sm" id="project" >
+                                            {% for line in project_list %}
+                                                <option value={{line.Project}}>{{line.Project}}</option>
+                                            {% endfor %}
+                                          </select>
+                          <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px;color:#FFF">Phase</span><select style="background-color:rgba(81,145,211,0.7);color:#FFF" class="form-control-sm" id="Phase">
+                                            <option value="Selected Phase">Selected Phase</option>
+                                            <option value="B(FVT)">B(FVT)</option>
+                                            <option value="C(SIT)">C(SIT)</option>
+{#                                            <option value="B(DVT)">B(DVT)</option>#}
+{#                                            <option value="C(PVT)">C(PVT)</option>#}
+                                            <option value="Pre-MP">Pre-MP</option>
+                                            <option value="MP">MP</option>
+                                            <option value="INV">INV</option>
+                                            <option value="Other">Other</option>
+                                          </select>
+                                          <button type="button" id="tt" class="btn btn-success "style="margin-left: 25px;">Search</button>
+                                          <button type="submit" id="Waterfall" name="Waterfall" class="btn btn-info "style="margin-right: 0px;">Waterfall</button>
+                                          <button type="submit" id="jian" name="jian" class="btn btn-info "style="margin-right: 0px;">简报</button>
+                                          {% csrf_token %}
+                        </div>
+                         </form>
+                   </ol>
+
+      <!--  DASHBOARD Unit TABLE -->
+        <div class="breadcrumb" position="relative" style="background-color:rgba(255,255,255,0.2);">
+          
+        <div  id="TableSize" style="max-height: 600px;width:100%;position: relative;"  >
+       
+          </div>
+        
+
+      <!--  DASHBOARD Unit TABLE END -->
+
+   
+    </div>
+            </div>
+            </div>
+            <div id="tip" style="max-width:500px;padding: 5px;display: none;pointer-events: none;position: fixed;background: rgba(0,0,0,0.6);color:rgb(255,255,255);white-space:pre-wrap;"></div>
+    {% endblock %}
+
+ 
+
+{% block scripts %}
+ <script src="../static/vendor/jquery/jquery-2.1.4.min.js"></script>
+ <script src="../static/vendor/jquery/jquery.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 自定义行列表格 -->
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/miniproject.js"></script>
+{% comment %}<script >
+	
+
+</script>
+
+
+
+      
+     <!--  <script src="../static/vendor/jquery/jquery.mousewheel.js"></script> -->
+      
+      
+     
+      <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+      <!-- Page level plugin JavaScript-->
+     
+      <script src="../static/vendor/datatables/jquery.dataTables.js"></script>
+      <script src="../static/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="../static/js/sb-admin.min.js"></script>
+
+      <!-- Demo scripts for this page-->{% endcomment %}
+{% endblock %}
+    
+
+<!-- </body>
+</html> -->

@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}主界面{% endblock %}
+
+{% block content %}
+        <!-- 幾台與phase選擇 -->
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+
+        <!-- Breadcrumbs-->
+            <form class='form-Test' action="/index/" method="POST" id="index">
+               <ol class="breadcrumb">
+                <!-- <li class="breadcrumb-item">
+                 <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li> -->
+                  <div class="input-group-sm">
+    {#			    <span class="input-group-addon" style="padding-right: 5px;">Project</span><input type="text" class="form-control-sm" >#}
+                    <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px"><span style="color: red;">*</span>Customer</span><select class="form-control-sm" name="Customer" id="customer">
+                                    <option value="Selecte Customer">Selecte Customer</option>
+                                    <option value="C38(NB)">C38(NB)</option>
+                                    <option value="C38(AIO)">C38(AIO)</option>
+                                    <option value="A39">A39</option>
+                                    <option value="Other">Other</option>
+                                  </select>
+                    {% if messagec %}
+                        <div class="alert alert-warning" style="margin-left: 25px;">{{ messagec }}</div>
+                    {% endif %}
+                 </div>
+                 <div class="input-group-sm">
+    {#			    <span class="input-group-addon" style="padding-right: 5px;">Project</span><input type="text" class="form-control-sm" >#}
+                    <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px"><span style="color: red;">*</span>Phase</span><select class="form-control-sm" name="Phase" id="phase">
+                                    <option value="Selecte Phase">Selecte Phase</option>
+                                    <option value="B(FVT)">B(FVT)</option>
+                                    <option value="C(SIT)">C(SIT)</option>
+                                    <option value="INV">INV</option>
+                                    <option value="Other">Other</option>
+                                  </select>
+                    {% if messagep %}
+                        <div class="alert alert-warning" style="margin-left: 25px;">{{ messagep }}</div>
+                    {% endif %}
+                 </div>
+               </ol>
+               <!-- <div class="container-fluid"> -->
+            <div class="breadcrumb">
+
+                    <div class="col-md-2">
+
+                        <div class="input" style="padding-top: 15px;">
+                            <center>
+                                  <span style="color: red;">*</span> Units <Br> <input type="text" class="form-control" name="Units" id="units" onkeyup="keyup(this)">
+                            </center>
+
+                            {% if message %}
+                                <div class="alert alert-warning" style="margin-left: 20px;">{{ message }}</div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                        <div class="input" style="padding-top: 15px;">
+                          {% csrf_token %}
+                            <center>
+                              <span style="color: red;">*</span> Item <Br> <input type="text" id="item1" class="form-control" name="Item" onkeyup="keyup(this)">
+                               <br> <h4 id="test" style="display:none;"></h4>
+                            </center>
+                            {% if messagei %}
+                                <div class="alert alert-warning" style="margin-left: 20px;">{{ messagei }}</div>
+
+                            {% endif %}
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+
+                        <div class="input"style="padding-top: 15px;">
+                        <center>
+                           Comments <Br> <input type="text" class="form-control" name="Comments" id="comments">
+                        </center>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-1" style="margin-right: 2%; " >
+
+
+
+                             <nav>
+                                  <ul class="navnew">
+                                      <li>
+                                        <a href="#" id="start" name="Start" value="Start" onclick="appendform('Start')">
+                                          {% csrf_token %}
+                                          <!-- <span class="icon-home"></span> -->
+                                          <span style="font-size: 20px;color:#fff">Start</span>
+                                        </a>
+                                      </li>
+
+
+
+                                  </ul>
+                              </nav>​
+
+                          </div>
+
+                    <div class="col-md-1"  style="margin-right: 2%; ">
+
+
+
+                             <nav>
+                                  <ul class="navnew">
+                                      <li>
+                                        <a href="#" id="end" onclick="appendform('End')">
+                                          {% csrf_token %}
+                                          <!-- <span class="icon-home"></span> -->
+                                          <span style="font-size: 20px;color:#fff">End</span>
+                                        </a>
+                                      </li>
+
+
+
+                                  </ul>
+                              </nav>​
+
+                          </div>
+                    <div class="col-md-1" style="margin-right: 2%; " >
+
+
+                     <nav>
+                          <ul class="navnew">
+                              <li>
+                                <a href="#" id="pass">
+                                  {% csrf_token %}
+                                  <!-- <span class="icon-home"></span> -->
+                                  <span style="font-size: 20px;color:#fff">Pass</span>
+                                </a>
+                              </li>
+
+
+
+                          </ul>
+                      </nav>​
+
+                          </div>
+                   <div class="col-md-1"  style="margin-right: 0%; ">
+
+
+
+                     <nav>
+                          <ul class="navnew">
+                              <li>
+                                <a href="#" id="fail">
+                                  {% csrf_token %}
+                                  <!-- <span class="icon-home"></span> -->
+                                  <span style="font-size: 20px;color: #fff">Fail</span>
+                                </a>
+                              </li>
+
+
+
+                          </ul>
+                      </nav>​
+
+                    </div>
+
+
+                   {% comment %}  <div class="col-md-3">
+
+                          <div class="row">
+                            <!-- old start and end button -->
+                             <div class="col-md-3" style="margin-bottom: 22px;" >
+                            <button type="submit"  class="btn-sm btn-primary" style="margin-top: 40px;" {{ actstatus }} name="Start">Start</button>
+                             {% csrf_token %}
+                             </div>
+                             <div class="col-md-3" style="margin-bottom: 22px;" >
+                            <button type="submit"   class="btn-sm btn-warning" style="margin-top: 40px;"{{ actstatus_end }} name="End">End</button>
+                             {% csrf_token %}
+                             </div>
+                              <!-- old start and end button -->
+                           <!--  result area -->
+                           <!-- <div class="col-md-6" style="height:100%; border-style: solid;border-width: 2px;border-color: black;"><center><span style="font-size=10px">Result</span></center> -->
+
+                             <!-- new start and end button -->
+
+                          <!--   <div class="testing">
+                            <div class="background" >
+                            <div style="height: 38px;font-size: 25px;"class="result"><center>Testing</center></div>
+
+                                <div style="width: 100%;">
+
+                                      <div class="cent" >
+                                        <button type="submit"  class="btn btn-primary"style="margin: auto;
+                                        " {{ actstatus }} name="Start">Start</button>
+                                         {% csrf_token %}
+                                     </div>
+                                      <div class="cent">
+                                         <button type="submit"   class="btn btn-warning"style="margin: auto; " {{ actstatus_end }} name="End">End</button>
+
+                                         {% csrf_token %}
+                                         </div>
+
+                                       </div>
+                                </div>
+
+                            </div>
+ -->
+                             <!-- new start and end button -->
+
+
+
+
+                            <div class="col-md-6">
+                            <div class="testing">
+                            <div class="background">
+                            <div style="height: 38px;font-size: 25px;"class="result"><center>Result</center></div>
+
+                                <div style="white-space:nowrap;display: flex;" >
+
+                                          <div style="width: 50%;">
+                                         <button type="button"  class="btn-sm btn-success " style="margin: 3%;width:90%;" {{ actstatus_end }} name="Pass" id="pass">Pass</button>
+                                         {% csrf_token %}
+
+                                         </div>
+                                         <div style="width: 50%;">
+                                         <button type="button"  class="btn-sm btn-danger "style="margin: 3%;width:90%;"  {{ actstatus_end }} name="Fail" id="fail">Fail</button>
+                                         </div>
+
+                                         {% csrf_token %}
+
+                                       </div>
+                                </div>
+
+                            </div>
+                            </div>
+                            </div>
+
+                    </div>{% endcomment %}
+                    <div class="col-md-4 offset-4">
+                        {% if message_se %}
+                            <div class="alert alert-warning">{{ message_se }}</div>
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-12" style="padding-top: 30px;">
+{#                      <meta http-equiv="Refresh" content="60">#}
+
+                        <div class="card-header">
+
+                        <i class="fas fa-table"></i>
+
+                        Plan list under testing</div>
+
+                        <div class="card-body">
+
+                        <div class="table-responsive" style="max-height: 500px;">
+
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                            <thead>
+
+                              <tr>
+
+                                <th>Customer</th>
+                                <th>Project</th>
+                                <th>Phase</th>
+                                <th>Unit</th>
+                                <th>Tester</th>
+                                <th>Item</th>
+{#                                <th>Result</th>#}
+                                <th>Start_time</th>
+                                <th>End_time</th>
+                                <th>Report_time</th>
+                                <th>Comments</th>
+                                <th>Item_Des</th>
+                              </tr>
+
+                              <tbody>
+
+                                  {% for line in test_list %}
+                                        <tr>
+                                            <td>{{line.Customer}}</td>
+                                            <td>{{line.Project}}</td>
+                                            <td>{{line.Phase}}</td>
+                                            <td>{{line.Unit}}</td>
+                                            <td>{{line.Tester}}</td>
+                                            <td>{{line.Testitem}}</td>
+{#                                            <td>{{line.Result}}</td>#}
+                                            <td>{{line.Start_time}}</td>
+                                            <td>{{line.End_time}}</td>
+                                            <td>{{line.Result_time}}</td>
+                                            <td>{{line.Comments}}</td>
+                                            <td>{{line.Item_Des}}</td>
+                                        </tr>
+                                  {% endfor %}
+
+                              </tbody>
+
+                            </thead>
+
+                          </table>
+
+                        </div>
+
+                      </div>
+
+                      </div>
+
+                    </div>
+
+    </div>
+
+    </form>
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="../static/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="../static/vendor/jquery/jquery.js"></script>
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/test_button.js"></script>
+    <script>
+    function appendform(obj){
+
+          $('#index').append("<input name='"+obj+"' id='"+obj+"id' style='display:none'>");
+          $('#index').submit();
+          return false;
+       }
+    </script>>
+{% endblock %}

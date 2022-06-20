@@ -1,0 +1,111 @@
+var obj={};
+    Object.defineProperty(obj,'hello',{
+      set:function(newVal){
+
+         /*document.getElementById('item').value=newVal;*/
+         $('#test').css({"display":"block"});
+         document.getElementById("test").innerHTML="<span>Item Description:</span><br>"+newVal;
+      }
+    });
+    document.getElementById("item1").addEventListener('input',function(e){
+
+
+      if(e.target.value.length==11){
+         $.ajax({
+              url:"/index/",
+              type:"POST",
+              dataType:"text",
+              async:false,
+              /*data:{project:$('#project').val(),Phase:$('#Phase').val(),csrfmiddlewaretoken:'{{ csrf_token  }}'},*/
+              data:{item:$('#item1').val(),itemSearch:"itemSearch",csrfmiddlewaretoken:$("input:first").val()},
+              /*header:{'X-CSRFtoken':csrftoken},*/
+              error:function(data){
+                console.log(data+"error");
+              },
+              success:function(data){
+                console.log(data.indexOf('<!DOCTYPE html>'));
+                if(data.indexOf('<!DOCTYPE html>')!==1){
+                  obj.hello=data;
+                  console.log("success");
+                  }
+                  else {
+                   /* $("#allbody").html(data);*///刷新整个body页面的html
+                    console.log("jump to login");
+                    window.location.href="/login/";
+                  }
+                }
+               })
+                    }
+      else{
+        $('#test').empty();
+      }
+
+
+   });
+    //pass and fail  confirm  alter window
+     $(document).ready(function(){
+
+
+
+      $('#pass').on('click',function(){
+
+        layer.confirm('测试结果是否为Pass?', {
+          btn: ['确认','取消'] //按钮
+        }, function(){
+          //上传测试结果(结果为pass) by ajax
+           $.ajax({
+              url:"/index/",
+              type:"POST",
+              dataType:"html",
+              async:true,
+              /*data:{project:$('#project').val(),Phase:$('#Phase').val(),csrfmiddlewaretoken:'{{ csrf_token  }}'},*/
+              data:{Customer:$('#customer').val(),Phase:$('#phase').val(),Units:$('#units').val(),item:$('#item1').val(),Comments:$('#comments').val(),PassButton:"PassButton",Result:"pass",csrfmiddlewaretoken:$("input:first").val(),},
+              /*header:{'X-CSRFtoken':csrftoken},*/
+              error:function(data){
+                console.log(data);
+              },
+              success:function(data){
+                   layer.msg('提交成功', {icon: 1,time:1000});
+                  console.log(data+"pass");
+                  $('#allbody').html(data);
+                }
+               })
+
+
+        }, function(){
+          layer.msg('请重新选择',{icon: 5,time:1000});
+        });
+       }
+      )
+      $('#fail').on('click',function(){
+
+        layer.confirm('测试结果是否为Fail?', {
+          btn: ['确认','取消'] //按钮
+        }, function(){
+            //上传测试结果(结果为fail) by ajax
+           $.ajax({
+              url:"/index/",
+              type:"POST",
+              dataType:"html",
+              async:true,
+              /*data:{project:$('#project').val(),Phase:$('#Phase').val(),csrfmiddlewaretoken:'{{ csrf_token  }}'},*/
+              data:{Customer:$('#customer').val(),Phase:$('#phase').val(),Units:$('#units').val(),item:$('#item1').val(),Comments:$('#comments').val(),FailButton:"FailButton",Result:"fail",csrfmiddlewaretoken:$("input:first").val(),},
+              /*header:{'X-CSRFtoken':csrftoken},*/
+              error:function(data){
+                console.log(data);
+              },
+              success:function(data){
+                   layer.msg('提交成功', {icon: 1,time:1000});
+                  console.log(data+"fail");
+                  $('#allbody').html(data);
+                }
+               })
+
+
+        }, function(){
+          layer.msg('请重新选择',{icon: 5,time:1000});
+        });
+       }
+      )
+
+    });

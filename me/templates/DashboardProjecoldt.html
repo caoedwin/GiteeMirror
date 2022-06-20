@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}主界面{% endblock %}
+
+{% block content %}
+
+    <div id="content-wrapper">
+
+          <div class="container-fluid">
+
+
+        <!-- Breadcrumbs-->
+           <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item">
+             <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li> -->
+
+
+             <div class="input-group-sm">
+			    <span class="input-group-addon" style="padding-right: 5px;">Project</span><input type="text" class="form-control-sm" >
+			    <span class="input-group-addon" style="padding-left: 25px;padding-right: 5px">Phase</span><select class="form-control-sm">
+    	      		          	<option>B Phase</option>
+    	      		          	<option>C Phase</option>
+    	      		          	<option>INV</option>
+    	      		          	<option>Other</option>
+    	      		          </select>
+    	      		          <button type="button" class="btn btn-success "style="margin-left: 25px;">Search</button>
+
+		     </div>
+
+		   </ol>
+		   <div class="breadcrumb">
+		   	<table id="resourceTable" style="min-width:1500px;" class="table bordered">
+		   		<thread>
+		   			<th>Data</th>
+		   			<th>04/18</th>
+		   			<th>04/18</th>
+		   			<th>04/18</th>
+		   			<th>04/18</th>
+		   			<th>04/18</th>
+		   			<th>04/18</th>
+
+
+
+		   		</thread>
+		   	</table>
+		   </div>
+		</div>
+	</div>
+{% endblock %}
