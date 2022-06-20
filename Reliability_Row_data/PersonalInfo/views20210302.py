@@ -5367,6 +5367,7 @@ def Summary3(request):
         #             {"Regions": "陝西", "A31": "20", "A32": "22", "C38": "23", "regionsSummary": "65"},
         #             {"Regions": "甘肅", "A31": "5", "A32": "2", "C38": "8", "regionsSummary": "15"}
     ]
+    # print(1,request.POST)
     if request.method == "POST":
         if request.POST.get("isGetData") == "first":
             YearSearch = request.POST.get("Year")  # 为空
@@ -6869,6 +6870,7 @@ def Summary3(request):
             regionsTable = sorted(regionsTable, key=lambda x: x.__getitem__("regionsSummary"), reverse=True)
 
         if request.POST.get("isGetData") == "SEARCH2":
+            # print(1)
             startYear = request.POST.get("startYear")
             endYear = request.POST.get("endYear")
             YearSearch = request.POST.get("Year")
@@ -6877,10 +6879,12 @@ def Summary3(request):
                 startYear = YearNow
             if not endYear:
                 endYear = YearNow
+            print(startYear,endYear)
             if endYear >= startYear:
                 DateNow_begin = startYear + "-1-1"
                 DateNow_end = endYear + "-12-31"
                 Test_Endperiod = [DateNow_begin, DateNow_end]
+                print(Test_Endperiod)
                 # 職稱
                 if not YearSearch or YearSearch == YearNow:
                     selectItemzhicheng = []
