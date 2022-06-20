@@ -1,0 +1,156 @@
+[2022-01-17 10:09:43,761] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4417, in M_edit
+    DevCtgry = responseData['DevCtgry']
+KeyError: 'DevCtgry'
+[2022-01-17 10:09:43,765] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 10:09:43,766] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 94651
+[2022-01-17 11:13:22,754] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4287, in M_edit
+    DevCtgry = responseData['DevCtgry']
+KeyError: 'DevCtgry'
+[2022-01-17 11:13:22,757] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 11:13:22,757] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 97421
+[2022-01-17 11:18:33,649] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4350, in M_edit
+    selectUnifiedNumber.append({"value": i["NID"]})
+TypeError: 'ComputerLNV' object is not subscriptable
+[2022-01-17 11:18:33,652] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 11:18:33,653] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 96241
+[2022-01-17 14:47:03,287] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:47:03,290] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:47:03,290] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112813
+[2022-01-17 14:49:27,506] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:49:27,507] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:49:27,508] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112834
+[2022-01-17 14:49:57,499] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:49:57,500] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:49:57,500] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112834
+[2022-01-17 14:51:29,758] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:51:29,759] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:51:29,759] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112846
+[2022-01-17 14:52:01,483] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:52:01,484] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:52:01,485] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112846
+[2022-01-17 14:54:49,707] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:55:48,276] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:56:04,810] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4333, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:56:04,812] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:56:04,812] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112839
+[2022-01-17 14:56:36,688] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:58:19,480] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:58:38,409] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:59:00,973] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 4334, in M_edit
+    0]) / 365,
+ValueError: could not convert string to float: '0:00:00'
+[2022-01-17 14:59:00,977] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-17 14:59:00,977] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/M_edit/ HTTP/1.1" 500 112873
+[2022-01-18 08:08:20,484] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

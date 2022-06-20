@@ -1,0 +1,533 @@
+[2021-08-19 08:53:48,695] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 962, in R_Borrowed
+    for i in responseData['params']:
+KeyError: 'params'
+[2021-08-19 08:53:48,700] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 08:53:48,701] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 82154
+[2021-08-19 08:56:18,064] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 990, in R_Borrowed
+    for i in mock_datalist:
+UnboundLocalError: local variable 'mock_datalist' referenced before assignment
+[2021-08-19 08:56:18,067] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 08:56:18,068] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 82702
+[2021-08-19 08:57:20,615] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 990, in R_Borrowed
+    for i in mock_datalist:
+UnboundLocalError: local variable 'mock_datalist' referenced before assignment
+[2021-08-19 08:57:20,617] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 08:57:20,618] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 82702
+[2021-08-19 09:06:00,781] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2846, in M_Keep
+    for i in DeviceLNV.objects.filter(BR_Status='續借確認').values('BR_per', 'BR_per_code').distinct().order_by('BR_per_code'):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 09:06:00,784] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_Keep/ HTTP/1.1" 500 122337
+[2021-08-19 12:03:47,131] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2866, in M_Keep
+    mock_datalist = DeviceLNV.objects.filter(BR_Status='續借確認')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 12:03:47,135] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 12:03:47,135] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 122717
+[2021-08-19 12:04:08,420] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2866, in M_Keep
+    mock_datalist = DeviceLNV.objects.filter(BR_Status='續借確認')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 12:04:08,422] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 12:04:08,423] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 122717
+[2021-08-19 12:06:18,223] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2872, in M_Keep
+    if i.Predict_return and not i.Return_date:
+AttributeError: 'DeviceLNV' object has no attribute 'Predict_return'
+[2021-08-19 12:06:18,226] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 12:06:18,226] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 79626
+[2021-08-19 12:57:59,684] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2965, in M_Keep
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 12:57:59,688] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 12:57:59,688] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 123151
+[2021-08-19 13:00:08,430] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2951, in M_Keep
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 13:00:08,434] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 13:00:08,435] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 123256
+[2021-08-19 13:56:17,899] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2951, in M_Keep
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 13:56:17,901] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 13:56:17,901] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 123256
+[2021-08-19 13:57:14,074] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 3037, in M_Keep
+    if responseData['Usrname']:
+KeyError: 'Usrname'
+[2021-08-19 13:57:14,078] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 13:57:14,078] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 79039
+[2021-08-19 13:57:55,380] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 3037, in M_Keep
+    if responseData['Usrname']:
+KeyError: 'Usrname'
+[2021-08-19 13:57:55,384] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 13:57:55,384] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 79040
+[2021-08-19 13:58:51,548] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 3050, in M_Keep
+    for i in responseData['RenewId']:
+KeyError: 'RenewId'
+[2021-08-19 13:58:51,551] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 13:58:51,551] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Keep/ HTTP/1.1" 500 79511
+[2021-08-19 14:04:06,109] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 14:22:23,776] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2538, in M_Return
+    for i in DeviceLNV.objects.filter(BR_Status='歸還確認').values('BR_per', 'BR_per_code').distinct().order_by('BR_per_code'):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 14:22:23,780] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/M_Return/ HTTP/1.1" 500 122382
+[2021-08-19 14:33:01,160] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2755, in M_Return
+    mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BR_Status' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 14:33:01,165] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 14:33:01,166] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Return/ HTTP/1.1" 500 123330
+[2021-08-19 15:34:55,883] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1131, in R_Return
+    for j in DeviceLNV.objects.filter(Customer=i["Customer"]).values("Changjia").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 15:34:55,886] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/R_Return/ HTTP/1.1" 500 122493
+[2021-08-19 15:37:01,877] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1469, in R_Keep
+    for j in DeviceLNV.objects.filter(Customer=i["Customer"]).values("Changjia").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 15:37:01,880] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/R_Keep/ HTTP/1.1" 500 122449
+[2021-08-19 15:37:08,355] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1131, in R_Return
+    for j in DeviceLNV.objects.filter(Customer=i["Customer"]).values("Changjia").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 15:37:08,356] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/R_Return/ HTTP/1.1" 500 122493
+[2021-08-19 15:55:19,356] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1131, in R_Return
+    for j in DeviceLNV.objects.filter(Customer=i["Customer"]).values("Changjia").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 15:55:19,359] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/R_Return/ HTTP/1.1" 500 122491
+[2021-08-19 16:25:08,847] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Return/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1373, in R_Return
+    Changjiasearch = responseData['Changjia']
+KeyError: 'Changjia'
+[2021-08-19 16:25:08,850] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-19 16:25:08,850] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Return/ HTTP/1.1" 500 81061
+[2021-08-19 16:28:57,351] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Keep/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 1573, in R_Keep
+    for j in DeviceLNV.objects.filter(Customer=i["Customer"]).values("Changjia").distinct().order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Changjia' into field. Choices are: ApplicationNo, AssetNum, BR_per_code, BrwStatus, Btime, Comment, Customer, Declaration, DeclarationNo, DevCtgry, DevDescription, DevID, DevModel, DevName, DevPrice, DevStatus, DevVendor, Devproperties, Devsize, FWVer, HWVer, IntfCtgry, LSTA, Last_BR_per, Last_BR_per_code, Last_Borrow_date, Last_Phase, Last_Predict_return, Last_ProjectCode, Last_Return_date, NID, PN, Pchsdate, PckgIncludes, Phase, Photo, Plandate, Plant, ProjectCode, Rtime, Source, UsrTimes, Usrname, addnewdate, addnewname, expirdate, id, uscyc, useday
+[2021-08-19 16:28:57,355] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/R_Keep/ HTTP/1.1" 500 122447
+[2021-08-20 08:07:20,872] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

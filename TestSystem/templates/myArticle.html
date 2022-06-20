@@ -1,0 +1,63 @@
+{% extends 'base.html' %} <!--从基本模板扩展-->
+{% block title %}我的文章{% endblock %} <!--首页标题-->
+{% block content %} <!--重写内容块-->
+    {% for article in articles %} <!--从分页的对象列表中遍历文章-->
+        <div class="panel panel-default"> <!--显示文章的面板-->
+            <div class="panel-heading"> <!--面板的头部-->
+                <h3 class="panel-title"> <!--放置内容标题-->
+                    <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+                </h3>
+            </div>
+            <div class="panel-body"> <!--面板的主体-->
+                <p>作者：{{ article.author.nickname }} &nbsp;日期：{{ article.pub_time }}
+                </p>
+                <p>{{ article.content|truncatechars:200|striptags }}</p> <!--过滤器用于仅显示200字符和去除HTML标签-->
+                <a class="btn" href="{% url 'detail' article.id %}">进入阅读 »</a>
+                {% if article.status.id != 3 %}
+                <a class="btn" href="{% url 'updateArticle' article.id %}">编辑</a>
+                {% endif %}
+                {% if request.session.canEdit == 0%}
+                    <a class="btn" href="{% url 'delete' article.id %}" onclick="return confirm('确认要删除？')">删除</a>
+                {% endif %}
+                {% if article.status.id == 3 %}
+                    <small class="col align-self-end" style="color: black;font-size: 13px;">
+                          浏览量: {{ article.total_views }}
+                    </small>
+                {% elif  article.status.id == 1%}
+                    <small class="col align-self-end" style="color: green;font-size: 13px;">
+                          {{ article.status.name }}
+                    </small>
+                    &nbsp;
+                    <small class="col align-self-end" style="color: red;font-size: 13px;">
+                          原因：{{ article.reason }}
+                    </small>
+                {% else %}
+                    <small class="col align-self-end" style="color: green;font-size: 13px;">
+                          {{ article.status.name }}
+                    </small>
+                {% endif %}
+            </div>
+        </div>
+<script>
+    // 删除文章的函数
+   function confirm_delete() {
+        // 调用layer弹窗组件
+        layer.open({
+            // 弹窗标题
+            title: "确认删除",
+            // 正文
+            content: "确认删除这篇文章吗？",
+            // 点击确定按钮后调用的回调函数
+            yes: function(index, layero) {
+                // 指定应当前往的 url
+                location.href='{% url "delete" article.id %}'
+            },
+        })
+    }
+</script>
+
+    {% endfor %}
+    {% if articles %}
+    {% include 'paginator.html' %}
+    {% endif %}
+{% endblock %}

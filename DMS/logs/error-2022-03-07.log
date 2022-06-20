@@ -1,0 +1,365 @@
+[2022-03-07 10:23:26,934] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 10:30:58,859] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 252, in BorrowedChairCabinet
+    if Category:
+UnboundLocalError: local variable 'Category' referenced before assignment
+[2022-03-07 10:30:58,861] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 10:30:58,862] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 89175
+[2022-03-07 11:30:00,175] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:30:44,017] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:30:51,100] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:31:06,879] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:31:08,544] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:43:34,450] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:43:35,752] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:46:58,730] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:47:49,202] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:47:50,160] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:54:47,583] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:57:56,888] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 11:59:00,969] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:00:15,336] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:00:55,830] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:01:52,480] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:02:02,029] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:02:13,710] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:02:18,091] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:09:50,365] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 226, in BorrowedChairCabinet
+    for i in BorrowedID.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2022-03-07 12:09:50,367] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 12:09:50,367] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 89008
+[2022-03-07 13:31:17,035] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Destine/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1078, in R_Destine
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-07 13:31:17,037] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 13:31:17,037] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/R_Destine/ HTTP/1.1" 500 81146
+[2022-03-07 13:38:07,477] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Destine/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1113, in R_Destine
+    for i in responseData['Apply']:
+KeyError: 'Apply'
+[2022-03-07 13:38:07,479] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 13:38:07,480] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/R_Destine/ HTTP/1.1" 500 79473
+[2022-03-07 13:41:14,333] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 399, in R_Borrowed
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-07 13:41:14,336] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 13:41:14,336] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 500 81990
+[2022-03-07 14:53:53,713] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /signin/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 120, in signin
+    UserInfo.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'password' cannot be null")
+[2022-03-07 14:53:53,730] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 14:53:53,730] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /signin/ HTTP/1.1" 500 234340
+[2022-03-07 14:54:43,331] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /signin/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 120, in signin
+    UserInfo.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'password' cannot be null")
+[2022-03-07 14:54:43,337] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 14:54:43,338] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /signin/ HTTP/1.1" 500 234358
+[2022-03-07 14:54:55,987] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /signin/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 120, in signin
+    UserInfo.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'password' cannot be null")
+[2022-03-07 14:54:55,993] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-07 14:54:55,994] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /signin/ HTTP/1.1" 500 234340
+[2022-03-07 14:55:32,759] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-08 08:03:02,561] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-09 08:39:49,167] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-09 11:57:29,107] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-09 11:57:35,071] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-09 11:57:40,306] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

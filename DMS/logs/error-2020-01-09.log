@@ -1,0 +1,108 @@
+[2020-01-09 08:18:31,251] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 679, in TestPlanSW_Edit
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-01-09 08:18:31,256] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-edit/?action=search&customer=C38(NB)&project=EL432&phase=0 HTTP/1.1" 500 27
+[2020-01-09 08:20:02,951] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 680, in TestPlanSW_Edit
+    for i in Projectinfos.Owner.all():
+AttributeError: 'NoneType' object has no attribute 'Owner'
+[2020-01-09 08:20:02,953] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-edit/?action=search&customer=C38(NB)&project=EL432&phase=0 HTTP/1.1" 500 27
+[2020-01-09 08:20:42,248] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 687, in TestPlanSW_Edit
+    SKUlist=[Projectinfos.SKU1,Projectinfos.SKU2,Projectinfos.SKU3,Projectinfos.SKU4,Projectinfos.SKU5,
+AttributeError: 'NoneType' object has no attribute 'SKU1'
+[2020-01-09 08:20:42,249] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-edit/?action=search&customer=C38(NB)&project=EL432&phase=0 HTTP/1.1" 500 27
+[2020-01-09 08:21:08,493] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 719, in TestPlanSW_Edit
+    m+=1
+TypeError: unsupported operand type(s) for +=: 'dict' and 'int'
+[2020-01-09 08:21:08,495] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-edit/?action=search&customer=C38(NB)&project=EL432&phase=0 HTTP/1.1" 500 27
+[2020-01-09 09:58:05,792] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 872, in TestPlanSW_Edit
+    if responseData['phase'] == 0:
+KeyError: 'phase'
+[2020-01-09 09:58:05,811] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 27
+[2020-01-09 12:04:06,483] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 885, in TestPlanSW_Edit
+    if 'Test_Items' in i.keys():
+AttributeError: 'str' object has no attribute 'keys'
+[2020-01-09 12:04:06,497] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 27
+[2020-01-09 12:13:48,751] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 886, in TestPlanSW_Edit
+    if 'Test_Items' in i.keys():
+AttributeError: 'str' object has no attribute 'keys'
+[2020-01-09 12:13:48,753] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 27
+[2020-01-09 12:16:51,446] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 886, in TestPlanSW_Edit
+    if 'Test_Items' in i.keys():
+AttributeError: 'str' object has no attribute 'keys'
+[2020-01-09 12:16:51,449] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 27
+[2020-01-09 12:41:23,940] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 901, in TestPlanSW_Edit
+    if i['Item No.'] in itemindata:
+TypeError: string indices must be integers
+[2020-01-09 12:41:23,942] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 27

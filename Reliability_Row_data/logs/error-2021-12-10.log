@@ -1,0 +1,16 @@
+[2021-12-10 14:28:27,135] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoItem_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 175, in AutoItem_edit
+    AutoItems.objects.filter(id=request.POST.get('id')).first().update(**add_dic)
+AttributeError: 'NoneType' object has no attribute 'update'
+[2021-12-10 14:28:27,137] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-10 14:28:27,138] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoItem_edit/ HTTP/1.1" 500 84123
+[2021-12-13 08:43:25,370] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

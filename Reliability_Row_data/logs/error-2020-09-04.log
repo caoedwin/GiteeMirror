@@ -1,0 +1,22 @@
+[2020-09-04 16:32:45,563] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 71, in INVGantt_upload
+    INVGantt.objects.create(**Create_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'editor' is an invalid keyword argument for this function
+[2020-09-04 16:32:45,568] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-upload/ HTTP/1.1" 500 99959
+[2020-09-04 16:33:32,727] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 500 59
+[2020-09-04 16:46:14,857] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 500 59

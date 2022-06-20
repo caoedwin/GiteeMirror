@@ -1,0 +1,176 @@
+[2021-03-16 16:28:40,910] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 232, in BorrowedAdapter
+    if i.Predict_return:
+AttributeError: 'dict' object has no attribute 'Predict_return'
+[2021-03-16 16:28:40,919] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 82764
+[2021-03-16 16:29:09,568] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 233, in BorrowedAdapter
+    if datetime.datetime.now().date() > i.Predict_return:
+AttributeError: 'dict' object has no attribute 'Predict_return'
+[2021-03-16 16:29:09,574] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 82829
+[2021-03-16 16:32:08,672] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 262, in BorrowedAdapter
+    for key, value in BR_perinfo:
+ValueError: too many values to unpack (expected 2)
+[2021-03-16 16:32:08,677] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 85820
+[2021-03-16 16:32:48,250] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 290, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"],sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:32:48,254] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89708
+[2021-03-16 16:34:33,286] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 290, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"], sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:34:33,289] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89710
+[2021-03-16 16:34:54,149] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 291, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"], sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:34:54,153] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89712
+[2021-03-16 16:35:40,631] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 291, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"], sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:35:40,634] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89712
+[2021-03-16 16:37:21,270] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 291, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"], sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:37:21,273] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89712
+[2021-03-16 16:39:37,477] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 289, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_item_PN=j["MaterialPN"], sub_item_Exceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:39:37,480] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89638
+[2021-03-16 16:41:24,316] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 289, in BorrowedAdapter
+    sub_td += sub_td_items.format(sub_itemPN=j["MaterialPN"], sub_itemExceedday=j["Exceed_days"])
+KeyError: 'sub_item'
+[2021-03-16 16:41:24,319] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 89630
+[2021-03-16 16:42:09,111] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 289, in BorrowedAdapter
+    message = messagecontend.format(sub_menu=sub_td)
+KeyError: 'sub_td'
+[2021-03-16 16:42:09,115] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 90061
+[2021-03-16 16:42:54,821] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 302, in BorrowedAdapter
+    msg.send()
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\message.py", line 291, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 110, in send_messages
+    sent = self._send(message)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 126, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "C:\Python372\lib\smtplib.py", line 881, in sendmail
+    raise SMTPRecipientsRefused(senderrs)
+smtplib.SMTPRecipientsRefused: {'=?utf-8?q?c1010S3?=': (501, b'Bad address syntax. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000730')}
+[2021-03-16 16:42:54,826] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 113528

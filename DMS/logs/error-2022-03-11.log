@@ -1,0 +1,272 @@
+[2022-03-11 10:56:39,572] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/M_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1334, in M_Borrow
+    "select": selectItem,
+NameError: name 'selectItem' is not defined
+[2022-03-11 10:56:39,574] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:56:39,575] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/M_Borrow/ HTTP/1.1" 500 82953
+[2022-03-11 10:58:34,837] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:58:45,170] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:59:00,967] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:59:11,516] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:59:18,303] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 10:59:25,055] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:03:16,867] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BG_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1301, in BG_Borrow
+    return render(request, 'ChairCabinetMS/M_Return.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChairCabinetMS/M_Return.html
+[2022-03-11 11:03:16,869] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ChairCabinetMS/BG_Borrow/ HTTP/1.1" 500 94598
+[2022-03-11 11:03:31,539] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BG_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1301, in BG_Borrow
+    return render(request, 'ChairCabinetMS/M_Return.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChairCabinetMS/M_Return.html
+[2022-03-11 11:03:31,541] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ChairCabinetMS/BG_Borrow/ HTTP/1.1" 500 94735
+[2022-03-11 11:08:37,680] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BG_Borrow/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1177, in BG_Borrow
+    if responseData['Name']:
+KeyError: 'Name'
+[2022-03-11 11:08:37,682] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:08:37,682] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BG_Borrow/ HTTP/1.1" 500 79160
+[2022-03-11 11:10:10,859] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:10:32,973] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:10:40,961] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:43:55,156] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:44:21,896] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:45:19,313] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:45:50,981] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:55:24,869] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:56:50,300] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1157, in R_Transfer
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-11 11:56:50,302] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 11:56:50,302] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/R_Transfer/ HTTP/1.1" 500 81553
+[2022-03-11 13:15:37,799] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:15:42,759] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:15:50,262] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:20:53,711] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Receive/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'ChairCabinetMS_chaircabinetlnv.linshi_BrwStatus' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1060, in R_Receive
+    for i in mock_datalist:
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'ChairCabinetMS_chaircabinetlnv.linshi_BrwStatus' in 'field list'")
+[2022-03-11 13:20:53,723] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:20:53,724] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/R_Receive/ HTTP/1.1" 500 223037
+[2022-03-11 13:21:39,870] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:21:47,797] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/M_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 1684, in M_Transfer
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-11 13:21:47,799] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 13:21:47,800] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/M_Transfer/ HTTP/1.1" 500 81772
+[2022-03-11 14:31:59,116] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 14:32:58,394] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /admin/ChairCabinetMS/chaircabinetlnvhis/2/change/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaultfilters.py", line 42, in _dec
+    args[0] = str(args[0])
+  File "C:\djangoproject\DMS\ChairCabinetMS\models.py", line 134, in __str__
+    return '{NID}>{Usrname}>{RealUsrname}'.format(NID=self.NID, Usrname=self.Usrname, RealUsrname=self.RealUsrname)
+AttributeError: 'ChairCabinetLNVHis' object has no attribute 'RealUsrname'
+[2022-03-11 14:32:58,409] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/ChairCabinetMS/chaircabinetlnvhis/2/change/ HTTP/1.1" 500 206876
+[2022-03-11 14:35:35,453] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 14:35:40,086] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 15:26:16,743] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 15:52:35,489] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 15:54:39,187] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 15:56:11,884] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 15:57:43,439] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 16:00:55,143] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-11 16:05:02,951] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

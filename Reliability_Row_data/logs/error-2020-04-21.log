@@ -1,0 +1,70 @@
+[2020-04-21 12:19:04,872] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 545, in Lesson_search
+    print(i)
+OSError: [Errno 22] Invalid argument
+[2020-04-21 12:19:05,005] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /Lesson_search/ HTTP/1.1" 500 27
+[2020-04-21 13:15:13,077] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 475, in MQM_search
+    print(request.POST)
+OSError: [Errno 22] Invalid argument
+[2020-04-21 13:15:13,079] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /MQM/MQM_search/ HTTP/1.1" 500 27
+[2020-04-21 13:15:50,255] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 44, in CQM_upload
+    print(request.method)
+OSError: [Errno 22] Invalid argument
+[2020-04-21 13:15:50,276] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQM_upload/ HTTP/1.1" 500 27
+[2020-04-21 13:15:56,257] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 43, in MQM_upload
+    print(request.method)
+OSError: [Errno 22] Invalid argument
+[2020-04-21 13:15:56,258] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /MQM/MQM_upload/ HTTP/1.1" 500 27
+[2020-04-21 14:51:55,040] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 50, in CQM_upload
+    if CQM_upload.is_valid():
+AttributeError: 'function' object has no attribute 'is_valid'
+[2020-04-21 14:51:55,066] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_upload/ HTTP/1.1" 500 27

@@ -1,0 +1,114 @@
+[2022-01-11 11:30:51,471] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 11:42:16,508] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 670, in AutoResult_edit
+    Customer = responseData['Customer']
+KeyError: 'Customer'
+[2022-01-11 11:42:16,510] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 11:42:16,511] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 100350
+[2022-01-11 11:45:57,149] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\options.py", line 564, in get_field
+    return self.fields_map[field_name]
+KeyError: 'Comments'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 767, in AutoResult_edit
+    **Check_dic).update(**i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 689, in update
+    query.add_update_values(kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\options.py", line 566, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: AutoItems has no field named 'Comments'
+[2022-01-11 11:45:57,152] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 11:45:57,152] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 137606
+[2022-01-11 11:48:29,491] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 769, in AutoResult_edit
+    AutoResult.objects.create(**i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 467, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_descriptors.py", line 210, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "''": "AutoResult.AutoItem" must be a "AutoItems" instance.
+[2022-01-11 11:48:29,494] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 11:48:29,494] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 139688
+[2022-01-11 13:06:58,224] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 802, in AutoResult_edit
+    mock_datalist = AutoItems.objects.filter(**ckeck_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Project' into field. Choices are: BaseIncome, CaseID, CaseName, Comment, Customer, FunDescription, Item, Number, Owner, Status, ValueIf, autoresult, id
+[2022-01-11 13:06:58,227] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:06:58,228] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 163953
+[2022-01-11 13:19:14,950] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:19:18,485] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:31:22,495] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:31:25,966] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:33:15,444] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:33:16,587] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:44:43,310] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:44:44,387] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:49:28,869] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:49:31,131] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:59:17,407] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 13:59:18,358] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 14:06:22,021] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-11 14:06:23,131] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-12 08:15:09,351] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-12 08:15:15,226] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

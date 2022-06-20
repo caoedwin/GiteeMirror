@@ -1,0 +1,44 @@
+[2021-12-31 08:05:42,066] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-31 08:07:55,249] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/R_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 2942, in R_Transfer
+    return render(request, 'ChairCabinetMS/R_Transfer.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChairCabinetMS/R_Transfer.html
+[2021-12-31 08:07:55,252] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ChairCabinetMS/R_Transfer/ HTTP/1.1" 500 96112
+[2021-12-31 08:14:26,301] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-31 08:15:12,586] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-31 08:15:38,295] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-31 08:20:29,034] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2967, in R_Transfer
+    return render(request, 'ComputerMS/R_Transfer.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ComputerMS/R_Transfer.html
+[2021-12-31 08:20:29,036] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 500 95963

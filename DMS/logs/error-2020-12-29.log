@@ -1,0 +1,311 @@
+[2020-12-29 11:16:46,958] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSerire/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 2188, in INVGantViewre
+    if requests.GET.get("Project_Name"):
+AttributeError: module 'requests' has no attribute 'GET'
+[2020-12-29 11:16:46,961] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSerire/ HTTP/1.1" 500 80326
+[2020-12-29 11:39:15,457] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 280, in index
+    ProI_data = ProjectinfoinDCT().objects.all().values('Project_Name').distinct().count()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 176, in __get__
+    raise AttributeError("Manager isn't accessible via %s instances" % cls.__name__)
+AttributeError: Manager isn't accessible via ProjectinfoinDCT instances
+[2020-12-29 11:39:15,459] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 87996
+[2020-12-29 11:40:33,911] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Project_Name' into field. Choices are: CPU, ComPrjCode, Customer, DQAPL, LD, ModifiedDate, OSSupport, Platform, PrjEngCode1, PrjEngCode2, ProjectName, SS, Size, VGA, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 280, in index
+    ProI_data = ProjectinfoinDCT.objects.all().values('Project_Name').distinct().count()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Project_Name' into field. Choices are: CPU, ComPrjCode, Customer, DQAPL, LD, ModifiedDate, OSSupport, Platform, PrjEngCode1, PrjEngCode2, ProjectName, SS, Size, VGA, Year, id
+[2020-12-29 11:40:33,916] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 124163
+[2020-12-29 11:46:53,945] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 386, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 202, in ImportProjectinfoFromDCT
+    # print(numpro)
+NameError: name 'numpro' is not defined
+[2020-12-29 11:46:53,946] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 91978
+[2020-12-29 11:55:40,779] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 407, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 87, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).first().save(**localPrjCre)
+TypeError: save() got an unexpected keyword argument 'Customer'
+[2020-12-29 11:55:40,781] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 94007
+[2020-12-29 11:56:53,548] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 408, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 88, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).first().save(**localPrjCre)
+TypeError: save() got an unexpected keyword argument 'Customer'
+[2020-12-29 11:56:53,550] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 93976
+[2020-12-29 11:57:50,732] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 408, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 88, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).first().update(**localPrjCre)
+AttributeError: 'ProjectinfoinDCT' object has no attribute 'update'
+[2020-12-29 11:57:50,735] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 94038
+[2020-12-29 11:58:11,048] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'Size' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 408, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 88, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).update(**localPrjCre)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'Size' cannot be null")
+[2020-12-29 11:58:11,056] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 220815
+[2020-12-29 12:01:25,434] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'PrjEngCode2' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 408, in ProjectInfoSearch
+    importPrjResult = ImportProjectinfoFromDCT()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 88, in ImportProjectinfoFromDCT
+    ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).update(**localPrjCre)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 693, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1383, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'PrjEngCode2' cannot be null")
+[2020-12-29 12:01:25,441] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ProjectInfoSearch/?action=first HTTP/1.1" 500 222572
+[2020-12-29 12:36:17,901] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectInfoSearch/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 454, in ProjectInfoSearch
+    for i in ProjectinfoinDCT.objects.filter(**checkdic_PRODCT):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'ProjectCode' into field. Choices are: CPU, ComPrjCode, Customer, DQAPL, LD, ModifiedDate, OSSupport, Platform, PrjEngCode1, PrjEngCode2, ProjectName, SS, Size, VGA, Year, id
+[2020-12-29 12:36:17,904] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ProjectInfoSearch/ HTTP/1.1" 500 135189

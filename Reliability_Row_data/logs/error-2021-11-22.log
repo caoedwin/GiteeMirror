@@ -1,0 +1,20 @@
+[2021-11-22 12:08:39,282] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /OBIDeviceResult/OBIDeviceResult_options/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\OBIDeviceResult\views.py", line 1243, in OBIDeviceResult_options
+    SeriesInfo.objects.get(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+OBIDeviceResult.models.SeriesInfo.DoesNotExist: SeriesInfo matching query does not exist.
+[2021-11-22 12:08:39,285] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-11-22 12:08:39,286] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /OBIDeviceResult/OBIDeviceResult_options/ HTTP/1.1" 500 90141
+[2021-11-23 09:08:25,602] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

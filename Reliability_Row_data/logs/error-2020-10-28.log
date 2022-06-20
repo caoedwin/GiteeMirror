@@ -1,0 +1,48 @@
+[2020-10-28 08:38:28,394] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3899, in TestPlanSW_Edit
+    updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
+ValueError: could not convert string to float: '1900/1/9'
+[2020-10-28 08:38:28,399] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 98624
+[2020-10-28 11:11:07,260] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3899, in TestPlanSW_Edit
+    updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
+ValueError: could not convert string to float: '1901/4/24'
+[2020-10-28 11:11:07,261] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 98924
+[2020-10-28 11:30:10,275] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3904, in TestPlanSW_Edit
+    updatedic["BaseAotomationTime1SKU"] = float(i['BaseAotomationTime1SKU'])
+ValueError: could not convert string to float: '上午 12:00:00'
+[2020-10-28 11:30:10,276] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 99091
+[2020-10-28 11:36:11,757] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 3904, in TestPlanSW_Edit
+    updatedic["BaseAotomationTime1SKU"] = float(i['BaseAotomationTime1SKU'])
+ValueError: could not convert string to float: '上午 12:00:00'
+[2020-10-28 11:36:11,757] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 500 99012

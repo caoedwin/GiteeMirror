@@ -1,0 +1,85 @@
+[2021-01-04 10:48:25,430] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 82, in Infos_upload
+    modeldata[headermodel_Departments[key]] = value
+KeyError: '部門代號'
+[2021-01-04 10:48:25,434] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19977
+[2021-01-04 10:49:40,397] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 140, in Infos_upload
+    modeldata[headermodel_Positions[key]] = value
+KeyError: '公司別'
+[2021-01-04 10:49:40,397] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19764
+[2021-01-04 10:55:14,476] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 231, in Infos_upload
+    modeldata[headermodel_MajorIfo[key]] = value
+KeyError: '公司別'
+[2021-01-04 10:55:14,477] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19763
+[2021-01-04 10:55:55,922] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 321, in Infos_upload
+    modeldata[headermodel_WorkOvertime[key]] = value
+KeyError: '公司別'
+[2021-01-04 10:55:55,923] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19767
+[2021-01-04 10:56:06,831] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 321, in Infos_upload
+    modeldata[headermodel_WorkOvertime[key]] = value
+KeyError: '公司別'
+[2021-01-04 10:56:06,832] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19767
+[2021-01-04 10:56:30,653] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 392, in Infos_upload
+    modeldata[headermodel_LeaveInfo[key]] = value
+KeyError: '計薪區間'
+[2021-01-04 10:56:30,653] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 20986
+[2021-01-04 15:28:17,698] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 500 59

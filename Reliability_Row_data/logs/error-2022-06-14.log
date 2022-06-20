@@ -1,0 +1,316 @@
+[2022-06-14 08:11:48,147] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 08:56:24,313] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/api-auth/login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 75, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'rest_framework'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 86, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'rest_framework' is not a registered namespace
+[2022-06-14 08:56:24,317] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/api-auth/login/ HTTP/1.1" 500 205249
+[2022-06-14 08:58:03,384] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/api-auth/login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 75, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'rest_framework'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 86, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'rest_framework' is not a registered namespace
+[2022-06-14 08:58:03,387] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/api-auth/login/ HTTP/1.1" 500 205380
+[2022-06-14 08:58:05,111] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/api-auth/login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 75, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'rest_framework'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 86, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'rest_framework' is not a registered namespace
+[2022-06-14 08:58:05,113] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/api-auth/login/ HTTP/1.1" 500 205380
+[2022-06-14 09:03:19,451] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:03:40,006] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:03:44,720] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:06:48,090] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:13:16,903] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:13:23,302] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:14:20,569] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:14:25,408] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_simplejwt\views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 234, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 436, in run_validation
+    value = self.validate(value)
+  File "C:\djangoproject\Reliability_Row_data\CQM\serializers.py", line 8, in validate
+    data = super().validate(attrs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_simplejwt\serializers.py", line 68, in validate
+    data = super().validate(attrs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_simplejwt\serializers.py", line 51, in validate
+    if not api_settings.USER_AUTHENTICATION_RULE(self.user):
+  File "C:\djangoproject\Reliability_Row_data\CQM\authentication.py", line 62, in custom_jwt_token_authentication_rule
+    return user is not None and user.active
+AttributeError: 'User' object has no attribute 'active'
+[2022-06-14 09:14:25,414] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:14:25,416] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /api/token/ HTTP/1.1" 500 129114
+[2022-06-14 09:15:26,860] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:23:19,935] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:25:05,141] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:25:48,859] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:26:11,114] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:43:22,335] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:43:34,528] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:44:19,890] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:44:27,225] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:46:51,813] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:48:15,391] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:55:36,603] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:55:54,320] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:55:58,360] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 09:56:30,719] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:12:04,598] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:12:08,678] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:16:18,321] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:16:32,009] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:16:47,217] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:21:38,708] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:26:15,094] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:26:29,686] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:27:24,595] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:27:26,397] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:27:30,405] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:27:53,594] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:28:05,417] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:37:54,298] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 10:40:12,145] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:21:02,232] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:21:07,103] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:21:14,324] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:21:18,586] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:22:47,794] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:24:11,885] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:25:31,138] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:25:53,512] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:26:24,658] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 16:35:24,671] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/api/api-auth/login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 75, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'rest_framework'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python372\mecheck\lib\site-packages\django\urls\base.py", line 86, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'rest_framework' is not a registered namespace
+[2022-06-14 16:35:24,678] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/api/api-auth/login/ HTTP/1.1" 500 204648
+[2022-06-14 17:12:50,985] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 17:18:25,496] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 17:18:31,875] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-14 17:18:37,969] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

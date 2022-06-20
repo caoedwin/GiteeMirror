@@ -1,0 +1,1234 @@
+{#{% load custom_tag %}#}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Data{% endblock %}</title>
+        {{ lesson_form.media }}
+        {% comment %}{{ form.media }}{% endcomment %}
+        <!-- ================= Favicon ================== -->
+        <!-- Standard -->
+        {% comment %}<link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+        <!-- Retina iPad Touch Icon-->
+        <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+        <!-- Retina iPhone Touch Icon-->
+        <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+        <!-- Standard iPad Touch Icon-->
+        <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+        <!-- Standard iPhone Touch Icon-->
+        <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">{% endcomment %}
+        <!-- Styles -->
+        <link href="/static/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+        <link href="/static/css/lib/chartist/chartist.min.css" rel="stylesheet">
+        <link href="/static/css/lib/font-awesome.min.css" rel="stylesheet">
+        <link href="/static/css/lib/themify-icons.css" rel="stylesheet">
+        <link href="/static/css/lib/owl.carousel.min.css" rel="stylesheet" />
+        <link href="/static/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+        <link href="/static/css/lib/weather-icons.css" rel="stylesheet" />
+        <link href="/static/css/lib/menubar/sidebar.css" rel="stylesheet">
+{#        <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">#}
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/lib/helper.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+        <link href="/static/css/uploadbutton.css" rel="stylesheet">
+        <style>
+            {% rbac_css %}
+        </style>
+        {% block css %}{% endblock %}
+
+    </head>
+    {% block style %}{% endblock %}
+    <style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    background-image: url({% block img %}{{ Skin }}{% endblock %}); background-size:cover;background-repeat: no-repeat;
+    }
+    </style>
+    <body>
+
+        <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+            <div class="nano">
+                <div class="nano-content">
+                    <ul>
+                        <div class="logo"><a href="/index/"><!-- <img src="../static/images/logo.png" alt="" /> --><span style="font-weight:900;color: #FFF;font-size: large">DDIS</span><span style="color: #FFF;font-size: small">(DQA Data Integration System)</span></a></div>
+                        <li class="label" style="color: #FFF;font-weight:800">Main</li>
+                            <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Home <span class="badge badge-primary"></span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+                                    <li><a href="/index/">Calendar</a></li>
+                                </ul>
+                            </li>
+
+{#                        {% comment %}<li class="label">Apps</li>#}
+{#                        <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Charts  <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                            <ul>#}
+{#                                <li><a href="chart-flot.html">Flot</a></li>#}
+{#                                <li><a href="chart-morris.html">Morris</a></li>#}
+{#                                <li><a href="chartjs.html">Chartjs</a></li>#}
+{#                                <li><a href="chartist.html">Chartist</a></li>#}
+{#                                <li><a href="chart-peity.html">Peity</a></li>#}
+{#                                <li><a href="chart-sparkline.html">Sparkle</a></li>#}
+{#                                <li><a href="chart-knob.html">Knob</a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{#                        <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>#}
+{#                        <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>#}
+{#                        <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>#}
+{#                        <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>{% endcomment %}#}
+                        <li class="label" style="color: #FFF;font-weight:800">Features</li>
+                            <li><a class="sidebar-sub-toggle">{% comment %}<i class="ti-files"></i>{% endcomment %}<i class="ti-file"></i> Lesson Learn <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+{#                                    <li><a href="/Lesson_search/">Reliability</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Reliability<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Lesson_search/">Search</a></li>
+                                            <li><a href="/Lesson_upload/">Add</a></li>
+                                            <li><a href="/Lesson_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="#">Compatibility</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Compatibility<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Compatibility_search/">Search</a></li>
+                                            <li><a href="/Compatibility_upload/">Add</a></li>
+                                            <li><a href="/Compatibility_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="#">QIL</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>QIL<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/QIL_search/">Search</a></li>
+                                            <li><a href="/QIL_upload/">Add</a></li>
+                                            <li><a href="/QIL_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Reliability Test Data <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+{#                                    <li><a href="#">Package G-value</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Package G-value<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Package_search/">Search</a></li>
+                                            <li><a href="/Package_upload/">Add</a></li>
+                                            <li><a href="/Package_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="#">Bouncing</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Bouncing<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Bouncing_search/">Search</a></li>
+                                            <li><a href="/Bouncing_upload/">Add</a></li>
+                                            <li><a href="/Bouncing_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="{% url "CDM:CDM_search"%}">CDM</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>CDM<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="{% url "CDM:CDM_search"%}">Search</a></li>
+                                            <li><a href="{% url "CDM:CDM_upload"%}">Add</a></li>
+                                            <li><a href="{% url "CDM:CDM_edit"%}">Edit</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="sidebar-sub-toggle"><i class="ti-files"></i> XQM <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+{#                                    <li><a href="#">CQM</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>CQM<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/CQM_search/">Search</a></li>
+                                            <li><a href="/CQM_upload/">Add</a></li>
+                                            <li><a href="/CQM_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="#">MQM</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>MQM<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/MQM_search/">Search</a></li>
+                                            <li><a href="/MQM_upload/">Add</a></li>
+                                            <li><a href="/MQM_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li><a href="#">Driver/Tool List</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Driver/Tool List<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Driver_search/">Search</a></li>
+                                            <li><a href="/Driver_upload/">Add</a></li>
+                                            <li><a href="/Driver_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> Others <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+{#                                    <li><a href="#">Know issue list</a></li>#}
+                                    <li><a class="sidebar-sub-toggle" style="color: #FFF"> <i class="ti-flag"></i>Know issue list<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                        <ul>
+                                            <li><a href="/Know_search/">Search</a></li>
+                                            <li><a href="/Know_upload/">Add</a></li>
+                                            <li><a href="/Know_edit/">Edit</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+{#                        <li class="label" style="color: #FFF;font-weight:800">Reliability Test Data</li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Package G-value <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="/Change_Password/">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Bouncing <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="/Change_Password/">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> CDM <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="{% url "CDM:CDM_upload"%}">Add</a></li>#}
+{#                                    <li><a href="{% url "CDM:CDM_edit"%}">Edit</a></li>#}
+{#                                    <li><a href="{% url "CDM:CDM_search"%}">Search</a></li>#}
+{#                                    {% comment %}<li><a href="font-themify.html">Themify</a></li>{% endcomment %}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        <li class="label" style="color: #FFF;font-weight:800">XQM</li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> CQM <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                    {% comment %}<li><a href="gmaps.html">Basic</a></li>#}
+{#                                    <li><a href="vector-map.html">Vector Map</a></li>{% endcomment %}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> MQM <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                    {% comment %}<li><a href="gmaps.html">Basic</a></li>#}
+{#                                    <li><a href="vector-map.html">Vector Map</a></li>{% endcomment %}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> Driver/Tool List <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                    {% comment %}<li><a href="gmaps.html">Basic</a></li>#}
+{#                                    <li><a href="vector-map.html">Vector Map</a></li>{% endcomment %}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        <li class="label" style="color: #FFF;font-weight:800">Others</li>#}
+{#                            <li><a class="sidebar-sub-toggle"><i class="ti-files"></i> Know issue list <span class="sidebar-collapse-icon ti-angle-down"></span></a>#}
+{#                                <ul>#}
+{#                                    <li><a href="ui-typography.html">Add</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Edit</a></li>#}
+{#                                    <li><a href="ui-alerts.html">Search</a></li>#}
+{#                                    {% comment %}<li><a href="gmaps.html">Basic</a></li>#}
+{#                                    <li><a href="vector-map.html">Vector Map</a></li>{% endcomment %}#}
+{#                                </ul>#}
+{#                            </li>#}
+                        <li class="label" style="color: #FFF;font-weight:800">Administrator</li>
+                            <li><a class="sidebar-sub-toggle"><i class="ti-settings"></i>Management<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+                                    <li><a href="/admin/">admin</a></li>
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /# sidebar -->
+            {% comment %}<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >自助建站</a></div>{% endcomment %}
+
+        <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-left">
+                        <li class="nav-item" style="padding-top: 12px;color: #0c0c0c"><div ><span id="time"></span></div></li>
+                    </div>
+                    <div class="float-right">
+                        {% comment %}<div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-bell"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Recent Notifications</span>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">5 members joined today </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mariam</div>
+                                                        <div class="notification-text">likes a photo of you</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Tasnim</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-email"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">2 New Messages</span>
+                                        <a href="email.html">
+                                            <i class="ti-pencil-alt pull-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../static/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>{% endcomment %}
+                        {% comment %}<div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar">Online：{{ request.session.user_name }}
+                                    <i class="ti-angle-down f-s-10"></i>
+                                </span>
+                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Upgrade Now</span>
+                                        <p class="trial-day">30 Days Trail</p>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-user"></i>
+                                                    <span>Profile</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-email"></i>
+                                                    <span>Inbox</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/Change_Skin/">
+                                                    <i class="ti-settings"></i>
+                                                    <span>Setting</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-lock"></i>
+                                                    <span>Lock Screen</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/Change_Password/">
+                                                    <i class="ti-user"></i>
+                                                    <span>Change_Password</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/logout/">
+                                                    <i class="ti-power-off"></i>
+                                                    <span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>{% endcomment %}
+                         <ul class="navbar-nav carousel" style="margin-bottom: 0px;position: relative;">
+
+                          <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-header" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#0c0c0c">
+                                  <i class="ti-user"></i>
+                                  Online：{{ request.session.user_name }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="userDropdown">
+                                  <a class="dropdown-item" href="/Change_Password/">Change Password</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">logout</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/Change_Skin/">Change Skin</a>
+                                </div>
+                          </li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- logout -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="/logout/">logout</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="content-wrap">
+            <div class="main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 p-r-0 title-margin-right">
+                            <div class="page-header">
+                                <div class="page-title">
+                                    <h1 style="color: #FFF">Hello {{ request.session.user_name }}, <span style="color: #FFF">Welcome Here</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# column -->
+                        <div class="col-lg-5 p-l-0 title-margin-left">
+                            <div class="page-header">
+                                <div class="page-title">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a style="color: #FFF" href="#">DDIS/{{ weizhi }}</a></li>
+                                        {% comment %}<li class="breadcrumb-item active" style="color: #FFF"></li>{% endcomment %}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- 生成菜单 -->
+                    <!-- /# row -->
+                   {% comment %} <section id="main-content">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-money color-success border-success"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">Total Profit</div>
+                                            <div class="stat-digit">1,012</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">New Customer</div>
+                                            <div class="stat-digit">961</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">Active Projects</div>
+                                            <div class="stat-digit">770</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">Referral</div>
+                                            <div class="stat-digit">2,781</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h4>Fee Collections and Expenses</h4>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ct-bar-chart m-t-30"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card">
+
+                                    <div class="card-body">
+                                        <div class="ct-pie-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card bg-primary">
+                                            <div class="weather-widget">
+                                                <div id="weather-one" class="weather-one p-22"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="testimonial-widget-one p-17">
+                                                <div class="testimonial-widget-one owl-carousel owl-theme">
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="testimonial-content">
+                                                            <div class="testimonial-text">
+                                                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                            </div>
+                                                            <img class="testimonial-author-img" src="../static/images/avatar/1.jpg" alt="" />
+                                                            <div class="testimonial-author">TYRION LANNISTER</div>
+                                                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# column -->
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-title pr">
+                                        <h4>All Exam Result</h4>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table student-data-table m-t-20">
+                                                <thead>
+                                                    <tr>
+                                                        <th><label><input type="checkbox" value=""></label>Exam Name</th>
+                                                        <th>Subject</th>
+                                                        <th>Grade Point</th>
+                                                        <th>Percent Form</th>
+                                                        <th>Percent Upto</th>
+                                                        <th>Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>Mathmatics</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>Mathmatics</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>English</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>Bangla</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>Mathmatics</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>English</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class Test</td>
+                                                        <td>Mathmatics</td>
+                                                        <td>
+                                                            4.00
+                                                        </td>
+                                                        <td>
+                                                            95.00
+                                                        </td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td>20/04/2017</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# column -->
+                        </div>
+                        <!-- /# row -->
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card p-0">
+                                    <div class="stat-widget-three home-widget-three">
+                                        <div class="stat-icon bg-facebook">
+                                            <i class="ti-facebook"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-digit">8,268</div>
+                                            <div class="stat-text">Likes</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card p-0">
+                                    <div class="stat-widget-three home-widget-three">
+                                        <div class="stat-icon bg-youtube">
+                                            <i class="ti-youtube"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-digit">12,545</div>
+                                            <div class="stat-text">Subscribes</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card p-0">
+                                    <div class="stat-widget-three home-widget-three">
+                                        <div class="stat-icon bg-twitter">
+                                            <i class="ti-twitter"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-digit">7,982</div>
+                                            <div class="stat-text">Tweets</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card p-0">
+                                    <div class="stat-widget-three home-widget-three">
+                                        <div class="stat-icon bg-danger">
+                                            <i class="ti-linkedin"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-digit">9,658</div>
+                                            <div class="stat-text">Followers</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="year-calendar"></div>
+                                    </div>
+                                </div>
+                                <!-- /# card -->
+                            </div>
+                            <!-- /# column -->
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h4>Notice Board </h4>
+
+                                    </div>
+                                    <div class="recent-comment m-t-15">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/1.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-primary">john doe</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <p class="comment-date">10 min ago</p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/2.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-success">Mr. John</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <p class="comment-date">1 hour ago</p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/3.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-danger">Mr. John</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <div class="comment-date">Yesterday</div>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/1.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-primary">john doe</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <p class="comment-date">10 min ago</p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/2.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-success">Mr. John</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <p class="comment-date">1 hour ago</p>
+                                            </div>
+                                        </div>
+                                        <div class="media no-border">
+                                            <div class="media-left">
+                                                <a href="#"><img class="media-object" src="../static/images/avatar/3.jpg" alt="..."></a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading color-info">Mr. John</h4>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                                <div class="comment-date">Yesterday</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /# card -->
+                            </div>
+                            <!-- /# column -->
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h4>Timeline</h4>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="timeline">
+                                            <li>
+                                                <div class="timeline-badge primary"><i class="fa fa-smile-o"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">School promote video sharing</h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>10 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">Ready our school website and online service</h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>20 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">Routine pubish our website form 10/03/2017 </h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>30 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-badge success"><i class="fa fa-check-circle-o"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">Principle quotation publish our website</h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>15 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">Class schedule publish our website</h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>20 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /# card -->
+                            </div>
+                        </div>
+                        <!-- /# row -->
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h4>Task</h4>
+
+                                    </div>
+                                    <div class="todo-list">
+                                        <div class="tdl-holder">
+                                            <div class="tdl-content">
+                                                <ul>
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox"><i></i><span>22,Dec Publish The Final Exam Result</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox" checked><i></i><span>First Jan Start Our School</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox"><i></i><span>Recently Our Maganement Programme Start</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox" checked><i></i><span>Check out some Popular courses</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox" checked><i></i><span>First Jan Start Our School</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+                                                    <li>
+                                                        <label>
+                                                        <input type="checkbox" checked><i></i><span>Connect with one new person</span>
+                                                        <a href='#' class="ti-close"></a>
+                                                    </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-title pr">
+                                        <h4>All Expense</h4>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table student-data-table m-t-20">
+                                                <thead>
+                                                    <tr>
+                                                        <th><label><input type="checkbox" value=""></label>ID</th>
+                                                        <th>Expense Type</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                        <th>Email</th>
+                                                        <th>Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                        <td>
+                                                            Salary
+                                                        </td>
+                                                        <td>
+                                                            $2000
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-primary">Paid</span>
+                                                        </td>
+                                                        <td>
+                                                            edumin@gmail.com
+                                                        </td>
+                                                        <td>
+                                                            10/05/2017
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                        <td>
+                                                            Salary
+                                                        </td>
+                                                        <td>
+                                                            $2000
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-warning">Pending</span>
+                                                        </td>
+                                                        <td>
+                                                            edumin@gmail.com
+                                                        </td>
+                                                        <td>
+                                                            10/05/2017
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                        <td>
+                                                            Salary
+                                                        </td>
+                                                        <td>
+                                                            $2000
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-primary">Paid</span>
+                                                        </td>
+                                                        <td>
+                                                            edumin@gmail.com
+                                                        </td>
+                                                        <td>
+                                                            10/05/2017
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                        <td>
+                                                            Salary
+                                                        </td>
+                                                        <td>
+                                                            $2000
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-danger">Due</span>
+                                                        </td>
+                                                        <td>
+                                                            edumin@gmail.com
+                                                        </td>
+                                                        <td>
+                                                            10/05/2017
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                        <td>
+                                                            Salary
+                                                        </td>
+                                                        <td>
+                                                            $2000
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-primary">Paid</span>
+                                                        </td>
+                                                        <td>
+                                                            edumin@gmail.com
+                                                        </td>
+                                                        <td>
+                                                            10/05/2017
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# column -->
+                        </div>
+
+
+
+                    </section>{% endcomment %}
+                    {% block content %}{% endblock %}
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p style="color: #FFF"><a href="#" style="color: #ffab00;font-weight: bolder"><img src="/static/src/back/001.png"></a></p>
+                                <p style="color: #FFF">2019-08-22 © <a style="color: #ff8f00">DQA3. - Auto Team</a> / Contact us: <a target="_blank" title="Contact">Jun_Wang; Edwin_Cao; Katherine_Cao; WillZ_Zhang; Lux_Chen;</a> -<a target="_blank" title="Contact" style="color: #ff8f00"> Tel: 21891</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- jquery vendor -->
+        <script src="/static/js/lib/jquery.min.js"></script>
+        <script src="/static/js/lib/jquery.nanoscroller.min.js"></script>
+        <!-- nano scroller -->
+        <script src="/static/js/lib/menubar/sidebar.js"></script>
+        <script src="/static/js/lib/preloader/pace.min.js"></script>
+        <!-- sidebar -->
+
+        <script src="/static/js/lib/bootstrap.min.js"></script>
+        <script src="/static/js/scripts.js"></script>
+        <!-- bootstrap -->
+
+        <script src="/static/js/lib/calendar-2/moment.latest.min.js"></script>
+        <script src="/static/js/lib/calendar-2/pignose.calendar.min.js"></script>
+        <script src="/static/js/lib/calendar-2/pignose.init.js"></script>
+
+
+        <script src="/static/js/lib/weather/jquery.simpleWeather.min.js"></script>
+        <script src="/static/js/lib/weather/weather-init.js"></script>
+        <script src="/static/js/lib/circle-progress/circle-progress.min.js"></script>
+        <script src="/static/js/lib/circle-progress/circle-progress-init.js"></script>
+{#        <script src="/static/js/lib/chartist/chartist.min.js"></script>#}
+        <script src="/static/js/lib/sparklinechart/jquery.sparkline.min.js"></script>
+        <script src="/static/js/lib/sparklinechart/sparkline.init.js"></script>
+        <script src="/static/js/lib/owl-carousel/owl.carousel.min.js"></script>
+        <script src="/static/js/lib/owl-carousel/owl.carousel-init.js"></script>
+        <!-- scripit init-->
+{#        <script src="/static/js/dashboard2.js"></script>#}
+        <script src="/static/js/date.js"></script>
+        <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="/static/js/vue.min.js"></script>
+        <script src="/static/js/xlsx/xlsx.core.min.js"></script>
+        <script src="/static/js/xlsx/xlsx.js"></script>
+        <script src="/static/js/datapicker.js"></script>
+        <script>
+            $(function () {
+                {% rbac_js %}
+            })
+        </script>
+        {% block scripts %}{% endblock %}
+    </body>
+
+</html>

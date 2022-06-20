@@ -1,0 +1,120 @@
+[2022-06-09 07:53:11,765] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-09 08:59:25,208] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 373, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1171, in authenticate
+    return self.authenticate_credentials(userid, password, request)
+AttributeError: 'MyAuth' object has no attribute 'authenticate_credentials'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 373, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1171, in authenticate
+    return self.authenticate_credentials(userid, password, request)
+rest_framework.request.WrappedAttributeError: 'MyAuth' object has no attribute 'authenticate_credentials'
+[2022-06-09 08:59:25,213] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 151197
+[2022-06-09 09:16:30,216] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-09 09:16:38,417] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-09 09:22:00,324] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-09 13:51:45,362] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-06-09 13:54:11,088] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 373, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1175, in authenticate
+    return self.authenticate_credentials(userid, password, request)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1187, in authenticate_credentials
+    user = authenticate(request=request, **credentials)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\auth\__init__.py", line 68, in authenticate
+    inspect.getcallargs(backend.authenticate, request, **credentials)
+AttributeError: 'UserInfo' object has no attribute 'authenticate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 373, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1175, in authenticate
+    return self.authenticate_credentials(userid, password, request)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 1187, in authenticate_credentials
+    user = authenticate(request=request, **credentials)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\auth\__init__.py", line 68, in authenticate
+    inspect.getcallargs(backend.authenticate, request, **credentials)
+rest_framework.request.WrappedAttributeError: 'UserInfo' object has no attribute 'authenticate'
+[2022-06-09 13:54:11,096] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 168988
+[2022-06-09 14:05:00,806] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /login/ HTTP/1.1" 500 59

@@ -1,0 +1,535 @@
+[2020-12-08 14:07:10,287] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 302 0
+[2020-12-08 14:07:10,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-12-08 14:07:10,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-12-08 14:07:10,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-12-08 14:07:13,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-12-08 14:07:14,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41847
+[2020-12-08 14:07:14,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 41847
+[2020-12-08 14:07:15,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:09:51,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:09:52,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:09:52,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1069
+[2020-12-08 14:09:57,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5502
+[2020-12-08 14:09:59,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 8001
+[2020-12-08 14:10:07,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:10:08,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:11:56,692] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 130, in DriverList_upload
+    BIOS = DriverList_M_lists.cleaned_data['BIOS']
+KeyError: 'BIOS'
+[2020-12-08 14:11:56,694] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 500 82542
+[2020-12-08 14:11:56,840] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:13:03,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:13:06,602] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:13:07,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:13:25,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:13:26,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:13:26,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1069
+[2020-12-08 14:13:33,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5502
+[2020-12-08 14:13:40,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 9003
+[2020-12-08 14:14:31,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:14:32,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1069
+[2020-12-08 14:14:32,892] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:14:37,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5502
+[2020-12-08 14:14:42,447] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 483, in DriverList_search
+    "Version": i.Version, "Project": i.Project, "Bios": i.Bios, "Driver": i.Driver, "Image": i.Image,
+AttributeError: 'DriverList_M' object has no attribute 'Bios'
+[2020-12-08 14:14:42,455] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 500 84691
+[2020-12-08 14:15:35,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:15:37,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1069
+[2020-12-08 14:15:37,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:15:39,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5502
+[2020-12-08 14:15:43,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 9003
+[2020-12-08 14:15:47,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:15:48,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1057
+[2020-12-08 14:15:48,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:15:54,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 8991
+[2020-12-08 14:16:11,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 8991
+[2020-12-08 14:16:24,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:16:25,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1057
+[2020-12-08 14:16:25,932] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:16:30,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 8991
+[2020-12-08 14:16:42,257] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:16:42,257] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:16:42,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:16:46,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 8991
+[2020-12-08 14:21:59,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 8993
+[2020-12-08 14:22:07,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/ToolList_upload/ HTTP/1.1" 200 25087
+[2020-12-08 14:22:07,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:22:32,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/ToolList_upload/ HTTP/1.1" 200 25087
+[2020-12-08 14:22:32,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:22:34,963] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:22:35,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:22:35,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1069
+[2020-12-08 14:22:38,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5502
+[2020-12-08 14:23:22,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:23:22,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:23:37,752] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 136, in DriverList_upload
+    if DriverList_M.objects.filter(**check_dic):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Bios' into field. Choices are: BIOS, Customer, Driver, Function, Image, Name, Phase0, Project, Vendor, Version, edit_time, editor, id
+[2020-12-08 14:23:37,757] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 500 127216
+[2020-12-08 14:23:37,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:25:03,199] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:25:03,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:25:08,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:25:08,832] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:25:08,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1110
+[2020-12-08 14:25:11,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 5902
+[2020-12-08 14:25:16,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1311
+[2020-12-08 14:25:20,577] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:25:21,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1098
+[2020-12-08 14:25:21,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:25:26,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1299
+[2020-12-08 14:25:31,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1299
+[2020-12-08 14:25:37,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:25:37,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:33:34,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 265
+[2020-12-08 14:33:38,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:33:39,262] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:33:39,281] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1154
+[2020-12-08 14:33:42,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 6340
+[2020-12-08 14:33:48,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 2334
+[2020-12-08 14:34:08,528] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:34:08,535] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:34:08,535] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-12-08 14:34:08,622] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:34:10,631] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 6340
+[2020-12-08 14:34:14,671] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 2334
+[2020-12-08 14:38:24,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:38:24,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:38:24,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:38:24,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:38:24,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:38:24,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:38:24,950] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:38:24,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:38:24,967] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:38:24,968] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:38:24,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:38:24,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:38:24,986] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:38:24,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:38:25,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:38:25,075] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:38:25,140] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:38:25,189] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:38:25,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:38:25,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:38:25,214] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:38:25,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:38:25,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:38:25,244] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:38:25,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:38:25,270] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:38:25,271] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:38:25,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:38:25,287] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:38:25,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:38:25,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:38:25,326] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:38:25,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:38:25,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:38:25,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:38:25,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:38:25,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:38:25,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:38:25,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:38:25,368] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[2020-12-08 14:38:25,411] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:38:25,472] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:38:25,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:38:25,606] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:38:25,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:38:25,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:38:30,315] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 1400
+[2020-12-08 14:39:17,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 265
+[2020-12-08 14:39:22,530] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:39:22,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:39:22,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:39:22,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:39:22,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:39:22,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:39:22,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:39:22,587] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:39:22,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:39:22,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:39:22,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:39:22,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:39:22,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:39:22,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:39:22,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:39:22,626] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-12-08 14:39:22,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:39:22,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:39:22,712] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:39:22,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:39:22,779] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:39:22,779] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:39:22,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:39:22,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:39:22,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:39:22,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:39:22,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:39:22,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:39:22,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:39:22,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:39:22,819] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:39:22,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:39:22,829] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:39:22,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:39:22,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:39:22,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:39:22,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:39:22,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:39:22,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:39:22,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:39:22,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:39:22,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-12-08 14:39:22,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-12-08 14:39:22,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:39:22,950] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-12-08 14:39:22,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-12-08 14:39:22,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-12-08 14:39:23,040] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:39:23,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:39:23,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-12-08 14:39:23,188] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:39:23,219] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-12-08 14:39:23,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:39:23,641] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:39:23,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-12-08 14:39:23,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:39:23,917] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1154
+[2020-12-08 14:39:29,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-12-08 14:39:30,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 6340
+[2020-12-08 14:39:32,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 3531
+[2020-12-08 14:39:42,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:39:43,310] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1142
+[2020-12-08 14:39:43,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:39:48,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 3519
+[2020-12-08 14:40:13,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 143838
+[2020-12-08 14:40:27,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 2337
+[2020-12-08 14:41:19,839] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:41:19,843] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:41:19,941] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:41:30,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 2114
+[2020-12-08 14:41:41,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 143126
+[2020-12-08 14:43:07,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:43:07,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:43:07,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:43:07,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:43:07,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:43:07,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:43:07,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:43:07,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:43:07,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:43:07,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:43:07,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:43:07,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:43:07,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:43:07,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:43:07,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:43:08,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:43:08,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:43:08,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:43:08,063] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:43:08,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:43:08,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:43:08,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:43:08,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:43:08,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:43:08,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:43:08,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:43:08,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:43:08,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:43:08,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:43:08,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:43:08,197] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:43:08,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:43:08,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:43:08,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:43:08,244] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[2020-12-08 14:43:08,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:43:08,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:43:08,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:43:08,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:43:08,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:43:08,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:43:08,392] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:43:08,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:43:08,558] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:43:08,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:43:08,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:45:14,310] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 725
+[2020-12-08 14:45:22,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:45:22,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:45:22,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:45:22,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:45:22,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:45:22,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:45:22,169] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:45:22,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:45:22,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:45:22,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:45:22,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:45:22,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:45:22,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:45:22,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:45:22,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-12-08 14:45:22,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:45:22,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:45:22,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:45:22,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:45:22,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:45:22,400] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:45:22,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:45:22,403] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:45:22,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:45:22,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:45:22,407] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:45:22,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:45:22,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:45:22,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:45:22,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:45:22,450] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:45:22,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:45:22,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:45:22,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:45:22,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-12-08 14:45:22,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:45:22,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:45:22,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:45:22,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-12-08 14:45:22,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:45:22,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:45:22,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:45:22,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:45:22,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-12-08 14:45:22,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-12-08 14:45:22,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:45:22,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-12-08 14:45:22,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-12-08 14:45:22,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:45:22,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:45:22,789] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:45:22,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:45:23,158] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:45:23,550] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1142
+[2020-12-08 14:45:23,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:45:30,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 2337
+[2020-12-08 14:45:37,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 143353
+[2020-12-08 14:45:41,327] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-12-08 14:48:06,735] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1852
+[2020-12-08 14:48:12,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 143130
+[2020-12-08 14:52:08,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1629
+[2020-12-08 14:52:12,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1392
+[2020-12-08 14:52:21,220] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1142
+[2020-12-08 14:52:37,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_upload/ HTTP/1.1" 200 26440
+[2020-12-08 14:52:37,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:52:37,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:52:37,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:52:37,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:52:37,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:52:37,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:52:37,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:52:37,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:52:37,995] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:52:37,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:52:38,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:52:38,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:52:38,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:52:38,008] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:52:38,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:52:38,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:52:38,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:52:38,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:52:38,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:52:38,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:52:38,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:52:38,147] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:52:38,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:52:38,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:52:38,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:52:38,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:52:38,185] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:52:38,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:52:38,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:52:38,193] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:52:38,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:52:38,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:52:38,223] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:52:38,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:52:38,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[2020-12-08 14:52:38,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:52:38,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:52:38,255] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:52:38,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:52:38,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:52:38,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:52:38,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:52:38,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:52:38,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:52:38,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:52:46,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_upload/ HTTP/1.1" 200 265
+[2020-12-08 14:52:52,584] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_search/ HTTP/1.1" 200 28031
+[2020-12-08 14:52:52,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:52:52,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:52:52,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:52:52,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:52:52,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:52:52,635] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:52:52,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:52:52,637] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:52:52,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:52:52,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:52:52,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:52:52,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:52:52,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:52:52,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:52:52,671] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-12-08 14:52:52,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:52:52,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:52:52,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:52:52,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:52:52,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:52:52,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:52:52,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:52:52,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:52:52,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:52:52,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:52:52,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:52:52,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:52:52,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:52:52,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:52:52,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:52:52,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:52:52,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:52:52,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:52:52,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:52:52,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:52:52,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:52:52,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-12-08 14:52:52,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-12-08 14:52:52,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:52:52,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:52:52,953] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:52:52,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:52:52,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-12-08 14:52:52,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-12-08 14:52:52,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2611
+[2020-12-08 14:52:52,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-12-08 14:52:52,975] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:52:52,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-12-08 14:52:53,076] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:52:53,214] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:52:53,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:52:53,444] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:52:53,609] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:52:53,611] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-12-08 14:52:53,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:52:53,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 1154
+[2020-12-08 14:52:56,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956
+[2020-12-08 14:52:56,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_search/ HTTP/1.1" 200 6340
+[2020-12-08 14:53:18,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/DriverList_edit/ HTTP/1.1" 200 41457
+[2020-12-08 14:53:18,729] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2020-12-08 14:53:18,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2020-12-08 14:53:18,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2020-12-08 14:53:18,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:53:18,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2020-12-08 14:53:18,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2020-12-08 14:53:18,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2020-12-08 14:53:18,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17210
+[2020-12-08 14:53:18,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2020-12-08 14:53:18,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2020-12-08 14:53:18,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91465
+[2020-12-08 14:53:18,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2020-12-08 14:53:18,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2020-12-08 14:53:18,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 200 232696
+[2020-12-08 14:53:18,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/jquery-3.2.1.js HTTP/1.1" 200 268039
+[2020-12-08 14:53:18,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2020-12-08 14:53:18,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2020-12-08 14:53:18,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2020-12-08 14:53:18,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2020-12-08 14:53:18,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2020-12-08 14:53:18,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2020-12-08 14:53:18,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2020-12-08 14:53:18,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2020-12-08 14:53:18,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2020-12-08 14:53:18,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2020-12-08 14:53:18,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2020-12-08 14:53:18,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2020-12-08 14:53:18,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2020-12-08 14:53:18,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2020-12-08 14:53:18,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2020-12-08 14:53:18,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2020-12-08 14:53:18,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2020-12-08 14:53:18,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2020-12-08 14:53:18,991] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2020-12-08 14:53:19,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2020-12-08 14:53:19,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:53:19,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2020-12-08 14:53:19,040] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2020-12-08 14:53:19,044] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2020-12-08 14:53:19,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2020-12-08 14:53:19,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2020-12-08 14:53:19,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2020-12-08 14:53:19,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2020-12-08 14:53:19,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2020-12-08 14:53:19,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2020-12-08 14:53:19,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2020-12-08 14:53:19,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2020-12-08 14:53:19,183] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-12-08 14:53:19,375] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-12-08 14:53:19,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2020-12-08 14:53:19,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2020-12-08 14:53:19,772] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-12-08 14:53:20,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1142
+[2020-12-08 14:53:20,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 18964
+[2020-12-08 14:53:24,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 2337
+[2020-12-08 14:55:23,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 200 1600
+[2020-12-08 14:55:23,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 200 55956

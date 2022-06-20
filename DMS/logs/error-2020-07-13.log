@@ -1,0 +1,70 @@
+[2020-07-13 09:11:25,361] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/login/?next=/admin/ HTTP/1.1" 500 59
+[2020-07-13 09:19:19,579] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 137, in Lesson_project
+    if Projectinfos.lessonlearn_project_set.filter(Category=Category):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Category' into field. Choices are: Comment, Projectinfo, Projectinfo_id, edit_time, editor, id, lesson, lesson_id, result
+[2020-07-13 09:19:19,583] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=FLY00%20(Y750)&Category=Compatibility&csrfmiddlewaretoken=KsWbr5pBnlxUzcELDSGiN0zeKaSQNT8OIRoQcNhqyP7OAaQrFF69zMEummVCCyVf HTTP/1.1" 500 126230
+[2020-07-13 09:19:19,703] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 137, in Lesson_project
+    if Projectinfos.lessonlearn_project_set.filter(Category=Category):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Category' into field. Choices are: Comment, Projectinfo, Projectinfo_id, edit_time, editor, id, lesson, lesson_id, result
+[2020-07-13 09:19:19,705] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /LessonProjectME/Lesson_ProjectResult/?action=search&customer=C38(NB)&project=FLY00%20(Y750)&Category=Compatibility&csrfmiddlewaretoken=KsWbr5pBnlxUzcELDSGiN0zeKaSQNT8OIRoQcNhqyP7OAaQrFF69zMEummVCCyVf HTTP/1.1" 500 126230
+[2020-07-13 09:59:06,779] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LessonProjectME/Lesson_SearchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LessonProjectME\views.py", line 434, in Lesson_project_Search
+    "ategory": i.ategory,
+AttributeError: 'lesson_learn' object has no attribute 'ategory'
+[2020-07-13 09:59:06,781] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LessonProjectME/Lesson_SearchByProject/ HTTP/1.1" 500 80576
+[2020-07-14 08:12:20,814] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 59

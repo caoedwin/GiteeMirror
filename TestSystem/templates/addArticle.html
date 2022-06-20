@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}添加文章{% endblock %}
+{% block css %}
+    <style>
+    .close {
+        float: right;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .2;
+    }
+
+    .pull-left {
+      float: left !important;
+    }
+    .pull-right {
+      float: right !important;
+    }
+
+    .element {
+      .pull-left();
+    }
+    .another-element {
+      .pull-right();
+    }
+
+    </style>
+{% endblock %}
+{% block content %}
+<div>
+    <form method="POST" action="." id="fm">
+             {% csrf_token %}
+        <div class="card" style="background: rgba(255,255,255,0.2);">
+        <div class="card-header title" style="color: black;font-size: 20px;">添加文章</div>
+        <br>
+{#          <div id="showResult" class="err_msg">上传结果：<span id="showErrResult"></span></div>#}
+          <div class="card-body" >
+            <div class="first-part">
+               <div class="input-group-prepend ">
+                    <span class="input-group-text  Label"><strong>标题</strong> </span>
+               </div>
+                    {{ article_post_form.title }}
+            </div>
+          </div>
+        <br>
+    <!-- 文章标签 -->
+    <div class="form-group">
+        <label for="tag">标签&nbsp;&nbsp;(按住'control'可选择多个)</label>
+             <select  multiple class="form-control selector1"
+                      id="tag"
+                      name="tag">
+                   {% for tags in tag %}
+                      <option value="{{ tags.id }}">{{ tags.name }}</option>
+                   {% endfor %}
+             </select>
+{#        <input type="text"#}
+{#               class="form-control col-3"#}
+{#               id="tag"#}
+{#               name="tag">#}
+{#                 {{ article_post_form.tag }}#}
+    <button id="tags" type="button" class="btn btn-default" style="margin-top: 10px"><span
+                        class="glyphicon glyphicon-plus"></span></button>
+    </div>
+
+            <div class="form-group">
+                <label for="category">分类</label>
+                {{ article_post_form.category }}
+            </div>
+          <div class="card-body" >
+            <div class="first-part">
+               <div class="input-group-prepend  Label">
+                      <span class="input-group-text"><strong>内容</strong></span>
+               </div>
+                     {{ article_post_form.content }}
+            </div>
+          </div>
+
+      </div>
+        <br>
+    <div id='add' style="color: red">{{ error }}</div><br>
+        <button type="submit" class="btn btn-primary">完成</button>
+    </form>
+
+</div>
+
+    <div id="a" style="display:none; position:absolute; left:200px; top:100px; width:300px; height:300px; border:1px solid #999999;background: white">
+{#    <button id="b">取消</button>#}
+        <div id="panel" class="card-header title" style="color: black;font-size: 20px;background-color: #999999">添加标签
+{#            <button id="b" type="button" class="btn btn-default" style="margin-left: 172px;"><span#}
+{#                        class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>#}
+            <button id="b" type="button" class="close" aria-label="Close" style="margin-right: 10px"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <br>
+{#        <form method="POST" action="/addTag/" id="fm1">#}
+{#            {% csrf_token %}#}
+        <label for="tag1" style="font-size: 18px">标签</label>
+        <input type="text"
+               class="form-control col-3"
+               id="tag1"
+               name="tag">
+         <br>
+        <label id="comment_message"  style="margin-top: 10px;vertical-align: middle;color: green;display: none;"></label>
+         <button id="submitbtn" type="button" class="btn btn-default" style="margin-left: 120px;margin-top: 60px;">完成</button>
+{#        </form>#}
+    </div>
+
+    <script>
+    {% comment %}
+        new Vue({
+            el: '#app',
+            delimiters: ['${', '}'],
+            data: function () {
+                return {
+                     formInline: {
+                              user: '',
+                              region: ''
+                            }
+                }
+                },
+        }),
+    {% endcomment %}
+        document.getElementById('tags').onclick = function(){
+            document.getElementById('a').style.display = 'block';
+        };
+
+        document.getElementById('b').onclick = function(){
+            document.getElementById('a').style.display = 'none';
+            document.getElementById('comment_message').style.display = 'none';
+        };
+
+        function add() {
+            if($('#title').val() != ''){
+                document.getElementById('add').style.display = 'none';
+            }
+        }
+
+    $(document).ready(function () {
+        $('#submitbtn').click(function () { // 定义回复按钮点击时调用的函数
+            $.ajaxSetup({ // 添加防止跨域攻击的代码
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
+            });
+            var tag = $('#tag1').val(); //将评论目标id存入变量
+            if (tag) { // 如果所有内容都已填写
+                $.post('{% url 'addTag' %}', { //用post方法提交请求
+                    'tag': tag
+                }, function (result) { //回调函数获取返回结果
+                    console.log(result.tagID, '1');
+                    console.log(result.tagName, '2');
+                    if(result === '200'){
+                        $('#comment_message').css({color: "red"}).html('标签内容不能为空格，请重新填写。');
+                         $('#comment_message').css({display: "block"});
+                        {#$('#comment_message').removeAttr('hidden'); // 去除提示元素的隐藏属性将提示显示在页面#}
+                    }else if(result === '300'){
+                        $('#comment_message').css({color: "red"}).html('标签内容重复，请重新填写。');
+                        {#$('#comment_message').removeAttr('hidden'); // 去除提示元素的隐藏属性将提示显示在页面#}
+                        $('#comment_message').css({display: "block"});
+                    }else {
+                        $('#comment_message').css({color: "green"}).html('添加成功！');
+                        {#$('#comment_message').removeAttr('hidden'); // 去除提示元素的隐藏属性将提示显示在页面#}
+                        $('#comment_message').css({display: "block"});
+                        $('#tag').prepend('<option value="' + result.tagID + '">' + result.tagName + '</option>');
+                        $('#a').delay(1000).hide(0);
+                    }
+                });
+
+            }else { //如果不是所有内容都已填写
+                $('#comment_message').html('标签内容不能为空，请重新填写。').css({color: "red"});
+                $('#comment_message').css({display: "block"});
+                {#$('a').css({display: "block"});#}
+                // 去除提示元素的隐藏属性将提示显示在页面，同时设置提示的样式与文字
+            }
+        });
+    });
+function Mover(id) {
+        this.obj = document.getElementById(id);
+        this.startx = 0;
+        this.starty;
+        this.startLeft;
+        this.startTop;
+        this.mainDiv = this.obj.parentNode;
+        this.isDown = false;
+        this.originIndex = this.mainDiv.style.zIndex;
+        var that = this;
+
+        this.movedown = function (e) {
+            e = e ? e : window.event;
+            if (!window.captureEvents) {
+                this.setCapture();
+            }
+
+            that.isDown = true;
+            that.obj.style.cursor = 'move';
+            that.mainDiv.style.zIndex = 1000;
+
+            that.startx = e.clientX;
+            that.starty = e.clientY;
+            that.startLeft = parseInt(that.mainDiv.offsetLeft);
+            that.startTop = parseInt(that.mainDiv.offsetTop);
+        };
+        this.move = function (e) {
+            e = e ? e : window.event;
+            if (that.isDown) {
+                that.mainDiv.style.left = e.clientX - (that.startx - that.startLeft) + "px";
+                that.mainDiv.style.top = e.clientY - (that.starty - that.startTop) + "px";
+            }
+        };
+        this.moveup = function () {
+            that.isDown = false;
+            that.obj.style.cursor = 'default';
+            that.mainDiv.style.zIndex = that.originIndex;
+            if (!window.captureEvents) {
+                this.releaseCapture();
+            }
+        };
+        this.obj.onmousedown = this.movedown;
+        this.obj.onmousemove = this.move;
+        this.obj.onmouseup = this.moveup;
+
+        //非ie浏览器
+        document.addEventListener("mousemove", this.move, true);
+    }
+
+    var mover1 = new Mover("panel");
+
+    </script>
+
+{% endblock %}
+
+{% block scripts1 %}
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/xlsx/xlsx.core.min.js"></script>
+<script src="/static/js/xlsx/xlsx_pop.js"></script>
+<script  src="/static/js/Element/main.js"></script>
+<script src="/static/js/Element/index.js"></script>
+
+ <script>
+    $(function () {
+        /*
+         获取form元素，调用其ajaxForm(...)方法
+         内部的function(data)的data就是后台返回的数据
+        */
+        $("#fm").ajaxForm(function (data) {
+                console.log(data);
+                console.log("str:" + JSON.stringify(data));
+            }
+        );
+    });
+
+ </script>
+
+
+{% endblock %}
+

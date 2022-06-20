@@ -1,0 +1,21 @@
+[2021-09-06 16:10:08,267] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceABO/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceABO\views.py", line 6464, in M_edit
+    return render(request, 'DeviceABO/M_edit.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: DeviceABO/M_edit.html
+[2021-09-06 16:10:08,270] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceABO/M_edit/ HTTP/1.1" 500 103040
+[2021-09-07 09:56:57,244] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

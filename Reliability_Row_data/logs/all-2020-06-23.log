@@ -1,0 +1,846 @@
+[2020-06-23 08:36:42,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 302 0
+[2020-06-23 08:36:45,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/TestPlanME/testprojectme/ HTTP/1.1" 200 1871
+[2020-06-23 08:36:45,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 08:36:48,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/TestPlanME/testprojectme/ HTTP/1.1" 302 0
+[2020-06-23 08:36:49,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 16416
+[2020-06-23 08:36:49,100] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 08:36:49,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 08:36:51,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/25/change/ HTTP/1.1" 200 9011
+[2020-06-23 08:36:51,289] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 08:36:51,368] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 08:37:35,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 16416
+[2020-06-23 08:37:35,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 08:58:08,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37341
+[2020-06-23 08:58:09,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/fonts/element-icons.woff HTTP/1.1" 200 28200
+[2020-06-23 08:58:09,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 08:58:11,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:03:13,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37341
+[2020-06-23 09:03:14,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:03:16,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:03:18,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-23 09:03:28,015] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:03:28,025] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:09:34,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/25/change/ HTTP/1.1" 200 9011
+[2020-06-23 09:09:34,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 09:09:34,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:09:47,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 16416
+[2020-06-23 09:09:47,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:12:30,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 19329
+[2020-06-23 09:12:30,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 09:12:30,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:12:32,661] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/25/change/ HTTP/1.1" 200 9664
+[2020-06-23 09:12:32,698] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 09:12:32,760] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:12:38,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 19329
+[2020-06-23 09:12:38,951] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:24:24,157] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:24:24,161] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:24:27,466] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37341
+[2020-06-23 09:24:28,475] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:24:30,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:24:35,333] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:24:35,334] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:24:45,516] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:24:45,520] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:25:03,923] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:25:03,925] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:25:09,002] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:25:09,003] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:26:39,518] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:26:39,519] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:26:39,627] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:26:47,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37341
+[2020-06-23 09:26:48,130] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:26:48,231] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:26:48,611] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:26:49,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:26:50,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:27:02,348] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:27:02,349] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77307
+[2020-06-23 09:27:33,089] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 464, in TestPlanSW_summary
+    print(timerange[0])
+IndexError: list index out of range
+[2020-06-23 09:27:33,093] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 76828
+[2020-06-23 09:27:54,379] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:27:54,385] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77302
+[2020-06-23 09:28:28,340] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 09:28:28,541] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:28:28,579] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:28:28,734] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:28:28,737] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 09:28:29,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:28:31,001] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:28:35,432] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 09:29:04,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37341
+[2020-06-23 09:29:05,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:29:05,142] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:29:05,278] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:29:05,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:29:07,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:29:10,173] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 468, in TestPlanSW_summary
+    if not timerange[0]:
+IndexError: list index out of range
+[2020-06-23 09:29:10,174] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 77302
+[2020-06-23 09:30:58,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:30:58,603] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:30:58,657] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:30:58,834] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:30:59,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:31:01,011] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:31:05,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 09:32:11,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 09:35:57,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 09:37:04,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 09:37:27,262] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:37:27,454] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:37:27,508] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:37:27,676] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:37:28,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:37:29,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:37:46,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:37:46,970] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:37:47,000] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:37:47,185] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:37:47,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:37:49,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 09:39:02,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:39:02,578] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:39:02,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:39:02,818] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:39:03,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:39:03,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:40:57,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 09:40:57,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 09:40:57,408] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 09:40:57,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 09:40:57,832] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 80
+[2020-06-23 09:40:57,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:41:01,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 7158
+[2020-06-23 09:41:06,195] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 197, in TestPlanME_Summary
+    for i in TestProjectME.objects.filter(Customer=Customer).filter(ScheduleBegin=timerange).values(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1230, in to_python
+    parsed = parse_date(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    match = date_re.match(value)
+TypeError: expected string or bytes-like object
+[2020-06-23 09:41:06,204] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 129460
+[2020-06-23 09:43:32,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 80
+[2020-06-23 09:44:05,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/16/change/ HTTP/1.1" 200 9664
+[2020-06-23 09:44:05,274] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 09:44:05,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:44:07,400] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+[2020-06-23 09:44:11,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/TestPlanME/testprojectme/16/change/ HTTP/1.1" 302 0
+[2020-06-23 09:44:11,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 19535
+[2020-06-23 09:44:11,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 09:44:11,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 09:44:19,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 920
+[2020-06-23 09:46:13,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 920
+[2020-06-23 09:46:17,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 80
+[2020-06-23 11:56:16,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2546
+[2020-06-23 11:56:20,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 11:57:21,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37357
+[2020-06-23 11:57:21,800] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 11:57:21,901] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 11:57:22,267] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 11:57:22,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 11:57:22,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 11:59:56,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2546
+[2020-06-23 11:59:59,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 13:28:14,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2546
+[2020-06-23 13:28:17,654] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 456, in TestPlanME_Summary
+    mock_data.append({"Project": i["name"]+":"+i["value"], "ID": serchProjectresult.IDs, "Type": serchProjectresult.Type, "SKU": serchProjectresult.SKU,
+AttributeError: 'NoneType' object has no attribute 'IDs'
+[2020-06-23 13:28:17,655] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 83862
+[2020-06-23 13:29:47,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2031
+[2020-06-23 13:48:39,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 13:48:39,813] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 13:48:39,902] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 13:48:40,154] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 13:48:40,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 13:48:40,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 13:48:42,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 13:48:50,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4644
+[2020-06-23 13:48:54,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5399
+[2020-06-23 14:23:23,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 66865
+[2020-06-23 14:23:24,121] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:23:24,206] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:23:24,565] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:23:24,565] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 14:23:25,126] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/?action=get HTTP/1.1" 200 803
+[2020-06-23 14:23:25,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 893
+[2020-06-23 14:23:25,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:23:26,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:23:27,146] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:23:27,250] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:23:27,593] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:23:27,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:23:27,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:23:30,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:23:33,941] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 539, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:23:33,943] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 96593
+[2020-06-23 14:25:47,300] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 539, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:25:47,304] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 96502
+[2020-06-23 14:26:52,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:26:52,947] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:26:53,009] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:26:53,276] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:26:53,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:26:53,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:26:58,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:27:00,987] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 539, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:27:00,988] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 95487
+[2020-06-23 14:27:48,727] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 539, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:27:48,729] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 95485
+[2020-06-23 14:28:41,288] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 469, in TestPlanME_Summary
+    print(check_dic_Project)
+NameError: name 'printcheck_dic_Project' is not defined
+[2020-06-23 14:28:41,290] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 85558
+[2020-06-23 14:28:59,838] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 469, in TestPlanME_Summary
+    print(check_dic_Project)
+NameError: name 'printcheck_dic_Project' is not defined
+[2020-06-23 14:28:59,839] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 85558
+[2020-06-23 14:29:16,923] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 540, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:29:16,933] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 95527
+[2020-06-23 14:35:11,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:35:11,773] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:35:11,885] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:35:12,271] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:35:12,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:35:12,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:35:15,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:35:17,978] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 540, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:35:17,981] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 95963
+[2020-06-23 14:35:35,241] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 540, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:35:35,243] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 96626
+[2020-06-23 14:36:44,368] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 541, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:36:44,370] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 95740
+[2020-06-23 14:38:31,114] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 541, in TestPlanME_Summary
+    ProjecttotalATO += j["RegularAttendTime"]
+TypeError: unsupported operand type(s) for +=: 'float' and 'NoneType'
+[2020-06-23 14:38:31,116] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 500 94821
+[2020-06-23 14:40:08,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 66865
+[2020-06-23 14:40:09,136] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:40:09,187] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:40:09,531] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 14:40:09,532] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:40:10,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/?action=get HTTP/1.1" 200 803
+[2020-06-23 14:40:10,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 893
+[2020-06-23 14:40:10,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:40:13,584] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 4902
+[2020-06-23 14:40:18,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 984
+[2020-06-23 14:48:17,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:48:18,017] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:48:18,109] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:48:18,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:48:18,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:48:18,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:48:22,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:48:25,279] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9855
+[2020-06-23 14:54:52,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:54:52,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:54:52,907] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:54:53,254] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:54:53,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:54:53,609] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:55:00,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2516
+[2020-06-23 14:55:03,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 3255
+[2020-06-23 14:55:08,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:55:12,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9855
+[2020-06-23 14:55:42,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 14:55:42,706] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:55:42,758] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:55:42,905] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:55:42,907] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 14:55:43,569] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:55:45,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 14:56:02,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-06-23 14:56:05,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 14:57:00,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 14:57:00,854] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:57:00,899] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:57:01,055] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:57:01,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 1706
+[2020-06-23 14:57:01,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 14:57:36,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:57:39,008] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9855
+[2020-06-23 14:59:11,529] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 14:59:11,536] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 14:59:11,582] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 14:59:14,706] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 14:59:18,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9855
+[2020-06-23 15:00:26,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 15:01:01,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/19/change/ HTTP/1.1" 200 9680
+[2020-06-23 15:01:01,176] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-06-23 15:01:01,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:01:48,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 19343
+[2020-06-23 15:01:48,434] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:01:49,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/16/change/ HTTP/1.1" 200 9683
+[2020-06-23 15:01:50,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:01:57,692] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanME/testprojectme/ HTTP/1.1" 200 19343
+[2020-06-23 15:01:57,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:42:50,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 37550
+[2020-06-23 15:42:50,619] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 15:42:50,713] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 15:42:51,048] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 15:42:51,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:42:51,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 15:48:39,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 42829
+[2020-06-23 15:48:40,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 15:48:40,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:49:03,637] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 15:49:03,642] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 15:49:03,669] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 15:49:11,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 42829
+[2020-06-23 15:49:11,585] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 15:49:11,645] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 15:49:11,812] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 15:49:12,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 15:49:12,574] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:53:20,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 42955
+[2020-06-23 15:53:20,344] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 15:53:20,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 15:53:20,544] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 15:53:20,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 15:53:21,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 16:07:08,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 16:07:09,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:07:11,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 16:09:36,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82301
+[2020-06-23 16:09:37,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:09:37,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:09:37,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:09:40,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:09:41,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:09:45,854] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:09:45,861] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:09:45,865] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:09:45,927] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:11:24,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getCategory&customer=C38(NB)&project=FLAT4_Tata4.0&phase=0 HTTP/1.1" 200 777
+[2020-06-23 16:11:25,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=FLAT4_Tata4.0&phase=0&category= HTTP/1.1" 200 4584
+[2020-06-23 16:20:58,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82282
+[2020-06-23 16:20:58,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:20:58,564] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:20:58,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:20:58,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:20:59,279] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:20:59,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:20:59,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:21:03,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 16:21:04,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:21:06,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 48391
+[2020-06-23 16:21:06,897] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 16:21:06,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:21:06,963] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 59
+[2020-06-23 16:21:07,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 16:21:20,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2546
+[2020-06-23 16:21:23,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 2711
+[2020-06-23 16:21:37,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-06-23 16:21:40,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9854
+[2020-06-23 16:22:45,476] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 48461
+[2020-06-23 16:22:46,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:22:46,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8223
+[2020-06-23 16:22:53,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 49736
+[2020-06-23 16:22:53,692] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:22:55,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5748
+[2020-06-23 16:23:00,600] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 831
+[2020-06-23 16:23:05,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 1445
+[2020-06-23 16:29:01,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 831
+[2020-06-23 16:29:04,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 1483
+[2020-06-23 16:35:18,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82559
+[2020-06-23 16:35:19,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:35:19,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:35:19,724] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:35:24,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:35:25,976] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:35:38,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:35:40,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:35:49,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:35:51,261] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:35:55,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:35:59,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-23 16:36:01,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:36:05,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-23 16:36:09,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82559
+[2020-06-23 16:36:10,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:36:10,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:36:10,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:36:12,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:36:13,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:36:22,923] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82559
+[2020-06-23 16:36:23,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:36:23,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:36:24,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:36:25,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:36:29,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-23 16:38:45,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82612
+[2020-06-23 16:38:46,008] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:38:46,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:38:46,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:38:53,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:38:55,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:38:59,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:39:03,396] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:39:10,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82612
+[2020-06-23 16:39:11,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:39:11,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:39:11,568] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:39:14,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:39:15,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:41:21,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:41:23,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:41:26,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82612
+[2020-06-23 16:41:26,932] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:41:26,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:41:27,415] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:41:29,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:41:31,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:41:39,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:41:40,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-23 16:41:42,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:41:44,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 202
+[2020-06-23 16:41:46,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:41:49,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:43:42,943] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:43:42,954] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:43:42,954] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:43:43,017] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:43:49,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 16:43:49,990] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:43:50,058] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:43:50,247] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:43:50,248] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:43:50,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:43:50,737] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:43:50,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:43:56,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:43:58,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 16:46:18,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82675
+[2020-06-23 16:46:18,560] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:46:18,624] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:46:18,818] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:46:18,818] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:46:19,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:46:19,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:46:19,383] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:46:44,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:46:52,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-23 16:47:42,282] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 16:47:42,463] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:47:42,522] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:47:42,676] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:47:42,677] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:47:43,075] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:47:43,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:47:43,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:50:03,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82740
+[2020-06-23 16:50:04,007] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:50:04,056] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:50:04,253] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:50:04,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:50:04,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:50:04,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:50:06,472] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:50:10,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:50:12,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 16:50:25,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:50:27,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 202
+[2020-06-23 16:57:11,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82781
+[2020-06-23 16:57:11,316] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 16:57:11,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 16:57:11,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 16:57:11,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 16:57:12,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 16:57:12,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 16:57:12,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 16:57:15,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 16:57:18,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 17:02:18,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82813
+[2020-06-23 17:02:18,201] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:02:18,286] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:02:18,637] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:02:18,638] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:02:19,179] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:02:19,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:02:19,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:02:23,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:02:25,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:07:42,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82866
+[2020-06-23 17:07:42,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:07:43,006] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:07:43,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:07:43,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:07:44,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:07:44,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:07:44,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:07:46,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:07:48,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 230
+[2020-06-23 17:07:52,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:07:53,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 253
+[2020-06-23 17:09:29,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 17:09:29,498] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:09:29,537] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:09:29,705] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:09:29,706] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:09:30,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:09:30,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:09:30,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:09:32,342] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:09:33,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:09:37,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:09:38,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:10:27,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 17:10:27,519] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:10:27,539] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:10:27,687] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:10:27,687] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:10:28,130] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:10:28,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:10:28,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:10:39,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:10:40,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:11:28,727] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 17:11:28,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:11:28,956] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:11:29,106] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:11:29,107] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:11:29,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:11:29,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:11:29,868] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:11:54,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 17:11:54,329] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:11:54,350] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:11:54,544] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:11:54,548] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:11:55,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:11:55,044] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:11:55,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:14:23,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:14:25,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:14:39,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:14:41,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:14:49,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:14:50,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:14:57,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-23 17:14:57,532] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-23 17:14:57,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-23 17:14:57,722] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-23 17:14:57,722] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-23 17:14:58,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-23 17:14:58,127] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-23 17:14:58,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-23 17:15:06,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-23 17:15:07,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-23 17:15:15,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:13:51,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 302 0
+[2020-06-24 08:13:51,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-24 08:13:51,572] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:13:51,588] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2020-06-24 08:13:51,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-06-24 08:13:51,609] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-06-24 08:13:54,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-06-24 08:13:54,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34437
+[2020-06-24 08:13:54,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_style.css HTTP/1.1" 304 0
+[2020-06-24 08:13:54,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/index.jpg HTTP/1.1" 304 0
+[2020-06-24 08:13:54,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34437
+[2020-06-24 08:13:54,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:13:54,978] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:13:55,074] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:13:55,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:14:05,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-24 08:14:05,839] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:14:05,907] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:14:06,083] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:14:06,084] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:14:06,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:14:06,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:14:06,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:14:11,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:14:13,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 358
+[2020-06-24 08:14:26,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:14:27,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:14:45,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:14:46,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:14:53,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-24 08:14:53,495] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:14:53,515] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:14:53,808] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:14:53,810] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:14:54,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:14:54,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:14:54,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:15:02,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:15:02,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:15:19,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-24 08:15:19,803] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:15:19,829] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:15:19,970] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:15:19,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:15:20,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:15:20,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:15:20,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:15:34,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:15:35,686] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:16:49,129] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-24 08:16:49,276] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:16:49,314] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:16:49,469] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:16:49,473] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:16:49,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:16:49,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:16:49,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:17:50,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:17:51,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:18:13,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:18:14,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:29:13,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82433
+[2020-06-24 08:29:14,177] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:29:14,199] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:29:14,352] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:29:14,353] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:29:14,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:29:14,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:29:14,841] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-06-24 08:29:17,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 2505
+[2020-06-24 08:29:18,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 225
+[2020-06-24 08:30:51,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 82684
+[2020-06-24 08:30:51,905] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-06-24 08:30:51,928] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-06-24 08:30:52,084] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-06-24 08:30:52,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-06-24 08:30:52,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-search/?action=first HTTP/1.1" 200 412
+[2020-06-24 08:30:52,542] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-search/ HTTP/1.1" 200 129
+[2020-06-24 08:30:52,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506

@@ -1,0 +1,1313 @@
+[2022-01-06 12:54:29,848] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+ValueError: not enough values to unpack (expected 2, got 1)
+[2022-01-06 12:54:29,851] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 113912
+[2022-01-06 12:54:29,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:54:29,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:55:25,097] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+ValueError: not enough values to unpack (expected 2, got 1)
+[2022-01-06 12:55:25,098] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 113912
+[2022-01-06 12:55:25,152] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:55:25,157] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:55:39,296] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+ValueError: not enough values to unpack (expected 2, got 1)
+[2022-01-06 12:55:39,297] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 113912
+[2022-01-06 12:55:39,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:55:39,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:56:44,963] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 36, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'HttpResponseRedirect' object has no attribute 'role'
+[2022-01-06 12:56:44,965] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111132
+[2022-01-06 12:56:45,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:56:45,044] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 12:58:28,654] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 36, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'HttpResponseRedirect' object has no attribute 'role'
+[2022-01-06 12:58:28,656] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111152
+[2022-01-06 12:58:28,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 12:58:28,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:00:24,063] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+ValueError: not enough values to unpack (expected 2, got 1)
+[2022-01-06 13:00:24,064] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 113912
+[2022-01-06 13:00:24,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:00:24,129] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:07:12,442] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:07:12,442] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 13:07:12,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:07:12,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:07:25,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_summary/ HTTP/1.1" 302 0
+[2022-01-06 13:07:25,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:07:26,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:07:26,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:07:28,548] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 13:07:28,561] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 13:07:28,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:07:28,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 304 0
+[2022-01-06 13:07:28,700] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:07:28,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:07:35,170] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 36, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'str' object has no attribute 'role'
+[2022-01-06 13:07:35,171] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111165
+[2022-01-06 13:07:35,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:08:36,499] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 36, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'str' object has no attribute 'role'
+[2022-01-06 13:08:36,500] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 500 111769
+[2022-01-06 13:08:36,558] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:08:48,428] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 36, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'str' object has no attribute 'role'
+[2022-01-06 13:08:48,429] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 500 111904
+[2022-01-06 13:08:48,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:09:12,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 13:09:12,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:09:12,727] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:09:12,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:09:20,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 200 2
+[2022-01-06 13:09:20,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:09:20,588] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:11:27,281] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 13:11:27,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 13:11:27,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:11:27,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:11:27,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:11:37,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 200 2
+[2022-01-06 13:11:37,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:11:48,313] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:11:48,314] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 13:11:48,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:12:32,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:12:32,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 13:12:33,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:13:05,662] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:13:05,662] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 13:13:05,726] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:15:20,922] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:15:20,922] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5194
+[2022-01-06 13:15:20,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:15:57,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 13:15:57,299] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:17:06,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 13:17:06,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:18:56,327] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 200 2
+[2022-01-06 13:18:56,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:19:04,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=123456789&Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 13:19:05,132] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:19:10,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 13:19:10,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:19:18,350] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/? HTTP/1.1" 200 2
+[2022-01-06 13:19:18,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:19:25,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 13:19:25,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:22:06,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 13:22:06,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 13:23:22,130] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 13:23:22,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:23:22,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:23:22,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:23:25,039] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:23:25,039] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:23:25,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:23:25,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:31:14,988] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:31:14,988] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:31:15,033] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:31:15,036] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:31:42,581] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:31:42,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:31:42,623] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:31:42,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:32:00,238] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:32:00,238] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:32:00,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:32:00,281] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:32:37,382] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:32:37,383] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:32:37,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:32:37,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:32:57,897] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:32:57,897] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?username=C1010S3&password=123456789&Customer=C38(NB) HTTP/1.1" 403 5515
+[2022-01-06 13:32:57,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:32:57,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:33:06,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?username=C1010S3&password=12345678&Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 13:33:07,417] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:33:07,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:33:51,661] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:33:51,661] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:33:51,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:33:51,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:38:18,743] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:38:18,743] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:38:18,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:38:18,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:39:46,284] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:39:46,285] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:39:46,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:39:46,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:39:47,308] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:39:47,308] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:39:47,336] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:39:47,338] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:39:47,546] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:39:47,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:39:47,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:39:47,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:45:11,580] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:45:11,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:45:11,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:45:11,637] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:45:12,758] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:45:12,758] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:45:12,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:45:12,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:45:13,040] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:45:13,040] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:45:13,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:45:13,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:45:33,469] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+AttributeError: 'BasicAuthentication' object has no attribute 'has_permission'
+[2022-01-06 13:45:33,470] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 500 107380
+[2022-01-06 13:45:33,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:45:33,547] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 13:49:54,758] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 13:49:54,759] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5295
+[2022-01-06 13:49:54,809] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 13:49:54,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:52:30,543] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:52:30,543] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5361
+[2022-01-06 15:52:30,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:52:30,614] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:52:33,587] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 302 0
+[2022-01-06 15:52:33,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:52:33,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:52:33,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:52:36,412] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 15:52:36,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 15:52:36,512] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 15:52:36,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 15:52:36,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 15:52:53,431] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 15:52:53,476] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 15:53:09,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 15:53:09,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 15:53:28,876] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 15:53:28,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 15:53:28,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 15:53:29,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 15:53:29,234] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 15:53:34,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 15:53:34,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:53:34,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:53:34,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:53:36,525] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:53:36,525] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5361
+[2022-01-06 15:53:36,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:53:36,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:53:43,522] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:53:43,522] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5361
+[2022-01-06 15:53:43,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:53:43,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:53:44,270] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:53:44,271] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5361
+[2022-01-06 15:53:44,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:53:44,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:53:59,044] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:53:59,044] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 15:53:59,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:53:59,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:54:04,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 302 0
+[2022-01-06 15:54:04,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:54:04,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:54:04,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:54:06,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:54:06,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:58:10,487] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:58:10,488] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 15:58:10,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:58:10,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 15:58:11,277] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 15:58:11,277] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 15:58:11,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 15:58:11,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:03:42,078] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:42,079] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:42,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:03:42,192] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:03:47,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 302 0
+[2022-01-06 16:03:47,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:03:47,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:03:47,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:03:50,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:03:50,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:03:52,764] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:03:52,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:03:52,832] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:03:52,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:03:53,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:03:54,971] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:54,971] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:55,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:03:56,434] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:56,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:56,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:03:57,114] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:57,114] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:57,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:03:57,413] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:57,413] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:57,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:03:58,083] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:03:58,084] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:03:58,140] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:02,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 200 21864
+[2022-01-06 16:04:02,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:28,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/ HTTP/1.1" 200 21864
+[2022-01-06 16:04:28,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:33,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:34,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:37,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2022-01-06 16:04:37,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:04:42,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 16:04:42,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:42,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:04:42,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:47,504] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:04:47,505] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:04:47,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:04:47,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:49,432] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:04:49,433] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:04:49,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:04:49,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:51,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 302 0
+[2022-01-06 16:04:51,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:51,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:04:51,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:04:52,935] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:04:52,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:04:53,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:04:53,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:04:53,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:02,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2022-01-06 16:05:02,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:03,458] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:05:03,458] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:05:03,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:07,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 200 21864
+[2022-01-06 16:05:07,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:17,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 21864
+[2022-01-06 16:05:17,976] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:21,446] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PublicArea/ HTTP/1.1" 200 46493
+[2022-01-06 16:05:21,810] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-01-06 16:05:21 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /PersonalInfo/PublicArea/ POST
+[2022-01-06 16:05:21,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PublicArea/ HTTP/1.1" 200 260
+[2022-01-06 16:05:21,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:26,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:26,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:27,216] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:31,081] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:05:31,082] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:05:31,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:31,316] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:05:31,317] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:05:31,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:05:31,594] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:05:31,594] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:05:31,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:06:57,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:06:57,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:07:05,271] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:07:05,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:07:05,319] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:07:05,417] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:07:05,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:07:10,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:07:10,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:07:15,528] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 16:07:15,530] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:07:15,568] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:07:15,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:07:18,016] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:07:18,017] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:07:18,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:07:18,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:15:18,968] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:15:18,969] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:15:19,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:15:19,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:15:50,919] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:15:50,920] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:16:13,350] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:16:13,351] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:16:25,485] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:16:25,487] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:17:30,704] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:17:30,704] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:17:30,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:17:30,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:17:37,568] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:17:37,568] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:17:37,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:17:37,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:19:54,614] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:19:54,616] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:19:59,934] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/AutoResult/autoresult/12/change/ HTTP/1.1" 200 1885
+[2022-01-06 16:19:59,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:19:59,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:20:01,829] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:20:01,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/AutoResult/autoresult/12/change/ HTTP/1.1" 302 0
+[2022-01-06 16:20:01,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/12/change/ HTTP/1.1" 200 29806
+[2022-01-06 16:20:01,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:20:02,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:20:02,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:20:04,004] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:20:04,005] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:20:07,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 39997
+[2022-01-06 16:20:07,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:20:07,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:20:08,759] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 55932
+[2022-01-06 16:20:08,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:20:08,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:20:08,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:20:27,502] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:20:27,502] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:20:38,044] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 39997
+[2022-01-06 16:20:38,103] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:20:38,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:20:45,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/ HTTP/1.1" 200 9972
+[2022-01-06 16:20:45,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:20:45,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:20:45,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:01,479] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:21:01,480] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:21:09,149] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:21:09,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 401 5147
+[2022-01-06 16:21:19,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/logout/ HTTP/1.1" 200 1208
+[2022-01-06 16:21:19,310] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:19,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:20,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-01-06 16:21:20,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2022-01-06 16:21:20,841] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:20,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:26,441] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:21:26,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1953
+[2022-01-06 16:21:26,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:26,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:33,497] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:21:33,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1953
+[2022-01-06 16:21:33,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:33,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:42,820] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:21:42,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-01-06 16:21:42,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 39997
+[2022-01-06 16:21:42,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:42,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:21:50,223] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:21:50,267] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:21:50,282] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:22:03,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/ HTTP/1.1" 200 9972
+[2022-01-06 16:22:03,556] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:22:03,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:22:03,606] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:22:22,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/1/change/ HTTP/1.1" 200 36538
+[2022-01-06 16:22:22,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/calendar.js HTTP/1.1" 200 7777
+[2022-01-06 16:22:22,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20281
+[2022-01-06 16:22:22,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:22:23,023] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[2022-01-06 16:22:23,023] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[2022-01-06 16:22:23,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:22:23,071] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:22:28,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/ HTTP/1.1" 200 9972
+[2022-01-06 16:22:28,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:22:28,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:23:47,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:23:48,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:23:48,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:23:55,496] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:23:55,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:23:55,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:23:55,695] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:23:55,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:06,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:06,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:36,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:36,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:37,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:37,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:37,629] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:37,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:37,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:37,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:38,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:38,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:38,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:24:38,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:24:44,350] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 16:24:44,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:24:44,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:24:44,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:24:46,503] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:24:46,503] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:24:46,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:24:46,576] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:24:54,706] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:24:54,708] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111243
+[2022-01-06 16:24:54,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:24:54,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:26:59,921] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:26:59,922] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111241
+[2022-01-06 16:26:59,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:26:59,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:11,595] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:27:11,607] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:27:11,675] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:27:11,760] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:27:11,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:15,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2022-01-06 16:27:15,071] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:15,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:27:15,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:17,260] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:17,261] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111241
+[2022-01-06 16:27:17,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:27:17,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:27,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:27,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:27:27,053] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:27:28,351] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:27:28,363] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:27:28,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:27:28,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:27:28,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:30,186] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:30,187] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:30,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:31,252] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:31,253] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:31,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:31,476] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:31,477] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:31,565] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:31,700] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:31,701] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:31,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:35,574] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:35,575] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:35,637] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:27:35,821] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:27:35,822] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:27:35,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:28:27,407] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:28:27,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:29:34,084] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQMSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 38, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'User' object has no attribute 'role'
+[2022-01-06 16:29:34,086] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /CQM/CQMSeriv/ HTTP/1.1" 500 111458
+[2022-01-06 16:29:34,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:35:54,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/ HTTP/1.1" 200 2
+[2022-01-06 16:35:54,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:01,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:01,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:04,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:06,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:07,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:07,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:32,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:33,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:35,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:35,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:36,155] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:38,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:36:38,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:36:58,570] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:36:58,571] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:37:15,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/add/ HTTP/1.1" 302 0
+[2022-01-06 16:37:15,907] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/auth/user/add/ HTTP/1.1" 200 1849
+[2022-01-06 16:37:15,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:37:20,066] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:37:20,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/auth/user/add/ HTTP/1.1" 302 0
+[2022-01-06 16:37:20,147] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/add/ HTTP/1.1" 200 5648
+[2022-01-06 16:37:20,169] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:37:20,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:37:42,351] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:37:42,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[2022-01-06 16:37:42,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/9/change/ HTTP/1.1" 200 36665
+[2022-01-06 16:37:42,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:37:42,561] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:37:52,917] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:37:52,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/auth/user/9/change/ HTTP/1.1" 302 0
+[2022-01-06 16:37:52,973] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/ HTTP/1.1" 200 10553
+[2022-01-06 16:37:53,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:37:53,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:38:01,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/9/change/ HTTP/1.1" 200 36474
+[2022-01-06 16:38:01,196] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:38:01,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:38:08,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:38:10,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:38:10,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:38:54,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:38:54,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:38:54,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:38:55,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:38:56,274] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:38:56,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:39:02,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:39:02,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:39:13,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/logout/ HTTP/1.1" 200 1208
+[2022-01-06 16:39:13,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:39:13,973] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:39:16,264] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:39:17,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:39:17,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:39:21,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-01-06 16:39:21,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2022-01-06 16:39:21,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:39:21,275] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:39:23,610] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:39:23,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-01-06 16:39:23,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 40040
+[2022-01-06 16:39:23,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:39:23,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:39:37,460] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:39:37,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:39:52,203] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:39:52,204] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:40:04,973] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:40:04,973] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:40:20,123] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/auth/user/ HTTP/1.1" 200 10389
+[2022-01-06 16:40:20,159] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-01-06 16:40:20,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:40:20,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:40:33,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:40:35,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:40:35,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:40:46,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:40:48,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:40:48,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:41:02,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:41:03,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:41:03,486] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:41:07,108] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:41:07,572] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:41:07,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:41:11,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:41:13,722] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:41:13,725] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:41:35,365] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:41:35,366] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:41:58,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:45:53,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:45:54,951] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:45:54,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:45:56,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:45:57,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:45:57,123] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:45:57,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:45:58,208] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:45:58,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:46:07,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:46:07,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:46:07,862] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:46:08,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:46:08,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:46:08,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:46:09,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:46:09,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:46:09,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:46:30,246] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:46:30,247] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:46:30,261] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+[2022-01-06 16:46:30,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+[2022-01-06 16:46:30,265] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1131
+[2022-01-06 16:46:30,265] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+[2022-01-06 16:46:30,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+[2022-01-06 16:46:30,267] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+[2022-01-06 16:46:30,268] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 200 88145
+[2022-01-06 16:46:30,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+[2022-01-06 16:46:30,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+[2022-01-06 16:46:30,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+[2022-01-06 16:46:30,276] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+[2022-01-06 16:46:30,314] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:46:30,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:46:56,382] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:46:56,382] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:46:58,401] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMSeriv/
+[2022-01-06 16:46:58,402] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 401 5231
+[2022-01-06 16:46:58,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:46:58,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:08,830] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:08,830] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:47:08,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:08,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:13,180] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:13,181] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:47:13,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:13,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:13,701] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:13,702] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:47:13,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:13,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:13,909] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:13,910] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:47:13,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:13,938] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:14,119] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:14,119] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:47:14,140] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:14,142] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:20,519] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:20,519] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/? HTTP/1.1" 403 5022
+[2022-01-06 16:47:20,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:20,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:26,335] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:26,336] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:47:26,363] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:26,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:42,265] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:42,266] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:47:42,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:42,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:43,834] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:43,834] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:47:43,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:43,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:44,302] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:44,302] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:47:44,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:44,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:44,506] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:44,506] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5260
+[2022-01-06 16:47:44,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:44,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:49,947] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:49,948] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:47:49,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:49,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:50,789] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:50,789] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:47:50,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:50,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:51,039] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:47:51,039] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:47:51,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:51,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:53,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 302 0
+[2022-01-06 16:47:53,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:53,556] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/test1.css HTTP/1.1" 200 29531
+[2022-01-06 16:47:53,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 54641
+[2022-01-06 16:47:53,558] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/jquery-easing/jquery.easing.min.js HTTP/1.1" 200 2532
+[2022-01-06 16:47:53,558] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 76308
+[2022-01-06 16:47:53,558] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 86927
+[2022-01-06 16:47:53,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+[2022-01-06 16:47:53,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/sb-admin.css HTTP/1.1" 200 214832
+[2022-01-06 16:47:53,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/ocean.jpg HTTP/1.1" 200 128450
+[2022-01-06 16:47:53,615] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:47:53,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:47:57,694] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-01-06 16:47:57,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-01-06 16:47:57,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:47:57,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3011
+[2022-01-06 16:47:57,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2022-01-06 16:47:57,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2022-01-06 16:47:57,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 17551
+[2022-01-06 16:47:57,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 38722
+[2022-01-06 16:47:57,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1003
+[2022-01-06 16:47:57,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2022-01-06 16:47:57,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17438
+[2022-01-06 16:47:57,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 30752
+[2022-01-06 16:47:57,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2022-01-06 16:47:57,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 200 73271
+[2022-01-06 16:47:57,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2022-01-06 16:47:57,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91469
+[2022-01-06 16:47:57,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_zerogrid.css HTTP/1.1" 200 4828
+[2022-01-06 16:47:57,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_style.css HTTP/1.1" 200 23905
+[2022-01-06 16:47:57,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_menu.css HTTP/1.1" 200 8215
+[2022-01-06 16:47:57,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97362
+[2022-01-06 16:47:57,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7278
+[2022-01-06 16:47:57,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12394
+[2022-01-06 16:47:57,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 26566
+[2022-01-06 16:47:57,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2022-01-06 16:47:57,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69782
+[2022-01-06 16:47:57,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2022-01-06 16:47:57,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61317
+[2022-01-06 16:47:57,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24265
+[2022-01-06 16:47:57,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4453
+[2022-01-06 16:47:57,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2022-01-06 16:47:57,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2022-01-06 16:47:57,829] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43247
+[2022-01-06 16:47:57,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42854
+[2022-01-06 16:47:57,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2022-01-06 16:47:57,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2022-01-06 16:47:57,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2022-01-06 16:47:57,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 447606
+[2022-01-06 16:47:57,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/prism.min.js HTTP/1.1" 200 8822
+[2022-01-06 16:47:57,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/semantic.ui.min.js HTTP/1.1" 200 287763
+[2022-01-06 16:47:57,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480558
+[2022-01-06 16:47:57,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2022-01-06 16:47:57,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13696
+[2022-01-06 16:47:57,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93675
+[2022-01-06 16:47:57,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 25398
+[2022-01-06 16:47:57,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 200 28389
+[2022-01-06 16:47:57,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 200 8726
+[2022-01-06 16:47:57,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2022-01-06 16:47:57,863] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 200 29207
+[2022-01-06 16:47:57,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 200 28341
+[2022-01-06 16:47:57,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 200 8700
+[2022-01-06 16:47:57,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/image.js HTTP/1.1" 200 25055
+[2022-01-06 16:47:57,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 200 11022
+[2022-01-06 16:47:57,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2022-01-06 16:47:57,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2022-01-06 16:47:57,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2022-01-06 16:47:57,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2022-01-06 16:47:57,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2022-01-06 16:47:57,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/8.jpg HTTP/1.1" 200 24687
+[2022-01-06 16:47:57,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/4.jpg HTTP/1.1" 200 27337
+[2022-01-06 16:47:57,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/index.jpg HTTP/1.1" 200 146911
+[2022-01-06 16:47:57,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/2.jpg HTTP/1.1" 200 47621
+[2022-01-06 16:47:57,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/1.jpg HTTP/1.1" 200 103270
+[2022-01-06 16:47:57,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/3.jpg HTTP/1.1" 200 35728
+[2022-01-06 16:47:57,896] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/5.jpg HTTP/1.1" 200 28854
+[2022-01-06 16:47:57,897] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/timg3.jfif HTTP/1.1" 200 74629
+[2022-01-06 16:47:57,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/10.jpg HTTP/1.1" 200 23088
+[2022-01-06 16:47:57,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/6.jpg HTTP/1.1" 200 14506
+[2022-01-06 16:47:57,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/9.jfif HTTP/1.1" 200 321460
+[2022-01-06 16:47:57,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46595
+[2022-01-06 16:47:57,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2022-01-06 16:47:57,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_05.jpg HTTP/1.1" 200 68706
+[2022-01-06 16:47:57,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/7.jpg HTTP/1.1" 200 33330
+[2022-01-06 16:47:57,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2022-01-06 16:47:57,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/timg.jfif HTTP/1.1" 200 73185
+[2022-01-06 16:47:58,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2022-01-06 16:47:58,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2022-01-06 16:47:58,185] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:00,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2022-01-06 16:48:00,724] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:01,080] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:48:01,080] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/ HTTP/1.1" 403 5022
+[2022-01-06 16:48:01,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:11,136] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:48:11,138] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:48:11,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:14,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /api-auth/login/?next=/CQM/CQMSeriv/ HTTP/1.1" 200 21864
+[2022-01-06 16:48:14,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2022-01-06 16:48:14,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:19,358] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:48:19,358] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:48:19,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864
+[2022-01-06 16:48:36,662] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:48:37,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:48:37,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:48:50,600] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 200 1605595
+[2022-01-06 16:48:51,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-01-06 16:48:51,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-01-06 16:48:56,414] [log.py:228] [log:log_response] [WARNING]- Forbidden: /CQM/CQMSeriv/
+[2022-01-06 16:48:56,414] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMSeriv/?Customer=C38(NB) HTTP/1.1" 403 5106
+[2022-01-06 16:48:56,472] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21864

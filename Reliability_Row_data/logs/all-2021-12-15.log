@@ -1,0 +1,677 @@
+[2021-12-15 10:56:49,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37444
+[2021-12-15 10:56:49,845] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 10:56:49 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 10:56:49,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 40377
+[2021-12-15 10:56:49,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 10:57:04,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_edit/ HTTP/1.1" 200 63532
+[2021-12-15 10:57:05,039] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 10:57:05 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2021-12-15 10:57:05,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 147
+[2021-12-15 10:57:05,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 10:57:09,743] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 10:57:09 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2021-12-15 10:57:09,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 30749
+[2021-12-15 10:57:11,217] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 10:57:11 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2021-12-15 10:57:11,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 19037
+[2021-12-15 11:25:02,745] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 489, in AutoResult_edit
+    if ProjectinfoinDCT.objects.filter(**check_dic).first().SS:
+AttributeError: 'NoneType' object has no attribute 'SS'
+[2021-12-15 11:25:02,746] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 82342
+[2021-12-15 11:25:02,862] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:25:24,431] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:25:24,529] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:25:24,555] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:25:24,640] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:25:24,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:25:24,979] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 570, in AutoResult_edit
+    'table_content': table_content,
+NameError: name 'table_content' is not defined
+[2021-12-15 11:25:24,981] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:25:24,981] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 98034
+[2021-12-15 11:25:48,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:25:48,544] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:25:48,551] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:25:48,645] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:25:48,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:25:48,874] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:25:48 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:25:48,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42356
+[2021-12-15 11:26:40,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ProjectInfoSearch/ HTTP/1.1" 200 42993
+[2021-12-15 11:26:41,211] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:26:41 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2021-12-15 11:26:41,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 56014
+[2021-12-15 11:26:41,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:28:24,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:28:24,792] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:28:24,804] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:28:24,987] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:28:25,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:28:25,244] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:28:25 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:28:25,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42356
+[2021-12-15 11:31:07,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:31:07,603] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:31:07,610] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:31:07,811] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:31:07,965] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:31:08,102] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:31:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:31:08,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42500
+[2021-12-15 11:32:45,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:32:45,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:32:45,585] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:32:45,679] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:32:45,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:32:45,926] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:32:45 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:32:45,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43124
+[2021-12-15 11:33:44,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:33:44,176] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:33:44,178] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:33:44,275] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:33:44,429] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:33:44,517] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:33:44 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:33:44,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42500
+[2021-12-15 11:34:01,512] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:34:01,604] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:34:01,608] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:34:01,701] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:34:01,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:34:01,948] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:34:01 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:34:01,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42548
+[2021-12-15 11:41:30,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:41:30,696] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:41:30,702] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:41:30,877] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:41:31,044] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:41:31,142] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:41:31 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:41:31,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42548
+[2021-12-15 11:46:39,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:46:39,955] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:46:39,982] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:46:40,187] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:46:40,345] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:46:40,437] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:46:40 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:46:40,445] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42548
+[2021-12-15 11:51:34,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:51:34,867] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:51:34,876] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:51:35,043] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:51:35,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:51:35,286] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:51:35 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:51:35,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42548
+[2021-12-15 11:51:46,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2021-12-15 11:51:46,445] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2021-12-15 11:51:46,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:51:50,595] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:51:50,602] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2021-12-15 11:51:50,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 40309
+[2021-12-15 11:51:50,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:51:56,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoproject/ HTTP/1.1" 200 3780
+[2021-12-15 11:51:56,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 11:51:56,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:51:59,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoproject/add/ HTTP/1.1" 200 8995
+[2021-12-15 11:51:59,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 11:51:59,085] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:52:25,370] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:52:25,377] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/AutoResult/autoproject/add/ HTTP/1.1" 302 0
+[2021-12-15 11:52:25,433] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoproject/ HTTP/1.1" 200 5976
+[2021-12-15 11:52:25,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 11:52:25,495] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:52:37,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ProjectInfoSearch/ HTTP/1.1" 200 42993
+[2021-12-15 11:52:37,968] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:52:37 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2021-12-15 11:52:37,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 56014
+[2021-12-15 11:52:37,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:52:41,549] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 486, in AutoResult_edit
+    Projectinfo['Year'] = AutoProject.objects.filter(Customer=i['Customer']).values('Project').Year
+AttributeError: 'QuerySet' object has no attribute 'Year'
+[2021-12-15 11:52:41,551] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 86791
+[2021-12-15 11:52:41,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:53:20,790] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 486, in AutoResult_edit
+    Projectinfo['Year'] = AutoProject.objects.filter(Customer=i['Customer']).values('Project').first().Year
+AttributeError: 'dict' object has no attribute 'Year'
+[2021-12-15 11:53:20,792] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 86791
+[2021-12-15 11:53:20,845] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:54:15,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 11:54:15,494] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 11:54:15,515] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 11:54:15,682] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 11:54:15,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:54:15,947] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 11:54:15 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 11:54:15,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42589
+[2021-12-15 11:56:19,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoproject/add/ HTTP/1.1" 200 8995
+[2021-12-15 11:56:19,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:20,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoproject/ HTTP/1.1" 200 5785
+[2021-12-15 11:56:20,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:20,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 40329
+[2021-12-15 11:56:20,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:21,574] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2021-12-15 11:56:21,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 40329
+[2021-12-15 11:56:21,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:24,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqm/?q=GLV3A HTTP/1.1" 200 228873
+[2021-12-15 11:56:24,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:26,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/ HTTP/1.1" 200 3286
+[2021-12-15 11:56:26,282] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:28,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/ HTTP/1.1" 200 27979
+[2021-12-15 11:56:28,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 11:56:28,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:36,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/53/change/ HTTP/1.1" 200 8961
+[2021-12-15 11:56:36,418] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 11:56:36,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 11:56:39,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/ HTTP/1.1" 200 27979
+[2021-12-15 11:56:39,609] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 12:03:32,738] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 12:03:32 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 12:03:32,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 42514
+[2021-12-15 13:41:25,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 21764
+[2021-12-15 13:41:25,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:41:47,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:41:47,410] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:41:47,420] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:41:47,616] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:41:47,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:41:47,886] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:41:47 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:41:47,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 3793
+[2021-12-15 13:42:05,324] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:42:05 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:42:05,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 45448
+[2021-12-15 13:42:09,542] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:42:09 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:42:09,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 45448
+[2021-12-15 13:42:23,148] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:42:23 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:42:23,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 45448
+[2021-12-15 13:42:33,063] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:42:33 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:42:33,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 45448
+[2021-12-15 13:43:01,951] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:43:01 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:43:01,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:49:58,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:49:58,703] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:49:58,714] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:49:58,925] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:49:59,119] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:49:59,204] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:49:59 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:49:59,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:50:19,192] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:50:19 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:50:19,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:50:43,078] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:50:43 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:50:43,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:51:02,537] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:51:02 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:51:02,547] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:51:10,515] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:51:10 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:51:10,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:52:25,270] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:52:25,377] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:52:25,384] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:52:25,471] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:52:25,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:52:25,703] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:52:25 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:52:25,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:52:40,074] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:52:40 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:52:40,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:52:48,802] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:52:48 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:52:48,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:52:56,038] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:52:56 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:52:56,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:00,411] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:00 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:00,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:01,642] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:01 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:01,649] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:03,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:53:03,899] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:53:03,920] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:53:04,024] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:53:04,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:53:04,292] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:04 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:04,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:53:08,071] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:08,080] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:17,391] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:17 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:17,400] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:25,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoItem_edit/ HTTP/1.1" 200 56350
+[2021-12-15 13:53:25,802] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:53:25,807] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:53:25,898] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:53:25,899] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2021-12-15 13:53:26,088] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:26 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoItem_edit/ POST
+[2021-12-15 13:53:26,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoItem_edit/ HTTP/1.1" 200 38905
+[2021-12-15 13:53:26,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:53:33,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:53:33,687] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:53:33,690] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:53:33,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:53:33,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:53:34,002] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:34 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:34,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:53:39,329] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:39 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:39,338] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:46,721] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:46 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:46,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:53:58,437] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:53:58,550] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:53:58,553] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:53:58,646] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:53:58,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:53:58,888] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:53:58 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:53:58,896] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:54:04,545] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:54:04 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:54:04,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:54:13,424] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:54:13 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:54:13,433] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:54:35,263] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:54:35 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:54:35,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:54:49,190] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:54:49 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:54:49,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:55:18,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:55:18,496] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:55:18,504] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:55:18,585] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:55:18,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:55:18,826] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:55:18 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:55:18,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:55:24,621] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:55:24 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:55:24,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:55:29,430] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:55:29 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:55:29,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 13:59:40,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 13:59:40,801] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 13:59:40,810] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 13:59:40,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 13:59:41,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 13:59:41,146] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:59:41 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:59:41,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 13:59:58,315] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 13:59:58 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 13:59:58,326] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:00:08,460] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:00:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:00:08,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:02:52,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37556
+[2021-12-15 14:02:52,153] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:02:52,158] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:02:52,270] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:02:52,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:02:52,535] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:02:52 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:02:52,544] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:03:08,792] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:03:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:03:08,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:03:29,662] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:03:29 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:03:29,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:04:28,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 14:04:28,622] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:04:28,629] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:04:28,718] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:04:28,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:04:28,974] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:04:28 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:04:28,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:04:51,844] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:04:51 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:04:51,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:05:14,174] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:05:14 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:05:14,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:05:46,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37555
+[2021-12-15 14:05:46,200] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:05:46,220] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:05:46,325] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:05:46,528] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:05:46,608] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:05:46 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:05:46,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:05:54,140] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:05:54 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:05:54,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:06:03,116] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:06:03 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:06:03,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:06:08,684] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:06:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:06:08,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:07:25,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37597
+[2021-12-15 14:07:25,251] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:07:25,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:07:25,347] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:07:25,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:07:25,613] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:07:25 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:07:25,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:07:32,629] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:07:32 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:07:32,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:07:55,202] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:07:55 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:07:55,211] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:07:57,398] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:07:57 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:07:57,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:08:17,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37597
+[2021-12-15 14:08:17,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:08:17,524] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:08:17,611] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:08:17,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:08:17,888] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:08:17 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:08:17,896] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:08:28,187] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:08:28 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:08:28,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:08:47,716] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:08:47 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:08:47,725] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:11:04,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37449
+[2021-12-15 14:11:04,388] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:11:04,406] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:11:04,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:11:04,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:11:04,790] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:11:04 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:11:04,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:11:18,150] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:11:18 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:11:18,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:11:24,429] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:11:24 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:11:24,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:23,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37572
+[2021-12-15 14:14:23,859] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:14:23,908] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:14:24,086] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:14:24,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:14:24,331] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:24 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:24,338] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:14:36,391] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:36 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:36,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:41,610] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:41 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:41,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:43,469] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:43 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:43,479] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:43,887] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:43 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:43,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:44,865] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:44 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:44,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:45,142] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:45 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:45,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:14:55,162] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:14:55 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:14:55,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:15:33,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37572
+[2021-12-15 14:15:33,790] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:15:33,837] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:15:34,069] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:15:34,256] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:15:34,356] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:15:34 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:15:34,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:15:40,121] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:15:40 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:15:40,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:15:56,759] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:15:56 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:15:56,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:19:21,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37587
+[2021-12-15 14:19:21,669] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:19:21,732] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:19:21,925] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:19:22,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:19:22,187] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:19:22 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:19:22,196] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:19:31,760] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:19:31 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:19:31,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:19:44,501] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:19:44 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:19:44,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:19:51,357] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:19:51 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:19:51,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:19:56,234] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:19:56 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:19:56,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:20:46,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37587
+[2021-12-15 14:20:46,137] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 14:20:46,189] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 14:20:46,424] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 14:20:46,610] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:20:46,698] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:20:46 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:20:46,706] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 14:20:54,232] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:20:54 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:20:54,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:21:10,762] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:21:10 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:21:10,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:25:04,964] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:25:04 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:25:04,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 14:40:13,696] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 21764
+[2021-12-15 14:40:13,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:40:26,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37587
+[2021-12-15 14:40:27,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 14:40:27,190] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 14:40:27 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 14:40:27,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 15:48:35,084] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:48:35 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:48:35,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 43968
+[2021-12-15 15:51:34,603] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:51:34 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:51:34,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 15:51:47,144] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:51:47 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:51:47,155] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 15:51:49,160] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:51:49 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:51:49,169] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 15:51:54,962] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:51:54 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:51:54,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 15:53:28,572] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:53:28 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:53:28,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 15:53:49,720] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 15:53:49,723] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 15:53:49,737] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 15:53:52,089] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:53:52 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:53:52,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 15:59:09,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37712
+[2021-12-15 15:59:09,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 15:59:09,792] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 15:59:09,961] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 15:59:10,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 15:59:10,213] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:59:10 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:59:10,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 15:59:18,839] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:59:18 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:59:18,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 15:59:41,491] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:59:41 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:59:41,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 15:59:48,783] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 15:59:48 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 15:59:48,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 16:00:08,983] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:00:08 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:00:08,992] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 16:00:24,626] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:00:24 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:00:24,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 16:01:13,902] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:01:13 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:01:13,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 16:02:18,159] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:02:18 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:02:18,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 90839
+[2021-12-15 16:02:39,021] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:02:39 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:02:39,031] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 16:03:29,808] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:03:29 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:03:29,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 16:07:18,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37716
+[2021-12-15 16:07:18,857] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 16:07:18,865] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 16:07:19,064] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 16:07:19,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:07:19,326] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:07:19 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:07:19,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 16:07:29,417] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:07:29 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:07:29,426] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 16:07:54,128] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:07:54 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:07:54,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46576
+[2021-12-15 16:22:51,781] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 584, in AutoResult_edit
+    AutoResult.objects.create(creat_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: create() takes 1 positional argument but 2 were given
+[2021-12-15 16:22:51,783] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:22:51,783] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 97511
+[2021-12-15 16:23:17,556] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 584, in AutoResult_edit
+    AutoResult.objects.create(**creat_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'ProjectData' is an invalid keyword argument for this function
+[2021-12-15 16:23:17,558] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:23:17,559] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 107855
+[2021-12-15 16:24:36,524] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:24:36 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:24:36,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46588
+[2021-12-15 16:25:00,154] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 578, in AutoResult_edit
+    AutoResult.objects.filter(**check_dic_Result).first().update(**update_dic)
+AttributeError: 'AutoResult' object has no attribute 'update'
+[2021-12-15 16:25:00,156] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:25:00,156] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 93229
+[2021-12-15 16:26:00,238] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:26:00 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:26:00,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46594
+[2021-12-15 16:29:36,010] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:29:36 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:29:36,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:29:42,118] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:29:42 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:29:42,127] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:29:43,355] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:29:43 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:29:43,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:29:43,572] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:29:43 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:29:43,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:37:51,201] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:37:51 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:37:51,211] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:37:52,610] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:37:52 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:37:52,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:37:53,403] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:37:53 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:37:53,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:38:10,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37716
+[2021-12-15 16:38:10,977] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 16:38:10,985] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 16:38:11,177] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 16:38:11,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:38:11,442] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:38:11 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:38:11,450] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 16:38:24,340] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:38:24 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:38:24,350] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:38:31,771] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:38:31 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:38:31,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-15 16:51:30,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37716
+[2021-12-15 16:51:31,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:51:31,118] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:51:31 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:51:31,127] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 16:51:38,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 40329
+[2021-12-15 16:51:38,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:51:57,918] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/ HTTP/1.1" 200 11812
+[2021-12-15 16:51:57,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 16:51:57,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:52:02,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/1/change/ HTTP/1.1" 200 23936
+[2021-12-15 16:52:02,340] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 16:52:02,388] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:53:05,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoitems/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8181
+[2021-12-15 16:53:05,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 16:53:05,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:54:17,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/ HTTP/1.1" 200 11812
+[2021-12-15 16:54:17,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:54:46,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/AutoResult/autoresult/2/change/ HTTP/1.1" 200 23936
+[2021-12-15 16:54:46,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2021-12-15 16:54:46,607] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:57:49,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37731
+[2021-12-15 16:57:49,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-15 16:57:49,839] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-15 16:57:50,066] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-15 16:57:50,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-15 16:57:50,338] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:57:50 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:57:50,346] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-15 16:58:04,131] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-15 16:58:04 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-15 16:58:04,142] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-22 10:22:01,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 302 0
+[2021-12-22 10:22:01,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2021-12-22 10:22:01,613] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:22:01,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2021-12-22 10:22:01,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2021-12-22 10:22:01,652] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2021-12-22 10:22:06,067] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-22 10:22:06,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2021-12-22 10:22:06,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46495
+[2021-12-22 10:22:06,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_style.css HTTP/1.1" 304 0
+[2021-12-22 10:22:06,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_menu.css HTTP/1.1" 304 0
+[2021-12-22 10:22:06,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 46495
+[2021-12-22 10:22:06,287] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:22:06,341] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:22:06,579] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:22:06,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:22:06,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:22:21,389] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37731
+[2021-12-22 10:22:21,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:22:21,509] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:22:21,696] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:22:21,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:22:21,959] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-22 10:22:21 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-22 10:22:21,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-22 10:24:14,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37585
+[2021-12-22 10:24:14,631] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:24:14,668] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:24:14,760] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:24:14,900] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-22 10:24:14,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 200 47008
+[2021-12-22 10:24:14,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:24:16,345] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37585
+[2021-12-22 10:24:16,430] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:24:16,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:24:16,518] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:24:16,649] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-22 10:24:16,658] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 200 47008
+[2021-12-22 10:24:16,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:25:20,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 200 37731
+[2021-12-22 10:25:20,865] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:25:20,871] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:25:20,966] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:25:21,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:25:21,227] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-22 10:25:21 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-22 10:25:21,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 2315
+[2021-12-22 10:25:29,218] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-22 10:25:29 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /AutoResult/AutoResult_edit/ POST
+[2021-12-22 10:25:29,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 200 46612
+[2021-12-22 10:57:06,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 56483
+[2021-12-22 10:57:06,848] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:57:06,852] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:57:06,951] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:57:07,017] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2021-12-22 10:57:07,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:57:35,624] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-22 10:57:35 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /TestPlanSW/TestPlanSW-summary/ POST
+[2021-12-22 10:57:35,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 11785
+[2021-12-22 10:57:56,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 56483
+[2021-12-22 10:57:56,175] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-12-22 10:57:56,193] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-12-22 10:57:56,328] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-12-22 10:57:56,333] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2021-12-22 10:57:56,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21764
+[2021-12-22 10:58:35,051] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-12-22 10:58:35 C1010S3>Edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /TestPlanSW/TestPlanSW-summary/ POST
+[2021-12-22 10:58:35,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 11785

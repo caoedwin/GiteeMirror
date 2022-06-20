@@ -1,0 +1,14 @@
+[2020-12-11 16:17:13,173] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 211, in CQM_upload
+    if i['Reliability'] not in ResultList or i['Compatibility'] not in ResultList or i['Testresult'] not in ResultList:
+KeyError: 'Reliability'
+[2020-12-11 16:17:13,175] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_upload/ HTTP/1.1" 500 22925

@@ -1,0 +1,130 @@
+[2022-03-04 12:10:34,755] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 12:11:26,337] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 12:11:29,072] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 12:12:58,116] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 12:13:13,770] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 13:06:35,502] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:08:38,321] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 268, in BorrowedChairCabinet
+    return render(request, 'ChairCabinetMS/BorrowedComputer.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ChairCabinetMS/BorrowedComputer.html
+[2022-03-04 14:08:38,323] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 113239
+[2022-03-04 14:10:07,191] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 120, in BorrowedChairCabinet
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-04 14:10:07,193] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:10:07,194] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 90596
+[2022-03-04 14:47:25,878] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:49:43,201] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:49:52,081] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:49:56,447] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:50:00,035] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:50:03,868] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:50:07,775] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 14:50:10,772] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 16:28:54,155] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 2435, in M_edit
+    ChairCabinetLNV.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'MaterialPN' is an invalid keyword argument for this function
+[2022-03-04 16:28:54,157] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 16:28:54,158] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/M_edit/ HTTP/1.1" 500 111431
+[2022-03-04 16:45:46,884] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/M_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 2672, in M_edit
+    NID = responseData['UnifiedNumber']
+KeyError: 'UnifiedNumber'
+[2022-03-04 16:45:46,886] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 16:45:46,886] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/M_edit/ HTTP/1.1" 500 87994
+[2022-03-04 16:56:25,232] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 120, in BorrowedChairCabinet
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-04 16:56:25,234] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 16:56:25,235] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 90587
+[2022-03-04 17:07:47,585] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 112, in BorrowedChairCabinet
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-04 17:07:47,587] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 17:07:47,588] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 85974
+[2022-03-04 17:11:11,149] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ChairCabinetMS/BorrowedChairCabinet/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ChairCabinetMS\views.py", line 129, in BorrowedChairCabinet
+    "Number": i.BR_per_code, "Name": i.Usrname, "MaterialPN": i.MaterialPN,
+AttributeError: 'ChairCabinetLNV' object has no attribute 'MaterialPN'
+[2022-03-04 17:11:11,152] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-03-04 17:11:11,152] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ChairCabinetMS/BorrowedChairCabinet/ HTTP/1.1" 500 91329

@@ -1,0 +1,88 @@
+[2020-09-10 08:57:36,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 302 0
+[2020-09-10 08:57:36,649] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-09-10 08:57:38,628] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-09-10 08:57:38,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 40530
+[2020-09-10 08:57:38,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 40530
+[2020-09-10 08:57:48,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 51967
+[2020-09-10 08:57:50,437] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 5834
+[2020-09-10 08:57:55,827] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 513, in TestPlanSW_summary
+    Prostr2 = i['Project'][0:3]+i[5:]
+TypeError: unhashable type: 'slice'
+[2020-09-10 08:57:55,831] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 79320
+[2020-09-10 08:58:58,124] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 513, in TestPlanSW_summary
+    Prostr2 = i['Project'][0:3]+['Project'][5:]
+TypeError: can only concatenate str (not "list") to str
+[2020-09-10 08:58:58,129] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 79442
+[2020-09-10 08:59:39,212] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 514, in TestPlanSW_summary
+    Prostr2 = i['Project'][0:3]+['Project'][5:]
+TypeError: can only concatenate str (not "list") to str
+[2020-09-10 08:59:39,220] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 79375
+[2020-09-10 09:01:56,665] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 514, in TestPlanSW_summary
+    Prostr2 = i['Project'][0:3]+['Project'][5:]
+TypeError: can only concatenate str (not "list") to str
+[2020-09-10 09:01:56,670] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 500 79451
+[2020-09-10 09:07:50,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-summary/ HTTP/1.1" 200 4847
+[2020-09-10 09:08:45,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 69048
+[2020-09-10 09:08:46,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/?action=get HTTP/1.1" 200 803
+[2020-09-10 09:08:46,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 893
+[2020-09-10 09:08:51,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 4902
+[2020-09-10 09:14:46,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 4902
+[2020-09-10 09:14:54,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 50517
+[2020-09-10 09:14:55,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8299
+[2020-09-10 09:14:58,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-09-10 10:30:35,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-09-10 10:41:11,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 8784
+[2020-09-10 10:41:37,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-summary/ HTTP/1.1" 200 9930
+[2020-09-10 11:51:12,359] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 41949
+[2020-09-10 11:51:14,638] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 223, in INVGantt_search
+    print(request.data,request)
+AttributeError: 'WSGIRequest' object has no attribute 'data'
+[2020-09-10 11:51:14,639] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 500 91276
+[2020-09-10 11:51:33,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 41949
+[2020-09-10 11:51:34,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 5652
+[2020-09-10 11:52:34,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 41949
+[2020-09-10 11:52:35,463] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 5652
+[2020-09-10 12:01:58,075] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 41949
+[2020-09-10 12:01:58,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 5652

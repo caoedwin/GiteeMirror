@@ -1,0 +1,489 @@
+[2020-07-08 08:51:33,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 302 0
+[2020-07-08 08:51:33,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-08 08:51:33,122] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[2020-07-08 08:51:33,219] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 08:51:33,223] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-07-08 08:51:33,236] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-08 08:51:38,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-07-08 08:51:38,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-08 08:51:38,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-08 08:51:38,421] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 08:51:38,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 08:51:38,520] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 08:51:38,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 08:51:46,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23197
+[2020-07-08 08:51:46,495] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 08:51:46,499] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 08:51:46,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 08:51:46,669] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 08:51:46,840] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 08:51:46,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 08:51:46,953] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 08:51:59,320] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 580, in Lesson_search
+    return HttpResponse(json.dumps(data), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+[2020-07-08 08:51:59,322] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 96475
+[2020-07-08 08:52:44,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 08:52:44,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 08:52:44,548] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 08:52:44,602] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 08:52:44,655] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 08:52:44,759] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 08:52:44,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 08:52:44,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 08:52:47,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 175201
+[2020-07-08 08:59:27,587] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 08:59:27,750] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 08:59:27,764] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 08:59:27,829] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 08:59:27,902] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 08:59:28,032] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 08:59:28,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 08:59:28,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 08:59:30,561] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 585, in Lesson_search
+    return HttpResponse(json.dumps(data), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ManyRelatedManager is not JSON serializable
+[2020-07-08 08:59:30,564] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 107279
+[2020-07-08 09:01:58,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 09:01:58,489] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:01:58,490] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:01:58,549] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:01:58,602] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:01:58,718] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:01:58,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:01:58,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:02:01,336] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 580, in Lesson_search
+    for j in i.Photo:
+TypeError: 'ManyRelatedManager' object is not iterable
+[2020-07-08 09:02:01,338] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 78984
+[2020-07-08 09:05:11,614] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 09:05:11,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:05:11,778] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:05:11,830] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:05:11,888] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:05:12,018] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:05:12,119] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:05:12,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:05:13,952] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 580, in Lesson_search
+    for j in i.Photo:
+TypeError: 'ManyRelatedManager' object is not iterable
+[2020-07-08 09:05:13,954] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 79044
+[2020-07-08 09:05:56,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 09:05:57,124] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:05:57,127] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:05:57,197] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:05:57,251] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:05:57,359] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:05:57,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:05:57,473] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:06:00,041] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 586, in Lesson_search
+    "Root_Cause":i.Root_Cause, "Solution":i.Solution, "Action":i.Action, "Photo":Photolist, "video":i.videolist, "edit_time":i.edit_time,})
+AttributeError: 'lesson_learn' object has no attribute 'videolist'
+[2020-07-08 09:06:00,044] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Lesson_search/ HTTP/1.1" 500 79565
+[2020-07-08 09:06:31,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23112
+[2020-07-08 09:06:31,764] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:06:31,768] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:06:31,823] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:06:31,893] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:06:32,023] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:06:32,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:06:32,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:06:33,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 433
+[2020-07-08 09:08:01,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23169
+[2020-07-08 09:08:01,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:08:01,454] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:08:01,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:08:01,561] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:08:01,678] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:08:01,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:08:01,798] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:09:15,745] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 23151
+[2020-07-08 09:09:15,916] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:09:15,919] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:09:15,977] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:09:16,024] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:09:16,135] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:09:16,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:09:16,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:10:19,164] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 62073
+[2020-07-08 09:12:12,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 176887
+[2020-07-08 09:12:13,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 176887
+[2020-07-08 09:12:13,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 176887
+[2020-07-08 09:12:28,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 176887
+[2020-07-08 09:12:28,641] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1.jpg
+[2020-07-08 09:12:28,646] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,651] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2.jpg
+[2020-07-08 09:12:28,652] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,697] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_eiPmC9F.jpg
+[2020-07-08 09:12:28,710] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_eiPmC9F.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,710] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_aAYec09.jpg
+[2020-07-08 09:12:28,711] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_FLgLGOS.jpg
+[2020-07-08 09:12:28,714] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3.jpg
+[2020-07-08 09:12:28,720] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_aAYec09.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,722] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4.jpg
+[2020-07-08 09:12:28,725] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_FLgLGOS.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,726] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,730] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,736] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/8.jpg
+[2020-07-08 09:12:28,737] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/8.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,747] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5.jpg
+[2020-07-08 09:12:28,754] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,757] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6.jpg
+[2020-07-08 09:12:28,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,774] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_xjt6Ker.jpg
+[2020-07-08 09:12:28,777] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_XDhtsbk.jpg
+[2020-07-08 09:12:28,778] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_XdI2z3V.jpg
+[2020-07-08 09:12:28,780] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_XDhtsbk.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,780] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_xjt6Ker.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,781] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_13Mnq7g.jpg
+[2020-07-08 09:12:28,783] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_XdI2z3V.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,796] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_13Mnq7g.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,796] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_FXHldYM.jpg
+[2020-07-08 09:12:28,804] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_M61z9GG.jpg
+[2020-07-08 09:12:28,805] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_FXHldYM.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,811] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_M61z9GG.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,822] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7.jpg
+[2020-07-08 09:12:28,835] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,838] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/10.jpg
+[2020-07-08 09:12:28,844] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9.jpg
+[2020-07-08 09:12:28,845] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/11.jpg
+[2020-07-08 09:12:28,845] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/10.jpg HTTP/1.1" 404 1770
+[2020-07-08 09:12:28,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9.jpg HTTP/1.1" 404 1767
+[2020-07-08 09:12:28,847] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/12.jpg
+[2020-07-08 09:12:28,848] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/11.jpg HTTP/1.1" 404 1770
+[2020-07-08 09:12:28,859] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/13.jpg
+[2020-07-08 09:12:28,860] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/12.jpg HTTP/1.1" 404 1770
+[2020-07-08 09:12:28,870] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/13.jpg HTTP/1.1" 404 1770
+[2020-07-08 09:12:28,893] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/14.jpg
+[2020-07-08 09:12:28,897] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:12:28,912] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/14.jpg HTTP/1.1" 404 1770
+[2020-07-08 09:12:28,913] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_l88aXoy.jpg
+[2020-07-08 09:12:28,922] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_8CrjNdM.jpg
+[2020-07-08 09:12:28,925] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_l88aXoy.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,931] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_JmnKEV2.jpg
+[2020-07-08 09:12:28,932] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_8CrjNdM.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_JmnKEV2.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:12:28,959] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_j9Jj9v3.jpg
+[2020-07-08 09:12:28,960] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_j9Jj9v3.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,977] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_wmAjvLf.jpg
+[2020-07-08 09:12:28,989] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_wmAjvLf.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,990] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_KDuTTwN.jpg
+[2020-07-08 09:12:28,993] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_KDuTTwN.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:28,993] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/8_JcOPk5S.jpg
+[2020-07-08 09:12:29,001] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_MDIb8TN.jpg
+[2020-07-08 09:12:29,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/8_JcOPk5S.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:12:29,002] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/9_7iKrxXA.jpg
+[2020-07-08 09:12:29,002] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_MDIb8TN.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,003] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_cGVxvOt.jpg
+[2020-07-08 09:12:29,009] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/9_7iKrxXA.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,009] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_cGVxvOt.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,045] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_MxgJjM1.jpg
+[2020-07-08 09:12:29,046] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_LHGuSr4.jpg
+[2020-07-08 09:12:29,047] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_MxgJjM1.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,048] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_LHGuSr4.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,055] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_KttX5LE.jpg
+[2020-07-08 09:12:29,058] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_qt1j1N1.jpg
+[2020-07-08 09:12:29,058] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_FRQgnzm.jpg
+[2020-07-08 09:12:29,059] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_KttX5LE.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,059] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_qt1j1N1.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,061] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_FRQgnzm.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,062] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_UHeKmkN.jpg
+[2020-07-08 09:12:29,078] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_UHeKmkN.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,088] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_x1XB0pK.jpg
+[2020-07-08 09:12:29,089] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_K4vV6br.jpg
+[2020-07-08 09:12:29,092] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:12:29,093] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_x1XB0pK.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,097] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_K4vV6br.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,127] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_SmICjjd.jpg
+[2020-07-08 09:12:29,135] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_pi8JYNQ.jpg
+[2020-07-08 09:12:29,136] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_SmICjjd.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,144] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/7_ZhWDnfZ.jpg
+[2020-07-08 09:12:29,148] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_pi8JYNQ.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,151] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/7_ZhWDnfZ.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,155] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_4Q3G8DV.jpg
+[2020-07-08 09:12:29,164] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_4Q3G8DV.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,166] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_YGAJbvb.jpg
+[2020-07-08 09:12:29,169] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/8_QdfTGML.jpg
+[2020-07-08 09:12:29,173] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/8_QdfTGML.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,175] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_YGAJbvb.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,179] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_ypYiOZH.jpg
+[2020-07-08 09:12:29,189] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_ypYiOZH.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,196] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_wBid37f.jpg
+[2020-07-08 09:12:29,203] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_wBid37f.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,204] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_wWKrVWx.jpg
+[2020-07-08 09:12:29,210] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_J9L9sDK.jpg
+[2020-07-08 09:12:29,211] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_wWKrVWx.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,217] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_9GLoPlC.jpg
+[2020-07-08 09:12:29,217] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_J9L9sDK.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,222] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_Pvd2bGU.jpg
+[2020-07-08 09:12:29,223] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_9GLoPlC.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,228] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/5_8aGoZBN.jpg
+[2020-07-08 09:12:29,228] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_Pvd2bGU.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,233] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/5_8aGoZBN.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,240] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/6_hg5ZTTM.jpg
+[2020-07-08 09:12:29,244] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_SKjiyAm.jpg
+[2020-07-08 09:12:29,245] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/6_hg5ZTTM.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,248] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_MkjSnHu.jpg
+[2020-07-08 09:12:29,251] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_SKjiyAm.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,255] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_MkjSnHu.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,259] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_kTgm70R.jpg
+[2020-07-08 09:12:29,263] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_kj0xnEP.jpg
+[2020-07-08 09:12:29,266] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_kTgm70R.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,273] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_wTKsNY5.jpg
+[2020-07-08 09:12:29,273] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_kj0xnEP.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,285] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_peT8EY0.jpg
+[2020-07-08 09:12:29,286] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_wTKsNY5.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,291] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_peT8EY0.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,296] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/4_7IjUNGp.jpg
+[2020-07-08 09:12:29,299] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/4_7IjUNGp.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,304] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_cIAzq4K.jpg
+[2020-07-08 09:12:29,307] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_cIAzq4K.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,318] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/2_2agPJuC.jpg
+[2020-07-08 09:12:29,324] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/2_2agPJuC.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,325] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_jTUJa1h.jpg
+[2020-07-08 09:12:29,339] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_jTUJa1h.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,347] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_XajZcqW.jpg
+[2020-07-08 09:12:29,352] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:12:29,355] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_yFStONJ.jpg
+[2020-07-08 09:12:29,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_XajZcqW.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_yFStONJ.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,362] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/3_LacUDBw.jpg
+[2020-07-08 09:12:29,371] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/3_LacUDBw.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,371] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_Fyv6m9P.jpg
+[2020-07-08 09:12:29,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_Fyv6m9P.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,388] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_MkmzdD5.jpg
+[2020-07-08 09:12:29,391] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/1_Zmxy1rm.jpg
+[2020-07-08 09:12:29,394] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_MkmzdD5.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,395] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/1_Zmxy1rm.jpg HTTP/1.1" 404 1791
+[2020-07-08 09:12:29,397] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/123.jpg
+[2020-07-08 09:12:29,399] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Logo_5KPDpvE.JPG
+[2020-07-08 09:12:29,403] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Logo_5KPDpvE.JPG HTTP/1.1" 404 1800
+[2020-07-08 09:12:29,405] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/123.jpg HTTP/1.1" 404 1773
+[2020-07-08 09:12:29,407] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Back_cover.JPG
+[2020-07-08 09:12:29,411] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Back_cover.JPG HTTP/1.1" 404 1794
+[2020-07-08 09:12:29,414] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Package.JPG
+[2020-07-08 09:12:29,424] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Package.JPG HTTP/1.1" 404 1785
+[2020-07-08 09:12:29,427] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/Rust.JPG
+[2020-07-08 09:12:29,428] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/Rust.JPG HTTP/1.1" 404 1776
+[2020-07-08 09:12:29,429] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/test/speaker.JPG
+[2020-07-08 09:12:29,431] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/test/speaker.JPG HTTP/1.1" 404 1785
+[2020-07-08 09:12:29,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:12:29,671] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:12:32,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24798
+[2020-07-08 09:19:35,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138931
+[2020-07-08 09:19:35,415] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:19:35,419] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:19:35,478] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:19:35,531] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:19:35,719] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:19:35,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:19:35,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:20:30,389] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24798
+[2020-07-08 09:20:31,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24798
+[2020-07-08 09:20:31,669] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24798
+[2020-07-08 09:20:31,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24798
+[2020-07-08 09:31:22,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138964
+[2020-07-08 09:31:22,262] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:31:22,263] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:31:22,340] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:31:22,397] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:31:22,595] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:31:22,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:31:22,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:31:26,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24831
+[2020-07-08 09:31:26,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138964
+[2020-07-08 09:31:26,550] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:31:26,554] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:31:26,599] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:31:26,645] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:31:26,810] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:31:26,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:31:26,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:31:35,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24831
+[2020-07-08 09:31:35,600] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138964
+[2020-07-08 09:31:35,823] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:31:35,823] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:31:35,872] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:31:35,915] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:31:36,054] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:31:36,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:31:36,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 09:31:42,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 138964
+[2020-07-08 09:31:42,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138964
+[2020-07-08 09:31:43,045] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 09:31:43,047] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 09:31:43,105] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 09:31:43,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 09:31:43,284] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 09:31:43,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 09:31:43,445] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:17:26,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2020-07-08 15:17:26,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-08 15:17:26,445] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[2020-07-08 15:17:26,753] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-07-08 15:17:26,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-08 15:17:41,819] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 16506
+[2020-07-08 15:17:42,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:18:56,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_search/ HTTP/1.1" 200 138947
+[2020-07-08 15:18:57,683] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 75
+[2020-07-08 15:18:57,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:19:08,157] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 15:19:08,158] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 15:19:08,158] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2020-07-08 15:19:08,210] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 15:19:08,210] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/lib/bootstrap.min.css.map HTTP/1.1" 404 1812
+[2020-07-08 15:19:14,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Lesson_search/ HTTP/1.1" 200 24814
+[2020-07-08 15:24:19,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_edit/ HTTP/1.1" 200 50640
+[2020-07-08 15:24:20,149] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 15:24:20,182] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 15:24:20,279] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 15:24:20,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 135
+[2020-07-08 15:24:20,829] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:24:22,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 875
+[2020-07-08 15:30:47,938] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 135
+[2020-07-08 15:30:57,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 875
+[2020-07-08 15:30:58,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 58982
+[2020-07-08 15:31:19,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2020-07-08 15:31:21,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1821
+[2020-07-08 15:31:22,009] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:31:24,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2020-07-08 15:31:24,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21903
+[2020-07-08 15:31:24,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:31:29,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/ HTTP/1.1" 200 6136
+[2020-07-08 15:31:29,667] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:31:29,750] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:31:32,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/4/change/ HTTP/1.1" 200 8308
+[2020-07-08 15:31:32,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2020-07-08 15:31:32,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2020-07-08 15:31:32,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2020-07-08 15:31:32,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:31:32,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2020-07-08 15:31:32,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:31:57,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/CQM/cqmproject/ HTTP/1.1" 200 6136
+[2020-07-08 15:31:57,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:31:58,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 21903
+[2020-07-08 15:31:58,610] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:23,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-08 15:34:23,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:34:23,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:26,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/5/change/ HTTP/1.1" 200 8408
+[2020-07-08 15:34:26,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:34:26,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:43,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-08 15:34:43,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:47,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/1/change/ HTTP/1.1" 200 8402
+[2020-07-08 15:34:47,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:34:47,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:49,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-08 15:34:50,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:51,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/9/change/ HTTP/1.1" 200 8388
+[2020-07-08 15:34:51,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2020-07-08 15:34:51,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:34:53,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/LessonProjectME/testprojectll/ HTTP/1.1" 200 9020
+[2020-07-08 15:34:53,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:36:31,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-08 15:36:31,196] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-08 15:36:31,463] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:36:36,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 200 37598
+[2020-07-08 15:36:36,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/image.js HTTP/1.1" 304 0
+[2020-07-08 15:36:37,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_ProjectResult/?action=get&csrfmiddlewaretoken=8RdbVXMfpn2iazjhOEoOvBZzULHsY5gtlQ6GKPhYJsppbij63PhPe2UQbE1HgxRV HTTP/1.1" 200 357
+[2020-07-08 15:36:37,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-08 15:36:43,453] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 15:36:43,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 15:36:43,465] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-08 15:36:43,489] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 15:36:46,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 200 37598
+[2020-07-08 15:36:46,322] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-08 15:36:46,379] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-08 15:36:46,538] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-08 15:36:46,538] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-08 15:36:46,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_ProjectResult/?action=get&csrfmiddlewaretoken=hMq0yKaChW2OuHaJkad7QJOcWkTyexR3uLjvnCFlB1pVvqayzl68zaJtdddNwZsv HTTP/1.1" 200 357
+[2020-07-08 15:36:46,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-09 08:17:07,076] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-09 08:17:07,078] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2020-07-09 08:17:07,078] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2020-07-09 08:17:07,079] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-09 08:17:10,232] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LessonProjectME/Lesson_ProjectResult/ HTTP/1.1" 302 0
+[2020-07-09 08:17:10,258] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-09 08:17:10,366] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-09 08:17:10,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2020-07-09 08:17:10,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2020-07-09 08:17:15,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2020-07-09 08:17:15,345] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-09 08:17:15,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 34438
+[2020-07-09 08:17:15,593] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-09 08:17:15,653] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-09 08:17:15,772] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-09 08:17:15,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506
+[2020-07-09 08:17:20,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Lesson_upload/ HTTP/1.1" 200 22369
+[2020-07-09 08:17:20,653] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2020-07-09 08:17:20,712] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2020-07-09 08:17:20,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16506

@@ -1,0 +1,74 @@
+[2021-09-17 15:09:16,295] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-09-17 15:09:21,311] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 114, in BorrowedDeviceLNV
+    for i in DeviceIntfCtgryList.objects.values("IntfCtgry").distinct().order("IntfCtgry"):
+AttributeError: 'QuerySet' object has no attribute 'order'
+[2021-09-17 15:09:21,315] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 82385
+[2021-09-17 15:10:16,762] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 114, in BorrowedDeviceLNV
+    for i in DeviceIntfCtgryList.objects.values("IntfCtgry").distinct().ordered("IntfCtgry"):
+TypeError: 'bool' object is not callable
+[2021-09-17 15:10:16,769] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 82410
+[2021-09-17 15:37:09,847] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 315, in BorrowedDeviceLNV
+    for i in mock_datalist:
+UnboundLocalError: local variable 'mock_datalist' referenced before assignment
+[2021-09-17 15:37:09,851] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-09-17 15:37:09,852] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 84768
+[2021-09-17 16:09:17,235] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 294, in BorrowedDeviceLNV
+    Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+KeyError: 'IntfCtgry'
+[2021-09-17 16:09:17,238] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-09-17 16:09:17,238] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 84648
+[2021-09-17 16:09:36,688] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/BorrowedDeviceLNV/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 294, in BorrowedDeviceLNV
+    Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+KeyError: 'IntfCtgry'
+[2021-09-17 16:09:36,689] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-09-17 16:09:36,689] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/BorrowedDeviceLNV/ HTTP/1.1" 500 84648

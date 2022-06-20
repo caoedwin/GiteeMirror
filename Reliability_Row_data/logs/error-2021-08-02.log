@@ -1,0 +1,433 @@
+[2021-08-02 09:46:09,251] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeri/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: __init__() takes 1 positional argument but 2 were given
+[2021-08-02 09:46:09,251] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeri/ HTTP/1.1" 500 71902
+[2021-08-02 15:15:33,424] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 59
+[2021-08-02 15:24:40,090] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+TypeError: cannot unpack non-iterable UserInfo object
+[2021-08-02 15:24:40,091] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 500 114345
+[2021-08-02 15:28:38,065] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+TypeError: cannot unpack non-iterable UserInfo object
+[2021-08-02 15:28:38,067] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 500 114345
+[2021-08-02 15:29:16,086] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 410, in initial
+    self.perform_authentication(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 220, in user
+    self._authenticate()
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    self.user, self.auth = user_auth_tuple
+TypeError: cannot unpack non-iterable UserInfo object
+[2021-08-02 15:29:16,088] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678 HTTP/1.1" 500 114345
+[2021-08-02 15:53:22,471] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 10, in has_permission
+    groups = request.user.groups.all()
+AttributeError: 'UserInfo' object has no attribute 'groups'
+[2021-08-02 15:53:22,474] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678&Project_Name=FOC60 HTTP/1.1" 500 111493
+[2021-08-02 15:57:23,301] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 10, in has_permission
+    group = UserInfo.objects.filter(name='C1010S3').first()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: account, cqmproject, email, id, password, role, testprojectll, testprojectme, testprojectsw, testprojectswaio, username
+[2021-08-02 15:57:23,303] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678&Project_Name=FOC60 HTTP/1.1" 500 153035
+[2021-08-02 16:00:13,610] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 24, in has_permission
+    groups = request.user.groups.all()
+AttributeError: 'UserInfo' object has no attribute 'groups'
+[2021-08-02 16:00:13,612] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678&Project_Name=FOC60 HTTP/1.1" 500 111617
+[2021-08-02 16:01:50,694] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 26, in has_permission
+    r2 = group and groups
+NameError: name 'group' is not defined
+[2021-08-02 16:01:50,697] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=C1010S3&password=12345678&Project_Name=FOC60 HTTP/1.1" 500 111487
+[2021-08-02 16:17:00,453] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 409, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'Method'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 18, in has_permission
+    print(request.Method)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 411, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'Method'
+[2021-08-02 16:17:00,455] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!&Project_Name=FOC60 HTTP/1.1" 500 119376
+[2021-08-02 16:19:35,122] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 409, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 493, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 411, in initial
+    self.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 24, in has_permission
+    print(request.url)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\request.py", line 411, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'url'
+[2021-08-02 16:19:35,123] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!&Project_Name=FOC60 HTTP/1.1" 500 119371
+[2021-08-02 16:53:20,558] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 698, in get_context
+    'options_form': self.get_rendered_html_form(data, view, 'OPTIONS', request),
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 476, in get_rendered_html_form
+    if not self.show_form_for_method(view, method, request, instance):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 431, in show_form_for_method
+    view.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 30, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+[2021-08-02 16:53:20,559] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!1&Project_Name=FOC60 HTTP/1.1" 500 112948
+[2021-08-02 16:55:59,981] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 698, in get_context
+    'options_form': self.get_rendered_html_form(data, view, 'OPTIONS', request),
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 476, in get_rendered_html_form
+    if not self.show_form_for_method(view, method, request, instance):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 431, in show_form_for_method
+    view.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 30, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+[2021-08-02 16:55:59,982] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!1&Project_Name=FOC60 HTTP/1.1" 500 113083
+[2021-08-02 16:59:37,865] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 698, in get_context
+    'options_form': self.get_rendered_html_form(data, view, 'OPTIONS', request),
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 476, in get_rendered_html_form
+    if not self.show_form_for_method(view, method, request, instance):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 431, in show_form_for_method
+    view.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 33, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+[2021-08-02 16:59:37,867] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!1&Project_Name=FOC60 HTTP/1.1" 500 113036
+[2021-08-02 16:59:39,324] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 698, in get_context
+    'options_form': self.get_rendered_html_form(data, view, 'OPTIONS', request),
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 476, in get_rendered_html_form
+    if not self.show_form_for_method(view, method, request, instance):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 431, in show_form_for_method
+    view.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 33, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+[2021-08-02 16:59:39,325] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!1&Project_Name=FOC60 HTTP/1.1" 500 113036
+[2021-08-02 17:00:35,077] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantSeriv/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 698, in get_context
+    'options_form': self.get_rendered_html_form(data, view, 'OPTIONS', request),
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 476, in get_rendered_html_form
+    if not self.show_form_for_method(view, method, request, instance):
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\renderers.py", line 431, in show_form_for_method
+    view.check_permissions(request)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\permissions.py", line 34, in has_permission
+    groups = request.user.role.all()
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+[2021-08-02 17:00:35,079] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /INVGantt/INVGantSeriv/?username=RD&password=Compal123!1&Project_Name=FOC60 HTTP/1.1" 500 113020

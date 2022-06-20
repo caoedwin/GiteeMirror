@@ -1,0 +1,646 @@
+[2021-08-10 08:17:50,196] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:17:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:17:50,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 08:17:56,479] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Category/
+Traceback (most recent call last):
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2889, in M_Category
+    DeviceDevCtgryList.objects.filter(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 662, in delete
+    collector.collect(del_query)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 221, in collect
+    field.remote_field.on_delete(self, field, sub_objs, self.using)
+TypeError: 'bool' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 2891, in M_Category
+    errormessae += """IntfCtgry:%s>DevCtgry:%s 有下层关联数据<br/>""" % (IntfCtgry, DeviceDevCtgryList.objects.filter(id=i).first().IntfCtgry)
+AttributeError: 'DeviceDevCtgryList' object has no attribute 'IntfCtgry'
+[2021-08-10 08:17:56,483] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-10 08:17:56,483] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 103374
+[2021-08-10 08:18:47,536] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:18:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:18:47,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2799
+[2021-08-10 08:21:45,782] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:21:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:21:45,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1558
+[2021-08-10 08:32:11,246] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:32:11 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:32:11,255] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 08:32:21,999] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:32:21 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:32:22,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1262
+[2021-08-10 08:32:32,857] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:32:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:32:32,868] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1262
+[2021-08-10 08:32:37,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 08:32:37,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 08:32:38,023] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 08:32:38,038] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 08:32:38,243] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 08:32:38,654] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:32:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:32:38,664] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2208
+[2021-08-10 08:32:38,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 08:32:47,680] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:32:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:32:47,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 08:33:32,079] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:33:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:33:32,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2373
+[2021-08-10 08:55:12,188] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:55:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:55:12,197] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2563
+[2021-08-10 08:55:26,890] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:55:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:55:26,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1424
+[2021-08-10 08:55:45,448] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:55:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:55:45,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2640
+[2021-08-10 08:55:52,932] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 08:55:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 08:55:52,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2674
+[2021-08-10 09:01:41,861] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:01:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:01:41,868] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2785
+[2021-08-10 09:04:40,206] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:04:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:04:40,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2896
+[2021-08-10 09:06:29,727] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:29,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:38,851] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:38,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:47,130] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:47,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:47,616] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:47,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:47,872] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:47,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:48,104] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:48 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:48,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:06:48,825] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:06:48 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:06:48,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:07:15,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:07:15,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:07:15,662] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:07:15,679] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:07:17,836] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:07:17,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:07:17,852] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:07:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:07:17,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:07:23,834] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:07:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:07:23,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:07:54,536] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:07:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:07:54,547] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2973
+[2021-08-10 09:09:53,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:09:53,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:09:53,235] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:09:53,246] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:09:53,442] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:09:53,774] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:09:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:09:53,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:09:53,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:10:02,720] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:10:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:10:02,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:10:32,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:10:32,703] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:10:32,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:10:32,719] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:10:32,805] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:10:33,206] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:10:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:10:33,213] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:10:33,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:11:01,874] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:11:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:11:01,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:11:19,352] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:11:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:11:19,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1235
+[2021-08-10 09:18:31,282] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:18:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:18:31,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:18:55,543] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:18:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:18:55,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2436
+[2021-08-10 09:29:39,841] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:29:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:29:39,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:30:10,026] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 09:30:13,861] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 09:30:52,249] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 09:31:43,826] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 09:32:42,183] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 09:33:39,503] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:33:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:33:39,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2889
+[2021-08-10 09:33:45,384] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:33:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:33:45,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2812
+[2021-08-10 09:33:58,940] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:33:58 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:33:58,949] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:33:59,890] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:33:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:33:59,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:00,106] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:00,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:00,297] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:00,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:00,984] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:00,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:01,329] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:01,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:01,552] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:01,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:04,620] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:04 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:04,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:05,161] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:05,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:05,813] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:05,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:16,122] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:34:16,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:34:16,338] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:34:16,341] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:34:16,554] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:34:17,095] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:17,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:34:17,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:34:25,527] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:25,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:34:45,881] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:45,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2889
+[2021-08-10 09:34:50,227] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:34:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:34:50,234] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2812
+[2021-08-10 09:35:03,577] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:35:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:35:03,587] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:35:13,185] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:35:13,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:35:13,290] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:35:13,301] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:35:13,503] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:35:13,897] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:35:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:35:13,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:35:13,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:35:20,812] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:35:20 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:35:20,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:35:32,051] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:35:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:35:32,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2812
+[2021-08-10 09:37:41,390] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:37:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:37:41,398] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2896
+[2021-08-10 09:38:10,005] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:38:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:38:10,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2896
+[2021-08-10 09:38:35,857] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:38:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:38:35,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2973
+[2021-08-10 09:38:44,485] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:38:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:38:44,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2896
+[2021-08-10 09:38:54,898] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:38:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:38:54,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:39:00,545] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:39:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:39:00,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:39:30,200] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:39:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:39:30,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:39:38,217] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:39:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:39:38,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:00,499] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:00,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1265
+[2021-08-10 09:40:17,468] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:17,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:36,065] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:36 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:36,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1265
+[2021-08-10 09:40:51,323] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:51,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:51,512] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:51,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:51,763] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:51,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:51,952] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:51,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:40:52,248] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:40:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:40:52,256] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:41:18,165] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:41:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:41:18,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:41:18,542] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:41:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:41:18,549] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:41:28,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:41:28,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:41:28,212] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:41:28,215] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:41:28,302] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:41:28,645] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:41:28 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:41:28,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:41:28,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:41:39,369] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:41:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:41:39,382] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:41:50,793] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:41:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:41:50,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2812
+[2021-08-10 09:42:02,505] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:42:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:42:02,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:42:30,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:42:30,845] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:42:30,874] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:42:30,880] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:42:30,965] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:42:31,312] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:42:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:42:31,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:42:31,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:42:37,395] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:42:37 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:42:37,403] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:42:50,013] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:42:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:42:50,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2812
+[2021-08-10 09:43:46,919] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:43:46 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:43:46,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:44:05,866] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:44:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:44:05,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1265
+[2021-08-10 09:44:15,513] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:44:15 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:44:15,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:44:32,857] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:44:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:44:32,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:44:54,681] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:44:54 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:44:54,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1265
+[2021-08-10 09:47:38,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:47:38,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 09:47:38,850] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 09:47:38,856] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 09:47:38,946] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 09:47:39,288] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:47:39 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:47:39,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2328
+[2021-08-10 09:47:39,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 09:47:51,072] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:47:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:47:51,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1292
+[2021-08-10 09:48:08,315] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:48:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:48:08,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2631
+[2021-08-10 09:48:18,983] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:48:18 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:48:18,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2636
+[2021-08-10 09:48:29,896] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:48:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:48:29,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 09:48:41,308] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:48:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:48:41,315] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2959
+[2021-08-10 09:48:56,852] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 09:48:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 09:48:56,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 11:09:15,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:09:15,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:09:15,895] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 11:09:15,903] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 11:09:16,083] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 11:09:16,459] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:09:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:09:16,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2475
+[2021-08-10 11:09:16,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 11:09:25,554] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:09:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:09:25,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 11:09:35,687] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:09:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:09:35,698] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2995
+[2021-08-10 11:13:42,481] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:13:42,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:13:42,592] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 11:13:42,606] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 11:13:42,777] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 11:13:43,134] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:13:43 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:13:43,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2475
+[2021-08-10 11:13:43,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 11:13:50,267] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:13:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:13:50,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1667
+[2021-08-10 11:13:56,489] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:13:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:13:56,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 3553
+[2021-08-10 11:15:38,230] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:15:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:15:38,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2787
+[2021-08-10 11:16:58,164] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:16:58 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:16:58,174] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:16:59,227] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:16:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:16:59,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:16:59,476] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:16:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:16:59,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:16:59,682] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:16:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:16:59,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:16:59,898] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:16:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:16:59,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:17:00,127] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:00 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:00,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:17:01,506] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:01,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:17:01,747] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:01,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:17:13,183] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:13,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2515
+[2021-08-10 11:17:27,442] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:27 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:27,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2711
+[2021-08-10 11:17:52,352] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:17:52 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:17:52,359] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2823
+[2021-08-10 11:19:02,862] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:19:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:19:02,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2935
+[2021-08-10 11:22:12,227] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:22:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:22:12,234] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2655
+[2021-08-10 11:22:34,316] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:22:34 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:22:34,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:22:50,971] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:22:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:22:50,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:22:56,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:22:56,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:22:56,622] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 11:22:56,632] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 11:22:56,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 11:22:57,135] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:22:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:22:57,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2355
+[2021-08-10 11:22:57,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 11:23:02,759] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:23:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:23:02,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:24:13,406] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:24:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:24:13,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:27:41,868] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:27:41 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:27:41,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:27:45,123] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:27:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:27:45,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1343
+[2021-08-10 11:27:49,715] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:27:49 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:27:49,726] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:27:55,978] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:27:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:27:55,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1344
+[2021-08-10 11:27:59,900] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:27:59 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:27:59,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1233
+[2021-08-10 11:28:03,549] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:28:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:28:03,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:30:47,763] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:30:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:30:47,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1204
+[2021-08-10 11:30:50,593] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:30:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:30:50,614] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1183
+[2021-08-10 11:41:38,302] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:41:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:41:38,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 973
+[2021-08-10 11:41:46,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:41:46,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:41:46,574] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 11:41:46,585] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 11:41:46,753] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 11:41:47,101] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:41:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:41:47,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1936
+[2021-08-10 11:41:47,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 11:41:53,461] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:41:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:41:53,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 785
+[2021-08-10 11:41:56,368] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:41:56 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:41:56,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 973
+[2021-08-10 11:43:17,773] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:43:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:43:17,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 973
+[2021-08-10 11:44:02,953] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:44:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:44:02,963] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 775
+[2021-08-10 11:44:03,847] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:44:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:44:03,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 869
+[2021-08-10 11:44:14,960] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:44:14 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:44:14,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 785
+[2021-08-10 11:44:19,884] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:44:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:44:19,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 866
+[2021-08-10 11:44:56,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:44:57,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 11:44:57,079] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 11:44:57,108] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 11:44:57,341] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 11:44:57,802] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:44:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:44:57,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1936
+[2021-08-10 11:44:57,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 11:45:01,638] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:45:01 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:45:01,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 785
+[2021-08-10 11:45:02,855] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:45:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:45:02,862] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 973
+[2021-08-10 11:48:12,212] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:48:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:48:12,224] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 973
+[2021-08-10 11:49:03,174] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:49:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:49:03,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2176
+[2021-08-10 11:59:57,612] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:59:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:59:57,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2035
+[2021-08-10 11:59:57,649] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 11:59:57 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 11:59:57,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 12:00:13,746] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:00:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:00:13,757] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 775
+[2021-08-10 12:00:14,977] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:00:14 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:00:14,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 792
+[2021-08-10 12:00:17,925] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:00:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:00:17,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1074
+[2021-08-10 12:00:50,417] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:00:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:00:50,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2126
+[2021-08-10 12:01:10,292] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:01:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:01:10,299] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2036
+[2021-08-10 12:01:10,324] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:01:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:01:10,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 12:02:03,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 12:02:03,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 12:02:03,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 12:02:03,669] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 12:02:03,840] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 12:02:04,178] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:02:04 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:02:04,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1936
+[2021-08-10 12:02:04,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 12:02:24,695] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:02:24 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:02:24,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 800
+[2021-08-10 12:02:25,717] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:02:25 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:02:25,725] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1176
+[2021-08-10 12:02:50,171] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:02:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:02:50,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2036
+[2021-08-10 12:02:50,224] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:02:50 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:02:50,231] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 12:04:26,413] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:04:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:04:26,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1278
+[2021-08-10 12:08:51,396] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 12:08:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 12:08:51,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1278
+[2021-08-10 12:09:10,532] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 13:07:12,457] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 13:14:10,452] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 59
+[2021-08-10 13:14:55,819] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:14:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:14:55,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2541
+[2021-08-10 13:15:05,576] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:05,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2450
+[2021-08-10 13:15:05,614] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:05 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:05,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 808
+[2021-08-10 13:15:22,448] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:22 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:22,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1278
+[2021-08-10 13:15:26,839] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:26,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1278
+[2021-08-10 13:15:29,485] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:29,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 869
+[2021-08-10 13:15:32,654] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:32,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 864
+[2021-08-10 13:15:34,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:15:34,695] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:15:34,735] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 13:15:34,746] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 13:15:34,937] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 13:15:35,343] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:35,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1936
+[2021-08-10 13:15:35,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 13:15:42,311] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:42 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:42,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 808
+[2021-08-10 13:15:44,231] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:15:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:15:44,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1278
+[2021-08-10 13:15:53,991] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Category/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 3459, in M_Category
+    if DevVendor:
+UnboundLocalError: local variable 'DevVendor' referenced before assignment
+[2021-08-10 13:15:53,994] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-10 13:15:53,994] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 84743
+[2021-08-10 13:26:12,330] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:26:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:26:12,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2161
+[2021-08-10 13:26:12,369] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:26:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:26:12,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 775
+[2021-08-10 13:26:23,702] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:26:23 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:26:23,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 869
+[2021-08-10 13:27:10,416] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:27:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:27:10,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2036
+[2021-08-10 13:27:10,450] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:27:10 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:27:10,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 13:27:38,653] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:27:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:27:38,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2146
+[2021-08-10 13:27:38,685] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:27:38 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:27:38,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 13:28:02,187] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:02,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2037
+[2021-08-10 13:28:02,215] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:02,224] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 764
+[2021-08-10 13:28:12,263] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:12 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:12,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1179
+[2021-08-10 13:28:24,059] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:24 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:24,066] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 2266
+[2021-08-10 13:28:24,095] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:24 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:24,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 785
+[2021-08-10 13:28:32,191] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:28:32 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:28:32,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 974
+[2021-08-10 13:30:09,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:30:09,346] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:30:09,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 13:30:09,406] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 13:30:09,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 13:30:09,930] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:30:09 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:30:09,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1936
+[2021-08-10 13:30:09,987] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 13:30:22,318] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:30:22 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:30:22,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 797
+[2021-08-10 13:30:29,823] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:30:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:30:29,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 869
+[2021-08-10 13:36:07,791] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/M_Category/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 3549, in M_Category
+    **DeviceDevsizecheck)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Devproperties_P' into field. Choices are: DevVendor_P, DevVendor_P_id, Devsize, id
+[2021-08-10 13:36:07,796] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-10 13:36:07,796] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 500 126432
+[2021-08-10 13:38:40,334] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:38:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:38:40,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 888
+[2021-08-10 13:39:02,125] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:39:02 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:39:02,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:39:03,960] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:39:03 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:39:03,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:39:13,129] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:39:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:39:13,140] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:42:06,888] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:42:06 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:42:06,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:42:17,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:42:17,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:42:17,430] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 13:42:17,438] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 13:42:17,611] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 13:42:17,951] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:42:17 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:42:17,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1472
+[2021-08-10 13:42:18,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 13:42:22,916] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:42:22 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:42:22,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 333
+[2021-08-10 13:42:33,424] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:42:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:42:33,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:42:51,504] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:42:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:42:51,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 13:43:32,703] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:43:32,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112170
+[2021-08-10 13:43:32,829] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 13:43:32,838] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 13:43:33,064] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 13:43:33,414] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:43:33 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:43:33,423] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1472
+[2021-08-10 13:43:33,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 13:43:47,226] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:43:47 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:43:47,236] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 333
+[2021-08-10 13:43:53,790] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 13:43:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 13:43:53,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:19:34,977] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:19:34 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:19:34,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:25:16,255] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:25:16 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:25:16,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:25:19,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:25:19,199] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:25:19,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 14:25:19,242] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 14:25:19,414] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 14:25:19,759] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:25:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:25:19,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1472
+[2021-08-10 14:25:19,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 14:25:26,763] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:25:26 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:25:26,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 333
+[2021-08-10 14:25:30,434] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:25:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:25:30,444] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:25:43,319] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:25:43 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:25:43,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:26:08,246] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:26:08 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:26:08,255] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:26:13,553] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:26:13 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:26:13,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:27:30,298] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:27:30 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:27:30,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 319
+[2021-08-10 14:27:31,357] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:27:31 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:27:31,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 333
+[2021-08-10 14:27:36,829] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:27:36 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:27:36,841] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:27:55,675] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:27:55 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:27:55,688] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:28:09,092] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:28:09 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:28:09,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:29:40,820] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:29:40 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:29:40,829] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 321
+[2021-08-10 14:29:44,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:29:44,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:29:44,946] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 14:29:44,956] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 14:29:45,159] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 14:29:45,501] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:29:45 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:29:45,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1472
+[2021-08-10 14:29:45,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 14:29:51,714] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:29:51 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:29:51,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 321
+[2021-08-10 14:29:53,335] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:29:53 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:29:53,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 510
+[2021-08-10 14:30:19,230] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:30:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:30:19,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1573
+[2021-08-10 14:30:19,266] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:30:19 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:30:19,274] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:30:43,445] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:30:43 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:30:43,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 345
+[2021-08-10 14:30:46,805] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:30:46 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:30:46,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:31:06,846] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:31:06 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:31:06,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:31:14,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:31:14,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceLNV/M_Category/ HTTP/1.1" 200 112166
+[2021-08-10 14:31:14,705] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2021-08-10 14:31:14,712] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2021-08-10 14:31:14,801] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2021-08-10 14:31:15,141] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:31:15 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:31:15,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 1472
+[2021-08-10 14:31:15,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14286
+[2021-08-10 14:31:29,076] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:31:29 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:31:29,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 345
+[2021-08-10 14:31:35,421] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:31:35 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:31:35,432] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 422
+[2021-08-10 14:31:44,038] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:31:44 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:31:44,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300
+[2021-08-10 14:32:49,395] [UserIP.py:87] [UserIP:process_response] [INFO]- 2021-08-10 14:32:49 C1010S3>cao. edwin None>LAPTOP-VA9VPAO8>417 127.0.0.1 127.0.0.1 /DeviceLNV/M_Category/ POST
+[2021-08-10 14:32:49,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceLNV/M_Category/ HTTP/1.1" 200 300

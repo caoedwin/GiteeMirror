@@ -1,0 +1,228 @@
+[2021-03-10 10:12:51,564] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 500 59
+[2021-03-10 10:15:05,950] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCodeBR/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'dms.adapterpowercodebr_adapterpowercode' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCodeBR\views.py", line 117, in BorrowedAdapter
+    for i in AdapterPowerCode.objects.all().values("Customer").distinct().order_by("Customer"):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 106, in __iter__
+    for row in compiler.results_iter(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1017, in results_iter
+    results = self.execute_sql(MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'dms.adapterpowercodebr_adapterpowercode' doesn't exist")
+[2021-03-10 10:15:05,960] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AdapterPowerCodeBR/BorrowedAdapter/ HTTP/1.1" 500 207242
+[2021-03-10 10:41:28,370] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 229, in BorrowedAdapter
+    ProjectSyncview()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 127, in ProjectSyncview
+    if UserInfo.objects.filter(account=i['BR_per_code']).first().email:
+AttributeError: 'NoneType' object has no attribute 'email'
+[2021-03-10 10:41:28,372] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 97988
+[2021-03-10 10:42:44,896] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 230, in BorrowedAdapter
+    ProjectSyncview()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 134, in ProjectSyncview
+    sendmass_email(messages)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:42:44,900] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 111144
+[2021-03-10 10:44:07,625] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 230, in BorrowedAdapter
+    ProjectSyncview()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 134, in ProjectSyncview
+    sendmass_email(messages)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:44:07,628] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 111144
+[2021-03-10 10:45:21,913] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 228, in BorrowedAdapter
+    ProjectSyncview()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 132, in ProjectSyncview
+    sendmass_email(messages)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:45:21,916] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 110782
+[2021-03-10 10:50:45,083] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 228, in BorrowedAdapter
+    # res = tasks.ProjectSync.delay()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 132, in ProjectSyncview
+    messages = (message1,)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:50:45,086] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 110869
+[2021-03-10 10:51:13,377] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 228, in BorrowedAdapter
+    # res = tasks.ProjectSync.delay()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 132, in ProjectSyncview
+    messages = (message1,())
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:51:13,381] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 110873
+[2021-03-10 10:51:51,590] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AdapterPowerCode/BorrowedAdapter/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 228, in BorrowedAdapter
+    # res = tasks.ProjectSync.delay()
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 132, in ProjectSyncview
+    messages = (message1,message2)
+  File "C:\djangoproject\DMS\AdapterPowerCode\views.py", line 49, in sendmass_email
+    send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 84, in send_mass_mail
+    for subject, message, sender, recipient in datatuple
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\__init__.py", line 83, in <listcomp>
+    EmailMessage(subject, message, sender, recipient, connection=connection)
+ValueError: too many values to unpack (expected 4)
+[2021-03-10 10:51:51,593] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AdapterPowerCode/BorrowedAdapter/ HTTP/1.1" 500 110883

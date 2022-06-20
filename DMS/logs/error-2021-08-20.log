@@ -1,0 +1,16 @@
+[2021-08-20 09:36:17,677] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-20 10:43:05,141] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DeviceLNV/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\DeviceLNV\views.py", line 937, in R_Borrowed
+    "Last_uscyc": responseData['Last_uscyc']
+KeyError: 'Last_uscyc'
+[2021-08-20 10:43:05,144] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-08-20 10:43:05,145] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DeviceLNV/R_Borrowed/ HTTP/1.1" 500 80821

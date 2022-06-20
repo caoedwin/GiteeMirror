@@ -1,0 +1,20 @@
+[2019-12-19 16:30:59,917] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 55, in login
+    t= UserInfo.objects.get(account=Account)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+app01.models.UserInfo.DoesNotExist: UserInfo matching query does not exist.
+[2019-12-19 16:30:59,966] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 27
+[2019-12-20 08:54:36,326] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/ocean.jpg HTTP/1.1" 500 59
+[2019-12-20 08:54:40,380] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /static/src/sunny.jpg HTTP/1.1" 500 59

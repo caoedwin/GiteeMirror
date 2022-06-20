@@ -1,0 +1,181 @@
+[2020-12-10 13:31:05,899] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/ HTTP/1.1" 500 59
+[2020-12-10 14:31:54,246] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 121, in MQM_upload
+    if i['Project'] != Project:
+UnboundLocalError: local variable 'Project' referenced before assignment
+[2020-12-10 14:31:54,248] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_upload/ HTTP/1.1" 500 21493
+[2020-12-10 14:36:48,121] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 235, in MQM_upload
+    "err_msg": err_msg,
+UnboundLocalError: local variable 'err_msg' referenced before assignment
+[2020-12-10 14:36:48,124] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_upload/ HTTP/1.1" 500 21485
+[2020-12-10 15:16:25,986] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 599, in CQM_edit
+    CQM.objects.get(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 879, in delete
+    collector.collect([self], keep_parents=keep_parents)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 221, in collect
+    field.remote_field.on_delete(self, field, sub_objs, self.using)
+TypeError: 'bool' object is not callable
+[2020-12-10 15:16:25,989] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_edit/ HTTP/1.1" 500 91712
+[2020-12-10 15:18:53,696] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 601, in CQM_edit
+    CQM.objects.get(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 879, in delete
+    collector.collect([self], keep_parents=keep_parents)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\deletion.py", line 221, in collect
+    field.remote_field.on_delete(self, field, sub_objs, self.using)
+TypeError: 'bool' object is not callable
+[2020-12-10 15:18:53,699] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_edit/ HTTP/1.1" 500 91706
+[2020-12-10 15:20:19,005] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CQM/CQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CQM\views.py", line 615, in CQM_edit
+    for i in CQM.objects.filter(**dic):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Phase0' into field. Choices are: Character, Comments, Compal_R1_PN, Compal_R3_PN, Compatibility, Controlrun, Customer, EMI, ESD, FW, HW, Keyparts, Material_Group, PID, PMsummary, Phase, Project, Projectinfo, Projectinfo_id, R1_PN_Description, RD1, RD2, RD3, RD4, RD5, RD6, RF, Reliability, Supplier, Testresult, VID, cqm_history, edit_time, editor, id
+[2020-12-10 15:20:19,009] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /CQM/CQM_edit/ HTTP/1.1" 500 130008
+[2020-12-10 15:32:51,559] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 447, in MQM_edit
+    Project = responseData['COMPRJCODE']
+KeyError: 'COMPRJCODE'
+[2020-12-10 15:32:51,561] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_edit/ HTTP/1.1" 500 81412
+[2020-12-10 15:33:28,485] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 445, in MQM_edit
+    MQM.objects.get(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+MQM.models.MQM.DoesNotExist: MQM matching query does not exist.
+[2020-12-10 15:33:28,488] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_edit/ HTTP/1.1" 500 90502
+[2020-12-10 15:34:39,161] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 442, in MQM_edit
+    MQM.objects.get(id=i).delete()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+MQM.models.MQM.DoesNotExist: MQM matching query does not exist.
+[2020-12-10 15:34:39,163] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_edit/ HTTP/1.1" 500 90838
+[2020-12-10 15:36:35,427] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 442, in MQM_edit
+    print(MQM.objects.get(id=i))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+MQM.models.MQM.DoesNotExist: MQM matching query does not exist.
+[2020-12-10 15:36:35,429] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_edit/ HTTP/1.1" 500 90832
+[2020-12-10 15:39:37,330] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /MQM/MQM_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\MQM\views.py", line 442, in MQM_edit
+    print(MQM.objects.get(id=i))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+MQM.models.MQM.DoesNotExist: MQM matching query does not exist.
+[2020-12-10 15:39:37,333] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /MQM/MQM_edit/ HTTP/1.1" 500 90848

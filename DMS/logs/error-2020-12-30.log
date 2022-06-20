@@ -1,0 +1,56 @@
+[2020-12-30 12:23:32,979] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 80, in Infos_upload
+    for key, value in i:
+ValueError: too many values to unpack (expected 2)
+[2020-12-30 12:23:32,983] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19795
+[2020-12-30 12:24:19,930] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 81, in Infos_upload
+    for key, value in i:
+ValueError: too many values to unpack (expected 2)
+[2020-12-30 12:24:19,933] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19795
+[2020-12-30 12:25:05,937] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 81, in Infos_upload
+    for key, value in i:
+ValueError: too many values to unpack (expected 2)
+[2020-12-30 12:25:05,940] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19795
+[2020-12-30 12:25:56,190] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Infos-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 106, in Infos_upload
+    for key, value in i:
+ValueError: too many values to unpack (expected 2)
+[2020-12-30 12:25:56,193] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Infos-upload/ HTTP/1.1" 500 19800

@@ -1,0 +1,98 @@
+[2022-02-08 08:24:26,436] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 13:42:50,090] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 372, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 13:42:50,093] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 13:42:50,094] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 81062
+[2022-02-08 15:34:08,146] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:08,147] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:08,147] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-08 15:34:08,973] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:08,974] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:08,975] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-08 15:34:09,271] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 501, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-08 15:34:09,272] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-08 15:34:09,273] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 82990
+[2022-02-09 14:25:49,002] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-09 14:26:15,078] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Borrowed/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 372, in R_Borrowed
+    if i.Plandate and i.Btime and not i.Rtime:
+AttributeError: 'ComputerLNV' object has no attribute 'Plandate'
+[2022-02-09 14:26:15,079] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-09 14:26:15,081] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 500 81062
+[2022-02-10 10:24:23,183] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-02-10 10:24:45,153] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ComputerMS/R_Transfer/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\ComputerMS\views.py", line 2744, in R_Transfer
+    return render(request, 'ComputerMS/R_Transfer.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ComputerMS/R_Transfer.html
+[2022-02-10 10:24:45,154] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 500 96625

@@ -1,0 +1,115 @@
+[2021-12-15 11:25:02,745] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 489, in AutoResult_edit
+    if ProjectinfoinDCT.objects.filter(**check_dic).first().SS:
+AttributeError: 'NoneType' object has no attribute 'SS'
+[2021-12-15 11:25:02,746] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 82342
+[2021-12-15 11:25:24,979] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 570, in AutoResult_edit
+    'table_content': table_content,
+NameError: name 'table_content' is not defined
+[2021-12-15 11:25:24,981] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:25:24,981] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 98034
+[2021-12-15 11:51:50,595] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:52:25,370] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 11:52:41,549] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 486, in AutoResult_edit
+    Projectinfo['Year'] = AutoProject.objects.filter(Customer=i['Customer']).values('Project').Year
+AttributeError: 'QuerySet' object has no attribute 'Year'
+[2021-12-15 11:52:41,551] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 86791
+[2021-12-15 11:53:20,790] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 486, in AutoResult_edit
+    Projectinfo['Year'] = AutoProject.objects.filter(Customer=i['Customer']).values('Project').first().Year
+AttributeError: 'dict' object has no attribute 'Year'
+[2021-12-15 11:53:20,792] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /AutoResult/AutoResult_edit/ HTTP/1.1" 500 86791
+[2021-12-15 16:22:51,781] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 584, in AutoResult_edit
+    AutoResult.objects.create(creat_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: create() takes 1 positional argument but 2 were given
+[2021-12-15 16:22:51,783] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:22:51,783] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 97511
+[2021-12-15 16:23:17,556] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 584, in AutoResult_edit
+    AutoResult.objects.create(**creat_dic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'ProjectData' is an invalid keyword argument for this function
+[2021-12-15 16:23:17,558] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:23:17,559] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 107855
+[2021-12-15 16:25:00,154] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /AutoResult/AutoResult_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\AutoResult\views.py", line 578, in AutoResult_edit
+    AutoResult.objects.filter(**check_dic_Result).first().update(**update_dic)
+AttributeError: 'AutoResult' object has no attribute 'update'
+[2021-12-15 16:25:00,156] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-15 16:25:00,156] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /AutoResult/AutoResult_edit/ HTTP/1.1" 500 93229
+[2021-12-22 10:22:06,067] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-22 10:24:14,900] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2021-12-22 10:24:16,649] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

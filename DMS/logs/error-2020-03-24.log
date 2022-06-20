@@ -1,0 +1,224 @@
+[2020-03-24 11:04:11,571] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1943, in TestPlanSW_search
+    i['BTS'] = TestPlanSW.objects.filter(Items=CategoryItemSum,Projectinfo=ProjectSum).aggregate(Sum('BaseTime'))['BaseTime__sum']
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 367, in aggregate
+    query.add_annotation(aggregate_expr, alias, is_summary=True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 988, in add_annotation
+    summarize=is_summary)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\aggregates.py", line 39, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 597, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 509, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1570, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'BaseTime' into field. Choices are: AttendTimeOptimize, BaseTimeSupport, CommentsLeverage, CommentsSmart, ConfigAutomationItem, ConfigAutomationTime, ConfigLeverageItem, ConfigLeverageTime, ConfigRetestCycle, ConfigRetestSKU, ConfigRetestTime, ConfigSmartItem, ConfigSmartItemPer, ConfigSmartTime, FeatureSupport, Items, Items_id, ProjectTestSKUOptimize, ProjectTestSKUfollowMatrix, Projectinfo, Projectinfo_id, SKU1, SKU10, SKU11, SKU12, SKU13, SKU14, SKU15, SKU16, SKU17, SKU18, SKU19, SKU2, SKU20, SKU3, SKU4, SKU5, SKU6, SKU7, SKU8, SKU9, Schedule, TE, TimewConfigFollowmatrix, edit_time, editor, id
+[2020-03-24 11:04:11,632] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 11:05:26,843] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1943, in TestPlanSW_search
+    i['BTS'] = TestPlanSW.objects.filter(Items=CategoryItemSum,Projectinfo=ProjectSum).aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 370, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 483, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2020-03-24 11:05:26,888] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 11:24:12,071] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1944, in TestPlanSW_search
+    i['BTS'] = TestPlanSW.objects.filter(Q(Items__Customer=Customer) & Q(Items__Phase=Phase) & Q(Items__Category2=i['category']) & Q(Projectinfo__Projrct=Project) & Q(Projectinfo__Phase=Phase)).aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1281, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1087, in build_lookup
+    raise FieldError('Related Field got invalid lookup: {}'.format(lookup_name))
+django.core.exceptions.FieldError: Related Field got invalid lookup: Projrct
+[2020-03-24 11:24:12,081] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 11:58:49,388] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1943, in TestPlanSW_search
+    i['BTS'] = TestPlanSW.objects.filter(Q(Items=CategoryItemSum)&Q(Projectinfo=ProjectSum)).aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 370, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 483, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 464, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 390, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 163, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 257, in process_rhs
+    'The QuerySet value for an exact lookup must be limited to '
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+[2020-03-24 11:58:49,394] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 13:35:01,444] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 2223, in TestPlanSW_search
+    return HttpResponse(json.dumps(updateData), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+[2020-03-24 13:35:01,473] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:03:12,914] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1945, in TestPlanSW_search
+    HC=round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(**dic_ProjectSum).first().Full_Function_Duration, 2)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:03:12,937] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:03:50,186] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1946, in TestPlanSW_search
+    HC=round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(**dic_ProjectSum).first().Full_Function_Duration, 2)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:03:50,189] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:14:08,987] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1959, in TestPlanSW_search
+    HC = round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:14:08,991] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:15:18,519] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1959, in TestPlanSW_search
+    HC = round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:15:18,523] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:16:10,639] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1960, in TestPlanSW_search
+    HC = round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:16:10,643] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:25:20,655] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1960, in TestPlanSW_search
+    HC = round(ATOsum[Num]['AttendTimeOptimize__sum'] / 6 / TestProjectSW.objects.filter(
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2020-03-24 16:25:20,658] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
+[2020-03-24 16:59:49,802] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanSW/TestPlanSW-search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanSW\views.py", line 1988, in TestPlanSW_search
+    print(RetestItemSW.objects.filter(**dicSum_check))
+UnboundLocalError: local variable 'dicSum_check' referenced before assignment
+[2020-03-24 16:59:49,804] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /TestPlanSW/TestPlanSW-search/?action=getContent&customer=C38(NB)&project=EL4C2&phase=2&category=Others%20(Project%20Leader%20update)(1.%20Base%20on%20Golden%20BIOS/Image%27s%20change%20list)(2.%20Retest%20for%20w/o%20solution%E2%80%99s%20issue%20)%20for%20full%20function%20test HTTP/1.1" 500 27
