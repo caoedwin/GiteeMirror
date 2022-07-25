@@ -837,10 +837,11 @@ def R_Borrowed(request):
                              'Return_date': None, }
                 # print(updatedic)
                 for i in RenewId.split(','):
-                    # updatedic['Last_BR_per'] = AdapterPowerCodeBR.objects.filter(id=i).first().BR_per
-                    # updatedic['Last_Predict_return'] = AdapterPowerCodeBR.objects.filter(id=i).first().Predict_return
-                    # updatedic['Last_Borrow_date'] = AdapterPowerCodeBR.objects.filter(id=i).first().Borrow_date
-                    # updatedic['Last_Return_date'] = datetime.datetime.now().date()
+                    updatedic['Last_BR_per'] = AdapterPowerCodeBR.objects.filter(id=i).first().BR_per
+                    updatedic['Last_BR_per_code'] = AdapterPowerCodeBR.objects.filter(id=i).first().BR_per_code
+                    updatedic['Last_Predict_return'] = AdapterPowerCodeBR.objects.filter(id=i).first().Predict_return
+                    updatedic['Last_Borrow_date'] = AdapterPowerCodeBR.objects.filter(id=i).first().Borrow_date
+                    updatedic['Last_Return_date'] = datetime.datetime.now().date()
                     try:
                         with transaction.atomic():
                             AdapterPowerCodeBR.objects.filter(id=i).update(**updatedic)

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}TestPlanOS_SW_edit{% endblock %}
+{% block title %}TestPlan_SW{% endblock %}
 
 {% block css %}
  <link rel="stylesheet" href="/static/css/ElementUI.css">
@@ -430,43 +430,43 @@
 {#      <el-button @click="Add()" size="medium" style="margin-left:30px;background-color:#75e5a7;color:white;"><i class="el-icon-circle-plus"></i>SKU錄入</el-button>#}
      </div>
 
-    <el-dialog :visible.sync="appendss">
-           <template>
-             <el-form ref="formappend"  :model="formappend"   :label-position="labelPosition" label-width="105px" :selfUpdate="true">
-                  <el-form-item label="ScheduleBegin">
-                          <el-date-picker v-model="formappend.ScheduleBegin" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>
-                  </el-form-item>
-                  <el-form-item label="ScheduleEnd">
-                          <el-date-picker v-model="formappend.ScheduleEnd" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>
-                  </el-form-item>
-                  <el-form-item label="Full_Function_Duration">
-                          <el-input  v-model="formappend.Full_Function_Duration"></el-input>
-                  </el-form-item>
-                  <el-form-item label="Gerber">
-                          <el-date-picker v-model="formappend.Gerber" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>
-                  </el-form-item>
-                 <el-form-item label="SKU1">
-                        <el-form-item label="CPU">
-                          <el-input  v-model="formappend.CPU1"></el-input>
-                        </el-form-item>
-                        <el-form-item label="VGA">
-                          <el-input  v-model="formappend.VGA1"></el-input>
-                        </el-form-item>
-                  </el-form-item>
-                 <el-form-item label="SKU2">
-                        <el-form-item label="CPU">
-                          <el-input  v-model="formappend.CPU2"></el-input>
-                        </el-form-item>
-                        <el-form-item label="VGA">
-                          <el-input  v-model="formappend.VGA2"></el-input>
-                        </el-form-item>
-                  </el-form-item>
-                  <el-form-item>
-                        <el-button type="primary" @click="addSubmit(formappend)">確定</el-button>
-                  </el-form-item>
-             </el-form>
-        </template>
-     </el-dialog>
+{#    <el-dialog :visible.sync="appendss">#}
+{#           <template>#}
+{#             <el-form ref="formappend"  :model="formappend"   :label-position="labelPosition" label-width="105px" :selfUpdate="true">#}
+{#                  <el-form-item label="ScheduleBegin">#}
+{#                          <el-date-picker v-model="formappend.ScheduleBegin" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>#}
+{#                  </el-form-item>#}
+{#                  <el-form-item label="ScheduleEnd">#}
+{#                          <el-date-picker v-model="formappend.ScheduleEnd" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>#}
+{#                  </el-form-item>#}
+{#                  <el-form-item label="Full_Function_Duration">#}
+{#                          <el-input  v-model="formappend.Full_Function_Duration"></el-input>#}
+{#                  </el-form-item>#}
+{#                  <el-form-item label="Gerber">#}
+{#                          <el-date-picker v-model="formappend.Gerber" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期"></el-date-picker>#}
+{#                  </el-form-item>#}
+{#                 <el-form-item label="SKU1">#}
+{#                        <el-form-item label="CPU">#}
+{#                          <el-input  v-model="formappend.CPU1"></el-input>#}
+{#                        </el-form-item>#}
+{#                        <el-form-item label="VGA">#}
+{#                          <el-input  v-model="formappend.VGA1"></el-input>#}
+{#                        </el-form-item>#}
+{#                  </el-form-item>#}
+{#                 <el-form-item label="SKU2">#}
+{#                        <el-form-item label="CPU">#}
+{#                          <el-input  v-model="formappend.CPU2"></el-input>#}
+{#                        </el-form-item>#}
+{#                        <el-form-item label="VGA">#}
+{#                          <el-input  v-model="formappend.VGA2"></el-input>#}
+{#                        </el-form-item>#}
+{#                  </el-form-item>#}
+{#                  <el-form-item>#}
+{#                        <el-button type="primary" @click="addSubmit(formappend)">確定</el-button>#}
+{#                  </el-form-item>#}
+{#             </el-form>#}
+{#        </template>#}
+{#     </el-dialog>#}
 
   <div class="tableAround" v-cloak >
   {% csrf_token %}
@@ -495,16 +495,17 @@
       <el-table-column width="100" label="Case ID"  prop="caseid" align="left" fixed></el-table-column>
       <el-table-column width="160" label="Case Name" prop="casename" fixed></el-table-column>
       <!--:key="Math.random()" => 为了解决数据错位 即前一列覆盖掉后一列 -->
-      <el-table-column width="160" label="Test Items" prop="testitem" {% comment %}v-if="showPhase === 3||showPhase === 15||showPhase === 16||showPhase === 17||showPhase === 18||showPhase === 19||showPhase === 20" :key="Math.random()" {% endcomment %} v-cloak></el-table-column>
-      <el-table-column width="120" label="priority" prop="priority"></el-table-column>
-      <el-table-column width="120" label="Owner" prop="owner"></el-table-column>
-      <el-table-column width="120" label="Release Date"prop="releasedate"></el-table-column>
+      <el-table-column width="160" label="Test Items" prop="testitem" {% comment %}v-if="showPhase === 3||showPhase === 15||showPhase === 16||showPhase === 17||showPhase === 18||showPhase === 19||showPhase === 20" :key="Math.random()" v-cloak{% endcomment %}></el-table-column>
       <el-table-column width="120" label="Version" prop="version"></el-table-column>
-{#      <el-table-column width="120"  v-if="showPhase !== 3&&showPhase !== 15&&showPhase !== 16&&showPhase !== 17&&showPhase !== 18&&showPhase !== 19&&showPhase !== 20"  label="TDMS Total Time"  :key="1" >#}
-{#          <template slot-scope="scope">#}
-{#              <span v-if="scope.row.id " v-cloak >${ scope.row.basetime + scope.row.unattendedtime }</span>#}
-{#          </template>#}
-{#      </el-table-column>#}
+      <el-table-column width="120" label="Release Date"prop="releasedate"></el-table-column>
+      <el-table-column width="120" label="Owner" prop="owner"></el-table-column>
+      <el-table-column width="120" label="priority" prop="priority"></el-table-column>
+      <!--:key="1" => 为了解决数据错位 （即前一列覆盖掉后一列）且使用Math.random()会产生抖动 ，换成固定值则正常 -->
+      <el-table-column width="120"  v-if="showPhase !== 3&&showPhase !== 15&&showPhase !== 16&&showPhase !== 17&&showPhase !== 18&&showPhase !== 19&&showPhase !== 20"  label="TDMS Total Time"  :key="1" >
+          <template slot-scope="scope">
+              <span v-if="scope.row.id " v-cloak >${ scope.row.basetime + scope.row.unattendedtime }</span>
+          </template>
+      </el-table-column>
       <el-table-column width="120"  label="Base Time" prop="basetime"></el-table-column>
       <el-table-column width="120"  label="(TDMS)Attended Time" prop="unattendedtime"></el-table-column>
       <el-table-column width="120"  label="Base Automation Time(1SKU)" prop="basetimeA"></el-table-column>
@@ -677,7 +678,7 @@
               </el-tooltip>
           </template>
            <template scope="scope">
-               <span v-if="scope.row.isSet && canEdit" >${ (!conSitemInAll[scope.$index + (currentPage-1)*pagesize] && conSitemInAll[scope.$index + (currentPage-1)*pagesize] !== 0)?0:conSitemInAll[scope.$index + (currentPage-1)*pagesize].toFixed(2) }</span>
+               <span v-if="scope.row.isSet && canEdit" >${ (!conSitemInAll[scope.$index + (currentPage-1)*pagesize{% comment %}+scrollArray[0]{% endcomment %}] && conSitemInAll[scope.$index + (currentPage-1)*pagesize{% comment %}+scrollArray[0]{% endcomment %}] !== 0)?0:conSitemInAll[scope.$index + (currentPage-1)*pagesize{% comment %}+scrollArray[0]{% endcomment %}].toFixed(2) }</span>
                <span v-else="scope.row.isSet && canEdit">${ (!scope.row.conSitemInAll && scope.row.conSitemInAll !== 0)?0:scope.row.conSitemInAll.toFixed(2) }</span>
           </template>
       </el-table-column>
@@ -1200,7 +1201,7 @@
     },
     //首先获取customer ，project ，phase 搜索信息
     created(){
-        axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=first" ,{
+        axios.get("/TestPlanSW/TestPlanSW-edit/?action=first" ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.selectMsg=res.data;
@@ -1225,7 +1226,7 @@
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
                 let _this=this;
-                axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action="+e ,{
+                axios.get("/TestPlanSW/TestPlanSW-edit/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.loading=false;
@@ -1295,7 +1296,7 @@
                         this.formData.append('SKU1', this.$refs.formappend.model.CPU1+'/'+this.$refs.formappend.model.VGA1)
                         this.formData.append('SKU2', this.$refs.formappend.model.CPU2+'/'+this.$refs.formappend.model.VGA2)
                         console.log(this.formData)
-                        axios.post("/TestPlanSWOS/TestPlanSWOS-edit/", this.formData,{
+                        axios.post("/TestPlanSW/TestPlanSW-edit/", this.formData,{
                                     headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                                 }).then((res)=>{
                                 this.tableData=res.data['content'];
@@ -1377,6 +1378,7 @@
           //打開修改框
           row.isSet = 1 ;
           console.log(this.tableData[index],index,row,row.isSet);
+          console.log(this.conSitemInAll,index,row.conSitemInAll, "conSitemInAll");
       },
       //cancel
       cancel(row,index){
@@ -1455,7 +1457,7 @@
               return false;
           }else{
               let result =  {'action':'edit','customer':this.showCustomer,'project':this.showProject,'phase':this.showPhase,'category':this.showCategory,'ID':row.id,'FS':this.FS[index],'BTS':this.BTS[index],'TFC':this.TFC[index],'starttime':this.starttime[index],'TE':this.TE[index],'schedule':this.schedule[index],'conAitem':this.conAitem[index],'conLitem':this.conLitem[index],'conSitem':this.conSitem[index],'CAT':this.CAT[index],'CLT':this.CLT[index],'CST':this.CST[index],'proTS':this.proTS[index],'ATO':this.ATO[index],'planOptimize':this.planOptimize[index],'comments1':this.comments1[index],'comments2':this.comments2[index],'CRC':this.CRC[index],'CRS':this.CRS[index],'CRT':this.CRT[index],'conSitemInAll':this.conSitemInAll[index]}
-              axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(result, {indices:false}),{
+              axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(result, {indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     //flag:editResult
@@ -1589,7 +1591,7 @@
                    //将之前张开的树形结构收起
                       //_this.reset();
                    //2.上傳數據
-                    axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
+                    axios.post("/TestPlanSW/TestPlanSW-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
                     //console.log(res.data,"first");//上传成功的操作
@@ -1717,7 +1719,7 @@
           if(!row){
               return false;
           }
-          console.log(change.id,"changedid2");
+          console.log(change, change.id,"changed");
            let caseid_temp =row.caseid;
            let sum =[0,0,0,0,0];
            //计算数量
@@ -1803,7 +1805,7 @@
           {% comment %}if(!row){
               return false;
           }{% endcomment %}
-          console.log(change.id,"changedid");
+          console.log(change.id,"changed");
            let caseid_temp =this.form.caseid;
            let sum =[0,0,0,0,0];
            //计算数量
@@ -1932,7 +1934,7 @@
           submitData['Phase'] = this.showPhase;
           submitData['category'] = this.showCategory;
           submitData['action'] = 'submitFFRTData';
-          axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(submitData ,{indices:false}),{
+          axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(submitData ,{indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res)=>{
                     if(res.data.submitResult === 1){
@@ -2039,7 +2041,6 @@
                //查找當前選項
                 if(this.selectMsg[this.customer][index]['project'] == newValue){
                     this.phasevalue = this.selectMsg[this.customer][index]['phase'];
-                    {#console.log(this.phasevalue,"phasevalue");#}
                     return ;
                 }
            }
@@ -2051,7 +2052,7 @@
            if(newValue !== ''){
                if(this.customer !== '' && this.project !== ''  && this.phase !== ''  ){
                  let parameter = ""+this.customer+"&project="+this.project+"&phase="+this.phase;
-                 axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
+                 axios.get("/TestPlanSW/TestPlanSW-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.categoryItem = res.data['MockData'];

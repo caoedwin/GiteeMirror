@@ -116,7 +116,7 @@ tbody tr td:last-child {
                        <option value="All">All</option>
                        <option v-for="(item,key,index) in customerOptions" >${ key }</option>
                  </select>
-                 <div class="inputError" v-cloak v-show="customerError">不能為空</div>
+{#                 <div class="inputError" v-cloak v-show="customerError">不能為空</div>#}
            </div>
            <div class="departmentContent">
                   <label for="department">部門:</label>
@@ -124,23 +124,31 @@ tbody tr td:last-child {
                        <option value="All">All</option>
                        <option v-for="(item,key,index) in departmentOptions">${ item.Department }</option>
                   </select>
-                  <div class="inputError" v-cloak  v-show="departmentError">不能為空</div>
+{#                  <div class="inputError" v-cloak  v-show="departmentError">不能為空</div>#}
            </div>
            <div class="lessonContent">
                   <label for="lesson">課别:</label>
-                  <select  ref="Lesson"  @change="changeLesson" v-model="lesson" style="height:40px;border-radius:5px 5px 5px 5px;width:120px;">
+                  <select  ref="Lesson"  v-model="lesson" style="height:40px;border-radius:5px 5px 5px 5px;width:120px;">
                        <option value="All">All</option>
                        <option v-for="(item,key,index) in lessonOptions">${ key }</option>
                   </select>
-                  <div class="inputError" v-cloak  v-show="lessonError">不能為空</div>
+{#                  <div class="inputError" v-cloak  v-show="lessonError">不能為空</div>#}
            </div>
            <div class="groupemployeesContent">
                  <label for="groupemployees">集團員工: </label>
-                 <select  ref="GroupEmployees"   v-model="groupemployees" style="height:40px;border-radius:5px 5px 5px 5px;width:100px;">
-                       <option value="All">All</option>
-                       <option v-for="(item,key,index) in groupemployeesOptions">${ item.GroupEmployees }</option>
-                 </select>
-                 <div class="inputError" v-cloak v-show="groupemployeesError">不能為空</div>
+                   <el-autocomplete
+                      ref="GroupEmployees"
+                      class="inline-input"
+                      v-model="groupemployees"
+                      :fetch-suggestions="querySearch"
+                      placeholder="请输入内容"
+                      @select="handleSelect"
+                 ></el-autocomplete>
+{#                 <select  ref="GroupEmployees"   v-model="groupemployees" style="height:40px;border-radius:5px 5px 5px 5px;width:100px;">#}
+{#                       <option value="All">All</option>#}
+{#                       <option v-for="(item,key,index) in groupemployeesOptions">${ item.GroupEmployees }</option>#}
+{#                 </select>#}
+{#                 <div class="inputError" v-cloak v-show="groupemployeesError">不能為空</div>#}
            </div>
                  <el-button @click="find" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
                  <el-button @click="exportExcel" type="success" v-if="canExport==0" style="height:40px;margin-left: 20px">導出</el-button>
@@ -151,16 +159,6 @@ tbody tr td:last-child {
     <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>
     <el-table height="700" border :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"  style="min-width: 100%;border-radius: 10px" id="out-table" @row-click="selectDetail" :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}">
               <el-table-column type="index" :index="indexMethod" ></el-table-column>
-              <el-table-column  prop="Status" label="狀態"  ></el-table-column>
-                <el-table-column  prop="RegistrationDate" label="報到日期"  ></el-table-column>
-                <el-table-column  prop="DepartureDate" label="離職日期"  ></el-table-column>
-                <el-table-column  prop="ExpectedDepartureDate" label="预计離職日期"  ></el-table-column>
-                <el-table-column  prop="DepartureReasons" label="離職原因"  ></el-table-column>
-                <el-table-column  prop="DepartureDetails" label="離職详情"  ></el-table-column>
-                <el-table-column  prop="DepartureTo" label="離職去向"  ></el-table-column>
-                <el-table-column  prop="NewCompanyName" label="新公司名稱"  ></el-table-column>
-                <el-table-column  prop="Salary" label="薪資"  ></el-table-column>
-                <el-table-column  prop="Seniority" label="年資"  ></el-table-column>
                 <el-table-column  prop="Customer" label="客戶"  ></el-table-column>
                 <el-table-column  prop="Department" label="部門"  ></el-table-column>
                 <el-table-column  prop="Lesson" label="課別"  ></el-table-column>
@@ -169,11 +167,21 @@ tbody tr td:last-child {
                 <el-table-column  prop="ChineseName" label="中文姓名"  ></el-table-column>
                 <el-table-column  prop="EnglishName" label="英文姓名"  ></el-table-column>
                 <el-table-column  prop="Gender" label="性別"  ></el-table-column>
+                <el-table-column  prop="Status" label="狀態"  ></el-table-column>
+                <el-table-column  prop="RegistrationDate" label="報到日期"  ></el-table-column>
+                <el-table-column  prop="DepartureDate" label="離職日期"  ></el-table-column>
+                <el-table-column  prop="ExpectedDepartureDate" label="预计離職日期"  ></el-table-column>
+                <el-table-column  prop="DepartureReasons" label="離職原因"  ></el-table-column>
+                <el-table-column  prop="DepartureDetails" label="離職详情"  ></el-table-column>
+{#                <el-table-column  prop="DepartureTo" label="離職去向"  ></el-table-column>#}
+{#                <el-table-column  prop="NewCompanyName" label="新公司名稱"  ></el-table-column>#}
+{#                <el-table-column  prop="Salary" label="薪資"  ></el-table-column>#}
+                <el-table-column  prop="Seniority" label="年資"  ></el-table-column>
                 <el-table-column  prop="CurrentTitle" label="現職稱"  ></el-table-column>
                 <el-table-column  prop="LastPromotionDate" label="最近一次晉升日期"  ></el-table-column>
-                <el-table-column  prop="EntryTitle" label="入職職稱"  ></el-table-column>
-                <el-table-column  prop="PromotionNumber" label="晉升次數"  ></el-table-column>
-                <el-table-column  prop="WorkExperience" label="是否承認工作經驗"  ></el-table-column>
+{#                <el-table-column  prop="EntryTitle" label="入職職稱"  ></el-table-column>#}
+{#                <el-table-column  prop="PromotionNumber" label="晉升次數"  ></el-table-column>#}
+{#                <el-table-column  prop="WorkExperience" label="是否承認工作經驗"  ></el-table-column>#}
                 <el-table-column  prop="GraduationYear" label="畢業年度"  ></el-table-column>
                 <el-table-column  prop="Education" label="學歷"  ></el-table-column>
                 <el-table-column  prop="School" label="學校"  ></el-table-column>
@@ -275,6 +283,7 @@ tbody tr td:last-child {
                 // 搜索条件
                 year:'',
                 yearOptions:[],
+                GroupEmployeesNum:[],
                 customer:'',
                 customerOptions:{},
                 customerError:false,
@@ -326,9 +335,29 @@ tbody tr td:last-child {
                     this.tableContent=res.data.content;
                     this.customerOptions=res.data.select;
                     this.canExport=res.data.canExport;
+                    this.GroupEmployeesNum=res.data.GroupEmployeesNum;
 
                  });
             },
+
+            querySearch(queryString,cb) {
+            var GroupEmployeesNum = this.GroupEmployeesNum;
+            var results = queryString ? GroupEmployeesNum.filter(this.createFilter(queryString)) : GroupEmployeesNum;
+            // 调用 callback 返回建议列表的数据
+            cb(results);
+              },
+            createFilter(queryString) {
+                    {#console.log(queryString,'p2');#}
+                return (restaurant) => {
+                  return (
+                      {#console.log(restaurant),#}
+                      restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
+                };
+            },
+            handleSelect(item) {
+                //console.log(item);
+            },
+
              //级联
             changeCustomer:function () {
                  if(this.$refs.Customer.value ==""){
@@ -353,17 +382,18 @@ tbody tr td:last-child {
                     this.lessonOptions=res.data.lessonOptions;
                 });
             },
-            changeLesson:function(index){
-                if(this.$refs.Lesson.value ==""){
-                      this.groupemployeesOptions=[""];
-                      return false;
-                 }
-                 this.groupemployeesOptions=this.lessonOptions[this.$refs.Lesson.value];
-                 this.groupemployees="";
-                 console.log(this.groupemployeesOptions);
-            },
+            //changeLesson:function(index){
+            //    if(this.$refs.Lesson.value ==""){
+            //         this.groupemployeesOptions=[""];
+            //         return false;
+            //    }
+            //      this.groupemployeesOptions=this.lessonOptions[this.$refs.Lesson.value];
+            //     this.groupemployees="";
+            //     console.log(this.groupemployeesOptions);
+            //},
             //上传搜索项：以此选项搜索符合条件的内容
             find :function(){
+                {% comment %}
                 if(this.$refs.Customer.value ==""){
                       this.customerError= true;
                       return false;
@@ -376,10 +406,12 @@ tbody tr td:last-child {
                       this.lessonError= true;
                       return false;
                  }
+
                 if(this.$refs.GroupEmployees.value ==""){
                       this.groupemployeesError= true;
                       return false;
                  }
+                 {% endcomment %}
                 let Year=this.$refs.Year.value;
                 let Customer = this.$refs.Customer.value;
                 let Department=this.$refs.Department.value;
@@ -407,6 +439,7 @@ tbody tr td:last-child {
             exportExcel:function (){
            /* 从表生成工作簿对象 */
 
+        {% comment %}
          if(this.$refs.Customer.value ==""){
                       this.customerError= true;
                       return false;
@@ -423,6 +456,7 @@ tbody tr td:last-child {
                       this.groupemployeesError= true;
                       return false;
                  }
+             {% endcomment %}
                 let temp=[];
                  temp.push(Number(this.currentPage));
                  temp.push(Number(this.pageSize));
@@ -475,7 +509,7 @@ tbody tr td:last-child {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                   this.form=res.data.form;
-                  console.log(this.form)
+                  {#console.log(this.form)#}
                   this.tableData=res.data.tableData;
                   this.Imageurl=res.data.Imageurl;
                 })

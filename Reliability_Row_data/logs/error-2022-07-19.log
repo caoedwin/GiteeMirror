@@ -1,0 +1,31 @@
+[2022-07-19 12:04:26,860] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3555, in Summary1
+    mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, GroupNum=i.Manager).first().CNName
+AttributeError: 'NoneType' object has no attribute 'CNName'
+[2022-07-19 12:04:26,871] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-19 12:04:26,874] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 84294
+[2022-07-19 12:04:38,448] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3555, in Summary1
+    mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, GroupNum=i.Manager).first().CNName
+AttributeError: 'NoneType' object has no attribute 'CNName'
+[2022-07-19 12:04:38,450] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-19 12:04:38,451] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 84294
+[2022-07-19 16:50:40,108] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

@@ -1,0 +1,80 @@
+[2022-07-05 11:38:28,796] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-05 13:37:08,335] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-06 07:42:07,439] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-06 07:44:51,889] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-07-06 07:46:27,258] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /mongotest/mongotest-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_mongoengine\generics.py", line 71, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 760, in data
+    ret = super().data
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 260, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 110, in _iter_results
+    self._populate_cache()
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 129, in _populate_cache
+    self._result_cache.append(next(self))
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\base.py", line 1590, in __next__
+    raw_doc = next(self._cursor)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 955, in __send_message
+    address=self.__address)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1346, in _run_operation_with_response
+    exhaust=exhaust)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1458, in _retryable_read
+    exhaust=exhaust) as (sock_info,
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1282, in _slaveok_for_server
+    with self._get_socket(server, session, exhaust=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1222, in _get_socket
+    self.__all_credentials, checkout=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 1138, in get_socket
+    sock_info.check_auth(all_credentials)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 712, in check_auth
+    auth.authenticate(credentials, self)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 564, in authenticate
+    auth_func(credentials, sock_info)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 539, in _authenticate_default
+    return _authenticate_scram(credentials, sock_info, 'SCRAM-SHA-1')
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 263, in _authenticate_scram
+    res = sock_info.command(source, cmd)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 613, in command
+    user_fields=user_fields)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\network.py", line 167, in command
+    parse_write_concern_error=parse_write_concern_error)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\helpers.py", line 159, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: Authentication failed.
+[2022-07-06 07:46:27,269] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 500 231331

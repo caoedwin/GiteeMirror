@@ -122,6 +122,7 @@ class DeviceABO(models.Model):
     Plandate = models.DateField(max_length=64, null=True, blank=True, verbose_name='預計歸還日期')
     Btime = models.DateField(max_length=64, null=True, blank=True, verbose_name='借用時間')
     Rtime = models.DateField(max_length=64, null=True, blank=True, verbose_name='歸還日期')
+    EOL = models.DateField(max_length=64, null=True, blank=True, verbose_name='EOL日期')
     Last_BR_per = models.CharField(max_length=64, null=True, blank=True, verbose_name='最近一次借還人員')
     Last_BR_per_code = models.CharField(max_length=64, null=True, blank=True, verbose_name='最近一次借還人員工號')
     Last_ProjectCode = models.CharField(max_length=16, null=True, blank=True, verbose_name='最近一次借機種')

@@ -537,6 +537,9 @@ def PersonalInfo_search(request):
         #          {"Department": "KMOMAQACF0", "GroupEmployees": "20709023", "ChineseName": "付亞楠", "EntryTitle": "工程師",
         #           "CurrentTitle": "資工師", "PromotionDate": "4/26/2020", "Intervaltime": "2.5", "beizhu": "晉升2", },
     ]
+    GroupEmployeesNum = [
+        # {"value": "20652552"}, {"value": "12345678"}, {"value": "34567890"}
+    ]
     Imageurl = ""#'/static/images/touxiang.jpg'  # 頭像地址放這裡
     canExport = 0  # 0為DQA權限，可以導出
 
@@ -559,6 +562,9 @@ def PersonalInfo_search(request):
         for j in PersonalInfo.objects.filter(Customer=i["Customer"]).values("Department").distinct().order_by("Department"):
             CustomerDep.append({"Department": j["Department"]})
         customerOptions[i["Customer"]] = CustomerDep
+
+    for i in PersonalInfo.objects.all().values("GroupNum").distinct().order_by("GroupNum"):
+        GroupEmployeesNum.append({"value": i['GroupNum']})
 
     if request.method == "POST":
         if request.POST.get("isGetData") == "first":
@@ -707,11 +713,22 @@ def PersonalInfo_search(request):
                          "PhoneNumber": i.MobileNum, "fileListO": Photolist},
                     )
         if request.POST.get("isGetData") == "selectDetail":
+            # YearSearch = request.POST.get("Year")
             GroupNumSearch = request.POST.get("GroupEmployees")#不管是PersonalInfo還是PersonalInfoHisByYear裏面的數據，都用工號到PersonalInfo裏面搜索，因爲晉升記錄鏈接的他，并且頭像都是一樣的
             registinfo = PersonalInfo.objects.get(GroupNum=GroupNumSearch)
+            print(Positions.objects.filter(Positions_Code=registinfo.PositionNow).first(),registinfo.PositionNow)
+            if Positions.objects.filter(Item=registinfo.PositionNow).first():
+                CurrentTitle = Positions.objects.filter(Item=registinfo.PositionNow).first().Positions_Name
+            else:
+                CurrentTitle = "該項次沒有對應的職稱名"
+            if Positions.objects.filter(Item=registinfo.PositionNow).first():
+                EntryTitle = Positions.objects.filter(Item=registinfo.PositionNow).first().Positions_Name
+            else:
+                EntryTitle = "該項次沒有對應的職稱名"
+
             form = {
                 "SAPEmployees": registinfo.SAPNum, "ChineseName": registinfo.CNName, "GroupEmployees": GroupNumSearch,
-                    "EnglishName": registinfo.EngName, "Profession": registinfo.Major, "School": registinfo.School, "CurrentTitle": registinfo.PositionNow,
+                    "EnglishName": registinfo.EngName, "Profession": registinfo.Major, "School": registinfo.School, "CurrentTitle": CurrentTitle,
                     "Birthday": registinfo.IdCard[6:10] + "-" + registinfo.IdCard[10:12] + "-" + registinfo.IdCard[12:14],
                     "NativeProvinceCity": registinfo.NativeProvince + registinfo.NativeCounty, "RegistrationDate": str(registinfo.RegistrationDate),
                     "Department": registinfo.DepartmentCode, "Status": registinfo.Status,
@@ -719,8 +736,8 @@ def PersonalInfo_search(request):
             for h in registinfo.Portrait.all():
                 Imageurl = '/media/' + h.img.name
             tableData.append(
-                {"Department": registinfo.DepartmentCode, "GroupEmployees": registinfo.GroupNum, "ChineseName": registinfo.CNName, "EntryTitle": registinfo.RegistPosition,
-                          "CurrentTitle": registinfo.RegistPosition, "PromotionDate": str(registinfo.RegistrationDate), "Intervaltime": "", "beizhu": "入職", }
+                {"Department": registinfo.DepartmentCode, "GroupEmployees": registinfo.GroupNum, "ChineseName": registinfo.CNName, "EntryTitle": EntryTitle,
+                          "CurrentTitle": CurrentTitle, "PromotionDate": str(registinfo.RegistrationDate), "Intervaltime": "", "beizhu": "入職", }
             )
             num = 0
             LastLastPromotionData = registinfo.RegistrationDate
@@ -739,6 +756,7 @@ def PersonalInfo_search(request):
 
         data = {
             "err_ok": "0",
+            "GroupEmployeesNum": GroupEmployeesNum,
             "select": customerOptions,
             "lessonOptions": lessonOptions,
             "content": mock_data,
@@ -761,6 +779,9 @@ def PersonalInfo_edit(request):
     if not Skin:
         Skin = "/static/src/blue.jpg"
     weizhi="PersonalInfo/PersonalInfo_edit"
+    GroupEmployeesNum = [
+        # {"value": "20652552"}, {"value": "12345678"}, {"value": "34567890"}
+    ]
     customerOptions = {
         # "C38(NB)": [{"Department": "DQA1"},
         #             {"Department": "RD1"},
@@ -865,11 +886,14 @@ def PersonalInfo_edit(request):
         Departmentoptions1.append(i['Department'])
     for i in PersonalInfo.objects.all().values("DepartmentCode").distinct().order_by("DepartmentCode"):
         Lessonoptions1.append(i['DepartmentCode'])
+    for i in PersonalInfo.objects.all().values("GroupNum").distinct().order_by("GroupNum"):
+        GroupEmployeesNum.append({"value": i['GroupNum']})
 
     for i in Positions.objects.all().values("Item").distinct().order_by("Item"):
         Titleoptions1.append(i["Item"])
     for i in MajorIfo.objects.all().values("MajorForExcel").distinct().order_by("MajorForExcel"):
         ProfessionAttributionoptions1.append({'value': i['MajorForExcel']})
+
     # print(request.method)
     # print(request.POST)
     # print(request.body)
@@ -2185,6 +2209,7 @@ def PersonalInfo_edit(request):
         data = {
             "err_ok": "0",
             "select": customerOptions,
+            "GroupEmployeesNum": GroupEmployeesNum,
             "lessonOptions": lessonOptions,
             "content": mock_data,
             "Customeroptions1": Customeroptions1,
@@ -3930,6 +3955,7 @@ def Summary2(request):
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
+                    ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
                     lizhidic = {"Customer": i["Customer"], "Classify": "離職"}
                     lizhilvdic = {"Customer": i["Customer"], "Classify": "離職率"}
                     mounthnum = 1
@@ -3951,23 +3977,27 @@ def Summary2(request):
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                         RegistrationDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                          QuitDate__range=Test_Endperiod).count()
                             if zaizhidic[j[0]]:
-                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 2)
+                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
                             else:
                                 lizhilvdic[j[0]] = 0
                             lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
                         mounthnum += 1
                     monthTable.append(yusuandic)
                     monthTable.append(zaizhidic)
+                    monthTable.append(ruzhidic)
                     monthTable.append(lizhidic)
                     monthTable.append(lizhilvdic)
                 # 合计
                 totalyusuandic = {"Customer": "合計", "Classify": "預算"}
                 totalzaizhidic = {"Customer": "合計", "Classify": "在職"}
+                totalruzhidic = {"Customer": "合計", "Classify": "入職"}
                 totallizhidic = {"Customer": "合計", "Classify": "離職"}
                 totallizhilvdic = {"Customer": "合計", "Classify": "離職率"}
                 mounthnum = 1
@@ -3989,18 +4019,21 @@ def Summary2(request):
                             RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
+                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(
+                            RegistrationDate__range=Test_Endperiod).count()
                         # totallizhidic[j[0]] = PersonalInfo.objects.filter(
                         #     QuitDate__lte=DateNow).count()
                         totallizhidic[j[0]] = PersonalInfo.objects.filter(
                             QuitDate__range=Test_Endperiod).count()
                         if totalzaizhidic[j[0]]:
-                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 2)
+                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 4)
                         else:
                             totallizhilvdic[j[0]] = 0
                         totallizhilvdic[j[0]] = '%.2f%%' % (totallizhilvdic[j[0]] * 100)
                     mounthnum += 1
                 monthTable.append(totalyusuandic)
                 monthTable.append(totalzaizhidic)
+                monthTable.append(totalruzhidic)
                 monthTable.append(totallizhidic)
                 monthTable.append(totallizhilvdic)
             else:
@@ -4036,6 +4069,7 @@ def Summary2(request):
                         "Customer"):
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
+                    ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
                     lizhidic = {"Customer": i["Customer"], "Classify": "離職"}
                     lizhilvdic = {"Customer": i["Customer"], "Classify": "離職率"}
                     mounthnum = 1
@@ -4058,22 +4092,27 @@ def Summary2(request):
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                  Year=YearSearch,
+                                                                                  RegistrationDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()
                             if zaizhidic[j[0]]:
-                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 2)
+                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
                             else:
                                 lizhilvdic[j[0]] = 0
                             lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
                         mounthnum += 1
                     monthTable.append(yusuandic)
                     monthTable.append(zaizhidic)
+                    monthTable.append(ruzhidic)
                     monthTable.append(lizhidic)
                     monthTable.append(lizhilvdic)
                 # 合计
                 totalyusuandic = {"Customer": "合計", "Classify": "預算"}
                 totalzaizhidic = {"Customer": "合計", "Classify": "在職"}
+                totalruzhidic = {"Customer": "合計", "Classify": "入職"}
                 totallizhidic = {"Customer": "合計", "Classify": "離職"}
                 totallizhilvdic = {"Customer": "合計", "Classify": "離職率"}
                 mounthnum = 1
@@ -4099,13 +4138,14 @@ def Summary2(request):
                         totallizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                    QuitDate__range=Test_Endperiod).count()
                         if totalzaizhidic[j[0]]:
-                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 2)
+                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 4)
                         else:
                             totallizhilvdic[j[0]] = 0
                         totallizhilvdic[j[0]] = '%.2f%%' % (totallizhilvdic[j[0]] * 100)
                     mounthnum += 1
                 monthTable.append(totalyusuandic)
                 monthTable.append(totalzaizhidic)
+                monthTable.append(totalruzhidic)
                 monthTable.append(totallizhidic)
                 monthTable.append(totallizhilvdic)
             # Summary
@@ -4118,7 +4158,7 @@ def Summary2(request):
                     #             i["Jan"] + i["Jul"] + i["Aug"] + i["Sep"] + i["Oct"] + \
                     #             i["Nov"] + i["Dec"]), 2)*100)
                     if everyzaizhi:
-                        i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi, 2) * 100)
+                        i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi, 4) * 100)
                     else:
                         i["monthSummary"] = '%.2f%%' % 0
                 else:
@@ -4142,7 +4182,11 @@ def Summary2(request):
                         {
                             'name': i["Customer"],
                             'type': 'bar',
-                            'data': monthDiagram1Data_data  # 對應月份 從一月到十二月
+                            'data': monthDiagram1Data_data,  # 對應月份 從一月到十二月
+                            'label': {
+                                'show': 'true',
+                                'position': 'top'
+                            },
                         }
                     )
                 if i["Customer"] == "合計":
@@ -4186,7 +4230,8 @@ def Summary2(request):
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
             # By职称
             if not YearSearch or YearSearch == YearNow:
-                legendData = ["DQA"]
+                # legendData = ["DQA"]
+                legendData = []
                 titleDiagramname = []
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by(
                         "Customer"):
@@ -4217,7 +4262,8 @@ def Summary2(request):
                         Positions.objects.filter(
                             Item=i["PositionNow"]).first().Positions_Name)  # Year=YearNow,
             else:
-                legendData = ["DQA"]
+                # legendData = ["DQA"]
+                legendData = []
                 titleDiagramname = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
@@ -4281,7 +4327,8 @@ def Summary2(request):
             # By年资
             seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
             if not YearSearch or YearSearch == YearNow:
-                legendDataseniority = ["DQA"]  # 与By职称里的名称区分开
+                # legendDataseniority = ["DQA"]  # 与By职称里的名称区分开
+                legendDataseniority = []  # 与By职称里的名称区分开
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by("Customer"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     legendDataseniority.append(i["Customer"])
@@ -4595,6 +4642,7 @@ def Summary2(request):
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
+                    ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
                     lizhidic = {"Customer": i["Customer"], "Classify": "離職"}
                     lizhilvdic = {"Customer": i["Customer"], "Classify": "離職率"}
                     mounthnum = 1
@@ -4615,23 +4663,27 @@ def Summary2(request):
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                         RegistrationDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                          QuitDate__range=Test_Endperiod).count()
                             if zaizhidic[j[0]]:
-                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 2)
+                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
                             else:
                                 lizhilvdic[j[0]] = 0
                             lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
                         mounthnum += 1
                     monthTable.append(yusuandic)
                     monthTable.append(zaizhidic)
+                    monthTable.append(ruzhidic)
                     monthTable.append(lizhidic)
                     monthTable.append(lizhilvdic)
                 # 合计
                 totalyusuandic = {"Customer": "合計", "Classify": "預算"}
                 totalzaizhidic = {"Customer": "合計", "Classify": "在職"}
+                totalruzhidic = {"Customer": "合計", "Classify": "入職"}
                 totallizhidic = {"Customer": "合計", "Classify": "離職"}
                 totallizhilvdic = {"Customer": "合計", "Classify": "離職率"}
                 mounthnum = 1
@@ -4653,18 +4705,21 @@ def Summary2(request):
                             RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
+                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(
+                            RegistrationDate__range=Test_Endperiod).count()
                         # totallizhidic[j[0]] = PersonalInfo.objects.filter(
                         #     QuitDate__lte=DateNow).count()
                         totallizhidic[j[0]] = PersonalInfo.objects.filter(
                             QuitDate__range=Test_Endperiod).count()
                         if totalzaizhidic[j[0]]:
-                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 2)
+                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 4)
                         else:
                             totallizhilvdic[j[0]] = 0
                         totallizhilvdic[j[0]] = '%.2f%%' % (totallizhilvdic[j[0]] * 100)
                     mounthnum += 1
                 monthTable.append(totalyusuandic)
                 monthTable.append(totalzaizhidic)
+                monthTable.append(totalruzhidic)
                 monthTable.append(totallizhidic)
                 monthTable.append(totallizhilvdic)
             else:
@@ -4700,6 +4755,7 @@ def Summary2(request):
                         "Customer"):
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
+                    ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
                     lizhidic = {"Customer": i["Customer"], "Classify": "離職"}
                     lizhilvdic = {"Customer": i["Customer"], "Classify": "離職率"}
                     mounthnum = 1
@@ -4722,22 +4778,27 @@ def Summary2(request):
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                  Year=YearSearch,
+                                                                                  RegistrationDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()
                             if zaizhidic[j[0]]:
-                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 2)
+                                lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
                             else:
                                 lizhilvdic[j[0]] = 0
                             lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
                         mounthnum += 1
                     monthTable.append(yusuandic)
                     monthTable.append(zaizhidic)
+                    monthTable.append(ruzhidic)
                     monthTable.append(lizhidic)
                     monthTable.append(lizhilvdic)
                 # 合计
                 totalyusuandic = {"Customer": "合計", "Classify": "預算"}
                 totalzaizhidic = {"Customer": "合計", "Classify": "在職"}
+                totalruzhidic = {"Customer": "合計", "Classify": "入職"}
                 totallizhidic = {"Customer": "合計", "Classify": "離職"}
                 totallizhilvdic = {"Customer": "合計", "Classify": "離職率"}
                 mounthnum = 1
@@ -4760,16 +4821,19 @@ def Summary2(request):
                             Year=YearSearch,
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
+                        totalruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                   RegistrationDate__range=Test_Endperiod).count()
                         totallizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                    QuitDate__range=Test_Endperiod).count()
                         if totalzaizhidic[j[0]]:
-                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 2)
+                            totallizhilvdic[j[0]] = round(float(totallizhidic[j[0]] / totalzaizhidic[j[0]]), 4)
                         else:
                             totallizhilvdic[j[0]] = 0
                         totallizhilvdic[j[0]] = '%.2f%%' % (totallizhilvdic[j[0]] * 100)
                     mounthnum += 1
                 monthTable.append(totalyusuandic)
                 monthTable.append(totalzaizhidic)
+                monthTable.append(totalruzhidic)
                 monthTable.append(totallizhidic)
                 monthTable.append(totallizhilvdic)
             # Summary
@@ -4782,7 +4846,7 @@ def Summary2(request):
                     #             i["Jan"] + i["Jul"] + i["Aug"] + i["Sep"] + i["Oct"] + \
                     #             i["Nov"] + i["Dec"]), 2)*100)
                     if everyzaizhi:
-                        i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi, 2) * 100)
+                        i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi, 4) * 100)
                     else:
                         i["monthSummary"] = '%.2f%%' % 0
                 else:
@@ -4806,7 +4870,11 @@ def Summary2(request):
                         {
                             'name': i["Customer"],
                             'type': 'bar',
-                            'data': monthDiagram1Data_data  # 對應月份 從一月到十二月
+                            'data': monthDiagram1Data_data,  # 對應月份 從一月到十二月
+                            'label': {
+                                'show': 'true',
+                                'position': 'top'
+                            },
                         }
                     )
                 if i["Customer"] == "合計":
@@ -4851,7 +4919,8 @@ def Summary2(request):
 
             # By职称
             if not YearSearch or YearSearch == YearNow:
-                legendData = ["DQA"]
+                # legendData = ["DQA"]
+                legendData = []
                 titleDiagramname = []
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by("Customer"):
                     selectItem.append(i["Customer"])
@@ -4878,7 +4947,8 @@ def Summary2(request):
                     titleDiagramname.append(
                         Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)  # Year=YearNow,
             else:
-                legendData = ["DQA"]
+                # legendData = ["DQA"]
+                legendData = []
                 titleDiagramname = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values("Customer").distinct().order_by(
                         "Customer"):
@@ -4935,7 +5005,8 @@ def Summary2(request):
             # By年资
             seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
             if not YearSearch or YearSearch == YearNow:
-                legendDataseniority = ["DQA"]
+                # legendDataseniority = ["DQA"]
+                legendDataseniority = []
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by("Customer"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     legendDataseniority.append(i["Customer"])
@@ -5499,7 +5570,7 @@ def Summary3(request):
             # zhanReasons
             if reasonsSummaryTotal:
                 for i in reasonsTable:
-                    i["zhanReasons"] = round(float(i["reasonsSummary"] / reasonsSummaryTotal * 100), 1)   # %分數
+                    i["zhanReasons"] = round(float(i["reasonsSummary"] / reasonsSummaryTotal * 100), 4)   # %分數
                     # print(round(float(i["reasonsSummary"] / reasonsSummaryTotal), 3), reasonsSummaryTotal, i["reasonsSummary"], i["zhanReasons"])
             # reasonsDiagramData
             LABEL = []
@@ -5508,7 +5579,7 @@ def Summary3(request):
             for i in reasonsTable:
                 LABEL.append(i["Reasons"])
                 HEJI.append(i["reasonsSummary"])
-                ZHANZONG.append(round(i["zhanReasons"] / 100, 3))
+                ZHANZONG.append(round(i["zhanReasons"] / 100, 4))
             reasonsDiagramData["LABEL"] = LABEL
             reasonsDiagramData["HEJI"] = HEJI
             reasonsDiagramData["ZHANZONG"] = ZHANZONG
@@ -5683,7 +5754,7 @@ def Summary3(request):
             # titleDeparture
             for i in titleTable:
                 if titleSummary_Total:
-                    i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 1)
+                    i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 4)
                 else:
                     i["titleDeparture"] = '%.2f%%' % round(0, 1)
             # titleDiagram2Data
@@ -5693,7 +5764,7 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 3))
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -5786,8 +5857,8 @@ def Summary3(request):
                     senioritySummary_Total += senioritySummary
                 if senioritySummary_Total:
                     for i in seniorityTable:
-                        i["seniorityDeparture"] = '%.1f%%' % round(
-                            float(i["senioritySummary"] / senioritySummary_Total * 100), 1)
+                        i["seniorityDeparture"] = '%.2f%%' % round(
+                            float(i["senioritySummary"] / senioritySummary_Total * 100), 4)
                 # print(seniorityTable)
                 # seniorityTable1
                 seniorityTitleData = seniorityTable1_Position
@@ -5917,8 +5988,8 @@ def Summary3(request):
                     senioritySummary_Total += senioritySummary
                 if senioritySummary_Total:
                     for i in seniorityTable:
-                        i["seniorityDeparture"] = '%.1f%%' % round(
-                            float(i["senioritySummary"] / senioritySummary_Total * 100), 1)
+                        i["seniorityDeparture"] = '%.2f%%' % round(
+                            float(i["senioritySummary"] / senioritySummary_Total * 100), 4)
                 # print(seniorityTable)
                 # seniorityTable1
                 seniorityTitleData = seniorityTable1_Position
@@ -5985,7 +6056,7 @@ def Summary3(request):
                 LABEL_seniorityDiagramData1.append(i["seniority"])
                 HEJILIZHI_seniorityDiagramData1.append(i["senioritySummary"])
                 if "seniorityDeparture" in i.keys():
-                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]) / 100, 3))
+                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]) / 100, 4))
             seniorityDiagramData1["LABEL"] = LABEL_seniorityDiagramData1
             seniorityDiagramData1["HEJILIZHI"] = HEJILIZHI_seniorityDiagramData1
             seniorityDiagramData1["LIZHIBI"] = LIZHIBI_seniorityDiagramData1
@@ -6014,7 +6085,7 @@ def Summary3(request):
                     educationTable.append(educationTable_dict)
                 if educationSummary_Total:
                     for i in educationTable:
-                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 4)
             else:
                 educationSummary_Total = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
@@ -6037,7 +6108,7 @@ def Summary3(request):
                     educationTable.append(educationTable_dict)
                 if educationSummary_Total:
                     for i in educationTable:
-                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 4)
             # educationDiagram
             LABEL_educationDiagram = []
             educationDiagramHE_educationDiagram = []
@@ -6045,7 +6116,7 @@ def Summary3(request):
             for i in educationTable:
                 LABEL_educationDiagram.append(i["Education"])
                 educationDiagramHE_educationDiagram.append(i["educationSummary"])
-                educationDiagramZH_educationDiagram.append(round(i["accountFor"] / 100, 3))
+                educationDiagramZH_educationDiagram.append(round(i["accountFor"] / 100, 4))
             educationDiagram = {
                 "LABEL": LABEL_educationDiagram,
                 "educationDiagramHE": educationDiagramHE_educationDiagram,  # 對應 從本科到中專
@@ -6210,6 +6281,7 @@ def Summary3(request):
             YearSearch = request.POST.get("Year")
             YearNow = str(datetime.datetime.now().year)
             Search_Endperiod = request.POST.getlist("YearRange", ['0000-00-00', '0000-00-00'])#经尝试这个默认值与没有这个搜索条件是一样的效果
+            print(Search_Endperiod)
             if Search_Endperiod == ['']:
                 # print(PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by("QuitDate"))
                 if PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by("QuitDate"):
@@ -6286,7 +6358,7 @@ def Summary3(request):
             # zhanReasons
             if reasonsSummaryTotal:
                 for i in reasonsTable:
-                    i["zhanReasons"] = round(float(i["reasonsSummary"] / reasonsSummaryTotal * 100), 1)   # %分數
+                    i["zhanReasons"] = round(float(i["reasonsSummary"] / reasonsSummaryTotal * 100), 4)   # %分數
             #reasonsDiagramData
             LABEL = []
             HEJI = []
@@ -6296,7 +6368,7 @@ def Summary3(request):
                 LABEL.append(i["Reasons"])
                 HEJI.append(i["reasonsSummary"])
                 if reasonsSummaryTotal:
-                    ZHANZONG.append(round(i["zhanReasons"] / 100, 3))
+                    ZHANZONG.append(round(i["zhanReasons"] / 100, 4))
             reasonsDiagramData["LABEL"] = LABEL
             reasonsDiagramData["HEJI"] = HEJI
             reasonsDiagramData["ZHANZONG"] = ZHANZONG
@@ -6472,7 +6544,7 @@ def Summary3(request):
             #titleDeparture
             for i in titleTable:
                 if titleSummary_Total:
-                    i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 1)
+                    i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 4)
                 else:
                     i["titleDeparture"] = '%.2f%%' % round(0, 1)
             # titleDiagram2Data
@@ -6482,7 +6554,7 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 3))
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -6572,7 +6644,7 @@ def Summary3(request):
                     senioritySummary_Total += senioritySummary
                 if senioritySummary_Total:
                     for i in seniorityTable:
-                        i["seniorityDeparture"] = '%.1f%%' % round(float(i["senioritySummary"] / senioritySummary_Total * 100), 1)
+                        i["seniorityDeparture"] = '%.2f%%' % round(float(i["senioritySummary"] / senioritySummary_Total * 100), 4)
                 # print(seniorityTable)
                 # seniorityTable1
                 seniorityTitleData = seniorityTable1_Position
@@ -6700,8 +6772,8 @@ def Summary3(request):
                     senioritySummary_Total += senioritySummary
                 if senioritySummary_Total:
                     for i in seniorityTable:
-                        i["seniorityDeparture"] = '%.1f%%' % round(
-                            float(i["senioritySummary"] / senioritySummary_Total * 100), 1)
+                        i["seniorityDeparture"] = '%.2f%%' % round(
+                            float(i["senioritySummary"] / senioritySummary_Total * 100), 4)
                 # print(seniorityTable)
                 # seniorityTable1
                 seniorityTitleData = seniorityTable1_Position
@@ -6771,7 +6843,7 @@ def Summary3(request):
                 LABEL_seniorityDiagramData1.append(i["seniority"])
                 HEJILIZHI_seniorityDiagramData1.append(i["senioritySummary"])
                 if "seniorityDeparture" in i.keys():
-                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 3))
+                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
             seniorityDiagramData1["LABEL"] = LABEL_seniorityDiagramData1
             seniorityDiagramData1["HEJILIZHI"] = HEJILIZHI_seniorityDiagramData1
             seniorityDiagramData1["LIZHIBI"] = LIZHIBI_seniorityDiagramData1
@@ -6796,7 +6868,7 @@ def Summary3(request):
                     educationTable.append(educationTable_dict)
                 if educationSummary_Total:
                     for i in educationTable:
-                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 4)
             else:
                 educationSummary_Total = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values("Education").distinct().order_by(
@@ -6814,7 +6886,7 @@ def Summary3(request):
                     educationTable.append(educationTable_dict)
                 if educationSummary_Total:
                     for i in educationTable:
-                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 1)
+                        i["accountFor"] = round(i["educationSummary"] / educationSummary_Total * 100, 4)
             # educationDiagram
             LABEL_educationDiagram = []
             educationDiagramHE_educationDiagram = []
@@ -6823,7 +6895,7 @@ def Summary3(request):
                 LABEL_educationDiagram.append(i["Education"])
                 educationDiagramHE_educationDiagram.append(i["educationSummary"])
                 if educationSummary_Total:
-                    educationDiagramZH_educationDiagram.append(round(i["accountFor"] / 100, 3))
+                    educationDiagramZH_educationDiagram.append(round(i["accountFor"] / 100, 4))
             educationDiagram = {
                 "LABEL": LABEL_educationDiagram,
                 "educationDiagramHE": educationDiagramHE_educationDiagram,  # 對應 從本科到中專
@@ -7170,7 +7242,7 @@ def Summary3(request):
 
                 for i in titleTable:
                     if titleSummary_Total:
-                        i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 1)
+                        i["titleDeparture"] = '%.2f%%' % round(float(i["titleSummary"] / titleSummary_Total * 100), 4)
                     else:
                         i["titleDeparture"] = '%.2f%%' % round(0, 1)
                 # titleDiagram2Data
@@ -7181,7 +7253,7 @@ def Summary3(request):
                 for i in titleTable:
                     LABEL_titleDiagram2Data.append(i["Title"])
                     HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                    LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 3))
+                    LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
                 titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
                 titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
                 titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data

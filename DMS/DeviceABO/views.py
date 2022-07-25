@@ -34,6 +34,7 @@ headermodel_Device = {
     '申購單號': 'ApplicationNo', '報關單號': 'DeclarationNo', '資產編號': 'AssetNum',  # "購買年限": "UsYear"实时计算出来的
     '使用次數': 'uscyc', '借還次數': 'UsrTimes', '設備添加人員': 'addnewname',
     '設備添加日期': 'addnewdate', '設備狀態': 'DevStatus',
+    'EOL日期': 'EOL',
 
     '借還人員工號': 'BR_per_code',
     '機種': 'ProjectCode', 'Phase': 'Phase',
@@ -164,10 +165,12 @@ def BorrowedDeviceABO(request):
                 elif "IntfCtgry" in checkAdaPow.keys() and "DevCtgry" in checkAdaPow.keys() and "Devproperties" in checkAdaPow.keys():
                     mock_datalist = DeviceABO.objects.filter(
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])
-                        & Q(Devproperties__icontains=checkAdaPow['Devproperties'])).filter(DevStatus__in=["Good", "Fixed"])
+                        & Q(Devproperties__icontains=checkAdaPow['Devproperties'])).filter(
+                        DevStatus__in=["Good", "Fixed"])
                 elif "IntfCtgry" in checkAdaPow.keys() and "DevCtgry" in checkAdaPow.keys():
                     mock_datalist = DeviceABO.objects.filter(
-                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])).filter(DevStatus__in=["Good", "Fixed"])
+                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])).filter(
+                        DevStatus__in=["Good", "Fixed"])
                 elif "IntfCtgry" in checkAdaPow.keys():
                     mock_datalist = DeviceABO.objects.filter(
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry'])).filter(DevStatus__in=["Good", "Fixed"])
@@ -291,7 +294,8 @@ def BorrowedDeviceABO(request):
             # mock_data
             if IntfCtgry and IntfCtgry != "All" and Devproperties and Devproperties != "All":
                 mock_datalist = DeviceABO.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(
+                    DevStatus__in=["Good", "Fixed"])
             elif IntfCtgry and IntfCtgry != "All" and (not Devproperties or Devproperties == "All"):
                 mock_datalist = DeviceABO.objects.filter(
                     Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed"])
@@ -429,7 +433,8 @@ def BorrowedDeviceABO(request):
             # mock_data
             if IntfCtgry and IntfCtgry != "All" and Devproperties and Devproperties != "All":
                 mock_datalist = DeviceABO.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(
+                    DevStatus__in=["Good", "Fixed"])
             elif IntfCtgry and IntfCtgry != "All" and (not Devproperties or Devproperties == "All"):
                 mock_datalist = DeviceABO.objects.filter(
                     Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed"])
@@ -893,10 +898,13 @@ def R_Borrowed(request):
                              'Rtime': None, }
                 # print(updatedic)
                 for i in RenewId.split(','):
-                    # updatedic['Last_BR_per'] = DeviceABO.objects.filter(id=i).first().BR_per
-                    # updatedic['Last_Predict_return'] = DeviceABO.objects.filter(id=i).first().Predict_return
-                    # updatedic['Last_Borrow_date'] = DeviceABO.objects.filter(id=i).first().Borrow_date
-                    # updatedic['Last_Return_date'] = datetime.datetime.now().date()
+                    updatedic['Last_BR_per'] = DeviceABO.objects.filter(id=i).first().Usrname
+                    updatedic['Last_BR_per_code'] = DeviceABO.objects.filter(id=i).first().BR_per_code
+                    updatedic['Last_Predict_return'] = DeviceABO.objects.filter(id=i).first().Plandate
+                    updatedic['Last_Borrow_date'] = DeviceABO.objects.filter(id=i).first().Btime
+                    updatedic['Last_Return_date'] = datetime.datetime.now().date()
+                    updatedic['Last_ProjectCode'] = DeviceABO.objects.filter(id=i).first().ProjectCode
+                    updatedic['Last_Phase'] = DeviceABO.objects.filter(id=i).first().Phase
                     try:
                         with transaction.atomic():
                             DeviceABO.objects.filter(id=i).update(**updatedic)
@@ -5818,8 +5826,11 @@ def M_edit(request):
     allDevsize = [
         # "USB_A", "USB_B"
     ]
-    allDevStatus = [
+    allBrwStatus = [
         # "可借用", "已借出"
+    ]
+    allDevStatus = [
+        # "Good", "Good"
     ]
 
     if DeviceIntfCtgryList.objects.all():
@@ -5839,7 +5850,10 @@ def M_edit(request):
             allDevsize.append(i["Devsize"])
     if DeviceABO.objects.all():
         for i in DeviceABO.objects.values("BrwStatus").distinct().order_by("BrwStatus"):
-            allDevStatus.append(i["BrwStatus"])
+            allBrwStatus.append(i["BrwStatus"])
+    if DeviceABO.objects.all():
+        for i in DeviceABO.objects.values("DevStatus").distinct().order_by("DevStatus"):
+            allDevStatus.append(i["DevStatus"])
 
     if DeviceIntfCtgryList.objects.all():
         for i in DeviceIntfCtgryList.objects.all():
@@ -6021,9 +6035,12 @@ def M_edit(request):
                 Devsize = request.POST.get('Devsize')
                 if Devsize and Devsize != "All":
                     checkAdaPow['Devsize'] = Devsize
+                BrwStatus = request.POST.get('Brwstatus')
+                if BrwStatus and BrwStatus != "All":
+                    checkAdaPow['BrwStatus'] = BrwStatus
                 DevStatus = request.POST.get('DevStatus')
                 if DevStatus and DevStatus != "All":
-                    checkAdaPow['BrwStatus'] = DevStatus
+                    checkAdaPow['DevStatus'] = DevStatus
 
                 # mock_data
                 if IntfCtgry and IntfCtgry != "All" and Devproperties and Devproperties != "All":
@@ -6047,6 +6064,20 @@ def M_edit(request):
                     # for h in i.Photo.all():
                     #     Photolist.append(
                     #         {'name': '', 'url': '/media/' + h.pic.name})  # fileListO需要的是对象列表而不是字符串列表
+                    EOLflag = 0
+                    if i.EOL:
+                        # print(i.EOL,datetime.datetime.now().date())
+                        if datetime.datetime.now().date() < i.EOL:
+                            flag_days = round(
+                                float(
+                                    str((i.EOL - datetime.datetime.now().date())).split(' ')[
+                                        0]),
+                                0)
+                            # print(flag_days)
+                            if flag_days <= 7:
+                                EOLflag = 1
+                        else:
+                            EOLflag = 1
                     if i.Plandate and i.Btime and not i.Rtime:
                         if datetime.datetime.now().date() > i.Plandate:
                             Exceed_days = round(
@@ -6080,6 +6111,11 @@ def M_edit(request):
                         addnewdate_str = str(i.addnewdate)
                     else:
                         addnewdate_str = ''
+                    EOL_str = ''
+                    if i.addnewdate:
+                        EOL_str = str(i.EOL)
+                    else:
+                        EOL_str = ''
                     Pchsdate_str = ''
                     if i.Pchsdate:
                         Pchsdate_str = str(i.Pchsdate)
@@ -6114,7 +6150,7 @@ def M_edit(request):
                          "PN": i.PN,
                          "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo, "Declaration_NO": i.DeclarationNo,
                          "AssetNum": i.AssetNum, "UsYear": Useyears,
-                         "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                         "addnewname": i.addnewname, "addnewdate": addnewdate_str, "EOL": EOL_str, "EOLflag": EOLflag,
                          "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
                          "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
                          "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
@@ -6292,6 +6328,9 @@ def M_edit(request):
                 addnewdate = request.POST.get('addnewdate')
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
+                EOL = request.POST.get('EOL')
+                if not EOL or EOL == 'null':
+                    EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')
                 UsrTimes = request.POST.get('UsrTimes')
@@ -6326,7 +6365,7 @@ def M_edit(request):
                     "LSTA": LNV_ST, "ApplicationNo": Purchase_NO,
                     "DeclarationNo": Declaration_NO,
                     "AssetNum": AssetNum, "useday": useday,
-                    "addnewname": addnewname, "addnewdate": addnewdate,
+                    "addnewname": addnewname, "addnewdate": addnewdate, "EOL": EOL,
                     "Comment": Comment, "uscyc": uscyc, "UsrTimes": UsrTimes,
                     "DevStatus": DevStatus, "BrwStatus": BrwStatus,
                     "Usrname": Usrname, "BR_per_code": BR_per_code,
@@ -6383,6 +6422,20 @@ def M_edit(request):
                     # for h in i.Photo.all():
                     #     Photolist.append(
                     #         {'name': '', 'url': '/media/' + h.pic.name})  # fileListO需要的是对象列表而不是字符串列表
+                    EOLflag = 0
+                    if i.EOL:
+                        # print(i.EOL,datetime.datetime.now().date())
+                        if datetime.datetime.now().date() < i.EOL:
+                            flag_days = round(
+                                float(
+                                    str((i.EOL - datetime.datetime.now().date())).split(' ')[
+                                        0]),
+                                0)
+                            # print(flag_days)
+                            if flag_days <= 7:
+                                EOLflag = 1
+                        else:
+                            EOLflag = 1
                     if i.Plandate and i.Btime and not i.Rtime:
                         if datetime.datetime.now().date() > i.Plandate:
                             Exceed_days = round(
@@ -6416,6 +6469,11 @@ def M_edit(request):
                         addnewdate_str = str(i.addnewdate)
                     else:
                         addnewdate_str = ''
+                    EOL_str = ''
+                    if i.addnewdate:
+                        EOL_str = str(i.EOL)
+                    else:
+                        EOL_str = ''
                     Pchsdate_str = ''
                     if i.Pchsdate:
                         Pchsdate_str = str(i.Pchsdate)
@@ -6451,7 +6509,7 @@ def M_edit(request):
                          "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo,
                          "Declaration_NO": i.DeclarationNo,
                          "AssetNum": i.AssetNum, "UsYear": Useyears,
-                         "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                         "addnewname": i.addnewname, "addnewdate": addnewdate_str, "EOL": EOL_str, "EOLflag": EOLflag,
                          "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
                          "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
                          "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
@@ -6506,6 +6564,9 @@ def M_edit(request):
                 addnewdate = request.POST.get('addnewdate')
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
+                EOL = request.POST.get('EOL')
+                if not EOL or EOL == 'null':
+                    EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')
                 UsrTimes = request.POST.get('UsrTimes')
@@ -6540,7 +6601,7 @@ def M_edit(request):
                     "LSTA": LNV_ST, "ApplicationNo": Purchase_NO,
                     "DeclarationNo": Declaration_NO,
                     "AssetNum": AssetNum, "useday": useday,
-                    "addnewname": addnewname, "addnewdate": addnewdate,
+                    "addnewname": addnewname, "addnewdate": addnewdate, "EOL": EOL,
                     "Comment": Comment, "uscyc": uscyc, "UsrTimes": UsrTimes,
                     "DevStatus": DevStatus, "BrwStatus": BrwStatus,
                     "Usrname": Usrname, "BR_per_code": BR_per_code,
@@ -6605,6 +6666,20 @@ def M_edit(request):
                     # for h in i.Photo.all():
                     #     Photolist.append(
                     #         {'name': '', 'url': '/media/' + h.pic.name})  # fileListO需要的是对象列表而不是字符串列表
+                    EOLflag = 0
+                    if i.EOL:
+                        # print(i.EOL,datetime.datetime.now().date())
+                        if datetime.datetime.now().date() < i.EOL:
+                            flag_days = round(
+                                float(
+                                    str((i.EOL - datetime.datetime.now().date())).split(' ')[
+                                        0]),
+                                0)
+                            # print(flag_days)
+                            if flag_days <= 7:
+                                EOLflag = 1
+                        else:
+                            EOLflag = 1
                     if i.Plandate and i.Btime and not i.Rtime:
                         if datetime.datetime.now().date() > i.Plandate:
                             Exceed_days = round(
@@ -6638,6 +6713,11 @@ def M_edit(request):
                         addnewdate_str = str(i.addnewdate)
                     else:
                         addnewdate_str = ''
+                    EOL_str = ''
+                    if i.addnewdate:
+                        EOL_str = str(i.EOL)
+                    else:
+                        EOL_str = ''
                     Pchsdate_str = ''
                     if i.Pchsdate:
                         Pchsdate_str = str(i.Pchsdate)
@@ -6672,7 +6752,7 @@ def M_edit(request):
                          "PN": i.PN,
                          "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo, "Declaration_NO": i.DeclarationNo,
                          "AssetNum": i.AssetNum, "UsYear": Useyears,
-                         "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                         "addnewname": i.addnewname, "addnewdate": addnewdate_str, "EOL": EOL_str, "EOLflag": EOLflag,
                          "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
                          "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
                          "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
@@ -6765,6 +6845,20 @@ def M_edit(request):
                         # for h in i.Photo.all():
                         #     Photolist.append(
                         #         {'name': '', 'url': '/media/' + h.pic.name})  # fileListO需要的是对象列表而不是字符串列表
+                        EOLflag = 0
+                        if i.EOL:
+                            # print(i.EOL,datetime.datetime.now().date())
+                            if datetime.datetime.now().date() < i.EOL:
+                                flag_days = round(
+                                    float(
+                                        str((i.EOL - datetime.datetime.now().date())).split(' ')[
+                                            0]),
+                                    0)
+                                # print(flag_days)
+                                if flag_days <= 7:
+                                    EOLflag = 1
+                            else:
+                                EOLflag = 1
                         if i.Plandate and i.Btime and not i.Rtime:
                             if datetime.datetime.now().date() > i.Plandate:
                                 Exceed_days = round(
@@ -6798,6 +6892,11 @@ def M_edit(request):
                             addnewdate_str = str(i.addnewdate)
                         else:
                             addnewdate_str = ''
+                        EOL_str = ''
+                        if i.addnewdate:
+                            EOL_str = str(i.EOL)
+                        else:
+                            EOL_str = ''
                         Pchsdate_str = ''
                         if i.Pchsdate:
                             Pchsdate_str = str(i.Pchsdate)
@@ -6832,7 +6931,8 @@ def M_edit(request):
                              "PN": i.PN,
                              "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo, "Declaration_NO": i.DeclarationNo,
                              "AssetNum": i.AssetNum, "UsYear": Useyears,
-                             "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                             "addnewname": i.addnewname, "addnewdate": addnewdate_str, "EOL": EOL_str,
+                             "EOLflag": EOLflag,
                              "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
                              "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
                              "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
@@ -7004,6 +7104,24 @@ def M_edit(request):
                                 break
                         else:
                             modeldata['addnewdate'] = None  # 日期爲空
+                        if 'EOL' in modeldata.keys():
+                            # modeldata['Pchsdate'] = modeldata['Pchsdate'].replace('/', '-')
+                            # print(len(modeldata['Pchsdate'].split('-')))
+                            # print(len(modeldata['EOL']))
+                            if len(modeldata['EOL']) >= 8 and len(modeldata['EOL']) <= 10:
+                                modeldata['EOL'] = modeldata['EOL'].replace('/', '-')
+                                modeldata['EOL'] = modeldata['EOL'].replace('.', '-')
+                                startupload = 1
+                            else:
+                                # canEdit = 0
+                                startupload = 0
+                                err_ok = 2
+                                errMsg = err_msg = """
+                                                            第"%s"條數據，EOL日期格式不對，請確認是否是文字格式YYYY-MM-DD
+                                                                                """ % rownum
+                                break
+                        else:
+                            modeldata['EOL'] = None  # 日期爲空
                         if 'Plandate' in modeldata.keys():
                             if len(modeldata['Plandate']) >= 8 and len(modeldata['Plandate']) <= 10:
                                 modeldata['Plandate'] = modeldata['Plandate'].replace('/', '-')
@@ -7088,6 +7206,7 @@ def M_edit(request):
                             # print(i)
                             # Check_dic_Gantt['Test_Start'] = None  # 日期格式为空NULL不能用空字符
                             if DeviceABO.objects.filter(**Check_dic):  # 已经存在覆盖
+                                # pass
                                 DeviceABO.objects.filter(
                                     **Check_dic).update(**i)
                             else:  # 新增
@@ -7126,6 +7245,20 @@ def M_edit(request):
                         # for h in i.Photo.all():
                         #     Photolist.append(
                         #         {'name': '', 'url': '/media/' + h.pic.name})  # fileListO需要的是对象列表而不是字符串列表
+                        EOLflag = 0
+                        if i.EOL:
+                            # print(i.EOL,datetime.datetime.now().date())
+                            if datetime.datetime.now().date() < i.EOL:
+                                flag_days = round(
+                                    float(
+                                        str((i.EOL - datetime.datetime.now().date())).split(' ')[
+                                            0]),
+                                    0)
+                                # print(flag_days)
+                                if flag_days <= 7:
+                                    EOLflag = 1
+                            else:
+                                EOLflag = 1
                         if i.Plandate and i.Btime and not i.Rtime:
                             if datetime.datetime.now().date() > i.Plandate:
                                 Exceed_days = round(
@@ -7159,6 +7292,11 @@ def M_edit(request):
                             addnewdate_str = str(i.addnewdate)
                         else:
                             addnewdate_str = ''
+                        EOL_str = ''
+                        if i.addnewdate:
+                            EOL_str = str(i.EOL)
+                        else:
+                            EOL_str = ''
                         Pchsdate_str = ''
                         if i.Pchsdate:
                             Pchsdate_str = str(i.Pchsdate)
@@ -7192,7 +7330,8 @@ def M_edit(request):
                              "PN": i.PN,
                              "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo, "Declaration_NO": i.DeclarationNo,
                              "AssetNum": i.AssetNum, "UsYear": Useyears,
-                             "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                             "addnewname": i.addnewname, "addnewdate": addnewdate_str, "EOL": EOL_str,
+                             "EOLflag": EOLflag,
                              "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
                              "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
                              "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
@@ -7227,6 +7366,7 @@ def M_edit(request):
             "allDevVendor": allDevVendor,
             "allDevsize": allDevsize,
             "allDevStatus": allDevStatus,
+            "allBrwStatus": allBrwStatus,
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'DeviceABO/M_edit.html', locals())

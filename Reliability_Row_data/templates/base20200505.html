@@ -22,6 +22,7 @@
         <link href="/static/css/lib/menubar/sidebar.css" rel="stylesheet">
 {#        <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">#}
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
         <link href="/static/css/lib/helper.css" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
         <link href="/static/css/uploadbutton.css" rel="stylesheet">
@@ -30,7 +31,7 @@
         {% comment %}<style>
         {% rbac_css %}
         </style>{% endcomment %}
-        <script src="{% static 'jquery-3.2.1.js' %}"></script>
+{#        <script src="{% static 'jquery-3.2.1.js' %}"></script>#}
         {% comment %}<script>
             $(function () {
                 {% rbac_js %}
@@ -57,13 +58,23 @@
         background-repeat: no-repeat;
         {#background-origin: padding-box;#}
     }
-    .el-table__fixed {
+    .sidebar .nano {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    {#overflow: hidden;#}
+        overflow: auto;
+}
+
+    .el-table__fixed,
+    .el-table__fixed-right{
 	height:auto !important; {% comment %}// 让固定列的高自适应，且设置!important覆盖ele-ui的默认样式{% endcomment %}
     bottom:17px; {% comment %}// 固定列默认设置了定位，    position: absolute;top: 0;left: 0;只需要再设置一下bottom的值，让固定列和父元素的底部出现距离即可{% endcomment %}
 }
     </style>
-    <body oncopy="return false" onselectstart="return false">
+    <body class="sidebar-collapse  pace-done sidebar-hide"{% comment %}默认导航条隐藏{% endcomment %} {% comment %} oncopy="return false" onselectstart="return false"{% endcomment %}>{% comment %}禁止复制禁止粘贴{% endcomment %}
 
+       {% comment %} <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">{% endcomment %}
         <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
             <div class="nano">
                 <div class="nano-content">
@@ -73,8 +84,10 @@
                             <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Home <span class="badge badge-primary"></span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                                 <ul>
                                     <li><a href="/index/">Dashboard</a></li>
+{#                                    <li><a href="/ProjectInfoSearch/">ProjectInfo</a></li>#}
                                     <li><a href="/FilesDownload/">FilesDownload</a></li>
                                 </ul>
+
                             </li>
 
                         <li class="label" style="color: #FFF;font-weight:800">Features</li>
@@ -354,8 +367,8 @@
                             <div class="title-margin-right">
                                 <p style="color: #FFF"><a href="#" style="color: #ffab00;font-weight: bolder"><img src="/static/src/back/001.png"></a></p>
                                 <p style="color: #FFF">2019-08-22 © <a style="color: #ff8f00;">DQA3. - Auto Team</a></p>
-                                <p style="color: #FFF"><img src="/static/src/back/mail.png"><a target="_blank" title="Contact" style="color: #ff8f00"> Jun_Wang; Edwin_Cao; Katherine_Cao; WillZ_Zhang; Lux_Chen;</a></p>
-                                <p style="color: #FFF"><a target="_blank" title="Contact" style="color: #ff8f00"> <img src="/static/src/back/call.png"> 21891</a></p>
+                                <p style="color: #FFF"><img src="/static/src/back/mail.png"><a target="_blank" title="Contact" style="color: #ff8f00"> Jun_Wang; Edwin_Cao; Katherine_Cao; Lux_Chen; Erin_Sun;</a></p>
+                                <p style="color: #FFF"><a target="_blank" title="Contact" style="color: #ff8f00"> <img src="/static/src/back/call.png"> 21850</a></p>
                             </div>
                         </div>
                     </div>
@@ -407,10 +420,13 @@
 {#        <script src="/static/js/element-ui.89ed192.js"></script>#}
 {#        {% block scripts_inbase %}#}
             <script src="/static/js/xlsx/xlsx.core.min.js"></script>
-            <script src="/static/js/xlsx/xlsx.js"></script>
+
 {#        {% endblock %}#}
         {% block scripts %}
 
+        {% endblock %}
+        {% block scripts1 %}
+            <script src="/static/js/xlsx/xlsx.js"></script>
         {% endblock %}
     </body>
 

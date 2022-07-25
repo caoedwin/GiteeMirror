@@ -472,7 +472,8 @@ def R_Borrowed(request):
                              # 'BR_per': request.session.get('CNname'),
                              # 'Predict_return': None,
                              # 'Borrow_date': None,'Return_date': None,
-                             'Transefer_per_code': ChairCabinetLNV.objects.filter(id=request.POST.get('ID')).first().BR_per_code,
+                             # 'Transefer_per_code': ChairCabinetLNV.objects.filter(id=request.POST.get('ID')).first().BR_per_code,#转账人可能为空，从而导致转账人为空，转账人应当是保管人，保管人肯定不为空。
+                             'Transefer_per_code': ChairCabinetLNV.objects.filter(id=request.POST.get('ID')).first().OAPcode,
                              'Receive_per_code': Receive_per_code,
                              'Last_BrwStatus': ChairCabinetLNV.objects.filter(id=request.POST.get('ID')).first().BrwStatus,
                              'Btime': None, 'Rtime': None,
@@ -1565,6 +1566,7 @@ def M_Transfer(request):
                          "CollectDate": Btime_str,
                          "Rtime": Rtime_str,
                          "Transefer_per": UserInfo.objects.filter(account=i.Transefer_per_code).first().CNname,
+                         # "Transefer_per": UserInfo.objects.filter(account=i.OAPcode).first().CNname,
                          "Transefer_per_code": i.Transefer_per_code,
                          "Receive_per": UserInfo.objects.filter(account=i.Receive_per_code).first().CNname,
                          "Receive_per_code": i.Receive_per_code,

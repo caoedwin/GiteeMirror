@@ -97,21 +97,21 @@ background-color: rgba(255,255,255,0.1);
                       <div  id="seniorityDiagram1" style="height:400px;"></div>
                   </div>
               </el-collapse-item>
-              <el-collapse-item title="By 學歷" name="4">
-                  <div class="educationTablecontent">
-                       <el-table border :data="educationTable" show-summary>
-                           <el-table-column prop="Education" label="學歷" align="center"></el-table-column>
-                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
-                           </el-table-column>
-                           <el-table-column prop="educationSummary" label="合計" align="center"></el-table-column>
-                           <el-table-column prop="accountFor" label="占%" align="center"></el-table-column>
-                       </el-table>
-                  </div>
-                  <div class="container-echart"v-cloak>
-                      <div  id="educationDiagram1" style="height:400px;"></div>
-                  </div>
-              </el-collapse-item>
-              <el-collapse-item title="By 專業" name="5">
+{#              <el-collapse-item title="By 學歷" name="4">#}
+{#                  <div class="educationTablecontent">#}
+{#                       <el-table border :data="educationTable" show-summary>#}
+{#                           <el-table-column prop="Education" label="學歷" align="center"></el-table-column>#}
+{#                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">#}
+{#                           </el-table-column>#}
+{#                           <el-table-column prop="educationSummary" label="合計" align="center"></el-table-column>#}
+{#                           <el-table-column prop="accountFor" label="占%" align="center"></el-table-column>#}
+{#                       </el-table>#}
+{#                  </div>#}
+{#                  <div class="container-echart"v-cloak>#}
+{#                      <div  id="educationDiagram1" style="height:400px;"></div>#}
+{#                  </div>#}
+{#              </el-collapse-item>#}
+              <el-collapse-item title="By 專業" name="4">
                   <div class="professionTablecontent">
                        <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary>
                            <el-table-column prop="daLei" label="" align="center"></el-table-column>
@@ -122,17 +122,17 @@ background-color: rgba(255,255,255,0.1);
                        </el-table>
                   </div>
               </el-collapse-item>
-              <el-collapse-item title="By 地區" name="6">
-                  <div class="regionsTablecontent">
-                       <el-table border :data="regionsTable" show-summary>
-                           <el-table-column prop="Regions" label="" align="center"></el-table-column>
-                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
-                           </el-table-column>
-                           <el-table-column prop="regionsSummary" label="合計" align="center"></el-table-column>
-                       </el-table>
-                  </div>
-
-              </el-collapse-item>
+{#              <el-collapse-item title="By 地區" name="6">#}
+{#                  <div class="regionsTablecontent">#}
+{#                       <el-table border :data="regionsTable" show-summary>#}
+{#                           <el-table-column prop="Regions" label="" align="center"></el-table-column>#}
+{#                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">#}
+{#                           </el-table-column>#}
+{#                           <el-table-column prop="regionsSummary" label="合計" align="center"></el-table-column>#}
+{#                       </el-table>#}
+{#                  </div>#}
+{##}
+{#              </el-collapse-item>#}
           </el-collapse>
     </div>
 </div>
@@ -153,15 +153,19 @@ background-color: rgba(255,255,255,0.1);
         data: function () {
             return {
                year:'',
-               activeNames:['1','2','3','4','5','6'],
+               {#activeNames:['1','2','3','4','5','6'],#}
+               activeNames:['1','2','3','4'],
                monthTable:[],
                titleTable:[],
                seniorityTable:[],
-               educationTable:[],
+               {#educationTable:[],#}
                professionTable:[],
-               regionsTable:[],
+               {#regionsTable:[],#}
                searchYear:null,
                monthDiagram1Data:[],
+               DataCustomer:[],
+               DataCustomer1:[],
+               DataRenCi:[],
                monthDiagram2Data:{},
                titleDiagram:{},
                seniorityDiagram:{},
@@ -188,9 +192,9 @@ background-color: rgba(255,255,255,0.1);
                     this.searchYear=res.data.searchYear;
                     this.titleTable=res.data.titleTable;
                     this.seniorityTable=res.data.seniorityTable;
-                    this.educationTable=res.data.educationTable;
+                    {#this.educationTable=res.data.educationTable;#}
                     this.professionTable=res.data.professionTable;
-                    this.regionsTable=res.data.regionsTable;
+                    {#this.regionsTable=res.data.regionsTable;#}
 
                     this.heBingNum=res.data.heBingNum;
 
@@ -201,8 +205,8 @@ background-color: rgba(255,255,255,0.1);
                     this.titleDiagramss();
                     this.seniorityDiagram=res.data.seniorityDiagram;   //年資分佈圖
                     this.seniorityDiagramss();
-                    this.educationDiagram=res.data.educationDiagram;  //學歷分佈圖
-                    this.educationDiagramss();
+                    {#this.educationDiagram=res.data.educationDiagram;  //學歷分佈圖#}
+                    {#this.educationDiagramss();#}
                  });
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
@@ -215,9 +219,9 @@ background-color: rgba(255,255,255,0.1);
                     this.monthTable=res.data.monthTable;
                     this.titleTable=res.data.titleTable;
                     this.seniorityTable=res.data.seniorityTable;
-                    this.educationTable=res.data.educationTable;
+                    {#this.educationTable=res.data.educationTable;#}
                     this.professionTable=res.data.professionTable;
-                    this.regionsTable=res.data.regionsTable;
+                    {#this.regionsTable=res.data.regionsTable;#}
 
                     this.heBingNum=res.data.heBingNum;
 
@@ -228,8 +232,8 @@ background-color: rgba(255,255,255,0.1);
                     this.titleDiagramss();
                     this.seniorityDiagram=res.data.seniorityDiagram;
                     this.seniorityDiagramss();
-                    this.educationDiagram=res.data.educationDiagram;
-                    this.educationDiagramss();
+                    {#this.educationDiagram=res.data.educationDiagram;#}
+                    {#this.educationDiagramss();#}
 
 
 
@@ -240,9 +244,9 @@ background-color: rgba(255,255,255,0.1);
             },
             objectSpanMethod({ row, column, rowIndex, columnIndex }) {               //合併行
                 if (columnIndex === 0) {
-                  if (rowIndex % 4 === 0) {
+                  if (rowIndex % 5 === 0) {
                     return {
-                      rowspan: 4,
+                      rowspan: 5,
                       colspan: 1
                     };
                   } else {
@@ -300,6 +304,7 @@ background-color: rgba(255,255,255,0.1);
                       }
                 }
             },
+    {% comment %}
             educationDiagramss(){
                 var myChart9 = echarts.init(document.getElementById('educationDiagram1'));
                 var option9 = {
@@ -348,7 +353,7 @@ background-color: rgba(255,255,255,0.1);
                             name: '合計',
                             min: 0,
                             max: 1000,
-                            interval: 500,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                interval: 500,
                             axisLabel: {
                                 formatter: '{value}'
                             }
@@ -387,6 +392,7 @@ background-color: rgba(255,255,255,0.1);
                      // 使用刚指定的配置项和数据显示图表。
                     })
             },
+    {% endcomment %}
             seniorityDiagramss(){
                 var myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
                 var option7 = {
@@ -430,14 +436,18 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '人次',
                             min: 0,
-                            max: 200,
+                            {#max: 200,#}
                             interval: 50,
                             axisLabel: {
                                 formatter: '{value}'
                              }
                             }
                         ],
-                        series: this.seniorityDiagram.seniorityDiagramData
+                        series: this.seniorityDiagram.seniorityDiagramData,
+                        label: {
+                            show: true,
+                            position: 'top'
+                        },
                   };
                     myChart7.clear();
                     myChart7.setOption(option7);
@@ -488,16 +498,20 @@ background-color: rgba(255,255,255,0.1);
                             {
                             type: 'value',
                             name: '人次',
-                            min: 0,
-                            max: 300,
+                            {#min: 10,#}
+                            {#max: 300,#}
                             interval: 50,
                             axisLabel: {
                                 formatter: '{value}'
                              }
                             }
                         ],
-                        series:this.titleDiagram.titleDiagramData
-                  };
+                        label: {
+                            show: true,
+                            position: 'top'
+                        },
+                        series:this.titleDiagram.titleDiagramData,
+            };
                     myChart3.clear();
                     myChart3.setOption(option3);
                     window.addEventListener('resize', ()=>{
@@ -554,8 +568,10 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '人次（各客戶別）',
                             min: 0,
-                            max: 250,
-                            interval: 50,
+                            {#max: 1000,#}
+                            {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
+                            {#interval: 200,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
                             axisLabel: {
                                 formatter: '{value}'
                             }
@@ -564,16 +580,17 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '預算/在職人次',
                             min: 0,
-                            max: 1000,
-                            interval: 200,
+                            {#max: Math.ceil(Math.max.apply(null,this.DataRenCi)/5)*5,#}
+                            {#max: 1000,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataRenCi)/5),#}
+                            {#interval: 200,#}
                             axisLabel: {
                                 formatter: '{value}'
                             }
                         }
                     ],
-                    series:this.monthDiagram1Data
+                    series:this.monthDiagram1Data,
                 };
-
                 var option2 = {
                     title: {
                         text: '各月份離職統計',
@@ -619,8 +636,8 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '離職人次',
                             min: 0,
-                            max: 30,
-                            interval: 5,
+                            {#max: 30,#}
+                            {#interval: 5,#}
                             axisLabel: {
                                 formatter: '{value}'
                             }
@@ -629,8 +646,8 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '離職率',
                             min: 0,
-                            max: 0.3,
-                            interval: 0.05,
+                            {#max: 0.3,#}
+                            {#interval: 0.05,#}
                             axisLabel: {
                                 formatter: '{value}'
                             }
@@ -640,13 +657,17 @@ background-color: rgba(255,255,255,0.1);
                         {
                             'name': '離職',
                             'type': 'bar',
-                            'data':this.monthDiagram2Data.LIZHI
+                            'data':this.monthDiagram2Data.LIZHI,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
                         },
                         {
                             'name': '離職率',
                             'type': 'line',
                             'yAxisIndex': 1,
-                            'data':this.monthDiagram2Data.LIZHILV
+                            'data':this.monthDiagram2Data.LIZHILV,
                         }
                     ]
                 };

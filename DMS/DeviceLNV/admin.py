@@ -9,7 +9,7 @@ class DeviceLNVAdmin(admin.ModelAdmin):
             'fields' : ('Customer', 'Plant', 'NID', 'DevID', 'IntfCtgry', 'DevCtgry', 'Devproperties', 'DevVendor',
                         'Devsize', 'DevModel', 'DevName', 'HWVer', 'FWVer', 'DevDescription', 'PckgIncludes', 'expirdate',
                         'DevPrice', 'Source', 'Pchsdate', 'PN', 'LSTA', 'ApplicationNo', 'DeclarationNo',
-                        'AssetNum', 'addnewname', 'addnewdate', 'Comment', 'uscyc', 'UsrTimes', 'DevStatus', 'BrwStatus',
+                        'AssetNum', 'addnewname', 'addnewdate','EOL', 'Comment', 'uscyc', 'UsrTimes', 'DevStatus', 'BrwStatus',
                         'Usrname', 'BR_per_code', 'ProjectCode', 'Phase', 'useday', 'Plandate', 'Btime', 'Rtime',
                         'Last_BR_per', 'Last_BR_per_code', 'Last_Predict_return', 'Last_Borrow_date', 'Last_Return_date',"Last_ProjectCode","Last_Phase",
                         'Last_uscyc')

@@ -713,7 +713,7 @@ def PersonalInfo_search(request):
                 Imageurl = '/media/' + h.img.name
             tableData.append(
                 {"Department": registinfo.DepartmentCode, "GroupEmployees": registinfo.GroupNum, "ChineseName": registinfo.CNName, "EntryTitle": registinfo.RegistPosition,
-                          "CurrentTitle": registinfo.RegistPosition, "PromotionDate": str(registinfo.RegistrationDate), "Intervaltime": "", "beizhu": "入職", }
+                          "CurrentTitle": registinfo.PositionNow, "PromotionDate": str(registinfo.RegistrationDate), "Intervaltime": "", "beizhu": "入職", }
             )
             num = 0
             LastLastPromotionData = registinfo.RegistrationDate

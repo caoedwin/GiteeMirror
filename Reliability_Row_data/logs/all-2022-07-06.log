@@ -1,0 +1,478 @@
+[2022-07-06 07:49:14,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 28706
+[2022-07-06 07:49:14,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37051
+[2022-07-06 07:49:15,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 07:50:28,777] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /mongotest/mongotest-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_mongoengine\generics.py", line 71, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 760, in data
+    ret = super().data
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 260, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 110, in _iter_results
+    self._populate_cache()
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 129, in _populate_cache
+    self._result_cache.append(next(self))
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\base.py", line 1590, in __next__
+    raw_doc = next(self._cursor)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 955, in __send_message
+    address=self.__address)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1346, in _run_operation_with_response
+    exhaust=exhaust)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1458, in _retryable_read
+    exhaust=exhaust) as (sock_info,
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1282, in _slaveok_for_server
+    with self._get_socket(server, session, exhaust=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1222, in _get_socket
+    self.__all_credentials, checkout=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 1138, in get_socket
+    sock_info.check_auth(all_credentials)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 712, in check_auth
+    auth.authenticate(credentials, self)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 564, in authenticate
+    auth_func(credentials, sock_info)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 539, in _authenticate_default
+    return _authenticate_scram(credentials, sock_info, 'SCRAM-SHA-1')
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 263, in _authenticate_scram
+    res = sock_info.command(source, cmd)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 613, in command
+    user_fields=user_fields)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\network.py", line 167, in command
+    parse_write_concern_error=parse_write_concern_error)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\helpers.py", line 159, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: Authentication failed.
+[2022-07-06 07:50:28,796] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 500 231466
+[2022-07-06 07:50:28,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:03:57,646] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22499
+[2022-07-06 08:03:58,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:04:05,434] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /mongotest/mongotest-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_mongoengine\generics.py", line 71, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 760, in data
+    ret = super().data
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 260, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 110, in _iter_results
+    self._populate_cache()
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 129, in _populate_cache
+    self._result_cache.append(next(self))
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\base.py", line 1590, in __next__
+    raw_doc = next(self._cursor)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 955, in __send_message
+    address=self.__address)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1346, in _run_operation_with_response
+    exhaust=exhaust)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1458, in _retryable_read
+    exhaust=exhaust) as (sock_info,
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1282, in _slaveok_for_server
+    with self._get_socket(server, session, exhaust=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1222, in _get_socket
+    self.__all_credentials, checkout=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 1138, in get_socket
+    sock_info.check_auth(all_credentials)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 712, in check_auth
+    auth.authenticate(credentials, self)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 564, in authenticate
+    auth_func(credentials, sock_info)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 539, in _authenticate_default
+    return _authenticate_scram(credentials, sock_info, 'SCRAM-SHA-1')
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 263, in _authenticate_scram
+    res = sock_info.command(source, cmd)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 613, in command
+    user_fields=user_fields)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\network.py", line 167, in command
+    parse_write_concern_error=parse_write_concern_error)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\helpers.py", line 159, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: Authentication failed.
+[2022-07-06 08:04:05,443] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 500 231466
+[2022-07-06 08:04:05,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:10:18,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22499
+[2022-07-06 08:10:19,167] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:17:37,493] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /mongotest/mongotest-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_mongoengine\generics.py", line 71, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 760, in data
+    ret = super().data
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 260, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 110, in _iter_results
+    self._populate_cache()
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 129, in _populate_cache
+    self._result_cache.append(next(self))
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\base.py", line 1590, in __next__
+    raw_doc = next(self._cursor)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 955, in __send_message
+    address=self.__address)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1346, in _run_operation_with_response
+    exhaust=exhaust)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1458, in _retryable_read
+    exhaust=exhaust) as (sock_info,
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1282, in _slaveok_for_server
+    with self._get_socket(server, session, exhaust=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1222, in _get_socket
+    self.__all_credentials, checkout=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 1138, in get_socket
+    sock_info.check_auth(all_credentials)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 712, in check_auth
+    auth.authenticate(credentials, self)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 564, in authenticate
+    auth_func(credentials, sock_info)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 539, in _authenticate_default
+    return _authenticate_scram(credentials, sock_info, 'SCRAM-SHA-1')
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 263, in _authenticate_scram
+    res = sock_info.command(source, cmd)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 613, in command
+    user_fields=user_fields)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\network.py", line 167, in command
+    parse_write_concern_error=parse_write_concern_error)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\helpers.py", line 159, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: Authentication failed.
+[2022-07-06 08:17:37,508] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 500 231466
+[2022-07-06 08:17:37,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:17:38,412] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /mongotest/mongotest-upload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework_mongoengine\generics.py", line 71, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 760, in data
+    ret = super().data
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 260, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\rest_framework\serializers.py", line 678, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 110, in _iter_results
+    self._populate_cache()
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\queryset.py", line 129, in _populate_cache
+    self._result_cache.append(next(self))
+  File "C:\Python372\mecheck\lib\site-packages\mongoengine\queryset\base.py", line 1590, in __next__
+    raw_doc = next(self._cursor)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\cursor.py", line 955, in __send_message
+    address=self.__address)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1346, in _run_operation_with_response
+    exhaust=exhaust)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1458, in _retryable_read
+    exhaust=exhaust) as (sock_info,
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1282, in _slaveok_for_server
+    with self._get_socket(server, session, exhaust=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\mongo_client.py", line 1222, in _get_socket
+    self.__all_credentials, checkout=exhaust) as sock_info:
+  File "C:\Python372\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 1138, in get_socket
+    sock_info.check_auth(all_credentials)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 712, in check_auth
+    auth.authenticate(credentials, self)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 564, in authenticate
+    auth_func(credentials, sock_info)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 539, in _authenticate_default
+    return _authenticate_scram(credentials, sock_info, 'SCRAM-SHA-1')
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\auth.py", line 263, in _authenticate_scram
+    res = sock_info.command(source, cmd)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\pool.py", line 613, in command
+    user_fields=user_fields)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\network.py", line 167, in command
+    parse_write_concern_error=parse_write_concern_error)
+  File "C:\Python372\mecheck\lib\site-packages\pymongo\helpers.py", line 159, in _check_command_response
+    raise OperationFailure(msg % errmsg, code, response)
+pymongo.errors.OperationFailure: Authentication failed.
+[2022-07-06 08:17:38,424] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 500 231464
+[2022-07-06 08:17:38,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:20:04,786] [log.py:228] [log:log_response] [WARNING]- Not Found: /mongotest/mongotest_upload/
+[2022-07-06 08:20:04,787] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /mongotest/mongotest_upload/ HTTP/1.1" 404 6502
+[2022-07-06 08:20:04,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:20:07,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:31:10,118] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 11744
+[2022-07-06 08:31:10,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:34:36,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:34:38,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2022-07-06 08:34:38,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:34:47,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47230
+[2022-07-06 08:34:47,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47230
+[2022-07-06 08:34:47,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:34:49,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47230
+[2022-07-06 08:34:49,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47230
+[2022-07-06 08:34:49,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:35:02,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ProjectInfoSearch/ HTTP/1.1" 200 43728
+[2022-07-06 08:35:02,629] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:35:02 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2022-07-06 08:35:02,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 56014
+[2022-07-06 08:35:02,649] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:35:21,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 08:35:21,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:35:22,268] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:35:22 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 08:35:22,275] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12241
+[2022-07-06 08:35:59,630] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:35:59,636] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:35:59,647] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 08:35:59,708] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:36:01,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 08:36:01,448] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:36:01,493] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:36:01,729] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 08:36:01,732] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:36:01,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:36:02,271] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:36:02 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 08:36:02,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12241
+[2022-07-06 08:37:48,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 08:37:48,370] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:37:48,449] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:37:48,874] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:37:48,891] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 08:37:49,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:37:49,766] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:37:49 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 08:37:49,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12153
+[2022-07-06 08:40:46,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 08:40:46,279] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:40:46,314] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:40:46,459] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:40:46,462] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 08:40:46,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:40:47,312] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:40:47 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 08:40:47,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12071
+[2022-07-06 08:47:26,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CDM/CDM-edit/ HTTP/1.1" 200 49456
+[2022-07-06 08:47:26,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/CDM_Spec.jpg HTTP/1.1" 200 41115
+[2022-07-06 08:47:26,257] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:47:26,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/CDM.jpg HTTP/1.1" 200 130310
+[2022-07-06 08:47:26,300] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:47:26,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:47:26,409] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2022-07-06 08:47:26,577] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:47:26,588] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:47:26 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /CDM/CDM-edit/ POST
+[2022-07-06 08:47:26,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CDM/CDM-edit/ HTTP/1.1" 200 33157
+[2022-07-06 08:48:52,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Package/Package-edit/ HTTP/1.1" 200 59918
+[2022-07-06 08:48:52,123] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/Magnific-Popup-master/dist/magnific-popup.css HTTP/1.1" 200 7302
+[2022-07-06 08:48:52,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/css/lightbox.min.css HTTP/1.1" 200 2532
+[2022-07-06 08:48:52,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/js/lightbox.js HTTP/1.1" 200 20871
+[2022-07-06 08:48:52,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/ImgUpload.js HTTP/1.1" 200 1324
+[2022-07-06 08:48:52,195] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:48:52,224] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:48:52,309] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:48:52,311] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2022-07-06 08:48:52,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/images/loading.gif HTTP/1.1" 200 8476
+[2022-07-06 08:48:52,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/images/next.png HTTP/1.1" 200 1350
+[2022-07-06 08:48:52,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/images/prev.png HTTP/1.1" 200 1360
+[2022-07-06 08:48:52,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/photo/images/close.png HTTP/1.1" 200 280
+[2022-07-06 08:48:52,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:48:52,526] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:48:52 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /Package/Package-edit/ POST
+[2022-07-06 08:48:52,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Package/Package-edit/ HTTP/1.1" 200 20605
+[2022-07-06 08:49:10,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Package/Package-export/ HTTP/1.1" 200 53086
+[2022-07-06 08:49:10,526] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 08:49:10,550] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 08:49:10,648] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/data-table/pdfmake.min.js.map HTTP/1.1" 404 1833
+[2022-07-06 08:49:10,649] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 08:49:10,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 08:49:10,883] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 08:49:10 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /Package/Package-export/ POST
+[2022-07-06 08:49:10,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Package/Package-export/ HTTP/1.1" 200 20605
+[2022-07-06 09:33:48,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22499
+[2022-07-06 09:33:48,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 09:44:58,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 09:44:58,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 09:44:58,879] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 09:44:58 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 09:44:58,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12071
+[2022-07-06 09:45:23,737] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 09:45:23,751] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 09:45:23,767] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 09:45:23,782] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 09:45:25,686] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 09:45:25,788] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 09:45:25,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 09:45:26,128] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 09:45:26,128] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 09:45:26,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 09:45:26,657] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 09:45:26 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 09:45:26,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12071
+[2022-07-06 10:04:01,314] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22499
+[2022-07-06 10:04:01,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 10:08:41,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22499
+[2022-07-06 10:08:42,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 10:08:48,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 10:08:48,841] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 10:08:48,889] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 10:08:49,137] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 10:08:49,143] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 10:08:49,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 10:08:49,671] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 10:08:49 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 10:08:49,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12494
+[2022-07-06 10:11:03,486] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 10:11:03 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 10:11:03,493] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1934
+[2022-07-06 10:11:08,543] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 10:11:08 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 10:11:08,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 10183
+[2022-07-06 10:11:18,267] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 10:11:18 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 10:11:18,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 10039
+[2022-07-06 15:52:04,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 52746
+[2022-07-06 15:52:05,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 15:52:05,123] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 15:52:05,484] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 15:52:05,486] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 15:52:05,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 15:52:06,445] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 15:52:06 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 15:52:06,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12586
+[2022-07-06 15:53:45,299] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 47873
+[2022-07-06 15:53:45,442] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 15:53:45,483] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 15:53:45,784] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 15:53:45,785] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 15:53:46,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 15:53:46,500] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 15:53:46 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2022-07-06 15:53:46,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 12586
+[2022-07-06 16:45:29,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit-AIO/ HTTP/1.1" 200 79208
+[2022-07-06 16:45:29,412] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 304 0
+[2022-07-06 16:45:29,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/date-picker.js HTTP/1.1" 304 0
+[2022-07-06 16:45:29,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/form.js HTTP/1.1" 304 0
+[2022-07-06 16:45:29,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/tooltip.js HTTP/1.1" 304 0
+[2022-07-06 16:45:29,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 304 0
+[2022-07-06 16:45:29,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 304 0
+[2022-07-06 16:45:29,530] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 16:45:29,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 16:45:29,687] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 16:45:29,692] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 16:45:29,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit-AIO/?action=first HTTP/1.1" 200 50
+[2022-07-06 16:45:30,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 304 0
+[2022-07-06 16:45:30,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 17:02:33,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ProjectInfoSearch/ HTTP/1.1" 200 43728
+[2022-07-06 17:02:33,275] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-07-06 17:02:33,354] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-07-06 17:02:33,541] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-07-06 17:02:33,542] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-07-06 17:02:33,814] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 17:02:33 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2022-07-06 17:02:33,828] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 56014
+[2022-07-06 17:02:33,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22499
+[2022-07-06 17:02:45,005] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 17:02:45 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2022-07-06 17:02:45,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 2904
+[2022-07-06 17:02:55,384] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-07-06 17:02:55 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /ProjectInfoSearch/ POST
+[2022-07-06 17:02:55,397] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ProjectInfoSearch/ HTTP/1.1" 200 3322

@@ -95,22 +95,22 @@ background-color: rgba(255,255,255,0.1);
                       </div>
                    </div>
               </el-collapse-item>
-              <el-collapse-item title="離職去向分析" name="2">
-                    <div class="reasonsTablecontent">
-                        <el-table border :data="reasonsTable" show-summary>
-                            <el-table-column :label="searchYear+'年離職去向調查'"align="center">
-                                <el-table-column prop="Reasons" label="離職去向" align="center"></el-table-column>
-                                <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
-                                </el-table-column>
-                                <el-table-column prop="reasonsSummary" label="合計" align="center"></el-table-column>
-                                <el-table-column prop="zhanReasons" label="去向占總%" align="center"></el-table-column>
-                            </el-table-column>
-                        </el-table>
-                    </div>
-                    <div class="container-echart"v-cloak>
-                      <div  id="reasonsDiagramDIV" style="height:400px;"></div>
-                    </div>
-              </el-collapse-item>
+{#              <el-collapse-item title="離職去向分析" name="2">#}
+{#                    <div class="reasonsTablecontent">#}
+{#                        <el-table border :data="reasonsTable" show-summary>#}
+{#                            <el-table-column :label="searchYear+'年離職去向調查'"align="center">#}
+{#                                <el-table-column prop="Reasons" label="離職去向" align="center"></el-table-column>#}
+{#                                <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">#}
+{#                                </el-table-column>#}
+{#                                <el-table-column prop="reasonsSummary" label="合計" align="center"></el-table-column>#}
+{#                                <el-table-column prop="zhanReasons" label="去向占總%" align="center"></el-table-column>#}
+{#                            </el-table-column>#}
+{#                        </el-table>#}
+{#                    </div>#}
+{#                    <div class="container-echart"v-cloak>#}
+{#                      <div  id="reasonsDiagramDIV" style="height:400px;"></div>#}
+{#                    </div>#}
+{#              </el-collapse-item>#}
               <el-collapse-item title="職稱" name="3">
                   <div class="selectMsg1" >
                        <div class="yearContent">
@@ -123,7 +123,7 @@ background-color: rgba(255,255,255,0.1);
                   </div>
                     <div class="titleTablecontent">
                           <el-table border :data="titleTable" show-summary>
-                               <el-table-column :label="searchYear1+'年離職職稱'"align="center">
+{#                               <el-table-column :label="searchYear1+'年離職職稱'"align="center">#}
                                    <el-table-column prop="Title" label="職稱" align="center"></el-table-column>
                                    <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
                                    </el-table-column>
@@ -133,19 +133,19 @@ background-color: rgba(255,255,255,0.1);
                           </el-table>
                     </div>
                     <div class="container-echart"v-cloak>
-                      <div  id="titleDiagram1DQADIV" style="height:400px;"></div>
+                      <div  id="titleDiagram1DQADIV" style="height:500px;"></div>
                     </div>
-                    <div class="titleTablecontent">
-                        <el-table border :data="titleTable1" @row-click="selectDetail" show-summary>
-                               <el-table-column prop="Title" label="職稱" align="center"></el-table-column>
-                               <el-table-column  v-for="(item,key,index) in titleSeniorityData" :label="item" :prop="item" align="center">
-                               </el-table-column>
-                               <el-table-column prop="titleSummary" label="合計" align="center"></el-table-column>
-                       </el-table>
-                    </div>
-                    <div class="container-echart"v-cloak>
-                      <div  id="titleDiagram2DQADIV" style="height:400px;"></div>
-                    </div>
+{#                    <div class="titleTablecontent">#}
+{#                        <el-table border :data="titleTable1" @row-click="selectDetail" show-summary>#}
+{#                               <el-table-column prop="Title" label="職稱" align="center"></el-table-column>#}
+{#                               <el-table-column  v-for="(item,key,index) in titleSeniorityData" :label="item" :prop="item" align="center">#}
+{#                               </el-table-column>#}
+{#                               <el-table-column prop="titleSummary" label="合計" align="center"></el-table-column>#}
+{#                       </el-table>#}
+{#                    </div>#}
+{#                    <div class="container-echart"v-cloak>#}
+{#                      <div  id="titleDiagram2DQADIV" style="height:400px;"></div>#}
+{#                    </div>#}
               </el-collapse-item>
               <el-collapse-item title="年資" name="4">
                     <div class="seniorityTablecontent">
@@ -158,37 +158,37 @@ background-color: rgba(255,255,255,0.1);
                           </el-table>
                     </div>
                     <div class="container-echart"v-cloak>
-                      <div  id="seniorityDiagramDIV1" style="height:400px;"></div>
+                      <div  id="seniorityDiagramDIV1" style="height:500px;"></div>
                     </div>
-                    <div class="seniorityTablecontent">
-                        <el-table border :data="seniorityTable1" @row-click="selectseniorityDetail" show-summary>
-                               <el-table-column prop="seniority" label="年資" align="center"></el-table-column>
-                               <el-table-column  v-for="(item,key,index) in seniorityTitleData" :label="item" :prop="item" align="center">
-                               </el-table-column>
-                       </el-table>
-                    </div>
-                    <div class="container-echart"v-cloak>
-                      <div  id="seniorityDiagramDIV2" style="height:400px;"></div>
-                    </div>
+{#                    <div class="seniorityTablecontent">#}
+{#                        <el-table border :data="seniorityTable1" @row-click="selectseniorityDetail" show-summary>#}
+{#                               <el-table-column prop="seniority" label="年資" align="center"></el-table-column>#}
+{#                               <el-table-column  v-for="(item,key,index) in seniorityTitleData" :label="item" :prop="item" align="center">#}
+{#                               </el-table-column>#}
+{#                       </el-table>#}
+{#                    </div>#}
+{#                    <div class="container-echart"v-cloak>#}
+{#                      <div  id="seniorityDiagramDIV2" style="height:400px;"></div>#}
+{#                    </div>#}
               </el-collapse-item>
-              <el-collapse-item title="學歷" name="5">
-                    <div class="educationTablecontent">
-                         <el-table border :data="educationTable" show-summary>
-                           <el-table-column prop="Education" label="學歷" align="center"></el-table-column>
-                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
-                           </el-table-column>
-                           <el-table-column prop="educationSummary" label="合計" align="center"></el-table-column>
-                           <el-table-column prop="accountFor" label="占%" align="center"></el-table-column>
-                       </el-table>
-                    </div>
-                    <div class="container-echart"v-cloak>
-                      <div  id="educationDiagram1" style="height:400px;"></div>
-                    </div>
-              </el-collapse-item>
+{#              <el-collapse-item title="學歷" name="5">#}
+{#                    <div class="educationTablecontent">#}
+{#                         <el-table border :data="educationTable" show-summary>#}
+{#                           <el-table-column prop="Education" label="學歷" align="center"></el-table-column>#}
+{#                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">#}
+{#                           </el-table-column>#}
+{#                           <el-table-column prop="educationSummary" label="合計" align="center"></el-table-column>#}
+{#                           <el-table-column prop="accountFor" label="占%" align="center"></el-table-column>#}
+{#                       </el-table>#}
+{#                    </div>#}
+{#                    <div class="container-echart"v-cloak>#}
+{#                      <div  id="educationDiagram1" style="height:400px;"></div>#}
+{#                    </div>#}
+{#              </el-collapse-item>#}
               <el-collapse-item title="專業" name="6">
                     <div class="professionTablecontent">
                            <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary>
-                               <el-table-column :label="searchYear+'年1-10月離職'"align="center">
+                               <el-table-column :label="searchYear+'年離職'"align="center">
                                <el-table-column prop="daLei" label="" align="center"></el-table-column>
                                <el-table-column prop="Profession" label="本科" align="center"></el-table-column>
                                <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
@@ -198,18 +198,18 @@ background-color: rgba(255,255,255,0.1);
                            </el-table>
                     </div>
               </el-collapse-item>
-              <el-collapse-item title="地區" name="7">
-                    <div class="regionsTablecontent">
-                       <el-table border :data="regionsTable" show-summary>
-                           <el-table-column :label="searchYear+'年1-10月離職'"align="center">
-                           <el-table-column prop="Regions" label="" align="center"></el-table-column>
-                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
-                           </el-table-column>
-                           <el-table-column prop="regionsSummary" label="合計" align="center"></el-table-column>
-                           </el-table-column>
-                       </el-table>
-                    </div>
-              </el-collapse-item>
+{#              <el-collapse-item title="地區" name="7">#}
+{#                    <div class="regionsTablecontent">#}
+{#                       <el-table border :data="regionsTable" show-summary>#}
+{#                           <el-table-column :label="searchYear+'年1-10月離職'"align="center">#}
+{#                           <el-table-column prop="Regions" label="" align="center"></el-table-column>#}
+{#                           <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">#}
+{#                           </el-table-column>#}
+{#                           <el-table-column prop="regionsSummary" label="合計" align="center"></el-table-column>#}
+{#                           </el-table-column>#}
+{#                       </el-table>#}
+{#                    </div>#}
+{#              </el-collapse-item>#}
         </el-collapse>
     </div>
 </div>
@@ -238,25 +238,25 @@ background-color: rgba(255,255,255,0.1);
                activeNames:['1','2','3','4','5','6','7'],
                perinTable:[],
                selectItem:[],
-               reasonsTable:[],
+               {#reasonsTable:[],#}
                titleTable:[],
                titleSeniorityData:[],   //職稱中年資劃分
-               titleTable1:[],
+               {#titleTable1:[],#}
                titleDiagram2Data:{},
                reasonsDiagramData:{},
                seniorityTable:[],
-               seniorityTable1:[],
+               {#seniorityTable1:[],#}
                seniorityTitleData:[],
                professionTable:[],
-               regionsTable:[],
+               {#regionsTable:[],#}
                heBingNum:[],
                seniorityDiagramData1:{},
-               educationTable:[],
+               {#educationTable:[],#}
                educationDiagram:{},
                seniorityText:null,
                SeniorityTitleDiagram0:[],
-               TitleText:null,
-               titleSeniorityDiagram2:[],
+               {#TitleText:null,#}
+               {#titleSeniorityDiagram2:[],#}
                 currentPage: 1,//默认显示第一页
                 pageSize:100,//默认每页显示100条
                 totalNum: null,
@@ -356,34 +356,33 @@ background-color: rgba(255,255,255,0.1);
                     this.searchYear1=res.data.searchYear;
                     this.selectItem=res.data.selectItem;
                     this.perinTable=res.data.perinTable;
-                    this.reasonsTable=res.data.reasonsTable;
+                    {#this.reasonsTable=res.data.reasonsTable;#}
                     this.titleTable=res.data.titleTable;
                     this.titleSeniorityData=res.data.titleSeniorityData;
-                    this.titleTable1=res.data.titleTable1;
+                    {#this.titleTable1=res.data.titleTable1;#}
                     this.seniorityTable=res.data.seniorityTable;
-                    this.seniorityTable1=res.data.seniorityTable1;
+                    {#this.seniorityTable1=res.data.seniorityTable1;#}
                     this.seniorityTitleData=res.data.seniorityTitleData;
-                    this.educationTable=res.data.educationTable;
+                    {#this.educationTable=res.data.educationTable;#}
                     this.professionTable=res.data.professionTable;
-                    this.regionsTable=res.data.regionsTable;
+                    {#this.regionsTable=res.data.regionsTable;#}
 
                     this.heBingNum=res.data.heBingNum;
 
                     this.titleDiagram2Data=res.data.titleDiagram2Data;
                     this.titleDiagramss();
-                    this.reasonsDiagramData=res.data.reasonsDiagramData;
-                    this.reasonsDiagramss();
+                    {#this.reasonsDiagramData=res.data.reasonsDiagramData;#}
+                    {#this.reasonsDiagramss();#}
                     this.seniorityDiagramData1=res.data.seniorityDiagramData1;
                     this.seniorityDiagramss();
-                    this.educationDiagram=res.data.educationDiagram;
-                    this.educationDiagramss();
+                    {#this.educationDiagram=res.data.educationDiagram;#}
+                    {#this.educationDiagramss();#}
                     this.SeniorityTitleDiagram0=res.data.SeniorityTitleDiagram0;
-                    this.seniorityText=res.data.seniorityText;
-                    this.xuanrantubiao();
-                    this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;
-                    this.TitleText=res.data.TitleText;
-                    this.xuanrantubiao1();
-
+                    {#this.seniorityText=res.data.seniorityText;#}
+                    {#this.xuanrantubiao();#}
+                    {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
+                    {#this.TitleText=res.data.TitleText;#}
+                    {#this.xuanrantubiao1();#}
                  });
             },
             search2 :function(){
@@ -397,12 +396,12 @@ background-color: rgba(255,255,255,0.1);
                     this.selectItem=res.data.selectItem;
                     this.titleTable=res.data.titleTable;
                     this.titleSeniorityData=res.data.titleSeniorityData;
-                    this.titleTable1=res.data.titleTable1;
+                    {#this.titleTable1=res.data.titleTable1;#}
                     this.titleDiagram2Data=res.data.titleDiagram2Data;
                     this.titleDiagramss();
-                    this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;
-                    this.TitleText=res.data.TitleText;
-                    this.xuanrantubiao1();
+                    {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
+                    {#this.TitleText=res.data.TitleText;#}
+                    {#this.xuanrantubiao1();#}
                 })
                 this.searchYear1=startYear+'~'+endYear;
             },
@@ -415,33 +414,33 @@ background-color: rgba(255,255,255,0.1);
                 }).then((res) => {
                     this.selectItem=res.data.selectItem;
                     this.perinTable=res.data.perinTable;
-                    this.reasonsTable=res.data.reasonsTable;
+                    {#this.reasonsTable=res.data.reasonsTable;#}
                     this.titleTable=res.data.titleTable;
                     this.titleSeniorityData=res.data.titleSeniorityData;
-                    this.titleTable1=res.data.titleTable1;
+                    {#this.titleTable1=res.data.titleTable1;#}
                     this.seniorityTable=res.data.seniorityTable;
-                    this.seniorityTable1=res.data.seniorityTable1;
+                    {#this.seniorityTable1=res.data.seniorityTable1;#}
                     this.seniorityTitleData=res.data.seniorityTitleData;
-                    this.educationTable=res.data.educationTable;
+                    {#this.educationTable=res.data.educationTable;#}
                     this.professionTable=res.data.professionTable;
-                    this.regionsTable=res.data.regionsTable;
+                    {#this.regionsTable=res.data.regionsTable;#}
 
                     this.heBingNum=res.data.heBingNum;
 
                     this.titleDiagram2Data=res.data.titleDiagram2Data;
                     this.titleDiagramss();
-                    this.reasonsDiagramData=res.data.reasonsDiagramData;
-                    this.reasonsDiagramss();
+                    {#this.reasonsDiagramData=res.data.reasonsDiagramData;#}
+                    {#this.reasonsDiagramss();#}
                     this.seniorityDiagramData1=res.data.seniorityDiagramData1;
                     this.seniorityDiagramss();
-                    this.educationDiagram=res.data.educationDiagram;
-                    this.educationDiagramss();
+                    {#this.educationDiagram=res.data.educationDiagram;#}
+                    {#this.educationDiagramss();#}
                     this.SeniorityTitleDiagram0=res.data.SeniorityTitleDiagram0;
-                    this.seniorityText=res.data.seniorityText;
-                    this.xuanrantubiao();
-                    this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;
-                    this.TitleText=res.data.TitleText;
-                    this.xuanrantubiao1();
+                    {#this.seniorityText=res.data.seniorityText;#}
+                    {#this.xuanrantubiao();#}
+                    {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
+                    {#this.TitleText=res.data.TitleText;#}
+                    {#this.xuanrantubiao1();#}
                 })
                        this.searchYear=Year;
                        this.searchYear1=Year;
@@ -492,6 +491,7 @@ background-color: rgba(255,255,255,0.1);
                       }
                 }
             },
+    {% comment %}
             educationDiagramss(){
                 var myChart6 = echarts.init(document.getElementById('educationDiagram1'));
                 var option6 = {
@@ -579,15 +579,55 @@ background-color: rgba(255,255,255,0.1);
                      // 使用刚指定的配置项和数据显示图表。
                     })
             },
+    {% endcomment %}
             seniorityDiagramss(){
+
+              let _this = this
+              const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 11,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
+
                  var myChart4 = echarts.init(document.getElementById('seniorityDiagramDIV1'));
                  var option4 = {
-                    title: {
+                    color: ['#778899',],
+                    title: [{
                         text:this.searchYear+'年各年資離職分佈圖',
                         textStyle: {
                         fontSize:30
                         }
                     },
+                      {
+                        text: '\n合計離職\n離職占比',
+                        bottom: 24, // 控制表格Y轴方向
+                        left: 0,
+                        textStyle: {
+                          color: '#000000',
+                          lineHeight: 26,
+                          fontSize: 16,
+                          fontWeight:'normal',
+                      }
+
+                    }
+
+                    ],
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
@@ -596,6 +636,12 @@ background-color: rgba(255,255,255,0.1);
                                 color: '#999'
                             }
                         }
+                    },
+
+                    grid: {
+                      bottom: 120,
+                      left: '80px',
+                      right: '50px'
                     },
                     toolbox: {
                         feature: {
@@ -612,10 +658,46 @@ background-color: rgba(255,255,255,0.1);
                         {
                             type: 'category',
                             data:this.seniorityDiagramData1.LABEL,
+                            axisTick: {
+                                length: 94 // 竖线的长度
+                            },
                             axisLabel: {//坐标轴刻度标签的相关设置。
                                     interval: 0,
-                                    rotate: "45"
-                                },
+                                    {#rotate: "45"#}
+
+                              formatter(value, index) {
+                                var data1 = _this.seniorityDiagramData1.LABEL
+                                {#var data1 = ["助技員", "技術員", "助工師", "工程師", "資工師", "副課長", "襄理"]#}
+                                var data2 = _this.seniorityDiagramData1.HEJILIZHI
+                                var data3 = _this.seniorityDiagramData1.LIZHIBI
+                                {#var data2 = [32, 30, 63, 23, 48, 4, 4]#}
+                                var indexNum = 0
+                                for (var i = 0; i < data1.length; i++) {
+                                  if (value === data1[i]) {
+                                    indexNum = i
+                                  }
+                                }
+                                return (
+                                  '{table|' +
+                                  value +
+                                  '}\n{table|' +
+                                  data2[indexNum] +
+                                  '}\n{table|'+
+                                  data3[indexNum] +
+                                  '}\n{table|' +
+                                  '}'
+                                )
+                              },
+                              rich: {
+                                table: {
+                                  lineHeight: 30,
+                                  align: 'center',
+                                  fontSize:16
+
+                                }
+                              }
+
+                            },
                             axisPointer: {
                                 type: 'shadow'
                             }
@@ -626,21 +708,27 @@ background-color: rgba(255,255,255,0.1);
                             type: 'value',
                             name: '合計離職',
                             min: 0,
-                            max: 200,
-                            interval: 20,
+                            {#max: 200,#}
+                            {#interval: 20,#}
                             axisLabel: {
                                 formatter: '{value}'
-                            }
+                            },
+                             axisTick: {
+                              show: false // 刻度线
+                            },
                         },
                         {
                             type: 'value',
                             name: '離職占%',
                             min: 0,
-                            max:1,
-                            interval: 0.1,
+                            {#max:1,#}
+                            {#interval: 0.1,#}
                             axisLabel: {
                                 formatter: '{value}'
-                            }
+                            },
+                             axisTick: {
+                              show: false // 刻度线
+                            },
                         }
                     ],
                     series:[
@@ -655,7 +743,8 @@ background-color: rgba(255,255,255,0.1);
                             'yAxisIndex': 1,
                             'data':this.seniorityDiagramData1.LIZHIBI
                         }
-                    ]
+                    ],
+                    graphic: list
                 };
                 myChart4.clear();
                  myChart4.setOption(option4);
@@ -665,11 +754,12 @@ background-color: rgba(255,255,255,0.1);
                 })
 
             },
+    {% comment %}
             reasonsDiagramss(){
                  var myChart1 = echarts.init(document.getElementById('reasonsDiagramDIV'));
                  var option1 = {
                     title: {
-                        text:this.searchYear+'年1-10月離職去向調查',
+                        text:this.searchYear+'年離職去向調查',
                         textStyle: {
                         fontSize:30
                         }
@@ -751,6 +841,8 @@ background-color: rgba(255,255,255,0.1);
                 })
 
             },
+    {% endcomment %}
+    {% comment %}
             selectDetail:function(row){                                 //表格中点击事件
                     var titleSeniorityValue=[];
                     this.titleSeniorityValue=row;
@@ -769,9 +861,11 @@ background-color: rgba(255,255,255,0.1);
 
                     }
                        //console.log(titleSeniorityDiagram2)
-                       this.TitleText=row.Title;
-                       this.xuanrantubiao1();
+                       {#this.TitleText=row.Title;#}
+                       {#this.xuanrantubiao1();#}
             },
+    {% endcomment %}
+    {% comment %}
             xuanrantubiao1(){
                     var myChart3 = echarts.init(document.getElementById('titleDiagram2DQADIV'));
 
@@ -813,6 +907,8 @@ background-color: rgba(255,255,255,0.1);
                      // 使用刚指定的配置项和数据显示图表。
                     })
             },
+    {% endcomment %}
+    {% comment %}
             selectseniorityDetail:function(row){
                   var SeniorityTitleValue=[];
                     this.SeniorityTitleValue=row;
@@ -831,11 +927,12 @@ background-color: rgba(255,255,255,0.1);
 
                     }
                        //console.log(SeniorityTitleDiagram0,'3')
-                       this.seniorityText=row.seniority;
-                       this.xuanrantubiao();
+                       {#this.seniorityText=row.seniority;#}
+                       {#this.xuanrantubiao();#}
                   },
-
-                  xuanrantubiao(){
+    {% endcomment %}
+    {% comment %}
+            xuanrantubiao(){
                      var myChart5 = echarts.init(document.getElementById('seniorityDiagramDIV2'));
                      var option5 = {
                         title: {
@@ -875,24 +972,68 @@ background-color: rgba(255,255,255,0.1);
                      // 使用刚指定的配置项和数据显示图表。
                     })
             },
-            titleDiagramss(){                                                                       //第二张图
+    {% endcomment %}
+
+
+            titleDiagramss(){
+                //第二张图
+              let _this = this
+              const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 10,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
                 var myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));
 
                 var option2 = {
-                    title: {
+                    color: ['#778899',],
+                    title: [{
                         text:this.searchYear1+'年各職稱離職分佈圖',
                         textStyle: {
                         fontSize:30
-                        }
-                    },
+                        }},
+                      {
+                        text: '\n合計離職\n離職占比',
+                        bottom: 24, // 控制表格Y轴方向
+                        left: 0,
+                        textStyle: {
+                          color: '#000000',
+                          lineHeight: 26,
+                          fontSize: 16,
+                          fontWeight:'normal',
+                      }
+
+                    }],
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
                             type: 'cross',
                             crossStyle: {
-                                color: '#999'
-                            }
+                                color: '#000000'
+                            },
                         }
+                    },
+
+                    grid: {
+                      bottom: 120,
+                      left: '80px',
+                      right: '50px'
                     },
                     toolbox: {
                         feature: {
@@ -905,39 +1046,82 @@ background-color: rgba(255,255,255,0.1);
                     legend: {
                         data: ['合計離職', '離職占']
                     },
-                    xAxis: [
+                    xAxis:[
                         {
                             type: 'category',
+                            boundaryGap: true,
                             data:this.titleDiagram2Data.LABEL,
+                            axisTick: {
+                                length: 94 // 竖线的长度
+                            },
                             axisLabel: {//坐标轴刻度标签的相关设置。
-                                    interval: 0,
-                                    rotate: "45"
+                                interval: 0,
+                                {#rotate: "45"#}
+                                axisPointer: {
+                                    type: 'shadow'
                                 },
-                            axisPointer: {
-                                type: 'shadow'
-                            }
-                        }
-                    ],
+                              formatter(value, index) {
+                                var data1 = _this.titleDiagram2Data.LABEL
+                                {#var data1 = ["助技員", "技術員", "助工師", "工程師", "資工師", "副課長", "襄理"]#}
+                                var data2 = _this.titleDiagram2Data.HEJILIZHI
+                                var data3 = _this.titleDiagram2Data.LIZHIBI
+                                {#var data2 = [32, 30, 63, 23, 48, 4, 4]#}
+                                var indexNum = 0
+                                for (var i = 0; i < data1.length; i++) {
+                                  if (value === data1[i]) {
+                                    indexNum = i
+                                  }
+                                }
+                                return (
+                                  '{table|' +
+                                  value +
+                                  '}\n{table|' +
+                                  data2[indexNum] +
+                                  '}\n{table|'+
+                                  data3[indexNum] +
+                                  '}\n{table|' +
+                                  '}'
+                                )
+                              },
+                              rich: {
+                                table: {
+                                  lineHeight: 30,
+                                  align: 'center',
+                                  fontSize:16
+
+                                }
+                              }
+                         },
+                    }
+                   ],
+
                     yAxis: [
                         {
                             type: 'value',
+                            scale: false,
                             name: '合計離職',
                             min: 0,
-                            max: 200,
-                            interval: 20,
+                            {#max: 200,#}
+                            {#interval: 20,#}
                             axisLabel: {
                                 formatter: '{value}'
-                            }
+                            },
+                            axisTick: {
+                              show: false // 刻度线
+                            },
                         },
                         {
                             type: 'value',
                             name: '離職占',
                             min: 0,
-                            max: 1,
-                            interval: 0.1,
+                            {#max: 1,#}
+                            {#interval: 0.1,#}
                             axisLabel: {
                                 formatter: '{value}'
-                            }
+                            },
+                            axisTick: {
+                              show: false // 刻度线
+                            },
                         }
                     ],
                     series:[
@@ -952,7 +1136,8 @@ background-color: rgba(255,255,255,0.1);
                             'yAxisIndex': 1,
                             'data':this.titleDiagram2Data.LIZHIBI
                         }
-                    ]
+                    ],
+                    graphic: list
                 };
                  myChart2.clear();
                  myChart2.setOption(option2);

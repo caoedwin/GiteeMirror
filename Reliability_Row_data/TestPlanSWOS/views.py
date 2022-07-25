@@ -497,7 +497,7 @@ def TestPlanSW_summary(request):
             # print(not timerange[0])
             Prolist = []
             # print(Customer)
-            if Customer == "C38(AIO)" or Customer == "C38(AIO)-T88":
+            if Customer == "C38(AIO)" or Customer == "T88(AIO)":
                 if not timerange[0]:
                     # 应该是统计只要某机种有一个Phase在规定时间段内，就统计这个机种的所有Phase的结果
                     if Customer:
@@ -1201,7 +1201,7 @@ def TestPlanSW_summary(request):
             Customer = getdata['customer']
             Projectlist = getdata["searchalert"]
             # print(Projectlist)
-            if Customer == "C38(AIO)" or Customer == "C38(AIO)-T88":
+            if Customer == "C38(AIO)" or Customer == "T88(AIO)":
                 Project_basetime = []
                 Project_FS = []
                 Project_TCM = []
