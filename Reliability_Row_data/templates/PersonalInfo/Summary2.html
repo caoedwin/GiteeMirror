@@ -521,6 +521,28 @@ background-color: rgba(255,255,255,0.1);
 
             },
             monthDiagram(){
+                let _this = this
+                const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 11,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
                 var myChart1 = echarts.init(document.getElementById('monthDiagram1'));
                 var myChart2 = echarts.init(document.getElementById('monthDiagram2'));
                 var option1 = {
@@ -592,12 +614,27 @@ background-color: rgba(255,255,255,0.1);
                     series:this.monthDiagram1Data,
                 };
                 var option2 = {
-                    title: {
+                    title: [{
                         text: '各月份離職統計',
                         textStyle: {
                         fontSize:30
                         }
+
                     },
+                        {
+                        text: '\n人數\n占總%',
+                        bottom: 24, // 控制表格Y轴方向
+                        left: 0,
+                        textStyle: {
+                          color: '#000000',
+                          lineHeight: 26,
+                          fontSize: 16,
+                          fontWeight:'normal',
+                      }
+
+                    }
+                        ],
+
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
@@ -606,6 +643,11 @@ background-color: rgba(255,255,255,0.1);
                                 color: '#999'
                             }
                         }
+                    },
+                    grid: {
+                      bottom: 120,
+                      left: '80px',
+                      right: '50px'
                     },
                     toolbox: {
                         feature: {
@@ -616,16 +658,58 @@ background-color: rgba(255,255,255,0.1);
                         }
                     },
                     legend: {
-                        data: ['離職', '離職率']
+                        data: ['離職', '離職率%']
                     },
                     xAxis: [
                         {
                             type: 'category',
                             data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                            {#axisLabel: {//坐标轴刻度标签的相关设置。#}
+                            {#        interval: 0,#}
+                            {#        rotate: "45"#}
+                            {#    },#}
+                            axisTick: {
+                                length: 94 // 竖线的长度
+                            },
                             axisLabel: {//坐标轴刻度标签的相关设置。
                                     interval: 0,
-                                    rotate: "45"
-                                },
+                                    {#rotate: "45"#}
+
+                              formatter(value, index) {
+                                  console.log(value)
+                                var data1 = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                                {#var data1 = ["助技員", "技術員", "助工師", "工程師", "資工師", "副課長", "襄理"]#}
+                                var data2 = _this.monthDiagram2Data.LIZHI
+                                var data3 = _this.monthDiagram2Data.LIZHILV
+                                {#var data2 = [32, 30, 63, 23, 48, 4, 4]#}
+                                {#  console.log(data2,data3)#}
+                                var indexNum = 0
+                                for (var i = 0; i < data1.length; i++) {
+                                  if (value === data1[i]) {
+                                    indexNum = i
+                                  }
+                                }
+                                return (
+                                  '{table|' +
+                                  value +
+                                  '}\n{table|' +
+                                  data2[indexNum] +
+                                  '}\n{table|'+
+                                  data3[indexNum] +
+                                  '}\n{table|' +
+                                  '}'
+                                )
+                              },
+                              rich: {
+                                table: {
+                                  lineHeight: 30,
+                                  align: 'center',
+                                  fontSize:16
+
+                                }
+                              }
+
+                            },
                             axisPointer: {
                                 type: 'shadow'
                             }
@@ -644,7 +728,7 @@ background-color: rgba(255,255,255,0.1);
                         },
                         {
                             type: 'value',
-                            name: '離職率',
+                            name: '離職率%',
                             min: 0,
                             {#max: 0.3,#}
                             {#interval: 0.05,#}
@@ -664,12 +748,13 @@ background-color: rgba(255,255,255,0.1);
                             },
                         },
                         {
-                            'name': '離職率',
+                            'name': '離職率%',
                             'type': 'line',
                             'yAxisIndex': 1,
                             'data':this.monthDiagram2Data.LIZHILV,
                         }
-                    ]
+                    ],
+                    graphic: list
                 };
                 myChart1.clear();
                 myChart2.clear();

@@ -1755,7 +1755,7 @@ def PersonalInfo_edit(request):
                                                         """ % rownum
                             break
                         if 'QuitDate' in modeldata.keys() and modeldata['Status'] != "轉部門":
-                            if 'Whereabouts' in modeldata.keys():
+                            if 'Whereabouts' in modeldata.keys() and 'QuitReason' in modeldata.keys():
                                 startupload = 1
                             else:
                                 # canEdit = 0
@@ -1766,14 +1766,14 @@ def PersonalInfo_edit(request):
                                                             """ % rownum
                                 break
                         if 'Status' in modeldata.keys() and modeldata['Status'] == "离职":
-                            if 'Whereabouts' in modeldata.keys():
+                            if 'QuitDate' in modeldata.keys() and 'RegistrationDate' in modeldata.keys():
                                 startupload = 1
                             else:
                                 # canEdit = 0
                                 startupload = 0
                                 err_ok = 2
                                 err_msg = """
-                                        第"%s"條數據，離職狀態，離職日期不能爲空
+                                        第"%s"條數據，離職狀態，離職日期,報到日期不能爲空
                                                             """ % rownum
                                 break
                         if 'Customer' in modeldata.keys():
@@ -4226,7 +4226,7 @@ def Summary2(request):
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
-                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')) / 100)
+                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
             # By职称
             if not YearSearch or YearSearch == YearNow:
@@ -4914,7 +4914,7 @@ def Summary2(request):
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
-                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')) / 100)
+                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
 
             # By职称
@@ -5454,6 +5454,15 @@ def Summary3(request):
                             #   {"name": "資深經理", "value": ""}
                               ]
 
+    reasonTable = [
+        # {"reason": "薪資福利", "reasonSummary": "24", "reasonDeparture": "25.00",},
+    ]
+    reasonDiagramData = {
+        # 'LABEL': ["薪資福利", "家庭因素", "進修學習", "實習借宿"],
+        # 'HEJIRENSHU': [86, 39, 23, 37, 11, 8, 0, 0],
+        # 'YUANYINBI': [0.421568627, 0.191176471, 0.112745098, 0.181372549, 0.053921569, 0.039215686, 0, 0]
+    }
+
     educationTable = [
         # {"Education": "本科", "A31": "149", "A32": "168", "C38": "178", "educationSummary": "495", "accountFor": ""},
         # {"Education": "大專", "A31": "53", "A32": "124", "C38": "28", "educationSummary": "205", "accountFor": ""},
@@ -5764,7 +5773,7 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -6056,7 +6065,7 @@ def Summary3(request):
                 LABEL_seniorityDiagramData1.append(i["seniority"])
                 HEJILIZHI_seniorityDiagramData1.append(i["senioritySummary"])
                 if "seniorityDeparture" in i.keys():
-                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]) / 100, 4))
+                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
             seniorityDiagramData1["LABEL"] = LABEL_seniorityDiagramData1
             seniorityDiagramData1["HEJILIZHI"] = HEJILIZHI_seniorityDiagramData1
             seniorityDiagramData1["LIZHIBI"] = LIZHIBI_seniorityDiagramData1
@@ -6065,6 +6074,53 @@ def Summary3(request):
                 seniorityText = seniorityTable1[0]["seniority"]
                 for i in seniorityTitleData:
                     SeniorityTitleDiagram0.append({"name": i, "value": seniorityTable1[0][i]})
+
+            # 離職原因
+            if not YearSearch or YearSearch == YearNow:
+                reasonSummaryTotal = 0
+                if PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                        "QuitReason").distinct():
+                    for i in PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                            "QuitReason").distinct().order_by(
+                        "QuitReason"):
+                        # print(i["QuitReason"])
+                        reasonTable_dict = {"reason": i["QuitReason"]}
+                        reasonTable_dict['reasonSummary'] = PersonalInfo.objects.filter(Status__in=["離職"],
+                                                                           QuitReason=i["QuitReason"]).count()
+                        reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(float(PersonalInfo.objects.filter(Status__in=["離職"],
+                                                                           QuitReason=i["QuitReason"]).count()/PersonalInfo.objects.filter(Status__in=["離職"],).count() * 100), 4)
+
+                        reasonTable.append(reasonTable_dict)
+            else:
+                if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                        "QuitReason").distinct():
+                    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                            "QuitReason").distinct().order_by("QuitReason"):
+                        reasonTable_dict = {"reason": i["QuitReason"]}
+                        reasonsSummary = 0
+                        reasonTable_dict['reasonSummary'] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                    Status__in=["離職"], QuitReason=i[
+                                "QuitReason"]).count()
+                        reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(
+                            float(PersonalInfoHisByYear.objects.filter(Year=YearSearch,Status__in=["離職"],
+                                                              QuitReason=i[
+                                                                  "QuitReason"]).count() / PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                Status__in=["離職"], ).count() * 100), 4)
+
+                    reasonTable.append(reasonTable_dict)
+
+            # reasonDiagramData
+            LABEL = []
+            HEJIRENSHU = []
+            YUANYINBI = []
+            if reasonTable:
+                for i in reasonTable:
+                    LABEL.append(i["reason"])
+                    HEJIRENSHU.append(i["reasonSummary"])
+                    YUANYINBI.append(i["reasonDeparture"])
+            reasonDiagramData["LABEL"] = LABEL
+            reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
+            reasonDiagramData["YUANYINBI"] = YUANYINBI
 
             # 學歷
             if not YearSearch or YearSearch == YearNow:
@@ -6554,7 +6610,7 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -6852,6 +6908,57 @@ def Summary3(request):
                 seniorityText = seniorityTable1[0]["seniority"]
                 for i in seniorityTitleData:
                     SeniorityTitleDiagram0.append({"name": i, "value": seniorityTable1[0][i]})
+
+            # 離職原因
+            if not YearSearch or YearSearch == YearNow:
+                if PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                        "QuitReason").distinct():
+                    for i in PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                            "QuitReason").distinct().order_by(
+                        "QuitReason"):
+                        reasonTable_dict = {"reason": i["QuitReason"]}
+                        reasonTable_dict['reasonSummary'] = PersonalInfo.objects.filter(Status__in=["離職"],
+                                                                                        QuitReason=i[
+                                                                                            "QuitReason"]).count()
+                        reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(
+                            float(PersonalInfo.objects.filter(Status__in=["離職"],
+                                                              QuitReason=i[
+                                                                  "QuitReason"]).count() / PersonalInfo.objects.filter(
+                                Status__in=["離職"], ).count() * 100), 4)
+
+                        reasonTable.append(reasonTable_dict)
+            else:
+                if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                        "QuitReason").distinct():
+                    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                            "QuitReason").distinct().order_by("QuitReason"):
+                        reasonTable_dict = {"reason": i["QuitReason"]}
+                        reasonsSummary = 0
+                        reasonTable_dict['reasonSummary'] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                                 Status__in=["離職"],
+                                                                                                 QuitReason=i[
+                                                                                                     "QuitReason"]).count()
+                        reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(
+                            float(PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
+                                                                       QuitReason=i[
+                                                                           "QuitReason"]).count() / PersonalInfoHisByYear.objects.filter(
+                                Year=YearSearch,
+                                Status__in=["離職"], ).count() * 100), 4)
+
+                    reasonTable.append(reasonTable_dict)
+
+            # reasonDiagramData
+            LABEL = []
+            HEJIRENSHU = []
+            YUANYINBI = []
+            if reasonTable:
+                for i in reasonTable:
+                    LABEL.append(i["reason"])
+                    HEJIRENSHU.append(i["reasonSummary"])
+                    YUANYINBI.append(i["reasonDeparture"])
+            reasonDiagramData["LABEL"] = LABEL
+            reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
+            reasonDiagramData["YUANYINBI"] = YUANYINBI
 
             # 學歷
             if not YearSearch or YearSearch == YearNow:
@@ -7253,7 +7360,7 @@ def Summary3(request):
                 for i in titleTable:
                     LABEL_titleDiagram2Data.append(i["Title"])
                     HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                    LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]) / 100, 4))
+                    LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
                 titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
                 titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
                 titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -7295,6 +7402,8 @@ def Summary3(request):
             "titleSeniorityDiagram2": titleSeniorityDiagram2,
             "seniorityText": seniorityText,
             "SeniorityTitleDiagram0": SeniorityTitleDiagram0,
+            "reasonTable": reasonTable,
+            "reasonDiagramData": reasonDiagramData,
 
         }
         return HttpResponse(json.dumps(data), content_type="application/json")

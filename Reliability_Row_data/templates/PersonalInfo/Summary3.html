@@ -171,6 +171,18 @@ background-color: rgba(255,255,255,0.1);
 {#                      <div  id="seniorityDiagramDIV2" style="height:400px;"></div>#}
 {#                    </div>#}
               </el-collapse-item>
+              <el-collapse-item title="離職原因" name="8">
+                    <div class="reasonTablecontent">
+                           <el-table border :data="reasonTable" show-summary>
+                                   <el-table-column prop="reason" label="離職原因" align="center"></el-table-column>
+                                   <el-table-column prop="reasonSummary" label="人數" align="center"></el-table-column>
+                                   <el-table-column prop="reasonDeparture" label="占總%" align="center"></el-table-column>
+                          </el-table>
+                    </div>
+                    <div class="container-echart"v-cloak>
+                      <div  id="reasonDiagramDIV1" style="height:500px;"></div>
+                    </div>
+              </el-collapse-item>
 {#              <el-collapse-item title="學歷" name="5">#}
 {#                    <div class="educationTablecontent">#}
 {#                         <el-table border :data="educationTable" show-summary>#}
@@ -235,7 +247,7 @@ background-color: rgba(255,255,255,0.1);
                endYear:'',
                searchYear:null,
                 searchYear1:null,
-               activeNames:['1','2','3','4','5','6','7'],
+               activeNames:['1','2','3','4','5','6','7','8'],
                perinTable:[],
                selectItem:[],
                {#reasonsTable:[],#}
@@ -245,12 +257,14 @@ background-color: rgba(255,255,255,0.1);
                titleDiagram2Data:{},
                reasonsDiagramData:{},
                seniorityTable:[],
+               reasonTable:[],
                {#seniorityTable1:[],#}
                seniorityTitleData:[],
                professionTable:[],
                {#regionsTable:[],#}
                heBingNum:[],
                seniorityDiagramData1:{},
+               reasonDiagramData:{},
                {#educationTable:[],#}
                educationDiagram:{},
                seniorityText:null,
@@ -361,6 +375,7 @@ background-color: rgba(255,255,255,0.1);
                     this.titleSeniorityData=res.data.titleSeniorityData;
                     {#this.titleTable1=res.data.titleTable1;#}
                     this.seniorityTable=res.data.seniorityTable;
+                    this.reasonTable=res.data.reasonTable;
                     {#this.seniorityTable1=res.data.seniorityTable1;#}
                     this.seniorityTitleData=res.data.seniorityTitleData;
                     {#this.educationTable=res.data.educationTable;#}
@@ -383,6 +398,8 @@ background-color: rgba(255,255,255,0.1);
                     {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
                     {#this.TitleText=res.data.TitleText;#}
                     {#this.xuanrantubiao1();#}
+                    this.reasonDiagramData=res.data.reasonDiagramData;
+                    this.reasonDiagramss();
                  });
             },
             search2 :function(){
@@ -419,6 +436,7 @@ background-color: rgba(255,255,255,0.1);
                     this.titleSeniorityData=res.data.titleSeniorityData;
                     {#this.titleTable1=res.data.titleTable1;#}
                     this.seniorityTable=res.data.seniorityTable;
+                    this.reasonTable=res.data.reasonTable;
                     {#this.seniorityTable1=res.data.seniorityTable1;#}
                     this.seniorityTitleData=res.data.seniorityTitleData;
                     {#this.educationTable=res.data.educationTable;#}
@@ -441,6 +459,8 @@ background-color: rgba(255,255,255,0.1);
                     {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
                     {#this.TitleText=res.data.TitleText;#}
                     {#this.xuanrantubiao1();#}
+                   this.reasonDiagramData=res.data.reasonDiagramData;
+                   this.reasonDiagramss();
                 })
                        this.searchYear=Year;
                        this.searchYear1=Year;
@@ -615,7 +635,7 @@ background-color: rgba(255,255,255,0.1);
                         }
                     },
                       {
-                        text: '\n合計離職\n離職占比',
+                        text: '\n合計離職\n離職占比%',
                         bottom: 24, // 控制表格Y轴方向
                         left: 0,
                         textStyle: {
@@ -750,6 +770,181 @@ background-color: rgba(255,255,255,0.1);
                  myChart4.setOption(option4);
                 window.addEventListener('resize', ()=>{
                    myChart4.resize();
+                 // 使用刚指定的配置项和数据显示图表。
+                })
+
+            },
+
+            reasonDiagramss(){
+
+              let _this = this
+              const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 11,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
+
+                 var myChart8 = echarts.init(document.getElementById('reasonDiagramDIV1'));
+                 var option8 = {
+                    color: ['#778899',],
+                    title: [{
+                        text:this.searchYear+'離職原因',
+                        textStyle: {
+                        fontSize:30
+                        }
+                    },
+                      {
+                        text: '\n人數\n占總%',
+                        bottom: 24, // 控制表格Y轴方向
+                        left: 0,
+                        textStyle: {
+                          color: '#000000',
+                          lineHeight: 26,
+                          fontSize: 16,
+                          fontWeight:'normal',
+                      }
+
+                    }
+
+                    ],
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
+                            }
+                        }
+                    },
+
+                    grid: {
+                      bottom: 120,
+                      left: '80px',
+                      right: '50px'
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        data: ['人數', '占總%']
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data:this.reasonDiagramData.LABEL,
+                            axisTick: {
+                                length: 94 // 竖线的长度
+                            },
+                            axisLabel: {//坐标轴刻度标签的相关设置。
+                                    interval: 0,
+                                    {#rotate: "45"#}
+
+                              formatter(value, index) {
+                                var data1 = _this.reasonDiagramData.LABEL
+                                {#var data1 = ["助技員", "技術員", "助工師", "工程師", "資工師", "副課長", "襄理"]#}
+                                var data2 = _this.reasonDiagramData.HEJIRENSHU
+                                var data3 = _this.reasonDiagramData.YUANYINBI
+                                {#var data2 = [32, 30, 63, 23, 48, 4, 4]#}
+                                var indexNum = 0
+                                for (var i = 0; i < data1.length; i++) {
+                                  if (value === data1[i]) {
+                                    indexNum = i
+                                  }
+                                }
+                                return (
+                                  '{table|' +
+                                  value +
+                                  '}\n{table|' +
+                                  data2[indexNum] +
+                                  '}\n{table|'+
+                                  data3[indexNum] +
+                                  '}\n{table|' +
+                                  '}'
+                                )
+                              },
+                              rich: {
+                                table: {
+                                  lineHeight: 30,
+                                  align: 'center',
+                                  fontSize:16
+
+                                }
+                              }
+
+                            },
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '人數',
+                            min: 0,
+                            {#max: 200,#}
+                            {#interval: 20,#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            },
+                             axisTick: {
+                              show: false // 刻度线
+                            },
+                        },
+                        {
+                            type: 'value',
+                            name: '占總%',
+                            min: 0,
+                            {#max:1,#}
+                            {#interval: 0.1,#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            },
+                             axisTick: {
+                              show: false // 刻度线
+                            },
+                        }
+                    ],
+                    series:[
+                        {
+                            'name': '人數',
+                            'type': 'bar',
+                            'data':this.reasonDiagramData.HEJIRENSHU
+                        },
+                        {
+                            'name': '離職占%',
+                            'type': 'line',
+                            'yAxisIndex': 1,
+                            'data':this.reasonDiagramData.YUANYINBI
+                        }
+                    ],
+                    graphic: list
+                };
+                myChart8.clear();
+                 myChart8.setOption(option8);
+                window.addEventListener('resize', ()=>{
+                   myChart5.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 })
 
@@ -1009,7 +1204,7 @@ background-color: rgba(255,255,255,0.1);
                         fontSize:30
                         }},
                       {
-                        text: '\n合計離職\n離職占比',
+                        text: '\n合計離職\n離職占比%',
                         bottom: 24, // 控制表格Y轴方向
                         left: 0,
                         textStyle: {
@@ -1044,7 +1239,7 @@ background-color: rgba(255,255,255,0.1);
                         }
                     },
                     legend: {
-                        data: ['合計離職', '離職占']
+                        data: ['合計離職', '離職占%']
                     },
                     xAxis:[
                         {
@@ -1112,7 +1307,7 @@ background-color: rgba(255,255,255,0.1);
                         },
                         {
                             type: 'value',
-                            name: '離職占',
+                            name: '離職占%',
                             min: 0,
                             {#max: 1,#}
                             {#interval: 0.1,#}
@@ -1131,7 +1326,7 @@ background-color: rgba(255,255,255,0.1);
                             'data':this.titleDiagram2Data.HEJILIZHI
                         },
                         {
-                            'name': '離職占',
+                            'name': '離職占%',
                             'type': 'line',
                             'yAxisIndex': 1,
                             'data':this.titleDiagram2Data.LIZHIBI
@@ -1883,7 +2078,7 @@ $(document).ready(function() {
                 }
                 else if(rows.Reliability=='Qd_L'&& rows.Compatibility!=='No Build'&& rows.Compatibility=='Qd'){
                     rows.Testresult=rows.Reliability;
-                }
+                }日期範圍
                 else{
                     rows.Testresult=rows.Compatibility;
                 }

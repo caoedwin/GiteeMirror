@@ -515,6 +515,28 @@ def FilesDownload(request):
             return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'FilesDownload.html', locals())
 
+def Navigation(request):
+    if not request.session.get('is_login', None):
+        return redirect('/login/')
+    Skin = request.COOKIES.get('Skin_raw')
+    # print(Skin)
+    if not Skin:
+        Skin = "/static/src/blue.jpg"
+    weizhi="Home/ProjectInfo"
+    permission_url = request.session.get(settings.SESSION_PERMISSION_URL_KEY)
+    data = {}
+    if request.method == "GET":
+        # print(request.GET)
+        if request.GET.get("action") == "first":
+            importPrjResult = ImportProjectinfoFromDCT()
+            if importPrjResult:
+                data['result'] = 1
+            else:
+                data['result'] = 0
+            # print(data)
+            return HttpResponse(json.dumps(data), content_type="application/json")
+    return render(request, 'Navigation.html', locals())
+
 @csrf_exempt
 def logout(request):
     # print('t')

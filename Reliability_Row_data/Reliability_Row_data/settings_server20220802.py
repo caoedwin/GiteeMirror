@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os,sys
 import time, datetime
-from datetime import timedelta
 
 # 管理员邮箱
 ADMINS = (
@@ -127,7 +126,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g!4+oe!rx(r%pm^=ryc)j57sieed1eea3_de63o&6+u0tu2%^i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+FCGI_LOG=True
 
 ALLOWED_HOSTS = ['*']
 
@@ -153,7 +153,7 @@ INSTALLED_APPS = [
     # 1.用户向登陆时服务会创建一个token值返回给用户，同时也将这个token值保存到了服务器数据库表中，如果是一个分布式系统的话，想通过一套认证系统的token表用来验证用户登陆，就会出现问题。
     # 2.authtoken表中存放的token值没有过期时间字段，如果token值一旦泄露，非常危险。
     # 3.随着用户的增多，token值会占用服务器大量空间，同时也会加大数据库的查询压力，性能下降
-    'djcelery', #此处是新加入的djcelery
+    # 'djcelery', #此处是新加入的djcelery
     # 'app01.apps.App01Config',
     'app01',
     # 'app01.templatetags',
@@ -169,7 +169,7 @@ INSTALLED_APPS = [
     'TestPlanSWOS',
     'MQM',
     'QIL',
-    'mongotest',
+    # 'mongotest',
     'INVGantt',
     'SpecDownload',
     'Issue_Notes',
@@ -214,7 +214,7 @@ WSGI_APPLICATION = 'Reliability_Row_data.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-import mongoengine,pymongo,parse,urllib
+# import mongoengine,pymongo,parse,urllib
 
 DATABASES = {
     'default': {
@@ -222,7 +222,7 @@ DATABASES = {
         'NAME': 'reliabilityrowdata',
         'USER': 'edwin',
         'PASSWORD': 'DCT@2019',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.1.9',
         'PORT': '3306'
     },
     # 'mongotest': {
@@ -230,12 +230,12 @@ DATABASES = {
     #     'NAME': 'mongotest',
     #     }#可以不要
 }
-_MONGODB_USER = urllib.parse.quote_plus("edwin")#'edwin'
-_MONGODB_PASSWD = urllib.parse.quote_plus("DCT@2019")#'DCT@2019'
-_MONGODB_HOST = '127.0.0.1:27017'
-_MONGODB_NAME = 'admin'#数据集的名字与账户密码要对应，也就是说账户密码要有当前数据集的权限
-_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
-mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+# _MONGODB_USER = urllib.parse.quote_plus("edwin")#'edwin'
+# _MONGODB_PASSWD = urllib.parse.quote_plus("DCT@2019")#'DCT@2019'
+# _MONGODB_HOST = '127.0.0.1:27016'
+# _MONGODB_NAME = 'admin'#数据集的名字与账户密码要对应，也就是说账户密码要有当前数据集的权限
+# _MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+# mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
 # user = urllib.parse.quote_plus("edwin")
 # passwd = urllib.parse.quote_plus("DCT@2019")
@@ -281,9 +281,6 @@ DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-
-
 # 允许跨域源
 CORS_ORIGIN_ALLOW_ALL = False
 # 配置指定跨域域名
@@ -382,26 +379,25 @@ SIMPLE_JWT = {
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(BASE_DIR, 'static'),
-
-
+#     # Put strings hecre, like "/home/html/static" or "C:/www/django/static".
+#     # Always use forward slashes, even on Windows.
+#     # Don't forget to use absolute paths, not relative paths.
+#     os.path.join(BASE_DIR, 'static'),
+#
+#
 )
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = 'c:\media'
-MEDIA_URL = 'c:/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 即项目路径下的media文件夹，没有则自动创建
+MEDIA_ROOT = 'I:\DMS_D disk\DDISvirtualmedia\media'
+MEDIA_URL = 'I:/DMS_D disk/DDISvirtualmedia/media/'
 MEDIAFILES_DIRS = (
     os.path.join(BASE_DIR, 'media'),
 
-    r'c:/media',
+    r'I:/DMS_D disk/DDISvirtualmedia/media',
 
-)
+)#
 #服务器路径
 # MEDIA_ROOT = 'I:\DMS_D disk\DDISvirtualmedia\media'
 # MEDIA_URL = 'I:/DMS_D disk/DDISvirtualmedia/media/'
@@ -457,11 +453,12 @@ SAFE_URL = [
     r'/static/.*',
     '/LessonProjectME/LessonProjectME-edit/.*',
     r'/test/',
-    '/mongotest/.*',
+    # '/mongotest/.*',
     '/INVGantt/INVGantSeri/.*',
     '/INVGantt/INVGantSerire/.*',
     '/INVGantt/INVGantSeriv/.*',
     '/INVGantt/apilogin/.*',
+    # '/CQM/CQMSeriv/.*',
     '/CQM/CQMapi/.*',
     '/CQM/CQMapi1/.*',
     '/api-auth/.*',
