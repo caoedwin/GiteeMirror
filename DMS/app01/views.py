@@ -139,16 +139,16 @@ def index(request):
                          }
     tableData = [
         # {"systName": "AdapterAndPowercode-LNV", "wangzhi": "https://www.baidu.com/", "region": "KS-Plant5", "adminCN": "王君",
-        #  "pic": "", "EnglishName": "Jun_Wang", "groupNumber": "C111B1J", "phoneNumber": "21850"},
+        #  "pic": "", "EnglishName": "Jun_Wang", "groupNumber": "C111B1J", "phoneNumber": "21831"},
         # {"systName": "Device-LNV", "wangzhi": "https://www.tmall.com/", "region": "KS-Plant5", "adminCN": "曹泽", "pic": "",
-        #  "EnglishName": "Edwin_Cao", "groupNumber": "C1010S3", "phoneNumber": "21850"},
+        #  "EnglishName": "Edwin_Cao", "groupNumber": "C1010S3", "phoneNumber": "21831"},
         # {"systName": "Device-ABO", "wangzhi": "https://www.taobao.com/", "region": "CQ", "adminCN": "孙俊清", "pic": "",
-        #  "EnglishName": "Erin_Sun", "groupNumber": "20652552", "phoneNumber": "21850"},
+        #  "EnglishName": "Erin_Sun", "groupNumber": "20652552", "phoneNumber": "21831"},
     ]
 
     Gcontent = [
         '1. 請使用Chrome瀏覽器',
-        '2. 若不能正常登陆设备管理系统，请及时联系Auto-Team（21850）',
+        '2. 若不能正常登陆设备管理系统，请及时联系Auto-Team（21831）',
         '3. 系统登陆默认密码是12345678，请大家登录后，尽快修改密码', '4. 系统后续更新维护事项，将以E-mail和系统公告的形式通知大家',
                 ]
     for i in Role.objects.all():
@@ -237,11 +237,11 @@ def Change_Password(request):
 def UserInfoedit(request):
     if not request.session.get('is_login', None):
         return redirect('/login/')
-    # tableData=[{"systName":"AdapterAndPowercode-LNV","wangzhi":"https://www.baidu.com/","region":"昆山","adminCN":"王君","pic":"","EnglishName":"Jun_Wang","groupNumber":"C111B1J","phoneNumber":"21850"},
-    #            {"systName": "Device-LNV","wangzhi":"https://www.tmall.com/", "region": "昆山", "adminCN": "曹泽","pic":"","EnglishName":"Edwin_Cao","groupNumber":"C1010s3","phoneNumber":"21850"},
-    #            {"systName": "Device-ABO","wangzhi":"https://www.taobao.com/", "region": "重慶", "adminCN": "孙俊清","pic":"","EnglishName":"Erin_Sun","groupNumber":"20652552","phoneNumber":"21850"},]
+    # tableData=[{"systName":"AdapterAndPowercode-LNV","wangzhi":"https://www.baidu.com/","region":"昆山","adminCN":"王君","pic":"","EnglishName":"Jun_Wang","groupNumber":"C111B1J","phoneNumber":"21831"},
+    #            {"systName": "Device-LNV","wangzhi":"https://www.tmall.com/", "region": "昆山", "adminCN": "曹泽","pic":"","EnglishName":"Edwin_Cao","groupNumber":"C1010s3","phoneNumber":"21831"},
+    #            {"systName": "Device-ABO","wangzhi":"https://www.taobao.com/", "region": "重慶", "adminCN": "孙俊清","pic":"","EnglishName":"Erin_Sun","groupNumber":"20652552","phoneNumber":"21831"},]
     #
-    # Gcontent = ['1.若不能正常登陆设备管理系统，请及时联系Jun_Wang（21850）', '2.由于IIS server权限限定,设备管理员不可随意在别人的工作机导出Excel文档',
+    # Gcontent = ['1.若不能正常登陆设备管理系统，请及时联系Jun_Wang（21831）', '2.由于IIS server权限限定,设备管理员不可随意在别人的工作机导出Excel文档',
     #             '3.系统登陆默认密码是123456，请大家登录后，尽快修改密码，密码需为六位纯数字', '4.系统后续更新维护事项，将以E-mail和系统公告的形式通知大家'
     #           , '5.系统后续更新维护事项，将以E-mail和系统公告的形式通知大家', '6.系统后续更新维护事项，将以E-mail和系统公告的形式通知大家', '7.系统后续更新维护事项，将以E-mail和系统公告的形式通知大家'
     #             ]

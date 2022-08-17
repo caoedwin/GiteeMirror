@@ -6273,7 +6273,7 @@ def M_edit(request):
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
                 EOL = request.POST.get('EOL')
-                if not EOL or EOL == 'null':
+                if not EOL or EOL == 'null' or EOL == 'None':
                     EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')
@@ -6509,7 +6509,7 @@ def M_edit(request):
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
                 EOL = request.POST.get('EOL')
-                if not EOL or EOL == 'null':
+                if not EOL or EOL == 'null' or EOL == 'None':
                     EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')
@@ -6913,9 +6913,9 @@ def M_edit(request):
                     # print(xlsxlist)
                     uploadxlsxlist = []
                     for i in xlsxlist:
-                        print(type(i),i)
+                        # print(type(i),i)
                         rownum += 1
-                        print(rownum)
+                        # print(rownum)
                         modeldata = {}
                         for key, value in i.items():
                             if key in headermodel_Device.keys():

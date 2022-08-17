@@ -106,8 +106,9 @@
   }
   .ColorSetPro{
       background-image: linear-gradient(to left, rgba(14,104,158,0.46), rgba(14,104,158, 1));
-      text-align: center;
-      {#color: #595d60;#}
+      {#text-align: center;#}
+      text-align: left!important;
+      color: #595d60;
   }
   .FontStyle{
      font-size: 15px;
@@ -279,7 +280,7 @@
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">OR C38(NB)專<br />案TestPlan的上<br />傳編輯，搜索</div>
                         <div>
-                        <a href="/TestPlanSWOS/TestPlanSWOS-edit/" target="_blank">Edit</a>
+                        <a href="/TestPlanSWOS/TestPlanSWOS-edit/" target="_blank">Edit-NB</a>
                         </div>
                       </el-tooltip>
                     </td></tr>
@@ -287,7 +288,7 @@
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">OR C38(NB)專<br />案TestPlan的上<br />傳編輯，搜索</div>
                         <div>
-                        <a href="/TestPlanSWOS/TestPlanSWOS-search/" target="_blank">Search</a>
+                        <a href="/TestPlanSWOS/TestPlanSWOS-search/" target="_blank">Search-NB</a>
                         </div>
                       </el-tooltip>
                     </td></tr>
@@ -323,7 +324,7 @@
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">C38(NB)專案<br />TestPlan的上<br />傳編輯，搜索</div>
                         <div>
-                        <a href="/TestPlanSW/TestPlanSW-edit/" target="_blank">Edit</a>
+                        <a href="/TestPlanSW/TestPlanSW-edit/" target="_blank">Edit-NB</a>
                         </div>
                       </el-tooltip>
                     </td></tr>
@@ -331,7 +332,7 @@
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">C38(NB)專案<br />TestPlan的上<br />傳編輯，搜索</div>
                         <div>
-                        <a href="/TestPlanSW/TestPlanSW-search/" target="_blank">Search</a>
+                        <a href="/TestPlanSW/TestPlanSW-search/" target="_blank">Search-NB</a>
                         </div>
                       </el-tooltip>
                     </td></tr>
@@ -524,23 +525,24 @@
                 <tr>
 {#                    <td style="text-align: center">11111</td>#}
 {#                    <td style="text-align: center">11111</td>#}
+
+                    <td id="AutoStyle" class="ColorSet" onclick="alertAuto()">Automation</td>
+                    <td id="SMStyle" class="ColorSetLesson" onclick="alertSM()">SW&ME</td>
+                </tr>
+                <tr>
                     <td id="MEStyle" class="ColorSet" onclick="alertME()">
                         ME
 {#                        <el-tooltip placement="left" effect="light">#}
 {#                        <div slot="content">機構專案TestPlan的編輯，<br/>搜索，Summary，上傳</div>#}
 {#                        <div>ME</div></el-tooltip>#}
                     </td>
-                    <td id="SMStyle" class="ColorSetLesson" onclick="alertSM()">SW&ME</td>
-                </tr>
-                <tr>
-                    <td id="AutoStyle" class="ColorSet" onclick="alertAuto()">Automation</td>
                     <td style="text-align: center;vertical-align:middle;background-color: #84bbdc;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="2">Issue List</td>
                     <td id="INStyle" class="ColorSetIssue" onclick="alertIN()">Issue Notes</td>
                 </tr>
                 <tr>
 {#                    <td style="text-align: center">11111</td>#}
                     <td id="INVStyle" class="ColorSet" onclick="alertINV()">INV</td>
-                    <td id="KIStyle" class="ColorSetIssue" onclick="alertKI()">Know Issue</td>
+                    <td id="KIStyle" class="ColorSetIssue" onclick="alertKI()">Known Issue</td>
                 </tr>
                 <tr>
                     <td id="SWORStyle" class="ColorSet" onclick="alertSWOR()">SW-OR</td>
@@ -567,7 +569,7 @@
                     <td id="CDMStyle" class="ColorSetRea" onclick="alertCDM()">CDM</td>
                 </tr>
                 <tr>
-                    <td id="OBIStyle" class="ColorSetXQM" onclick="alertOBI()">OBIDevice</td>
+                    <td id="OBIStyle" class="ColorSetXQM" onclick="alertOBI()">OBIResult</td>
 {#                    <td style="text-align: center">11111</td>#}
 {#                    <td style="text-align: center"></td>#}
                     <td id="BougStyle" class="ColorSetRea" onclick="alertBoug()">Bouncing</td>
@@ -576,9 +578,11 @@
                     <td id="DriverStyle" class="ColorSetXQM" onclick="alertDriver()">DriverTool</td>
 {#                    <td style="text-align: center"></td>#}
                     <td style="text-align: center;background-color: #0E689E;">
-                        <a style="color: black;font-size: 24px;color: #FFFFFF!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" href="/ProjectInfoSearch/" target="_blank">ProjectInfo</a>
+                        <a style="color: black;font-size: 24px;color: #FFFFFF!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" {% comment %}href="/ProjectInfoSearch/"{% endcomment %} target="_blank">ProjectInfo</a>
                     </td>
-                    <td class="ColorSetPro"></td>
+                    <td class="ColorSetPro">
+                        <a style="color: black;font-size: 100%;color: #8c939d!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" href="/ProjectInfoSearch/" target="_blank">Search</a>
+                    </td>
                 </tr>
             </table>
             </div>
@@ -715,7 +719,7 @@
                 <table id="tableKI" class="table table-bordered" style="margin-left: -29px;margin-top: 152px;">
                     <tr><td class="ColorSetIssue1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
-                        <div slot="content">Know Issue<br />的新增，編<br />輯，搜索</div>
+                        <div slot="content">Known Issue<br />的新增，編<br />輯，搜索</div>
                         <div>
                         <a href="/KnowIssue/KnowIssue-upload/" target="_blank">Add</a>
                         </div>
@@ -723,7 +727,7 @@
                     </td></tr>
                     <tr><td class="ColorSetIssue1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
-                        <div slot="content">Know Issue<br />的新增，編<br />輯，搜索</div>
+                        <div slot="content">Known Issue<br />的新增，編<br />輯，搜索</div>
                         <div>
                         <a href="/KnowIssue/KnowIssue-edit/" target="_blank">Edit</a>
                         </div>
@@ -731,7 +735,7 @@
                     </td></tr>
                     <tr><td class="ColorSetIssue1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
-                        <div slot="content">Know Issue<br />的新增，編<br />輯，搜索</div>
+                        <div slot="content">Known Issue<br />的新增，編<br />輯，搜索</div>
                         <div>
                         <a href="/KnowIssue/KnowIssue-search/" target="_blank">Search</a>
                         </div>

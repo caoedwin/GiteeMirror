@@ -425,6 +425,9 @@
          <el-button @click="fileUpload" type="warning" style="height:40px" v-cloak> Excel上傳</el-button>
         <span class="showFileName" v-cloak >${ fileName }</span>
      </div>
+    <div v-cloak class="fileUploadContent"    v-if="canEdit"  style="float:right">
+        <el-button @click="Delete" v-cloak type="primary" class="Button">清空数据</el-button>
+    </div>
 <div class="tableAround" v-cloak >
   {% csrf_token %}
  <!--數據表-->
@@ -1154,6 +1157,71 @@
                  this.getdata(parameter);
               }
           },
+          //删除机种Phase的所有数据
+      Delete:function() {
+          var warning = confirm('此操作将永久删除数据！！！ 请确保有新数据可以重新上传。是否继续?');
+          if (warning) {
+              //customer和project和phase未填
+              let _this = this;
+              if (this.customer == '') {
+                  //alert("客戶別未選擇");
+                  this.customerError = true;
+                  return false;
+              }
+              ;
+              this.customerError = false;
+              if (this.project == '') {
+                  //alert("專案號未填寫");
+                  this.projectError = true;
+                  return false;
+              }
+              ;
+              this.projectError = false;
+              if (this.phase === '') {
+                  //alert("專案號未填寫");
+                  this.phaseError = true;
+                  return false;
+              }
+              ;
+              this.phaseError = false;
+              if (this.category === '') {
+                  //alert("專案號未填寫");
+                  this.categoryError = true;
+                  return false;
+              }
+              ;
+              this.categoryError = false;
+              //至此，前兩項檢查已完成，將之前可能遺留的提示框隱藏起來
+              //判断是否是第一次查询
+              let parameter = "DeleteAll&customer=" + this.customer + "&project=" + this.project + "&phase=" + this.phase + "&category=" + encodeURIComponent(this.category);
+              if (this.showCustomer || this.showProject || this.showPhase || this.showCategory) {
+                  //判断是否有未更改的值
+                  let result = this.checkChangedData();
+                  if (!result) {
+                      try {
+                          console.log("清除");
+                          this.clearContents();
+                          this.getdata(parameter);
+                      } catch (e) {
+                          console.log(e);
+                      }
+                  } else {
+                      console.log("未更新");
+                      var warning = confirm("檢測到當前填寫的部分數據未保存，請及時點擊保存，以免數據丟失 是否繼續搜索?");
+                      if (warning) {
+                          this.clearContents();
+                          this.getdata(parameter);
+                      } else {
+                          //取消動作
+                          return false;
+                      }
+                  }
+              } else {
+                  // 判断为第一次查询
+                  this.getdata(parameter);
+              }
+          }
+      },
                clearContents(){
                   this.FS =[];
                   this.schedule=[];

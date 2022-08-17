@@ -2962,6 +2962,297 @@ def TestPlanSW_Edit(request):
             # if request.GET.get("contents") == "Connectivity":
             #     return HttpResponse(json.dumps(newContents2), content_type="application/json")
 
+        elif request.GET.get("action") == "DeleteAll":
+            Customer = request.GET.get('customer')
+            Project = request.GET.get('project')
+            Phase = request.GET.get('phase')
+            Category2=request.GET.get('category')
+            # print(Category2)
+            # print(Phase, type(Phase))
+            #Search的时候不需要知道Items是link那个Item的，读的都是TestPlan里面的测试当下的Item信息，并且创建时可能就没有Link case（比如测试当下的版本不是上传时的最新版本，因为现在只有excel才能创建PLan）
+            if Phase == '0':
+                Phase = 'B(FVT)'
+                # PhaseinItem = ['B(FVT)']
+            if Phase == '1':
+                Phase = 'C(SIT)'
+                # PhaseinItem = ['C(SIT)']
+            if Phase == '2':
+                Phase = 'SIT2'
+                # PhaseinItem = ['C(SIT)']
+            if Phase == '3':
+                Phase = 'GSKU'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '4':
+                Phase = 'Wave'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '5':
+                Phase = 'Wave2'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '6':
+                Phase = 'Wave3'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '7':
+                Phase = 'Wave4'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '8':
+                Phase = 'Wave5'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '9':
+                Phase = 'OOC'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '10':
+                Phase = 'OOC2'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '11':
+                Phase = 'OOC3'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '12':
+                Phase = 'OOC4'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '13':
+                Phase = 'OOC5'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '14':
+                Phase = 'OOC6'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
+            if Phase == '15':
+                Phase = 'FFRT'
+                # PhaseinItem = ['FFRT']
+            if Phase == '16':
+                Phase = 'FFRT2'
+                # PhaseinItem = ['FFRT']
+            if Phase == '17':
+                Phase = 'FFRT3'
+                # PhaseinItem = ['FFRT']
+            if Phase == '18':
+                Phase = 'FFRT4'
+                # PhaseinItem = ['FFRT']
+            if Phase == '19':
+                Phase = 'FFRT5'
+                # PhaseinItem = ['FFRT']
+            if Phase == '20':
+                Phase = 'FFRT6'
+                # PhaseinItem = ['FFRT']
+            if Phase == '21':
+                Phase = 'Others'
+                # PhaseinItem = ['Others']
+            # print(Category2)
+            dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+            # print(dic_Project)
+            Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
+            # print(Projectinfos.Owner.all())
+            # print(Projectinfos)
+
+            # Delete TestPlan&RetestItemSW
+            if Projectinfos:
+                Deldic = {'Customer': Customer, 'Phase': Phase, "Projectinfo": Projectinfos}
+                if TestPlanSW.objects.filter(**Deldic):
+                    # print(1)
+                    TestPlanSW.objects.filter(**Deldic).delete()
+                if RetestItemSW.objects.filter(**Deldic):
+                    # print(2)
+                    RetestItemSW.objects.filter(**Deldic).delete()
+            # Searchs
+            canEdit = 0
+            current_user = request.session.get('user_name')
+            if Projectinfos:
+                for i in Projectinfos.Owner.all():
+                    # print(i.username,current_user)
+                    # print(type(i.username),type(current_user))
+                    if i.username == current_user:
+                        canEdit = 1
+                        break
+                SKUlist = [
+                    Projectinfos.SKU1, Projectinfos.SKU2, Projectinfos.SKU3, Projectinfos.SKU4,
+                           Projectinfos.SKU5,
+                           Projectinfos.SKU6, Projectinfos.SKU7, Projectinfos.SKU8, Projectinfos.SKU9,
+                           Projectinfos.SKU10,
+                           Projectinfos.SKU11, Projectinfos.SKU12, Projectinfos.SKU13, Projectinfos.SKU14,
+                           Projectinfos.SKU15,
+                           Projectinfos.SKU16, Projectinfos.SKU17, Projectinfos.SKU18, Projectinfos.SKU19,
+                           Projectinfos.SKU20,
+                            Projectinfos.SKU21, Projectinfos.SKU22, Projectinfos.SKU23, Projectinfos.SKU24,
+                            Projectinfos.SKU25,
+                            Projectinfos.SKU26, Projectinfos.SKU27, Projectinfos.SKU28, Projectinfos.SKU29,
+                            Projectinfos.SKU30,
+                            Projectinfos.SKU31, Projectinfos.SKU32, Projectinfos.SKU33, Projectinfos.SKU34,
+                            Projectinfos.SKU35,
+                            Projectinfos.SKU36, Projectinfos.SKU37, Projectinfos.SKU38, Projectinfos.SKU39,
+                            Projectinfos.SKU40,
+                           ]
+                n = 1
+                for i in SKUlist:
+                    if i:
+                        SKUno = 'SKU%s' % n
+                        SKU.append({"skuNo": SKUno, "VGA": i.split('/')[1], "CPU": i.split('/')[0]})
+                    n += 1
+            # print(SKU)
+            # print(type(Phase))
+            # if canEdit:
+            #     itemlist = []
+            #     for i in TestItemSW.objects.filter(Customer=Customer, Phase=Phase):
+            #         itemlist.append(i.id)
+            #     # print (itemlist,'yyy')
+            #     existitem = []
+            #     for i in Projectinfos.testplansw_set.all():
+            #         existitem.append(i.Items.id)
+            #     # print(existitem)
+            #     for i in itemlist:
+            #         if i in existitem:
+            #             continue
+            #         else:
+            #             # print(TestProjectSW.objects.filter(**dic_Project).first())
+            #             TestPlanSW.objects.create(Items=TestItemSW.objects.get(id=i),Projectinfo=TestProjectSW.objects.filter(**dic_Project).first(),
+            #             Customer=TestItemSW.objects.get(id=i).Customer, Phase=TestItemSW.objects.get(id=i).Phase,
+            #             ItemNo_d=TestItemSW.objects.get(id=i).ItemNo_d, Item_d=TestItemSW.objects.get(id=i).Item_d,
+            #             TestItems=TestItemSW.objects.get(id=i).TestItems, Category=TestItemSW.objects.get(id=i).Category,
+            #             Category2=TestItemSW.objects.get(id=i).Category2, Version=TestItemSW.objects.get(id=i).Version,
+            #             ReleaseDate=TestItemSW.objects.get(id=i).ReleaseDate, Owner=TestItemSW.objects.get(id=i).Owner,
+            #             Priority=TestItemSW.objects.get(id=i).Priority, TDMSTotalTime=TestItemSW.objects.get(id=i).TDMSTotalTime,
+            #             BaseTime=TestItemSW.objects.get(id=i).BaseTime, TDMSUnattendedTime=TestItemSW.objects.get(id=i).TDMSUnattendedTime,
+            #             BaseAotomationTime1SKU=TestItemSW.objects.get(id=i).BaseAotomationTime1SKU, Chramshell=TestItemSW.objects.get(id=i).Chramshell,
+            #             ConvertibaleNBMode=TestItemSW.objects.get(id=i).ConvertibaleNBMode, ConvertibaleYogaPadMode=TestItemSW.objects.get(id=i).ConvertibaleYogaPadMode,
+            #             DetachablePadMode=TestItemSW.objects.get(id=i).DetachablePadMode, DetachableWDockmode=TestItemSW.objects.get(id=i).DetachableWDockmode,
+            #             PhaseFVT=TestItemSW.objects.get(id=i).PhaseFVT, PhaseSIT=TestItemSW.objects.get(id=i).PhaseSIT,
+            #             PhaseFFRT=TestItemSW.objects.get(id=i).PhaseFFRT, Coverage=TestItemSW.objects.get(id=i).Coverage,
+            #             editor=request.session.get('user_name'),edit_time=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+
+            # print(dicItem)
+            dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+            # print(dic_Project)
+            # print(request.GET)
+            # print(request.GET.get("category"))
+
+            if request.GET.get("category") == "Others (Project Leader update)(1. Base on Golden BIOS/Image's change list)(2. Retest for w/o solution's issue ) for full function test":
+                RetestItemSWinfo=RetestItemSW.objects.filter(**dic_Project)
+                # print('Retest')
+                # print(RetestItemSWinfo)
+                if RetestItemSWinfo:
+                    for i in RetestItemSWinfo:
+                        planOptimize=[]
+                        SKUlist_R = {
+                                    "SKU1":i.SKU1, "SKU2":i.SKU2, "SKU3":i.SKU3, "SKU4":i.SKU4,"SKU5":i.SKU5,
+                                   "SKU6":i.SKU6, "SKU7":i.SKU7, "SKU8":i.SKU8, "SKU9":i.SKU9,"SKU10":i.SKU10,
+                                   "SKU11":i.SKU11, "SKU12":i.SKU12,"SKU13": i.SKU13, "SKU14":i.SKU14,"SKU15":i.SKU15,
+                                   "SKU16":i.SKU16, "SKU17":i.SKU17, "SKU18":i.SKU18, "SKU19":i.SKU19,"SKU20":i.SKU20,
+                            "SKU21": i.SKU21, "SKU22": i.SKU22, "SKU23": i.SKU23, "SKU24": i.SKU24, "SKU25": i.SKU25,
+                            "SKU26": i.SKU26, "SKU27": i.SKU27, "SKU28": i.SKU28, "SKU29": i.SKU29, "SKU30": i.SKU30,
+                            "SKU31": i.SKU31, "SKU32": i.SKU32, "SKU33": i.SKU33, "SKU34": i.SKU34, "SKU35": i.SKU35,
+                            "SKU36": i.SKU36, "SKU37": i.SKU37, "SKU38": i.SKU38, "SKU39": i.SKU39, "SKU40": i.SKU40,
+                        }
+                        for j in SKU:
+                            if j["skuNo"] in SKUlist_R.keys():
+                                    planOptimize.append(SKUlist_R[j["skuNo"]])
+                            # print(planOptimize)
+                        newContents.append(
+                            {  # Reitem
+                                "id": i.id, "caseid": i.ItemNo_d, "casename": i.Item_d,
+                                "testitem": i.TestItems,
+                                "version": i.Version,
+                                "releasedate": i.ReleaseDate, "owner": i.Owner,
+                                "priority": i.Priority,
+                                # TDMSTotalTime前端直接后两项加总
+                                "basetime": i.BaseTime,
+                                "unattendedtime": i.TDMSUnattendedTime,
+                                "basetimeA": i.BaseAotomationTime1SKU,
+                                "chramshell": i.Chramshell, "conver_NB": i.ConvertibaleNBMode,
+                                "conver_Yoga": i.ConvertibaleYogaPadMode,
+                                "detach_Pad": i.DetachablePadMode, "detach_W": i.DetachableWDockmode,
+                                "PhaseF": i.PhaseFVT, "PhaseS": i.PhaseSIT, 'PhaseFFRT': i.PhaseFFRT,
+                                "coverage": i.Coverage,
+                                'FS': i.FeatureSupport, 'TE': i.TE, 'schedule': i.Schedule,
+                                'starttime': i.ProjectTestSKUfollowMatrix, 'conAitem': i.ConfigAutomationItem,
+                                'conLitem': i.ConfigLeverageItem, 'comments1': i.CommentsLeverage,
+                                'conSitem': i.ConfigSmartItem,
+                                'comments2': i.CommentsSmart, "planOptimize": planOptimize, 'CRC': i.ConfigRetestCycle,
+                                'CRS': i.ConfigRetestSKU, 'CRT': i.ConfigRetestTime,
+                                # no need edit
+                                'BTS':i.BaseTimeSupport,'TFC':i.TimewConfigFollowmatrix,'conAtime':i.ConfigAutomationTime,'conLtime':i.ConfigLeverageTime,
+                                'conSitemInAll':i.ConfigSmartItemPer,'conStime':i.ConfigSmartTime,'proTS':i.ProjectTestSKUOptimize,'ATO':i.AttendTimeOptimize
+                            })
+                    # print(newContents)
+            else:
+                # print('Others')
+                # Iteminfos = TestItemSW.objects.filter(**dicItem)
+                Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
+                # print(Projectinfos.Owner.all())
+                # print(Iteminfos)
+                # print(Projectinfos)
+                dicPlan = {'Customer': Customer, 'Phase': Phase, 'Category2': Category2, "Projectinfo": Projectinfos}
+                if Projectinfos:
+                    x = 0
+
+                    for i in TestPlanSW.objects.filter(**dicPlan):
+                        x += 1
+                        # print(i,type(i))
+                        # print(i.id)
+                        planOptimize = []
+                        SKUlist_T = {
+                            "SKU1": i.SKU1, "SKU2": i.SKU2, "SKU3": i.SKU3, "SKU4": i.SKU4, "SKU5": i.SKU5,
+                                     "SKU6": i.SKU6, "SKU7": i.SKU7, "SKU8": i.SKU8, "SKU9": i.SKU9,
+                                     "SKU10": i.SKU10,
+                                     "SKU11": i.SKU11, "SKU12": i.SKU12, "SKU13": i.SKU13, "SKU14": i.SKU14,
+                                     "SKU15": i.SKU15,
+                                     "SKU16": i.SKU16, "SKU17": i.SKU17, "SKU18": i.SKU18, "SKU19": i.SKU19,
+                                     "SKU20": i.SKU20,
+                            "SKU21": i.SKU21, "SKU22": i.SKU22, "SKU23": i.SKU23, "SKU24": i.SKU24, "SKU25": i.SKU25,
+                            "SKU26": i.SKU26, "SKU27": i.SKU27, "SKU28": i.SKU28, "SKU29": i.SKU29, "SKU30": i.SKU30,
+                            "SKU31": i.SKU31, "SKU32": i.SKU32, "SKU33": i.SKU33, "SKU34": i.SKU34, "SKU35": i.SKU35,
+                            "SKU36": i.SKU36, "SKU37": i.SKU37, "SKU38": i.SKU38, "SKU39": i.SKU39, "SKU40": i.SKU40,
+                        }
+                        for j in SKU:
+                            if j["skuNo"] in SKUlist_T.keys():
+                                planOptimize.append(SKUlist_T[j["skuNo"]])
+                        # print(planOptimize)
+                        # print(i.ConfigSmartItemPer,i.ConfigSmartTime)
+                        newContents.append(
+                            {  # item
+                                "id": i.id, "caseid": i.ItemNo_d, "casename": i.Item_d,
+                                "testitem": i.TestItems,
+                                "version": i.Version,
+                                "releasedate": i.ReleaseDate, "owner": i.Owner,
+                                "priority": i.Priority,
+                                # TDMSTotalTime前端直接后两项加总
+                                "basetime": i.BaseTime,
+                                "unattendedtime": i.TDMSUnattendedTime,
+                                "basetimeA": i.BaseAotomationTime1SKU,
+                                "chramshell": i.Chramshell, "conver_NB": i.ConvertibaleNBMode,
+                                "conver_Yoga": i.ConvertibaleYogaPadMode,
+                                "detach_Pad": i.DetachablePadMode, "detach_W": i.DetachableWDockmode,
+                                "PhaseF": i.PhaseFVT, "PhaseS": i.PhaseSIT,
+                                'PhaseFFRT': i.PhaseFFRT,
+                                "coverage": i.Coverage,
+                                # plan
+                                'FS': i.FeatureSupport, 'TE': i.TE, 'schedule': i.Schedule,
+                                'starttime': i.ProjectTestSKUfollowMatrix, 'conAitem': i.ConfigAutomationItem,
+                                'conLitem': i.ConfigLeverageItem, 'comments1': i.CommentsLeverage,
+                                'conSitem': i.ConfigSmartItem,
+                                'comments2': i.CommentsSmart, "planOptimize": planOptimize,
+                                'CRC': i.ConfigRetestCycle, 'CRS': i.ConfigRetestSKU, 'CRT': i.ConfigRetestTime,
+                                # no need edit
+                                'BTS': i.BaseTimeSupport, 'TFC': i.TimewConfigFollowmatrix,
+                                'CAT': i.ConfigAutomationTime, 'CLT': i.ConfigLeverageTime,
+                                'conSitemInAll': i.ConfigSmartItemPer, 'CST': i.ConfigSmartTime,
+                                'proTS': i.ProjectTestSKUOptimize, 'ATO': i.AttendTimeOptimize
+                            })
+                    # print(newContents)
+                    # print(x)
+            # print(newContents)
+            updateData = {
+                "content": newContents,
+                "SKU": SKU,
+                "canEdit": canEdit
+            }
+            # print(updateData)
+            return HttpResponse(json.dumps(updateData), content_type="application/json")
+            # if request.GET.get("contents") == "Basic":
+            #     return HttpResponse(json.dumps(newContents), content_type="application/json")
+            # if request.GET.get("contents") == "Interaction":
+            #     return HttpResponse(json.dumps(newContents1), content_type="application/json")
+            # if request.GET.get("contents") == "Connectivity":
+            #     return HttpResponse(json.dumps(newContents2), content_type="application/json")
+
     if request.method == "POST":
         # print(request.POST)
         # print(request.body)
@@ -7442,6 +7733,117 @@ def TestPlanSW_Edit_AIO(request):
             # print(Projectinfos.Owner.all())
             # print(Projectinfos)
 
+            canEdit = 0
+            current_user = request.session.get('user_name')
+            if Projectinfos:
+                for i in Projectinfos.Owner.all():
+                    # print(i.username,current_user)
+                    # print(type(i.username),type(current_user))
+                    if i.username == current_user:
+                        canEdit = 1
+                        break
+                SKUlist = [Projectinfos.SKU1, Projectinfos.SKU2, Projectinfos.SKU3, Projectinfos.SKU4,
+                           Projectinfos.SKU5,
+                           Projectinfos.SKU6, Projectinfos.SKU7, Projectinfos.SKU8, Projectinfos.SKU9,
+                           Projectinfos.SKU10,
+                           Projectinfos.SKU11, Projectinfos.SKU12, Projectinfos.SKU13, Projectinfos.SKU14,
+                           Projectinfos.SKU15,
+                           Projectinfos.SKU16, Projectinfos.SKU17, Projectinfos.SKU18, Projectinfos.SKU19,
+                           Projectinfos.SKU20]
+                n = 1
+                for i in SKUlist:
+                    if i:
+                        SKUno = 'SKU%s' % n
+                        SKU.append({"skuNo": SKUno, "VGA": i.split('/')[1], "CPU": i.split('/')[0]})
+                    n += 1
+
+            # print(dicItem)
+            dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+
+            Projectinfos = TestProjectSWAIO.objects.filter(**dic_Project).first()
+            # print(Projectinfos.Owner.all())
+            # print(Iteminfos)
+            # print(Projectinfos)
+            dicPlan = {'Customer': Customer, 'Phase': Phase, 'Category': Category, "Projectinfo": Projectinfos}
+            # print(dicPlan)
+            if Projectinfos:
+                x = 0
+                for i in TestPlanSWAIO.objects.filter(**dicPlan):
+                    x += 1
+                    # print(i,type(i))
+                    # print(i.id)
+                    planOptimize = []
+                    SKUlist_T = {"SKU1": i.SKU1, "SKU2": i.SKU2, "SKU3": i.SKU3, "SKU4": i.SKU4, "SKU5": i.SKU5,
+                                 "SKU6": i.SKU6, "SKU7": i.SKU7, "SKU8": i.SKU8, "SKU9": i.SKU9,
+                                 "SKU10": i.SKU10,
+                                 "SKU11": i.SKU11, "SKU12": i.SKU12, "SKU13": i.SKU13, "SKU14": i.SKU14,
+                                 "SKU15": i.SKU15,
+                                 "SKU16": i.SKU16, "SKU17": i.SKU17, "SKU18": i.SKU18, "SKU19": i.SKU19,
+                                 "SKU20": i.SKU20}
+                    for j in SKU:
+                        if j["skuNo"] in SKUlist_T.keys():
+                            planOptimize.append(SKUlist_T[j["skuNo"]])
+                    # print(planOptimize)
+                    # print(i.ConfigSmartItemPer,i.ConfigSmartTime)
+                    newContents.append(
+                        {"id": i.id, "Category": i.Category, "Test_Title": i.TestTitle,
+                         "Sub_Test_Title": i.Subtesttitle, "Test_Item": i.TestItem, "Priority": i.Priority,
+                         "Release_Date": i.ReleaseDate, "Owner": i.Owner, "Attend_Time": i.AT_AttendTime, "Unattend_Time": i.AT_UnattendTime,
+                         "Automation": i.AT_Automation, "Attend_Time_hrs": i.DQMS_AttendTime,
+                         "Unattend_Time_hrs": i.DQMS_UnattendTime, "TUC": i.TestUnitsConfig, "Smart_Item": i.SmartItem,
+                         "Cusumer": i.Cusumer, "Commercial": i.Commercial,
+                         "SDV": i.SDV, "SIT": i.SIT, "Coverage": i.Coverage, "FS": i.FeatureSupport, "BTS": i.Basetimesupport,
+                         "TE": i.TE, "schedule": i.Schedule,
+                         "NUMX": i.Configalltestunits, "NUMX_TIME": i.Configalltesttime, "NUMA": i.ConfigAutomationItem,
+                         "CAT": i.ConfigAutomationtime, "NUML": i.ConfigLeverageItem, "CLT": i.ConfigLeveragetime,
+                         "conSitemInAll": i.ConfigSmartItemper,
+                         "CST": i.ConfigSmarttime, "comments": i.Comments, "proTS": i.ProjecttestSKUOptimize, "ATO": i.AttendtimeOptimize,
+                         "planOptimize": planOptimize,
+                         "CRC": i.ConfigRetestCycle, "CRS": i.ConfigRetestSKU, "CRT": i.ConfigRetesttime},)
+                # print(newContents)
+                # print(x)
+        # print(newContents)
+            updateData = {
+                "content": newContents,
+                "SKU": SKU,
+                "canEdit": canEdit
+            }
+            # print(updateData)
+            return HttpResponse(json.dumps(updateData), content_type="application/json")
+            # if request.GET.get("contents") == "Basic":
+            #     return HttpResponse(json.dumps(newContents), content_type="application/json")
+            # if request.GET.get("contents") == "Interaction":
+            #     return HttpResponse(json.dumps(newContents1), content_type="application/json")
+            # if request.GET.get("contents") == "Connectivity":
+            #     return HttpResponse(json.dumps(newContents2), content_type="application/json")
+
+        elif request.GET.get("action") == "DeleteAll":
+            Customer = request.GET.get('customer')
+            Project = request.GET.get('project')
+            Phase = request.GET.get('phase')
+            Category=request.GET.get('category')
+            # print(Category2)
+            #Search的时候不需要知道Items是link那个Item的，读的都是TestPlan里面的测试当下的Item信息，并且创建时可能就没有Link case（比如测试当下的版本不是上传时的最新版本，因为现在只有excel才能创建PLan）
+            if Phase == '0':
+                Phase = 'B(SDV)'
+            if Phase == '1':
+                Phase = 'C(SIT)'
+            if Phase == '2':
+                Phase = 'EELP+'
+
+            dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+            # print(dic_Project)
+            Projectinfos = TestProjectSWAIO.objects.filter(**dic_Project).first()
+            # print(Projectinfos.Owner.all())
+            # print(Projectinfos)
+
+            # Delete TestPlanSWAIO
+            if Projectinfos:
+                Deldic = {'Customer': Customer, 'Phase': Phase, "Projectinfo": Projectinfos}
+                if TestPlanSWAIO.objects.filter(**Deldic):
+                    # print(1)
+                    TestPlanSWAIO.objects.filter(**Deldic).delete()
+            # Searchs
             canEdit = 0
             current_user = request.session.get('user_name')
             if Projectinfos:

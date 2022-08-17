@@ -3,16 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeviceABO/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeviceABO/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeviceLNV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeviceLNV/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/AutoResult/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/AutoResult/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSW/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSW/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSWOS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSWOS/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSWOS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/TestPlanSWOS/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-02.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-02.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-02.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/Navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/Navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit_AIO.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit_AIO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_edit_AIO.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_edit_AIO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSWOS/TestPlanSW_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../me/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../me/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../me/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../me/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +53,48 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/ttt.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="7302" column="40" selection-start-line="7302" selection-start-column="28" selection-end-line="7302" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#324546#325472#0" />
+                <element signature="e#325491#325639#0" />
+                <element signature="e#325668#325977#0" />
+                <element signature="e#326001#326523#0" />
+                <element signature="e#326544#326664#0" />
+                <element signature="e#327686#327704#0" />
+                <element signature="e#332111#332157#0" />
+                <element signature="e#335547#336787#0" />
+                <element signature="e#336868#338154#0" />
+                <element signature="e#338235#339480#0" />
+                <element signature="e#339557#354535#0" />
+                <element signature="e#354607#367563#0" />
+                <element signature="e#367636#380901#0" />
+                <element signature="e#380979#381972#0" />
+                <element signature="e#382264#391114#0" />
+                <element signature="e#391188#414375#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,18 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectedDevStatus</find>
-      <find>DevStatus</find>
-      <find>devstatus</find>
-      <find>allDevStatus</find>
-      <find>BrStatus</find>
-      <find>BrwStatus</find>
-      <find>Dev_Status_choice</find>
-      <find>ABO</find>
-      <find>LNV</find>
-      <find>DeviceABO</find>
-      <find>Br</find>
-      <find>mock_data</find>
       <find>add</find>
       <find>EOL日期</find>
       <find>預計歸還日期</find>
@@ -76,8 +114,6 @@
       <find>addnewdate</find>
       <find>借還狀態</find>
       <find>&quot;addnewdate&quot;: addnewdate_str,</find>
-      <find>EOL_str</find>
-      <find>EOL</find>
       <find>EOLflag</find>
       <find>可借用</find>
       <find>DeviceLNV</find>
@@ -87,6 +123,20 @@
       <find>Element</find>
       <find>inputRoles</find>
       <find>dash</find>
+      <find>Last_Borrow_date</find>
+      <find>mock_data4</find>
+      <find>21850</find>
+      <find>mock_data3</find>
+      <find>ChairCabinetLNV</find>
+      <find>EOL</find>
+      <find>Rtime</find>
+      <find>EOL_str</find>
+      <find>if not EOL or EOL == 'null'</find>
+      <find>删除</find>
+      <find>新增</find>
+      <find>deleteData</find>
+      <find>warning</find>
+      <find>errMsgNumber</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/ChairCabinetMS/R_Destine.html" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/R_Return.html" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/R_Transfer..html" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/R_Receive.html" />
@@ -127,7 +176,6 @@
         <option value="$PROJECT_DIR$/templates/Summary.html" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/M_edit.html" />
         <option value="$PROJECT_DIR$/templates/ComputerMS/M_edit.html" />
-        <option value="$PROJECT_DIR$/app01/views.py" />
         <option value="$PROJECT_DIR$/ComputerMS/models.py" />
         <option value="$PROJECT_DIR$/templates/ComputerMS/BorrowedComputer.html" />
         <option value="$PROJECT_DIR$/DMS/settings_server_.py" />
@@ -141,18 +189,21 @@
         <option value="$PROJECT_DIR$/DeviceLNV/admin.py" />
         <option value="$PROJECT_DIR$/DeviceABO/admin.py" />
         <option value="$PROJECT_DIR$/ChairCabinetMS/views.py" />
-        <option value="$PROJECT_DIR$/DeviceLNV/views.py" />
         <option value="$PROJECT_DIR$/templates/DeviceLNV/M_edit.html" />
-        <option value="$PROJECT_DIR$/DeviceABO/views.py" />
         <option value="$PROJECT_DIR$/templates/DeviceABO/M_edit.html" />
         <option value="$PROJECT_DIR$/templates/Signin.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/app01/views.py" />
+        <option value="$PROJECT_DIR$/DeviceABO/views.py" />
+        <option value="$PROJECT_DIR$/DeviceLNV/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="135" />
-    <option name="width" value="1030" />
-    <option name="height" value="885" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -160,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,18 +221,19 @@
             <path>
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="DeviceLNV" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reliability_Row_data" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -360,11 +411,14 @@
       <workItem from="1658738951637" duration="89000" />
       <workItem from="1658798207720" duration="2527000" />
       <workItem from="1659315584970" duration="3673000" />
+      <workItem from="1659497480867" duration="30051000" />
+      <workItem from="1660607387758" duration="9970000" />
+      <workItem from="1660693561755" duration="4440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1830529000" />
+    <option name="totallyTimeSpent" value="1874990000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,11 +433,11 @@
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49879518" visible="true" weight="0.096354164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.22985469" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.26149425" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.17804155" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -393,7 +447,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="SciView" order="9" sideWeight="0.50158983" side_tool="true" weight="0.29307282" />
       <window_info anchor="bottom" id="Database" order="10" sideWeight="0.50158983" side_tool="true" weight="0.24333926" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959514" weight="0.2982196" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959514" weight="0.30712166" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32761088" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5023847" side_tool="true" weight="0.24333926" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -407,20 +461,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/ComputerMS/R_Transfer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="206" column="29" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ComputerMS/R_Destine.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="206" column="34" selection-start-line="206" selection-start-column="34" selection-end-line="206" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ComputerMS/M_Return.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -695,55 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChairCabinetMS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="83" column="11" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChairCabinetMS/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="474" column="159" selection-start-line="474" selection-start-column="159" selection-end-line="474" selection-end-column="159" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1180#12855#0" />
-            <element signature="e#1378#2472#0" />
-            <element signature="e#3558#6016#0" />
-            <element signature="e#4333#6016#0" />
-            <element signature="e#6071#8529#0" />
-            <element signature="e#13094#14188#0" />
-            <element signature="e#14755#16884#0" />
-            <element signature="e#16957#19894#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceABO/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139360">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="6021" column="33" lean-forward="true" selection-end-line="7316" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="2192" column="6" selection-end-line="2266" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceABO/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -808,35 +799,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/Signin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="95" column="14" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="14" />
+        <state relative-caret-position="49">
+          <caret line="146" column="34" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChairCabinetMS/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
-            <element signature="e#1264#3333#0" />
-            <element signature="e#4973#7939#0" />
-            <element signature="e#7979#8477#0" />
-            <element signature="e#8526#9788#0" />
-            <element signature="e#9834#15934#0" />
-            <element signature="e#15979#17511#0" />
-            <element signature="e#17552#35538#0" />
-            <element signature="e#19393#22910#0" />
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1378#2472#0" />
+            <element signature="e#3558#6016#0" />
+            <element signature="e#4333#6016#0" />
+            <element signature="e#6071#8529#0" />
+            <element signature="e#8588#12468#0" />
+            <element signature="e#12900#24568#0" />
+            <element signature="e#13094#14188#0" />
+            <element signature="e#14755#16884#0" />
+            <element signature="e#16957#19894#0" />
+            <element signature="e#19971#23928#0" />
+            <element signature="e#24611#32876#0" />
+            <element signature="e#32919#41468#0" />
+            <element signature="e#41510#54251#0" />
+            <element signature="e#43298#45457#0" />
+            <element signature="e#45532#48721#0" />
+            <element signature="e#49013#53963#0" />
+            <element signature="e#54296#62128#0" />
+            <element signature="e#62171#69728#0" />
+            <element signature="e#71510#73992#0" />
+            <element signature="e#74067#76683#0" />
+            <element signature="e#85946#127314#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChairCabinetMS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="85" column="55" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="55" />
+        <state relative-caret-position="163">
+          <caret line="198" column="157" selection-start-line="198" selection-start-column="152" selection-end-line="198" selection-end-column="157" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Signin.html">
+    <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="146" column="34" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
+        <state relative-caret-position="372">
+          <caret line="640" lean-forward="true" selection-start-line="640" selection-end-line="640" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#1264#3333#0" />
+            <element signature="e#3373#4934#0" />
+            <element signature="e#4973#7939#0" />
+            <element signature="e#7979#8477#0" />
+            <element signature="e#8526#9788#0" />
+            <element signature="e#9834#15934#0" />
+            <element signature="e#15979#17511#0" />
+            <element signature="e#19393#22910#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceABO/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="6331" column="60" selection-start-line="6331" selection-start-column="60" selection-end-line="6331" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="7302" column="40" selection-start-line="7302" selection-start-column="28" selection-end-line="7302" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#324546#325472#0" />
+            <element signature="e#325491#325639#0" />
+            <element signature="e#325668#325977#0" />
+            <element signature="e#326001#326523#0" />
+            <element signature="e#326544#326664#0" />
+            <element signature="e#327686#327704#0" />
+            <element signature="e#332111#332157#0" />
+            <element signature="e#335547#336787#0" />
+            <element signature="e#336868#338154#0" />
+            <element signature="e#338235#339480#0" />
+            <element signature="e#339557#354535#0" />
+            <element signature="e#354607#367563#0" />
+            <element signature="e#367636#380901#0" />
+            <element signature="e#380979#381972#0" />
+            <element signature="e#382264#391114#0" />
+            <element signature="e#391188#414375#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="2073" column="31" lean-forward="true" selection-start-line="2068" selection-start-column="30" selection-end-line="2073" selection-end-column="31" />
+          <folding>
+            <element signature="e#72952#74939#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ttt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

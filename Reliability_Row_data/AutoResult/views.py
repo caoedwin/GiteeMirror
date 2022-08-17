@@ -389,6 +389,7 @@ def AutoItem_edit(request):
                     # print(responseData)
                     # print(responseData['historyYear'],type(responseData['historyYear']))
                     for i in responseData["params"]:
+                        # print(i,AutoItems.objects.filter(id=i))
                         AutoItems.objects.filter(id=i).delete()
 
                     ckeck_dic = {}
@@ -1166,8 +1167,69 @@ def AutoResult_summary(request):
 
     if request.method == "POST":
         if request.POST.get("isGetData") == "first":
-            # print(CQMtest.objects.all().count())
-            pass
+            Year = request.POST.get("Year")
+            if not Year:
+                Year = str(datetime.datetime.now().year)
+            AllItems = list(AutoItems.objects.all().values("Number", "ValueIf").distinct())
+            Projectlist_Total = []
+            for i in selectCustomerYear:
+                for j in selectCustomerYear[i]:
+                    if j["Year"] == Year:
+                        Projectlist_Total.append((j["Project"], j["Phase"]))
+
+            VAData_NPI = 0
+            NVAData_NPI = 0
+            VAData_INV = 0
+            NVAData_INV = 0
+            for i in Projectlist_Total:
+                for j in AllItems:
+                    if "INV" in i[0].upper():
+                        check_dic = {"AutoItem": AutoItems.objects.filter(Number=j["Number"]).first(),
+                                     "Projectinfo": AutoProject.objects.filter(Project=i[0]).first()}
+                    else:
+                        check_dic = {"AutoItem": AutoItems.objects.filter(Number=j["Number"]).first(),
+                                     "ProjectinfoCQM": CQMProject.objects.filter(Project=i[0]).first()}
+                    # print(check_dic)
+                    if AutoResult.objects.filter(**check_dic).first():
+                        if i[1] == "NPI":
+                            # print(i)
+                            if j["ValueIf"] == "VA":
+                                VAData_NPI += float(
+                                    AutoResult.objects.filter(**check_dic).first().Cycles) * float(
+                                    AutoItems.objects.filter(Number=j["Number"]).first().BaseIncome)
+                            if j["ValueIf"] == "N-VA":
+                                NVAData_NPI += float(
+                                    AutoResult.objects.filter(**check_dic).first().Cycles) * float(
+                                    AutoItems.objects.filter(Number=j["Number"]).first().BaseIncome)
+                        else:
+                            if j["ValueIf"] == "VA":
+                                VAData_INV += float(
+                                    AutoResult.objects.filter(**check_dic).first().Cycles) * float(
+                                    AutoItems.objects.filter(Number=j["Number"]).first().BaseIncome)
+                            if j["ValueIf"] == "N-VA":
+                                NVAData_INV += float(
+                                    AutoResult.objects.filter(**check_dic).first().Cycles) * float(
+                                    AutoItems.objects.filter(Number=j["Number"]).first().BaseIncome)
+            # print(VAData_NPI,VAData_INV, NVAData_NPI,NVAData_INV)
+            VAData = [VAData_NPI, VAData_NPI + VAData_INV]
+            NVAData = [NVAData_NPI, NVAData_NPI + NVAData_INV]
+            VA_NVA = [
+                {
+                    "name": "VA",
+                    "type": "bar",
+                    "stack": "status",
+                    "barMaxWidth": 50,
+                    "data": VAData
+                },
+                {
+                    "name": "N-VA",
+                    "type": "bar",
+                    "stack": "status",
+                    "barMaxWidth": 50,
+                    "data": NVAData
+                },
+            ]
+            # pass
         if request.POST.get("isGetData") == "Search":
             Year = request.POST.get("Year")
             if not Year:

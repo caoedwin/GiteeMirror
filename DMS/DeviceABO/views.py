@@ -6329,7 +6329,7 @@ def M_edit(request):
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
                 EOL = request.POST.get('EOL')
-                if not EOL or EOL == 'null':
+                if not EOL or EOL == 'null' or EOL == 'None':
                     EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')
@@ -6565,7 +6565,7 @@ def M_edit(request):
                 if not addnewdate or addnewdate == 'null':
                     addnewdate = None  # 日期爲空
                 EOL = request.POST.get('EOL')
-                if not EOL or EOL == 'null':
+                if not EOL or EOL == 'null' or EOL == 'None':
                     EOL = None  # 日期爲空
                 Comment = request.POST.get('Comment')
                 uscyc = request.POST.get('uscyc')

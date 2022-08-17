@@ -429,6 +429,9 @@
         <span class="showFileName" v-cloak >${ fileName }</span>
 {#      <el-button @click="Add()" size="medium" style="margin-left:30px;background-color:#75e5a7;color:white;"><i class="el-icon-circle-plus"></i>SKU錄入</el-button>#}
      </div>
+    <div v-cloak class="fileUploadContent"    v-if="canEdit"  style="float:right">
+        <el-button @click="Delete" v-cloak type="primary" class="Button">清空数据</el-button>
+    </div>
 
 {#    <el-dialog :visible.sync="appendss">#}
 {#           <template>#}
@@ -1201,7 +1204,7 @@
     },
     //首先获取customer ，project ，phase 搜索信息
     created(){
-        axios.get("/TestPlanSW/TestPlanSW-edit/?action=first" ,{
+        axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=first" ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.selectMsg=res.data;
@@ -1226,7 +1229,7 @@
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
                 let _this=this;
-                axios.get("/TestPlanSW/TestPlanSW-edit/?action="+e ,{
+                axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.loading=false;
@@ -1296,7 +1299,7 @@
                         this.formData.append('SKU1', this.$refs.formappend.model.CPU1+'/'+this.$refs.formappend.model.VGA1)
                         this.formData.append('SKU2', this.$refs.formappend.model.CPU2+'/'+this.$refs.formappend.model.VGA2)
                         console.log(this.formData)
-                        axios.post("/TestPlanSW/TestPlanSW-edit/", this.formData,{
+                        axios.post("/TestPlanSWOS/TestPlanSWOS-edit/", this.formData,{
                                     headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                                 }).then((res)=>{
                                 this.tableData=res.data['content'];
@@ -1457,7 +1460,7 @@
               return false;
           }else{
               let result =  {'action':'edit','customer':this.showCustomer,'project':this.showProject,'phase':this.showPhase,'category':this.showCategory,'ID':row.id,'FS':this.FS[index],'BTS':this.BTS[index],'TFC':this.TFC[index],'starttime':this.starttime[index],'TE':this.TE[index],'schedule':this.schedule[index],'conAitem':this.conAitem[index],'conLitem':this.conLitem[index],'conSitem':this.conSitem[index],'CAT':this.CAT[index],'CLT':this.CLT[index],'CST':this.CST[index],'proTS':this.proTS[index],'ATO':this.ATO[index],'planOptimize':this.planOptimize[index],'comments1':this.comments1[index],'comments2':this.comments2[index],'CRC':this.CRC[index],'CRS':this.CRS[index],'CRT':this.CRT[index],'conSitemInAll':this.conSitemInAll[index]}
-              axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(result, {indices:false}),{
+              axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(result, {indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     //flag:editResult
@@ -1591,7 +1594,7 @@
                    //将之前张开的树形结构收起
                       //_this.reset();
                    //2.上傳數據
-                    axios.post("/TestPlanSW/TestPlanSW-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
+                    axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
                     //console.log(res.data,"first");//上传成功的操作
@@ -1690,6 +1693,70 @@
           }else{
              // 判断为第一次查询
              this.getdata(parameter);
+          }
+      },
+      Delete:function() {
+          var warning = confirm('此操作将永久删除数据！！！ 请确保有新数据可以重新上传。是否继续?');
+          if (warning) {
+              //customer和project和phase未填
+              let _this = this;
+              if (this.customer == '') {
+                  //alert("客戶別未選擇");
+                  this.customerError = true;
+                  return false;
+              }
+              ;
+              this.customerError = false;
+              if (this.project == '') {
+                  //alert("專案號未填寫");
+                  this.projectError = true;
+                  return false;
+              }
+              ;
+              this.projectError = false;
+              if (this.phase === '') {
+                  //alert("專案號未填寫");
+                  this.phaseError = true;
+                  return false;
+              }
+              ;
+              this.phaseError = false;
+              if (this.category === '') {
+                  //alert("專案號未填寫");
+                  this.categoryError = true;
+                  return false;
+              }
+              ;
+              this.categoryError = false;
+              //至此，前兩項檢查已完成，將之前可能遺留的提示框隱藏起來
+              //判断是否是第一次查询
+              let parameter = "DeleteAll&customer=" + this.customer + "&project=" + this.project + "&phase=" + this.phase + "&category=" + encodeURIComponent(this.category);
+              if (this.showCustomer || this.showProject || this.showPhase || this.showCategory) {
+                  //判断是否有未更改的值
+                  let result = this.checkChangedData();
+                  if (!result) {
+                      try {
+                          console.log("清除");
+                          this.clearContents();
+                          this.getdata(parameter);
+                      } catch (e) {
+                          console.log(e);
+                      }
+                  } else {
+                      console.log("未更新");
+                      var warning = confirm("檢測到當前填寫的部分數據未保存，請及時點擊保存，以免數據丟失 是否繼續搜索?");
+                      if (warning) {
+                          this.clearContents();
+                          this.getdata(parameter);
+                      } else {
+                          //取消動作
+                          return false;
+                      }
+                  }
+              } else {
+                  // 判断为第一次查询
+                  this.getdata(parameter);
+              }
           }
       },
        //检查是否发生数据改变
@@ -1934,7 +2001,7 @@
           submitData['Phase'] = this.showPhase;
           submitData['category'] = this.showCategory;
           submitData['action'] = 'submitFFRTData';
-          axios.post("/TestPlanSW/TestPlanSW-edit/" ,Qs.stringify(submitData ,{indices:false}),{
+          axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,Qs.stringify(submitData ,{indices:false}),{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res)=>{
                     if(res.data.submitResult === 1){
@@ -2052,7 +2119,7 @@
            if(newValue !== ''){
                if(this.customer !== '' && this.project !== ''  && this.phase !== ''  ){
                  let parameter = ""+this.customer+"&project="+this.project+"&phase="+this.phase;
-                 axios.get("/TestPlanSW/TestPlanSW-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
+                 axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.categoryItem = res.data['MockData'];

@@ -978,7 +978,7 @@ p a{
     },
     //首先获取customer ，project ，phase 搜索信息
     created(){
-        axios.get("/TestPlanSW/TestPlanSW-search/?action=first" ,{
+        axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action=first" ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.selectMsg=res.data;
@@ -998,7 +998,7 @@ p a{
                  },
       getdata:function(e){
                 let _this=this;
-                axios.get("/TestPlanSW/TestPlanSW-search/?action="+e ,{
+                axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.loading = false;
@@ -1027,7 +1027,7 @@ p a{
             },
         getdata1: function (e) {
                 let data = {"isGetData": e,};
-                axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
+                axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
                 }).then((res) => {
                     this.selectItem1 = res.data.select1;
@@ -1043,7 +1043,7 @@ p a{
                         "Project": Project,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
+                    axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                     this.rdchangelist = res.data.rdchangelist;
@@ -1069,7 +1069,7 @@ p a{
                         "Project": Project,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
+                    axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                     this.rdchangelist = res.data.rdchangelist;
@@ -1271,7 +1271,7 @@ p a{
                          "Customer": Customer,
                          "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                      }
-                     axios.post("/TestPlanSW/TestPlanSW-search/", Qs.stringify(data), {
+                     axios.post("/TestPlanSWOS/TestPlanSWOS-search/", Qs.stringify(data), {
                          headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                      }).then((res) => {
                          this.proinfomation = res.data.proinfomation;
@@ -1288,7 +1288,7 @@ p a{
                 let Customer = this.$refs.Customer1.value;
                 this.showProject1=row.COMPRJCODE;
            let data ={"isGetData":"SELECTPRO","Customer":Customer,"COMPRJCODE":row.COMPRJCODE,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-           axios.post("/TestPlanSW/TestPlanSW-search/",Qs.stringify(data), {
+           axios.post("/TestPlanSWOS/TestPlanSWOS-search/",Qs.stringify(data), {
            headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                         this.Sum1 =res.data['Sum1'];
@@ -1485,7 +1485,7 @@ p a{
             let Project = this.$refs.project.value;
             let Phase = this.$refs.phase.value;
            let data ={"isGetData":"SEARCH","Customer":Customer,"Project":Project,"Phase":Phase,"category":row.category,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-           axios.post("/TestPlanSW/TestPlanSW-search/",Qs.stringify(data), {
+           axios.post("/TestPlanSWOS/TestPlanSWOS-search/",Qs.stringify(data), {
            headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                this.tableData=res.data['content'];
@@ -1830,7 +1830,7 @@ p a{
            if(newValue !== ''){
                if(this.customer !== '' && this.project !== ''  && this.phase !== ''  ){
                  let parameter = ""+this.customer+"&project="+this.project+"&phase="+this.phase;
-                 axios.get("/TestPlanSW/TestPlanSW-search/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
+                 axios.get("/TestPlanSWOS/TestPlanSWOS-search/?action=getCategory&customer="+this.customer+"&project="+this.project+"&phase="+this.phase ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
                     this.categoryItem = res.data['MockData'];

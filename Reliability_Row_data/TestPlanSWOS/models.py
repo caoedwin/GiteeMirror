@@ -101,7 +101,7 @@ class TestProjectSW(models.Model):
         ('Others', 'Others'),
     )
     Customer = models.CharField('Customer', choices=Customer_choice,max_length=20)
-    Project = models.CharField('Project', max_length=20)
+    Project = models.CharField('Project', max_length=30)
     Phase = models.CharField('Phase', choices=Phase_choice, max_length=20)
     ScheduleBegin = models.DateField('ScheduleBegin', blank=True, null=True, )
     ScheduleEnd = models.DateField('ScheduleEnd', blank=True, null=True, )
@@ -530,7 +530,7 @@ class TestProjectSWAIO(models.Model):
         ('Others', 'Others'),
     )
     Customer = models.CharField('Customer', choices=Customer_choice,max_length=20)
-    Project = models.CharField('Project', max_length=20)
+    Project = models.CharField('Project', max_length=30)
     Phase = models.CharField('Phase', choices=Phase_choice, max_length=20)
     ScheduleBegin = models.DateField('ScheduleBegin', blank=True, null=True, )
     ScheduleEnd = models.DateField('ScheduleEnd', blank=True, null=True, )
