@@ -1,0 +1,14 @@
+[2022-08-23 09:01:44,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2022-08-23 09:01:44,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-08-23 09:01:44,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-08-23 09:01:44,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-08-23 09:01:47,679] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-23 09:01:47,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-08-23 09:01:47,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47664
+[2022-08-23 09:01:47,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47664
+[2022-08-23 09:01:48,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-23 09:01:57,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PublicArea/ HTTP/1.1" 200 47562
+[2022-08-23 09:01:57,690] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.woff HTTP/1.1" 304 0
+[2022-08-23 09:01:57,867] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-08-23 09:01:57 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/PublicArea/ POST
+[2022-08-23 09:01:57,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PublicArea/ HTTP/1.1" 200 260
+[2022-08-23 09:01:57,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
