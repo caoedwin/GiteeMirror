@@ -1587,18 +1587,22 @@
                     var datas = workbook.Sheets[sheet];
                     // 如果有不规范数据可以在这里进行处理datas
                     persons = persons.concat(XLSX.utils.sheet_to_json(datas));
+                    //console.log(typeof (persons),'111')
                     //break; // 只读了第一张表
                 }
             }
                  // 数据保存在result
                   let result=JSON.stringify(persons);
+                  //console.log(typeof (result),'2222')
+                  //console.log(typeof ({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result}),'233')
+                       console.log({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},'333333')
                    //将之前张开的树形结构收起
                       //_this.reset();
                    //2.上傳數據
                     axios.post("/TestPlanSW/TestPlanSW-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
-                    //console.log(res.data,"first");//上传成功的操作
+                    console.log(res.data,"first");//上传成功的操作
                     _this.uploadFile=null;
                     _this.fileName=first;
                    _this.loading=false;

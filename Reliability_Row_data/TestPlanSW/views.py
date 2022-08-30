@@ -3720,7 +3720,7 @@ def TestPlanSW_Edit(request):
                 if Phase == '21':
                     Phase = 'Others'
                     # PhaseinItem = ['Others']
-                print(Phase)
+                # print(Phase)
                 dic_Project = {'Customer': responseData['customer'],
                                'Project': responseData['project'], 'Phase': Phase}
                 Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
@@ -4494,7 +4494,7 @@ def TestPlanSW_Edit(request):
                                 # for j in i.keys():
                                 #     updatedic[j]=i[j]
                                 # updatedic['Project'] = responseData['project']
-                                print(dic_Project)
+                                # print(dic_Project)
                                 updatedic['Projectinfo'] = TestProjectSW.objects.get(**dic_Project)
                                 if check_list:  # 文档中的测项check_dic不存在于TestPlanSW中的某一个或几个机种中，但是存在于TestItemSW中，说明测试当下的case信息就是最新的case，则创建并linkTestItem表,否则只创建但是不linkTest Item表。
                                     itemsinfo = TestItemSW.objects.get(id=check_list.id)
@@ -5156,8 +5156,8 @@ def TestPlanSW_Edit(request):
                             #     #                      'Item_d': i['Item_d']})
                             #     #     #need update testitem first
                             #     #     print("新增的测项还没来得及维护到TestItemSW")
-                print("item_changeddata", item_changeddata)
-                print("item_nodata", item_nodata)
+                # print("item_changeddata", item_changeddata)
+                # print("item_nodata", item_nodata)
 
             # print(type(Phase))
             Phase = responseData['phase']

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2022-08-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2022-08-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +35,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,7 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
       <find>EOL日期</find>
       <find>預計歸還日期</find>
       <find>設備添加日期</find>
@@ -58,7 +57,6 @@
       <find>EOLflag</find>
       <find>可借用</find>
       <find>DeviceLNV</find>
-      <find>axios</find>
       <find>/DeviceLNV/M_edit/</find>
       <find>if</find>
       <find>Element</find>
@@ -78,6 +76,8 @@
       <find>deleteData</find>
       <find>warning</find>
       <find>errMsgNumber</find>
+      <find>axios</find>
+      <find>excel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +142,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
-    <option name="width" value="1919" />
-    <option name="height" value="1019" />
+    <option name="width" value="1920" />
+    <option name="height" value="1020" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -151,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,16 +163,28 @@
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="DeviceLNV" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="DeviceLNV" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reliability_Row_data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -356,11 +367,12 @@
       <workItem from="1660693561755" duration="4440000" />
       <workItem from="1660779682233" duration="16546000" />
       <workItem from="1660865489626" duration="5264000" />
+      <workItem from="1661744197386" duration="488000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1896800000" />
+    <option name="totallyTimeSpent" value="1897288000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,9 +384,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="0" width="1535" height="815" extended-state="0" />
+    <frame x="8" y="0" width="1536" height="816" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.23215477" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.232" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -820,16 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="2073" column="31" lean-forward="true" selection-start-line="2068" selection-start-column="30" selection-end-line="2073" selection-end-column="31" />
-          <folding>
-            <element signature="e#72952#74939#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -867,6 +869,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-491">
+          <caret line="1803" column="34" selection-start-line="1803" selection-start-column="29" selection-end-line="1803" selection-end-column="34" />
         </state>
       </provider>
     </entry>
