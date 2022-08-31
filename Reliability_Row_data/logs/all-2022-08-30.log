@@ -1,1 +1,92 @@
 [2022-08-30 07:57:13,372] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=DeleteAll&customer=C38(NB)&project=FLMA0&phase=0&category=Application HTTP/1.1" 200 362
+[2022-08-30 07:58:43,520] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 07:58:43,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111553
+[2022-08-30 07:58:48,232] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category=Application HTTP/1.1" 200 28430
+[2022-08-30 07:58:58,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-08-30 07:58:58,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2022-08-30 07:58:59,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 07:59:03,733] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 07:59:03,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-08-30 07:59:04,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42158
+[2022-08-30 07:59:04,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/js/index.js?_=2022.4.9 HTTP/1.1" 304 0
+[2022-08-30 07:59:04,697] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/css/index.css.map HTTP/1.1" 200 3250
+[2022-08-30 07:59:05,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/waves/waves.min.js.map HTTP/1.1" 200 9739
+[2022-08-30 07:59:05,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 07:59:14,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 07:59:17,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testplansw/ HTTP/1.1" 200 1417682
+[2022-08-30 07:59:17,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/base.css?_=2.7 HTTP/1.1" 304 0
+[2022-08-30 07:59:17,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/css/base.css?_=2.7 HTTP/1.1" 304 0
+[2022-08-30 07:59:17,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/changelists.css?_=20180905 HTTP/1.1" 304 0
+[2022-08-30 07:59:17,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/responsive.css?_=20180905 HTTP/1.1" 304 0
+[2022-08-30 07:59:17,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+[2022-08-30 07:59:17,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-08-30 07:59:17,377] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2022-08-30 07:59:17,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/theme/simpleui.css.map HTTP/1.1" 200 1935
+[2022-08-30 07:59:17,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2022-08-30 07:59:17,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/js/axios.min.map HTTP/1.1" 200 117473
+[2022-08-30 07:59:17,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2022-08-30 07:59:17,580] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+[2022-08-30 07:59:18,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2022-08-30 07:59:27,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testplansw/?Projectinfo__id__exact=1 HTTP/1.1" 200 1512932
+[2022-08-30 07:59:27,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-08-30 07:59:27,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/theme/simpleui.css.map HTTP/1.1" 200 1935
+[2022-08-30 07:59:27,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/js/axios.min.map HTTP/1.1" 200 117473
+[2022-08-30 08:22:51,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 08:22:52,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-08-30 08:22:52,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42158
+[2022-08-30 08:22:52,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/css/index.css.map HTTP/1.1" 200 3250
+[2022-08-30 08:22:52,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/waves/waves.min.js.map HTTP/1.1" 200 9739
+[2022-08-30 08:22:52,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 08:22:53,623] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testplansw/ HTTP/1.1" 200 1417682
+[2022-08-30 08:22:53,626] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/TestPlanSW/testplansw/ HTTP/1.1" 500 59
+[2022-08-30 08:22:53,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111553
+[2022-08-30 08:22:53,830] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-08-30 08:22:53,911] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-08-30 08:22:53,994] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-08-30 08:22:53,996] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-08-30 08:22:54,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-08-30 08:22:54,447] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 08:23:08,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 795
+[2022-08-30 08:23:12,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 14958
+[2022-08-30 08:23:24,343] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-08-30 08:23:24,384] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 08:23:24,391] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-08-30 08:23:24,394] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85385
+[2022-08-30 08:23:37,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 14958
+[2022-08-30 08:25:12,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111553
+[2022-08-30 08:25:12,466] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-08-30 08:25:12,496] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-08-30 08:25:12,602] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-08-30 08:25:12,605] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-08-30 08:25:12,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-08-30 08:25:13,189] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-08-30 08:25:20,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 795
+[2022-08-30 08:25:24,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=0&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 14958
+[2022-08-30 08:25:30,143] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-08-30 08:25:30,176] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 08:25:30,181] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-08-30 08:25:30,184] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85385
+[2022-08-30 08:30:14,638] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-08-30 08:30:14,670] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 08:30:14,676] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-08-30 08:30:14,678] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85385
+[2022-08-30 08:43:06,245] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-08-30 08:43:06,278] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 08:43:06,290] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-08-30 08:43:06,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85385
+[2022-08-30 08:55:53,321] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-08-30 08:55:53,370] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 08:55:53,379] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-08-30 08:55:53,381] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85385
+[2022-08-30 09:47:43,011] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 09:47:43,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-08-30 10:33:15,771] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-08-30 10:33:15,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
