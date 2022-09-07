@@ -305,6 +305,8 @@ REST_FRAMEWORK = {
     #     'rest_framework.authentication.SessionAuthentication',
     #     'rest_framework.authentication.BasicAuthentication',
     # )
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+
 }
 # jwt
 SIMPLE_JWT = {
@@ -467,6 +469,7 @@ SAFE_URL = [
     '/api-auth/.*',
     '/api/token/.*',
     '/CQM/api/.*',
+    '/docs/.*',
     # '/redit_Lesson/.*',
     # r'/CDM/CDM-upload/',
     # r'/CDM/CDM-edit/',

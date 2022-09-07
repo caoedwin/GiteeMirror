@@ -32,7 +32,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
-
+from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     # 实现了users和groups的API开发，但是我们可以发现，我们没有用户登录退出的按钮，以及权限设置（只有超级用户登录之后才可以看到列表和详情，非登录状态会显示没有权限查看）接下来我们对这两个地方进行优化：
@@ -50,6 +50,8 @@ urlpatterns = [
     # path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # path('api/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    # url(r'^docs/', include_docs_urls(title='My API title')),
+    path('docs/', include_docs_urls(title='接口文档')),
     path('ueditor/', include('DjangoUeditor.urls')), #添加DjangoUeditor的URL
     path(r'login/', views.login),
     path(r'', views.login),

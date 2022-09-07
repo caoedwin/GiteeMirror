@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/TestPlanSW/TestPlanSW_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-31.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-31.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-31.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/FilesDownload.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/FilesDownload.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EOL日期</find>
-      <find>預計歸還日期</find>
       <find>設備添加日期</find>
       <find>addnewdate</find>
       <find>借還狀態</find>
@@ -78,6 +80,8 @@
       <find>errMsgNumber</find>
       <find>axios</find>
       <find>excel</find>
+      <find>transaction</find>
+      <find>vue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +188,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reliability_Row_data" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -368,11 +372,13 @@
       <workItem from="1660779682233" duration="16546000" />
       <workItem from="1660865489626" duration="5264000" />
       <workItem from="1661744197386" duration="488000" />
+      <workItem from="1662340147218" duration="100000" />
+      <workItem from="1662522164503" duration="2893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1897288000" />
+    <option name="totallyTimeSpent" value="1900281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,7 +392,7 @@
   <component name="ToolWindowManager">
     <frame x="8" y="0" width="1536" height="816" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.232" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" weight="0.232" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -409,6 +415,30 @@
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
       <window_info anchor="right" id="Find" order="4" weight="0.32793522" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.232" />
+      <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
+      <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.23975721" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32761088" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="SciView" order="9" sideWeight="0.50158983" side_tool="true" weight="0.29307282" />
+      <window_info anchor="bottom" id="Database" order="10" sideWeight="0.50158983" side_tool="true" weight="0.24333926" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959514" weight="0.30712166" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32761088" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5023847" side_tool="true" weight="0.24333926" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
+      <window_info anchor="right" id="Find" order="4" weight="0.32793522" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -638,16 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/BorrowedDeviceLNV.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="194" column="19" lean-forward="true" selection-start-line="194" selection-start-column="19" selection-end-line="194" selection-end-column="19" />
-          <folding>
-            <element signature="n#el-dialog#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceLNV/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -797,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="198" column="157" selection-start-line="198" selection-start-column="152" selection-end-line="198" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -832,10 +845,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ttt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/爬虫案例Perry老师直播分享0817/Perry老师直播分享0817/下载视频.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-491">
+          <caret line="1803" column="34" selection-start-line="1803" selection-start-column="29" selection-end-line="1803" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="7298" column="23" lean-forward="true" selection-start-line="7298" selection-start-column="23" selection-end-line="7298" selection-end-column="23" />
+        <state relative-caret-position="193">
+          <caret line="1042" column="44" selection-start-line="1042" selection-start-column="33" selection-end-line="1042" selection-end-column="44" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#324546#325472#0" />
@@ -858,24 +892,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ttt.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="193">
+          <caret line="240" column="37" selection-start-line="240" selection-start-column="34" selection-end-line="240" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/爬虫案例Perry老师直播分享0817/Perry老师直播分享0817/下载视频.py">
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/BorrowedDeviceLNV.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491">
-          <caret line="1803" column="34" selection-start-line="1803" selection-start-column="29" selection-end-line="1803" selection-end-column="34" />
+        <state relative-caret-position="307">
+          <caret line="232" column="19" lean-forward="true" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
         </state>
       </provider>
     </entry>
