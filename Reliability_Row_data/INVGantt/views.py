@@ -2252,11 +2252,21 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.http import HttpResponse
 from app01.models import UserInfo
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+from CQM.permissions import MyPermission
+from CQM.authentication import MyJWTAuthentication
 @csrf_exempt
 
 # @api_view(['GET'])
 # @permission_classes((IsAuthenticated, ))
 def INVGantViewre(request):
+
+    #没有继承父类，所以认证不起作用，不认识authentication_classes，permission_classes
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+    # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    # 所有用户都可以访问
     if request.method == "GET":
         # print(request.GET)
         Account = request.GET.get("username")
@@ -2346,10 +2356,15 @@ class LoginView(APIView):
             return Response('the username or password was wrong')
 
 # 游客只读，登录用户只读，只有登录用户属于 管理员 分组，才可以增删改
-from .permissions import MyPermission
+# from .permissions import MyPermission
 class TestView(APIView):
-    authentication_classes = [MyAuth]	# 局部认证
-    permission_classes = [MyPermission]  # 局部配置
+    # authentication_classes = [MyAuth]	# 局部认证
+    # permission_classes = [MyPermission]  # 局部配置
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+    # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+
+    # 所有用户都可以访问
     # 所有用户都可以访问
     # def get(self, request, *args, **kwargs):
     #     return APIResponse(0, '自定义读 OK')

@@ -52,7 +52,15 @@ class ListView(generics.ListCreateAPIView):
     queryset = models.data1.objects.all()
     serializer_class = serializers.data1Serializer
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+from CQM.permissions import MyPermission
+from CQM.authentication import MyJWTAuthentication
 class ToolListmongo(generics.ListCreateAPIView):
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+    # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    # 所有用户都可以访问
     queryset = models.ToolList_Mongo.objects.all()
     serializer_class = serializers.ToolSerializer
 

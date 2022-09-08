@@ -1,0 +1,32 @@
+[2022-09-08 16:00:46,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/ HTTP/1.1" 200 115076
+[2022-09-08 16:00:46,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/schema.js HTTP/1.1" 200 18740
+[2022-09-08 16:02:07,815] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-09-08 16:02:07 None>None None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /mongotest/mongotest-upload/ POST
+[2022-09-08 16:02:07,815] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /mongotest/mongotest-upload/
+[2022-09-08 16:02:07,816] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /mongotest/mongotest-upload/ HTTP/1.1" 401 43
+[2022-09-08 16:05:04,927] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /mongotest/mongotest-upload/
+[2022-09-08 16:05:04,928] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 401 43
+[2022-09-08 16:05:14,270] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /CQM/CQMapi/
+[2022-09-08 16:05:14,270] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /CQM/CQMapi/?Project=GLMS1 HTTP/1.1" 401 179
+[2022-09-08 16:05:25,318] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-09-08 16:05:25 None>None None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /CQM/api/login/ POST
+[2022-09-08 16:05:25,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/api/login/ HTTP/1.1" 200 497
+[2022-09-08 16:06:11,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQMapi/?Project=GLMS1 HTTP/1.1" 200 43307
+[2022-09-08 16:06:56,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /mongotest/mongotest-upload/ HTTP/1.1" 200 1256
+[2022-09-08 16:11:11,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/ HTTP/1.1" 200 115076
+[2022-09-08 16:11:11,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/schema.js HTTP/1.1" 200 18740
+[2022-09-08 16:11:24,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantSeri/ HTTP/1.1" 200 255968
+[2022-09-08 16:11:47,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantSeri/ HTTP/1.1" 200 255968
+[2022-09-08 16:14:43,385] [log.py:228] [log:log_response] [WARNING]- Forbidden: /INVGantt/INVGantSeriv/
+[2022-09-08 16:14:43,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 403 34
+[2022-09-08 16:16:31,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/ HTTP/1.1" 200 115076
+[2022-09-08 16:16:31,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /docs/schema.js HTTP/1.1" 200 18740
+[2022-09-08 16:16:36,877] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /INVGantt/INVGantSeriv/
+[2022-09-08 16:16:36,878] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 401 43
+[2022-09-08 16:17:51,278] [log.py:228] [log:log_response] [WARNING]- Unauthorized: /INVGantt/INVGantSeriv/
+[2022-09-08 16:17:51,279] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 401 43
+[2022-09-08 16:18:55,060] [log.py:228] [log:log_response] [WARNING]- Forbidden: /INVGantt/INVGantSeriv/
+[2022-09-08 16:18:55,061] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 403 49
+[2022-09-08 16:19:11,854] [UserIP.py:87] [UserIP:process_response] [INFO]- 2022-09-08 16:19:11 None>None None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /CQM/api/login/ POST
+[2022-09-08 16:19:11,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/api/login/ HTTP/1.1" 200 497
+[2022-09-08 16:19:31,904] [log.py:228] [log:log_response] [WARNING]- Forbidden: /INVGantt/INVGantSeriv/
+[2022-09-08 16:19:31,904] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 403 49
+[2022-09-08 16:19:52,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 200 255968
