@@ -30,3 +30,115 @@
 [2022-09-08 16:19:31,904] [log.py:228] [log:log_response] [WARNING]- Forbidden: /INVGantt/INVGantSeriv/
 [2022-09-08 16:19:31,904] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 403 49
 [2022-09-08 16:19:52,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantSeriv/ HTTP/1.1" 200 255968
+[2022-09-13 11:34:17,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2022-09-13 11:34:17,846] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-09-13 11:34:24,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2022-09-13 11:34:24,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2022-09-13 11:34:54,088] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:34:54,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2022-09-13 11:34:54,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47664
+[2022-09-13 11:34:54,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47664
+[2022-09-13 11:34:54,753] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:35:28,615] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:35:28,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 304 0
+[2022-09-13 11:35:28,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 304 0
+[2022-09-13 11:35:28,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 304 0
+[2022-09-13 11:35:28,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/form.js HTTP/1.1" 304 0
+[2022-09-13 11:35:29,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-09-13 11:35:29,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 304 0
+[2022-09-13 11:35:29,326] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:35:46,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2022-09-13 11:35:46,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2022-09-13 11:35:46,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:35:51,381] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:35:51,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2022-09-13 11:35:56,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42050
+[2022-09-13 11:35:56,588] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/automatic/dicts.js?_=2022.4.9 HTTP/1.1" 304 0
+[2022-09-13 11:35:57,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:36:20,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:36:20,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/ HTTP/1.1" 200 66976
+[2022-09-13 11:36:20,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/automatic/dicts.js HTTP/1.1" 304 0
+[2022-09-13 11:36:20,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-09-13 11:36:25,493] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TestPlanSW/testprojectsw/add/ HTTP/1.1" 200 43331
+[2022-09-13 11:36:25,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2022-09-13 11:36:25,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,518] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-09-13 11:36:25,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2022-09-13 11:36:25,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2022-09-13 11:36:25,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:25,615] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:25,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:25,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:25,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:25,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+[2022-09-13 11:36:36,819] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:36:37,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 113213
+[2022-09-13 11:36:37,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2022-09-13 11:36:44,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=0 HTTP/1.1" 200 1119
+[2022-09-13 11:36:48,013] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=15 HTTP/1.1" 200 715
+[2022-09-13 11:36:53,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=%20NA%20 HTTP/1.1" 200 362
+[2022-09-13 11:36:59,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Application HTTP/1.1" 200 362
+[2022-09-13 11:37:15,120] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-09-13 11:37:15,120] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-09-13 11:37:15,120] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-09-13 11:37:15,222] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-09-13 11:37:16,400] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /TestPlanSW/TestPlanSW-edit/
+[2022-09-13 11:37:16,401] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:37:16,410] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 403 2508
+[2022-09-13 11:38:54,696] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /TestPlanSW/TestPlanSW-edit/
+[2022-09-13 11:38:54,698] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:38:54,721] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 403 2508
+[2022-09-13 11:39:45,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22933
+[2022-09-13 11:39:46,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:40:02,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:40:03,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-09-13 11:40:03,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:40:11,213] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=15 HTTP/1.1" 200 715
+[2022-09-13 11:40:17,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 362
+[2022-09-13 11:41:13,254] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:41:13,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:41:19,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 300488
+[2022-09-13 11:42:11,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=DeleteAll&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 362
+[2022-09-13 11:43:10,893] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:43:10,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:43:19,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 116037
+[2022-09-13 11:44:41,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=DeleteAll&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 362
+[2022-09-13 11:44:43,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:44:44,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-09-13 11:44:44,450] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:44:52,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=15 HTTP/1.1" 200 715
+[2022-09-13 11:44:55,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Application HTTP/1.1" 200 362
+[2022-09-13 11:45:30,255] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:45:30,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:48:09,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22933
+[2022-09-13 11:48:10,205] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:48:21,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:48:22,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 746
+[2022-09-13 11:48:22,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933
+[2022-09-13 11:48:32,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=FLMA0&phase=15 HTTP/1.1" 200 798
+[2022-09-13 11:48:36,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 116037
+[2022-09-13 11:48:44,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=DeleteAll&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 362
+[2022-09-13 11:49:24,908] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:49:24,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:50:24,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=FLMA0&phase=15&category=Basic HTTP/1.1" 200 116037
+[2022-09-13 11:51:34,083] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:51:34,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 111559
+[2022-09-13 11:52:58,225] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-09-13 11:52:58,324] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:52:58,331] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-09-13 11:52:58,334] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85487
+[2022-09-13 11:53:29,726] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-09-13 11:53:29,741] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2022-09-13 11:53:29,746] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2022-09-13 11:53:29,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-09-13 11:53:39,866] [exception.py:77] [exception:response_for_exception] [ERROR]- Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+[2022-09-13 11:53:39,918] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2022-09-13 11:53:39,925] [log.py:228] [log:log_response] [WARNING]- Bad Request: /TestPlanSW/TestPlanSW-edit/
+[2022-09-13 11:53:39,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 400 85487
+[2022-09-13 15:09:04,742] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2022-09-13 15:09:04,751] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2022-09-13 15:09:04,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22933

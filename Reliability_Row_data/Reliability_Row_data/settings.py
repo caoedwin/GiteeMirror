@@ -182,6 +182,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',#这里要注意中间件加载顺序，列表是有序的。django-cors-headers
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -284,7 +285,7 @@ DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 
 
 
-# 允许跨域源
+# 允许跨域源 生产环境开启跨域
 CORS_ORIGIN_ALLOW_ALL = False
 # 配置指定跨域域名
 CORS_ORIGIN_WHITELIST = []
