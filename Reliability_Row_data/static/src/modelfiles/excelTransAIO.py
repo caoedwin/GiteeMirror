@@ -517,3 +517,15 @@ try:
 except Exception as e:
     with open('errorAIO.txt', 'w') as f:  # 设置文件对象
         print(e, file=f)
+
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
+def show_messagebox():
+    choice = QMessageBox.information(None, 'Excel转化', '%s-%s模板转换已完成' % (Customer, Phase),
+                         QMessageBox.Ok)  # 1
+
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv) #没有无法使用
+    demo = show_messagebox()
