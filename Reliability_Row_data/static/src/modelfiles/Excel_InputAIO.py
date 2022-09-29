@@ -14,6 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 # from PyQt5.Qt import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+from Progress import MyWindow, UI_Progress
 # import pandas as pd
 # import pprint
 # from pathlib import Path
@@ -27,50 +30,85 @@ from PyQt5.QtCore import pyqtSignal
 # import numpy as np
 
 class Ui_MainWindow(QWidget):
-    button_clicked_signal = pyqtSignal()
-    close_signal = pyqtSignal()
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(140, 160, 111, 31))
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(140, 280, 111, 31))
-        self.label_2.setObjectName("label_2")
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(240, 50, 256, 51))
-        self.textBrowser.setObjectName("textBrowser")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(620, 480, 93, 28))
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalGroupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.horizontalGroupBox.setGeometry(QtCore.QRect(140, 200, 621, 61))
-        self.horizontalGroupBox.setObjectName("horizontalGroupBox")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalGroupBox)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(0, -30, 791, 571))
+        self.frame.setStyleSheet("QFrame {    background-color: rgb(56, 58, 89);    \n"
+                                 "    color: rgb(220, 220, 220);\n"
+                                 "    border-radius: 10px;\n"
+                                 "}")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.textEdit = QtWidgets.QTextEdit(self.frame)
+        self.textEdit.setGeometry(QtCore.QRect(300, 60, 104, 87))
+        self.textEdit.setObjectName("textEdit")
+        self.textEdit_2 = QtWidgets.QTextEdit(self.frame)
+        self.textEdit_2.setGeometry(QtCore.QRect(270, 80, 281, 87))
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.textEdit_3 = QtWidgets.QTextEdit(self.frame)
+        self.textEdit_3.setGeometry(QtCore.QRect(100, 160, 231, 41))
+        self.textEdit_3.setStyleSheet(
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+            "p, li { white-space: pre-wrap; }\n"
+            "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+            "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>")
+        self.textEdit_3.setObjectName("textEdit_3")
+        self.textEdit_4 = QtWidgets.QTextEdit(self.frame)
+        self.textEdit_4.setGeometry(QtCore.QRect(100, 290, 231, 41))
+        self.textEdit_4.setObjectName("textEdit_4")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(self.frame)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(110, 200, 561, 80))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.radioButton = QtWidgets.QRadioButton(self.horizontalGroupBox)
+        self.radioButton_5 = QtWidgets.QRadioButton(self.horizontalLayoutWidget)
+        self.radioButton_5.setStyleSheet("font: 9pt \"楷体\";\n"
+                                         "color: rgb(255, 255, 255);")
+        self.radioButton_5.setObjectName("radioButton_5")
+        self.horizontalLayout.addWidget(self.radioButton_5)
+        self.radioButton = QtWidgets.QRadioButton(self.horizontalLayoutWidget)
+        self.radioButton.setStyleSheet("font: 9pt \"楷体\";\n"
+                                       "color: rgb(255, 255, 255);")
         self.radioButton.setObjectName("radioButton")
         self.horizontalLayout.addWidget(self.radioButton)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.horizontalGroupBox)
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.horizontalLayout.addWidget(self.radioButton_2)
-        self.horizontalGroupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.horizontalGroupBox_2.setGeometry(QtCore.QRect(140, 310, 481, 91))
-        self.horizontalGroupBox_2.setObjectName("horizontalGroupBox_2")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalGroupBox_2)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.radioButton_4 = QtWidgets.QRadioButton(self.horizontalGroupBox_2)
-        self.radioButton_4.setObjectName("radioButton_4")
-        self.horizontalLayout_3.addWidget(self.radioButton_4)
-        self.radioButton_3 = QtWidgets.QRadioButton(self.horizontalGroupBox_2)
+        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.frame)
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(110, 330, 561, 80))
+        self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.radioButton_3 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
+        self.radioButton_3.setStyleSheet("font: 9pt \"楷体\";\n"
+                                         "color: rgb(255, 255, 255);")
         self.radioButton_3.setObjectName("radioButton_3")
-        self.horizontalLayout_3.addWidget(self.radioButton_3)
-        self.radioButton_5 = QtWidgets.QRadioButton(self.horizontalGroupBox_2)
-        self.radioButton_5.setObjectName("radioButton_5")
-        self.horizontalLayout_3.addWidget(self.radioButton_5)
+        self.horizontalLayout_2.addWidget(self.radioButton_3)
+        self.radioButton_4 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
+        self.radioButton_4.setStyleSheet("font: 9pt \"楷体\";\n"
+                                         "color: rgb(255, 255, 255);")
+        self.radioButton_4.setObjectName("radioButton_4")
+        self.horizontalLayout_2.addWidget(self.radioButton_4)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
+        self.radioButton_2.setStyleSheet("font: 9pt \"楷体\";\n"
+                                         "color: rgb(255, 255, 255);")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.horizontalLayout_2.addWidget(self.radioButton_2)
+        self.pushButton = QtWidgets.QPushButton(self.frame)
+        self.pushButton.setGeometry(QtCore.QRect(580, 460, 93, 28))
+        self.pushButton.setStyleSheet("font: 9pt \"楷体\";")
+        self.pushButton.setObjectName("pushButton")
+        self.textEdit_5 = QtWidgets.QTextEdit(self.frame)
+        self.textEdit_5.setGeometry(QtCore.QRect(120, 460, 81, 41))
+        self.textEdit_5.setObjectName("textEdit_5")
+        self.textEdit_7 = QtWidgets.QTextEdit(self.frame)
+        self.textEdit_7.setGeometry(QtCore.QRect(210, 460, 81, 41))
+        self.textEdit_7.setObjectName("textEdit_7")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
@@ -81,21 +119,13 @@ class Ui_MainWindow(QWidget):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.actionexit = QtWidgets.QAction(MainWindow)
+        self.actionexit.setObjectName("actionexit")
+        self.menu.addAction(self.actionexit)
+        self.menubar.addAction(self.menu.menuAction())
 
-        # self.actionexit = QtWidgets.QAction(MainWindow)
-        # self.actionexit.setObjectName("actionexit")
-        # print(1)
-        # self.group1 = QButtonGroup()  # 把按钮添加到逻辑分组里
-        # self.group1.addButton(self.radioButton, 1)  # 还可以设置按钮的id
-        # self.group1.addButton(self.radioButton_2, 2)
-        # self.group2 = QButtonGroup()  # 把按钮添加到逻辑分组里
-        # self.group2.addButton(self.radioButton_3, 2)  # 还可以设置按钮的id
-        # self.group2.addButton(self.radioButton_4, 3)
-        # self.group2.addButton(self.radioButton_5, 4)
-        # self.Customer = ''
-        # self.Phase = ''
-        # self.group1.buttonClicked.connect(self.gettext())
-        # self.group2.buttonClicked.connect(self.gettext())
+        # self.retranslateUi(MainWindow)
+        # QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         self.action = QAction('退出(&X)')  # 定义一个Action即动作
         self.action.setStatusTip('Exit application')  # 状态栏信息
@@ -108,606 +138,45 @@ class Ui_MainWindow(QWidget):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        # self.pushButton.clicked.connect(MainWindow.close)
-        self.pushButton.clicked.connect(self.gettext)
-        self.button_clicked_signal.connect(self.excel)
-        # self.close_signal.connect(self.main_close)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "请选择客户别："))
-        self.label_2.setText(_translate("MainWindow", "请选择Phase："))
-        self.textBrowser.setHtml(_translate("MainWindow",
-                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                            "p, li { white-space: pre-wrap; }\n"
-                                            "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                            "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600; color:#0000ff;\">模板选择</span></p></body></html>"))
+        self.textEdit_2.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:36pt; color:#fe79c7;\">模板选择</span></p></body></html>"))
+        self.textEdit_3.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>"))
+        self.textEdit_4.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择Phase：</span></p></body></html>"))
+        self.radioButton_5.setText(_translate("MainWindow", "C38(AIO)"))
+        self.radioButton.setText(_translate("MainWindow", "T88(AIO)"))
+        self.radioButton_3.setText(_translate("MainWindow", "B(SDV)"))
+        self.radioButton_4.setText(_translate("MainWindow", "C(SIT)"))
+        self.radioButton_2.setText(_translate("MainWindow", "EELP+"))
         self.pushButton.setText(_translate("MainWindow", "确认"))
-        self.radioButton.setText(_translate("MainWindow", "C38(AIO)"))
-        self.radioButton_2.setText(_translate("MainWindow", "T88(AIO)"))
-        self.radioButton_4.setText(_translate("MainWindow", "B(SDV)"))
-        self.radioButton_3.setText(_translate("MainWindow", "C(SIT)"))
-        self.radioButton_5.setText(_translate("MainWindow", "EELP+"))
+        self.textEdit_5.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:8pt; color:#00ffff;\">运行状态：</span></p></body></html>"))
+        self.textEdit_7.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:8pt; color:#e0feff;\"> </span></p></body></html>"))
         self.menu.setTitle(_translate("MainWindow", "选项"))
-        self.action.setText(_translate("MainWindow", "exit"))
-
-    def gettext(self):
-        self.Customer = ''
-        self.Phase = ''
-        if self.radioButton.isChecked():
-            self.Customer = self.radioButton.text()
-        elif self.radioButton_2.isChecked():
-            self.Customer = self.radioButton_2.text()
-        if self.radioButton_3.isChecked():
-            self.Phase = self.radioButton_3.text()
-        elif self.radioButton_4.isChecked():
-            self.Phase = self.radioButton_4.text()
-        elif self.radioButton_5.isChecked():
-            self.Phase = self.radioButton_5.text()
-        # print(self.Customer, 1)
-        # print(self.Phase, 2)
-        if self.Customer == '' or self.Phase == '':
-            QtWidgets.QMessageBox.information(None, 'What?', '貌似有没有选的啊，快去选一个吧！')
-        else:
-            # print(1)
-            # self.gettext()
-            self.button_clicked_signal.emit()
-            # print('2')
-            # 发送信号
-            # self.pushButton.clicked.connect(self.MainWindow.close)
-            # return {"Customer": self.Customer, "Phase": self.Phase}
-            # pass
-    def excel(self):
-        # import pandas as pd
-        # import pprint
-        # from pathlib import Path
-        # import os
-        # import numpy as np
-
-        import pandas as pd
-        # import pprint
-        # from pathlib import Path
-        import os, sys
-        # import numpy as np
-
-        # current_work_dir = os.path.dirname(__file__)  # 当前文件所在的目录
-        # os.path.abspath('.')
-        path1 = os.path.dirname(os.path.realpath(sys.executable))
-        # path2 = os.path.dirname(os.path.dirname(os.path.realpath(sys.executable)))
-        src_file = path1 + "\ProjectAIO.xlsx"
-        # print(src_file,1)
-        # with open('path.txt', 'w') as f:  # 设置文件对象
-        #     print(src_file, file=f)
-        if not os.path.exists(src_file):
-            QtWidgets.QMessageBox.information(None, '缺少文件?', '同级目录下没有rojectAIO.xlsx')
-        else:
-            Customer = self.Customer
-            sheetnum = self.Phase
-            if sheetnum == "EELP+":
-                sheetnum = '4'
-            elif sheetnum == "C(SIT)":
-                sheetnum = '3'
-            elif sheetnum == "B(SDV)":
-                sheetnum = '2'
-            if sheetnum == '2':
-                df = pd.read_excel(src_file, header=5, sheet_name=int(sheetnum)).iloc[:,
-                     2:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(df.shape)#获取行数列数
-                # if 'Unnamed: 26' in df.columns:
-                #     # print(1)
-                #     df = df.drop(labels='Unnamed: 26', axis=1)
-                print(df.shape)  # 获取行数列数
-                # # 显示所有列
-                pd.set_option('display.max_columns', None)
-                # # 显示所有行
-                # pd.set_options('display.max_rows', None)
-                # print(df.columns)
-                # print(df.iloc[:1, :])
-                # pprint.pprint(df)
-                # sheet = pd.read_excel(src_file, sheet_name=0)
-                # print(sheet)
-                # print(df)
-                # 转换字典
-                # df_dict = df.to_dict(orient='records')
-                # 转换列表
-                # df_list = df.values
-                # # pprint.pprint(df_list)
-                # print(df_list[0])
-                # 注意带上inplace=True参数用于更新作用于本数据集，而不是返回一个新的数据集。
-                # df.rename(columns={'6-英语':'english'},inplace=True)
-                # 如果需要重命名行索引，可以通过df.rename(index={‘原索引’:‘重命名索引’})的方式进行重命名。
-                # 更多的，如果要重命名多个列，可以传入一个需要重命名的多个字典值，进行多个列的重命名。
-                # df[['1-学号','2-姓名','3-年龄']].rename(columns={'1-学号':'ID','2-姓名':'name','3-年龄':'age'})
-                columnsRename = {
-                    'Category': 'Category', 'Test Title': 'TestTitle', 'Sub test title': 'Subtesttitle',
-                    'Test Item': 'TestItem', 'Priority': 'Priority', 'Release Date': 'ReleaseDate', 'Owner ': 'Owner',
-                    # 'Version': 'Version',
-                    'Actual Time': 'AT_Totaltime',
-                    'Unnamed: 10': 'AT_AttendTime', 'Unnamed: 11': 'AT_UnattendTime', 'Unnamed: 12': 'AT_Automation',
-                    'DQMS Test Plan': 'DQMS_AttendTime', 'Unnamed: 14': 'DQMS_UnattendTime',
-                    'Test Units\n/Config': 'TestUnitsConfig', 'Smart Item': 'SmartItem',
-                    'AIO SW Test plan Matrix for Planning': 'Cusumer', 'Unnamed: 18': 'Commercial', 'Unnamed: 19': 'SDV',
-                    'Unnamed: 20': 'SIT', 'Unnamed: 21': 'Coverage',
-                    'Feature Support': 'FeatureSupport', 'Base time-support': 'Basetimesupport', 'TE': 'TE',
-                    'Schedule': 'Schedule',
-                    'Config-all test units': 'Configalltestunits', 'Config-all test time': 'Configalltesttime',
-                    'Config-Automation Item': 'ConfigAutomationItem', 'Config-Automation time': 'ConfigAutomationtime',
-                    'Config-Leverage Item': 'ConfigLeverageItem',
-                    'Config-Leverage time': 'ConfigLeveragetime', 'Config-Smart Item占总case比例': 'ConfigSmartItemper',
-                    'Config-Smart time': 'ConfigSmarttime',
-                    'Comments': 'Comments', 'Project test SKU-Optimize': 'ProjecttestSKUOptimize',
-                    'Attend time-Optimize': 'AttendtimeOptimize',
-                    'Planning after Optimize': 'SKU1', 'Unnamed: 38': 'SKU2', 'Unnamed: 39': 'SKU3', 'Unnamed: 40': 'SKU4',
-                    'Unnamed: 41': 'SKU5',
-                    'Unnamed: 42': 'SKU6', 'Unnamed: 43': 'SKU7', 'Unnamed: 44': 'SKU8', 'Unnamed: 45': 'SKU9',
-                    'Unnamed: 46': 'SKU10', 'Config-Retest Cycle': 'ConfigRetestCycle',
-                    'Config-Retest SKU': 'ConfigRetestSKU', 'Config-Retest time': 'ConfigRetesttime',
-                }
-                if 'Unnamed: 47' in df.columns:
-                    columnsRename["Unnamed: 47"] = "SKU11"
-                if 'Unnamed: 48' in df.columns:
-                    columnsRename["Unnamed: 48"] = "SKU12"
-                if 'Unnamed: 49' in df.columns:
-                    columnsRename["Unnamed: 49"] = "SKU13"
-                if 'Unnamed: 50' in df.columns:
-                    columnsRename["Unnamed: 50"] = "SKU14"
-                if 'Unnamed: 51' in df.columns:
-                    columnsRename["Unnamed: 51"] = "SKU15"
-                if 'Unnamed: 52' in df.columns:
-                    columnsRename["Unnamed: 52"] = "SKU16"
-                if 'Unnamed: 53' in df.columns:
-                    columnsRename["Unnamed: 53"] = "SKU17"
-                if 'Unnamed: 54' in df.columns:
-                    columnsRename["Unnamed: 54"] = "SKU18"
-                if 'Unnamed: 55' in df.columns:
-                    columnsRename["Unnamed: 55"] = "SKU19"
-                if 'Unnamed: 56' in df.columns:
-                    columnsRename["Unnamed: 56"] = "SKU20"
-
-                df.rename(columns=columnsRename, inplace=True)
-                # print(df.iloc[:8, :])
-                # print(df.columns) #获取表头
-                # df = df.drop([0], axis=0)
-                # df = df.drop([1], axis=0)
-                # df = df.drop([2], axis=0)
-                # 删除data中索引为0和1的行
-                df = df.drop(index=[0, 1, 2, 3])
-
-                # 删除data中列名为“source”和“target”的列
-                # df.drop(columns=['source', 'target'])
-                # 参数axis为0表示在0轴（列）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的行。
-                # df.drop("姓名", axis=0)
-                df = df.drop(index=df[(df.Owner == '.Mins')].index.tolist())
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-                # print(df.shape)  # 获取行数列数
-                # print(df.iloc[2188:, :])
-
-                # print(index)
-                # print(range(0,len(index)))
-
-                # 参数axis为1表示在1轴（行）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的列。
-                # df.drop("姓名", axis=1)
-
-                # # 插入列
-                # df.insert(5, "Category", value='')
-                # df.insert(6, "Category2", value='')
-                # # 合并单元格
-                # df['ItemNo_d'] = df['ItemNo_d'].ffill()
-                # df['Item_d'] = df['Item_d'].ffill()
-                # df['Version'] = df['Version'].ffill()
-                # df['ReleaseDate'] = df['ReleaseDate'].ffill()
-
-                # index = df[(df.Owner == '.Hrs')].index.tolist()
-                # print(len(index))
-                # # print(df[(df.Owner == '.Hrs')])
-                # sub_Category = ['Pre-Installed App', 'WiGig Dock', 'USB Dock', 'Folio Case(Draft)', 'USB-C Dock', 'Thunderbolt Dock', 'Hybrid Dock',
-                #                 'Power USB-C  Travel Hub & USB-C Mini dock', 'BT Folio Case', 'Lenovo 3-IN-1 Hub', 'USB-C Travel Hub Gen2',
-                #                 'Lenovo USB-C 7-in-1 Hub']
-                # for num in range(0, len(index)):
-                #     # print(num)
-                #     # print(data.loc[data['部门'] == 'A', ['姓名', '工资']])  # 部门为A，打印姓名和工资
-                #     # print(data.loc[data['工资'] < 3000, ['姓名', '工资']])  # 查找工资小于3000的人
-                #     # print(df['ItemNo_d'][index[num]])
-                #     now_Category = '只记大类'
-                #     if df['ItemNo_d'][index[num]] not in sub_Category:
-                #         now_Category = df['ItemNo_d'][index[num]]
-                #     if num != len(index)-1:
-                #         df.loc[index[num]: index[num+1], 'Category'] = now_Category # 只记大类
-                #         df.loc[index[num]: index[num + 1], 'Category2'] = df['ItemNo_d'][index[num]]
-                #     else:#最后一个类别
-                #         df.loc[index[num]:df.shape[0], 'Category'] = now_Category  # 只记大类
-                #         df.loc[index[num]:df.shape[0], 'Category2'] = df['ItemNo_d'][index[num]]
-                df = df.drop(index=df[(df.Owner == '.Hrs')].index.tolist())
-                df = df.fillna('')  # 替换
-                df = df.drop(index=df[(df.Owner == '')].index.tolist())
-                # df = df.drop(index=df[(df.TestItems == '')].index.tolist())
-                # print(df.head(8))
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-
-                # phaseinexcel = pd.read_excel(src_file, header=1, sheet_name=int(sheetnum)).iloc[0:3, 1:3]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(phaseinexcel)
-                # print(phaseinexcel.columns[0])
-                Phase = ''
-                # if "B(SDV)" in phaseinexcel.columns[0]:
-                #     Phase = "B(FVT)"
-                # elif "C(SIT)" in phaseinexcel.columns[0]:
-                #     Phase = "C(SIT)"
-                if sheetnum == '2':
-                    Phase = "B(SDV)"
-                df.insert(0, "Customer", value=Customer)
-                df.insert(1, "Phase", value=Phase)
-                # wr_data = df.to_csv('out.csv')
-                # 第一个参数为保存的文件名，注意，不能为空
-                # sheet_name
-                # 设置excel文件脚注
-                # index = False
-                # 这个意思是不将索引写入到文件中
-                # print(df.iloc[1962:1965, :])
-                df['ReleaseDate'] = df['ReleaseDate'].apply(
-                    lambda x: x.strftime('%Y-%m-%d') if 'datetime.datetime' in str(type(x)) else x)  # 批量类型转换
-                print(df.shape)  # 获取行数列数
-                with open('dataAIO.txt', 'w') as f:  # 设置文件对象
-                    print(df.shape, df.columns, file=f)
-                df.to_excel('uploadAIO.xlsx', sheet_name="sheet1", index=False,
-                            engine='xlsxwriter')  # engine默认是openpyxl， openpyxl生成的文件DDIS上传不了
-
-                # write = pd.ExcelWriter("test.xlsx")  # 新建xlsx文件。
-                # df.to_excel(write, sheet_name='Sheet1', index=False)  # 写入文件的Sheet1
-                # write.save()  # 这里一定要保存
-
-            if sheetnum == '3':
-                df = pd.read_excel(src_file, header=5, sheet_name=int(sheetnum)).iloc[:,
-                     2:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(df.shape)#获取行数列数
-                # if 'Unnamed: 26' in df.columns:
-                #     # print(1)
-                #     df = df.drop(labels='Unnamed: 26', axis=1)
-                print(df.shape)  # 获取行数列数
-                # # 显示所有列
-                pd.set_option('display.max_columns', None)
-                # # 显示所有行
-                # pd.set_options('display.max_rows', None)
-                # print(df.columns)
-                # print(df.iloc[:1, :])
-                # pprint.pprint(df)
-                # sheet = pd.read_excel(src_file, sheet_name=0)
-                # print(sheet)
-                # print(df)
-                # 转换字典
-                # df_dict = df.to_dict(orient='records')
-                # 转换列表
-                # df_list = df.values
-                # # pprint.pprint(df_list)
-                # print(df_list[0])
-                # 注意带上inplace=True参数用于更新作用于本数据集，而不是返回一个新的数据集。
-                # df.rename(columns={'6-英语':'english'},inplace=True)
-                # 如果需要重命名行索引，可以通过df.rename(index={‘原索引’:‘重命名索引’})的方式进行重命名。
-                # 更多的，如果要重命名多个列，可以传入一个需要重命名的多个字典值，进行多个列的重命名。
-                # df[['1-学号','2-姓名','3-年龄']].rename(columns={'1-学号':'ID','2-姓名':'name','3-年龄':'age'})
-                columnsRename = {
-                    'Category': 'Category', 'Test Title': 'TestTitle', 'Sub test title': 'Subtesttitle',
-                    'Test Item': 'TestItem', 'Priority': 'Priority', 'Release Date': 'ReleaseDate', 'Owner ': 'Owner',
-                    # 'Version': 'Version',
-                    'Actual Time': 'AT_Totaltime',
-                    'Unnamed: 10': 'AT_AttendTime', 'Unnamed: 11': 'AT_UnattendTime', 'Unnamed: 12': 'AT_Automation',
-                    'DQMS Test Plan': 'DQMS_AttendTime', 'Unnamed: 14': 'DQMS_UnattendTime',
-                    'Test Units\n/Config': 'TestUnitsConfig', 'Smart Item': 'SmartItem',
-                    'AIO SW Test plan Matrix for Planning': 'Cusumer', 'Unnamed: 18': 'Commercial', 'Unnamed: 19': 'SDV',
-                    'Unnamed: 20': 'SIT', 'Unnamed: 21': 'Coverage',
-                    'Feature Support': 'FeatureSupport', 'Base time-support': 'Basetimesupport', 'TE': 'TE',
-                    'Schedule': 'Schedule',
-                    'Config-all test units': 'Configalltestunits', 'Config-all test time': 'Configalltesttime',
-                    'Config-Automation Item': 'ConfigAutomationItem', 'Config-Automation time': 'ConfigAutomationtime',
-                    'Config-Leverage Item': 'ConfigLeverageItem',
-                    'Config-Leverage time': 'ConfigLeveragetime', 'Config-Smart Item占总case比例': 'ConfigSmartItemper',
-                    'Config-Smart time': 'ConfigSmarttime',
-                    'Comments': 'Comments', 'Project test SKU-Optimize': 'ProjecttestSKUOptimize',
-                    'Attend time-Optimize': 'AttendtimeOptimize',
-                    'Planning after Optimize': 'SKU1', 'Unnamed: 38': 'SKU2', 'Unnamed: 39': 'SKU3', 'Unnamed: 40': 'SKU4',
-                    'Unnamed: 41': 'SKU5',
-                    'Unnamed: 42': 'SKU6', 'Unnamed: 43': 'SKU7', 'Unnamed: 44': 'SKU8', 'Unnamed: 45': 'SKU9',
-                    'Unnamed: 46': 'SKU10', 'Config-Retest Cycle': 'ConfigRetestCycle',
-                    'Config-Retest SKU': 'ConfigRetestSKU', 'Config-Retest time': 'ConfigRetesttime',
-                }
-                if 'Unnamed: 47' in df.columns:
-                    columnsRename["Unnamed: 47"] = "SKU11"
-                if 'Unnamed: 48' in df.columns:
-                    columnsRename["Unnamed: 48"] = "SKU12"
-                if 'Unnamed: 49' in df.columns:
-                    columnsRename["Unnamed: 49"] = "SKU13"
-                if 'Unnamed: 50' in df.columns:
-                    columnsRename["Unnamed: 50"] = "SKU14"
-                if 'Unnamed: 51' in df.columns:
-                    columnsRename["Unnamed: 51"] = "SKU15"
-                if 'Unnamed: 52' in df.columns:
-                    columnsRename["Unnamed: 52"] = "SKU16"
-                if 'Unnamed: 53' in df.columns:
-                    columnsRename["Unnamed: 53"] = "SKU17"
-                if 'Unnamed: 54' in df.columns:
-                    columnsRename["Unnamed: 54"] = "SKU18"
-                if 'Unnamed: 55' in df.columns:
-                    columnsRename["Unnamed: 55"] = "SKU19"
-                if 'Unnamed: 56' in df.columns:
-                    columnsRename["Unnamed: 56"] = "SKU20"
-
-                df.rename(columns=columnsRename, inplace=True)
-                # print(df.iloc[:8, :])
-                # print(df.columns) #获取表头
-                # df = df.drop([0], axis=0)
-                # df = df.drop([1], axis=0)
-                # df = df.drop([2], axis=0)
-                # 删除data中索引为0和1的行
-                df = df.drop(index=[0, 1, 2, 3])
-
-                # 删除data中列名为“source”和“target”的列
-                # df.drop(columns=['source', 'target'])
-                # 参数axis为0表示在0轴（列）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的行。
-                # df.drop("姓名", axis=0)
-                df = df.drop(index=df[(df.Owner == '.Mins')].index.tolist())
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-                # print(df.shape)  # 获取行数列数
-                # print(df.iloc[2188:, :])
-
-                # print(index)
-                # print(range(0,len(index)))
-
-                # 参数axis为1表示在1轴（行）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的列。
-                # df.drop("姓名", axis=1)
-
-                # # 插入列
-                # df.insert(5, "Category", value='')
-                # df.insert(6, "Category2", value='')
-                # # 合并单元格
-                # df['ItemNo_d'] = df['ItemNo_d'].ffill()
-                # df['Item_d'] = df['Item_d'].ffill()
-                # df['Version'] = df['Version'].ffill()
-                # df['ReleaseDate'] = df['ReleaseDate'].ffill()
-
-                # index = df[(df.Owner == '.Hrs')].index.tolist()
-                # print(len(index))
-                # # print(df[(df.Owner == '.Hrs')])
-                # sub_Category = ['Pre-Installed App', 'WiGig Dock', 'USB Dock', 'Folio Case(Draft)', 'USB-C Dock', 'Thunderbolt Dock', 'Hybrid Dock',
-                #                 'Power USB-C  Travel Hub & USB-C Mini dock', 'BT Folio Case', 'Lenovo 3-IN-1 Hub', 'USB-C Travel Hub Gen2',
-                #                 'Lenovo USB-C 7-in-1 Hub']
-                # for num in range(0, len(index)):
-                #     # print(num)
-                #     # print(data.loc[data['部门'] == 'A', ['姓名', '工资']])  # 部门为A，打印姓名和工资
-                #     # print(data.loc[data['工资'] < 3000, ['姓名', '工资']])  # 查找工资小于3000的人
-                #     # print(df['ItemNo_d'][index[num]])
-                #     now_Category = '只记大类'
-                #     if df['ItemNo_d'][index[num]] not in sub_Category:
-                #         now_Category = df['ItemNo_d'][index[num]]
-                #     if num != len(index)-1:
-                #         df.loc[index[num]: index[num+1], 'Category'] = now_Category # 只记大类
-                #         df.loc[index[num]: index[num + 1], 'Category2'] = df['ItemNo_d'][index[num]]
-                #     else:#最后一个类别
-                #         df.loc[index[num]:df.shape[0], 'Category'] = now_Category  # 只记大类
-                #         df.loc[index[num]:df.shape[0], 'Category2'] = df['ItemNo_d'][index[num]]
-                df = df.drop(index=df[(df.Owner == '.Hrs')].index.tolist())
-                df = df.fillna('')  # 替换
-                df = df.drop(index=df[(df.Owner == '')].index.tolist())
-                # df = df.drop(index=df[(df.TestItems == '')].index.tolist())
-                # print(df.head(8))
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-
-                # phaseinexcel = pd.read_excel(src_file, header=1, sheet_name=int(sheetnum)).iloc[0:3, 1:3]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(phaseinexcel)
-                # print(phaseinexcel.columns[0])
-                Phase = ''
-                # if "B(SDV)" in phaseinexcel.columns[0]:
-                #     Phase = "B(FVT)"
-                # elif "C(SIT)" in phaseinexcel.columns[0]:
-                #     Phase = "C(SIT)"
-                if sheetnum == '3':
-                    Phase = "C(SIT)"
-                df.insert(0, "Customer", value=Customer)
-                df.insert(1, "Phase", value=Phase)
-                # wr_data = df.to_csv('out.csv')
-                # 第一个参数为保存的文件名，注意，不能为空
-                # sheet_name
-                # 设置excel文件脚注
-                # index = False
-                # 这个意思是不将索引写入到文件中
-                # print(df.iloc[1962:1965, :])
-
-                df['ReleaseDate'] = df['ReleaseDate'].apply(
-                    lambda x: x.strftime('%Y-%m-%d') if 'datetime.datetime' in str(type(x)) else x)  # 批量类型转换
-                # df['ReleaseDate'] = df['ReleaseDate'].apply(lambda x: print(x) if 'str' in str(type(x)) else print(type(x)))
-                print(df.shape)  # 获取行数列数
-                with open('dataAIO.txt', 'w') as f:  # 设置文件对象
-                    print(df.shape, df.columns, file=f)
-                df.to_excel('uploadAIO.xlsx', sheet_name="sheet1", index=False,
-                            engine='xlsxwriter')  # engine默认是openpyxl， openpyxl生成的文件DDIS上传不了
-
-                # write = pd.ExcelWriter("test.xlsx")  # 新建xlsx文件。
-                # df.to_excel(write, sheet_name='Sheet1', index=False)  # 写入文件的Sheet1
-                # write.save()  # 这里一定要保存
-
-            if sheetnum == '4':
-                df = pd.read_excel(src_file, header=5, sheet_name=int(sheetnum)).iloc[:,
-                     2:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(df.shape)#获取行数列数
-                # if 'Unnamed: 26' in df.columns:
-                #     # print(1)
-                #     df = df.drop(labels='Unnamed: 26', axis=1)
-                print(df.shape)  # 获取行数列数
-                # # 显示所有列
-                pd.set_option('display.max_columns', None)
-                # # 显示所有行
-                # pd.set_options('display.max_rows', None)
-                # print(df.columns)
-                # print(df.iloc[:1, :])
-                # pprint.pprint(df)
-                # sheet = pd.read_excel(src_file, sheet_name=0)
-                # print(sheet)
-                # print(df)
-                # 转换字典
-                # df_dict = df.to_dict(orient='records')
-                # 转换列表
-                # df_list = df.values
-                # # pprint.pprint(df_list)
-                # print(df_list[0])
-                # 注意带上inplace=True参数用于更新作用于本数据集，而不是返回一个新的数据集。
-                # df.rename(columns={'6-英语':'english'},inplace=True)
-                # 如果需要重命名行索引，可以通过df.rename(index={‘原索引’:‘重命名索引’})的方式进行重命名。
-                # 更多的，如果要重命名多个列，可以传入一个需要重命名的多个字典值，进行多个列的重命名。
-                # df[['1-学号','2-姓名','3-年龄']].rename(columns={'1-学号':'ID','2-姓名':'name','3-年龄':'age'})
-                columnsRename = {
-                    'Category': 'Category', 'Test Title': 'TestTitle', 'Sub test title': 'Subtesttitle',
-                    'Test Item': 'TestItem', 'Priority': 'Priority', 'Release Date': 'ReleaseDate', 'Owner ': 'Owner',
-                    # 'Version': 'Version',
-                    'Actual Time': 'AT_Totaltime',
-                    'Unnamed: 10': 'AT_AttendTime', 'Unnamed: 11': 'AT_UnattendTime', 'Unnamed: 12': 'AT_Automation',
-                    'DQMS Test Plan': 'DQMS_AttendTime', 'Unnamed: 14': 'DQMS_UnattendTime',
-                    'Test Units\n/Config': 'TestUnitsConfig', 'Smart Item': 'SmartItem',
-                    'AIO SW Test plan Matrix for Planning': 'Cusumer', 'Unnamed: 18': 'Commercial', 'Unnamed: 19': 'SDV',
-                    'Unnamed: 20': 'SIT', 'Unnamed: 21': 'Coverage',
-                    'Feature Support': 'FeatureSupport', 'Base time-support': 'Basetimesupport', 'TE': 'TE',
-                    'Schedule': 'Schedule',
-                    'Config-all test units': 'Configalltestunits', 'Config-all test time': 'Configalltesttime',
-                    'Config-Automation Item': 'ConfigAutomationItem', 'Config-Automation time': 'ConfigAutomationtime',
-                    'Config-Leverage Item': 'ConfigLeverageItem',
-                    'Config-Leverage time': 'ConfigLeveragetime', 'Config-Smart Item占总case比例': 'ConfigSmartItemper',
-                    'Config-Smart time': 'ConfigSmarttime',
-                    'Comments': 'Comments', 'Project test SKU-Optimize': 'ProjecttestSKUOptimize',
-                    'Attend time-Optimize': 'AttendtimeOptimize',
-                    'Planning after Optimize': 'SKU1', 'Unnamed: 38': 'SKU2', 'Unnamed: 39': 'SKU3', 'Unnamed: 40': 'SKU4',
-                    'Unnamed: 41': 'SKU5',
-                    'Unnamed: 42': 'SKU6', 'Unnamed: 43': 'SKU7', 'Unnamed: 44': 'SKU8', 'Unnamed: 45': 'SKU9',
-                    'Unnamed: 46': 'SKU10', 'Config-Retest Cycle': 'ConfigRetestCycle',
-                    'Config-Retest SKU': 'ConfigRetestSKU', 'Config-Retest time': 'ConfigRetesttime',
-                }
-                if 'Unnamed: 47' in df.columns:
-                    columnsRename["Unnamed: 47"] = "SKU11"
-                if 'Unnamed: 48' in df.columns:
-                    columnsRename["Unnamed: 48"] = "SKU12"
-                if 'Unnamed: 49' in df.columns:
-                    columnsRename["Unnamed: 49"] = "SKU13"
-                if 'Unnamed: 50' in df.columns:
-                    columnsRename["Unnamed: 50"] = "SKU14"
-                if 'Unnamed: 51' in df.columns:
-                    columnsRename["Unnamed: 51"] = "SKU15"
-                if 'Unnamed: 52' in df.columns:
-                    columnsRename["Unnamed: 52"] = "SKU16"
-                if 'Unnamed: 53' in df.columns:
-                    columnsRename["Unnamed: 53"] = "SKU17"
-                if 'Unnamed: 54' in df.columns:
-                    columnsRename["Unnamed: 54"] = "SKU18"
-                if 'Unnamed: 55' in df.columns:
-                    columnsRename["Unnamed: 55"] = "SKU19"
-                if 'Unnamed: 56' in df.columns:
-                    columnsRename["Unnamed: 56"] = "SKU20"
-
-                df.rename(columns=columnsRename, inplace=True)
-                # print(df.iloc[:8, :])
-                # print(df.columns) #获取表头
-                # df = df.drop([0], axis=0)
-                # df = df.drop([1], axis=0)
-                # df = df.drop([2], axis=0)
-                # 删除data中索引为0和1的行
-                df = df.drop(index=[0, 1, 2, 3])
-
-                # 删除data中列名为“source”和“target”的列
-                # df.drop(columns=['source', 'target'])
-                # 参数axis为0表示在0轴（列）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的行。
-                # df.drop("姓名", axis=0)
-                df = df.drop(index=df[(df.Owner == '.Mins')].index.tolist())
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-                # print(df.shape)  # 获取行数列数
-                # print(df.iloc[2188:, :])
-
-                # print(index)
-                # print(range(0,len(index)))
-
-                # 参数axis为1表示在1轴（行）上搜索名为“姓名”的对象，然后删除对象“姓名”对应的列。
-                # df.drop("姓名", axis=1)
-
-                # # 插入列
-                # df.insert(5, "Category", value='')
-                # df.insert(6, "Category2", value='')
-                # # 合并单元格
-                # df['ItemNo_d'] = df['ItemNo_d'].ffill()
-                # df['Item_d'] = df['Item_d'].ffill()
-                # df['Version'] = df['Version'].ffill()
-                # df['ReleaseDate'] = df['ReleaseDate'].ffill()
-
-                # index = df[(df.Owner == '.Hrs')].index.tolist()
-                # print(len(index))
-                # # print(df[(df.Owner == '.Hrs')])
-                # sub_Category = ['Pre-Installed App', 'WiGig Dock', 'USB Dock', 'Folio Case(Draft)', 'USB-C Dock', 'Thunderbolt Dock', 'Hybrid Dock',
-                #                 'Power USB-C  Travel Hub & USB-C Mini dock', 'BT Folio Case', 'Lenovo 3-IN-1 Hub', 'USB-C Travel Hub Gen2',
-                #                 'Lenovo USB-C 7-in-1 Hub']
-                # for num in range(0, len(index)):
-                #     # print(num)
-                #     # print(data.loc[data['部门'] == 'A', ['姓名', '工资']])  # 部门为A，打印姓名和工资
-                #     # print(data.loc[data['工资'] < 3000, ['姓名', '工资']])  # 查找工资小于3000的人
-                #     # print(df['ItemNo_d'][index[num]])
-                #     now_Category = '只记大类'
-                #     if df['ItemNo_d'][index[num]] not in sub_Category:
-                #         now_Category = df['ItemNo_d'][index[num]]
-                #     if num != len(index)-1:
-                #         df.loc[index[num]: index[num+1], 'Category'] = now_Category # 只记大类
-                #         df.loc[index[num]: index[num + 1], 'Category2'] = df['ItemNo_d'][index[num]]
-                #     else:#最后一个类别
-                #         df.loc[index[num]:df.shape[0], 'Category'] = now_Category  # 只记大类
-                #         df.loc[index[num]:df.shape[0], 'Category2'] = df['ItemNo_d'][index[num]]
-                df = df.drop(index=df[(df.Owner == '.Hrs')].index.tolist())
-                df = df.fillna('')  # 替换
-                df = df.drop(index=df[(df.Owner == '')].index.tolist())
-                # df = df.drop(index=df[(df.TestItems == '')].index.tolist())
-                # print(df.head(8))
-                # 会将标签重新从零开始顺序排序,使用参数设置drop=True删除旧的索引序列
-                df = df.reset_index(drop=True)
-
-                # phaseinexcel = pd.read_excel(src_file, header=1, sheet_name=int(sheetnum)).iloc[0:3, 1:3]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-                # print(phaseinexcel)
-                # print(phaseinexcel.columns[0])
-                Phase = ''
-                # if "B(SDV)" in phaseinexcel.columns[0]:
-                #     Phase = "B(FVT)"
-                # elif "C(SIT)" in phaseinexcel.columns[0]:
-                #     Phase = "C(SIT)"
-                if sheetnum == '4':
-                    Phase = "EELP+"
-                df.insert(0, "Customer", value=Customer)
-                df.insert(1, "Phase", value=Phase)
-                # wr_data = df.to_csv('out.csv')
-                # 第一个参数为保存的文件名，注意，不能为空
-                # sheet_name
-                # 设置excel文件脚注
-                # index = False
-                # 这个意思是不将索引写入到文件中
-                # print(df.iloc[1962:1965, :])
-                df['ReleaseDate'] = df['ReleaseDate'].apply(
-                    lambda x: x.strftime('%Y-%m-%d') if 'datetime.datetime' in str(type(x)) else x)  # 批量类型转换
-                print(df.shape)  # 获取行数列数
-                with open('dataAIO.txt', 'w') as f:  # 设置文件对象
-                    print(df.shape, df.columns, file=f)
-                df.to_excel('uploadAIO.xlsx', sheet_name="sheet1", index=False,
-                            engine='xlsxwriter')  # engine默认是openpyxl， openpyxl生成的文件DDIS上传不了
-
-                # write = pd.ExcelWriter("test.xlsx")  # 新建xlsx文件。
-                # df.to_excel(write, sheet_name='Sheet1', index=False)  # 写入文件的Sheet1
-                # write.save()  # 这里一定要保存
-
-            import sys
-            from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
-
-            QMessageBox.information(None, 'Excel转化', '%s-%s模板转换已完成' % (Customer, Phase),
-                                                 QMessageBox.Ok)  # 1
-            # self.close()
-            self.MainWindow.close()
-            # self.close_signal.emit()
-    # def main_close(self):
-    #     # self.close()
-    #     self.MainWindow.close()
-
-
-
+        self.actionexit.setText(_translate("MainWindow", "exit"))
