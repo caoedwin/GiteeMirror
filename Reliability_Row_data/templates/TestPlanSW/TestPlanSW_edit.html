@@ -1844,14 +1844,15 @@
            //AB
            if(change.id ===2 || change.id ===3){
                //console.log("AB");
-              if(caseid_temp.toLowerCase() ==='uth001_07'||this.conAitem[key] !== 0 ){
+              if(caseid_temp.toLowerCase() ==='uth001_07'||this.conAitem[key] !== "Y" ){
                this.CAT[key]=0;
            }
               else if(caseid_temp.toLowerCase() === 'compal_2'||caseid_temp ==='STA017') {
                this.CAT[key]=row.basetimeA * 5;
            }
               else{
-               this.CAT[key]=isNaN(row.basetimeA * this.conAitem[key])?0:row.basetimeA * this.conAitem[key];
+                  this.CAT[key]=row.basetimeA * this.proTS[key];
+               {#this.CAT[key]=isNaN(row.basetimeA * this.conAitem[key])?0:row.basetimeA * this.conAitem[key];#}
            }
            }
            //AD
@@ -1931,14 +1932,15 @@
            //AB
            if(change.id ===2 || change.id ===3){
                //console.log("AB");
-              if(caseid_temp.toLowerCase() ==='uth001_07'||this.form.conAitem !== 0 ){
+              if(caseid_temp.toLowerCase() ==='uth001_07'||this.form.conAitem !== "Y" ){
                this.form.CAT=0;
            }
               else if(caseid_temp.toLowerCase() === 'compal_2'||caseid_temp ==='STA017') {
                this.form.CAT=this.form.basetimeA * 5;
            }
               else{
-               this.form.CAT=isNaN(this.form.basetimeA * this.form.conAitem)?0:this.form.basetimeA * this.form.conAitem;
+                  this.form.CAT=this.form.basetimeA * this.form.proTS;
+               {#this.form.CAT=isNaN(this.form.basetimeA * this.form.conAitem)?0:this.form.basetimeA * this.form.conAitem;#}
            }
            }
            //AD
