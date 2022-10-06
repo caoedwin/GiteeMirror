@@ -105,7 +105,7 @@
       line-height: 10px!important;
   }
   .ColorSetPro{
-      background-image: linear-gradient(to left, rgba(14,104,158,0.46), rgba(14,104,158, 1));
+      background-image: linear-gradient(to left, rgba(107,171,210,0.66), rgba(63,119,153, 1));
       {#text-align: center;#}
       text-align: left!important;
       color: #595d60;
@@ -119,9 +119,9 @@
       background-image: url("/static/src/test20.jpg"),url("/static/src/test12.jpg");
       background-repeat: no-repeat,no-repeat;
       /*图片从左往右移动的百分比大小，从上往下百分比大小，重复方式 换成数值同样如此，在这里没有调整大小的方法*!*/
-      background-position: 0% 20%, 50% 20%;
+      background-position: 0% 20%, 50% 18%;
       /*从左到右，从上到下的缩放比例，单位px则为px缩放*/
-      background-size: 50% 93.5%,100% 93.5%;
+      background-size: 47% 95%,100% 95%;
   }
 
   {#.backgroundStyle{#}
@@ -158,7 +158,7 @@
 
         <div class="col-md-3">
             <div id="testME" style="display: none;margin-left: 60px;">
-                <table id="tableME" class="table table-bordered" style="margin-left: 29px;margin-top: 50px;">
+                <table id="tableME" class="table table-bordered" style="margin-left: 29px;margin-top: 101px;">
 {#                <table style="width: 50px;">#}
                     <tr><td class="ColorSet1">
                       <el-tooltip placement="left" effect="light">
@@ -195,7 +195,7 @@
                 </table>
             </div>
             <div id="testAuto" style="margin-left: 60px;display: none">
-                <table id="tableAuto" class="table table-bordered" style="margin-left: 29px;margin-top: 101px;">
+                <table id="tableAuto" class="table table-bordered" style="margin-left: 29px;margin-top: 50px;">
                     <tr><td class="ColorSet1">
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">管理員維護信息</div>
@@ -231,7 +231,7 @@
                 </table>
             </div>
             <div id="testINV" style="margin-left: 60px;display: none">
-                <table id="tableINV" class="table table-bordered" style="margin-left: 29px;margin-top: 151px;">
+                <table id="tableINV" class="table table-bordered" style="margin-left: 29px;margin-top: 253px;">
                     <tr><td class="ColorSet1">
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">各專案INV<br />測試結果的<br/>上傳，編輯，<br />搜索，Summ</br>ary，Top信息</div>
@@ -319,7 +319,7 @@
                 </table>
             </div>
             <div id="testSW" style="margin-left: 60px;display: none">
-                <table id="tableSW" class="table table-bordered" style="margin-left: 29px;margin-top: 253px;">
+                <table id="tableSW" class="table table-bordered" style="margin-left: 29px;margin-top: 151px;">
                     <tr><td class="ColorSet1">
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">C38(NB)專案<br />TestPlan的上<br />傳編輯，搜索</div>
@@ -508,7 +508,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div style="margin: 0 auto;height: 528px;">
+            <div style="margin: 0 auto;height: 524px;">
 {#            <div style="margin: 0 auto;height: 510px;">#}
             <table class="table table-bordered">
                 <tr>
@@ -523,8 +523,6 @@
                     <td id="QILStyle" class="ColorSetLesson" onclick="alertQIL()">QIL</td>
                 </tr>
                 <tr>
-{#                    <td style="text-align: center">11111</td>#}
-{#                    <td style="text-align: center">11111</td>#}
 
                     <td id="AutoStyle" class="ColorSet" onclick="alertAuto()">Automation</td>
                     <td id="SMStyle" class="ColorSetLesson" onclick="alertSM()">SW&ME</td>
@@ -540,8 +538,8 @@
                     <td id="INStyle" class="ColorSetIssue" onclick="alertIN()">Issue Notes</td>
                 </tr>
                 <tr>
-{#                    <td style="text-align: center">11111</td>#}
-                    <td id="INVStyle" class="ColorSet" onclick="alertINV()">INV</td>
+
+                    <td id="SWStyle" class="ColorSet" onclick="alertSW()">SW</td>
                     <td id="KIStyle" class="ColorSetIssue" onclick="alertKI()">Known Issue</td>
                 </tr>
                 <tr>
@@ -552,8 +550,7 @@
                     </td>
                 </tr>
                 <tr>
-{#                    <td style="text-align: center">11111</td>#}
-                    <td id="SWStyle" class="ColorSet" onclick="alertSW()">SW</td>
+                    <td id="INVStyle" class="ColorSet" onclick="alertINV()">INV</td>
                     <td id="InfoStyle" class="ColorSetDep" onclick="alertInfo()">PersonalInfo</td>
                 </tr>
                 <tr>
@@ -564,24 +561,20 @@
                 </tr>
                 <tr>
                     <td id="CQMStyle" class="ColorSetXQM" onclick="alertCQM()">CQM</td>
-{#                    <td style="text-align: center">11111</td>#}
-{#                    <td style="text-align: center">11111</td>#}
                     <td id="CDMStyle" class="ColorSetRea" onclick="alertCDM()">CDM</td>
                 </tr>
                 <tr>
                     <td id="OBIStyle" class="ColorSetXQM" onclick="alertOBI()">OBIResult</td>
-{#                    <td style="text-align: center">11111</td>#}
-{#                    <td style="text-align: center"></td>#}
                     <td id="BougStyle" class="ColorSetRea" onclick="alertBoug()">Bouncing</td>
                 </tr>
                 <tr>
                     <td id="DriverStyle" class="ColorSetXQM" onclick="alertDriver()">DriverTool</td>
 {#                    <td style="text-align: center"></td>#}
-                    <td style="text-align: center;background-color: #0E689E;">
+                    <td style="text-align: center;background-color: #3f7799;">
                         <a style="color: black;font-size: 24px;color: #FFFFFF!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" {% comment %}href="/ProjectInfoSearch/"{% endcomment %} target="_blank">ProjectInfo</a>
                     </td>
                     <td class="ColorSetPro">
-                        <a style="color: black;font-size: 100%;color: #8c939d!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" href="/ProjectInfoSearch/" target="_blank">Search</a>
+                        <a style="color: #465158;font-size: 17px;" href="/ProjectInfoSearch/" target="_blank">Search</a>
                     </td>
                 </tr>
             </table>
@@ -1726,5 +1719,7 @@
           el: "#app",
           delimiters: ['${', '}'],
       })
+
+    $("#showUp").css('display','none');
     </script>
 {% endblock %}
