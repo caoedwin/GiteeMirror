@@ -1366,6 +1366,7 @@ def INVGantt_summary(request):
                                                         Test_Start__range=Test_Endperiod).count()
                     # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
                     PlanningNo = INVGantt.objects.filter(Status="Planning").count()
+
                     mock_data4.append({"KeyPart": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})

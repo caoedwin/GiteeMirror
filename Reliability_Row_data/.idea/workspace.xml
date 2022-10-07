@@ -6,7 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/INVGantt/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/Excel_InputAIO.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/Excel_InputAIO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/Excel_InputNB.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/Excel_InputNB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/excelTrans.zip" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/excelTrans.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/excelTransAIO.zip" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/excelTransAIO.zip" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/TestPlanSW/TestPlanSW-search/</find>
-      <find>TestPlanSW</find>
-      <find>list_filter</find>
-      <find>Year</find>
-      <find>Edit-AIO</find>
       <find>DriverTool</find>
       <find>Bouncing</find>
       <find>ColorSetRea</find>
@@ -85,6 +84,11 @@
       <find>cors</find>
       <find>edit</find>
       <find>setC</find>
+      <find>Execution_Top10</find>
+      <find>content4</find>
+      <find>tableData4</find>
+      <find>mock_data4</find>
+      <find>retest_time</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -143,16 +147,16 @@
         <option value="$PROJECT_DIR$/CQM/views.py" />
         <option value="$PROJECT_DIR$/Reliability_Row_data/urls.py" />
         <option value="$PROJECT_DIR$/mongotest/views.py" />
-        <option value="$PROJECT_DIR$/INVGantt/views.py" />
         <option value="$PROJECT_DIR$/Reliability_Row_data/settings.py" />
         <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_edit.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit.html" />
+        <option value="$PROJECT_DIR$/INVGantt/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
-    <option name="y" value="51" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1" />
+    <option name="y" value="50" />
     <option name="width" value="1920" />
     <option name="height" value="1020" />
   </component>
@@ -163,6 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,13 +178,18 @@
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="TestPlanSW" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Package" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -630,6 +640,7 @@
       <workItem from="1663040051130" duration="695000" />
       <workItem from="1663040880336" duration="9419000" />
       <workItem from="1664409293031" duration="1237000" />
+      <workItem from="1665019972053" duration="9893000" />
     </task>
     <servers />
   </component>
@@ -648,7 +659,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5742702000" />
+    <option name="totallyTimeSpent" value="5752595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -660,11 +671,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
       <window_info id="Favorites" order="0" sideWeight="0.51502144" side_tool="true" weight="0.23117569" />
-      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22853369" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22853369" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
@@ -682,7 +694,7 @@
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50317967" weight="0.3006135" />
       <window_info anchor="bottom" id="SciView" order="15" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
       <window_info anchor="bottom" id="TypeScript" order="16" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="17" sideWeight="0.5006605" weight="0.2822086" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="17" sideWeight="0.5006605" visible="true" weight="0.2822086" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -733,43 +745,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/node_modules/bootstrap-icons/font/bootstrap-icons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3097">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/node_modules/bootstrap-icons/font/bootstrap-icons.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings_server_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="497" selection-start-line="497" selection-end-line="497" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings_server20220802.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="64" column="10" lean-forward="true" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/UserIP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1780">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5657">
@@ -1137,20 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="2256" column="40" lean-forward="true" selection-start-line="2256" selection-start-column="40" selection-end-line="2256" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#128591#129862#0" />
-            <element signature="e#130094#131355#0" />
-            <element signature="e#131485#131919#0" />
-            <element signature="e#132025#132892#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/INVGantt/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1233,13 +1194,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
+    <entry file="file://$PROJECT_DIR$/TestPlanME/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="6974" column="73" lean-forward="true" selection-start-line="6974" selection-start-column="73" selection-end-line="6974" selection-end-column="73" />
+        <state relative-caret-position="672">
+          <caret line="469" column="70" selection-start-line="469" selection-start-column="55" selection-end-line="469" selection-end-column="70" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#589#107299#0" />
+            <element signature="e#812#3858#0" />
+            <element signature="e#4040#6364#0" />
+            <element signature="e#6391#6500#0" />
+            <element signature="e#10321#13589#0" />
+            <element signature="e#13836#16600#0" />
+            <element signature="e#16624#17547#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPlanME/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="83" column="18" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#127#1782#0" />
+            <element signature="e#1822#2904#0" />
+            <element signature="e#4379#6320#0" />
+            <element signature="e#6360#8584#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3847">
+          <caret line="1454" column="36" selection-start-line="1454" selection-start-column="23" selection-end-line="1454" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
             <element signature="e#838#3182#0" />
             <element signature="e#3274#4013#0" />
             <element signature="e#4034#4403#0" />
@@ -1247,7 +1237,9 @@
             <element signature="e#4910#5294#0" />
             <element signature="e#5305#5635#0" />
             <element signature="e#5658#6049#0" />
-            <element signature="e#7294#107224#0" />
+            <element signature="e#7351#26393#0" />
+            <element signature="e#26466#72973#0" />
+            <element signature="e#73353#86835#0" />
             <element signature="e#107335#351671#0" />
             <element signature="e#107568#107582#0" />
             <element signature="e#163128#166213#0" />
@@ -1279,6 +1271,38 @@
             <element signature="e#551624#590771#0" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="124" column="57" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#el-table#0;n#template#1;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="145" column="8" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1388" column="102" selection-start-line="1388" selection-start-column="102" selection-end-line="1388" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Package/Package_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9260" />
       </provider>
     </entry>
   </component>
