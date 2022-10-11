@@ -47,6 +47,10 @@ class Ui_MainWindow(QWidget):
         self.frame.setObjectName("frame")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.frame)
         self.gridLayout_2.setObjectName("gridLayout_2")
+        self.pushButton = QtWidgets.QPushButton(self.frame)
+        self.pushButton.setStyleSheet("font: 9pt \"楷体\";")
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_2.addWidget(self.pushButton, 8, 6, 1, 1, QtCore.Qt.AlignRight)
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setMinimumSize(QtCore.QSize(0, 140))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 140))
@@ -70,36 +74,39 @@ class Ui_MainWindow(QWidget):
         self.radioButton.setObjectName("radioButton")
         self.gridLayout_3.addWidget(self.radioButton, 0, 1, 1, 1)
         self.gridLayout_6.addLayout(self.gridLayout_3, 0, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.frame_2, 4, 0, 1, 3)
-        self.textEdit_5 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_5.setMinimumSize(QtCore.QSize(60, 60))
-        self.textEdit_5.setMaximumSize(QtCore.QSize(120, 60))
-        self.textEdit_5.setObjectName("textEdit_5")
-        self.gridLayout_2.addWidget(self.textEdit_5, 8, 0, 1, 1)
-        self.textEdit_2 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_2.setMaximumSize(QtCore.QSize(16777215, 120))
-        self.textEdit_2.setObjectName("textEdit_2")
-        self.gridLayout_2.addWidget(self.textEdit_2, 2, 0, 1, 3)
-        self.pushButton = QtWidgets.QPushButton(self.frame)
-        self.pushButton.setStyleSheet("font: 9pt \"楷体\";")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_2.addWidget(self.pushButton, 8, 2, 1, 1, QtCore.Qt.AlignRight)
-        self.textEdit_4 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_4.setMinimumSize(QtCore.QSize(200, 50))
-        self.textEdit_4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.textEdit_4.setObjectName("textEdit_4")
-        self.gridLayout_2.addWidget(self.textEdit_4, 6, 0, 1, 3)
-        self.textEdit_3 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_3.setMinimumSize(QtCore.QSize(220, 50))
-        self.textEdit_3.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.textEdit_3.setStyleSheet(
-            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-            "p, li { white-space: pre-wrap; }\n"
-            "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-            "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>")
-        self.textEdit_3.setObjectName("textEdit_3")
-        self.gridLayout_2.addWidget(self.textEdit_3, 3, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.frame_2, 4, 0, 1, 7)
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.label_3.setStyleSheet("font: 28pt \"楷体\";\n"
+                                   "color: rgb(255, 170, 255);\n"
+                                   "font-weight:bold;\n"
+                                   "text-align:center;")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 7, QtCore.Qt.AlignHCenter)
+        self.label_4 = QtWidgets.QLabel(self.frame)
+        self.label_4.setMinimumSize(QtCore.QSize(60, 60))
+        self.label_4.setMaximumSize(QtCore.QSize(100, 60))
+        self.label_4.setStyleSheet("font: 9pt \"楷体\";\n"
+                                   "color: rgb(0, 255, 255);\n"
+                                   "font-weight:bold;")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout_2.addWidget(self.label_4, 7, 0, 1, 1)
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setMinimumSize(QtCore.QSize(0, 60))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.label.setStyleSheet("font: 14pt \"楷体\";\n"
+                                 "color: rgb(0, 255, 255);\n"
+                                 "font-weight:bold;")
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 3, 0, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setMinimumSize(QtCore.QSize(0, 60))
+        self.label_2.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.label_2.setStyleSheet("font: 14pt \"楷体\";\n"
+                                   "color: rgb(0, 255, 255);\n"
+                                   "font-weight:bold;")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_2.addWidget(self.label_2, 5, 0, 1, 1)
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -135,12 +142,16 @@ class Ui_MainWindow(QWidget):
         self.radioButton_3.setObjectName("radioButton_3")
         self.gridLayout_4.addWidget(self.radioButton_3, 0, 0, 1, 1)
         self.gridLayout_5.addLayout(self.gridLayout_4, 0, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.frame_3, 7, 0, 1, 3)
-        self.textEdit_7 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_7.setMinimumSize(QtCore.QSize(60, 60))
-        self.textEdit_7.setMaximumSize(QtCore.QSize(180, 60))
-        self.textEdit_7.setObjectName("textEdit_7")
-        self.gridLayout_2.addWidget(self.textEdit_7, 8, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_3, 6, 0, 1, 7)
+        self.label_5 = QtWidgets.QLabel(self.frame)
+        self.label_5.setMinimumSize(QtCore.QSize(180, 60))
+        self.label_5.setMaximumSize(QtCore.QSize(180, 60))
+        self.label_5.setStyleSheet("font: 9pt \"楷体\";\n"
+                                   "color: rgb(255, 255, 127);\n"
+                                   "font-weight:bold;")
+        self.label_5.setText("")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_2.addWidget(self.label_5, 7, 1, 1, 1)
         self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -156,7 +167,7 @@ class Ui_MainWindow(QWidget):
         self.actionexit.setObjectName("actionexit")
         # self.menu.addAction(self.actionexit)
         # self.menubar.addAction(self.menu.menuAction())
-
+        #
         # self.retranslateUi(MainWindow)
         # QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -175,41 +186,15 @@ class Ui_MainWindow(QWidget):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton.setText(_translate("MainWindow", "确认"))
         self.radioButton_5.setText(_translate("MainWindow", "C38(AIO)"))
         self.radioButton.setText(_translate("MainWindow", "T88(AIO)"))
-        self.textEdit_5.setHtml(_translate("MainWindow",
-                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                           "p, li { white-space: pre-wrap; }\n"
-                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                           "<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:10pt; color:#00ffff;\">运行状态：</span></p></body></html>"))
-        self.textEdit_2.setHtml(_translate("MainWindow",
-                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                           "p, li { white-space: pre-wrap; }\n"
-                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                           "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:36pt; color:#fe79c7;\">模板选择</span></p></body></html>"))
-        self.pushButton.setText(_translate("MainWindow", "确认"))
-        self.textEdit_4.setHtml(_translate("MainWindow",
-                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                           "p, li { white-space: pre-wrap; }\n"
-                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                           "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择Phase：</span></p></body></html>"))
-        self.textEdit_3.setHtml(_translate("MainWindow",
-                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                           "p, li { white-space: pre-wrap; }\n"
-                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                           "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>"))
+        self.label_3.setText(_translate("MainWindow", "模板选择"))
+        self.label_4.setText(_translate("MainWindow", "运行状态："))
+        self.label.setText(_translate("MainWindow", "请选择客户别："))
+        self.label_2.setText(_translate("MainWindow", "请选择Phase："))
         self.radioButton_2.setText(_translate("MainWindow", "EELP+"))
         self.radioButton_4.setText(_translate("MainWindow", "C(SIT)"))
         self.radioButton_3.setText(_translate("MainWindow", "B(SDV)"))
-        self.textEdit_7.setHtml(_translate("MainWindow",
-                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                           "p, li { white-space: pre-wrap; }\n"
-                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                           "<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:10pt; color:#e0feff;\"> </span></p></body></html>"))
         self.menu.setTitle(_translate("MainWindow", "选项"))
         self.actionexit.setText(_translate("MainWindow", "exit"))

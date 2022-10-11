@@ -21,6 +21,8 @@ class CheckFun(QMainWindow, Ui_MainWindow):
 
         super(CheckFun, self).__init__()
         self.setupUi(self)
+        # self.setWindowFlags(Qt.FramelessWindowHint)  # 去边框
+        # self.setAttribute(Qt.WA_TranslucentBackground)  # 设置窗口背景透明
         self.myth1 = mythread1()
 
         self.pushButton.clicked.connect(self.start_excel)
@@ -55,12 +57,14 @@ class CheckFun(QMainWindow, Ui_MainWindow):
     def disable_button(self):
         print("disable")
         self.pushButton.setEnabled(False)
-        self.textEdit_7.setMarkdown("正在运行")
+        # self.textEdit_7.setMarkdown("正在运行")
+        self.label_5.setText("正在运行")
 
     def enable_button(self):
         print("enable_button")
         self.pushButton.setEnabled(True)
-        self.textEdit_7.setMarkdown("运行完成")
+        # self.textEdit_7.setMarkdown("运行完成")
+        self.label_5.setText("运行完成")
 
     def boxinfo(self,str):
         print(str)
