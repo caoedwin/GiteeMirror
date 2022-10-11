@@ -578,9 +578,15 @@ class mythread1(QThread):
 
 
 
-
+from PyQt5.QtCore import Qt
 try:
     if __name__ == '__main__':
+        ######使用下面的方式一定程度上可以解决界面模糊问题--解决电脑缩放比例问题
+        QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+
+        # QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+
+        # 在主函数入口之前加入上面的设置即可解决
         app = QApplication(sys.argv)
         C = CheckFun()
         C.show()

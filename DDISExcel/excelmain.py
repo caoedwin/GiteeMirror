@@ -11,14 +11,20 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_DDIS_Excel(object):
-    def setupUi(self, DDIS_Excel):
-        DDIS_Excel.setObjectName("DDIS_Excel")
-        DDIS_Excel.resize(806, 595)
-        self.centralwidget = QtWidgets.QWidget(DDIS_Excel)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(834, 757)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(0, -30, 811, 581))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(6)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet("QFrame {    background-color: rgb(56, 58, 89);    \n"
 "    color: rgb(220, 220, 220);\n"
 "    border-radius: 10px;\n"
@@ -26,115 +32,152 @@ class Ui_DDIS_Excel(object):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.textEdit = QtWidgets.QTextEdit(self.frame)
-        self.textEdit.setGeometry(QtCore.QRect(300, 60, 104, 87))
-        self.textEdit.setObjectName("textEdit")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_3)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.radioButton_3 = QtWidgets.QRadioButton(self.frame_3)
+        self.radioButton_3.setMinimumSize(QtCore.QSize(0, 80))
+        self.radioButton_3.setStyleSheet("font: 9pt \"楷体\";\n"
+"color: rgb(255, 255, 255);")
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.horizontalLayout_2.addWidget(self.radioButton_3)
+        self.radioButton_4 = QtWidgets.QRadioButton(self.frame_3)
+        self.radioButton_4.setMinimumSize(QtCore.QSize(0, 80))
+        self.radioButton_4.setStyleSheet("font: 9pt \"楷体\";\n"
+"color: rgb(255, 255, 255);")
+        self.radioButton_4.setObjectName("radioButton_4")
+        self.horizontalLayout_2.addWidget(self.radioButton_4)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.frame_3)
+        self.radioButton_2.setMinimumSize(QtCore.QSize(0, 80))
+        self.radioButton_2.setStyleSheet("font: 9pt \"楷体\";\n"
+"color: rgb(255, 255, 255);")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.horizontalLayout_2.addWidget(self.radioButton_2)
+        self.gridLayout_4.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_3, 4, 0, 1, 4)
+        self.textEdit_4 = QtWidgets.QTextEdit(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.textEdit_4.sizePolicy().hasHeightForWidth())
+        self.textEdit_4.setSizePolicy(sizePolicy)
+        self.textEdit_4.setMinimumSize(QtCore.QSize(220, 50))
+        self.textEdit_4.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.textEdit_4.setObjectName("textEdit_4")
+        self.gridLayout_2.addWidget(self.textEdit_4, 3, 0, 1, 4)
+        self.pushButton = QtWidgets.QPushButton(self.frame)
+        self.pushButton.setStyleSheet("font: 9pt \"楷体\";")
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_2.addWidget(self.pushButton, 6, 3, 1, 1, QtCore.Qt.AlignRight)
         self.textEdit_2 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_2.setGeometry(QtCore.QRect(270, 46, 431, 121))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textEdit_2.sizePolicy().hasHeightForWidth())
+        self.textEdit_2.setSizePolicy(sizePolicy)
+        self.textEdit_2.setMinimumSize(QtCore.QSize(0, 0))
+        self.textEdit_2.setMaximumSize(QtCore.QSize(16777215, 120))
         self.textEdit_2.setObjectName("textEdit_2")
+        self.gridLayout_2.addWidget(self.textEdit_2, 0, 0, 1, 4, QtCore.Qt.AlignHCenter)
         self.textEdit_3 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_3.setGeometry(QtCore.QRect(100, 140, 571, 61))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textEdit_3.sizePolicy().hasHeightForWidth())
+        self.textEdit_3.setSizePolicy(sizePolicy)
+        self.textEdit_3.setMinimumSize(QtCore.QSize(220, 50))
+        self.textEdit_3.setMaximumSize(QtCore.QSize(16777215, 50))
         self.textEdit_3.setStyleSheet("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>")
         self.textEdit_3.setObjectName("textEdit_3")
-        self.textEdit_4 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_4.setGeometry(QtCore.QRect(100, 280, 571, 51))
-        self.textEdit_4.setObjectName("textEdit_4")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.frame)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(110, 190, 561, 80))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.addWidget(self.textEdit_3, 1, 0, 1, 4)
+        self.frame_2 = QtWidgets.QFrame(self.frame)
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.radioButton = QtWidgets.QRadioButton(self.horizontalLayoutWidget)
-        self.radioButton.setStyleSheet("font: 9pt \"楷体\";\n"
+        self.radioButton = QtWidgets.QRadioButton(self.frame_2)
+        self.radioButton.setMinimumSize(QtCore.QSize(0, 80))
+        self.radioButton.setStyleSheet("font: 11pt \"楷体\";\n"
 "color: rgb(255, 255, 255);")
         self.radioButton.setObjectName("radioButton")
         self.horizontalLayout.addWidget(self.radioButton)
-        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.frame)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(110, 330, 561, 80))
-        self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.radioButton_3 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
-        self.radioButton_3.setStyleSheet("font: 9pt \"楷体\";\n"
-"color: rgb(255, 255, 255);")
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.horizontalLayout_2.addWidget(self.radioButton_3)
-        self.radioButton_4 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
-        self.radioButton_4.setStyleSheet("font: 9pt \"楷体\";\n"
-"color: rgb(255, 255, 255);")
-        self.radioButton_4.setObjectName("radioButton_4")
-        self.horizontalLayout_2.addWidget(self.radioButton_4)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_2)
-        self.radioButton_2.setStyleSheet("font: 9pt \"楷体\";\n"
-"color: rgb(255, 255, 255);")
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.horizontalLayout_2.addWidget(self.radioButton_2)
-        self.pushButton = QtWidgets.QPushButton(self.frame)
-        self.pushButton.setGeometry(QtCore.QRect(580, 460, 93, 28))
-        self.pushButton.setStyleSheet("font: 9pt \"楷体\";")
-        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_3.addLayout(self.horizontalLayout, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_2, 2, 0, 1, 4)
         self.textEdit_5 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_5.setGeometry(QtCore.QRect(110, 450, 131, 51))
+        self.textEdit_5.setMinimumSize(QtCore.QSize(60, 60))
+        self.textEdit_5.setMaximumSize(QtCore.QSize(120, 60))
         self.textEdit_5.setObjectName("textEdit_5")
+        self.gridLayout_2.addWidget(self.textEdit_5, 5, 0, 1, 1)
         self.textEdit_7 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_7.setGeometry(QtCore.QRect(260, 450, 191, 61))
+        self.textEdit_7.setMinimumSize(QtCore.QSize(60, 60))
+        self.textEdit_7.setMaximumSize(QtCore.QSize(180, 60))
         self.textEdit_7.setObjectName("textEdit_7")
-        DDIS_Excel.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(DDIS_Excel)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 806, 26))
+        self.gridLayout_2.addWidget(self.textEdit_7, 5, 1, 1, 2)
+        self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 834, 26))
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
-        DDIS_Excel.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(DDIS_Excel)
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-        DDIS_Excel.setStatusBar(self.statusbar)
-        self.actionexit = QtWidgets.QAction(DDIS_Excel)
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionexit = QtWidgets.QAction(MainWindow)
         self.actionexit.setObjectName("actionexit")
         self.menu.addAction(self.actionexit)
         self.menubar.addAction(self.menu.menuAction())
 
-        self.retranslateUi(DDIS_Excel)
-        QtCore.QMetaObject.connectSlotsByName(DDIS_Excel)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, DDIS_Excel):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        DDIS_Excel.setWindowTitle(_translate("DDIS_Excel", "MainWindow"))
-        self.textEdit_2.setHtml(_translate("DDIS_Excel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:36pt; color:#fe79c7;\">模板选择</span></p></body></html>"))
-        self.textEdit_3.setHtml(_translate("DDIS_Excel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>"))
-        self.textEdit_4.setHtml(_translate("DDIS_Excel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.radioButton_3.setText(_translate("MainWindow", "B(FVT)"))
+        self.radioButton_4.setText(_translate("MainWindow", "C(SIT)"))
+        self.radioButton_2.setText(_translate("MainWindow", "FFRT"))
+        self.textEdit_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择Phase：</span></p></body></html>"))
-        self.radioButton.setText(_translate("DDIS_Excel", "C38(NB)"))
-        self.radioButton_3.setText(_translate("DDIS_Excel", "B(FVT)"))
-        self.radioButton_4.setText(_translate("DDIS_Excel", "C(SIT)"))
-        self.radioButton_2.setText(_translate("DDIS_Excel", "FFRT"))
-        self.pushButton.setText(_translate("DDIS_Excel", "确认"))
-        self.textEdit_5.setHtml(_translate("DDIS_Excel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.pushButton.setText(_translate("MainWindow", "确认"))
+        self.textEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:8pt; color:#00ffff;\">运行状态：</span></p></body></html>"))
-        self.textEdit_7.setHtml(_translate("DDIS_Excel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:36pt; color:#fe79c7;\">模板选择</span></p></body></html>"))
+        self.textEdit_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:8pt; color:#e0feff;\"> </span></p></body></html>"))
-        self.menu.setTitle(_translate("DDIS_Excel", "选项"))
-        self.actionexit.setText(_translate("DDIS_Excel", "exit"))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:16pt; color:#00ffff;\">请选择客户别：</span></p></body></html>"))
+        self.radioButton.setText(_translate("MainWindow", "C38(NB)"))
+        self.textEdit_5.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:10pt; color:#00ffff;\">运行状态：</span></p></body></html>"))
+        self.textEdit_7.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'LiSu\'; font-size:10pt; color:#e0feff;\"> </span></p></body></html>"))
+        self.menu.setTitle(_translate("MainWindow", "选项"))
+        self.actionexit.setText(_translate("MainWindow", "exit"))

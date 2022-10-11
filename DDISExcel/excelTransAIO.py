@@ -659,14 +659,20 @@ class mythread1(QThread):
 
 
 
+from PyQt5.QtCore import Qt
+try:
+    if __name__ == '__main__':
+        ######使用下面的方式一定程度上可以解决界面模糊问题--解决电脑缩放比例问题
+        QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
-# try:
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    C = CheckFun()
-    C.show()
-    sys.exit(app.exec())
+        # QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
-# except Exception as e:
-#     with open('error.txt', 'w') as f:  # 设置文件对象
-#         print(e, file=f)
+        # 在主函数入口之前加入上面的设置即可解决
+        app = QApplication(sys.argv)
+        C = CheckFun()
+        C.show()
+        sys.exit(app.exec())
+
+except Exception as e:
+    with open('error.txt', 'w') as f:  # 设置文件对象
+        print(e, file=f)
