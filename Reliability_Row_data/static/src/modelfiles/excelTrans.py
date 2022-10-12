@@ -64,6 +64,9 @@ class CheckFun(QMainWindow, Ui_MainWindow):
         self.pushButton.setEnabled(True)
         # self.textEdit_7.setMarkdown("运行完成")
         self.label_5.setText("运行完成")
+        self.label_5.setStyleSheet("font: 9pt \"楷体\";\n"
+                                   "color: rgb(0, 255, 0);\n"
+                                   "font-weight:bold;")
 
     def boxinfo(self,str):
         print(str)

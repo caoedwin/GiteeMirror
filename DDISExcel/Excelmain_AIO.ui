@@ -30,17 +30,118 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="8" column="6" alignment="Qt::AlignRight">
-        <widget class="QPushButton" name="pushButton">
+       <item row="2" column="0" colspan="7" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;楷体&quot;;</string>
+          <string notr="true">font: 28pt &quot;楷体&quot;;
+color: rgb(255, 170, 255);
+font-weight:bold;
+text-align:center;</string>
          </property>
          <property name="text">
-          <string>确认</string>
+          <string>模板选择</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="7">
+       <item row="8" column="1">
+        <widget class="QLabel" name="label_5">
+         <property name="minimumSize">
+          <size>
+           <width>180</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>180</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;楷体&quot;;
+color: rgb(255, 255, 127);
+font-weight:bold;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="7">
+        <widget class="Line" name="line_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 255, 255);</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;楷体&quot;;
+color: rgb(0, 255, 255);
+font-weight:bold;</string>
+         </property>
+         <property name="text">
+          <string>请选择客户别：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="7">
+        <widget class="Line" name="line">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 255, 255);</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;楷体&quot;;
+color: rgb(0, 255, 255);
+font-weight:bold;</string>
+         </property>
+         <property name="text">
+          <string>运行状态：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="7">
         <widget class="QFrame" name="frame_2">
          <property name="minimumSize">
           <size>
@@ -102,98 +203,7 @@ color: rgb(255, 255, 255);</string>
          </layout>
         </widget>
        </item>
-       <item row="2" column="0" colspan="7" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 28pt &quot;楷体&quot;;
-color: rgb(255, 170, 255);
-font-weight:bold;
-text-align:center;</string>
-         </property>
-         <property name="text">
-          <string>模板选择</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;楷体&quot;;
-color: rgb(0, 255, 255);
-font-weight:bold;</string>
-         </property>
-         <property name="text">
-          <string>运行状态：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 14pt &quot;楷体&quot;;
-color: rgb(0, 255, 255);
-font-weight:bold;</string>
-         </property>
-         <property name="text">
-          <string>请选择客户别：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 14pt &quot;楷体&quot;;
-color: rgb(0, 255, 255);
-font-weight:bold;</string>
-         </property>
-         <property name="text">
-          <string>请选择Phase：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="7">
+       <item row="7" column="0" colspan="7">
         <widget class="QFrame" name="frame_3">
          <property name="enabled">
           <bool>true</bool>
@@ -281,27 +291,48 @@ color: rgb(255, 255, 255);</string>
          </layout>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QLabel" name="label_5">
+       <item row="9" column="6" alignment="Qt::AlignRight">
+        <widget class="QPushButton" name="pushButton">
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;楷体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>确认</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_2">
          <property name="minimumSize">
           <size>
-           <width>180</width>
+           <width>0</width>
            <height>60</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>180</width>
+           <width>16777215</width>
            <height>60</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;楷体&quot;;
-color: rgb(255, 255, 127);
+          <string notr="true">font: 14pt &quot;楷体&quot;;
+color: rgb(0, 255, 255);
 font-weight:bold;</string>
          </property>
          <property name="text">
-          <string/>
+          <string>请选择Phase：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="7" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;楷体&quot;;
+color: rgb(0, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>DDIS Ecel转换工具-AIO 版本：V1.0 开发者：DQA Auto Team</string>
          </property>
         </widget>
        </item>
