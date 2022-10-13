@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2022-08-31.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2022-08-31.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2022-08-31.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/FilesDownload.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/FilesDownload.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,10 +73,10 @@
       <find>deleteData</find>
       <find>warning</find>
       <find>errMsgNumber</find>
-      <find>axios</find>
       <find>excel</find>
       <find>transaction</find>
       <find>vue</find>
+      <find>axios</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,7 +183,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reliability_Row_data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -374,11 +369,12 @@
       <workItem from="1661744197386" duration="488000" />
       <workItem from="1662340147218" duration="100000" />
       <workItem from="1662522164503" duration="2893000" />
+      <workItem from="1665558933274" duration="1062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1900281000" />
+    <option name="totallyTimeSpent" value="1901343000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,6 +387,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="0" width="1536" height="816" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" weight="0.232" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
@@ -859,17 +856,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="240" column="37" selection-start-line="240" selection-start-column="34" selection-end-line="240" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/BorrowedDeviceLNV.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="232" column="19" lean-forward="true" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491">
-          <caret line="1803" column="34" selection-start-line="1803" selection-start-column="29" selection-end-line="1803" selection-end-column="34" />
+        <state relative-caret-position="231">
+          <caret line="1857" column="45" lean-forward="true" selection-start-line="1857" selection-start-column="45" selection-end-line="1857" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DeviceLNV/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="1042" column="44" selection-start-line="1042" selection-start-column="33" selection-end-line="1042" selection-end-column="44" />
+        <state relative-caret-position="421">
+          <caret line="1051" column="26" selection-start-line="1051" selection-start-column="26" selection-end-line="1051" selection-end-column="26" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#324546#325472#0" />
@@ -889,20 +900,6 @@
             <element signature="e#382264#391114#0" />
             <element signature="e#391188#414375#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="240" column="37" selection-start-line="240" selection-start-column="34" selection-end-line="240" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/BorrowedDeviceLNV.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="232" column="19" lean-forward="true" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
         </state>
       </provider>
     </entry>

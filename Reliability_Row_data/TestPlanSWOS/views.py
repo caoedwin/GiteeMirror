@@ -3784,7 +3784,7 @@ def TestPlanSW_Edit(request):
                                         else:
                                             editplan.BaseTime = 0
                                     else:
-                                        editplan.BaseTime =None
+                                        editplan.BaseTime = 0
                                     if 'TDMSUnattendedTime' in i.keys():
                                         if i['TDMSUnattendedTime']:
                                             editplan.TDMSUnattendedTime = float(i['TDMSUnattendedTime'])
@@ -4291,7 +4291,7 @@ def TestPlanSW_Edit(request):
                                         else:
                                             editplan.BaseTime = 0
                                     else:
-                                        editplan.BaseTime = None
+                                        editplan.BaseTime = 0
                                     if 'TDMSUnattendedTime' in i.keys():
                                         if i['TDMSUnattendedTime']:
                                             editplan.TDMSUnattendedTime = float(i['TDMSUnattendedTime'])
