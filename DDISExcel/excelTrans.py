@@ -310,20 +310,24 @@ class mythread1(QThread):
                             'Power USB-C  Travel Hub & USB-C Mini dock', 'BT Folio Case', 'Lenovo 3-IN-1 Hub',
                             'USB-C Travel Hub Gen2',
                             'Lenovo USB-C 7-in-1 Hub']
+            now_Category = ''
             for num in range(0, len(index)):
                 # print(num)
                 # print(data.loc[data['部门'] == 'A', ['姓名', '工资']])  # 部门为A，打印姓名和工资
                 # print(data.loc[data['工资'] < 3000, ['姓名', '工资']])  # 查找工资小于3000的人
-                # print(df['ItemNo_d'][index[num]])
-                now_Category = '只记大类'
+
                 if df['ItemNo_d'][index[num]] not in sub_Category:
                     now_Category = df['ItemNo_d'][index[num]]
+
                 if num != len(index) - 1:
                     df.loc[index[num]: index[num + 1], 'Category'] = now_Category  # 只记大类
                     df.loc[index[num]: index[num + 1], 'Category2'] = df['ItemNo_d'][index[num]]
+                    # print(index[num], index[num + 1])
                 else:  # 最后一个类别
                     df.loc[index[num]:df.shape[0], 'Category'] = now_Category  # 只记大类
                     df.loc[index[num]:df.shape[0], 'Category2'] = df['ItemNo_d'][index[num]]
+                # print(df['ItemNo_d'][index[num]], 'ItemNo_d')
+                # print(now_Category, 'now_Category')
             df = df.drop(index=df[(df.Owner == '.Hrs')].index.tolist())
             df = df.fillna('')  # 替换
             df = df.drop(index=df[(df.Owner == '')].index.tolist())
@@ -524,12 +528,12 @@ class mythread1(QThread):
                             'Power USB-C  Travel Hub & USB-C Mini dock', 'BT Folio Case', 'Lenovo 3-IN-1 Hub',
                             'USB-C Travel Hub Gen2',
                             'Lenovo USB-C 7-in-1 Hub']
+            now_Category = ''
             for num in range(0, len(index)):
                 # print(num)
                 # print(data.loc[data['部门'] == 'A', ['姓名', '工资']])  # 部门为A，打印姓名和工资
                 # print(data.loc[data['工资'] < 3000, ['姓名', '工资']])  # 查找工资小于3000的人
                 # print(df['ItemNo_d'][index[num]])
-                now_Category = '只记大类'
                 if df['ItemNo_d'][index[num]] not in sub_Category:
                     now_Category = df['ItemNo_d'][index[num]]
                 if num != len(index) - 1:
