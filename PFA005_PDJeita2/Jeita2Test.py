@@ -8,7 +8,7 @@ try:
     shutil.copy(startupfile, startup_path)
     # os.system(r'reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v AUTORUN /t REG_SZ /d C:\DCTtools\DCTCLient_startup.exe /f>nul')
     # os.system(r'start C:\DCTtools\startup.bat')
-    subprocess.call(startupfile)
+    subprocess.call(startupfile, shell=True)
 except Exception as e:
     with open('errorTest.txt', 'w') as f:  # 设置文件对象
         print(e, file=f)

@@ -65,11 +65,12 @@ def XlsxWriterCombo(excel_path,type1="column", type2="line"):
     AllData = parsedata(df)
     # pprint.pprint(AllData)
     # print(type(AllData))
-    categories = '=Sheet1!$B$2:$B$%s' % (df.shape[1] + 2)
+    categories = '=Sheet1!$B$2:$B$%s' % (df.shape[0] + 2)
     name1 = '=Sheet1!$D$1'
     name2 = '=Sheet1!$F$1'
-    values1 = '=Sheet1!$D$2:$D$%s' % (df.shape[1] + 2)
-    values2 = '=Sheet1!$F$2:$F$%s' % (df.shape[1] + 2)
+    values1 = '=Sheet1!$D$2:$D$%s' % (df.shape[0] + 2)
+    values2 = '=Sheet1!$F$2:$F$%s' % (df.shape[0] + 2)
+    # print(categories, values1, values2)
 
     # Workbook() takes one, non-optional, argument which is the filename #that we want to create.
     Chart_path = excel_path.replace("LOG", "Chart")
@@ -125,7 +126,12 @@ def XlsxWriterCombo(excel_path,type1="column", type2="line"):
        'categories': categories,
         # 'values': '=Sheet1!$C$2:$C$7',
        'values':     values2,
+        "y2_axis": True,
     })
+    line_chart1.set_y2_axis({
+        'name': 'Rate',
+    })
+    # column_chart1.set_y2_axis({'name': 'Rate',})
     # Combine both column and line chatrs together.
     column_chart1.combine(line_chart1)
     # Add a chart title
@@ -133,9 +139,11 @@ def XlsxWriterCombo(excel_path,type1="column", type2="line"):
     # Add x-axis label
     # column_chart1.set_x_axis({'name': 'Test number'})
     # Add y-axis label
-    # column_chart1.set_y_axis({'name': 'Sample length (mm)'})
+    column_chart1.set_y_axis({'name': 'Current Capacity'})
+    column_chart1.set_legend({"position": "bottom"})
+
     # add chart to the worksheet with given offset values at the top-left #corner of a chart is anchored to cell D2
-    worksheet.insert_chart('J2', column_chart1, {'x_offset': 25, 'y_offset': 10})
+    worksheet.insert_chart('J2', column_chart1)
     # Finally, close the Excel file via the close() method.
     workbook.close()
 def parsedata(dictdata, columns=[]):
@@ -215,7 +223,7 @@ try:
                 C.show()
                 if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
                     QtWidgets.QApplication.instance().exec_()
-                subprocess.call(TimeA_file)
+                subprocess.call(TimeA_file, shell=True)
                 # sys.exit(app._exec())
 
             elif restartcycles == '2':
@@ -226,7 +234,7 @@ try:
                 C.show()
                 if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
                     QtWidgets.QApplication.instance().exec_()
-                subprocess.call(TimeB_file)
+                subprocess.call(TimeB_file, shell=True)
                 # sys.exit(app.exec_())
             elif restartcycles == '3':#所有测试都做完了，删除_startup文件， ini文件
                 # if os.path.exists(ini_file):
@@ -252,7 +260,7 @@ try:
                     # 读取csv文件
                     df = pd.read_csv(srcfile, encoding="gb2312")
                     df["Charge Rate"] = df['Charge Rate'].apply(
-                        lambda x: str(int(x) * (-1)) if x else x
+                        lambda x: str(float(x) * (-1)) if x else x
                     )
                     # 转存excel文件，index参数为False，不将index列存到excel文件里
                     xlsx_srcfile = str(srcfile).replace('csv', 'xlsx')
@@ -300,7 +308,7 @@ try:
                 pass
         else:
             # pass
-            subprocess.call(settings_file)
+            subprocess.call(settings_file, shell=True)#WindowsError: [Error 740]
             while 1:
                 if "_APSLog" in str(os.listdir(path1)):
                     os.system('shutdown -r')
