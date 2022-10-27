@@ -3,8 +3,8 @@
 #include <MsgBoxConstants.au3>
 #RequireAdmin
 ;$settingfile = @ScriptDir & @CRLF & "\SysSettingsModifier_V4.2022\SysSettingsModifier.exe"
-$Path = @WorkingDir & "\New Battery Manager\BatteryManager.exe"
-
+$Path = @ScriptDir & "\New Battery Manager\BatteryManager.exe"
+FileChangeDir(@ScriptDir)
 Run($Path)
 Sleep(1000)
 If  WinExists("BattManager") Then
@@ -21,6 +21,6 @@ ControlClick($hWin, "","[NAME:button1]")
 ;IniWrite(@WorkingDir & "\Times.ini","section2", "时间", @YEAR & "-" & @MON & "-" & @MDAY & " " & @HOUR & ":" & @MIN & ":" & @SEC)
 ;IniWrite(@WorkingDir & "\Times.ini","section1", "Restart", "2")
 
-IniWrite(@WorkingDir & "\Times.ini","section3", "Progress", "Time B")
-IniWrite(@WorkingDir & "\Times.ini","section3", "时间", @YEAR & "-" & @MON & "-" & @MDAY & " " & @HOUR & ":" & @MIN & ":" & @SEC)
-IniWrite(@WorkingDir & "\Times.ini","section1", "Restart", "3")
+IniWrite(@ScriptDir & "\Times.ini","section3", "Progress", "Time B")
+IniWrite(@ScriptDir & "\Times.ini","section3", "时间", @YEAR & "-" & @MON & "-" & @MDAY & " " & @HOUR & ":" & @MIN & ":" & @SEC)
+IniWrite(@ScriptDir & "\Times.ini","section1", "Restart", "3")

@@ -13,6 +13,8 @@ rem echo 当前CMD默认目录："%cd%"
 rem pause
 
 echo dangqian:"%~dp0"
+echo VideoUIPath:"%VideoUIPath%"
 cd /d "%~dp0"
-start "C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.22041.10091.0_x64__8wekyb3d8bbwe\Video.UI.exe" "JB2_0.mp4"
+rem start "C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.22041.10091.0_x64__8wekyb3d8bbwe\Video.UI.exe" "JB2_0.mp4"
+start "%VideoUIPath%" "JB2_0.mp4"
 rem pause

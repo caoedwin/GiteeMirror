@@ -17,7 +17,7 @@ class Readini(ConfigParser):
         self.read(filename)
 
 class MainFunc(QMainWindow, Ui_MainWindow):
-    def __init__(self, str, str2="即将开始：", str3="提示：\n""请确认电量是100%，点击开始后，拔除电源！",butname="开始"):
+    def __init__(self, str, str2="即将开始：", str3="""提示：\n请确认电量是100%，点击开始后，拔除电源！""",butname="开始"):
 
         super(MainFunc, self).__init__()
         self.setupUi(self)
@@ -179,7 +179,7 @@ try:
         # os.path.abspath('.')
         path1 = os.path.dirname(os.path.realpath(sys.executable))
         startup_path = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
-        startup_file = startup_path + "Jeita2_Startup.exe"
+        startup_file = startup_path + "\Jeita2_Startup.exe"
         ini_file = path1 + "\Times.ini"
         settings_file = path1 + "\setting.exe"
         TimeA_file = path1 + "\BatteryMonitorA.exe"
@@ -187,10 +187,14 @@ try:
         # setlog_file1 = path1 + "\SysSettingsModifier_V4.2022\*.txt"
         # setlog_file2 = path1 + "\*.txt"
         # print(ini_file)
+        with open('dataPropath1.txt', 'w') as f:  # 设置文件对象
+            print(path1,ini_file, os.path.exists(ini_file),file=f)
         if os.path.exists(ini_file):
             ini_contend =Readini(ini_file)
             restartcycles = ini_contend.get('section1', 'Restart')
-            # print(restartcycles)
+            # print(restartcycle
+            #
+            # s)
             if restartcycles == '1':
                 # subprocess.call(TimeA_file)
 
@@ -216,10 +220,21 @@ try:
                 #
                 #
                 # sys.exit(app.exec())
+                VideoRootpath = "C:/Program Files/WindowsApps/"
+                files = [f for f in glob.glob('C:/Program Files/WindowsApps/**/Video.UI.exe')]
+                if files:
+                    os.environ['VideoUIPath'] = files[0]
+                    os.putenv('VideoUIPath', files[0])
+                    command = r"setx 'VideoUIPath' '%s' /m" % files[0]
+                    os.system(command)
+                    # print(files[0])
+                # for f in files:
+                #     os.environ['VideoUIPath'] = f
+                #     print(f)
 
 
                 app = QApplication(sys.argv)
-                C = MainFunc(str="TimeA", str3="提示：\n""请确认电量是100%，点击开始.\n等到全屏播放视频后，拔除电源！")
+                C = MainFunc(str="TimeA", str3="""提示：\n确认电量是100%，再点击开始.\n等到全屏播放视频后，拔除电源！""")
                 C.show()
                 if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
                     QtWidgets.QApplication.instance().exec_()
@@ -308,6 +323,15 @@ try:
                 pass
         else:
             # pass
+            app = QApplication(sys.argv)
+            C = MainFunc(str="SysSettingsModifier", str3="""提示：自动化工具测试前需要设置亮度为150nits，
+    SysSettingsModifier工具无法设定的也需要手动设定，再运行该工具""")
+            C.show()
+            # print(sys.flags.interactive, hasattr(QtCore, 'PYQT_VERSION'))
+            if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
+                QtWidgets.QApplication.instance().exec_()
+                # print(sys.flags.interactive, hasattr(QtCore, 'PYQT_VERSION'))
+                # print('ssss')
             subprocess.call(settings_file, shell=True)#WindowsError: [Error 740]
             while 1:
                 if "_APSLog" in str(os.listdir(path1)):
