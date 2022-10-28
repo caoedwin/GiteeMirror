@@ -254,8 +254,12 @@ try:
             elif restartcycles == '3':#所有测试都做完了，删除_startup文件， ini文件
                 # if os.path.exists(ini_file):
                 #     os.remove(ini_file)
-                if os.path.exists(startup_file):
-                    os.remove(startup_file)
+                os.chdir(startup_path)
+                if os.path.isfile('Jeita2_Startup.exee'):
+                    os.remove('Jeita2_Startup.exe')
+                # if os.path.exists(startup_file):
+                #     os.remove(startup_file)
+                os.chdir(path1)
 
                 src_dir = path1 + '/'
                 # src_dir = './'
@@ -309,8 +313,9 @@ try:
 
                 # os.system('del "%s"' % setlog_file1)#刚开始也要执行一遍伤处txt log
                 # os.system('del "%s"' % setlog_file2)
-                if os.path.exists(startup_file):
-                    os.system('del "%s"' % startup_file)
+                # if os.path.exists(startup_file):
+                #     os.system('del "%s"' % startup_file)
+
                 # print(os.listdir(path1 + "\SysSettingsModifier_V4.2022"))
                 app = QApplication(sys.argv)
                 # QtWidgets.QMessageBox.information(None, '测试完成', '%s' % "所有测试都已完成，点击OK退出程序")
@@ -324,8 +329,10 @@ try:
         else:
             # pass
             app = QApplication(sys.argv)
-            C = MainFunc(str="SysSettingsModifier", str3="""提示：自动化工具测试前需要设置亮度为150nits，
-    SysSettingsModifier工具无法设定的也需要手动设定，再运行该工具""")
+            C = MainFunc(str="SysSettingsModifier", str3="""提示：
+            自动化工具测试前需要设置亮度为150nits，
+            SysSettingsModifier工具无法设定的也需要手动设定，
+            再运行该工具!!!""")
             C.show()
             # print(sys.flags.interactive, hasattr(QtCore, 'PYQT_VERSION'))
             if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):

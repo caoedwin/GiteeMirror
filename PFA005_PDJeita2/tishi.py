@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1726, 974)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -27,28 +27,15 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QtWidgets.QGridLayout(self.frame)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.label_4 = QtWidgets.QLabel(self.frame)
-        self.label_4.setMinimumSize(QtCore.QSize(0, 120))
+        self.label_4.setMinimumSize(QtCore.QSize(0, 240))
         self.label_4.setStyleSheet("font: 16pt \"楷体\";\n"
 "background-color: rgb(238, 230, 211);\n"
 "color: rgb(85, 170, 0);")
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.gridLayout_2.addWidget(self.label_4, 2, 1, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.frame)
-        self.label_3.setMaximumSize(QtCore.QSize(180, 80))
-        self.label_3.setStyleSheet("font: 16pt \"楷体\";\n"
-"color: rgb(221, 255, 143);")
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.frame)
-        self.label.setMinimumSize(QtCore.QSize(680, 120))
-        self.label.setMaximumSize(QtCore.QSize(16777215, 360))
-        self.label.setStyleSheet("color: rgb(255, 0, 0);\n"
-"font: 20pt \"楷体\";")
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 3, 0, 1, 2, QtCore.Qt.AlignHCenter)
         self.label_2 = QtWidgets.QLabel(self.frame)
-        self.label_2.setMinimumSize(QtCore.QSize(0, 100))
+        self.label_2.setMinimumSize(QtCore.QSize(0, 120))
         self.label_2.setMaximumSize(QtCore.QSize(16777215, 120))
         font = QtGui.QFont()
         font.setFamily("楷体")
@@ -57,6 +44,19 @@ class Ui_MainWindow(object):
         self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_2.setObjectName("label_2")
         self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 2, QtCore.Qt.AlignHCenter)
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setMaximumSize(QtCore.QSize(180, 80))
+        self.label_3.setStyleSheet("font: 16pt \"楷体\";\n"
+"color: rgb(221, 255, 143);")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setMinimumSize(QtCore.QSize(1680, 480))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 360))
+        self.label.setStyleSheet("color: rgb(255, 0, 0);\n"
+"font: 20pt \"楷体\";")
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 3, 0, 1, 2, QtCore.Qt.AlignHCenter)
         self.pushButton = QtWidgets.QPushButton(self.frame)
         self.pushButton.setStyleSheet("font: 20pt \"楷体\";\n"
 "background-color: rgb(199, 255, 146);")
@@ -74,8 +74,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_2.setText(_translate("MainWindow", "PFA005_PDJeita2.0"))
         self.label_3.setText(_translate("MainWindow", "即将开始："))
         self.label.setText(_translate("MainWindow", "提示：\n"
 "请确认电量是100%，点击开始后，拔除电源！"))
-        self.label_2.setText(_translate("MainWindow", "PFA005_PDJeita2.0"))
         self.pushButton.setText(_translate("MainWindow", "开始"))
