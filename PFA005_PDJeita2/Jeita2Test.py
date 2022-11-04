@@ -7,7 +7,7 @@ try:
     startup_path = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
     os.putenv('Jeita2Path', path1)
     os.environ['Jeita2Path'] = path1
-    command = r"setx 'Jeita2Path' '%s' /m" % path1
+    command = r"setx Jeita2Path %s /m" % path1
     os.system(command)
     shutil.copy(startupfile, startup_path)
     # os.system(r'reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v AUTORUN /t REG_SZ /d C:\DCTtools\DCTCLient_startup.exe /f>nul')

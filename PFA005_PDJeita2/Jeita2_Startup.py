@@ -1,7 +1,8 @@
 import os,subprocess,sys
 
 try:
-    path1 = os.getenv('Jeita2Path')
+    # path1 = os.getenv('Jeita2Path')
+    path1 = os.environ['Jeita2Path']
     os.chdir(path1)
     Processfile = path1 + "\Jeita2_Process.exe"
     with open('dataSt.txt', 'w') as f:  # 设置文件对象

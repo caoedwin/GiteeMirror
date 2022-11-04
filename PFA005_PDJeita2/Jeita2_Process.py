@@ -223,9 +223,10 @@ try:
                 VideoRootpath = "C:/Program Files/WindowsApps/"
                 files = [f for f in glob.glob('C:/Program Files/WindowsApps/**/Video.UI.exe')]
                 if files:
-                    os.environ['VideoUIPath'] = files[0]
+
                     os.putenv('VideoUIPath', files[0])
-                    command = r"setx 'VideoUIPath' '%s' /m" % files[0]
+                    os.environ['VideoUIPath'] = files[0]
+                    command = r"setx VideoUIPath %s /m" % files[0]
                     os.system(command)
                     # print(files[0])
                 # for f in files:
