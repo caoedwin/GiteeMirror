@@ -4021,11 +4021,11 @@ def TestPlanSW_Edit(request):
                                     if 'BaseTime' in i.keys():
                                         # print(i['BaseTime'])
                                         if i['BaseTime']:
-                                            editplan.BaseTime = float(i['BaseTime'])
+                                            updatedic["BaseTime"] = float(i['BaseTime'])
                                         else:
-                                            editplan.BaseTime = 0
+                                            updatedic["BaseTime"] = 0
                                     else:
-                                        editplan.BaseTime = 0
+                                        updatedic["BaseTime"] = 0
                                     if 'TDMSUnattendedTime' in i.keys():
                                         if i['TDMSUnattendedTime']:
                                             updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
