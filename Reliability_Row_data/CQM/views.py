@@ -827,8 +827,9 @@ def CQM_edit(request):
                     if updateCQM:
                         CQM_history.objects.create(**update_dic_his)
                     alert=0
-            except:
-                alert='此数据正被其他使用者编辑中...'
+            except Exception as e:
+                print("error", e)
+                alert = '此数据正被其他使用者编辑中...'
             check_dic = {}
             check_dic_Pro = {}
             if Customer:

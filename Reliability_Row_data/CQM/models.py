@@ -90,7 +90,7 @@ class CQM(models.Model):
     RD6 = models.CharField('RD6', max_length=100, blank=True, null=True)
     PMsummary = models.CharField('PMsummary',max_length=100, blank=True, null=True)
     Controlrun = models.CharField('Controlrun',max_length=100, blank=True, null=True)
-    Comments = models.CharField('Comments',max_length=9000, blank=True, null=True)
+    Comments = models.CharField('Comments',max_length=10000, blank=True, null=True)
     editor = models.CharField('editor', max_length=100)
     edit_time = models.CharField('edit_time', max_length=26)
 
@@ -104,8 +104,8 @@ class CQM(models.Model):
 
 class CQM_history(models.Model):
     Changeid = models.ForeignKey("CQM", on_delete=True)
-    Changecontent = models.CharField('Changecontent',  max_length=3000)
-    Changeto = models.CharField('Changecontent',  max_length=3000)
+    Changecontent = models.CharField('Changecontent',  max_length=10000)
+    Changeto = models.CharField('Changecontent',  max_length=10000)
     Changeowner = models.CharField('Changeowner', max_length=100)
     Change_time = models.CharField('Change_time', max_length=26)
     class Meta:
