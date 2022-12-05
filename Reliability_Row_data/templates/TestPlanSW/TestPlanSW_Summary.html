@@ -225,14 +225,15 @@
     <el-table-column prop="CaseLibrarytime" label="Case Library time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="ProjectBasetime" label="Project Base time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="Timew/Comfig" label="Time w/Comfig-follow matrix" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-    <el-table-column prop="SKUQ" label="SKU Q'ty" align="center" width="160" align="center"></el-table-column>
+    <el-table-column prop="SKUQ" label="SKU Q'ty" align="center" width="120" align="center"></el-table-column>
     <el-table-column prop="Config-Automationtime" label="Config-Automation time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="Config-Leveragetime" label="Config-Leverage time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="Config-Smarttime" label="Config-Smart time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="Attendtime-Optimize" label="Attend time-Optimize" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
     <el-table-column prop="Config-Retesttime" label="Config-Retest time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-    <el-table-column prop="H/C" label="H/C" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-    <el-table-column prop="H/C+OT" label="H/C+OT" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="H/C" label="H/C" align="center" width="80" align="center" :formatter="stateFormat"></el-table-column>
+    {% comment %}<el-table-column prop="H/C+OT" label="H/C+OT" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>{% endcomment %}
+    <el-table-column prop="ATO/TCM" label="Attendtime-Optimize/TimeComfig-followMatrix" align="center" width="200" align="center" :formatter="stateFormat"></el-table-column>
     </el-table>
     </template>
 

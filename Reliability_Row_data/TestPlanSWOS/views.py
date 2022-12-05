@@ -385,7 +385,9 @@ def TestPlanSW_summary(request):
                          "Config-Automationtime": CodeCAT + CodeCAT_R, "Config-Leveragetime": CodeCLT + CodeCLT_R,
                          "Config-Smarttime": CodeCST + CodeCST_R,
                          "Attendtime-Optimize": CodeATO + CodeATO_R,
-                         "Config-Retesttime": CodeCRT + CodeCRT_R, "H/C": round(HC + HC_R, 2), "H/C+OT": round(HCO + HCO_R, 2)})
+                         "Config-Retesttime": CodeCRT + CodeCRT_R, "H/C": round(HC + HC_R, 2), "H/C+OT": round(HCO + HCO_R, 2),
+                         "ATO/TCM": 0 if (CodeTCM + CodeTCM_R) == 0 else round((CodeATO + CodeATO_R) / (CodeTCM + CodeTCM_R), 2)
+                         })
             print(datetime.datetime.now(), "表格")
             # Project top 10
             Projectlist_top = []
@@ -1337,7 +1339,9 @@ def TestPlanSW_summary(request):
                              "Config-Smarttime": CodeCST,
                              "Attendtime-Optimize": CodeATO,
                              "Config-Retesttime": CodeCRT, "H/C": round(HC, 2),
-                             "H/C+OT": round(HCO, 2)})
+                             "H/C+OT": round(HCO, 2),
+                             "ATO/TCM": 0 if CodeTCM == 0 else round(CodeATO / CodeTCM, 2)
+                             })
                 print(datetime.datetime.now(), "表格")
                 # Project top 10
                 Projectlist_top = []
@@ -1665,7 +1669,10 @@ def TestPlanSW_summary(request):
                              "SKUQ": SKUQ,
                              "Config-Automationtime": CodeCAT+CodeCAT_R, "Config-Leveragetime": CodeCLT+CodeCLT_R, "Config-Smarttime": CodeCST+CodeCST_R,
                              "Attendtime-Optimize": CodeATO+CodeATO_R,
-                             "Config-Retesttime": CodeCRT+CodeCRT_R, "H/C": round(HC+HC_R, 2), "H/C+OT": round(HCO+HCO_R, 2)})
+                             "Config-Retesttime": CodeCRT+CodeCRT_R, "H/C": round(HC+HC_R, 2), "H/C+OT": round(HCO+HCO_R, 2),
+                             "ATO/TCM": 0 if (CodeTCM + CodeTCM_R) == 0 else round(
+                                 (CodeATO + CodeATO_R) / (CodeTCM + CodeTCM_R), 2)
+                             })
                 print(datetime.datetime.now(),"表格")
                 #Project top 10
                 Projectlist_top = []
