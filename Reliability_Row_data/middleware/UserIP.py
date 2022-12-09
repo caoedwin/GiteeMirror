@@ -30,15 +30,18 @@ class LogMiddle(MiddlewareMixin):
             # 响应内容
             content = {}
             if method == "POST":#get返回的html，json.loads时会报错
-                content = response.content
-                # 记录信息
-                # print('a')
-                content = str(content.decode('utf-8'))
-                # print('b')
-                content = urllib.parse.unquote(content)
-                # print('c')
-                # print(content)
-                content = (json.loads(content))
+                """
+                json时可能会报错，导致系统错误，前端报500，excel上传失败。contend也没有用到
+                """
+                # content = response.content
+                # # 记录信息
+                # # print('a')
+                # content = str(content.decode('utf-8'))
+                # # print('b')
+                # content = urllib.parse.unquote(content)
+                # # print('c')
+                # # print(content)
+                # content = (json.loads(content))
                 # print('d')
                 # message = '%s %s %s %s %s' % (localtime, path, method, status_code, content)
                 # logger.info(message)
