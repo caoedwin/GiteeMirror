@@ -4550,6 +4550,8 @@ def TestPlanSW_Edit(request):
                                         updatedic["BaseTime"] = float(i['BaseTime'])
                                     else:
                                         updatedic["BaseTime"] = 0
+                                else:
+                                    updatedic["BaseTime"] = 0
                                 if 'TDMSUnattendedTime' in i.keys():
                                     if i['TDMSUnattendedTime'] and not i['TDMSUnattendedTime'] == " ":
                                         updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])
