@@ -107,6 +107,10 @@
                     <div class="col-md-1">
                         <el-button size="small" v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                     </div>
+                    <div class="col-md-1">
+                        <a size="small" v-if="canExport==1" href="\\10.129.83.21\files_MQM\Attachment" >Export</a>
+{#                        <a size="small" v-if="canExport==1" href="file:///D:\work/" >Export</a>#}
+                    </div>
           </div>
 <template>
 <el-input type="text" v-model="search" id="sh" placeholder="关键字搜索......"></el-input>
