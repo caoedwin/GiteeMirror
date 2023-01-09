@@ -59,7 +59,7 @@ class CQM(models.Model):
         ('F', 'F'),
         ('DisQ', 'DisQ'),
         ('Drpd', 'Drpd'),
-        ('No Build', 'No Build')
+        ('Not Build', 'Not Build')
     )
     Projectinfo = models.ForeignKey("CQMProject", on_delete=True)
     Customer = models.CharField('Customer', choices=Customer_list, max_length=100)

@@ -271,7 +271,7 @@ def CQM_upload(request):
                                     """ % rownum
                         break
                     # 結果验证，不分客户别
-                    ResultList = ["Qd", "Qd_L", "Qd_C", "T", "F", "DisQ", "Drpd", "No Build"]
+                    ResultList = ["Qd", "Qd_L", "Qd_C", "T", "F", "DisQ", "Drpd", "Not Build"]
                     if 'Reliability' in i.keys():
                         if i['Reliability'] not in ResultList:
                             startupload = 0

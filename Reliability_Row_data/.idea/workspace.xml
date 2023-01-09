@@ -7,7 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/MQM/MQM_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/MQM/MQM_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CQM/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CQM/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CQM/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CQM/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,17 +43,12 @@
     <favorites_list name="DDIS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_edit.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_search.html">
+        <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_searchlinshi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="110" column="114" lean-forward="true" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
+            <state relative-caret-position="120">
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -71,7 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Project</find>
       <find>know</find>
       <find>查找</find>
       <find>isSet</find>
@@ -101,6 +96,7 @@
       <find>tableData</find>
       <find>content</find>
       <find>export</find>
+      <find>build</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -155,19 +151,20 @@
         <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_edit.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit.html" />
         <option value="$PROJECT_DIR$/INVGantt/views.py" />
-        <option value="$PROJECT_DIR$/CQM/views.py" />
-        <option value="$PROJECT_DIR$/CQM/models.py" />
         <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_Summary.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_Summary.html" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/views.py" />
         <option value="$PROJECT_DIR$/TestPlanSW/views.py" />
         <option value="$PROJECT_DIR$/middleware/UserIP.py" />
         <option value="$PROJECT_DIR$/templates/MQM/MQM_search.html" />
+        <option value="$PROJECT_DIR$/CQM/views.py" />
+        <option value="$PROJECT_DIR$/CQM/models.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1915" />
     <option name="height" value="1030" />
   </component>
@@ -195,7 +192,7 @@
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="MQM" type="462c0819:PsiDirectoryNode" />
+              <item name="CQM" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
@@ -667,6 +664,7 @@
       <workItem from="1670554680077" duration="863000" />
       <workItem from="1670558541164" duration="1213000" />
       <workItem from="1672284097586" duration="936000" />
+      <workItem from="1673224005764" duration="288000" />
     </task>
     <servers />
   </component>
@@ -685,7 +683,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5762438000" />
+    <option name="totallyTimeSpent" value="5762726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -697,17 +695,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="0" width="1532" height="824" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
       <window_info id="Favorites" order="0" sideWeight="0.51502144" side_tool="true" weight="0.23117569" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22593583" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22324967" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" weight="0.3293944" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.497979" weight="0.32465544" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.497979" visible="true" weight="0.32361963" />
       <window_info anchor="bottom" id="Structure" order="6" sideWeight="0.502994" weight="0.23466258" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49636218" weight="0.4754601" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49717057" weight="0.32721713" />
@@ -770,22 +768,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestPlanSW/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="636" column="20" selection-start-line="636" selection-start-column="20" selection-end-line="636" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#24665#25635#0" />
-            <element signature="e#25706#26869#0" />
-            <element signature="e#26948#28131#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestPlanSWOS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1501">
@@ -1170,30 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CQM/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="831" column="42" lean-forward="true" selection-start-line="831" selection-start-column="42" selection-end-line="831" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#422#1147#0" />
-            <element signature="e#1216#35830#0" />
-            <element signature="e#54800#66187#0" />
-            <element signature="e#66687#66722#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CQM/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="107" column="63" selection-start-line="107" selection-start-column="63" selection-end-line="107" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1205,44 +1163,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="235" column="173" selection-start-line="235" selection-start-column="4" selection-end-line="235" selection-end-column="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="4018" column="60" lean-forward="true" selection-start-line="4018" selection-start-column="60" selection-end-line="4018" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#589#107681#0" />
-            <element signature="e#838#3182#0" />
-            <element signature="e#3274#4013#0" />
-            <element signature="e#4034#4403#0" />
-            <element signature="e#4415#4876#0" />
-            <element signature="e#4910#5294#0" />
-            <element signature="e#5305#5635#0" />
-            <element signature="e#5658#6049#0" />
-            <element signature="e#7351#26549#0" />
-            <element signature="e#26622#73129#0" />
-            <element signature="e#73196#107045#0" />
-            <element signature="e#107950#107964#0" />
-            <element signature="e#163510#166595#0" />
-            <element signature="e#166608#167473#0" />
-            <element signature="e#167484#168029#0" />
-            <element signature="e#168044#168656#0" />
-            <element signature="e#168793#171090#0" />
-            <element signature="e#171446#177817#0" />
-            <element signature="e#177826#177871#0" />
-            <element signature="e#182137#198945#0" />
-            <element signature="e#199014#216317#0" />
-            <element signature="e#216471#227254#0" />
-            <element signature="e#227511#236044#0" />
-            <element signature="e#241291#256646#0" />
-            <element signature="e#274299#275262#0" />
-            <element signature="e#275342#276068#0" />
-            <element signature="e#276766#292955#0" />
-            <element signature="e#293030#309994#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,13 +1198,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_edit.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="4018" column="60" selection-start-line="4018" selection-start-column="60" selection-end-line="4018" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#589#107681#0" />
+            <element signature="e#838#3182#0" />
+            <element signature="e#3274#4013#0" />
+            <element signature="e#4034#4403#0" />
+            <element signature="e#4415#4876#0" />
+            <element signature="e#4910#5294#0" />
+            <element signature="e#5305#5635#0" />
+            <element signature="e#5658#6049#0" />
+            <element signature="e#7351#26549#0" />
+            <element signature="e#26622#73129#0" />
+            <element signature="e#73196#107045#0" />
+            <element signature="e#107950#107964#0" />
+            <element signature="e#163510#166595#0" />
+            <element signature="e#166608#167473#0" />
+            <element signature="e#167484#168029#0" />
+            <element signature="e#168044#168656#0" />
+            <element signature="e#168793#171090#0" />
+            <element signature="e#171446#177817#0" />
+            <element signature="e#177826#177871#0" />
+            <element signature="e#182137#198945#0" />
+            <element signature="e#199014#216317#0" />
+            <element signature="e#216471#227254#0" />
+            <element signature="e#227511#236044#0" />
+            <element signature="e#241291#256646#0" />
+            <element signature="e#274299#275262#0" />
+            <element signature="e#275342#276068#0" />
+            <element signature="e#276766#292955#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="110" column="114" lean-forward="true" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
+          <caret line="110" column="114" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_edit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CQM/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="297" column="29" selection-start-line="297" selection-start-column="29" selection-end-line="297" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#422#1147#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CQM/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_searchlinshi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
         </state>
       </provider>
     </entry>
