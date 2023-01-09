@@ -3,6 +3,9 @@
 {% block title %}MQM_search{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 .content{
     width:25px;
@@ -108,8 +111,14 @@
                         <el-button size="small" v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                     </div>
                     <div class="col-md-1">
-                        <a size="small" v-if="canExport==1" href="\\10.129.83.21\files_MQM\Attachment" >Export</a>
-{#                        <a size="small" v-if="canExport==1" href="file:///D:\work/" >Export</a>#}
+                        <a size="small" v-if="canExport==1" href="file:\\10.129.83.21\files_MQM\" style="color: #FFFAF0">Attachment</a>
+{#                        <a size="small" v-if="canExport==1" href="file:///D:\work/" >Attachment</a>#}
+{#                        <form action="file://10.129.83.21/files_MQM/">#}
+{#                            <input type="submit" value="Go to forder">#}
+{#                        </form>#}
+                    </div>
+                    <div class="col-md-1">
+                        <a size="small" v-if="canExport==1" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a>
                     </div>
           </div>
 <template>
