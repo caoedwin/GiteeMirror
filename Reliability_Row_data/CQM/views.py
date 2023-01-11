@@ -659,7 +659,7 @@ def CQM_edit(request):
     # print(roles)
     editPpriority = 100
     for i in roles:
-        if i == 'admin':
+        if i == 'admin' or ('DQA_SW' in i and 'DQA_ME' in i):
             editPpriority = 4
         elif 'PM' in i:
             if editPpriority != 4:
