@@ -310,7 +310,7 @@ def MQM_edit(request):
     # print(roles)
     editPpriority = 100
     for i in roles:
-        if i == 'admin' or ('DQA_SW' in i and 'DQA_ME' in i):
+        if i == 'admin' or ('DQA_SW' in str(roles) and 'DQA_ME' in str(roles)):
             editPpriority = 4
         elif 'PM' in i:
             if editPpriority != 4:
