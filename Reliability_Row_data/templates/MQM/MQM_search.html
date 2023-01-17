@@ -111,14 +111,16 @@
                         <el-button size="small" v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                     </div>
                     <div class="col-md-1">
-                        <a size="small" v-if="canExport==1" href="file:\\10.129.83.21\files_MQM\" style="color: #FFFAF0">Attachment</a>
+                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search"><a size="small" href="file:\\10.129.83.21\files_MQM\" style="color: #FFFAF0">Attachment</a></el-button>
+
 {#                        <a size="small" v-if="canExport==1" href="file:///D:\work/" >Attachment</a>#}
 {#                        <form action="file://10.129.83.21/files_MQM/">#}
 {#                            <input type="submit" value="Go to forder">#}
 {#                        </form>#}
                     </div>
                     <div class="col-md-1">
-                        <a size="small" v-if="canExport==1" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a>
+                        <el-button size="small" v-if="canExport==1" type="info" ><a size="small" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a></el-button>
+
                     </div>
           </div>
 <template>
