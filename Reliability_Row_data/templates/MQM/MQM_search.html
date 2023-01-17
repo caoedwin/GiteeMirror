@@ -74,6 +74,10 @@
             color:#2f97a8;
         font-family:微软雅黑;
     }
+    .el-icon-question:before {
+    color:yellowgreen;
+    font-size: xx-large;
+}
     </style>
 {% endblock %}
 {% block content %}
@@ -119,9 +123,14 @@
 {#                        </form>#}
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" v-if="canExport==1" type="info" ><a size="small" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a></el-button>
-
+                        <el-tooltip v-if="canExport==1" class="item" effect="dark" placement="top">
+                            <div slot="content">提示：<br/>1.下载：出于安全考虑，Chrome将禁止打开本地及网络路径，请先点击“Chrome插件”按钮，按照sop安装插件。<br />2.上传：按Win+R输入“\\10.129.83.21\files_MQM”（目前仅限DQA人员才有权限）</div>
+                            <el-button size="small" v-if="canExport==1" type="info" ><a size="small" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a></el-button>
+                        </el-tooltip>
                     </div>
+{#                    <div class="col-md-1">#}
+{#                        <el-tooltip v-if="canExport==1" class="item" effect="dark" content="提示：<br />下载：出于安全考虑，Chrome将禁止打开本地及网络路径，请先点击“Chrome插件”按钮，安装插件。<br />上传：打开Win+R输入“\\10.129.83.21\files_MQM”（目前仅限DQA人员才有权限）" placement="right"><i class="el-icon-question"></i></el-tooltip>#}
+{#                    </div>#}
           </div>
 <template>
 <el-input type="text" v-model="search" id="sh" placeholder="关键字搜索......"></el-input>

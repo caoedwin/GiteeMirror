@@ -7,6 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-01-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-01-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-01-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-01-17.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/MQM/MQM_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/MQM/MQM_search.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +45,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="443" selection-start-line="443" selection-end-line="446" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+            <state relative-caret-position="128">
+              <caret line="126" column="111" selection-start-line="126" selection-start-column="111" selection-end-line="126" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -66,9 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>know</find>
-      <find>查找</find>
-      <find>isSet</find>
       <find>Delete</find>
       <find>find</find>
       <find>plan</find>
@@ -96,6 +104,9 @@
       <find>content</find>
       <find>export</find>
       <find>build</find>
+      <find>item</find>
+      <find>search</find>
+      <find>el-icon-question</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -191,6 +202,12 @@
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="MQM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="TestPlanSW" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
@@ -667,7 +684,7 @@
       <workItem from="1673408503791" duration="351000" />
       <workItem from="1673408991676" duration="134000" />
       <workItem from="1673409428374" duration="230000" />
-      <workItem from="1673920197127" duration="429000" />
+      <workItem from="1673920197127" duration="2256000" />
     </task>
     <servers />
   </component>
@@ -686,7 +703,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5763870000" />
+    <option name="totallyTimeSpent" value="5765697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -703,7 +720,7 @@
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
       <window_info id="Favorites" order="0" sideWeight="0.51502144" side_tool="true" weight="0.23117569" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22324967" />
+      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.48497853" visible="true" weight="0.22324967" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
@@ -721,7 +738,7 @@
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50317967" weight="0.3006135" />
       <window_info anchor="bottom" id="SciView" order="15" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
       <window_info anchor="bottom" id="TypeScript" order="16" />
-      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="17" sideWeight="0.5006605" visible="true" weight="0.28374234" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="17" sideWeight="0.5006605" visible="true" weight="0.28374234" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -772,63 +789,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_search_AIO.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="476" column="13" selection-start-line="476" selection-start-column="13" selection-end-line="476" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="3919" column="55" lean-forward="true" selection-start-line="3919" selection-start-column="12" selection-end-line="3919" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1306#2162#0" />
-            <element signature="e#3542#20728#0" />
-            <element signature="e#20781#39600#0" />
-            <element signature="e#21046#21422#0" />
-            <element signature="e#21443#22080#0" />
-            <element signature="e#22108#23307#0" />
-            <element signature="e#25721#28348#0" />
-            <element signature="e#28415#29126#0" />
-            <element signature="e#29193#36087#0" />
-            <element signature="e#30345#33153#0" />
-            <element signature="e#39651#135333#0" />
-            <element signature="e#40024#40924#0" />
-            <element signature="e#40945#41582#0" />
-            <element signature="e#41599#42798#0" />
-            <element signature="e#45528#48372#0" />
-            <element signature="e#48447#49158#0" />
-            <element signature="e#49233#56526#0" />
-            <element signature="e#56598#77424#0" />
-            <element signature="e#77498#95697#0" />
-            <element signature="e#95891#104542#0" />
-            <element signature="e#135382#145124#0" />
-            <element signature="e#145171#176846#0" />
-            <element signature="e#176888#234198#0" />
-            <element signature="e#327293#457273#0" />
-            <element signature="e#340649#341526#0" />
-            <element signature="e#341561#342495#0" />
-            <element signature="e#342590#343617#0" />
-            <element signature="e#343652#344917#0" />
-            <element signature="e#344996#345278#0" />
-            <element signature="e#345814#350601#0" />
-            <element signature="e#350636#355732#0" />
-            <element signature="e#355811#356035#0" />
-            <element signature="e#356758#357510#0" />
-            <element signature="e#357718#364830#0" />
-            <element signature="e#364865#372199#0" />
-            <element signature="e#373363#374405#0" />
-            <element signature="e#374440#375697#0" />
-            <element signature="e#457317#474435#0" />
-            <element signature="e#474479#476276#0" />
-            <element signature="e#476315#719723#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AutoResult/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
@@ -1282,10 +1242,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_edit20200326.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="443" selection-start-line="443" selection-end-line="446" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+        <state relative-caret-position="128">
+          <caret line="126" column="111" selection-start-line="126" selection-start-column="111" selection-end-line="126" selection-end-column="111" />
         </state>
       </provider>
     </entry>
