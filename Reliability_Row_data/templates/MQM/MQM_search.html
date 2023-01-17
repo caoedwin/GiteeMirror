@@ -115,7 +115,9 @@
                         <el-button size="small" v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search"><a size="small" href="file:\\10.129.83.21\files_MQM\" style="color: #FFFAF0">Attachment</a></el-button>
+                        <a v-if="canExport==1" size="small" href="file:\\10.129.83.21\files_MQM\" style="color: #FFFAF0">
+                            <el-button size="small" style="background:#428bca;color:#fff;">Attachment</el-button>
+                        </a>
 
 {#                        <a size="small" v-if="canExport==1" href="file:///D:\work/" >Attachment</a>#}
 {#                        <form action="file://10.129.83.21/files_MQM/">#}
@@ -125,7 +127,9 @@
                     <div class="col-md-1">
                         <el-tooltip v-if="canExport==1" class="item" effect="dark" placement="top">
                             <div slot="content">提示：<br/>1.下载：出于安全考虑，Chrome将禁止打开本地及网络路径，请先点击“Chrome插件”按钮，按照sop安装插件。<br />2.上传：按Win+R输入“\\10.129.83.21\files_MQM”（目前仅限DQA人员才有权限）</div>
-                            <el-button size="small" v-if="canExport==1" type="info" ><a size="small" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">Chrome插件</a></el-button>
+                            <a v-if="canExport==1" size="small" href="/static/src/modelfiles/enable-local-file-links.zip" style="color: #FFFAF0">
+                                <el-button size="small" type="info" >Chrome插件</el-button>
+                            </a>
                         </el-tooltip>
                     </div>
 {#                    <div class="col-md-1">#}
