@@ -1006,6 +1006,7 @@ def CQM_search(request):
     # for i in CQM.objects.all().values('Material_Group').distinct().order_by('Material_Group'):
     #     selectCategory.append(i['Material_Group'])
     canExport = 0
+    canShow = 1
     roles = []
     onlineuser = request.session.get('account')
     # print(UserInfo.objects.get(account=onlineuser))
@@ -1015,6 +1016,9 @@ def CQM_search(request):
         if 'admin' in i:
             # editPpriority = 4
             canExport = 1
+        if 'RD' in i:
+            # editPpriority = 4
+            canShow = 0
         # elif 'DQA' in i and 'edit' in i:
         #     canExport = 1
     # print(request.POST)
@@ -1074,6 +1078,7 @@ def CQM_search(request):
             "selectCompal_R3_PN":selectCompal_R3_PN,
             "selectCategory":selectCategory,
             'canExport': canExport,
+            'canShow': canShow,
         }
         # print(json.dumps(data), type(json.dumps(data)))
         return HttpResponse(json.dumps(data), content_type="application/json")

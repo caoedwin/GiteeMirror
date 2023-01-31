@@ -18,6 +18,7 @@ class MQM(models.Model):
         ('Qd_C', 'Qd_C'),
         ('QT', 'QT'),
         ('QF', 'QF'),
+        ('QF_L', 'QF_L'),
         ('DisQ', 'DisQ'),
         ('Drop', 'Drop'),
         ('Not Build', 'Not Build'),
@@ -25,7 +26,7 @@ class MQM(models.Model):
     Customer=models.CharField('Customer', max_length=10, choices=Choice_customer, default='')
     Project = models.CharField('Project', max_length=20)
     Category = models.CharField('Category', max_length=200,default='',)
-    Name=models.CharField('Name', max_length=200)
+    Name=models.CharField('Name', max_length=300)
     Vendor=models.CharField('Vender', max_length=50, default='', blank=True, null=True)
     SourcePriority=models.CharField('SourcePriority', max_length=10)
     CompalPN=models.CharField('CompalPN', max_length=50, default='', blank=True, null=True)

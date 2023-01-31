@@ -540,6 +540,7 @@ def MQM_search(request):
     ]
 
     canExport = 0
+    canShow = 1
     roles = []
     onlineuser = request.session.get('account')
     # print(UserInfo.objects.get(account=onlineuser))
@@ -549,6 +550,9 @@ def MQM_search(request):
         if 'admin' in i:
             # editPpriority = 4
             canExport = 1
+        if 'RD' in i:
+            # editPpriority = 4
+            canShow = 0
         # elif 'PM' in i:
         #     if editPpriority != 4:
         #         editPpriority = 1
@@ -644,6 +648,7 @@ def MQM_search(request):
             "content": mock_data,
             "select": selectItem,
             'canExport': canExport,
+            'canShow': canShow,
             'addselect': selectCategory,
         }
         return HttpResponse(json.dumps(data), content_type="application/json")

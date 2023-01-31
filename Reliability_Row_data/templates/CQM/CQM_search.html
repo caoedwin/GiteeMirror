@@ -192,8 +192,8 @@ input:focus{
                    <span v-else="scope.row.Comments">${ scope.row.Testresult }</span>
               </template>
           </el-table-column>
-          <el-table-column prop="Reliability" label="Reliability" align="center" width="110" sortable='custom'></el-table-column>
-          <el-table-column prop="Compatibility" label="Compatibility" align="center" width="130" sortable='custom'></el-table-column>
+          <el-table-column v-if="canShow!==0" prop="Reliability" label="Reliability" align="center" width="110" sortable='custom'></el-table-column>
+          <el-table-column v-if="canShow!==0" prop="Compatibility" label="Compatibility" align="center" width="130" sortable='custom'></el-table-column>
           </el-table-column>
           <el-table-column  label="RD test result" align="center">
           <el-table-column prop="ESD" label="ESD" align="center" width="70" sortable='custom'></el-table-column>
@@ -274,6 +274,7 @@ $(document).ready(function() {
                 selectedProject:null,
                 selectedCategory:null,
                 canExport:null,
+                canShow:null,
                 selectedCompal_R1_PN:'',
                 selectedCompal_R3_PN:'',
                 selectItem:[],
@@ -457,6 +458,7 @@ $(document).ready(function() {
                     this.tableContent = res.data.content;
                     this.selectItem = res.data.select;
                     this.canExport = res.data.canExport;
+                    this.canShow = res.data.canShow;
 {#                    this.selectCategory = res.data.selectCategory;#}
                     this.selectCompal_R1_PN=res.data.selectCompal_R1_PN;
                     this.selectCompal_R3_PN=res.data.selectCompal_R3_PN;
@@ -596,7 +598,8 @@ $(document).ready(function() {
                       background: '#00FF00'
                   }
               }{% endcomment %}
-              if (columnIndex === 8 && (row.Testresult === 'Qd' || row.Testresult === 'Qd_C' || row.Testresult === 'Qd_L' || row.Testresult === 'Qd-C' || row.Testresult === 'Qd-L')) {
+            if (this.canShow === 1){
+                if (columnIndex === 8 && (row.Testresult === 'Qd' || row.Testresult === 'Qd_C' || row.Testresult === 'Qd_L' || row.Testresult === 'Qd-C' || row.Testresult === 'Qd-L')) {
                   return {
                       background: '#00FF00'
                   }
@@ -651,6 +654,64 @@ $(document).ready(function() {
                       background: '#696969'
                   }
               }
+            }else{
+                if (columnIndex === 8 && (row.Testresult === 'Qd' || row.Testresult === 'Qd_C' || row.Testresult === 'Qd_L' || row.Testresult === 'Qd-C' || row.Testresult === 'Qd-L')) {
+                  return {
+                      background: '#00FF00'
+                  }
+              }
+
+{#              if (columnIndex === 13 && row.Reliability === 'T') {#}
+{#                  return {#}
+{#                      background: '#FFFF00'#}
+{#                  }#}
+{#              }#}
+{#              if (columnIndex === 14 && row.Compatibility === 'T') {#}
+{#                  return {#}
+{#                      background: '#FFFF00'#}
+{#                  }#}
+{#              }#}
+{#              if (columnIndex === 15 && row.Testresult === 'T') {#}
+{#                  return {#}
+{#                      background: '#FFFF00'#}
+{#                  }#}
+{#              }#}
+
+
+              {% comment %}if (columnIndex === 8 && (row.Reliability === 'F' || row.Reliability === 'DisQ')) {
+                  return {
+                      color: '#FF0000'
+                  }
+              }
+              if (columnIndex === 9 && (row.Compatibility === 'F' || row.Compatibility === 'DisQ')) {
+                  return {
+                      color: '#FF0000'
+                  }
+              }{% endcomment %}
+              if (columnIndex === 8 && (row.Testresult === 'F' || row.Testresult === 'DisQ')) {
+                  return {
+                      color: '#FF0000'
+                  }
+              }
+
+
+              {% comment %}if (columnIndex === 8 && row.Reliability === 'Drpd') {
+                  return {
+                      background: '#696969'
+                  }
+              }
+              if (columnIndex === 9 && row.Compatibility === 'Drpd' ) {
+                  return {
+                      background: '#696969'
+                  }
+              }{% endcomment %}
+              if (columnIndex === 8 && row.Testresult === 'Drpd' ) {
+                  return {
+                      background: '#696969'
+                  }
+              }
+            }
+
           },
         ToBreak (val) {
 

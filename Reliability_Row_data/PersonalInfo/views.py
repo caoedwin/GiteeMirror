@@ -2006,7 +2006,7 @@ def PersonalInfo_edit(request):
                                     第"%s"條數據，手機號碼不能爲空
                                                         """ % rownum
                             break
-                    if responseData['historyYear']:#存到PersonalInfoHisByYear
+                    if responseData['historyYear'] and responseData['historyYear'] != "null":#存到PersonalInfoHisByYear
                         Check_dic = {
                             'Year': responseData['historyYear'],
                             # 'GroupNum': modeldata['GroupNum'],
@@ -2026,9 +2026,16 @@ def PersonalInfo_edit(request):
                                     if key in headermodel_PersonalInfo.keys():
                                         if headermodel_PersonalInfo[key] == "RegistrationDate" or headermodel_PersonalInfo[
                                             key] == "QuitDate" or headermodel_PersonalInfo[key] == "LastPromotionData":
-                                            modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + \
-                                                                                       value.split("/")[0] + "-" + \
-                                                                                       value.split("/")[1]
+                                            # value = value.replace('/', '-')
+                                            # value = value.replace('.', '-')
+                                            if len(value.split("/")) == 3:
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + \
+                                                                                           value.split("/")[0] + "-" + \
+                                                                                           value.split("/")[1]
+                                            else:
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[2] + "-" + \
+                                                                                           value.split("-")[0] + "-" + \
+                                                                                           value.split("-")[1]
                                         else:
                                             modeldata[headermodel_PersonalInfo[key]] = value
                                 modeldata['Year'] = responseData['historyYear']
@@ -2054,7 +2061,16 @@ def PersonalInfo_edit(request):
                                 for key, value in i.items():
                                     if key in headermodel_PersonalInfo.keys():
                                         if headermodel_PersonalInfo[key] == "RegistrationDate" or headermodel_PersonalInfo[key] == "QuitDate" or headermodel_PersonalInfo[key] == "LastPromotionData":
-                                            modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + value.split("/")[0] + "-" + value.split("/")[1]
+                                            # value = value.replace('/', '-')
+                                            # value = value.replace('.', '-')
+                                            if len(value.split("/")) == 3:
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + \
+                                                                                           value.split("/")[0] + "-" + \
+                                                                                           value.split("/")[1]
+                                            else:
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[2] + "-" + \
+                                                                                           value.split("-")[0] + "-" + \
+                                                                                           value.split("-")[1]
                                         else:
                                             modeldata[headermodel_PersonalInfo[key]] = value
                                 Check_dic = {

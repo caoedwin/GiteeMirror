@@ -351,7 +351,7 @@ $(document).ready(function() {
         delimiters: ['${', '}'],
         data: function () {
             return {
-                options: [{value: 'QS', label: 'QS'}, {value: 'Qd_L', label: 'Qd_L'}, {value: 'Qd_C', label: 'Qd_C'}, {value: 'QT', label: 'QT'}, {value: 'QF', label: 'QF'}, {value: 'DisQ', label: 'DisQ'}, {value: 'Drop', label: 'Drop'}, {value: 'Not Build', label: 'Not Build'}],
+                options: [{value: 'QS', label: 'QS'}, {value: 'Qd_L', label: 'Qd_L'}, {value: 'Qd_C', label: 'Qd_C'}, {value: 'QT', label: 'QT'}, {value: 'QF', label: 'QF'}, {value: 'QF_L', label: 'QF_L'}, {value: 'DisQ', label: 'DisQ'}, {value: 'Drop', label: 'Drop'}, {value: 'Not Build', label: 'Not Build'}],
                 visible: false,
                 tableContent: [],
                     project:[],
@@ -717,10 +717,13 @@ $(document).ready(function() {
                 else if(rows.ReliabilityB=='QF'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!==''){
                     rows.ResultforB=rows.ReliabilityB;
                 }
-                else if(rows.ReliabilityB=='QT'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!=='QF'&& rows.CompatibilityB!==''){
+                else if(rows.ReliabilityB=='QF_L'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!=='QF'&& rows.CompatibilityB!==''){
                     rows.ResultforB=rows.ReliabilityB;
                 }
-                else if(rows.ReliabilityB=='Qd_C'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!=='QF'&& rows.CompatibilityB!=='QT'&& rows.CompatibilityB!==''){
+                else if(rows.ReliabilityB=='QT'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!=='QF'&& rows.CompatibilityB!=='QF_L'&& rows.CompatibilityB!==''){
+                    rows.ResultforB=rows.ReliabilityB;
+                }
+                else if(rows.ReliabilityB=='Qd_C'&& rows.CompatibilityB!=='Not Build'&& rows.CompatibilityB!=='Drop'&& rows.CompatibilityB!=='DisQ'&& rows.CompatibilityB!=='QF'&& rows.CompatibilityB!=='QF_L'&& rows.CompatibilityB!=='QT'&& rows.CompatibilityB!==''){
                     rows.ResultforB=rows.ReliabilityB;
                 }
                 else if(rows.ReliabilityB=='Qd_L'&& rows.CompatibilityB=='QS'){
@@ -752,10 +755,13 @@ $(document).ready(function() {
                 else if(rows.ReliabilityC=='QF'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&&rows.CompatibilityC!==''){
                     rows.ResultforC='QF';
                 }
-                else if(rows.ReliabilityC=='QT'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&& rows.CompatibilityC!=='QF'&&rows.CompatibilityC!==''){
+                else if(rows.ReliabilityC=='QF_L'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&& rows.CompatibilityC!=='QF'&&rows.CompatibilityC!==''){
+                    rows.ResultforC='QF_L';
+                }
+                else if(rows.ReliabilityC=='QT'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&& rows.CompatibilityC!=='QF'&& rows.CompatibilityC!=='QF_L'&&rows.CompatibilityC!==''){
                     rows.ResultforC='QT';
                 }
-                else if(rows.ReliabilityC=='Qd_C'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&& rows.CompatibilityC!=='QF'&& rows.CompatibilityC!=='QT'&&rows.CompatibilityC!==''){
+                else if(rows.ReliabilityC=='Qd_C'&& rows.CompatibilityC!=='Not Build'&& rows.CompatibilityC!=='Drop'&& rows.CompatibilityC!=='DisQ'&& rows.CompatibilityC!=='QF'&& rows.CompatibilityC!=='QF_L'&& rows.CompatibilityC!=='QT'&&rows.CompatibilityC!==''){
                     rows.ResultforC='Qd_C';
                 }
                 else if(rows.ReliabilityC=='Qd_L'&& rows.CompatibilityC=='QS'){
@@ -784,7 +790,10 @@ $(document).ready(function() {
                 else if(rows.ReliabilityINV=='QF'&& rows.CompatibilityINV!=='Not Build' && rows.CompatibilityINV!=='Drop' && rows.CompatibilityINV!=='DisQ'&& rows.CompatibilityINV !==''){
                     rows.ResultforINV=rows.ReliabilityINV;
                 }
-                else if(rows.ReliabilityINV=='QT'&& rows.CompatibilityINV!=='Not Build'&& rows.CompatibilityINV !== 'Drop' && rows.CompatibilityINV!=='DisQ'&& rows.CompatibilityC!=='QF'&& rows.CompatibilityINV !==''){
+                else if(rows.ReliabilityINV=='QF_L'&& rows.CompatibilityINV!=='Not Build' && rows.CompatibilityINV!=='Drop' && rows.CompatibilityINV!=='DisQ' && rows.CompatibilityINV!=='QF'&& rows.CompatibilityINV !==''){
+                    rows.ResultforINV=rows.ReliabilityINV;
+                }
+                else if(rows.ReliabilityINV=='QT'&& rows.CompatibilityINV!=='Not Build'&& rows.CompatibilityINV !== 'Drop' && rows.CompatibilityINV!=='DisQ'&& rows.CompatibilityC!=='QF'&& rows.CompatibilityC!=='QF_L'&& rows.CompatibilityINV !==''){
                     rows.ResultforINV=rows.ReliabilityINV;
                 }
                 else if(rows.ReliabilityINV=='Qd_C'&& (rows.CompatibilityINV=='QS'|| rows.CompatibilityINV=='Qd_L')){
@@ -908,6 +917,11 @@ $(document).ready(function() {
                                   background: '#FF0000'
                                 }
                 }
+                if (columnIndex === 7 && (row.ResultforB === 'QF_L'|| row.ResultforB === 'DisQ')) {
+                        return {
+                                  background: '#FF0000'
+                                }
+                }
                 {% comment %}if (columnIndex === 11 && (row.ReliabilityC === 'QF'||row.ReliabilityC === 'DisQ')) {
                         return {
                                   background: '#FF0000'
@@ -923,6 +937,11 @@ $(document).ready(function() {
                                   background: '#FF0000'
                                 }
                 }
+                if (columnIndex === 11 && (row.ResultforC === 'QF_L'|| row.ResultforC === 'DisQ')) {
+                        return {
+                                  background: '#FF0000'
+                                }
+                }
                 {% comment %}if (columnIndex === 15 && (row.ReliabilityINV === 'QF'|| row.ReliabilityINV === 'DisQ')) {
                         return {
                                   background: '#FF0000'
@@ -934,6 +953,11 @@ $(document).ready(function() {
                                 }
                 }{% endcomment %}
                 if (columnIndex === 15 && (row.ResultforINV === 'QF'|| row.ResultforINV === 'DisQ')) {
+                        return {
+                                  background: '#FF0000'
+                                }
+                }
+                if (columnIndex === 15 && (row.ResultforINV === 'QF_L'|| row.ResultforINV === 'DisQ')) {
                         return {
                                   background: '#FF0000'
                                 }
