@@ -159,6 +159,16 @@ def Infos_upload(request):
                             第"%s"條數據，職等不能爲空
                                                 """ % rownum
                     break
+                if 'Grade' in modeldata.keys():
+                    startupload = 1
+                else:
+                    # canEdit = 0
+                    startupload = 0
+                    err_ok = 2
+                    err_msg = """
+                            第"%s"條數據，職等不能爲空
+                                                """ % rownum
+                    break
                 if 'Item' in modeldata.keys():
                     startupload = 1
                 else:
@@ -6123,7 +6133,7 @@ def Summary3(request):
                                                                   "QuitReason"]).count() / PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                 Status__in=["離職"], ).count() * 100), 4)
 
-                    reasonTable.append(reasonTable_dict)
+                        reasonTable.append(reasonTable_dict)
 
             # reasonDiagramData
             LABEL = []
@@ -6927,41 +6937,41 @@ def Summary3(request):
 
             # 離職原因
             if not YearSearch or YearSearch == YearNow:
-                if PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                if PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod).values(
                         "QuitReason").distinct():
-                    for i in PersonalInfo.objects.filter(Status__in=["離職"]).values(
+                    for i in PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod).values(
                             "QuitReason").distinct().order_by(
                         "QuitReason"):
                         reasonTable_dict = {"reason": i["QuitReason"]}
                         reasonTable_dict['reasonSummary'] = PersonalInfo.objects.filter(Status__in=["離職"],
                                                                                         QuitReason=i[
-                                                                                            "QuitReason"]).count()
+                                                                                            "QuitReason"], QuitDate__range=Search_Endperiod).count()
                         reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(
                             float(PersonalInfo.objects.filter(Status__in=["離職"],
                                                               QuitReason=i[
-                                                                  "QuitReason"]).count() / PersonalInfo.objects.filter(
+                                                                  "QuitReason"], QuitDate__range=Search_Endperiod).count() / PersonalInfo.objects.filter(
                                 Status__in=["離職"], ).count() * 100), 4)
 
                         reasonTable.append(reasonTable_dict)
             else:
-                if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"], QuitDate__range=Search_Endperiod).values(
                         "QuitReason").distinct():
-                    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
+                    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"], QuitDate__range=Search_Endperiod).values(
                             "QuitReason").distinct().order_by("QuitReason"):
                         reasonTable_dict = {"reason": i["QuitReason"]}
                         reasonsSummary = 0
                         reasonTable_dict['reasonSummary'] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                                  Status__in=["離職"],
                                                                                                  QuitReason=i[
-                                                                                                     "QuitReason"]).count()
+                                                                                                     "QuitReason"], QuitDate__range=Search_Endperiod).count()
                         reasonTable_dict['reasonDeparture'] = '%.2f%%' % round(
                             float(PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
                                                                        QuitReason=i[
-                                                                           "QuitReason"]).count() / PersonalInfoHisByYear.objects.filter(
+                                                                           "QuitReason"], QuitDate__range=Search_Endperiod).count() / PersonalInfoHisByYear.objects.filter(
                                 Year=YearSearch,
                                 Status__in=["離職"], ).count() * 100), 4)
 
-                    reasonTable.append(reasonTable_dict)
+                        reasonTable.append(reasonTable_dict)
 
             # reasonDiagramData
             LABEL = []
