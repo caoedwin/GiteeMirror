@@ -40,3 +40,26 @@
 [2023-02-01 15:04:21,727] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-01 15:04:21 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /CQM/CQM_search/ POST
 [2023-02-01 15:04:21,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_search/ HTTP/1.1" 200 120282
 [2023-02-01 15:04:26,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-02-01 15:19:18,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 22870
+[2023-02-01 15:19:19,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-02-01 15:19:44,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 67362
+[2023-02-01 15:19:45,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-02-01 15:19:46,294] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-01 15:19:46 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-02-01 15:19:46,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 90908
+[2023-02-01 15:20:05,326] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-01 15:20:05 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-02-01 15:20:05,341] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 13701
+[2023-02-03 09:08:29,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 302 0
+[2023-02-03 09:08:29,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-02-03 09:08:29,969] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-02-03 09:08:29,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-02-03 09:08:31,927] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-03 09:08:31 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /login/ POST
+[2023-02-03 09:08:31,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-02-03 09:08:32,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-02-03 09:08:32,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-02-03 09:08:32,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-02-03 09:09:03,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 200 45054
+[2023-02-03 09:09:03,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-02-03 09:09:04,157] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-03 09:09:04 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2023-02-03 09:09:04,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 200 1073865
+[2023-02-03 09:09:08,170] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-03 09:09:08 C1010S3>Edwin None>LAPTOP-1EJQO0D7>311 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2023-02-03 09:09:08,176] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 200 23083

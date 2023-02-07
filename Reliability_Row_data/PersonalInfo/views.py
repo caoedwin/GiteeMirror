@@ -22,7 +22,7 @@ headermodel_Departments = {
     '客戶別': 'Customer', '部門代碼': 'Department_Code', '管理者': 'Manager',
 }
 headermodel_Positions = {
-    '職等': 'Grade', '項次': 'Item', '國籍': 'Nationality', '職稱代碼': 'Positions_Code', '職稱': 'Positions_Name',
+    '職等': 'Grade', '項次': 'Item', '國籍': 'Nationality', '職稱代碼': 'Positions_Code', '職稱': 'Positions_Name', '年份': 'Year',
 }
 headermodel_MajorIfo = {
     '學歷': 'Education', '大類': 'Categories', '學科': 'Subject', '門類': 'category', '專業': 'Major', '專業 for 公式查找': 'MajorForExcel',
@@ -209,12 +209,22 @@ def Infos_upload(request):
                             第"%s"條數據，職稱不能爲空
                                                 """ % rownum
                     break
+                if 'Year' in modeldata.keys():
+                    startupload = 1
+                else:
+                    # canEdit = 0
+                    startupload = 0
+                    err_ok = 2
+                    err_msg = """
+                            第"%s"條數據，年份不能爲空
+                                                """ % rownum
+                    break
             if startupload:
                 for i in simplejson.loads(xlsxlist):
                     modeldata = {}
                     for key, value in i.items():
                         modeldata[headermodel_Positions[key]] = value
-                    Check_dic = {'Grade': modeldata['Grade'], 'Item': modeldata['Item'], 'Positions_Code': modeldata['Positions_Code'],
+                    Check_dic = {'Grade': modeldata['Grade'], 'Item': modeldata['Item'], 'Positions_Code': modeldata['Positions_Code'], 'Year': modeldata['Year'],
                                  }
                     # print(Check_dic)
                     exsitdata = {}
@@ -723,26 +733,28 @@ def PersonalInfo_search(request):
                          "PhoneNumber": i.MobileNum, "fileListO": Photolist},
                     )
         if request.POST.get("isGetData") == "selectDetail":
-            # YearSearch = request.POST.get("Year")
+            YearSearch = request.POST.get("Year")
             GroupNumSearch = request.POST.get("GroupEmployees")#不管是PersonalInfo還是PersonalInfoHisByYear裏面的數據，都用工號到PersonalInfo裏面搜索，因爲晉升記錄鏈接的他，并且頭像都是一樣的
             registinfo = PersonalInfo.objects.get(GroupNum=GroupNumSearch)
-            print(Positions.objects.filter(Positions_Code=registinfo.PositionNow).first(),registinfo.PositionNow)
-            if Positions.objects.filter(Item=registinfo.PositionNow).first():
-                CurrentTitle = Positions.objects.filter(Item=registinfo.PositionNow).first().Positions_Name
+            # print(Positions.objects.filter(Positions_Code=registinfo.PositionNow).first(),registinfo.PositionNow)
+            if Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first():
+                CurrentTitle = Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first().Positions_Name
             else:
                 CurrentTitle = "該項次沒有對應的職稱名"
-            if Positions.objects.filter(Item=registinfo.PositionNow).first():
-                EntryTitle = Positions.objects.filter(Item=registinfo.PositionNow).first().Positions_Name
+            if Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first():
+                EntryTitle = Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first().Positions_Name
             else:
                 EntryTitle = "該項次沒有對應的職稱名"
 
             form = {
                 "SAPEmployees": registinfo.SAPNum, "ChineseName": registinfo.CNName, "GroupEmployees": GroupNumSearch,
-                    "EnglishName": registinfo.EngName, "Profession": registinfo.Major, "School": registinfo.School, "CurrentTitle": CurrentTitle,
+                    "EnglishName": registinfo.EngName, "Profession": registinfo.Major, "School": registinfo.School,
+                    "Education":registinfo.Education, "CurrentTitle": CurrentTitle,
                     "Birthday": registinfo.IdCard[6:10] + "-" + registinfo.IdCard[10:12] + "-" + registinfo.IdCard[12:14],
-                    "NativeProvinceCity": registinfo.NativeProvince + registinfo.NativeCounty, "RegistrationDate": str(registinfo.RegistrationDate),
-                    "Department": registinfo.DepartmentCode, "Status": registinfo.Status,
+                    "NativeProvinceCity": registinfo.NativeProvince + registinfo.NativeCounty, "RegistrationDate": str(registinfo.RegistrationDate) if registinfo.RegistrationDate else '',
+                    "Department": registinfo.DepartmentCode, "Status": registinfo.Status, "ExpectedDepartureDate": str(registinfo.QuitDate) if registinfo.QuitDate else '',
             }
+            # print(form)
             for h in registinfo.Portrait.all():
                 Imageurl = '/media/' + h.img.name
             tableData.append(
@@ -753,13 +765,13 @@ def PersonalInfo_search(request):
             LastLastPromotionData = registinfo.RegistrationDate
             for i in PersonalInfoHisByPer.objects.filter(GroupNum=GroupNumSearch).values("DepartmentCode", "CNName", "PositionOld", "PositionNow", "LastPromotionData").order_by("LastPromotionData"):
                 num += 1
-                # print(i)
+                print(i)
                 tableData.append(
                     {"Department": i["DepartmentCode"], "GroupEmployees": GroupNumSearch,
                      "ChineseName": i["CNName"], "EntryTitle": i["PositionOld"],
                      "CurrentTitle": i["PositionNow"], "PromotionDate": str(i["LastPromotionData"]),
                      "Intervaltime": round(
-                            float(str((i["LastPromotionData"] - LastLastPromotionData)).split(' ')[0]) / 365, 1),
+                            float(str((i["LastPromotionData"] - LastLastPromotionData)).split(' ')[0]) / 365, 1) if i["LastPromotionData"] else "缺少晋升日期",
                      "beizhu": "晉升%s"%num, }
                 )
                 LastLastPromotionData = i["LastPromotionData"]
@@ -898,8 +910,9 @@ def PersonalInfo_edit(request):
         Lessonoptions1.append(i['DepartmentCode'])
     for i in PersonalInfo.objects.all().values("GroupNum").distinct().order_by("GroupNum"):
         GroupEmployeesNum.append({"value": i['GroupNum']})
-
-    for i in Positions.objects.all().values("Item").distinct().order_by("Item"):
+    YearNow = str(datetime.datetime.now().year)
+    # print(Positions.objects.filter(Year=YearSearch).values("Item").distinct())
+    for i in Positions.objects.filter(Year=YearNow).values("Item").distinct().order_by("Item"):
         Titleoptions1.append(i["Item"])
     for i in MajorIfo.objects.all().values("MajorForExcel").distinct().order_by("MajorForExcel"):
         ProfessionAttributionoptions1.append({'value': i['MajorForExcel']})
@@ -953,6 +966,15 @@ def PersonalInfo_edit(request):
                             "GroupNum"):
                         GroupNumlist.append({"GroupEmployees": j["GroupNum"]})
                     lessonOptions[i["DepartmentCode"]] = GroupNumlist
+                #更具年份變更職位信息列表
+                YearSearch = request.POST.get("Year")
+                YearNow = str(datetime.datetime.now().year)
+                if not YearSearch:
+                    YearSearch = YearNow
+                Titleoptions1 = []
+                # print(Positions.objects.filter(Year=YearSearch).values("Item").distinct())
+                for i in Positions.objects.filter(Year=YearSearch).values("Item").distinct().order_by("Item"):
+                    Titleoptions1.append(i["Item"])
             if request.POST.get("isGetData") == "SEARCH":
                 YearSearch = request.POST.get("Year")
                 CustomerSearch = request.POST.get("Customer")
@@ -1044,6 +1066,12 @@ def PersonalInfo_edit(request):
                              "HukouCity": i.ResidenceCounty,
                              "PhoneNumber": i.MobileNum, "fileListO": Photolist},
                         )
+                if not YearSearch:
+                    YearSearch = YearNow
+                Titleoptions1 = []
+                # print(YearSearch,Positions.objects.filter(Year=YearSearch).values("Item").distinct().order_by("Item"))
+                for i in Positions.objects.filter(Year=YearSearch).values("Item").distinct().order_by("Item"):
+                    Titleoptions1.append(i["Item"])
             if request.POST.get("action") == "submit":
                 #虽然与新增用的同一个form，但是编辑时需要先赋值默认值，复制后为空的数据就不是空字符串了。
                 YearSearch = request.POST.get("searchYear")
@@ -2518,7 +2546,8 @@ def ManPower_edit(request):
     # YearNow = str(datetime.datetime.now().year)
     # for i in Positions.objects.filter(Year=YearNow).values("Item").distinct().order_by("Item"):
     #     itemOption.append(i["Item"])
-    for i in Positions.objects.all().values("Item").distinct().order_by("Item"):
+    YearNow = str(datetime.datetime.now().year)
+    for i in Positions.objects.filter(Year=YearNow).values("Item").distinct().order_by("Item"):
         itemOption.append(i["Item"])
 
     if request.method == 'POST':
@@ -2602,6 +2631,11 @@ def ManPower_edit(request):
                          "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jan, "Jul": i.Jul, "Aug": i.Aug, "Sep": i.Sep,
                          "Oct": i.Oct, "Nov": i.Nov, "Dec": i.Dec},
                     )
+                if not YearSearch:
+                    YearSearch = YearNow
+                itemOption = []
+                for i in Positions.objects.filter(Year=YearSearch).values("Item").distinct().order_by("Item"):
+                    itemOption.append(i["Item"])
             if request.POST.get("isGetData") == "changeChu":
                 YearSearch = request.POST.get("Year")
                 CHUSearch = request.POST.get("chu")
@@ -4257,6 +4291,7 @@ def Summary2(request):
             # By职称
             if not YearSearch or YearSearch == YearNow:
                 # legendData = ["DQA"]
+                YearSearch = YearNow
                 legendData = []
                 titleDiagramname = []
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by(
@@ -4267,7 +4302,7 @@ def Summary2(request):
                     "PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -4275,7 +4310,7 @@ def Summary2(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleTable_data = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "無對應的年份的職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItem:
                         titleTable_data[j] = PersonalInfo.objects.filter(PositionNow=i["PositionNow"],
@@ -4286,7 +4321,7 @@ def Summary2(request):
                     titleTable.append(titleTable_data)
                     titleDiagramname.append(
                         Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name)  # Year=YearNow,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "無對應的年份的職稱")  # Year=YearNow,
             else:
                 # legendData = ["DQA"]
                 legendData = []
@@ -4301,7 +4336,7 @@ def Summary2(request):
                     "PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -4311,7 +4346,7 @@ def Summary2(request):
                     # print(i["PositionNow"])
                     titleTable_data = {
                         "Title": Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearSearch,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch) else "無對應的年份的職稱", }  # Year=YearSearch,
                     titleSummary = 0
                     for j in selectItem:
                         titleTable_data[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
@@ -4324,7 +4359,7 @@ def Summary2(request):
                     titleTable.append(titleTable_data)
                     titleDiagramname.append(
                         Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name)  # Year=YearSearch,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch) else "無對應的年份的職稱",)  # Year=YearSearch,
             # titleDiagram
             titleDiagram["legendData"] = legendData
             titleDiagram["titleDiagramname"] = titleDiagramname
@@ -4946,6 +4981,7 @@ def Summary2(request):
             # By职称
             if not YearSearch or YearSearch == YearNow:
                 # legendData = ["DQA"]
+                YearSearch = YearNow
                 legendData = []
                 titleDiagramname = []
                 for i in PersonalInfo.objects.filter(Status="在職").values("Customer").distinct().order_by("Customer"):
@@ -4954,7 +4990,7 @@ def Summary2(request):
                 PositionQuerySet = PersonalInfo.objects.filter(Status="在職").values("PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -4962,7 +4998,7 @@ def Summary2(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleTable_data = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItem:
                         titleTable_data[j] = PersonalInfo.objects.filter(PositionNow=i["PositionNow"], Customer=j,
@@ -4971,7 +5007,7 @@ def Summary2(request):
                     titleTable_data["titleSummary"] = titleSummary
                     titleTable.append(titleTable_data)
                     titleDiagramname.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)  # Year=YearNow,
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")  # Year=YearNow,
             else:
                 # legendData = ["DQA"]
                 legendData = []
@@ -4983,7 +5019,7 @@ def Summary2(request):
                 PositionQuerySet = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values("PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -4993,7 +5029,7 @@ def Summary2(request):
                     # print(i["PositionNow"])
                     titleTable_data = {
                         "Title": Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearSearch,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearSearch,
                     titleSummary = 0
                     for j in selectItem:
                         titleTable_data[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
@@ -5003,7 +5039,7 @@ def Summary2(request):
                     titleTable_data["titleSummary"] = titleSummary
                     titleTable.append(titleTable_data)
                     titleDiagramname.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)  # Year=YearSearch,
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else"沒有該年份的對應職稱")  # Year=YearSearch,
             # titleDiagram
             titleDiagram["legendData"] = legendData
             titleDiagram["titleDiagramname"] = titleDiagramname
@@ -5621,6 +5657,7 @@ def Summary3(request):
 
             # 職稱
             if not YearSearch or YearSearch == YearNow:
+                YearSearch = YearNow
                 selectItemzhicheng = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Customer").distinct().order_by(
                         "Customer"):
@@ -5630,7 +5667,7 @@ def Summary3(request):
                 PositionQuerySet = PersonalInfo.objects.filter(Status__in=["離職"]).values("PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -5638,13 +5675,13 @@ def Summary3(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleDiagram2Data_LABLE.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                     titleDiagram2Data_Position.append(i["PositionNow"])
                 # titleTable
                 titleSummary_Total = 0
                 for i in Positionlistnew:
                     titleTable_dict = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItemzhicheng:
                         titleTable_dict[j] = PersonalInfo.objects.filter(Status__in=["離職"], Customer=j,
@@ -5694,7 +5731,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                         '2~3年': number2_3, '3~5年': number3_5,
                                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -5713,7 +5750,7 @@ def Summary3(request):
                     "PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -5721,13 +5758,13 @@ def Summary3(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleDiagram2Data_LABLE.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", )
                     titleDiagram2Data_Position.append(i["PositionNow"])
                 # titleTable
                 titleSummary_Total = 0
                 for i in Positionlistnew:
                     titleTable_dict = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItemzhicheng:
                         titleTable_dict[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
@@ -5779,7 +5816,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                         '2~3年': number2_3, '3~5年': number3_5,
                                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -5828,12 +5865,13 @@ def Summary3(request):
                     selectItem_seniorityTable.append(i["Customer"])
                 seniorityTable1_Positioncode = []
                 seniorityTable1_Position = []
+                YearSearch = YearNow
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("PositionNow").distinct().order_by(
                         "PositionNow"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
                     seniorityTable1_Position.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                 CustomerSeniorityData = {
                     # "C38": {"3个月以下": 20, "3个月~1年": 20, '1~2年': 20, '2~3年': 20, '3~5年': 20, '5~10年': 20, '10~15年': 20, "15~20年": 20, '20年以上': 20, }
                 }
@@ -5936,7 +5974,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    PositionSeniorityData[Positions.objects.filter(Item=i).first().Positions_Name] = {
+                    PositionSeniorityData[Positions.objects.filter(Item=i, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i, Year=YearSearch).first() else "沒有該年份的對應職稱"] = {
                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                         '2~3年': number2_3, '3~5年': number3_5,
                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -5964,7 +6002,7 @@ def Summary3(request):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
                     seniorityTable1_Position.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                 CustomerSeniorityData = {
                     # "C38": {"3个月以下": 20, "3个月~1年": 20, '1~2年': 20, '2~3年': 20, '3~5年': 20, '5~10年': 20, '10~15年': 20, "15~20年": 20, '20年以上': 20, }
                 }
@@ -6068,7 +6106,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    PositionSeniorityData[Positions.objects.filter(Item=i).first().Positions_Name] = {
+                    PositionSeniorityData[Positions.objects.filter(Item=i, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i, Year=YearSearch).first() else "沒有該年份的對應職稱"] = {
                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                         '2~3年': number2_3, '3~5年': number3_5,
                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -6458,6 +6496,7 @@ def Summary3(request):
             #職稱
             if not YearSearch or YearSearch == YearNow:
                 selectItemzhicheng = []
+                YearSearch = YearNow
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Customer").distinct().order_by(
                         "Customer"):
                     selectItemzhicheng.append(i["Customer"])
@@ -6467,7 +6506,7 @@ def Summary3(request):
                     "PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱項次"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -6475,13 +6514,13 @@ def Summary3(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleDiagram2Data_LABLE.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                     titleDiagram2Data_Position.append(i["PositionNow"])
                 # titleTable
                 titleSummary_Total = 0
                 for i in Positionlistnew:
                     titleTable_dict = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItemzhicheng:
                         titleTable_dict[j] = PersonalInfo.objects.filter(Status__in=["離職"], Customer=j, QuitDate__range=Search_Endperiod,
@@ -6531,7 +6570,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                         '2~3年': number2_3, '3~5年': number3_5,
                                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -6550,7 +6589,7 @@ def Summary3(request):
                     "PositionNow").distinct().order_by(
                     "PositionNow").annotate(entry_Code=Value('', CharField()))
                 for i in PositionQuerySet:
-                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                    i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱"
                 # print(type(Positionlist), Positionlist)
                 # print(list(PositionQuerySet))
                 Positionlist = list(PositionQuerySet)
@@ -6558,13 +6597,13 @@ def Summary3(request):
                 # print(Positionlistnew)
                 for i in Positionlistnew:
                     titleDiagram2Data_LABLE.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                     titleDiagram2Data_Position.append(i["PositionNow"])
                 # titleTable
                 titleSummary_Total = 0
                 for i in Positionlistnew:
                     titleTable_dict = {"Title": Positions.objects.filter(
-                        Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                        Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                     titleSummary = 0
                     for j in selectItemzhicheng:
                         titleTable_dict[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
@@ -6616,7 +6655,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                    titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                         '2~3年': number2_3, '3~5年': number3_5,
                                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -6658,6 +6697,7 @@ def Summary3(request):
             # 年资
             seniorityDiagramname = ['3个月以下', '3个月~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
             if not YearSearch or YearSearch == YearNow:
+                YearSearch = YearNow
                 selectItem_seniorityTable = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Customer").distinct().order_by("Customer"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
@@ -6667,7 +6707,7 @@ def Summary3(request):
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("PositionNow").distinct().order_by("PositionNow"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
-                    seniorityTable1_Position.append(Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                    seniorityTable1_Position.append(Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                 CustomerSeniorityData = {
                     # "C38": {"3个月以下": 20, "3个月~1年": 20, '1~2年': 20, '2~3年': 20, '3~5年': 20, '5~10年': 20, '10~15年': 20, "15~20年": 20, '20年以上': 20, }
                 }
@@ -6769,7 +6809,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    PositionSeniorityData[Positions.objects.filter(Item=i).first().Positions_Name] = {
+                    PositionSeniorityData[Positions.objects.filter(Item=i, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i, Year=YearSearch).first() else "沒有該年份的對應職稱"] = {
                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                         '2~3年': number2_3, '3~5年': number3_5,
                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -6795,7 +6835,7 @@ def Summary3(request):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
                     seniorityTable1_Position.append(
-                        Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                        Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                 CustomerSeniorityData = {
                     # "C38": {"3个月以下": 20, "3个月~1年": 20, '1~2年': 20, '2~3年': 20, '3~5年': 20, '5~10年': 20, '10~15年': 20, "15~20年": 20, '20年以上': 20, }
                 }
@@ -6898,7 +6938,7 @@ def Summary3(request):
                             number15_20 += 1
                         elif Seniority > 20:
                             number20 += 1
-                    PositionSeniorityData[Positions.objects.filter(Item=i).first().Positions_Name] = {
+                    PositionSeniorityData[Positions.objects.filter(Item=i, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i, Year=YearSearch).first() else "沒有該年份的對應職稱"] = {
                         "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                         '2~3年': number2_3, '3~5年': number3_5,
                         '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -7197,6 +7237,7 @@ def Summary3(request):
                 # 職稱
                 # print(Test_Endperiod)
                 if not YearSearch or YearSearch == YearNow:
+                    YearSearch = YearNow
                     # print(1)
                     selectItemzhicheng = []
                     selectItem = []
@@ -7210,7 +7251,7 @@ def Summary3(request):
                         "PositionNow").distinct().order_by(
                         "PositionNow").annotate(entry_Code=Value('', CharField()))
                     for i in PositionQuerySet:
-                        i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                        i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"],Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"],Year=YearSearch).first() else "沒有該年份的職稱代碼"
                     # print(type(Positionlist), Positionlist)
                     # print(list(PositionQuerySet))
                     Positionlist = list(PositionQuerySet)
@@ -7218,14 +7259,15 @@ def Summary3(request):
                     # print(Positionlistnew)
                     for i in Positionlistnew:
                         titleDiagram2Data_LABLE.append(
-                            Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                            Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else"沒有該年份的對應職稱")
                         titleDiagram2Data_Position.append(i["PositionNow"])
                     # titleTable
                     # print(titleDiagram2Data_Position)
                     titleSummary_Total = 0
                     for i in Positionlistnew:
                         titleTable_dict = {"Title": Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(
+                            Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                         titleSummary = 0
                         for j in selectItemzhicheng:
                             titleTable_dict[j] = PersonalInfo.objects.filter(Status__in=["離職"], Customer=j,
@@ -7276,7 +7318,7 @@ def Summary3(request):
                                 number15_20 += 1
                             elif Seniority > 20:
                                 number20 += 1
-                        titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                        titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                             "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                             '2~3年': number2_3, '3~5年': number3_5,
                                             '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,
@@ -7296,7 +7338,7 @@ def Summary3(request):
                         "PositionNow").distinct().order_by(
                         "PositionNow").annotate(entry_Code=Value('', CharField()))
                     for i in PositionQuerySet:
-                        i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Code
+                        i["entry_Code"] = Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Code if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的職稱代碼"
                     # print(type(Positionlist), Positionlist)
                     # print(list(PositionQuerySet))
                     Positionlist = list(PositionQuerySet)
@@ -7304,13 +7346,14 @@ def Summary3(request):
                     # print(Positionlistnew)
                     for i in Positionlistnew:
                         titleDiagram2Data_LABLE.append(
-                            Positions.objects.filter(Item=i["PositionNow"]).first().Positions_Name)
+                            Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱")
                         titleDiagram2Data_Position.append(i["PositionNow"])
                     # titleTable
                     titleSummary_Total = 0
                     for i in Positionlistnew:
                         titleTable_dict = {"Title": Positions.objects.filter(
-                            Item=i["PositionNow"]).first().Positions_Name, }  # Year=YearNow,
+                            Item=i["PositionNow"], Year=YearSearch).first().Positions_Name if Positions.objects.filter(
+                            Item=i["PositionNow"], Year=YearSearch).first() else "沒有該年份的對應職稱", }  # Year=YearNow,
                         titleSummary = 0
                         for j in selectItemzhicheng:
                             titleTable_dict[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
@@ -7364,7 +7407,7 @@ def Summary3(request):
                                 number15_20 += 1
                             elif Seniority > 20:
                                 number20 += 1
-                        titleTable1_dict = {"Title": Positions.objects.filter(Item=j).first().Positions_Name,
+                        titleTable1_dict = {"Title": Positions.objects.filter(Item=j, Year=YearSearch).first().Positions_Name if Positions.objects.filter(Item=j, Year=YearSearch).first() else "沒有該年份的對應職稱",
                                             "3个月以下": number025, "3个月~1年": number025_1, '1~2年': number1_2,
                                             '2~3年': number2_3, '3~5年': number3_5,
                                             '5~10年': number5_10, '10~15年': number10_15, "15~20年": number15_20,

@@ -231,27 +231,34 @@ tbody tr td:last-child {
                     <td  colspan="3"> <span>${ form.School }</span></td>
                 </tr>
                 <tr>
+                    <td><el-form-item label="學歷:"></el-form-item></td>
+                    <td><span>${ form.Education }</span></td>
                     <td><el-form-item label="職稱:"></el-form-item></td>
                     <td><span>${ form.CurrentTitle }</span></td>
-                    <td><el-form-item label="出生年月:"></el-form-item></td>
-                    <td><span>${ form.Birthday }</span></td>
                 </tr>
                 <tr>
                     <td><el-form-item label="籍貫:"></el-form-item></td>
                     <td><span>${ form.NativeProvinceCity }</span></td>
-                    <td><el-form-item label="報到日期:"></el-form-item></td>
-                    <td><span>${ form.RegistrationDate }</span></td>
+                    <td><el-form-item label="出生年月:"></el-form-item></td>
+                    <td><span>${ form.Birthday }</span></td>
                 </tr>
                 <tr>
+                    <td><el-form-item label="報到日期:"></el-form-item></td>
+                    <td><span>${ form.RegistrationDate }</span></td>
                     <td><el-form-item label="部門代碼:"></el-form-item></td>
                     <td><span>${ form.Department }</span></td>
+                </tr>
+                <tr>
                     <td><el-form-item label="人員狀態:"></el-form-item></td>
                     <td><span>${ form.Status }</span></td>
+                    <td><el-form-item label="離職日期:"></el-form-item></td>
+                    <td><span>${ form.ExpectedDepartureDate }</span></td>
                 </tr>
             </table>
         </el-form>
        </div>
-       <el-table  border :data="tableData">
+{#            由於每次更新都是年初excel整體上傳，而不是在系統中編輯，故而系統中沒有歷史記錄，就無法算出晉升次數以及每次晉升日期，故決定拿掉這部分信息#}
+       {% comment %}<el-table  border :data="tableData">
                 <el-table-column type="index" :index="indexMethod" ></el-table-column>
                 <el-table-column  prop="Department" label="部門代碼"  width="130"></el-table-column>
                 <el-table-column  prop="GroupEmployees" label="工號"  width="100"></el-table-column>
@@ -261,7 +268,7 @@ tbody tr td:last-child {
                 <el-table-column  prop="PromotionDate" label="晉升日期"    width="120"></el-table-column>
                 <el-table-column  prop="Intervaltime" label="間隔時間（年）"></el-table-column>
                 <el-table-column  prop="beizhu" label=" "  ></el-table-column>
-       </el-table>
+       </el-table>{% endcomment %}
          </template>
   </el-dialog>
 </div>
@@ -504,6 +511,7 @@ tbody tr td:last-child {
             },
             selectDetail:function(row){
                 this.detail=true;
+                this.form={};//防止报错的话显示上一个人的信息
                let data ={"isGetData":"selectDetail","Year":this.showYear,"Customer":this.showCustomer,"Department":this.showDepartment,"Lesson":this.showLesson,"GroupEmployees":this.showGroupEmployees,"ID":row.id,"GroupEmployees":row.GroupEmployees,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/PersonalInfo/PersonalInfo-search/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}

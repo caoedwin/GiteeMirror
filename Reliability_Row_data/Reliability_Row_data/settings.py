@@ -24,14 +24,24 @@ SEND_BROKEN_LINK_EMAILS = True
 MANAGERS = ADMINS
 
 # Email设置
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'Edwin_Cao@compal.com'  # QQ邮箱SMTP服务器(邮箱需要开通SMTP服务)
-EMAIL_PORT = 25  # QQ邮箱SMTP服务端口
-EMAIL_HOST_USER = 'Edwin_Cao@compal.com'  # 我的邮箱帐号
-EMAIL_HOST_PASSWORD = '!1234qwer'  # 授权码
-EMAIL_SUBJECT_PREFIX = 'DDIS'  # 为邮件标题的前缀,默认是'[django]'
-EMAIL_USE_TLS = True  # 开启安全链接
-DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER  # 设置发件人
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com' # 腾讯QQ邮箱 SMTP 服务器地址
+EMAIL_PORT = 25 # SMTP服务的端口号
+EMAIL_HOST_USER = '416434871@qq.com' #你的qq邮箱，邮件发送者的邮箱
+EMAIL_HOST_PASSWORD = 'umjszfmhjjmbbgdj' #你申请的授权码（略）
+EMAIL_USE_TLS = False #与SMTP服务器通信时,是否启用安全模式
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'webmail.compal.com'  # QQ邮箱SMTP服务器(邮箱需要开通SMTP服务)
+# # EMAIL_PORT = 25  # QQ邮箱SMTP服务端口
+# EMAIL_PORT = 443
+# EMAIL_HOST_USER = 'Edwin_Cao@compal.com'  # 我的邮箱帐号
+# # EMAIL_HOST_PASSWORD = '*******'  # 授权码
+# EMAIL_HOST_PASSWORD = '!1234zxcv'
+# EMAIL_SUBJECT_PREFIX = 'DDIS'  # 为邮件标题的前缀,默认是'[django]'
+# EMAIL_USE_TLS = True  # 开启安全链接
+# DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER  # 设置发件人
 
 cur_path = os.path.dirname(os.path.realpath(__file__))  # log_path是存放日志的路径
 log_path = os.path.join(os.path.dirname(cur_path), 'logs')

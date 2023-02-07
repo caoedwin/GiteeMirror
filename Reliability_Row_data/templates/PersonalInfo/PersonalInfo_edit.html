@@ -902,6 +902,7 @@ label{
         methods: {
             //获取数据
             getdata: function (e) {
+                this.Titleoptions1=[];
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/PersonalInfo-edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -987,9 +988,10 @@ label{
                       this.lessonOptions=[""];
                       return false;
                 }
+                let Year=this.$refs.Year.value;
                 let Customer=this.$refs.Customer.value;
                 let Department=this.$refs.Department.value;
-                let data ={"isGetData":"JiLian","Customer":Customer,"Department":Department,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+                let data ={"isGetData":"JiLian","Year":Year,"Customer":Customer,"Department":Department,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/PersonalInfo/PersonalInfo-edit/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
@@ -1027,6 +1029,7 @@ label{
                       return false;
                  }
                  {% endcomment %}
+                this.Titleoptions1=[];
                 let Year=this.$refs.Year.value;
                 let Customer = this.$refs.Customer.value;
                 let Department=this.$refs.Department.value;
@@ -1038,6 +1041,7 @@ label{
                 }).then((res) => {
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
+                  this.Titleoptions1=res.data.Titleoptions1;
                 })
                        this.showYear=Year;
                        this.showCustomer=Customer;
@@ -1128,7 +1132,7 @@ label{
                                        this.Customeroptions1=res.data.Customeroptions1;
                                        this.Departmentoptions1=res.data.Departmentoptions1;
                                        this.Lessonoptions1=res.data.Lessonoptions1;
-                                       this.Titleoptions1=res.data.Titleoptions1;
+                                       //this.Titleoptions1=res.data.Titleoptions1;
                                        this.ProfessionAttributionoptions1=res.data.ProfessionAttributionoptions1;
 
 
