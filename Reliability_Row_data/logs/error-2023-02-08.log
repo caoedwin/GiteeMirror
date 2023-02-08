@@ -1,0 +1,72 @@
+[2023-02-08 09:33:24,369] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 622, in FilesDownload
+    Mailhtml()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 606, in Mailhtml
+    msg.send()
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\message.py", line 291, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 110, in send_messages
+    sent = self._send(message)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 126, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "C:\Python372\lib\smtplib.py", line 888, in sendmail
+    raise SMTPDataError(code, resp)
+smtplib.SMTPDataError: (550, b'Mail content denied. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726 [MEQ8DF90VtWytIkztLQoHRcfcNjN8Y1m92QKPNqAHqDkh0Ni8jJkRRysi+bxxiFYaw== IP: 121.227.33.241]')
+[2023-02-08 09:33:24,375] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 127084
+[2023-02-08 09:52:06,563] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 675, in FilesDownload
+    Mailhtml()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 659, in Mailhtml
+    msg.send()
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\message.py", line 291, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 110, in send_messages
+    sent = self._send(message)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 126, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "C:\Python372\lib\smtplib.py", line 888, in sendmail
+    raise SMTPDataError(code, resp)
+smtplib.SMTPDataError: (550, b'Mail content denied. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726 [MEQ8DF90VtWytIkztLQoHRdG1mac5iSu0RVAJXqGRm/Z40aIIkGcnGVz3CrN/JAa0g== IP: 121.227.33.241]')
+[2023-02-08 09:52:06,571] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 139156
+[2023-02-08 09:56:13,366] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /FilesDownload/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 675, in FilesDownload
+    Mailhtml()
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 659, in Mailhtml
+    msg.send()
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\message.py", line 291, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 110, in send_messages
+    sent = self._send(message)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\mail\backends\smtp.py", line 126, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "C:\Python372\lib\smtplib.py", line 888, in sendmail
+    raise SMTPDataError(code, resp)
+smtplib.SMTPDataError: (550, b'Mail content denied. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726 [MEQ8DF90VtWytIkztLQoHRdJeqju6e1S29nyx6XhYpuZGtDWO/+QCK1npWmgC91dbQ== IP: 121.227.33.241]')
+[2023-02-08 09:56:13,372] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /FilesDownload/?action=first HTTP/1.1" 500 139156
