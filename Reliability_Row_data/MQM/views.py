@@ -70,6 +70,8 @@ def MQM_upload(request):
                 if request.POST.get('Comments'):
                     Comments = request.session.get('user_name') +  '(%s)' % datetime.datetime.now().strftime(
                         "%Y-%m-%d %H:%M:%S") + ":" + '\n' + request.POST.get('Comments')
+                else:
+                    Comments = ""
 
                 Create_dic={'Customer':request.POST.get('Customer'), 'Project':request.POST.get('Project'),
                             'Category':request.POST.get('Category').upper(), 'Name': request.POST.get('Name'), 'Vendor':request.POST.get('Vendor'),

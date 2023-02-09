@@ -95,6 +95,7 @@ class MQM_F(forms.Form):
         ('Qd_C', 'Qd_C'),
         ('QT', 'QT'),
         ('QF', 'QF'),
+        ('QF_L', 'QF_L'),
         ('DisQ', 'DisQ'),
         ('Drop', 'Drop'),
         ('Not Build', 'Not Build')
@@ -106,6 +107,7 @@ class MQM_F(forms.Form):
         ('Qd_C', 'Qd_C'),
         ('QT', 'QT'),
         ('QF', 'QF'),
+        ('QF_L', 'QF_L'),
         ('DisQ', 'DisQ'),
         ('Drop', 'Drop'),
         ('Not Build', 'Not Build')
@@ -117,6 +119,7 @@ class MQM_F(forms.Form):
         ('Qd_C', 'Qd_C'),
         ('QT', 'QT'),
         ('QF', 'QF'),
+        ('QF_L', 'QF_L'),
         ('DisQ', 'DisQ'),
         ('Drop', 'Drop'),
         ('Not Build', 'Not Build')
@@ -128,6 +131,7 @@ class MQM_F(forms.Form):
         ('Qd_C', 'Qd_C'),
         ('QT', 'QT'),
         ('QF', 'QF'),
+        ('QF_L', 'QF_L'),
         ('DisQ', 'DisQ'),
         ('Drop', 'Drop'),
         ('Not Build', 'Not Build')
@@ -155,33 +159,33 @@ class MQM_F(forms.Form):
     Name = forms.CharField(label="Name", required=True, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Vendor=forms.CharField(label="Object",max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     CompalPN = forms.CharField(label="push", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    Description=forms.CharField(label="Description", required=True, widget=forms.Textarea(attrs={'class': 'form-control-new'}))
+    Description=forms.CharField(label="Description", required=False, widget=forms.Textarea(attrs={'class': 'form-control-new'}))
     Qty=forms.IntegerField(label="PV_L_min", required=True, widget=forms.NumberInput(attrs={'class': 'form-control-new'}))
     Location = forms.CharField(label="Location", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     VendorPN = forms.CharField(label="VendorPN", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Controlrun = forms.CharField(label="Controlrun", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    Comments = forms.CharField(label="Comments", max_length=500, required=True,widget=forms.Textarea(attrs={'class': 'form-control-new'}))
-    DataCodeB = forms.CharField(label="DataCodeB", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    ReliabilityB = forms.CharField(label="ReliabilityB", max_length=100, required=True,widget=forms.Select(choices=ReliabilityB_list,attrs={'id':'ReliabilityB','class': 'form-control-new'}))
-    CompatibilityB = forms.CharField(label="CompatibilityB", max_length=100, required=True,widget=forms.Select(choices=CompatibilityB_list,attrs={'id':'CompatibilityB','class': 'form-control-new'}))
-    ResultforB = forms.CharField(label="ResultforB", max_length=100, required=True,widget=forms.TextInput(attrs={'readonly':'true','id':'ResultforB','class': 'form-control-new'}))
-    ESDB = forms.CharField(label="ESDB", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    EMIB = forms.CharField(label="EMIB", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    RFB = forms.CharField(label="RFB", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    DataCodeC = forms.CharField(label="DataCodeC", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    ReliabilityC = forms.CharField(label="ReliabilityC", max_length=100, required=True,widget=forms.Select(choices=ReliabilityC_list,attrs={'id':'ReliabilityC','class': 'form-control-new'}))
-    CompatibilityC = forms.CharField(label="CompatibilityC", max_length=100, required=True,widget=forms.Select(choices=CompatibilityC_list,attrs={'id':'CompatibilityC','class': 'form-control-new'}))
-    ResultforC = forms.CharField(label="ResultforC", max_length=100, required=True,widget=forms.TextInput(attrs={'readonly':'true','id':'ResultforC','class': 'form-control-new'}))
-    ESDC = forms.CharField(label="ESDC", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    EMIC = forms.CharField(label="EMIC", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    RFC = forms.CharField(label="RFC", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    DataCodeINV = forms.CharField(label="DataCodeINV", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    ReliabilityINV = forms.CharField(label="ReliabilityINV", max_length=100, required=True,widget=forms.Select(choices=ReliabilityC_list,attrs={'id': 'ReliabilityINV', 'class': 'form-control-new'}))
-    CompatibilityINV = forms.CharField(label="CompatibilityINV", max_length=100, required=True,widget=forms.Select(choices=CompatibilityC_list, attrs={'id': 'CompatibilityINV','class': 'form-control-new'}))
-    ResultforINV = forms.CharField(label="ResultforINV", max_length=100, required=True, widget=forms.TextInput(attrs={'readonly': 'true', 'id': 'ResultforINV', 'class': 'form-control-new'}))
-    ESDINV = forms.CharField(label="ESDINV", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    EMIINV = forms.CharField(label="EMIINV", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    RFINV = forms.CharField(label="RFINV", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    Comments = forms.CharField(label="Comments", max_length=500, required=False,widget=forms.Textarea(attrs={'class': 'form-control-new'}))
+    DataCodeB = forms.CharField(label="DataCodeB", max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    ReliabilityB = forms.CharField(label="ReliabilityB", max_length=100, required=False,widget=forms.Select(choices=ReliabilityB_list,attrs={'id':'ReliabilityB','class': 'form-control-new'}))
+    CompatibilityB = forms.CharField(label="CompatibilityB", max_length=100, required=False,widget=forms.Select(choices=CompatibilityB_list,attrs={'id':'CompatibilityB','class': 'form-control-new'}))
+    ResultforB = forms.CharField(label="ResultforB", max_length=100, required=False,widget=forms.TextInput(attrs={'readonly':'true','id':'ResultforB','class': 'form-control-new'}))
+    ESDB = forms.CharField(label="ESDB", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    EMIB = forms.CharField(label="EMIB", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    RFB = forms.CharField(label="RFB", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    DataCodeC = forms.CharField(label="DataCodeC", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    ReliabilityC = forms.CharField(label="ReliabilityC", max_length=100, required=False,widget=forms.Select(choices=ReliabilityC_list,attrs={'id':'ReliabilityC','class': 'form-control-new'}))
+    CompatibilityC = forms.CharField(label="CompatibilityC", max_length=100, required=False,widget=forms.Select(choices=CompatibilityC_list,attrs={'id':'CompatibilityC','class': 'form-control-new'}))
+    ResultforC = forms.CharField(label="ResultforC", max_length=100, required=False,widget=forms.TextInput(attrs={'readonly':'true','id':'ResultforC','class': 'form-control-new'}))
+    ESDC = forms.CharField(label="ESDC", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    EMIC = forms.CharField(label="EMIC", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    RFC = forms.CharField(label="RFC", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    DataCodeINV = forms.CharField(label="DataCodeINV", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    ReliabilityINV = forms.CharField(label="ReliabilityINV", max_length=100, required=False,widget=forms.Select(choices=ReliabilityC_list,attrs={'id': 'ReliabilityINV', 'class': 'form-control-new'}))
+    CompatibilityINV = forms.CharField(label="CompatibilityINV", max_length=100, required=False,widget=forms.Select(choices=CompatibilityC_list, attrs={'id': 'CompatibilityINV','class': 'form-control-new'}))
+    ResultforINV = forms.CharField(label="ResultforINV", max_length=100, required=False, widget=forms.TextInput(attrs={'readonly': 'true', 'id': 'ResultforINV', 'class': 'form-control-new'}))
+    ESDINV = forms.CharField(label="ESDINV", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    EMIINV = forms.CharField(label="EMIINV", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    RFINV = forms.CharField(label="RFINV", max_length=100, required=False,widget=forms.TextInput(attrs={'class': 'form-control-new'}))
 
     def editor_check(self):
         print('tt')
