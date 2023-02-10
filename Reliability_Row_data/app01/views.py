@@ -494,7 +494,7 @@ def ProjectInfoSearch(request):
 
 from django.core.mail import EmailMultiAlternatives
 from TestPlanSW.models import TestProjectSW,TestPlanSW
-def Mailhtml():
+def Mailhtml():# settings Email设置1-外網qq
     print("Starthtmlmail")
     # subject 主题 content 内容 to_addr 是一个列表，发送给哪些人
     # msg = EmailMultiAlternatives('邮件标题', '邮件内容', '发送方', ['接收方'])
@@ -661,6 +661,23 @@ def Mailhtml():
     # 发送
     msg.send()
 
+def MailOAtest():# settings Email设置2-内網OA
+    message = 'ddistest'
+    print(message)
+    subject = '【DDIS】数据上传提醒'
+    from_email = 'DDIS@compal.com'
+    to_email = []
+    to_email.append('edwin_cao@compal.com')
+
+    # print(key)
+    # print(to_email)
+    msg = EmailMultiAlternatives(subject, message, from_email, to_email)
+    msg.content_subtype = "html"
+    # 添加附件（可选）
+    # msg.attach_file('test.txt')
+    # 发送
+    msg.send()
+
 @csrf_exempt
 def FilesDownload(request):
     if not request.session.get('is_login', None):
@@ -675,7 +692,9 @@ def FilesDownload(request):
     if request.method == "GET":
         # print(request.GET)
         if request.GET.get("action") == "first":
-            Mailhtml()
+            # Mailhtml()
+            # MailOAtest()
+            # print('mailend')
             importPrjResult = ImportProjectinfoFromDCT()
             if importPrjResult:
                 data['result'] = 1

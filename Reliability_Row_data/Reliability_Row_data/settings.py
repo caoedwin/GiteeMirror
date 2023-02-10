@@ -23,8 +23,7 @@ ADMINS = (
 SEND_BROKEN_LINK_EMAILS = True
 MANAGERS = ADMINS
 
-# Email设置
-
+# Email设置1-外網qq
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com' # 腾讯QQ邮箱 SMTP 服务器地址
 EMAIL_PORT = 25 # SMTP服务的端口号
@@ -32,6 +31,7 @@ EMAIL_HOST_USER = '416434871@qq.com' #你的qq邮箱，邮件发送者的邮箱
 EMAIL_HOST_PASSWORD = 'umjszfmhjjmbbgdj' #你申请的授权码（略）
 EMAIL_USE_TLS = False #与SMTP服务器通信时,是否启用安全模式
 
+# Email设置2-内網OA
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'webmail.compal.com'  # QQ邮箱SMTP服务器(邮箱需要开通SMTP服务)
 # # EMAIL_PORT = 25  # QQ邮箱SMTP服务端口
