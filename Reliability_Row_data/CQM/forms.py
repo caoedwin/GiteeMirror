@@ -26,7 +26,7 @@ class CQM_F(forms.Form):
         ('F', 'F'),
         ('DisQ', 'DisQ'),
         ('Drpd', 'Drpd'),
-        ('No Build', 'No Build')
+        ('Not Build', 'Not Build')
     )
     Material_Group_list=(
         ('', ''),
