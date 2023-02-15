@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}Summary_加班請假{% endblock %}
 {% block css %}
@@ -129,7 +130,8 @@ p {
           <el-table stripe border  :data="tableData1" style="width: 100%;" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" id="out-table1" >
             <el-table-column prop="Department" label="部門名稱 --> (人均加班時數)" align="center" width="120"></el-table-column>
             <el-table-column prop="QM" label="QM" align="center" width="80"></el-table-column>
-            <el-table-column prop="IDL_Sum" label="IDL 人數 (扣除課/理級主管/產假人員/作業人員)" align="center" width="120"></el-table-column>
+{#            <el-table-column prop="IDL_Sum" label="IDL 人數 (扣除課/理級主管/產假人員/作業人員)" align="center" width="120"></el-table-column>#}
+            <el-table-column prop="IDL_Sum" label="IDL 人數 " align="center" width="120"></el-table-column>
             <el-table-column prop="Jan" label="Jan" align="center" width="80"></el-table-column>
             <el-table-column prop="Feb" label="Feb" align="center"  width="80"></el-table-column>
             <el-table-column prop="Mar" label="Mar" align="center" width="80"></el-table-column>

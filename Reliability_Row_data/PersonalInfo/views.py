@@ -3184,8 +3184,9 @@ def Summary1(request):
                                                         KE__isnull=False):  # 每个部下面的课的部门代码
                         # print(i.Department_Code, j)
                         # 每个课下的除了课长的所有人
-                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
-                            PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
+                        #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
                         mounthnum = 1
                         for k in Yuefenlist:
                             if mounthnum > mounthnow:
@@ -3419,8 +3420,9 @@ def Summary1(request):
                                                         KE__isnull=False):  # 每个部下面的课的部门代码
                         # print(i.Department_Code, j)
                         # 每个课下的除了课长的所有人
-                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
-                            PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
+                        #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
                         mounthnum = 1
                         for k in Yuefenlist:
                             if mounthnum > mounthnow:
@@ -3612,7 +3614,7 @@ def Summary1(request):
                         # "Year_Average": "31.97"
                     }
                     mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
-                    mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, GroupNum=i.Manager).first().CNName
+                    mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, GroupNum=i.Manager).first().CNName if PersonalInfoHisByYear.objects.filter(Year=YearSearch, GroupNum=i.Manager).first() else "該年份人員信心缺少該QM信息"
                     # print(mock_data1_dict["QM"])
                     IDL_Sum = 0
                     Yuefen = {"Jan": 0, "Feb": 0,
@@ -3621,7 +3623,8 @@ def Summary1(request):
                     for j in Departments.objects.filter(Year=YearSearch, CHU=i.CHU, BU=i.BU, KE__isnull=False):#每个部下面的课的部门代码
                         # print(i.Department_Code, j)
                         #每个课下的除了课长的所有人
-                        IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).exclude(PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        # IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).exclude(PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+                        IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).count()
                         for k in Yuefenlist:
                             #加班时数
                             if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(Sum("Peacetime"))["Peacetime__sum"]:
@@ -4542,22 +4545,24 @@ def Summary2(request):
                 for i in PersonalInfo.objects.filter(Status="在職").values("Education", "Major").distinct().order_by(
                         "Education"):
                     # print(i["Education"], i["Major"])
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfo.objects.filter(Education=i["Education"],
-                                                                                     Major=i["Major"],
-                                                                                     Customer=j, Status="在職").count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfo.objects.filter(Education=i["Education"],
+                                                                                 Major=i["Major"],
+                                                                                 Customer=j, Status="在職").count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -4581,24 +4586,26 @@ def Summary2(request):
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Education", "Major").distinct().order_by("Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
-                                                                                              Status="在職",
-                                                                                              Education=i["Education"],
-                                                                                              Major=i["Major"],
-                                                                                              Customer=j).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                          Status="在職",
+                                                                                          Education=i["Education"],
+                                                                                          Major=i["Major"],
+                                                                                          Customer=j).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
             if MajorIfo.objects.filter(Education__contains=i["Education"],
                                        Major="TBC").first():
                 professionTableData_TBC = {
@@ -5221,22 +5228,24 @@ def Summary2(request):
                 for i in PersonalInfo.objects.filter(Status="在職").values("Education", "Major").distinct().order_by(
                         "Education"):
                     # print(i["Education"], i["Major"])
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfo.objects.filter(Education=i["Education"],
-                                                                                     Major=i["Major"],
-                                                                                     Customer=j, Status="在職").count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfo.objects.filter(Education=i["Education"],
+                                                                                 Major=i["Major"],
+                                                                                 Customer=j, Status="在職").count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -5260,24 +5269,26 @@ def Summary2(request):
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Education", "Major").distinct().order_by("Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
-                                                                                              Status="在職",
-                                                                                              Education=i["Education"],
-                                                                                              Major=i["Major"],
-                                                                                              Customer=j).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                          Status="在職",
+                                                                                          Education=i["Education"],
+                                                                                          Major=i["Major"],
+                                                                                          Customer=j).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                     if MajorIfo.objects.filter(Education__contains=i["Education"],
                                                          Major="TBC").first():
                         professionTableData_TBC = {
@@ -5565,6 +5576,20 @@ def Summary3(request):
         #             {"Regions": "陝西", "A31": "20", "A32": "22", "C38": "23", "regionsSummary": "65"},
         #             {"Regions": "甘肅", "A31": "5", "A32": "2", "C38": "8", "regionsSummary": "15"}
     ]
+    canExport = 0  # 0為DQA權限，可以導出
+
+    onlineuser = request.session.get('account')
+    roles = []
+    if UserInfo.objects.filter(account=onlineuser).first():
+        for i in UserInfo.objects.filter(account=onlineuser).first().role.all():
+            roles.append(i.name)
+    # print(roles)
+    # editPpriority = 100
+    for i in roles:
+        if 'admin' in i or 'DepartmentAdmin' in i:
+            canExport = 0
+        elif 'Department' in i:
+            canExport = 1
     if request.method == "POST":
         if request.POST.get("isGetData") == "first":
             YearSearch = request.POST.get("Year")  # 为空
@@ -6250,26 +6275,30 @@ def Summary3(request):
                         "Customer"):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
+                print(PersonalInfo.objects.filter(Status__in=["離職"]).values("Education",
+                                                                               "Major").distinct().count(),MajorIfo.objects.all().values("Education","Major").count())
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Education",
                                                                                "Major").distinct().order_by(
                         "Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfo.objects.filter(Status__in=["離職"],
-                                                                                     Education__contains=i["Education"],
-                                                                                     Major=i["Major"],
-                                                                                     Customer=j).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfo.objects.filter(Status__in=["離職"],
+                                                                                 Education__contains=i["Education"],
+                                                                                 Major=i["Major"],
+                                                                                 Customer=j).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -6293,24 +6322,26 @@ def Summary3(request):
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Education", "Major").distinct().order_by("Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                 Major=i["Major"]).first().Categories,
-                                "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                      Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
-                                                                                              Status__in=["離職"],
-                                                                                              Education=i["Education"],
-                                                                                              Major=i["Major"],
-                                                                                              Customer=j).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                             Major=i["Major"]).first().Categories,
+                            "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                  Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+                                                                                          Status__in=["離職"],
+                                                                                          Education=i["Education"],
+                                                                                          Major=i["Major"],
+                                                                                          Customer=j).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -7082,22 +7113,24 @@ def Summary3(request):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Education", "Major").distinct().order_by("Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                             Major=i["Major"]).first().Categories,
-                            "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                  Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfo.objects.filter(Status__in=["離職"], Education__contains=i["Education"],
-                                                                  Major=i["Major"],
-                                                                                     Customer=j, QuitDate__range=Search_Endperiod).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                        "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                         Major=i["Major"]).first().Categories,
+                        "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                              Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfo.objects.filter(Status__in=["離職"], Education__contains=i["Education"],
+                                                              Major=i["Major"],
+                                                                                 Customer=j, QuitDate__range=Search_Endperiod).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -7120,23 +7153,25 @@ def Summary3(request):
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Education", "Major").distinct().order_by("Education"):
-                    if i["Education"] == "本科":
-                        if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
-                            professionTableData = {
-                                "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                     Major=i["Major"]).first().Categories,
-                                    "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
-                                                                          Major=i["Major"]).first().Major,
-                            }
-                            professionSummary = 0
-                            for j in Customer_major:
-                                professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
-                                                                                              Education=i["Education"],
-                                                                                              Major=i["Major"],
-                                                                                              Customer=j, QuitDate__range=Search_Endperiod).count()
-                                professionSummary += professionTableData[j]
-                            professionTableData["professionSummary"] = professionSummary
-                            professionTable.append(professionTableData)
+                    # if i["Education"] == "本科":
+                    if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
+                        professionTableData = {
+                            "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                 Major=i["Major"]).first().Categories,
+                                "Profession": MajorIfo.objects.filter(Education__contains=i["Education"],
+                                                                      Major=i["Major"]).first().Major,
+                        }
+                        professionSummary = 0
+                        for j in Customer_major:
+                            professionTableData[j] = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
+                                                                                          Education=i["Education"],
+                                                                                          Major=i["Major"],
+                                                                                          Customer=j, QuitDate__range=Search_Endperiod).count()
+                            professionSummary += professionTableData[j]
+                        professionTableData["professionSummary"] = professionSummary
+                        professionTable.append(professionTableData)
+                    else:
+                        print("專業信息裏面沒有：", i["Education"], i["Major"])
                         # else:
                         #     professionTableData = {
                         #         "daLei": MajorIfo.objects.filter(Education__contains=i["Education"],
@@ -7473,6 +7508,7 @@ def Summary3(request):
             "SeniorityTitleDiagram0": SeniorityTitleDiagram0,
             "reasonTable": reasonTable,
             "reasonDiagramData": reasonDiagramData,
+            "canExport": canExport,
 
         }
         return HttpResponse(json.dumps(data), content_type="application/json")

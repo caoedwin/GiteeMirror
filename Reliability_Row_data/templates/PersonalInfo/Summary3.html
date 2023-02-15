@@ -65,7 +65,7 @@ background-color: rgba(255,255,255,0.1);
                 end-placeholder="结束日期">
               </el-date-picker>
             </div>
-                 <el-button @click="search" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
+                 <el-button @click="search" :loading="elbuttonloading" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
       </div>
     <div class="tableAround" v-cloak >
     <span  class="selectItem" v-cloak  v-if="searchYear">當前信息年份：${ searchYear } </span>
@@ -73,7 +73,8 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="離職人員信息" name="1">
                   <div class="perinTablecontent">
                        <el-input type="text" v-model="search000"  placeholder="Search..."></el-input>
-                       <el-table border height="500px" @sort-change='sortChange' :default-sort = "{prop: 'DepartureDate', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)">
+                      <el-button @click="exportExcel" type="success" v-if="canExport==0" style="height:40px;margin-left: 2px;float: right">導出</el-button>
+                       <el-table border height="500px" id="out-table" @sort-change='sortChange' :default-sort = "{prop: 'DepartureDate', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)">
                            <el-table-column type="index" :index="indexMethod"></el-table-column>
                            <el-table-column prop="RegistrationDate" label="報到日期" align="center" sortable='custom'></el-table-column>
                            <el-table-column prop="Seniority" label="年資" align="center" sortable='custom'></el-table-column>
@@ -202,7 +203,7 @@ background-color: rgba(255,255,255,0.1);
                            <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary>
                                <el-table-column :label="searchYear+'年離職'"align="center">
                                <el-table-column prop="daLei" label="" align="center"></el-table-column>
-                               <el-table-column prop="Profession" label="本科" align="center"></el-table-column>
+                               <el-table-column prop="Profession" label="專業" align="center"></el-table-column>
                                <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
                                </el-table-column>
                                <el-table-column prop="professionSummary" label="合計" align="center"></el-table-column>
@@ -277,6 +278,8 @@ background-color: rgba(255,255,255,0.1);
                 proptype: "" ,//存放column.prop的字符串值
                 search000:'',
                 Totalsize:null,
+                canExport:null,//導出權限
+                elbuttonloading: false,
 
                }
         },
@@ -400,6 +403,7 @@ background-color: rgba(255,255,255,0.1);
                     {#this.xuanrantubiao1();#}
                     this.reasonDiagramData=res.data.reasonDiagramData;
                     this.reasonDiagramss();
+                    this.canExport=res.data.canExport;
                  });
             },
             search2 :function(){
@@ -423,6 +427,8 @@ background-color: rgba(255,255,255,0.1);
                 this.searchYear1=startYear+'~'+endYear;
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
+                this.elbuttonloading = true;
+                {#console.log(this.elbuttonloading);#}
                let Year=this.$refs.Year.value;
                let YearRange=this.$refs.value1.value;
                let data ={"isGetData":"SEARCH","Year":Year,"YearRange":YearRange,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -461,9 +467,13 @@ background-color: rgba(255,255,255,0.1);
                     {#this.xuanrantubiao1();#}
                    this.reasonDiagramData=res.data.reasonDiagramData;
                    this.reasonDiagramss();
+                   this.canExport=res.data.canExport;
+                   this.elbuttonloading = false;
+                       {#console.log(this.elbuttonloading);#}
                 })
                        this.searchYear=Year;
                        this.searchYear1=Year;
+
             },
             daLeiSpanMethod({ row, column, rowIndex, columnIndex }) {
                 if (columnIndex === 0) {    //用于设置要合并的列
@@ -944,9 +954,9 @@ background-color: rgba(255,255,255,0.1);
                 myChart8.clear();
                  myChart8.setOption(option8);
                 window.addEventListener('resize', ()=>{
-                   myChart5.resize();
+                   myChart8.resize();
                  // 使用刚指定的配置项和数据显示图表。
-                })
+                });
 
             },
     {% comment %}
@@ -1342,6 +1352,69 @@ background-color: rgba(255,255,255,0.1);
                 })
 
             },
+            exportExcel:function (){
+           /* 从表生成工作簿对象 */
+
+        {% comment %}
+         if(this.$refs.Customer.value ==""){
+                      this.customerError= true;
+                      return false;
+                 }
+                if(this.$refs.Department.value ==""){
+                      this.departmentError= true;
+                      return false;
+                 }
+                if(this.$refs.Lesson.value ==""){
+                      this.lessonError= true;
+                      return false;
+                 }
+                if(this.$refs.GroupEmployees.value ==""){
+                      this.groupemployeesError= true;
+                      return false;
+                 }
+             {% endcomment %}
+                let temp=[];
+                 temp.push(Number(this.currentPage));
+                 temp.push(Number(this.pageSize));
+                 console.log(temp)
+                 this.currentPage=1;
+                 this.pageSize=this.perinTable.length;
+                 console.log(temp,this.defaultPage1,this.pageSize);
+                 setTimeout(() => { let table = document.querySelector("#out-table").cloneNode(true);
+                 // 因为element-ui的表格的fixed属性导致多出一个table，会下载重复内容，这里删除掉
+                 //table.removeChild(table.querySelector(".el-table__fixed"))
+                 //table.removeChild(table.querySelector(".el-table__fixed-right"))//左右都有固定列
+                    //let wb = XLSX.utils.table_to_book(table,{raw:true});//mytable为表格的id名
+
+                var wb = XLSX.utils.table_to_book(table,{raw:true});
+                console.log("wb",wb);
+                /* 获取二进制字符串作为输出 */
+                var wbout = XLSX.write(wb, {
+                    bookType: "xlsx",
+                    bookSST: true,
+                    type: "array"
+                });
+                console.log("wbout",wbout);
+                try {
+                    saveAs(
+                    //Blob 对象表示一个不可变、原始数据的类文件对象。
+                    //Blob 表示的不一定是JavaScript原生格式的数据。
+                    //File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。
+                    //返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
+                    new Blob([wbout], { type: "application/octet-stream" }),
+                    //设置导出文件名称
+                    "sheetjs.xlsx"
+                    );
+
+                } catch (e) {
+                    if (typeof console !== "undefined") console.log(e, wbout);
+                }
+                this.currentPage=temp[0];
+                    this.pageSize=temp[1];//edwin:要想导出后回到当前页而不是第一页，<el-pagination里面的:page-size="100"，而不能是:page-size="pageSize"
+                    //console.log(this.currentPage,this.pageSize)
+                    temp=[];
+                return wbout;},1000) ;
+                },
         },
         computed:{
                 datas(){//必须是el-table里面绑定的数据变量,不能与axios接受的变量名一样

@@ -329,7 +329,7 @@ label{
                  <el-form-item label="學校" prop="School">
                            <el-input v-model="form.School"></el-input>
                   </el-form-item>
-                 <el-form-item label="專業歸屬" prop="ProfessionAttribution">
+                 {% comment %}<el-form-item label="專業歸屬" prop="ProfessionAttribution">
                      <el-autocomplete
                           class="inline-input"
                           v-model="form.ProfessionAttribution"
@@ -338,7 +338,7 @@ label{
                           placeholder="请输入專業歸屬"
                           @select="handleSelect"
                         ></el-autocomplete>
-                  </el-form-item>
+                  </el-form-item>{% endcomment %}
                  <el-form-item label="專業" prop="Profession">
                           <el-input v-model="form.Profession" ></el-input>
                   </el-form-item>
@@ -667,7 +667,7 @@ label{
                 <el-table-column  prop="GraduationYear" label="畢業年度"  ></el-table-column>
                 <el-table-column  prop="Education" label="學歷"  ></el-table-column>
                 <el-table-column  prop="School" label="學校"  ></el-table-column>
-                <el-table-column  prop="ProfessionAttribution" label="專業歸屬"  ></el-table-column>
+{#                <el-table-column  prop="ProfessionAttribution" label="專業歸屬"  ></el-table-column>#}
                 <el-table-column  prop="Profession" label="專業"  ></el-table-column>
                 <el-table-column  prop="English" label="英語"  ></el-table-column>
                 <el-table-column  prop="IdNumber" label="身份証號"  ></el-table-column>
