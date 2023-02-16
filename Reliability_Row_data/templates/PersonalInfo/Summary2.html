@@ -41,7 +41,7 @@ background-color: rgba(255,255,255,0.1);
                  <label for="year">年份: </label>
                  <el-date-picker ref="Year" value-format="yyyy" v-model="year" type="year" placeholder="選擇年份" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;"></el-date-picker>
            </div>
-                 <el-button @click="search" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
+                 <el-button @click="search" :loading="elbuttonloading" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
       </div>
     <div class="tableAround" v-cloak >
     <span  class="selectItem" v-cloak  v-if="searchYear">當前信息年份：${ searchYear } </span>
@@ -171,7 +171,8 @@ background-color: rgba(255,255,255,0.1);
                seniorityDiagram:{},
                educationDiagram:{},
                selectItem:[],
-               heBingNum:[]
+               heBingNum:[],
+                elbuttonloading: false,
 
              }
         },
@@ -210,6 +211,7 @@ background-color: rgba(255,255,255,0.1);
                  });
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
+                this.elbuttonloading = true;
                let Year=this.$refs.Year.value;
                let data ={"isGetData":"SEARCH","Year":Year,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/PersonalInfo/Summary2/",Qs.stringify(data), {
@@ -234,6 +236,7 @@ background-color: rgba(255,255,255,0.1);
                     this.seniorityDiagramss();
                     {#this.educationDiagram=res.data.educationDiagram;#}
                     {#this.educationDiagramss();#}
+                   this.elbuttonloading = false;
 
 
 

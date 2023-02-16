@@ -1,0 +1,17 @@
+[2023-02-16 09:33:24,348] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4989, in Summary2
+    monthDiagram2Data_LIZHILV.append()
+TypeError: append() takes exactly one argument (0 given)
+[2023-02-16 09:33:24,352] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-16 09:33:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-02-16 09:33:24,353] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 94010
+[2023-02-16 09:33:51,414] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-02-16 09:33:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-02-16 09:33:51,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 28944

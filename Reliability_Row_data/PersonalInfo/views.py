@@ -4284,13 +4284,18 @@ def Summary2(request):
                         for j in mounthlist:
                             if j[0] in i.keys():
                                 monthDiagram2Data_LIZHI.append(i[j[0]])
+                            else:
+                                monthDiagram2Data_LIZHI.append('')
                         monthDiagram2Data["LIZHI"] = monthDiagram2Data_LIZHI
                     elif i["Classify"] == "離職率":
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
                                 monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
+                            else:
+                                monthDiagram2Data_LIZHILV.append('')
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
+
             # By职称
             if not YearSearch or YearSearch == YearNow:
                 # legendData = ["DQA"]
@@ -4977,12 +4982,16 @@ def Summary2(request):
                         for j in mounthlist:
                             if j[0] in i.keys():
                                 monthDiagram2Data_LIZHI.append(i[j[0]])
+                            else:
+                                monthDiagram2Data_LIZHI.append('')
                         monthDiagram2Data["LIZHI"] = monthDiagram2Data_LIZHI
                     elif i["Classify"] == "離職率":
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
                                 monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
+                            else:
+                                monthDiagram2Data_LIZHILV.append('')
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
 
             # By职称
