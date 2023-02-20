@@ -208,19 +208,21 @@ def get_menu_html(menu_data):
                         Class = "ti-list"
                     elif item['title'] == 'D_L_Device-LNV':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-view-list"
+                    elif item['title'] == 'D_3_Device-A39':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
+                        Class = "ti-view-list"
                     elif item['title'] == 'D_A_Device-ABO':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-view-list-alt"
                     elif item['title'] == 'CoL_工作機':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "bi-display"
                     elif item['title'] == 'ChL_櫃椅':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-archive"
-                    elif item['title'] == 'A_L_可借用' or item['title'] == 'D_L_可借用' or item['title'] == 'D_A_可借用' or item['title'] == 'CoL_工作機列表' or item['title'] == 'ChL_櫃椅列表':
+                    elif item['title'] == 'A_L_可借用' or item['title'] == 'D_L_可借用' or item['title'] == 'D_3_可借用' or item['title'] == 'D_A_可借用' or item['title'] == 'CoL_工作機列表' or item['title'] == 'ChL_櫃椅列表':
                         Class = "ti-search"
-                    elif item['title'] == 'A_L_我的申请' or item['title'] == 'D_L_我的设备' or item['title'] == 'D_A_我的设备' or item['title'] == 'CoL_我的申請中' or item['title'] == 'ChL_我的申請中':
+                    elif item['title'] == 'A_L_我的申请' or item['title'] == 'D_L_我的设备' or item['title'] == 'D_3_我的设备' or item['title'] == 'D_A_我的设备' or item['title'] == 'CoL_我的申請中' or item['title'] == 'ChL_我的申請中':
                         Class = "ti-marker"
                     elif item['title'] == 'A_L_我的挂账' or item['title'] == 'CoL_我的簽核' or item['title'] == 'ChL_我的簽核':
                         Class = "ti-joomla"
-                    elif item['title'] == 'A_L_管理员' or item['title'] == 'D_L_管理员' or item['title'] == 'D_A_管理员' or item['title'] == 'CoL_管理員' or item['title'] == 'ChL_管理員':
+                    elif item['title'] == 'A_L_管理员' or item['title'] == 'D_L_管理员' or item['title'] == 'D_3_管理员' or item['title'] == 'D_A_管理员' or item['title'] == 'CoL_管理員' or item['title'] == 'ChL_管理員':
                         Class = "ti-notepad"
                     elif item['title'] == 'P_S_個人設備Summary':
                         Class = "ti-bar-chart-alt"

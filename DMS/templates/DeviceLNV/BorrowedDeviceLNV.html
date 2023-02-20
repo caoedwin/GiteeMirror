@@ -111,7 +111,7 @@
                              <option v-for="(item,key,index) in allDevStatus">${ item }</option>
                          </select>
                    </div>
-                   <el-button @click="search5" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button><span v-if="showTips5" v-cloak class="tips">前四项不能为空</span>
+                   <el-button @click="search5"  :loading="elbuttonloading" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button><span v-if="showTips5" v-cloak class="tips">前四项不能为空</span>
      </div>
 
     <div class="tableAround" v-cloak >
@@ -261,6 +261,7 @@
                getMore:false,
                Info:false,
                show:false,
+                elbuttonloading: false,
                form: {
                     Project:'',
                     Phase:'',
@@ -415,6 +416,7 @@
               {% comment %} if(this.$refs.IntfCtgry5.value ==""||this.$refs.DevCtgry5.value ==""||this.$refs.Devproperties5.value==''||this.$refs.DevVendor5.value==''){
                    this.showTips5=true;
                }else {{% endcomment %}
+                    this.elbuttonloading = true;
                    let IntfCtgry = this.$refs.IntfCtgry5.value;
                    let DevCtgry = this.$refs.DevCtgry5.value;
                    let Devproperties = this.$refs.Devproperties5.value;
@@ -437,6 +439,7 @@
                        this.tableContent=res.data.content;
                        this.moreDetails=this.tableContent;
                        this.totalNum=this.tableContent.length;
+                       this.elbuttonloading = false;
                    })
                    this.showTips5=false;
                    this.$refs.multipleTable.clearSelection()

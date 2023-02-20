@@ -41,6 +41,7 @@ urlpatterns = [
     re_path('^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),#增加此行
     path('AdapterPowerCode/', include('AdapterPowerCode.urls', namespace='AdapterPowerCode')),
     path('DeviceLNV/', include('DeviceLNV.urls', namespace='DeviceLNV')),
+    path('DeviceA39/', include('DeviceA39.urls', namespace='DeviceA39')),
     path('DeviceABO/', include('DeviceABO.urls', namespace='DeviceABO')),
     path('ComputerMS/', include('ComputerMS.urls', namespace='ComputerMS')),
     path('ChairCabinetMS/', include('ChairCabinetMS.urls', namespace='ChairCabinetMS')),

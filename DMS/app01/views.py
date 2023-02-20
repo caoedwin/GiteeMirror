@@ -133,6 +133,7 @@ def index(request):
     Syswangzhinamedic = {
         "AdapterPowerCord_LNV": "/AdapterPowerCode/BorrowedAdapter/",
         "Device_LNV": "/DeviceLNV/BorrowedDeviceLNV/",
+        "Device_A39": "/DeviceA39/BorrowedDeviceA39/",
         "Device_ABO": "/DeviceABO/BorrowedDeviceABO/",
         "ComputerMS_LNV": "/ComputerMS/BorrowedComputer/",
         "ChairCabinetMS_LNV": "/ChairCabinetMS/BorrowedChairCabinet/",

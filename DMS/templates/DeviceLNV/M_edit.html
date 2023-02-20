@@ -309,7 +309,7 @@
 </div>
 <div class="row" style="white-space: nowrap;">
     <div v-cloak class="fileUploadContent">
-        <el-button size="medium" style="height:35px;border-color:black;color:white;margin-left: 10px;background-color:#7fa0ff" value="Search" name="Search" @click="selectMsg">Search</el-button>
+        <el-button size="medium" style="height:35px;border-color:black;color:white;margin-left: 10px;background-color:#7fa0ff" :loading="elbuttonloading" value="Search" name="Search" @click="selectMsg">Search</el-button>
         <el-button size="medium" style="height:35px;border-color:black;color:white;margin-left: 10px;" @click="exportExcel" type="info" >Export</el-button>
         <a style="margin-top: 10px;margin-left: 20px;color: #000000" href="/static/src/modelfiles/New%20DMS%20format_20210513upload.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
         <div class="inputPackage" v-cloak>
@@ -322,7 +322,10 @@
 </div>
 <el-dialog title="歷史記錄" width="65%" :visible.sync="dialogTableVisible">
   <el-table  :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#FAFAFA','border-bottom':'1px solid rgb(103, 194, 58)'}"
-            :data="tableData">
+            :data="tableData"
+            v-loading="hisloading"
+            element-loading-text="小主别急"
+            border>
     <el-table-column property="NID" label="設備序號" width="120" align="center"></el-table-column>
     <el-table-column property="DevID" label="設備用途" width="120" align="center"></el-table-column>
     <el-table-column property="DevModel" label="設備型號" width="120" align="center"></el-table-column>
@@ -1233,7 +1236,7 @@
 <script src="/static/js/Element/icon.js"></script>
 <script src="/static/js/Element/image.js"></script>
 <script src="/static/js/Element/message.js"></script>
-<script type="text/babel">
+ax<script type="text/babel">
  new Vue({
      el: '#app',
      delimiters: ['${', '}'],
@@ -1295,7 +1298,9 @@
              excelFile:null,
              fileName:"未選擇文件",
              loading:false,
+             hisloading:false,
              search:'',
+             elbuttonloading: false,
              form: {
                   Customer: '',
                   Plant: '',
@@ -1523,6 +1528,7 @@
 
           //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.elbuttonloading = true;
                let intfCtgry = this.$refs.IntfCtgry.value;
                let devCtgry = this.$refs.DevCtgry.value;
                let devproperties = this.$refs.Devproperties.value;
@@ -1538,6 +1544,7 @@
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
                   this.$refs.multipleTable.clearSelection();
+                  this.elbuttonloading = false;
 
                 })
              },
@@ -2153,7 +2160,9 @@
           },
 
         alertData:function(id,pid){
+                this.hisloading = true;
                this.dialogTableVisible=true;
+               this.tableData = [];
                let intfCtgry = this.$refs.IntfCtgry.value;
                let devCtgry = this.$refs.DevCtgry.value;
                let devproperties = this.$refs.Devproperties.value;
@@ -2168,6 +2177,7 @@
                         headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                     } ).then((res) => {
                     this.tableData = res.data.tableData;
+                    this.hisloading = false;
                })
         },
 

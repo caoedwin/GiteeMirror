@@ -154,6 +154,7 @@ INSTALLED_APPS = [
     # 'app01.templatetags',
     'DeviceLNV',
     'DeviceABO',
+    'DeviceA39',
     'ComputerMS',
     'ChairCabinetMS',
 
