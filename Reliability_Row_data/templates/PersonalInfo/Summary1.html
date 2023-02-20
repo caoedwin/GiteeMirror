@@ -126,7 +126,10 @@ p {
     </div>
        <p class="selectItem" v-cloak  v-if="showCustomer1" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer1 }/${ showYear1 }</p>
         <template v-cloak>
-          <el-table stripe border  :data="tableData1" style="width: 100%;" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" id="out-table1" >
+          <el-table stripe border  :data="tableData1" style="width: 100%;" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" id="out-table1"
+          v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
             <el-table-column prop="Department" label="部門名稱 --> (人均加班時數)" align="center" width="120"></el-table-column>
             <el-table-column prop="QM" label="QM" align="center" width="80"></el-table-column>
 {#            <el-table-column prop="IDL_Sum" label="IDL 人數 (扣除課/理級主管/產假人員/作業人員)" align="center" width="120"></el-table-column>#}
@@ -225,6 +228,7 @@ p {
                 Top10:[],
                 condition:null,
                 elbuttonloading: false,
+                tableloading: false,
             }
         },
         mounted() {        // 页面渲染后触发该区域内容 即页面初始化
@@ -246,6 +250,8 @@ p {
             },
 
             getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e,};
                 axios.post("/PersonalInfo/Summary1/", Qs.stringify(data), {
                     headers: {
@@ -414,10 +420,13 @@ p {
                          })
 
                 });
+                this.elbuttonloading = false;
+                this.tableloading = false;
             },
 
             SEARCH1: function () {
                 this.elbuttonloading = true;
+                this.tableloading = true;
                 if (this.$refs.selectedYear1.value == '') {
                     this.customerError = true;
                     return false;
@@ -523,6 +532,7 @@ p {
                             {#myChart4.resize();#}
                          })
                     this.elbuttonloading = false;
+                    this.tableloading = false;
                 });
             }
 

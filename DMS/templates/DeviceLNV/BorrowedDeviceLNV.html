@@ -121,7 +121,10 @@
 <el-input type="text" v-model="search"  id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
             <el-table height="700" ref="multipleTable" border :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)" @selection-change="handleSelectionChange" :row-key="getRowKeys" :cell-style="addColor" :row-style="changeRowColor"
             :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}" style="border-radius: 10px;word-break: keep-all"
-            width=900>
+            width=900
+            v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
           <el-table-column type="selection" width="50" :reserve-selection="true" :selectable='checkboxT' disabled="true"></el-table-column>
           <el-table-column type="index" :index="indexMethod" fixed v-if="show" align="center"></el-table-column>
           <el-table-column  prop="Customer" label="客戶別" width="100" fixed align="center"></el-table-column>
@@ -262,6 +265,7 @@
                Info:false,
                show:false,
                 elbuttonloading: false,
+                tableloading: false,
                form: {
                     Project:'',
                     Phase:'',
@@ -307,6 +311,8 @@
         methods: {
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                    this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/DeviceLNV/BorrowedDeviceLNV/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -321,6 +327,8 @@
                     this.tableContent=res.data.content;
                     this.moreDetails=this.tableContent;
                     this.totalNum=this.tableContent.length;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
                 });
             },
 
@@ -417,6 +425,7 @@
                    this.showTips5=true;
                }else {{% endcomment %}
                     this.elbuttonloading = true;
+                    this.tableloading = true;
                    let IntfCtgry = this.$refs.IntfCtgry5.value;
                    let DevCtgry = this.$refs.DevCtgry5.value;
                    let Devproperties = this.$refs.Devproperties5.value;
@@ -440,6 +449,7 @@
                        this.moreDetails=this.tableContent;
                        this.totalNum=this.tableContent.length;
                        this.elbuttonloading = false;
+                       this.tableloading = false;
                    })
                    this.showTips5=false;
                    this.$refs.multipleTable.clearSelection()

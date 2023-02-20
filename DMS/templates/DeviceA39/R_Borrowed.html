@@ -301,7 +301,7 @@
             //获取数据
             getdata: function (e) {
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/DeviceABO/R_Borrowed/", Qs.stringify(data), {
+                axios.post("/DeviceA39/R_Borrowed/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.IntfCtgryOptions5=res.data.IntfCtgryOptions5;
@@ -372,7 +372,7 @@
                         "Devproperties": this.$refs.Devproperties5.value,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/R_Borrowed/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/R_Borrowed/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                         this.DevVendorOptions5 = res.data.DevVendorOptions5;
@@ -385,7 +385,7 @@
                         "Devproperties": this.$refs.form5.model.Devproperties,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/R_Borrowed/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/R_Borrowed/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                         this.DevVendorOptions5 = res.data.DevVendorOptions5;
@@ -425,7 +425,7 @@
                        "Devsize":Devsize,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/R_Borrowed/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/R_Borrowed/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.tableContent=res.data.content;
@@ -437,10 +437,10 @@
               {% comment %} }{% endcomment %}
             },
             getNID(pic){
-                return "/media/DeviceABO/Device/"+pic+'.jpg';
+                return "/media/DeviceA39/Device/"+pic+'.jpg';
             },
             getDeclaration_NO:function(pic){
-                return "/media/DeviceABO/Baoguan/"+pic+'_b.jpg';
+                return "/media/DeviceA39/Baoguan/"+pic+'_b.jpg';
                 {#console.log('/static/images/'+pic+'_b.jpg')#}
             },
             getMore11(row) {
@@ -497,7 +497,7 @@
                       "USE_NUM": USE_NUM,
                       "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                   }
-                  axios.post("/DeviceABO/R_Borrowed/", data).then((res) => {
+                  axios.post("/DeviceA39/R_Borrowed/", data).then((res) => {
                       this.tableContent = res.data.content;
                       this.moreDetails = this.tableContent;
                       this.totalNum = this.tableContent.length;
@@ -549,7 +549,7 @@
                     this.formData.append('Project', this.$refs.form.model.Project)
                     this.formData.append('Phase', this.$refs.form.model.Phase)
                     this.formData.append('Predict_return', this.$refs.form.model.Predict_return)
-                     axios.post("/DeviceABO/R_Borrowed/", this.formData,{
+                     axios.post("/DeviceA39/R_Borrowed/", this.formData,{
                        headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                         }).then((res) => {
                           this.tableContent=res.data.content;

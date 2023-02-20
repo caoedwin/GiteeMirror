@@ -1118,7 +1118,10 @@
      :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
      :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
      style="border-radius: 10px;word-break: keep-all"
-     @selection-change="handleSelectionChange" :row-key="getRowKeys" @cell-click="showDetial" :cell-style="addColor" :row-style="changeRowColor">
+     @selection-change="handleSelectionChange" :row-key="getRowKeys" @cell-click="showDetial" :cell-style="addColor" :row-style="changeRowColor"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
         <el-table-column type="selection" align="center" :reserve-selection="true" fixed></el-table-column>
         <el-table-column type="index" :index="indexMethod" width="60" align="center" v-if="show" fixed></el-table-column>
         <el-table-column prop="Customer" label="客戶別" align="center" width="100" fixed>
@@ -1301,6 +1304,7 @@ ax<script type="text/babel">
              hisloading:false,
              search:'',
              elbuttonloading: false,
+             tableloading: false,
              form: {
                   Customer: '',
                   Plant: '',
@@ -1472,8 +1476,9 @@ ax<script type="text/babel">
 
         getdata: function (e) {
             this.elbuttonloading = true;
+            this.tableloading = true;
             let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/DeviceLNV/M_edit/", Qs.stringify(data), {
+                axios.post("/DeviceABO/M_edit/", Qs.stringify(data), {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                 this.tableData=res.data.tableData;
@@ -1499,6 +1504,7 @@ ax<script type="text/babel">
                 this.tableContent = res.data.content;
                 this.totalNum=this.tableContent.length;
                 this.elbuttonloading = false;
+                this.tableloading = false;
          });
 
         },
@@ -1532,6 +1538,7 @@ ax<script type="text/babel">
           //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
                 this.elbuttonloading = true;
+                this.tableloading = true;
                let intfCtgry = this.$refs.IntfCtgry.value;
                let devCtgry = this.$refs.DevCtgry.value;
                let devproperties = this.$refs.Devproperties.value;
@@ -1541,13 +1548,14 @@ ax<script type="text/babel">
                let brwstatus = this.$refs.BrwStatus.value;
                let data ={"isGetData":"SEARCH","IntfCtgry":intfCtgry,"DevCtgry":devCtgry,"Devproperties":devproperties,
                           "DevVendor":devVendor,"Devsize":devsize,"Brwstatus":brwstatus,"DevStatus":devstatus,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
-               axios.post("/DeviceLNV/M_edit/",Qs.stringify(data), {
+               axios.post("/DeviceABO/M_edit/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
                   this.$refs.multipleTable.clearSelection();
                   this.elbuttonloading = false;
+                  this.tableloading = false;
 
                 })
              },
@@ -1568,11 +1576,11 @@ ax<script type="text/babel">
          },
 
             getImgUrl(val){
-               return "/media/DeviceLNV/Device/"+val+".jpg";
+               return "/media/DeviceABO/Device/"+val+".jpg";
             },
 
             getImgUrl2(val){
-               return "/media/DeviceLNV/Baoguan/"+val+"_b.jpg";
+               return "/media/DeviceABO/Baoguan/"+val+"_b.jpg";
             },
 
             floatdisplay(row, column, cell, event){
@@ -1672,7 +1680,7 @@ ax<script type="text/babel">
                   devproperties = this.$refs.form.model.Devproperties;
                   data = {"isGetData": "InsertJiLian","IntfCtgry":intfCtgry, "DevCtgry":devCtgry,
                             "Devproperties":devproperties, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/DeviceLNV/M_edit/", Qs.stringify(data), {
+                axios.post("/DeviceABO/M_edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.formselectOption = res.data.formselectOption;
@@ -1683,7 +1691,7 @@ ax<script type="text/babel">
                   devproperties = this.$refs.form1.model.Devproperties;
                   data = {"isGetData": "UpdateJiLian","IntfCtgry":intfCtgry, "DevCtgry":devCtgry,
                             "Devproperties":devproperties, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/DeviceLNV/M_edit/", Qs.stringify(data), {
+                axios.post("/DeviceABO/M_edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.form1selectOption = res.data.form1selectOption;
@@ -1699,7 +1707,7 @@ ax<script type="text/babel">
                //   }
                //   data = {"isGetData": "SearchJiLian","IntfCtgry":intfCtgry, "DevCtgry":devCtgry,
                //             "Devproperties":devproperties, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-               // axios.post("/DeviceLNV/M_edit/", Qs.stringify(data), {
+               // axios.post("/DeviceABO/M_edit/", Qs.stringify(data), {
                //     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                // }).then((res) => {
                //     this.selectOption = res.data.selectOption;
@@ -1857,7 +1865,7 @@ ax<script type="text/babel">
                        //将之前张开的树形结构收起
                           //_this.reset();
                        //2.上傳數據
-                        axios.post("/DeviceLNV/M_edit/" ,{"IntfCtgry":intfCtgry,"DevCtgry":devCtgry,"Devproperties":devproperties,'DevVendor':devVendor,'Devsize':devsize,'DevStatus':devstatus,"ExcelData":result},{
+                        axios.post("/DeviceABO/M_edit/" ,{"IntfCtgry":intfCtgry,"DevCtgry":devCtgry,"Devproperties":devproperties,'DevVendor':devVendor,'Devsize':devsize,'DevStatus':devstatus,"ExcelData":result},{
                         headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                     }).then((res) => {
                         //console.log(res.data,"first");//上传成功的操作
@@ -2000,7 +2008,7 @@ ax<script type="text/babel">
                        let devstatus = this.$refs.DevStatus.value;
                        let data ={"isGetData":"MUTICANCEL","params": params,"IntfCtgry":intfCtgry,"DevCtgry":devCtgry,
                             "DevVendor":devVendor,"Devproperties":devproperties,"Devsize":devsize,"DevStatus":devstatus,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
-                       axios.post("/DeviceLNV/M_edit/",data).then((res) => {
+                       axios.post("/DeviceABO/M_edit/",data).then((res) => {
                              this.tableContent = res.data.content;
                              this.totalNum=this.tableContent.length;
                              self.$message({
@@ -2069,7 +2077,7 @@ ax<script type="text/babel">
                   this.formData.append('Purchase_NO', this.$refs.form.model.Purchase_NO);
                   this.formData.append("action",'submit');
                   console.log(this.formData);
-                  axios.post("/DeviceLNV/M_edit/", this.formData,{
+                  axios.post("/DeviceABO/M_edit/", this.formData,{
                               headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                           }).then((res)=>{
                               this.tableContent = res.data.content;
@@ -2152,7 +2160,7 @@ ax<script type="text/babel">
                   this.formData1.append('Purchase_NO', this.$refs.form1.model.Purchase_NO);
                   this.formData1.append("action",'submit1');
                   console.log(this.formData1);
-                  axios.post("/DeviceLNV/M_edit/", this.formData1,{
+                  axios.post("/DeviceABO/M_edit/", this.formData1,{
                             headers:{ 'Content-Type': 'multipart/form-data','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                         }).then((res)=>{
                             this.tableContent = res.data.content;
@@ -2176,7 +2184,7 @@ ax<script type="text/babel">
                   "isGetData" : "alertData" , "ID":id,"NID":pid,"IntfCtgry":intfCtgry,"DevCtgry":devCtgry,
                    "Devproperties":devproperties,"DevVendor":devVendor,"Devsize":devsize,"DevStatus":devstatus
               };
-               axios.post("/DeviceLNV/M_edit/",Qs.stringify(msg,{indices:false}),{
+               axios.post("/DeviceABO/M_edit/",Qs.stringify(msg,{indices:false}),{
                         headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                     } ).then((res) => {
                     this.tableData = res.data.tableData;

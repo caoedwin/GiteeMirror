@@ -74,7 +74,10 @@ background-color: rgba(255,255,255,0.1);
                   <div class="perinTablecontent">
                        <el-input type="text" v-model="search000"  placeholder="Search..."></el-input>
                       <el-button @click="exportExcel" type="success" v-if="canExport==0" style="height:40px;margin-left: 2px;float: right">導出</el-button>
-                       <el-table border height="500px" id="out-table" @sort-change='sortChange' :default-sort = "{prop: 'DepartureDate', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)">
+                       <el-table border height="500px" id="out-table" @sort-change='sortChange' :default-sort = "{prop: 'DepartureDate', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
+                       v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                            <el-table-column type="index" :index="indexMethod"></el-table-column>
                            <el-table-column prop="RegistrationDate" label="報到日期" align="center" sortable='custom'></el-table-column>
                            <el-table-column prop="Seniority" label="年資" align="center" sortable='custom'></el-table-column>
@@ -120,10 +123,13 @@ background-color: rgba(255,255,255,0.1);
                              <label>至</label>
                              <el-date-picker ref="endYear" value-format="yyyy" v-model="endYear" type="year" placeholder="選擇结束年份" style="height:40px;border-radius:5px 5px 5px 5px;"></el-date-picker>
                        </div>
-                             <el-button @click="search2" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
+                             <el-button :loading="elbuttonloading1" @click="search2" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
                   </div>
                     <div class="titleTablecontent">
-                          <el-table border :data="titleTable" show-summary>
+                          <el-table border :data="titleTable" show-summary
+                          v-loading="tableloading1"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
 {#                               <el-table-column :label="searchYear1+'年離職職稱'"align="center">#}
                                    <el-table-column prop="Title" label="職稱" align="center"></el-table-column>
                                    <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
@@ -150,7 +156,10 @@ background-color: rgba(255,255,255,0.1);
               </el-collapse-item>
               <el-collapse-item title="年資" name="4">
                     <div class="seniorityTablecontent">
-                           <el-table border :data="seniorityTable" show-summary>
+                           <el-table border :data="seniorityTable" show-summary
+                           v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                                    <el-table-column prop="seniority" label="年資" align="center"></el-table-column>
                                    <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
                                    </el-table-column>
@@ -174,7 +183,10 @@ background-color: rgba(255,255,255,0.1);
               </el-collapse-item>
               <el-collapse-item title="離職原因" name="8">
                     <div class="reasonTablecontent">
-                           <el-table border :data="reasonTable" show-summary>
+                           <el-table border :data="reasonTable" show-summary
+                           v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                                    <el-table-column prop="reason" label="離職原因" align="center"></el-table-column>
                                    <el-table-column prop="reasonSummary" label="人數" align="center"></el-table-column>
                                    <el-table-column prop="reasonDeparture" label="占總%" align="center"></el-table-column>
@@ -200,7 +212,10 @@ background-color: rgba(255,255,255,0.1);
 {#              </el-collapse-item>#}
               <el-collapse-item title="專業" name="6">
                     <div class="professionTablecontent">
-                           <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary>
+                           <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary
+                           v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                                <el-table-column :label="searchYear+'年離職'"align="center">
                                <el-table-column prop="daLei" label="" align="center"></el-table-column>
                                <el-table-column prop="Profession" label="專業" align="center"></el-table-column>
@@ -280,6 +295,9 @@ background-color: rgba(255,255,255,0.1);
                 Totalsize:null,
                 canExport:null,//導出權限
                 elbuttonloading: false,
+                tableloading: false,
+                elbuttonloading1: false,
+                tableloading1: false,
 
                }
         },
@@ -365,6 +383,9 @@ background-color: rgba(255,255,255,0.1);
                     }
             },
             getdata: function (e) {          //获取数据
+                this.elbuttonloading = true;
+                this.tableloading = true;
+                this.tableloading1 = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/Summary3/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -404,9 +425,14 @@ background-color: rgba(255,255,255,0.1);
                     this.reasonDiagramData=res.data.reasonDiagramData;
                     this.reasonDiagramss();
                     this.canExport=res.data.canExport;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
+                    this.tableloading1 = false;
                  });
             },
             search2 :function(){
+                this.elbuttonloading1=true;
+                this.tableloading1=true;
                let Year=this.$refs.Year.value;
                let startYear=this.$refs.startYear.value;
                let endYear=this.$refs.endYear.value;
@@ -423,11 +449,15 @@ background-color: rgba(255,255,255,0.1);
                     {#this.titleSeniorityDiagram2=res.data.titleSeniorityDiagram2;#}
                     {#this.TitleText=res.data.TitleText;#}
                     {#this.xuanrantubiao1();#}
+                   this.elbuttonloading1=false;
+                this.tableloading1=false;
                 })
                 this.searchYear1=startYear+'~'+endYear;
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
                 this.elbuttonloading = true;
+                this.tableloading = true;
+                this.tableloading1 = true;
                 {#console.log(this.elbuttonloading);#}
                let Year=this.$refs.Year.value;
                let YearRange=this.$refs.value1.value;
@@ -469,6 +499,8 @@ background-color: rgba(255,255,255,0.1);
                    this.reasonDiagramss();
                    this.canExport=res.data.canExport;
                    this.elbuttonloading = false;
+                   this.tableloading = false;
+                   this.tableloading1 = false;
                        {#console.log(this.elbuttonloading);#}
                 })
                        this.searchYear=Year;

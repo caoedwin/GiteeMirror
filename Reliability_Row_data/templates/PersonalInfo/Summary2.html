@@ -48,7 +48,10 @@ background-color: rgba(255,255,255,0.1);
           <el-collapse v-model="activeNames" @change="handleChange">
               <el-collapse-item title="By 月份" name="1">
                    <div class="monthTablecontent">
-                       <el-table border :data="monthTable" :span-method="objectSpanMethod">
+                       <el-table border :data="monthTable" :span-method="objectSpanMethod"
+                       v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                            <el-table-column prop="Customer" label="客戶別" align="center"></el-table-column>
                            <el-table-column prop="Classify" :label="searchYear" align="center"></el-table-column>
                            <el-table-column prop="Jan" label="一月" align="center"></el-table-column>
@@ -73,7 +76,10 @@ background-color: rgba(255,255,255,0.1);
               </el-collapse-item>
               <el-collapse-item title="By 職稱" name="2">
                   <div class="titleTablecontent">
-                       <el-table border :data="titleTable" show-summary>
+                       <el-table border :data="titleTable" show-summary
+                       v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                            <el-table-column prop="Title" label="職稱" align="center"></el-table-column>
                            <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
                            </el-table-column>
@@ -86,7 +92,10 @@ background-color: rgba(255,255,255,0.1);
               </el-collapse-item>
               <el-collapse-item title="By 年資" name="3">
                   <div class="seniorityTablecontent">
-                       <el-table border :data="seniorityTable" show-summary>
+                       <el-table border :data="seniorityTable" show-summary
+                       v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                            <el-table-column prop="Seniority" label="年資" align="center"></el-table-column>
                            <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
                            </el-table-column>
@@ -113,7 +122,10 @@ background-color: rgba(255,255,255,0.1);
 {#              </el-collapse-item>#}
               <el-collapse-item title="By 專業" name="4">
                   <div class="professionTablecontent">
-                       <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary>
+                       <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary
+                       v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
                            <el-table-column prop="daLei" label="" align="center"></el-table-column>
                            <el-table-column prop="Profession" label="專業" align="center"></el-table-column>
                            <el-table-column  v-for="(item,key,index) in selectItem" :label="item" :prop="item" align="center">
@@ -173,6 +185,7 @@ background-color: rgba(255,255,255,0.1);
                selectItem:[],
                heBingNum:[],
                 elbuttonloading: false,
+                tableloading: false,
 
              }
         },
@@ -184,6 +197,8 @@ background-color: rgba(255,255,255,0.1);
                 console.log(val);
             },
             getdata: function (e) {          //获取数据
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/Summary2/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -208,10 +223,13 @@ background-color: rgba(255,255,255,0.1);
                     this.seniorityDiagramss();
                     {#this.educationDiagram=res.data.educationDiagram;  //學歷分佈圖#}
                     {#this.educationDiagramss();#}
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
                  });
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
                 this.elbuttonloading = true;
+                this.tableloading = true;
                let Year=this.$refs.Year.value;
                let data ={"isGetData":"SEARCH","Year":Year,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/PersonalInfo/Summary2/",Qs.stringify(data), {
@@ -237,6 +255,7 @@ background-color: rgba(255,255,255,0.1);
                     {#this.educationDiagram=res.data.educationDiagram;#}
                     {#this.educationDiagramss();#}
                    this.elbuttonloading = false;
+                   this.tableloading = false;
 
 
 

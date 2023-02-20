@@ -767,7 +767,7 @@
             getdata: function (e) {
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 console.log(data)
-                axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.canExport = res.data.canExport;
@@ -794,7 +794,7 @@
             search1 :function(){
                let IntfCtgry = this.$refs.IntfCtgry.value;
                let data ={"isGetData":"SEARCH1","IntfCtgry":IntfCtgry,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-               axios.post("/DeviceABO/M_Category/",Qs.stringify(data), {
+               axios.post("/DeviceA39/M_Category/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                   this.IntfCtgryTable=res.data.IntfCtgryTable;
@@ -821,7 +821,7 @@
                        "DevCtgry": DevCtgry,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.DevCtgryTable = res.data.DevCtgryTable;
@@ -864,7 +864,7 @@
                        "Devproperties":Devproperties,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.DevpropertiesTable=res.data.DevpropertiesTable;
@@ -913,7 +913,7 @@
                         "Devproperties": this.$refs.Devproperties4.value,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.DevVendorOptions4=res.data.DevVendorOptions4;
@@ -937,7 +937,7 @@
                        "DevVendor":DevVendor,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.DevVendorTable=res.data.DevVendorTable;
@@ -997,7 +997,7 @@
                         "Devproperties": this.$refs.Devproperties5.value,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                         this.DevVendorOptions5 = res.data.DevVendorOptions5;
@@ -1030,7 +1030,7 @@
                        "Devsize":Devsize,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/M_Category/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/M_Category/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.DevsizeTable=res.data.DevsizeTable;
@@ -1164,7 +1164,7 @@
                        //将之前张开的树形结构收起
                           //_this.reset();
                        //2.上傳數據
-                        axios.post("/DeviceABO/M_Category/" ,{"ExcelData":result},{
+                        axios.post("/DeviceA39/M_Category/" ,{"ExcelData":result},{
                         headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                     }).then((res) => {
                         //console.log(res.data,"first");//上传成功的操作
@@ -1256,7 +1256,7 @@
                          let data ={"isGetData":"Delete1","DeleteId":params,
                              "IntfCtgry_search":this.$refs.IntfCtgry.value,
                              "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                         axios.post("/DeviceABO/M_Category/",data).then((res) => {
+                         axios.post("/DeviceA39/M_Category/",data).then((res) => {
                              if(res.data.err_MSG!=='') {
                                 this.$alert(res.data.err_MSG, '提示', {
                                       dangerouslyUseHTMLString: true,
@@ -1311,7 +1311,7 @@
                         "IntfCtgry": this.$refs.form1.model.IntfCtgry,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1381,7 +1381,7 @@
                         "editID":this.editID,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1451,7 +1451,7 @@
                              "IntfCtgry_search":this.$refs.IntfCtgry2.value,
                              "DevCtgry_search":this.$refs.DevCtgry2.value,
                              "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                         axios.post("/DeviceABO/M_Category/",data).then((res) => {
+                         axios.post("/DeviceA39/M_Category/",data).then((res) => {
                              if(res.data.err_MSG!=='') {
                                 this.$alert(res.data.err_MSG, '提示', {
                                       confirmButtonText: '确定',
@@ -1509,7 +1509,7 @@
                         "DevCtgry": this.$refs.form2.model.DevCtgry,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1581,7 +1581,7 @@
                         "editID":this.editID,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1648,7 +1648,7 @@
                              "DevCtgry_search":this.$refs.DevCtgry3.value,
                              "Devproperties_search":this.$refs.Devproperties3.value,
                              "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                         axios.post("/DeviceABO/M_Category/",data).then((res) => {
+                         axios.post("/DeviceA39/M_Category/",data).then((res) => {
                              if(res.data.err_MSG!=='') {
                                 this.$alert(res.data.err_MSG, '提示', {
                                       confirmButtonText: '确定',
@@ -1705,7 +1705,7 @@
                         "Devproperties": this.$refs.form3.model.Devproperties,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1776,7 +1776,7 @@
                         "editID":this.editID,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1844,7 +1844,7 @@
                              "Devproperties_search":this.$refs.Devproperties4.value,
                              "DevVendor_search":this.$refs.DevVendor4.value,
                              "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                         axios.post("/DeviceABO/M_Category/",data).then((res) => {
+                         axios.post("/DeviceA39/M_Category/",data).then((res) => {
                              if(res.data.err_MSG!=='') {
                                 this.$alert(res.data.err_MSG, '提示', {
                                       confirmButtonText: '确定',
@@ -1901,7 +1901,7 @@
                         "DevVendor":this.$refs.form4.model.DevVendor,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -1973,7 +1973,7 @@
                         "editID":this.editID,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -2040,7 +2040,7 @@
                              "DevVendor_search":this.$refs.DevVendor5.value,
                              "Devsize_search":this.$refs.Devsize5.value,
                              "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                         axios.post("/DeviceABO/M_Category/",data).then((res) => {
+                         axios.post("/DeviceA39/M_Category/",data).then((res) => {
                              if(res.data.err_MSG!=='') {
                                 this.$alert(res.data.err_MSG, '提示', {
                                       confirmButtonText: '确定',
@@ -2095,7 +2095,7 @@
                         "Devsize":this.$refs.form5.model.Devsize,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -2168,7 +2168,7 @@
                         "editID":this.editID,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/M_Category/", data, {
+                    axios.post("/DeviceA39/M_Category/", data, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                             'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()

@@ -409,7 +409,7 @@
         //获取数据
         getdata: function (e) {
             let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-            axios.post("/DeviceABO/M_Return/", Qs.stringify(data), {
+            axios.post("/DeviceA39/M_Return/", Qs.stringify(data), {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then((res) => {
                 this.selectItem=res.data.select;
@@ -439,11 +439,11 @@
          },
 
          getImgUrl(val){
-            return "/media/DeviceABO/Device/"+val+".jpg";
+            return "/media/DeviceA39/Device/"+val+".jpg";
          },
 
          getImgUrl2(val){
-            return "/media/DeviceABO/Baoguan/"+val+"_b.jpg";
+            return "/media/DeviceA39/Baoguan/"+val+"_b.jpg";
          },
 
 
@@ -471,7 +471,7 @@
                let Borrower = this.$refs.Borrower.value;
                let BorrowerNum = this.number;
                let data ={"isGetData":"SEARCH","Borrower":Borrower,"BorrowerNum":BorrowerNum, "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
-               axios.post("/DeviceABO/M_Return/",Qs.stringify(data), {
+               axios.post("/DeviceA39/M_Return/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                   this.tableContent=res.data.content;
@@ -520,7 +520,7 @@
                                "isGetData": "ChangeStorages",
                                "params": params,"Borrower":Borrower,"BorrowerNum":BorrowerNum, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                            };
-                           axios.post('/DeviceABO/M_Return/', data).then((res) =>{
+                           axios.post('/DeviceA39/M_Return/', data).then((res) =>{
                                  this.tableContent = res.data.content;
                                  this.totalNum=this.tableContent.length;
                                  console.log(this.tableContent,'mul');

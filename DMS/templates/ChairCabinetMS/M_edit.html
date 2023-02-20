@@ -297,7 +297,7 @@
 {#               <option v-for="(item,key,index) in allDevproperties" >${ item }</option>#}
 {#           </select>#}
 
-        <el-button size="medium" style="height:35px;border-color:black;color:white;margin-left: 10px;background-color:#7fa0ff" value="Search" name="Search" @click="selectMsg">Search</el-button>
+        <el-button size="medium":loading="elbuttonloading" style="height:35px;border-color:black;color:white;margin-left: 10px;background-color:#7fa0ff" value="Search" name="Search" @click="selectMsg">Search</el-button>
         <el-button size="medium" style="border-color:black;" @click="exportExcel" type="info" >Export</el-button>
         <a style="margin-top: 10px;margin-left: 20px;color: #000000" href="/static/src/modelfiles/ChairCabinet.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
     </div>
@@ -550,7 +550,10 @@
      :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
      :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
      style="border-radius: 10px;word-break: keep-all"
-     @selection-change="handleSelectionChange" :row-key="getRowKeys">
+     @selection-change="handleSelectionChange" :row-key="getRowKeys"
+    v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
         <el-table-column type="selection" align="center" :reserve-selection="true" fixed></el-table-column>
         <el-table-column label="No." type="index" :index="indexMethod" width="60" align="center" fixed></el-table-column>
 {#        <el-table-column prop="No" label="No." align="center" width="90" fixed>#}
@@ -637,6 +640,9 @@
              fileName:"未選擇文件",
              loading:false,
              search:'',
+             hisloading:false,
+             elbuttonloading: false,
+             tableloading: false,
              form: {
                   GYNumber: '',
                   Category: '',
@@ -696,6 +702,8 @@
      methods: {
         //获取数据
         getdata: function (e) {
+            this.elbuttonloading = true;
+            this.tableloading = true;
             let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/ChairCabinetMS/M_edit/", Qs.stringify(data), {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -710,6 +718,8 @@
                 }
                 this.tableContent = res.data.content;
                 this.totalNum=this.tableContent.length;
+                this.elbuttonloading = false;
+            this.tableloading = false;
          });
 
         },
@@ -847,6 +857,8 @@
 
           //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+            this.elbuttonloading = true;
+            this.tableloading = true;
                let GYNumber = this.$refs.GYNumber.value;
                let UseStatus = this.$refs.UseStatus.value;
                let Number = this.$refs.Number.value;
@@ -863,6 +875,8 @@
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
                   this.$refs.multipleTable.clearSelection();
+                  this.elbuttonloading = false;
+                  this.tableloading = false;
 
                 })
              },
@@ -1259,6 +1273,7 @@
           },
 
         alertData:function(id,pid){
+                this.hisloading = true;
                let GYNumber = this.$refs.GYNumber.value;
                let UseStatus = this.$refs.UseStatus.value;
                let Number = this.$refs.Number.value;
@@ -1273,6 +1288,7 @@
                         headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                     } ).then((res) => {
                     this.tableData = res.data.tableData;
+                    this.hisloading = false;
                })
         },
 

@@ -163,7 +163,7 @@
             </div>
     <div class="col-md-1">
 
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT">Search</el-button>
+                        <el-button size="small" :loading="elbuttonloading" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT">Search</el-button>
                     </div>
         <div class="col-md-1">
            <el-tooltip class="item" effect="dark" content="搜索一段時期内所有機種Top10的執行時間及復測時間(默認是按照ScheduleBegin排序的最近的10個機種)" placement="right"><i class="el-icon-question"></i></el-tooltip>
@@ -180,7 +180,10 @@
        'background-color':'#fafafa',
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'}"
-            :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="searchalert" >
+            :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="searchalert"
+  v-loading="tableloading1"
+        element-loading-text="數據更新中，請稍後"
+        border>
     <el-table-column type="selection"></el-table-column>
     <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>
     <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>
@@ -219,7 +222,10 @@
           </div>
       </div>
 <template v-cloak>
-<el-table stripe border  :data="tableData" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}">
+<el-table stripe border  :data="tableData" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}"
+v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
     <el-table-column prop="Project" label="Project" align="center" width="160" align="center" fixed sortable></el-table-column>
     <el-table-column prop="Phase" label="Phase" align="center" width="160" align="center" fixed sortable ></el-table-column>
     <el-table-column prop="CaseLibrarytime" label="Case Library time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
@@ -267,6 +273,9 @@
                 settable:false,
                 customerError:false,
                 datePicker:'',
+                elbuttonloading:false,
+                tableloading:false,
+                tableloading1:false,
                 Top10:[],
                 coloroder:{'B(FVT)': "#FFC000", 'B(SDV)': "#FFC000", 'C(SIT)': "#00FFFF", 'SIT2': "#589800", 'GSKU':"#06fa24",'FFRT': "#00B0F0", 'FFRT2': "#00B0F0", 'FFRT3': "#00B0F0",
                             'FFRT4': "#00B0F0", 'FFRT5': "#00B0F0", 'FFRT6': "#00B0F0", 'Wave': "#FE2E64", 'Wave2': "#FE2E64", 'Wave3': "#FE2E64",
@@ -321,6 +330,8 @@
                 }).replace(/\.$/, '');
                  },
             getdata: function (e) {
+                    this.tableloading = true;
+                    this.elbuttonloading = true;
                 let data = {"isGetData": e,};
                 axios.post("/TestPlanSWOS/TestPlanSWOS-summary/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
@@ -523,7 +534,8 @@
                myChart4.resize();
 
         })
-
+                    this.tableloading = false;
+                    this.elbuttonloading = false;
                 });
             },
             SEARCHALERT: function () {
@@ -533,6 +545,7 @@
                     this.customerError = true;
                     return false;
                 } else {
+                    this.tableloading1 = true;
                     this.customerError = false;
                     let Customer = this.$refs.Customer.value;
                     let Date = this.$refs.datePicker.value;
@@ -547,12 +560,14 @@
                     }).then((res) => {
                         this.searchalert = res.data.sear;
                         this.showCustomer = this.selectedCustomer;
+                        this.tableloading1 = false;
                     })
                     this.settable = true;
                 }
             },
             //二次选择
             getMsg: function () {
+
                 //是否選中信息
                 let data = this.$refs.projectTable.store.states.selection;
                 this.title = this.$refs.projectTable.store.states.selection.map((res) => {
@@ -569,6 +584,7 @@
                     return
                 }
 
+                this.tableloading=true;
                 //選中上傳數據
                 {% comment %}this.projectArray = data.map((res) => res.COMPRJCODE+":"+res.Phase);{% endcomment %}
                 this.projectArray = data.map((res) => res.COMPRJCODE );
@@ -795,6 +811,7 @@
                myChart4.resize();
                // 使用刚指定的配置项和数据显示图表。
         })
+                    this.tableloading=false;
 
                 })
                 this.combineArray = [];

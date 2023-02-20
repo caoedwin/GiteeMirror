@@ -211,7 +211,7 @@
             //获取数据
             getdata: function (e) {
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/DeviceABO/R_Keep/", Qs.stringify(data), {
+                axios.post("/DeviceA39/R_Keep/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.IntfCtgryOptions5=res.data.IntfCtgryOptions5;
@@ -283,7 +283,7 @@
                         "Devproperties": this.$refs.Devproperties5.value,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/R_Keep/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/R_Keep/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                         this.DevVendorOptions5 = res.data.DevVendorOptions5;
@@ -296,7 +296,7 @@
                         "Devproperties": this.$refs.form5.model.Devproperties,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
-                    axios.post("/DeviceABO/R_Keep/", Qs.stringify(data), {
+                    axios.post("/DeviceA39/R_Keep/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
                         this.DevVendorOptions5 = res.data.DevVendorOptions5;
@@ -336,7 +336,7 @@
                        "Devsize":Devsize,
                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                    }
-                   axios.post("/DeviceABO/R_Keep/", Qs.stringify(data), {
+                   axios.post("/DeviceA39/R_Keep/", Qs.stringify(data), {
                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                    }).then((res) => {
                        this.tableContent=res.data.content;
@@ -348,10 +348,10 @@
                {% comment %}}{% endcomment %}
             },
             getNID(pic){
-                return "/media/DeviceABO/Device/"+pic+'.jpg';
+                return "/media/DeviceA39/Device/"+pic+'.jpg';
             },
             getDeclaration_NO:function(pic){
-                return "/media/DeviceABO/Baoguan/"+pic+'_b.jpg';
+                return "/media/DeviceA39/Baoguan/"+pic+'_b.jpg';
                 {#console.log('/static/images/'+pic+'_b.jpg')#}
             },
             getMore11(row) {
@@ -400,7 +400,7 @@
                             "Renew": params,
                             "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                         }
-                        axios.post("/DeviceABO/R_Keep/",data).then((res) => {
+                        axios.post("/DeviceA39/R_Keep/",data).then((res) => {
                             this.tableContent = res.data.content;
                             this.moreDetails=this.tableContent;
                             this.totalNum = this.tableContent.length;

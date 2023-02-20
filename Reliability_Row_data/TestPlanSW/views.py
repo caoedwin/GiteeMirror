@@ -285,6 +285,7 @@ def TestPlanSW_summary(request):
                             HC = round(CodeATO / 6 / TestProjectSW.objects.filter(
                                 **check_dic_Pro).first().Full_Function_Duration, 2)
                         HCO = round(HC * 6 / 7, 2)
+                        print(i["name"],HCO)
                         # mock_data.append(
                         #     {"Project": i["name"], "Phase": i["value"], "CaseLibrarytime": CodeBS, "ProjectBasetime": CodeFS,
                         #      "Timew/Comfig": CodeTCM,
@@ -377,6 +378,7 @@ def TestPlanSW_summary(request):
                             HC_R = round(CodeATO_R / 6 / TestProjectSW.objects.filter(
                                 **check_dic_Pro).first().Full_Function_Duration, 2)
                         HCO_R = round(HC_R * 6 / 7, 2)
+                        print(i["name"], HCO)
                     mock_data.append(
                         {"Project": i["name"], "Phase": i["value"], "CaseLibrarytime": CodeBS + CodeBS_R,
                          "ProjectBasetime": CodeFS + CodeFS_R,
@@ -4547,11 +4549,12 @@ def TestPlanSW_Edit(request):
                                 if 'BaseTime' in i.keys():
                                     # print(i['BaseTime'])
                                     if i['BaseTime']:
-                                        updatedic["BaseTime"] = float(i['BaseTime'])
+                                        updatedic['BaseTime'] = float(i['BaseTime'])
                                     else:
-                                        updatedic["BaseTime"] = 0
+                                        updatedic['BaseTime'] = 0
                                 else:
-                                    updatedic["BaseTime"] = 0
+                                    updatedic['BaseTime'] = 0
+
                                 if 'TDMSUnattendedTime' in i.keys():
                                     if i['TDMSUnattendedTime'] and not i['TDMSUnattendedTime'] == " ":
                                         updatedic["TDMSUnattendedTime"] = float(i['TDMSUnattendedTime'])

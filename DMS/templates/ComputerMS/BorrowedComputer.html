@@ -78,7 +78,7 @@
          </el-select>
          </div>
          <div class="col-md-2">
-             <el-button @click="search5" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button>
+             <el-button :loading="elbuttonloading" @click="search5" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button>
          </div>
      </div>
 <br>
@@ -90,7 +90,10 @@
     <el-table id="out-table" border  stripe ref="multipleTable"  tooltip-effect="dark"  height="700"
      :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
      :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-     style="border-radius: 10px;word-break: keep-all" @selection-change="handleSelectionChange" :row-key="getRowKeys">
+     style="border-radius: 10px;word-break: keep-all" @selection-change="handleSelectionChange" :row-key="getRowKeys"
+    v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
         <el-table-column type="selection" align="center" :reserve-selection="true" :selectable='checkboxT' fixed></el-table-column>
         <el-table-column type="index" :index="indexMethod" width="40" align="center" fixed></el-table-column>
         <el-table-column prop="CollectDate" label="領用日期" align="center" width="95" fixed>
@@ -172,6 +175,8 @@
                 currentPage: 1,//默认显示第一页
                 pageSize:100,//默认每页显示100条
                 totalNum: null,
+                elbuttonloading: false,
+                tableloading: false,
                 multipleSelection: [],
             }
         },
@@ -181,6 +186,8 @@
         methods: {
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/ComputerMS/BorrowedComputer/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -189,6 +196,8 @@
                     this.selectUnifiedNumber=res.data.selectUnifiedNumber;
                     this.allMachineStatus=res.data.allMachineStatus;
                     this.totalNum=this.tableContent.length;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
                 });
             },
 
@@ -211,6 +220,8 @@
             },
 
             search5:function(){
+                    this.elbuttonloading = true;
+                    this.tableloading = true;
                    let UnifiedNumber = this.$refs.UnifiedNumber.value;
                    let MachineStatus = this.$refs.MachineStatus.value;
                    let data = {
@@ -224,6 +235,8 @@
                    }).then((res) => {
                        this.tableContent=res.data.content;
                        this.totalNum=this.tableContent.length;
+                       this.elbuttonloading = false;
+                        this.tableloading = false;
                    })
                    this.$refs.multipleTable.clearSelection()
             },
