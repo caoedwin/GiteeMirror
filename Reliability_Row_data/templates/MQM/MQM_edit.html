@@ -63,7 +63,7 @@
            </select>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
                     </div>
                   <div class="col-md-1">
                     <el-button size="small" type="danger" v-if="statu === 4 || statu === 6" @click="multiDelete">批量删除</el-button>
@@ -72,7 +72,10 @@
 <template>
     {% comment %}<el-input v-model="search" placeholder="请输入内容模糊搜索"></el-input>{% endcomment %}
     <el-table border height="750" ref="multipleTable" @selection-change="handleSelectionChange" :row-key="getRowKeys" :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)"
-    :cell-style="addClass">
+    :cell-style="addClass"
+    v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
         <el-table-column type="selection" width="50" fixed></el-table-column>
         <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
         <el-table-column label="Project" align="center" width="120" fixed>
@@ -407,6 +410,8 @@ $(document).ready(function() {
                 search: '',
                 multiDeleteVisible:false,
                 multipleSelection: [],
+                elbuttonloading:false,
+                tableloading:false,
 
             }
         },
@@ -470,6 +475,8 @@ $(document).ready(function() {
           },
             //获取数据
             getdata: function (e) {
+                this.tableloading = true;
+                this.elbuttonloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/MQM/MQM_edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -515,6 +522,8 @@ $(document).ready(function() {
                         this.controlrun[i] = this.tableContent[i].Controlrun;
                         this.comments[i] = this.tableContent[i].Comments;
                     }
+                    this.tableloading = false;
+                    this.elbuttonloading = false;
                 });
             },
             //索引
@@ -648,6 +657,8 @@ $(document).ready(function() {
             },
             //上传搜索项：以此选项搜索符合条件的内容
             selectMsg :function(){
+                this.tableloading = true;
+                this.elbuttonloading = true;
                let Customer = this.$refs.Customer.value;
                let Project = this.$refs.Project.value;
                let data ={"isGetData":"SEARCH","Customer":Customer,"Project":Project,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -696,6 +707,8 @@ $(document).ready(function() {
                             this.controlrun[i] = this.tableContent[i].Controlrun;
                             this.comments[i] = this.tableContent[i].Comments;
                         }
+                        this.tableloading = false;
+                        this.elbuttonloading = false;
                 })
              },
            changeresultB:function(rows,index){
@@ -1020,6 +1033,8 @@ $(document).ready(function() {
           multiDelete() {
                 var warning=confirm('此操作将永久删除该条数据, 是否继续?')
          if(warning) {
+             this.tableloading = true;
+                this.elbuttonloading = true;
              this.multiDeleteVisible = false;
              let checkArr = this.multipleSelection;   // multipleSelection存储了勾选到的数据
              let params = [];
@@ -1082,6 +1097,8 @@ $(document).ready(function() {
                          type: 'success'
                      });
                  this.selectItem=res.data.select;
+                 this.tableloading = false;
+                this.elbuttonloading = false;
              })
          }else{
              return false;

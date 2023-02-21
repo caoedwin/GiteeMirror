@@ -206,9 +206,9 @@ def get_menu_html(menu_data):
                         Class = "ti-id-badge"
                     elif item['title'] == 'A_L_Adapter&PowerCord-LNV':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-list"
-                    elif item['title'] == 'D_L_Device-LNV':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
+                    elif item['title'] == 'D_L_Device-C38-LNV':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-view-list"
-                    elif item['title'] == 'D_3_Device-A39':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
+                    elif item['title'] == 'D_3_Device-A39-OBI':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-view-list"
                     elif item['title'] == 'D_A_Device-ABO':# or item['title'] == 'D_L_Device-LNV' or item['title'] == 'D_A_Device-ABO':
                         Class = "ti-view-list-alt"

@@ -93,7 +93,7 @@ def login(request):
 def signin(request):
     # print("signin")
     message = ""
-    inputRoles = Role.objects.filter(name__contains="Users").order_by("name")
+    inputRoles = Role.objects.filter(name__contains="Users").exclude(name__contains="A39").order_by("name")
     # print(inputRoles)
     if request.method == "POST":
         # message = "请检查填写的内容！"
@@ -132,8 +132,8 @@ def index(request):
         return redirect('/login/')
     Syswangzhinamedic = {
         "AdapterPowerCord_LNV": "/AdapterPowerCode/BorrowedAdapter/",
-        "Device_LNV": "/DeviceLNV/BorrowedDeviceLNV/",
-        "Device_A39": "/DeviceA39/BorrowedDeviceA39/",
+        "Device_C38LNV": "/DeviceLNV/BorrowedDeviceLNV/",
+        "Device_A39OBI": "/DeviceA39/BorrowedDeviceA39/",
         "Device_ABO": "/DeviceABO/BorrowedDeviceABO/",
         "ComputerMS_LNV": "/ComputerMS/BorrowedComputer/",
         "ChairCabinetMS_LNV": "/ChairCabinetMS/BorrowedChairCabinet/",

@@ -109,7 +109,7 @@
            </select>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
                     </div>
                     <div class="col-md-1">
                         <el-button size="small" v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
@@ -139,7 +139,10 @@
 <template>
 <el-input type="text" v-model="search" id="sh" placeholder="关键字搜索......"></el-input>
    <el-table id="out-table" border height="750" @sort-change='sortChange' :default-sort = "{prop: 'CompalPN', order: 'ascending'}" :data="datas_computed.slice((currentPage-1)*pageSize,currentPage*pageSize)" tooltip-effect="dark" style="width: 100%"
-   :cell-style="addClass">
+   :cell-style="addClass"
+   v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
     <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
        <el-table-column prop="Project" label="Project" align="center" width="120" sortable='custom' fixed></el-table-column>
        <el-table-column prop="Category" label="Category" align="center" width="156" sortable='custom' fixed></el-table-column>
@@ -266,6 +269,8 @@ new Vue({
                 totalNum: null,
                 search:'',
                 Totalsize:null,
+                elbuttonloading:false,
+                tableloading:false,
 
             }
         },
@@ -388,6 +393,8 @@ new Vue({
       },
             //获取数据
             getdata: function (e) {
+                this.tableloading = true;
+                this.elbuttonloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/MQM/MQM_search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -397,6 +404,8 @@ new Vue({
                     this.canExport = res.data.canExport;
                     this.canShow = res.data.canShow;
                     this.totalNum=this.tableContent.length;
+                    this.tableloading = false;
+                    this.elbuttonloading = false;
                 });
             },
             indexMethod(index) {
@@ -416,6 +425,8 @@ new Vue({
              },
             //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.tableloading = true;
+                this.elbuttonloading = true;
                let Customer = this.$refs.Customer.value;
                let Project = this.$refs.Project.value;
                 let Category = this.$refs.Category.value;
@@ -428,6 +439,8 @@ new Vue({
                   this.tableContent=res.data.content.sort(this.sortFun("CompalPN",  'ascending'));//用sort-change方法对分页后台排序时，默认排序列
                   this.selectItem=res.data.select;
                   this.totalNum=this.tableContent.length;
+                  this.tableloading = false;
+                this.elbuttonloading = false;
                 })
              },
             //導出表格
