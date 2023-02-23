@@ -140,7 +140,7 @@ input:focus{
            </select>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
                     </div>
                     <div class="col-md-1">
                         <el-button size="small" @click="exportExcel" type="info" v-if="canExport==1" >Export</el-button>
@@ -150,7 +150,10 @@ input:focus{
      <hr/>
   <template >
       <el-input type="text" v-model="search" id="sh" placeholder="关键字搜索......"></el-input>
-      <el-table  id="out-table" border stripe height="700" @sort-change='sortChange' :default-sort = "{prop: 'Compal_R1_PN', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)" :cell-style="addClass" style="width: 100%">
+      <el-table  id="out-table" border stripe height="700" @sort-change='sortChange' :default-sort = "{prop: 'Compal_R1_PN', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)" :cell-style="addClass" style="width: 100%"
+      v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
           <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
           <el-table-column prop="Customer" label="CG" align="center" width="80" sortable='custom' fixed></el-table-column>
           <el-table-column prop="INV_Number" label="INV_Number" align="center" width="130" sortable='custom' fixed></el-table-column>
@@ -265,6 +268,8 @@ $(document).ready(function() {
                 search:'',
                 changeindex:null,
                 Totalsize:null,
+                elbuttonloading: false,
+                tableloading: false,
             }
         },
     mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -380,6 +385,8 @@ $(document).ready(function() {
       },
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/INVGantt/INVGantt-search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -392,6 +399,8 @@ $(document).ready(function() {
                     this.selectLenovo_TP_PN=res.data.selectLenovo_TP_PN;
                     this.selectCompal_TP_PN=res.data.selectCompal_TP_PN;
                     this.totalNum=this.tableContent.length;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
 
                 });
             },
@@ -400,6 +409,8 @@ $(document).ready(function() {
             },
             //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function() {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                let Customer = this.$refs.Customer.value;
                let Project = this.$refs.Project.value;
                let Category = this.$refs.Category.value;
@@ -420,6 +431,8 @@ $(document).ready(function() {
                   this.selectCompal_TP_PN=res.data.selectCompal_TP_PN;
                   {#this.selectCompal_R3_PN=res.data.selectCompal_R3_PN;#}
                   this.totalNum=this.tableContent.length;
+                  this.elbuttonloading = false;
+                this.tableloading = false;
                 })
              },
             historyRow(index,row){

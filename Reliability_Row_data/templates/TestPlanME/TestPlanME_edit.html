@@ -226,7 +226,7 @@
         </el-select><br>
         <div class="inputError" v-cloak  v-show="phaseError">phase號不能為空</div>
     </div>
-    <el-button @click="find" v-cloak type="primary" style="height:40px">查找</el-button>
+    <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px">查找</el-button>
     <el-button @click="saveData" v-cloak type="success" style="height:40px">保存</el-button>
       <!--<el-button @click="exportExcel"  style="height:40px">導出</el-button>-->
 </div>
@@ -253,7 +253,10 @@
        'background-color':'#fafafa',
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'
-    }">
+    }"
+      v-loading="tableloading"
+      element-loading-text="數據更新中，請稍後"
+        border>
       <el-table-column prop="ItemNo" label="序號" fixed ></el-table-column>
       <el-table-column prop="Item" label="項目名稱" fixed width="150"></el-table-column>
       <el-table-column prop="Sample Size" label="取樣數"  fixed width="150"></el-table-column>
@@ -446,6 +449,8 @@
         projectError:false,
         customerError:false,
         phaseError:false,
+        tableloading:false,
+        elbuttonloading:false,
         phaseName:["B(FVT)","C(SIT)","INV","Others",],
         //需要用到輸入和變化值
         NTU:[],
@@ -493,6 +498,8 @@
     methods: {
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
+                this.tableloading = true;
+                this.elbuttonloading = true;
                 //console.log("getdata begin");
                 //let data = {"isGetData":e,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
                 axios.get("/TestPlanME/TestPlanME-edit/?action="+e+"&csrfmiddlewaretoken="+$("[name='csrfmiddlewaretoken']").val()+"" ,{
@@ -511,6 +518,8 @@
                         this.RTU_temp[i]=this.tableData[i].RTU;
                         this.RTR_temp[i]=this.tableData[i].RTR;
                     }
+                    this.tableloading = false;
+                    this.elbuttonloading = false;
                      // console.log(this.NTU,this.RTU,this.RTR,12);
                     //this.RTA.length=this.tableData.length;
                     //this.RTP.length=this.tableData.length;
@@ -526,6 +535,7 @@
                this.showCustomer=this.customer;
                this.showProject=this.project;
                this.showPhase=this.phase;
+
             },
       Search:function(){
 

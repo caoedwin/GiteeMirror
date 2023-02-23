@@ -106,7 +106,10 @@
        'background-color':'#fafafa',
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'}"
-            :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="searchalert" >
+            :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="searchalert"
+        v-loading="tableloading"
+      element-loading-text="數據更新中，請稍後"
+        border>
     <el-table-column type="selection"></el-table-column>
     <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>
     <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>
@@ -145,7 +148,10 @@
           </div>
       </div>
     <template>
-        <el-table stripe border :data="tableData" v-if="showCustomer!=='C38(AIO)'" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}">
+        <el-table stripe border :data="tableData" v-if="showCustomer!=='C38(AIO)'" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}"
+        v-loading="tableloading1"
+      element-loading-text="數據更新中，請稍後"
+        border>
             <el-table-column prop="Project" label="Project" width="100"  align="center" fixed sortable></el-table-column>
            <el-table-column prop="Phase" label="Phase"  align="center" fixed sortable></el-table-column>
             <el-table-column prop="ID" label="ID"  align="center"></el-table-column>
@@ -224,6 +230,8 @@
                             'Wave4': "#6F00D2", 'Wave5': "#4B0091", 'OOC': "#FFA042", 'OOC2': "#FF8000", 'OOC3': "#EA7500", 'OOC4': "#D26900",
                             'OOC5': "#BB5E00", 'OOC6': "#9F5000", 'Others': "#272727"},
                 datePicker:'',
+                tableloading:false,
+                tableloading1:false,
                 pickerOptions: {
                   shortcuts: [{
                     text: '最近一周',
@@ -266,7 +274,12 @@
         },
         methods: {
              getdata: function (e) {
+
                 let data = {"isGetData": e,};
+                var myChart1 = echarts.init(document.getElementById('main1'));
+                    myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart2 = echarts.init(document.getElementById('main2'));
+                    myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 axios.post("/TestPlanME/TestPlanME-summary/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
                 }).then((res) => {
@@ -289,8 +302,7 @@
                     }
 
                     console.log(Execution_Top10_label,"输出标签值")
-                var myChart1 = echarts.init(document.getElementById('main1'));
-                var myChart2 = echarts.init(document.getElementById('main2'));
+
                     var colorcode = [];
                     for(var i=0;i<Regression_Top10_label.length;i++){
                             colorcode.push(this.coloroder[Regression_Top10_label[i]]);
@@ -460,6 +472,8 @@
                myChart1.resize();
                myChart2.resize();
         })
+                myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                 });
             },
             SEARCHALERT: function () {
@@ -469,6 +483,7 @@
                     this.customerError = true;
                     return false;
                 } else {
+                    this.tableloading = true;
                     this.customerError = false;
                     let Customer = this.$refs.Customer.value;
                     let Date = this.$refs.datePicker.value;
@@ -483,6 +498,7 @@
                     }).then((res) => {
                         this.searchalert = res.data.sear;
                         this.showCustomer = this.selectedCustomer;
+                        this.tableloading = false;
                     })
                     this.settable = true;
                 }
@@ -505,6 +521,12 @@
                 }
 
                 //選中上傳數據
+                this.settable = false;
+                this.tableloading1 = true;
+                var myChart1 = echarts.init(document.getElementById('main1'));
+                    myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart2 = echarts.init(document.getElementById('main2'));
+                    myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 this.projectArray = data.map((res) => res.COMPRJCODE );
                 this.phaseArray = data.map((res) => res.PHASE );
                   console.log("this.projectArray",data,this.projectArray);
@@ -546,8 +568,7 @@
                     }
 
                     console.log(Execution_Top10_label,"输出标签值")
-                var myChart1 = echarts.init(document.getElementById('main1'));
-                var myChart2 = echarts.init(document.getElementById('main2'));
+
                     var colorcode = [];
                     for(var i=0;i<Regression_Top10_label.length;i++){
                             colorcode.push(this.coloroder[Regression_Top10_label[i]]);
@@ -707,6 +728,9 @@
                myChart1.resize();
                myChart2.resize();
         })
+                    myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    this.tableloading1 = false;
                 })
                 this.combineArray = [];
             },

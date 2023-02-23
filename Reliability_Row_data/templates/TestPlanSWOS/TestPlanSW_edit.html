@@ -418,7 +418,7 @@
          </el-select><br>
         <div class="inputError" v-cloak  v-show="categoryError">類別不能為空</div>
     </div>
-    <el-button @click="find" v-cloak type="primary" class="Button">查找</el-button>
+    <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" class="Button">查找</el-button>
   </div>
   <div v-cloak class="fileUploadContent"    v-if="canEdit">
             <div class="inputPackage" v-cloak>
@@ -427,6 +427,7 @@
             </div>
          <el-button @click="fileUpload" type="warning" style="height:40px" v-cloak> Excel上傳</el-button>
         <span class="showFileName" v-cloak >${ fileName }</span>
+
 {#      <el-button @click="Add()" size="medium" style="margin-left:30px;background-color:#75e5a7;color:white;"><i class="el-icon-circle-plus"></i>SKU錄入</el-button>#}
      </div>
     <div v-cloak class="fileUploadContent"    v-if="canEdit"  style="float:right">
@@ -492,7 +493,10 @@
     }"
       element-loading-text="拼命加载中"
 	  element-loading-spinner="el-icon-loading"
-	  element-loading-background="rgba(0, 0, 0, 0.8)">
+	  element-loading-background="rgba(0, 0, 0, 0.8)"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
       <!--無需編輯-->
       <el-table-column width="45" label="No."  prop="index"  fixed></el-table-column>
       <el-table-column width="100" label="Case ID"  prop="caseid" align="left" fixed></el-table-column>
@@ -1063,6 +1067,8 @@
       return {
           formData:[],
       appendss:false,
+      elbuttonloading:false,
+      tableloading:false,
         labelPosition:'right',
       formappend: {
                 ScheduleBegin:'',
@@ -1229,6 +1235,8 @@
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
                 let _this=this;
+                this.elbuttonloading=true;
+                this.tableloading=true;
                 axios.get("/TestPlanSWOS/TestPlanSWOS-edit/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
@@ -1257,6 +1265,8 @@
                     {
                        console.log("错误异常"+e);
                     }
+                    this.elbuttonloading=false;
+                    this.tableloading=false;
 
                 }).catch(function (e) {
                        _this.loading=false;
@@ -1586,18 +1596,22 @@
                     var datas = workbook.Sheets[sheet];
                     // 如果有不规范数据可以在这里进行处理datas
                     persons = persons.concat(XLSX.utils.sheet_to_json(datas));
+                    //console.log(typeof (persons),'111')
                     //break; // 只读了第一张表
                 }
             }
                  // 数据保存在result
                   let result=JSON.stringify(persons);
+                  //console.log(typeof (result),'2222')
+                  //console.log(typeof ({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result}),'233')
+                       console.log({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},'333333')
                    //将之前张开的树形结构收起
                       //_this.reset();
                    //2.上傳數據
                     axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
-                    //console.log(res.data,"first");//上传成功的操作
+                    console.log(res.data,"first");//上传成功的操作
                     _this.uploadFile=null;
                     _this.fileName=first;
                    _this.loading=false;
@@ -1695,6 +1709,7 @@
              this.getdata(parameter);
           }
       },
+      //删除机种Phase的所有数据
       Delete:function() {
           var warning = confirm('此操作将永久删除数据！！！ 请确保有新数据可以重新上传。是否继续?');
           if (warning) {
@@ -1908,8 +1923,8 @@
                if(caseid_temp.slice(0,3) ==='STA'){
                    if(caseid_temp === 'STA017'){
                        this.form.TFC=this.form.BTS * 5;
-                   }else if(caseid_temp === 'STA018_EF'){
-                       this.form.TFC=this.form.BTS * 2;
+                   }else if(caseid_temp === 'STA018_EF') {
+                       this.form.TFC = this.form.BTS * 2;
                    }else{
                        //console.log('sta017');
                        this.form.TFC=isNaN(this.form.BTS * this.form.starttime)?0:(this.form.BTS * this.form.starttime)/2;

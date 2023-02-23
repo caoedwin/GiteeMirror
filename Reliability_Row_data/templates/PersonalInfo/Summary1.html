@@ -252,6 +252,8 @@ p {
             getdata: function (e) {
                 this.elbuttonloading = true;
                 this.tableloading = true;
+                var myChart3 = echarts.init(document.getElementById('main2'));
+                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
                 let data = {"isGetData": e,};
                 axios.post("/PersonalInfo/Summary1/", Qs.stringify(data), {
                     headers: {
@@ -340,7 +342,6 @@ p {
                         ],
                         series: this.Month
                     };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
 
                     {% comment %}var option4 = {
                         tooltip: {
@@ -418,6 +419,7 @@ p {
                             myChart3.resize();
                             {% comment %}myChart4.resize();{% endcomment %}
                          })
+                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
                 });
                 this.elbuttonloading = false;
@@ -425,12 +427,13 @@ p {
             },
 
             SEARCH1: function () {
-                this.elbuttonloading = true;
-                this.tableloading = true;
+
                 if (this.$refs.selectedYear1.value == '') {
                     this.customerError = true;
                     return false;
                 }else{
+                    this.elbuttonloading = true;
+                    this.tableloading = true;
                     this.customerError = false;
                     {#let Department_Code = this.$refs.Department_Code.value;#}
                     let Date = this.$refs.selectedYear1.value;

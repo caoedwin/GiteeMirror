@@ -116,13 +116,16 @@ p {
         </div>
 
           <div class="col-md-1" style="margin-left: 50px;margin-top: 5px">
-                <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH1">Search</el-button>
+                <el-button size="small" :loading="elbuttonloading1" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH1">Search</el-button>
           </div>
 
      </div>
        <p class="selectItem" v-cloak  v-if="showYear1" style="color: #000000;font-size: medium;">當前表格信息：${ showYear1 }年</p>
         <template v-cloak>
-          <el-table  border  :data="tableData1" style="width: 50%;float: left" id="out-table1" >
+          <el-table  border  :data="tableData1" style="width: 50%;float: left" id="out-table1"
+          v-loading="tableloading1"
+            element-loading-text="數據更新中，請稍後"
+            border>
             <el-table-column prop="Customer" label="Customer" align="center" width="100"></el-table-column>
             <el-table-column prop="Pass" label="Pass" align="center" width="100"></el-table-column>
             <el-table-column prop="Fail" label="Fail" align="center" width="100"></el-table-column>
@@ -159,12 +162,15 @@ p {
         </div>
 
           <div class="col-md-1" style="margin-left: 50px;margin-top: 5px">
-                <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH2">Search</el-button>
+                <el-button :loading="elbuttonloading5" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH2">Search</el-button>
           </div>
      </div>
      <p class="selectItem" v-cloak   v-if="showYear2" style="color: #000000;font-size: medium;">當前表格信息：${ showYear2 }年</p>
       <template v-cloak>
-          <el-table  border  :data="tableData2" style="width: 50%;float: left" id="out-table2" >
+          <el-table  border  :data="tableData2" style="width: 50%;float: left" id="out-table2"
+          v-loading="tableloading2"
+            element-loading-text="數據更新中，請稍後"
+            border>
             <el-table-column prop="Month" label="Month" align="center" width="120" ></el-table-column>
               <el-table-column v-if="tableData2[0]" v-for="(item,key,index) in selectItem" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item">
                </el-table-column>
@@ -211,7 +217,7 @@ p {
                 </template>
             </div>
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH3">Search</el-button>
+        <el-button :loading="elbuttonloading5" size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH3">Search</el-button>
     </div>
 
     </div>
@@ -221,7 +227,10 @@ p {
               <div class="Quatity" id="main4" style="height:400px;"></div>
           </div>
           <template v-cloak>
-              <el-table  border  :data="tableData3" style="width: 100%;" id="out-table1" >
+              <el-table  border  :data="tableData3" style="width: 100%;" id="out-table1"
+              v-loading="tableloading3"
+            element-loading-text="數據更新中，請稍後"
+            border>
                 <el-table-column prop="Project" label="Project" align="center" width="200"></el-table-column>
                 <el-table-column prop="Pass" label="Pass" align="center" width="200" ></el-table-column>
                 <el-table-column prop="Fail" label="Fail" align="center" width="200" ></el-table-column>
@@ -259,7 +268,7 @@ p {
         </div>
 
           <div class="col-md-1" style="margin-left: 50px;margin-top: 5px">
-                <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH4">Search</el-button>
+                <el-button :loading="elbuttonloading4" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCH4">Search</el-button>
           </div>
 
      </div>
@@ -269,7 +278,10 @@ p {
               <div class="Quatity" id="main6" style="height:400px;"></div>
           </div>
           <template v-cloak>
-              <el-table  border  :data="tableData4" style="width: 100%;" id="out-table1" >
+              <el-table  border  :data="tableData4" style="width: 100%;" id="out-table1"
+              v-loading="tableloading4"
+            element-loading-text="數據更新中，請稍後"
+            border>
                 <el-table-column prop="KeyPart" label="TP Category" align="center" width="120"></el-table-column>
                 <el-table-column prop="Pass" label="Pass" align="center" width="120" ></el-table-column>
                 <el-table-column prop="Fail" label="Fail" align="center" width="120" ></el-table-column>
@@ -312,13 +324,16 @@ p {
                 </template>
          </div>
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px;margin-left: 10px" value="Search" name="Search" @click="SEARCH5">Search</el-button>
+        <el-button size="small" :loading="elbuttonloading5" style="background:#428bca;color:#fff;margin-top: 5px;margin-left: 10px" value="Search" name="Search" @click="SEARCH5">Search</el-button>
     </div>
 
     </div>
       <p class="selectItem" v-cloak  v-if="showCustomer2" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer2 }/${ showYear5 }</p>
           <template v-cloak>
-              <el-table  border  :data="tableData5" style="width: 100%" id="out-table1" >
+              <el-table  border  :data="tableData5" style="width: 100%" id="out-table1"
+              v-loading="tableloading5"
+            element-loading-text="數據更新中，請稍後"
+            border>
                 <el-table-column prop="Project" label="Project" align="center" width="120"></el-table-column>
                 <el-table-column prop="Jan" label="Jan" align="center" width="80" ></el-table-column>
                 <el-table-column prop="Feb" label="Feb" align="center" width="80" ></el-table-column>
@@ -387,7 +402,17 @@ p {
                 Top10:[],
                 activeName: ['1','2','3','4','5'],
                 coloroder:{'Pass': "#589800", 'Fail': "#FF0000", 'Ongoing': "#FFFF00", 'Planning': "#FFFFFF"},
-                condition:null
+                condition:null,
+                elbuttonloading1: false,
+                tableloading1: false,
+                elbuttonloading2: false,
+                tableloading2: false,
+                elbuttonloading3: false,
+                tableloading3: false,
+                elbuttonloading4: false,
+                tableloading4: false,
+                elbuttonloading5: false,
+                tableloading5: false,
             }
         },
         mounted() {        // 页面渲染后触发该区域内容 即页面初始化
@@ -407,6 +432,24 @@ p {
             },
 
             getdata: function (e) {
+                this.elbuttonloading1 = true;
+                this.tableloading1 = true;
+                this.elbuttonloading2 = true;
+                this.tableloading2 = true;
+                this.elbuttonloading3 = true;
+                this.tableloading3 = true;
+                this.elbuttonloading4 = true;
+                this.tableloading4 = true;
+                this.elbuttonloading5 = true;
+                this.tableloading5 = true;
+                var myChart3 = echarts.init(document.getElementById('main2'));
+                myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart4 = echarts.init(document.getElementById('main3'));
+                myChart4.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart5 = echarts.init(document.getElementById('main4'));
+                myChart5.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart6 = echarts.init(document.getElementById('main6'));
+                myChart6.showLoading() // 在获取数据之前, 显示加载动画
                 let data = {"isGetData": e,};
                 axios.post("/INVGantt/INVGantt-summary/", Qs.stringify(data), {
                     headers: {
@@ -506,7 +549,7 @@ p {
                         ],
                         series: this.INV_Customer
                     };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
+                    {#var myChart3 = echarts.init(document.getElementById('main2'));#}
 
                     var option4 = {
                         color: ['#589800', '#1E90FF', "#FF8C00"],
@@ -558,7 +601,7 @@ p {
                         ],
                         series: this.INV_Month
                     };
-                    var myChart4 = echarts.init(document.getElementById('main3'));
+                    {#var myChart4 = echarts.init(document.getElementById('main3'));#}
 
                     var option5 = {
                         color: ['#589800', '#FF0000', "#FFFF00", "#00FFFF"],
@@ -610,7 +653,7 @@ p {
                         ],
                         series: this.INV_Project
                     };
-                    var myChart5 = echarts.init(document.getElementById('main4'));
+                    {#var myChart5 = echarts.init(document.getElementById('main4'));#}
 
                             var option6 = {
                                 color: ['#589800', '#FF0000', "#FFFF00", "#00FFFF"],
@@ -662,7 +705,7 @@ p {
                                 ],
                                 series: this.INV_Category
                             };
-                            var myChart6 = echarts.init(document.getElementById('main6'));
+                            {#var myChart6 = echarts.init(document.getElementById('main6'));#}
 
                             // 使用刚指定的配置项和数据显示图表。
                             myChart3.setOption(option3, true);
@@ -685,10 +728,28 @@ p {
                                 {#myChart7.resize();#}
 
                             })
+                    this.elbuttonloading1 = false;
+                    this.tableloading1 = false;
+                    this.elbuttonloading2 = false;
+                    this.tableloading2 = false;
+                    this.elbuttonloading3 = false;
+                    this.tableloading3 = false;
+                    this.elbuttonloading4 = false;
+                    this.tableloading4 = false;
+                    this.elbuttonloading5 = false;
+                    this.tableloading5 = false;
+                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart5.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart6.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                 });
             },
 
             SEARCH1: function () {
+                    this.elbuttonloading1 = true;
+                    this.tableloading1 = true;
+                    var myChart3 = echarts.init(document.getElementById('main2'));
+                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
                     let Date = this.$refs.selectedYear1.value;
                     let data = {
                         "isGetData": "SEARCH1",
@@ -764,7 +825,7 @@ p {
                         ],
                         series: this.INV_Customer
                     };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
+
 
 
                             // 使用刚指定的配置项和数据显示图表。
@@ -778,11 +839,18 @@ p {
                                 {#myChart7.resize();#}
 
                             })
+                        this.elbuttonloading1 = false;
+                        this.tableloading1 = false;
+                        myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     })
                     this.settable = true;
             },
 
             SEARCH2: function () {
+                    this.elbuttonloading2 = true;
+                    this.tableloading2 = true;
+                    var myChart4 = echarts.init(document.getElementById('main3'));
+                    myChart4.showLoading() // 在获取数据之前, 显示加载动画
                     let Date = this.$refs.selectedYear2.value;
                     let data = {
                         "isGetData": "SEARCH2",
@@ -862,7 +930,7 @@ p {
                         ],
                         series: this.INV_Month
                     };
-                    var myChart4 = echarts.init(document.getElementById('main3'));
+                    {#var myChart4 = echarts.init(document.getElementById('main3'));#}
 
                             // 使用刚指定的配置项和数据显示图表。
 
@@ -877,6 +945,10 @@ p {
                                 {#myChart7.resize();#}
 
                             })
+
+                        this.elbuttonloading2 = false;
+                        this.tableloading2 = false;
+                        myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     })
                     this.settable = true;
             },
@@ -886,6 +958,10 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading3 = true;
+                    this.tableloading3 = true;
+                    var myChart5 = echarts.init(document.getElementById('main4'));
+                    myChart5.showLoading() // 在获取数据之前, 显示加载动画
                     this.customerError = false;
                     let Customer = this.$refs.Customer1.value;
                     let Date = this.$refs.selectedYear3.value;
@@ -969,7 +1045,7 @@ p {
                         ],
                         series: this.INV_Project
                     };
-                    var myChart5 = echarts.init(document.getElementById('main4'));
+                    {#var myChart5 = echarts.init(document.getElementById('main4'));#}
 
 
                             // 使用刚指定的配置项和数据显示图表。
@@ -985,12 +1061,19 @@ p {
                                 {#myChart7.resize();#}
 
                             })
+                        this.elbuttonloading3 = false;
+                        this.tableloading3 = false;
+                        myChart5.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     })
                     this.settable = true;
                 }
             },
 
             SEARCH4: function () {
+                    this.elbuttonloading4 = true;
+                    this.tableloading4 = true;
+                    var myChart6 = echarts.init(document.getElementById('main6'));
+                    myChart6.showLoading() // 在获取数据之前, 显示加载动画
                     let Date = this.$refs.selectedYear4.value;
                     let data = {
                         "isGetData": "SEARCH4",
@@ -1073,7 +1156,7 @@ p {
                                 ],
                                 series: this.INV_Category
                             };
-                            var myChart6 = echarts.init(document.getElementById('main6'));
+                            {#var myChart6 = echarts.init(document.getElementById('main6'));#}
 
                             // 使用刚指定的配置项和数据显示图表。
 
@@ -1085,6 +1168,9 @@ p {
                                 {#myChart7.resize();#}
 
                             })
+                        this.elbuttonloading4 = false;
+                        this.tableloading4 = false;
+                        myChart6.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     })
                     this.settable = true;
             },
@@ -1094,6 +1180,8 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading5 = true;
+                    this.tableloading5 = true;
                     this.customerError = false;
                     let Customer = this.$refs.Customer2.value;
                     let Date = this.$refs.selectedYear5.value;
@@ -1114,6 +1202,8 @@ p {
                     {#this.Top10 = res.data['Top10'];#}
 
                     this.settable = false;
+                    this.elbuttonloading5 = false;
+                        this.tableloading5 = false;
                     })
                     this.settable = true;
                 }

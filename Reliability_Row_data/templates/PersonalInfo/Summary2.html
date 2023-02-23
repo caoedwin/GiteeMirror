@@ -186,6 +186,10 @@ background-color: rgba(255,255,255,0.1);
                heBingNum:[],
                 elbuttonloading: false,
                 tableloading: false,
+                myChart7:{},
+                myChart3:{},
+                myChart2:{},
+                myChart1:{},
 
              }
         },
@@ -199,6 +203,14 @@ background-color: rgba(255,255,255,0.1);
             getdata: function (e) {          //获取数据
                 this.elbuttonloading = true;
                 this.tableloading = true;
+                this.myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
+                this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));
+                this.myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/Summary2/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -225,11 +237,20 @@ background-color: rgba(255,255,255,0.1);
                     {#this.educationDiagramss();#}
                     this.elbuttonloading = false;
                     this.tableloading = false;
+
                  });
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
                 this.elbuttonloading = true;
                 this.tableloading = true;
+                this.myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
+                this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));
+                this.myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                let Year=this.$refs.Year.value;
                let data ={"isGetData":"SEARCH","Year":Year,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/PersonalInfo/Summary2/",Qs.stringify(data), {
@@ -256,6 +277,7 @@ background-color: rgba(255,255,255,0.1);
                     {#this.educationDiagramss();#}
                    this.elbuttonloading = false;
                    this.tableloading = false;
+
 
 
 
@@ -416,7 +438,8 @@ background-color: rgba(255,255,255,0.1);
             },
     {% endcomment %}
             seniorityDiagramss(){
-                var myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
+                {#var myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));#}
+                {#myChart7.showLoading() // 在获取数据之前, 显示加载动画#}
                 var option7 = {
                         color: ['#FFC0CB', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
                         title: {
@@ -471,15 +494,17 @@ background-color: rgba(255,255,255,0.1);
                             position: 'top'
                         },
                   };
-                    myChart7.clear();
-                    myChart7.setOption(option7);
+                    this.myChart7.clear();
+                    this.myChart7.setOption(option7);
                     window.addEventListener('resize', ()=>{
-                       myChart7.resize();
+                       this.myChart7.resize();
                      // 使用刚指定的配置项和数据显示图表。
                     })
+                this.myChart7.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
             },
             titleDiagramss(){
-                var myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));
+                {#var myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));#}
+                {#myChart3.showLoading() // 在获取数据之前, 显示加载动画#}
                   var option3 = {
                         color: ['#FFC0CB', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
                         title: {
@@ -534,12 +559,13 @@ background-color: rgba(255,255,255,0.1);
                         },
                         series:this.titleDiagram.titleDiagramData,
             };
-                    myChart3.clear();
-                    myChart3.setOption(option3);
+                    this.myChart3.clear();
+                    this.myChart3.setOption(option3);
                     window.addEventListener('resize', ()=>{
-                       myChart3.resize();
+                       this.myChart3.resize();
                      // 使用刚指定的配置项和数据显示图表。
                     })
+                this.myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
             monthDiagram(){
@@ -565,8 +591,7 @@ background-color: rgba(255,255,255,0.1);
                   }
                 })
               }
-                var myChart1 = echarts.init(document.getElementById('monthDiagram1'));
-                var myChart2 = echarts.init(document.getElementById('monthDiagram2'));
+
                 var option1 = {
                     color: ['#FFC0CB', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
                     title: {
@@ -780,15 +805,17 @@ background-color: rgba(255,255,255,0.1);
                     ],
                     graphic: list
                 };
-                myChart1.clear();
-                myChart2.clear();
-                myChart1.setOption(option1);
-                myChart2.setOption(option2);
+                _this.myChart1.clear();
+                _this.myChart2.clear();
+                _this.myChart1.setOption(option1);
+                _this.myChart2.setOption(option2);
                 window.addEventListener('resize', ()=>{
-                   myChart1.resize();
-                   myChart2.resize();
+                   _this.myChart1.resize();
+                   _this.myChart2.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 })
+                   _this.myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                   _this.myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
             }
 
         }

@@ -225,7 +225,10 @@
        :header-cell-style="{
        'background-color':'#fafafa',
        'font-weight':'800',
-       'border-bottom':'1px solid rgb(103, 194, 58)'}" >
+       'border-bottom':'1px solid rgb(103, 194, 58)'}"
+  v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
     <el-table-column type="selection"></el-table-column>
     <el-table-column property="YEAR" label="YEAR" ></el-table-column>
     <el-table-column property="COMPRJCODE" label="COMPRJCODE" ></el-table-column>
@@ -322,6 +325,7 @@
              selectCustomer: [],
              selectedYear:'',
              search:'',
+             tableloading: false,
 
          }
      },
@@ -361,6 +365,7 @@
 
               //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.tableloading=true;
                let customer = this.$refs.Customer.value;
                let year = this.$refs.Year.value;
                if(customer==''){
@@ -380,6 +385,7 @@
                    }).then((res) => {
                        {#this.canEdit = res.data.canEdit;#}
                        this.projectMsg = res.data.projectMsg;
+                       this.tableloading=false;
                    });
                     this.showCustomer = customer;
                }

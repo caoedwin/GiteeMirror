@@ -104,7 +104,10 @@
                     </div>
 </div>
         <el-dialog :visible.sync="settable" >
-  <el-table border stripe :default-sort="{prop:'SS',order:'descending'}" height="500" :data="searchalert" @row-click="selectMsg">
+  <el-table border stripe :default-sort="{prop:'SS',order:'descending'}" height="500" :data="searchalert" @row-click="selectMsg"
+  v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
       {% comment %}<el-table-column type="selection"></el-table-column>{% endcomment %}
     <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>
     <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>
@@ -128,7 +131,10 @@
           <span class="selectItem" v-cloak  v-if="showCustomer&&showProject">當前表格信息：${ showCustomer }/${ showProject }<span v-if="showTips" v-cloak class="tips">(您所使用的賬號沒有編輯此表單的權限)</span></span>
     <template>
     <el-table border stripe height="750" :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)"
-     :cell-style="addClass">
+     :cell-style="addClass"
+    v-loading="tableloading1"
+            element-loading-text="數據更新中，請稍後"
+            border>
         <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
         <el-table-column label="CG" align="center" width="120" fixed>
             <template slot-scope="scope">
@@ -384,7 +390,8 @@
   </div>
     </template>
     <el-dialog :title="'ChangeId:'+changeindex" :visible.sync="dialogTableVisible">
-  <el-table border height="500" :data="historyRecord" :default-sort="{prop:'changeTime', order:'descending'}">
+  <el-table border height="500" :data="historyRecord" :default-sort="{prop:'changeTime', order:'descending'}"
+>
     <el-table-column property="oldContent" label="oldContent"  style="white-space: pre-line" min-width="450" class-name="my-cell"></el-table-column>
     <el-table-column property="newContent" label="newContent"  style="white-space: pre-line" min-width="450" class-name="my-cell"></el-table-column>
     <el-table-column property="changeOwner" label="changeOwner" min-width="150" sortable></el-table-column>
@@ -466,6 +473,8 @@ $(document).ready(function() {
              dialogTableVisible:false,
              changeindex:null,
              customerError:false,
+             tableloading:false,
+             tableloading1:false,
          }
      },
      mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -500,6 +509,7 @@ $(document).ready(function() {
                     this.customerError = true;
                    return false;
                }else {
+                this.tableloading=true;
                 this.customerError = false;
                 let Customer = this.$refs.Customer.value;
                 let data = {
@@ -511,12 +521,14 @@ $(document).ready(function() {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.searchalert = res.data.sear;
+                    this.tableloading=false;
                 })
                 this.settable=true;
             }
              },
           //上传搜索项：以此选项搜索符合条件的内容
          selectMsg :function(row){
+            this.tableloading1=true;
            let Customer = this.$refs.Customer.value;
              //console.log(row);
              let data ={"isGetData":"SEARCH","Customer":Customer,"COMPRJCODE":row.COMPRJCODE,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -557,6 +569,8 @@ $(document).ready(function() {
                         this.test_end[i] = this.tableContent[i].Test_End;
                         {#this.comments[i] = this.tableContent[i].Comments;#}
                }
+               this.tableloading1=false;
+
            })
                this.showCustomer=Customer;
                this.showProject=row.COMPRJCODE;

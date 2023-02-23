@@ -418,7 +418,7 @@
          </el-select><br>
         <div class="inputError" v-cloak  v-show="categoryError">類別不能為空</div>
     </div>
-    <el-button @click="find" v-cloak type="primary" class="Button">查找</el-button>
+    <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" class="Button">查找</el-button>
   </div>
   <div v-cloak class="fileUploadContent"    v-if="canEdit">
             <div class="inputPackage" v-cloak>
@@ -493,7 +493,10 @@
     }"
       element-loading-text="拼命加载中"
 	  element-loading-spinner="el-icon-loading"
-	  element-loading-background="rgba(0, 0, 0, 0.8)">
+	  element-loading-background="rgba(0, 0, 0, 0.8)"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
       <!--無需編輯-->
       <el-table-column width="45" label="No."  prop="index"  fixed></el-table-column>
       <el-table-column width="100" label="Case ID"  prop="caseid" align="left" fixed></el-table-column>
@@ -1064,6 +1067,8 @@
       return {
           formData:[],
       appendss:false,
+      elbuttonloading:false,
+      tableloading:false,
         labelPosition:'right',
       formappend: {
                 ScheduleBegin:'',
@@ -1230,6 +1235,8 @@
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e){
                 let _this=this;
+                this.elbuttonloading=true;
+                this.tableloading=true;
                 axios.get("/TestPlanSW/TestPlanSW-edit/?action="+e ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 }).then((res) => {
@@ -1258,6 +1265,8 @@
                     {
                        console.log("错误异常"+e);
                     }
+                    this.elbuttonloading=false;
+                    this.tableloading=false;
 
                 }).catch(function (e) {
                        _this.loading=false;

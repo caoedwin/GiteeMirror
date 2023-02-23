@@ -332,6 +332,10 @@ v-loading="tableloading"
             getdata: function (e) {
                     this.tableloading = true;
                     this.elbuttonloading = true;
+                var myChart3 = echarts.init(document.getElementById('main2'));
+                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart4 = echarts.init(document.getElementById('main3'));
+                    myChart4.showLoading() // 在获取数据之前, 显示加载动画
                 let data = {"isGetData": e,};
                 axios.post("/TestPlanSWOS/TestPlanSWOS-summary/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
@@ -359,8 +363,7 @@ v-loading="tableloading"
                             colorcode.push(this.coloroder[Regression_Top10_label[i]]);
                     }
                     //console.log(colorcode)
-                var myChart3 = echarts.init(document.getElementById('main2'));
-                var myChart4 = echarts.init(document.getElementById('main3'));
+
 
                 // 指定图表的配置项和数据
                 var option3 = {
@@ -534,6 +537,8 @@ v-loading="tableloading"
                myChart4.resize();
 
         })
+                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     this.tableloading = false;
                     this.elbuttonloading = false;
                 });
@@ -585,6 +590,10 @@ v-loading="tableloading"
                 }
 
                 this.tableloading=true;
+                var myChart3 = echarts.init(document.getElementById('main2'));
+                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart4 = echarts.init(document.getElementById('main3'));
+                    myChart4.showLoading() // 在获取数据之前, 显示加载动画
                 //選中上傳數據
                 {% comment %}this.projectArray = data.map((res) => res.COMPRJCODE+":"+res.Phase);{% endcomment %}
                 this.projectArray = data.map((res) => res.COMPRJCODE );
@@ -638,8 +647,7 @@ v-loading="tableloading"
                             colorcode.push(this.coloroder[Regression_Top10_label[i]]);
                     }
                     //console.log(colorcode)
-                var myChart3 = echarts.init(document.getElementById('main2'));
-                var myChart4 = echarts.init(document.getElementById('main3'));
+
                 // 指定图表的配置项和数据
                 var option3 = {
                     color:colorcode,//['#A2CD5A','#66CD00','#FFFF93',"#FFEC8B","#FFD306",'#FF9D6F','#FF8F59','#FF8040','#FF5809','#F75000','#D94600','#BB3D00','#A23400','#FF8000',
@@ -811,6 +819,8 @@ v-loading="tableloading"
                myChart4.resize();
                // 使用刚指定的配置项和数据显示图表。
         })
+                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     this.tableloading=false;
 
                 })

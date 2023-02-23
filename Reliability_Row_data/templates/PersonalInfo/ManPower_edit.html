@@ -208,7 +208,7 @@
     </div>
 
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin: 2px;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;margin: 2px;" value="Search" name="Search" @click="selectMsg">Search</el-button>
     </div>
     <div  class="col-md-1" style="margin-left: 120px;margin-right:10px;line-height: 40px" v-if="permission===1">
             <a href="/static/src/modelfiles/MainPower.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
@@ -400,7 +400,10 @@
         <template>
     <el-table border stripe ref="multipleTable"  tooltip-effect="dark"  height="700" :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)"
      :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" style="width: 100%"
-     @selection-change="handleSelectionChange">
+     @selection-change="handleSelectionChange"
+    v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
         <el-table-column type="selection" width="50" align="center"></el-table-column>
         <el-table-column  label="Edit" align="center" fixed>
             <template slot-scope="scope">
@@ -667,6 +670,8 @@ $(document).ready(function() {
              MinistrySerch:'',
              SectionSerch:'',
              loading:false,
+             elbuttonloading: false,
+             tableloading: false,
              form: {
                   id: '',
                   name: '',
@@ -704,6 +709,8 @@ $(document).ready(function() {
      methods: {
         //获取数据
         getdata: function (e) {
+            this.elbuttonloading = true;
+                this.tableloading = true;
             let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
             axios.post("/PersonalInfo/ManPower-edit/", Qs.stringify(data), {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -718,6 +725,8 @@ $(document).ready(function() {
                 this.itemOption = res.data.itemOption;
                 this.permission = res.data.permission;
                 this.department = res.data.department;
+                this.elbuttonloading = false;
+                this.tableloading = false;
          });
 
         },
@@ -739,6 +748,8 @@ $(document).ready(function() {
           //上传搜索项：以此选项搜索符合条件的内容
 
              selectMsg :function(){
+               this.elbuttonloading = true;
+               this.tableloading = true;
                let Customer = this.$refs.Customer.value;
                let Year1 = this.$refs.Year1.value;
                let Chu = this.$refs.Chu.value;
@@ -762,6 +773,8 @@ $(document).ready(function() {
                   this.sectionOption = res.data.sectionOption;
                   this.itemOption = res.data.itemOption;
                   this.totalNum=this.tableContent.length;
+                  this.elbuttonloading = false;
+                  this.tableloading = false;
 
                 })
              },

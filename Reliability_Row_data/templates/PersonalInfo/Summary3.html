@@ -298,6 +298,9 @@ background-color: rgba(255,255,255,0.1);
                 tableloading: false,
                 elbuttonloading1: false,
                 tableloading1: false,
+                myChart8:{},
+                myChart2:{},
+                myChart4:{},
 
                }
         },
@@ -383,6 +386,13 @@ background-color: rgba(255,255,255,0.1);
                     }
             },
             getdata: function (e) {          //获取数据
+                this.myChart4 = echarts.init(document.getElementById('seniorityDiagramDIV1'));
+                this.myChart4.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart8 = echarts.init(document.getElementById('reasonDiagramDIV1'));
+                this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
+                {#var myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));#}
+                this.myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 this.tableloading1 = true;
@@ -431,6 +441,8 @@ background-color: rgba(255,255,255,0.1);
                  });
             },
             search2 :function(){
+                this.myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 this.elbuttonloading1=true;
                 this.tableloading1=true;
                let Year=this.$refs.Year.value;
@@ -455,6 +467,13 @@ background-color: rgba(255,255,255,0.1);
                 this.searchYear1=startYear+'~'+endYear;
             },
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
+                this.myChart4 = echarts.init(document.getElementById('seniorityDiagramDIV1'));
+                this.myChart4.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart8 = echarts.init(document.getElementById('reasonDiagramDIV1'));
+                this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
+                {#var myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));#}
+                this.myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 this.tableloading1 = true;
@@ -667,7 +686,7 @@ background-color: rgba(255,255,255,0.1);
                 })
               }
 
-                 var myChart4 = echarts.init(document.getElementById('seniorityDiagramDIV1'));
+
                  var option4 = {
                     color: ['#778899',],
                     title: [{
@@ -808,12 +827,13 @@ background-color: rgba(255,255,255,0.1);
                     ],
                     graphic: list
                 };
-                myChart4.clear();
-                 myChart4.setOption(option4);
+                _this.myChart4.clear();
+                 _this.myChart4.setOption(option4);
                 window.addEventListener('resize', ()=>{
-                   myChart4.resize();
+                   _this.myChart4.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 })
+                _this.myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
 
@@ -842,7 +862,7 @@ background-color: rgba(255,255,255,0.1);
                 })
               }
 
-                 var myChart8 = echarts.init(document.getElementById('reasonDiagramDIV1'));
+
                  var option8 = {
                     color: ['#778899',],
                     title: [{
@@ -983,12 +1003,13 @@ background-color: rgba(255,255,255,0.1);
                     ],
                     graphic: list
                 };
-                myChart8.clear();
-                 myChart8.setOption(option8);
+                _this.myChart8.clear();
+                 _this.myChart8.setOption(option8);
                 window.addEventListener('resize', ()=>{
-                   myChart8.resize();
+                   _this.myChart8.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 });
+                _this.myChart8.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
     {% comment %}
@@ -1236,7 +1257,7 @@ background-color: rgba(255,255,255,0.1);
                   }
                 })
               }
-                var myChart2 = echarts.init(document.getElementById('titleDiagram1DQADIV'));
+
 
                 var option2 = {
                     color: ['#778899',],
@@ -1376,12 +1397,13 @@ background-color: rgba(255,255,255,0.1);
                     ],
                     graphic: list
                 };
-                 myChart2.clear();
-                 myChart2.setOption(option2);
+                 _this.myChart2.clear();
+                 _this.myChart2.setOption(option2);
                 window.addEventListener('resize', ()=>{
-                   myChart2.resize();
+                   _this.myChart2.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 })
+                _this.myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
             exportExcel:function (){

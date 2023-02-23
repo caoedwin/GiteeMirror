@@ -215,7 +215,10 @@
     </div>
 {% csrf_token %}
     <el-dialog title="机种列表" :visible.sync="setproject">
-        <el-table stripe border :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="proinfomation" @row-click="selectpro">
+        <el-table stripe border :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="proinfomation" @row-click="selectpro"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
             <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>
             <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>
             <el-table-column property="PrjEngCode1" label="PRJENGCODE1" width="140" sortable></el-table-column>
@@ -284,7 +287,7 @@
         </el-select>
         <div class="inputError" v-cloak  v-show="phaseError">phase號不能為空</div>
     </div>
-    <el-button @click="Search" type="primary" style="height:40px">搜索</el-button>
+    <el-button :loading="elbuttonloading" @click="Search" type="primary" style="height:40px">搜索</el-button>
     <el-button @click="exportExcel" type="info" style="height:40px">導出</el-button>
       <el-button size="small" style="background:#428bca;color:#fff;" v-if="canEdit==1" @click="openKeypart">Keypart</el-button>
 </div>
@@ -326,7 +329,10 @@
        'background-color':'#fafafa',
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'
-    }">
+    }"
+  v-loading="tableloading1"
+        element-loading-text="數據更新中，請稍後"
+        border>
       <el-table-column prop="ItemNo" label="序號" fixed ></el-table-column>
       <el-table-column prop="Item" label="項目名稱" fixed width="150"></el-table-column>
       <el-table-column prop="Sample Size" label="取樣數"  fixed width="150"></el-table-column>
@@ -409,6 +415,9 @@
             value:"NA"
         }
         ],
+          tableloading:false,
+          tableloading1:false,
+          elbuttonloading:false,
         search:'',
         // customer選擇
         customerOptions:[{
@@ -566,6 +575,7 @@
                     this.customerError1 = true;
                    return false;
                }else {
+                    this.tableloading = true;
                      this.customerError1 = false;
                      let Customer = this.$refs.Customer1.value;
                      let data = {
@@ -579,6 +589,7 @@
                          this.proinfomation = res.data.proinfomation;
                          if(this.$refs.Customer1.value!==''||this.$refs.customer.value==''){
                            this.customer=Customer;
+                           this.tableloading = false;
 
                             {#console.log(this.project,this.showProject1,'ghjk1');#}
                        }
@@ -587,6 +598,11 @@
                  }
             },
             selectpro:function(row){
+            this.setproject=false;
+            let myChart1 = echarts.init(document.getElementById('myChart'));
+                myChart1.showLoading(); // 在获取数据之前, 显示加载动画
+              let myChart2 = echarts.init(document.getElementById('myChart1'));
+                myChart2.showLoading(); // 在获取数据之前, 显示加载动画
                 let Customer = this.$refs.Customer1.value;
            let data ={"isGetData":"SELECTPRO","Customer":Customer,"COMPRJCODE":row.COMPRJCODE,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
            axios.post("/TestPlanME/TestPlanME-search/",Qs.stringify(data), {
@@ -596,8 +612,7 @@
                 this.showCustomer1=Customer;
                 this.showProject1=row.COMPRJCODE;
                 this.setproject=false;
-               let myChart1 = echarts.init(document.getElementById('myChart'));
-              let myChart2 = echarts.init(document.getElementById('myChart1'));
+
 
               /**
                * labei 換行
@@ -788,6 +803,8 @@
                     this.project=this.showProject1;
                     console.log(this.project,this.showProject1,'ghjk2');
                }
+                myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 })
 
             },
@@ -795,6 +812,8 @@
 
        //获取数据的封装函数 ：引用了axios 和 qs 的js文件
       getdata:function(e,fun){
+                this.tableloading1 = true;
+                this.elbuttonloading = true;
                 //console.log("getdata begin");
                 //let data = {"isGetData":e,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
                 axios.get("/TestPlanME/TestPlanME-search/?action="+e ,{
@@ -813,6 +832,8 @@
                         this.RTU_temp[i]=this.tableData[i].RTU;
                         this.RTR_temp[i]=this.tableData[i].RTR;
                     }
+                    this.tableloading1 = false;
+                    this.elbuttonloading = false;
                 });
             },
       Search:function(){

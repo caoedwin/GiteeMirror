@@ -150,14 +150,17 @@ tbody tr td:last-child {
 {#                 </select>#}
 {#                 <div class="inputError" v-cloak v-show="groupemployeesError">不能為空</div>#}
            </div>
-                 <el-button @click="find" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
+                 <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
                  <el-button @click="exportExcel" type="success" v-if="canExport==0" style="height:40px;margin-left: 20px">導出</el-button>
         <br/>
        <el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
     </div>
     <div class="tableAround" v-cloak >
     <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>
-    <el-table height="700" border :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"  style="min-width: 100%;border-radius: 10px" id="out-table" @row-click="selectDetail" :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}">
+    <el-table height="700" border :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"  style="min-width: 100%;border-radius: 10px" id="out-table" @row-click="selectDetail" :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
+    v-loading="tableloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
               <el-table-column type="index" :index="indexMethod" ></el-table-column>
                 <el-table-column  prop="Customer" label="客戶"  ></el-table-column>
                 <el-table-column  prop="Department" label="部門"  ></el-table-column>
@@ -202,7 +205,10 @@ tbody tr td:last-child {
         </div>
   </div>
 
-  <el-dialog :visible.sync="detail" align="center">
+  <el-dialog :visible.sync="detail" align="center"
+  v-loading="dialogloading"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
         <template>
           <div class="demo-fit">
               <image :src="Imageurl" alt="暫無頭像" mode="scaleToFill" width="123px" height="186px"/>
@@ -324,6 +330,9 @@ tbody tr td:last-child {
 
                 search:'',
                 Totalsize:null,
+                elbuttonloading: false,
+                tableloading: false,
+                dialogloading: false,
                 }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -335,6 +344,8 @@ tbody tr td:last-child {
             },
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/PersonalInfo-search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -343,6 +354,8 @@ tbody tr td:last-child {
                     this.customerOptions=res.data.select;
                     this.canExport=res.data.canExport;
                     this.GroupEmployeesNum=res.data.GroupEmployeesNum;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
 
                  });
             },
@@ -419,6 +432,8 @@ tbody tr td:last-child {
                       return false;
                  }
                  {% endcomment %}
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let Year=this.$refs.Year.value;
                 let Customer = this.$refs.Customer.value;
                 let Department=this.$refs.Department.value;
@@ -430,6 +445,8 @@ tbody tr td:last-child {
                 }).then((res) => {
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
+                  this.elbuttonloading = false;
+                this.tableloading = false;
                 })
                        this.showYear=Year;
                        this.showCustomer=Customer;
@@ -510,6 +527,7 @@ tbody tr td:last-child {
                   console.log("trt");
             },
             selectDetail:function(row){
+                this.dialogloading=true;
                 this.detail=true;
                 this.form={};//防止报错的话显示上一个人的信息
                let data ={"isGetData":"selectDetail","Year":this.showYear,"Customer":this.showCustomer,"Department":this.showDepartment,"Lesson":this.showLesson,"GroupEmployees":this.showGroupEmployees,"ID":row.id,"GroupEmployees":row.GroupEmployees,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -520,6 +538,7 @@ tbody tr td:last-child {
                   {#console.log(this.form)#}
                   this.tableData=res.data.tableData;
                   this.Imageurl=res.data.Imageurl;
+                  this.dialogloading=false;
                 })
             },
             handleSizeChange(val) {

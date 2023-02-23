@@ -462,7 +462,10 @@ p a{
        </div>
    </div>
    <el-dialog title="机种列表" :visible.sync="setproject">
-        <el-table stripe border :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="proinfomation" @row-click="selectpro">
+        <el-table stripe border :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="proinfomation" @row-click="selectpro"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
             <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>
             <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>
             <el-table-column property="PrjEngCode1" label="PRJENGCODE1" width="140" sortable></el-table-column>
@@ -516,7 +519,7 @@ p a{
             </el-select><br>
             <div class="inputError" v-cloak  v-show="phaseError">phase號不能為空</div>
         </div>
-        <el-button @click="find" v-cloak type="primary" class="Button">查找</el-button>
+        <el-button :loading="elbuttonloading1" @click="find" v-cloak type="primary" class="Button">查找</el-button>
         <el-button @click="exportExcel" v-cloak type="success" class="Button">導出</el-button>
    </div>
 
@@ -541,7 +544,10 @@ p a{
     }"
       element-loading-text="拼命加载中"
 	  element-loading-spinner="el-icon-loading"
-	  element-loading-background="rgba(0, 0, 0, 0.8)">
+	  element-loading-background="rgba(0, 0, 0, 0.8)"
+  v-loading="tableloading2"
+        element-loading-text="數據更新中，請稍後"
+        border>
       <!--無需編輯-->
       <el-table-column width="45" label="No."  prop="index"  fixed></el-table-column>
       <el-table-column width="120" label="Category" prop="Category" fixed></el-table-column>
@@ -736,7 +742,10 @@ p a{
            'background-color':'#fafafa',
            'font-weight':'800',
            'border-bottom':'1px solid rgb(103, 194, 58)'
-        }">
+        }"
+      v-loading="tableloading1"
+        element-loading-text="數據更新中，請稍後"
+        border>
           <el-table-column width='170' label="Category" prop="category"></el-table-column>
           <el-table-column label="Base Time" prop="basetime" :formatter="stateFormat"></el-table-column>
           <el-table-column label="Feature Support" prop="BTS" :formatter="stateFormat"></el-table-column>
@@ -819,6 +828,11 @@ p a{
         customerError:false,
         phaseError:false,
         categoryError:'',
+              tableloading:false,
+          tableloading1:false,
+          tableloading2:false,
+          elbuttonloading:false,
+          elbuttonloading1:false,
         phaseName:["B(SDV)", "C(SIT)", "EELP+", ],
         columnName:[],
         fileName:"未選擇文件",
@@ -879,6 +893,7 @@ p a{
                     this.customerError1 = true;
                    return false;
                }else {
+                    this.tableloading=true;
                      this.customerError1 = false;
                      let Customer = this.$refs.Customer1.value;
                      let data = {
@@ -895,11 +910,17 @@ p a{
 
 
                        }
+                       this.tableloading=false;
                      })
                      this.setproject=true;
                  }
             },
              selectpro:function(row){
+                this.setproject=false;
+                var myChart1 = echarts.init(document.getElementById('main'));
+                myChart1.showLoading(); // 在获取数据之前, 显示加载动画
+                var myChart2 = echarts.init(document.getElementById('main1'));
+                myChart2.showLoading(); // 在获取数据之前, 显示加载动画
                  let Customer = this.$refs.Customer1.value;
                 this.showProject1=row.COMPRJCODE;
                let data ={"isGetData":"SELECTPRO","Customer":Customer,"COMPRJCODE":row.COMPRJCODE,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -911,8 +932,7 @@ p a{
                     this.showProject1=row.COMPRJCODE;
                     console.log(this.showCustomer1,this.showProject1)
                     this.setproject=false;
-                    var myChart1 = echarts.init(document.getElementById('main'));
-                    var myChart2 = echarts.init(document.getElementById('main1'));
+
                     // 指定图表的配置项和数据
                     var option1 = {
                         title: {
@@ -1072,9 +1092,13 @@ p a{
                         this.project=this.showProject1;
                         console.log(this.project)
                    }
+                   myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
     })
              },
             getdata: function (e) {
+                this.tableloading1=true;
+                this.elbuttonloading1=true;
                 let _this = this;
                 axios.get("/TestPlanSWOS/TestPlanSWOS-search-AIO/?action="+e , {
                     headers: {
@@ -1101,6 +1125,8 @@ p a{
                             }
                         }
                     }
+                    this.tableloading1=false;
+                    this.elbuttonloading1=false;
                 })
                 //顯示當前表格的信息
                 this.showCustomer = this.customer;
@@ -1109,6 +1135,7 @@ p a{
             },
              selectDetail:function(row){
                     this.settable=true;
+                    this.tableloading2=true;
                     let _this=this;
                     let Customer = this.$refs.customer.value;
                     let Project = this.$refs.project.value;
@@ -1135,6 +1162,7 @@ p a{
                             {
                                //console.log("错误异常"+e);
                             }
+                            this.tableloading2=false;
 
                         }).catch(function (e) {
                                _this.loading=false;

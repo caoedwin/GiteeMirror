@@ -144,7 +144,7 @@ input:focus{
 
     </div>
     <div class="col-md-1" style="margin: 2px;">
-        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
     </div>
     <div class="col-md-1" style="margin: 2px;">
         <el-button size="small" @click="exportExcel" type="info" v-if="canEdit === 1">Export</el-button>
@@ -154,7 +154,10 @@ input:focus{
      <hr/>
   <template >
       <el-input type="text" v-model="search"  id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
-      <el-table  id="out-table" border stripe height="700" @sort-change='sortChange' :default-sort = "{prop: 'Customer', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" style="width: 100%">
+      <el-table  id="out-table" border stripe height="700" @sort-change='sortChange' :default-sort = "{prop: 'Customer', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" style="width: 100%"
+      v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
           <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
           <el-table-column prop="Customer" label="客戶別"  align="center"  width="100" sortable='custom' fixed></el-table-column>
           <el-table-column prop="Department_Code" label="部門代碼"  align="center"  width="140" sortable='custom' fixed></el-table-column>
@@ -236,6 +239,8 @@ $(document).ready(function() {
                 Year1: '',
                 canEdit:null,
                 date: '',
+                elbuttonloading: false,
+                tableloading: false,
             }
         },
     mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -350,6 +355,8 @@ $(document).ready(function() {
       },
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/PersonalInfo/ManPower-search/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -359,6 +366,8 @@ $(document).ready(function() {
                     this.totalNum=this.tableContent.length;
                     this.selectCustomer = res.data.selectCustomer;
                     this.selectYear = res.data.selectYear;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
                 });
             },
             indexMethod(index) {
@@ -366,6 +375,8 @@ $(document).ready(function() {
             },
             //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.elbuttonloading = true;
+                this.tableloading = true;
                let Customer = this.$refs.Customer.value;
                let Year1 = this.$refs.Year1.value;
                let Chu = this.$refs.Chu.value;
@@ -379,6 +390,8 @@ $(document).ready(function() {
                   this.selectYear = res.data.selectYear;
                   {#this.selectSection = res.data.selectSection;#}
                   this.totalNum=this.tableContent.length;
+                  this.elbuttonloading = false;
+                this.tableloading = false;
                 })
              },
             changeYear:function () {

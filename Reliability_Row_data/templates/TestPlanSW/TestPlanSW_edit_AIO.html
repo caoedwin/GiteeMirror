@@ -415,7 +415,7 @@
          </el-select><br>
         <div class="inputError" v-cloak  v-show="categoryError">類別不能為空</div>
     </div>
-    <el-button @click="find" v-cloak type="primary" class="Button">查找</el-button>
+    <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" class="Button">查找</el-button>
   </div>
 <div v-cloak class="fileUploadContent"    v-if="canEdit">
             <div class="inputPackage" v-cloak>
@@ -449,7 +449,11 @@
     }"
       element-loading-text="拼命加载中"
 	  element-loading-spinner="el-icon-loading"
-	  element-loading-background="rgba(0, 0, 0, 0.8)">
+	  element-loading-background="rgba(0, 0, 0, 0.8)"
+
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
       <!--無需編輯-->
       <el-table-column width="45" label="No."  prop="index"  fixed></el-table-column>
       <el-table-column width="100" label="Category"  prop="Category" align="left" fixed></el-table-column>
@@ -800,6 +804,8 @@
       projectError:false,
       customerError:false,
       phaseError:false,
+      elbuttonloading:false,
+      tableloading:false,
       categoryError:'',
       customerOptions:[
           {
@@ -882,6 +888,8 @@
           }
       },
           getdata:function(e){
+              this.elbuttonloading=true;
+                this.tableloading=true;
                 {% comment %}let data = {"isGetData":e,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};{% endcomment %}
                 axios.get("/TestPlanSW/TestPlanSW-edit-AIO/?action="+e , {
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'} //改变头格式，原生默认上传json格式
@@ -903,6 +911,8 @@
                         //重新計算表格高度
                         this.$refs.multipleTable.doLayout()
                     })
+                    this.elbuttonloading=false;
+                    this.tableloading=false;
                 });
                this.showCustomer=this.customer;
                this.showProject=this.project;

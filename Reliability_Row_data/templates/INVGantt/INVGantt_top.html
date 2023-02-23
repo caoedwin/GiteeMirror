@@ -116,13 +116,16 @@ p {
                 </template>
             </div>
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH3">Search</el-button>
+        <el-button :loading="elbuttonloading3" size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH3">Search</el-button>
     </div>
 
     </div>
     <p class="selectItem" v-cloak  v-if="showCustomer3" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer3 }/${ showYear3 }</p>
           <template v-cloak>
-              <el-table  stripe border  :data="tableData4" style="width: 50%;float: left" id="out-table1" >
+              <el-table  stripe border  :data="tableData4" style="width: 50%;float: left" id="out-table1"
+              v-loading="tableloading3"
+            element-loading-text="數據更新中，請稍後"
+            border>
                 <el-table-column prop="Project" label="Project" align="center" width="120"></el-table-column>
                 <el-table-column prop="Pass" label="Pass" align="center" width="100" ></el-table-column>
                 <el-table-column prop="Fail" label="Fail" align="center" width="100" ></el-table-column>
@@ -169,13 +172,16 @@ p {
                 </template>
             </div>
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH1">Search</el-button>
+        <el-button size="small" :loading="elbuttonloading1" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH1">Search</el-button>
     </div>
 
     </div>
        <p class="selectItem" v-cloak  v-if="showCustomer1" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer1 }/${ showYear1 }</p>
         <template v-cloak>
-          <el-table stripe border  :data="tableData1" style="width: 50%;float: left" id="out-table1" >
+          <el-table stripe border  :data="tableData1" style="width: 50%;float: left" id="out-table1"
+          v-loading="tableloading1"
+            element-loading-text="數據更新中，請稍後"
+            border>
             <el-table-column prop="Project" label="Project" align="center" width="120"></el-table-column>
             <el-table-column prop="Standard_test_time" label="Standard_test_time" align="center" width="160"></el-table-column>
             <el-table-column prop="Retest_time" label="Retest_time" align="center" width="120"></el-table-column>
@@ -220,14 +226,17 @@ p {
                 </template>
             </div>
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH2">Search</el-button>
+        <el-button size="small" :loading="elbuttonloading2" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH2">Search</el-button>
     </div>
 
     </div>
      <p class="selectItem" v-cloak   v-if="showCustomer2" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer2 }/${ showYear2 }</p>
       <p><h5>TP Category Top10</h5></p>
       <template v-cloak>
-          <el-table stripe border  :data="tableData2" style="width: 50%;float: left" id="out-table2" >
+          <el-table stripe border  :data="tableData2" style="width: 50%;float: left" id="out-table2"
+          v-loading="tableloading2"
+            element-loading-text="數據更新中，請稍後"
+            border>
             <el-table-column prop="KeyPart" label="TP Category" align="center" width="160" ></el-table-column>
             <el-table-column prop="Pass" label="Pass" align="center" width="120" ></el-table-column>
             <el-table-column prop="Fail" label="Fail" align="center" width="120" ></el-table-column>
@@ -289,13 +298,16 @@ p {
                 </template>
             </div>{% endcomment %}
     <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH4">Search</el-button>
+        <el-button :loading="elbuttonloading4" size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH4">Search</el-button>
     </div>
 
     </div>
      <p class="selectItem" v-cloak  v-if="showCustomer4" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer4 }{% comment %}/${ showYear4 }{% endcomment %}</p>
           <template v-cloak>
-              <el-table  stripe border  :data="tableData5" style="width: 50%;float: left" id="out-table1" >
+              <el-table  stripe border  :data="tableData5" style="width: 50%;float: left" id="out-table1"
+              v-loading="tableloading4"
+            element-loading-text="數據更新中，請稍後"
+            border>
                 <el-table-column prop="Year" label="Year" align="center" width="120"></el-table-column>
                 <el-table-column prop="PASS" label="PASS" align="center" width="120" ></el-table-column>
                 <el-table-column prop="FAIL" label="FAIL" align="center" width="120" ></el-table-column>
@@ -363,7 +375,15 @@ p {
                 Top10:[],
                 activeName: ['1','2','3','4'],
                 coloroder:{'Pass': "#589800", 'Fail': "#FF0000", 'Ongoing': "#FFFF00", 'Planning': "#FFFFFF"},
-                condition:null
+                condition:null,
+                elbuttonloading1: false,
+                tableloading1: false,
+                elbuttonloading2: false,
+                tableloading2: false,
+                elbuttonloading3: false,
+                tableloading3: false,
+                elbuttonloading4: false,
+                tableloading4: false,
             }
         },
         mounted() {        // 页面渲染后触发该区域内容 即页面初始化
@@ -385,6 +405,22 @@ p {
             },
 
             getdata: function (e) {
+                this.elbuttonloading1 = true;
+                this.tableloading1 = true;
+                this.elbuttonloading2 = true;
+                this.tableloading2 = true;
+                this.elbuttonloading3 = true;
+                this.tableloading3 = true;
+                this.elbuttonloading4 = true;
+                this.tableloading4 = true;
+                var myChart3 = echarts.init(document.getElementById('main2'));
+                myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart4 = echarts.init(document.getElementById('main3'));
+                myChart4.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart6 = echarts.init(document.getElementById('main5'));
+                myChart6.showLoading() // 在获取数据之前, 显示加载动画
+                var myChart7 = echarts.init(document.getElementById('main6'));
+                myChart7.showLoading() // 在获取数据之前, 显示加载动画
                 let data = {"isGetData": e,};
                 axios.post("/INVGantt/INVGantt-top/", Qs.stringify(data), {
                     headers: {
@@ -484,7 +520,7 @@ p {
                         ],
                         series: this.Execution_Project
                     };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
+                    {#var myChart3 = echarts.init(document.getElementById('main2'));#}
 
                     var option4 = {
                         title: {
@@ -518,7 +554,7 @@ p {
                             }
                         ]
                     };
-                    var myChart4 = echarts.init(document.getElementById('main3'));
+                    {#var myChart4 = echarts.init(document.getElementById('main3'));#}
 
                     {% comment %}var option5 = {
                         title: {
@@ -605,7 +641,7 @@ p {
                         ],
                         series: this.Test_Status
                     };
-                    var myChart6 = echarts.init(document.getElementById('main5'));
+                    {#var myChart6 = echarts.init(document.getElementById('main5'));#}
 
                     var option7 = {
                          color: ['#589800', '#FF0000', "#FFFF00", "#00FFFF"],
@@ -655,7 +691,7 @@ p {
                                 ],
                                 series: this.INV_Quantity
                             };
-                    var myChart7 = echarts.init(document.getElementById('main6'));
+                    {#var myChart7 = echarts.init(document.getElementById('main6'));#}
 
                     // 使用刚指定的配置项和数据显示图表。
                     myChart3.setOption(option3, true);
@@ -675,6 +711,18 @@ p {
                             myChart6.resize();
                             myChart7.resize();
                          })
+                    this.elbuttonloading1 = false;
+                    this.tableloading1 = false;
+                    this.elbuttonloading2 = false;
+                    this.tableloading2 = false;
+                    this.elbuttonloading3 = false;
+                    this.tableloading3 = false;
+                    this.elbuttonloading4 = false;
+                    this.tableloading4 = false;
+                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart6.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    myChart7.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
                 });
             },
@@ -684,6 +732,10 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading1 = true;
+                    this.tableloading1 = true;
+                    var myChart3 = echarts.init(document.getElementById('main2'));
+                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
                     this.customerError = false;
                     let Customer = this.$refs.Customer1.value;
                     let Date = this.$refs.selectedYear1.value;
@@ -770,7 +822,7 @@ p {
                             ],
                             series: this.Execution_Project
                         };
-                        var myChart3 = echarts.init(byId('main2'));
+                        {#var myChart3 = echarts.init(byId('main2'));#}
 
                         // 使用刚指定的配置项和数据显示图表。
                         myChart3.setOption(option3, true);
@@ -778,6 +830,9 @@ p {
                         window.addEventListener('resize', function () {
                             myChart3.resize();
                         })
+                        this.elbuttonloading1 = false;
+                        this.tableloading1 = false;
+                        myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     })
                     this.settable = true;
                 }
@@ -788,6 +843,10 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading2 = true;
+                    this.tableloading2 = true;
+                    var myChart4 = echarts.init(document.getElementById('main3'));
+                    myChart4.showLoading() // 在获取数据之前, 显示加载动画
                     this.customerError = false;
                     let Customer = this.$refs.Customer2.value;
                     let Date = this.$refs.selectedYear2.value;
@@ -852,7 +911,7 @@ p {
                                 }
                             ]
                         };
-                        var myChart4 = echarts.init(byId('main3'));
+                        {#var myChart4 = echarts.init(byId('main3'));#}
 
                         {% comment %}var option5 = {
                             title: {
@@ -900,6 +959,9 @@ p {
                             myChart5.resize();
 
                         })
+                        this.elbuttonloading2 = false;
+                        this.tableloading2 = false;
+                        myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
                     })
                     this.settable = true;
@@ -911,6 +973,10 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading3 = true;
+                    this.tableloading3 = true;
+                    var myChart6 = echarts.init(document.getElementById('main5'));
+                    myChart6.showLoading() // 在获取数据之前, 显示加载动画
                     this.customerError = false;
                     let Customer = this.$refs.Customer3.value;
                     let Date = this.$refs.selectedYear3.value;
@@ -998,7 +1064,7 @@ p {
                             ],
                             series: this.Test_Status
                         };
-                        var myChart6 = echarts.init(byId('main5'));
+                        {#var myChart6 = echarts.init(byId('main5'));#}
 
                         // 使用刚指定的配置项和数据显示图表。
                         myChart6.setOption(option6, true);
@@ -1006,6 +1072,9 @@ p {
                         window.addEventListener('resize', function() {
                                 myChart6.resize();
                          })
+                        this.elbuttonloading3 = false;
+                        this.tableloading3 = false;
+                        myChart6.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
                     })
                     this.settable = true;
@@ -1017,6 +1086,10 @@ p {
                     this.customerError = true;
                     return false;
                 } else {
+                    this.elbuttonloading4 = true;
+                    this.tableloading4 = true;
+                    var myChart7 = echarts.init(document.getElementById('main6'));
+                    myChart7.showLoading() // 在获取数据之前, 显示加载动画
                     this.customerError = false;
                     let Customer = this.$refs.Customer4.value;
                     {% comment %}let Date = this.$refs.selectedYear4.value;{% endcomment %}
@@ -1100,7 +1173,7 @@ p {
                             ],
                             series: this.INV_Quantity
                         };
-                        var myChart7 = echarts.init(byId('main6'));
+                        {#var myChart7 = echarts.init(byId('main6'));#}
 
                         // 使用刚指定的配置项和数据显示图表。
                         myChart7.setOption(option7, true);
@@ -1109,6 +1182,9 @@ p {
                             myChart7.resize();
 
                         })
+                        this.elbuttonloading4 = false;
+                        this.tableloading4 = false;
+                        myChart7.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
                     })
                     this.settable = true;
