@@ -81,7 +81,7 @@
                        <option v-for="(item,key,index) in statusOptions">${ item }</option>
                  </select>
            </div>
-                 <el-button @click="selectMsg" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button>
+                 <el-button :loading="elbuttonloading" @click="selectMsg" v-cloak  style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">搜索</el-button>
                  <el-button size="small" @click="exportExcel" type="info" style="height:40px;border-color:black;color:black;margin-left: 20px;background-color: #f9bd63">Export</el-button>
            <div class="col-md-1">
                <el-tooltip class="item" effect="dark" {% comment %}content="1.请严格遵循一物有且仅有一料号的原则\n2.物品入库时请保持挂账人和借还人员一致，即账随人走原则<br/>3.若TUM已经退库，请管理员帮忙将系统中的借还状态改成Close，不要直接删除"{% endcomment %} placement="right">
@@ -104,7 +104,10 @@
       <span class="showNum">已選 <span id="selectNum">0</span> 條</span> <el-button @click="ensureInfo()" v-cloak size="medium" style="background-color:#9df387d4; border-color:black;color:black;margin-left: 50px">借用</el-button>
         </div>
           <el-input type="text" v-model="search"  id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
-          <el-table height="700" id="out-table" ref="multipleTable" border stripe :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)" @selection-change="handleSelectionChange" :row-key="getRowKeys" :cell-style="addColor">
+          <el-table height="700" id="out-table" ref="multipleTable" border stripe :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)" @selection-change="handleSelectionChange" :row-key="getRowKeys" :cell-style="addColor"
+            v-loading="tableloading"
+            element-loading-text="數據更新中，請稍後"
+            border>
           <el-table-column type="selection" width="50" :reserve-selection="true" :selectable='checkboxT' disabled="true"></el-table-column>
           <el-table-column type="index" :index="indexMethod"></el-table-column>
           <el-table-column  prop="Pinming" label="品名"></el-table-column>
@@ -186,6 +189,8 @@
                pageSize:100,//默认每页显示100条
                totalNum: null,
                Info:false,
+                elbuttonloading: false,
+                tableloading: false,
                form: {
                     Project:'',
                     Phase:'',
@@ -225,6 +230,8 @@
         methods: {
             //获取数据
             getdata: function (e) {
+                this.elbuttonloading = true;
+                    this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/AdapterPowerCode/BorrowedAdapter/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -236,6 +243,8 @@
                     this.tableContent=res.data.content;
                     this.selectItem=res.data.selectItem;
                     this.totalNum=this.tableContent.length;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
                 });
             },
 
@@ -259,6 +268,8 @@
           },
             //上传搜索项：以此选项搜索符合条件的内容
             selectMsg :function(){
+                this.elbuttonloading = true;
+                this.tableloading = true;
                 {#let Customer = this.$refs.Customer.value;#}
                 {#let OAPNum = this.number;#}
                 let OAPNum = ''
@@ -276,6 +287,8 @@
                 }).then((res) => {
                   this.tableContent=res.data.content;
                   this.totalNum=this.tableContent.length;
+                  this.elbuttonloading = false;
+                   this.tableloading = false;
                 });
                 this.$refs.multipleTable.clearSelection();
             },

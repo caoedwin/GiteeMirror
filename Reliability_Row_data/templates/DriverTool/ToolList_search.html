@@ -37,14 +37,17 @@
 {#           </select>#}
 {#                    </div>#}
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT();dialogTableVisible = true">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT();dialogTableVisible = true">Search</el-button>
                     </div>
                     <div class="col-md-1">
                         <el-button size="small" @click="exportExcel" type="info" >Export</el-button>
                     </div>
      </div>
  <el-dialog title="" :visible.sync="dialogTableVisible">
-  <el-table height="500" border stripe :default-sort = "{prop: 'YEAR', order: 'descending'}" :data="searchalert" @row-click="clickDetails">
+  <el-table height="500" border stripe :default-sort = "{prop: 'YEAR', order: 'descending'}" :data="searchalert" @row-click="clickDetails"
+  v-loading="tableloading1"
+  element-loading-text="數據更新中，請稍後"
+  border>
     <el-table-column property="YEAR" label="YEAR" width="70" sortable></el-table-column>
     <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="120" sortable></el-table-column>
     <el-table-column property="PrjEngCode1" label="PRJENGCODE1" width="110" sortable></el-table-column>
@@ -64,7 +67,10 @@
   </el-table>
 </el-dialog>
 <template >
-   <el-table  stripe border height="700" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}" ref="multipleTable" :data="tableContent" tooltip-effect="dark" style="width:95%;heighrt:200;" @selection-change="handleSelectionChange">
+   <el-table  stripe border height="700" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}" ref="multipleTable" :data="tableContent" tooltip-effect="dark" style="width:95%;heighrt:200;" @selection-change="handleSelectionChange"
+   v-loading="tableloading2"
+  element-loading-text="數據更新中，請稍後"
+  border>
     <el-table-column type="index" :index="indexMethod"></el-table-column>
        <el-table-column prop="Project" sortable label="Project" width="200" show-overflow-tooltip></el-table-column>
        <el-table-column prop="Phase" sortable label="Phase" width="100" show-overflow-tooltip></el-table-column>
@@ -105,20 +111,25 @@
                 result:{},
                 choose:false,
                 dialogTableVisible: false,
+                tableloading1:false,
+                tableloading2:false,
+                elbuttonloading:false,
             }
         },
         mounted(){
             // 页面渲染后触发该区域内容 即页面初始化
             this.$nextTick(() => {
                  this.getdata("first");
-            })
+            }
+            )
 
         },
         methods: {
             //获取数据
             getdata: function (e) {
-                console.log(this.$refs.Customer)
+                console.log('start');
                let Customer = this.$refs.Customer.value;
+               {#console.log(this.$refs.Customer);#}
                {% comment %}let Project = this.$refs.Project.value;
                let Phase0 = this.$refs.Phase0.value;{% endcomment %}
                 let data = {"isGetData": e, "Customer":Customer,{% comment %}"Project":Project,"Phase":Phase0,{% endcomment %}"csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
@@ -130,6 +141,8 @@
                 });
             },
              SEARCHALERT:function(){
+                this.tableloading1=true;
+                this.elbuttonloading=true;
                 let Customer = this.$refs.Customer.value;
                 let data ={"isGetData":"SEARCHALERT","Customer":Customer,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                axios.post("/DriverTool/ToolList_search/",Qs.stringify(data), {
@@ -137,9 +150,13 @@
                 }).then((res) => {
                   this.searchalert=res.data.sear;
                   {% comment %}console.log(this.searchalert,"YYY"){% endcomment %}
+                   this.tableloading1=false;
+                   this.elbuttonloading=false;
                 })
              },
             clickDetails(row){
+                this.dialogTableVisible=false;
+                this.tableloading2=true;
                 console.log(row.COMPRJCODE);
                 let Customer = this.$refs.Customer.value;
                 let data ={"isGetData":"clickdetail","row.COMPRJCODE":row.COMPRJCODE,"Customer":Customer,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -148,8 +165,9 @@
                 }).then((res) => {
                   this.searchalert=res.data.sear;
                    this.tableContent=res.data.content;
+                   this.tableloading2=false;
                 })
-                this.dialogTableVisible = false;
+                {#this.dialogTableVisible = false;#}
             },
             indexMethod(index) {
         return index +1;

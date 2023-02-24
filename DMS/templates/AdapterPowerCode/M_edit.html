@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+s{% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}材料維護{% endblock %}
 {% block css %}
@@ -264,7 +264,7 @@
                  </template>
              </el-autocomplete>
 
-        <el-button size="medium" style="height:35px;border-color:black;color:white;margin-left: -5px;background-color:#7fa0ff" value="Search" name="Search" @click="selectMsg">Search</el-button>
+        <el-button :loading="elbuttonloading" size="medium" style="height:35px;border-color:black;color:white;margin-left: -5px;background-color:#7fa0ff" value="Search" name="Search" @click="selectMsg">Search</el-button>
         <el-button size="medium" style="border-color:black;" @click="exportExcel" type="info" >Export</el-button>
 {#        <div  class="selectMsg" style="margin-left: 120px;margin-right:10px;"{% comment %} v-if="permission===1"{% endcomment %}>#}
         <a style="margin-left: 20px;color: #000000" href="/static/src/modelfiles/DQA%20adapterpower%20cord庫存管理.xls">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
@@ -647,7 +647,10 @@
      :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)"
      :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#FAFAFA','border-bottom':'1px solid rgb(103, 194, 58)'}"
      style="border-radius: 10px;word-break: keep-all"
-     @selection-change="handleSelectionChange" :row-key="getRowKeys" :cell-style="addColor">
+     @selection-change="handleSelectionChange" :row-key="getRowKeys" :cell-style="addColor"
+    v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
         <el-table-column type="selection" align="center" :reserve-selection="true" fixed></el-table-column>
         <el-table-column type="index" :index="indexMethod" width="60" align="center" fixed></el-table-column>
         <el-table-column prop="Pinming" label="品名" align="center" width="100" fixed>
@@ -755,6 +758,8 @@
              excelFile:null,
              fileName:"未選擇文件",
              loading:false,
+             elbuttonloading: false,
+             tableloading: false,
              form: {
                   {#id: '',#}
                   Customer: '',
@@ -855,6 +860,8 @@
      methods: {
         //获取数据
         getdata: function (e) {
+            this.elbuttonloading = true;
+            this.tableloading = true;
             let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
             axios.post("/AdapterPowerCode/M_edit/", Qs.stringify(data), {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -875,6 +882,8 @@
                 this.guihuanqueren=res.data.guihuanqueren;
                 this.tableContent = res.data.content;
                 this.totalNum=this.tableContent.length;
+                this.elbuttonloading = false;
+                this.tableloading = false;
          });
 
         },
@@ -935,6 +944,8 @@
               },
           //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+               this.elbuttonloading = true;
+               this.tableloading = true;
                let OAPNum = ''
                let oapnum = this.$refs.OAP.value;
                {#console.log(oapnum, 'oapnum')#}
@@ -961,6 +972,8 @@
                   this.jieyongyuding=res.data.jieyongyuding;
                   this.guihuanqueren=res.data.guihuanqueren;
                   this.$refs.multipleTable.clearSelection();
+                  this.elbuttonloading = false;
+                  this.tableloading = false;
 
                 })
              },

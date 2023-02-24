@@ -155,7 +155,7 @@
                   placeholder="请输入PN"
                   @select="handleSelect">
          </el-autocomplete>
-    <el-button size="small" style="background:#428bca;color:#fff;margin-left: 50px;" value="Search" name="Search" @click="selectMsg()">Search</el-button>
+    <el-button size="small" :loading="elbuttonloading" style="background:#428bca;color:#fff;margin-left: 50px;" value="Search" name="Search" @click="selectMsg()">Search</el-button>
     <el-button size="small" @click="exportExcel" type="info" v-if="canEdit==1">Export</el-button>
     </div>
 </div>
@@ -165,7 +165,10 @@
     <el-input type="text" v-model="search"  id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
     <el-table id="out-table" border stripe height="750" @sort-change='sortChange' :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
               :header-cell-style="{background:'white','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              style="border-radius: 10px;word-break: keep-all" :cell-style="addColor">
+              style="border-radius: 10px;word-break: keep-all" :cell-style="addColor"
+    v-loading="tableloading"
+    element-loading-text="正在加载中，请稍后"
+    border>
         <el-table-column type="index" :index="indexMethod" fixed></el-table-column>
         <el-table-column prop="Customer" label="Customer" sortable='custom' align="center" width="85" fixed>
         </el-table-column>
@@ -244,6 +247,8 @@ $(document).ready(function() {
              selectedProjectName:'',
              selectedPlatform:null,
              selectedPN:'',
+             elbuttonloading:false,
+             tableloading:false,
          }
      },
      mounted: function (){        // 页面渲染后触发该区域内容 即页面初始化
@@ -398,6 +403,8 @@ $(document).ready(function() {
 
           //上传搜索项：以此选项搜索符合条件的内容
          selectMsg :function(row){
+            this.elbuttonloading=true;
+            this.tableloading=true;
            let Customer = this.$refs.Customer.value;
            let ProjectName = this.$refs.ProjectName.value;
            let Platform = this.$refs.Platform.value;
@@ -409,6 +416,8 @@ $(document).ready(function() {
                this.canEdit = res.data.canEdit;
                this.tableContent = res.data.content;
                this.totalNum=this.tableContent.length;
+               this.elbuttonloading=false;
+                this.tableloading=false;
            });
         },
 

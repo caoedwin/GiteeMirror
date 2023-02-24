@@ -72,7 +72,10 @@ position: relative;
        :header-cell-style="{
        'background-color':'#fafafa',
        'font-weight':'800',
-       'border-bottom':'1px solid rgb(103, 194, 58)'}" >
+       'border-bottom':'1px solid rgb(103, 194, 58)'}"
+  v-loading="tableloading1"
+  element-loading-text="正在加载中，请稍后"
+  border>
 
     <el-table-column type="selection"></el-table-column>
     <el-table-column property="YEAR" label="YEAR" ></el-table-column>
@@ -99,7 +102,10 @@ position: relative;
 </el-dialog>
 <template>
     <span class="selectItem"  v-cloak  v-if="showCustomer&&showProject">當前表格信息：${ showCustomer }</span>
-   <el-table id="out-table" border height="650" :cell-style="cellStyle" @sort-change='sortChange' :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)" tooltip-effect="dark" style="width: 100%">
+   <el-table id="out-table" border height="650" :cell-style="cellStyle" @sort-change='sortChange' :data="tableContent.slice((currentPage-1)*pageSize,currentPage*pageSize)" tooltip-effect="dark" style="width: 100%"
+   v-loading="tableloading2"
+  element-loading-text="正在加载中，请稍后"
+  border>
        <el-table-column type="index" :index="indexMethod" ></el-table-column>
        <el-table-column prop="Product" label="Product" align="center" width="80" sortable='custom' ></el-table-column>
        <el-table-column prop="Customer" label="Customer" align="center" width="100" sortable='custom' ></el-table-column>
@@ -160,7 +166,9 @@ new Vue({
                 title:[],
                 choose:false,
                 projectArray:[],
-                projectMsg:[]
+                projectMsg:[],
+                tableloading1:false,
+                tableloading2:false,
 
             }
         },
@@ -266,11 +274,14 @@ new Vue({
               },
             //获取数据
             getdata: function (e) {
+
+                console.log(this.tableloading1)
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/QIL/QIL_searchbyproject/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.selectItem = res.data.select;
+                    this.tableloading1=false;
                 });
             },
             //上传搜索项：以此选项搜索符合条件的内容
@@ -283,6 +294,7 @@ new Vue({
                                 this.customerError = true;
                                 return false;
                };
+               this.tableloading1=true;
                let Customer = this.$refs.Customer.value;
 
                let data ={"isGetData":"SEARCH","Customer":Customer,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
@@ -292,11 +304,13 @@ new Vue({
                     this.selectItem=res.data.select;
                     this.projectMsg=res.data.searchalert;
                    this.showCustomer=Customer;
+                   this.tableloading1=false;
                 })
              },
             //二次选择
               getMsg:function(){
                   //是否選中信息
+
                   let data = this.$refs.projectTable.store.states.selection;
                   this.title = this.$refs.projectTable.store.states.selection.map((res) => {return res.COMPRJCODE})
                   //未選中
@@ -308,6 +322,8 @@ new Vue({
                       this.choose = false;
                       return
                   }
+                  this.tableloading2=true;
+                  this.choose=false;
 
                   //選中上傳數據
                   this.projectArray = data.map((res) => res.COMPRJCODE );
@@ -320,7 +336,8 @@ new Vue({
                         } ).then((res) => {
                            this.tableContent=res.data.content;
                            this.totalNum=this.tableContent.length;
-                            this.choose = false;
+                            {#this.choose = false;#}
+                            this.tableloading2=false;
                    })
               },
               //取消查找

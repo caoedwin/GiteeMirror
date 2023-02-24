@@ -46,12 +46,15 @@
            </select>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
                     </div>
     </div>
 <template>
    <el-table stripe border height="700" ref="multipleTable" :data="tableContent" tooltip-effect="dark" style="width: 95% ;heighrt:200;"  @selection-change="handleSelectionChange"
-   {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}>
+   {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}
+   v-loading="tableloading"
+  element-loading-text="數據更新中，請稍後"
+  border>
     <el-table-column type="selection" width="50"></el-table-column>
     <el-table-column type="index" :index="indexMethod"></el-table-column>
        <el-table-column prop="Project" label="Project" width="200" show-overflow-tooltip>
@@ -173,7 +176,9 @@
                 image:[],
                 showEdit: [], //显示编辑框
                 showBtn: [],
-                showBtnOrdinary: true
+                showBtnOrdinary: true,
+                tableloading:false,
+                elbuttonloading:false,
             }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -243,6 +248,9 @@
             },
             //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.tableloading=true;
+                this.elbuttonloading=true;
+                {#console.log(this.tableloading);#}
                let Customer = this.$refs.Customer.value;
                let Project = this.$refs.Project.value;
                let Phase0 = this.$refs.Phase0.value;
@@ -252,7 +260,7 @@
                axios.post("/DriverTool/DriverList_edit/",Qs.stringify(data), {
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
-                  console.log(res.data.content,'search');
+                  {#console.log(res.data.content,'search');#}
                   this.tableContent=res.data.content;
                   for(let i=0;i<this.tableContent.length;i++){
                         this.Customer[i]=this.tableContent[i].Customer;
@@ -266,9 +274,12 @@
                         this.project[i]=this.tableContent[i].Project;
                         this.phase[i]=this.tableContent[i].Phase;
                         this.image[i]=this.tableContent[i].Image;
-                        console.log(this.tableContent[i].Image,'in');
+                        {#console.log(this.tableContent[i].Image,'in');#}
                     }
                   this.selectItem=res.data.select;
+                  this.tableloading=false;
+                   this.elbuttonloading=false;
+                   {#console.log(this.tableloading);#}
                 })
              },
             toggleSelection(rows) {

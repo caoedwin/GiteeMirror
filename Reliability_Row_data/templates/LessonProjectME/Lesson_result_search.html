@@ -174,7 +174,10 @@
        :header-cell-style="{
        'background-color':'#fafafa',
        'font-weight':'800',
-       'border-bottom':'1px solid rgb(103, 194, 58)'}" >
+       'border-bottom':'1px solid rgb(103, 194, 58)'}"
+  v-loading="tableloading1"
+  element-loading-text="正在加载中，请稍后"
+  border>
 
     <el-table-column type="selection"></el-table-column>
     <el-table-column property="YEAR" label="YEAR" ></el-table-column>
@@ -209,7 +212,10 @@
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'
     }"
-    >
+
+    v-loading="tableloading2"
+  element-loading-text="正在加载中，请稍后"
+  border>
         <el-table-column prop="Category" label="Category" sortable='custom' fixed></el-table-column>
       <el-table-column prop="object" label="Object" sortable='custom' fixed></el-table-column>
       <el-table-column prop="symptom" label="Symptom" sortable='custom' fixed></el-table-column>
@@ -313,6 +319,9 @@
         choose:false,
         projectArray:[],
         title:[],
+        {#elbuttonloading:false,#}
+        tableloading1:false,
+        tableloading2:false,
 
       }
     },
@@ -384,6 +393,7 @@
                 }
             },
       getdata:function(e){
+                this.tableloading1=true;
                 axios.get("/LessonProjectME/Lesson_SearchByProject/?action="+e+"&csrfmiddlewaretoken="+$("[name='csrfmiddlewaretoken']").val()+""{% comment %} 'https://douban.uieee.com/v2/movie/in_theaters',{header:{'Access-Control-Allow-Origin':'*'}}{% endcomment %}
                     ,{
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'} //改变头格式，原生默认上传json格式
@@ -397,6 +407,7 @@
                         this.$refs.multipleTable.doLayout()
                     })
                     this.showCustomer = this.customer;
+                    this.tableloading1=false;
 
                 })
                     .catch((res) => {
@@ -440,6 +451,8 @@
               this.choose = false;
               return
           }
+          this.tableloading2=true;
+          this.choose=false;
 
           //選中上傳數據
           this.projectArray = data.map((res) => res.COMPRJCODE );
@@ -451,7 +464,8 @@
                     headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
                 } ).then((res) => {
                     this.tableData = res.data['content'].sort(this.sortFun("Category",  'ascending'));//用sort-change方法对分页后台排序时，默认排序列;
-                    this.choose = false;
+                    {#this.choose = false;#}
+                    this.tableloading2=false;
            })
       },
       //取消查找

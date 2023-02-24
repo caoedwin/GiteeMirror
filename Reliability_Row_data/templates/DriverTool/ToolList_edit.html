@@ -31,12 +31,15 @@
            </select>
                     </div>
                     <div class="col-md-1">
-                        <el-button size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
                     </div>
      </div>
 
 <template>
-   <el-table stripe border height="700" id="Tab" ref="multipleTable" :data="tableContent" tooltip-effect="dark" style="width: 1050px ;heighrt:200;" @selection-change="handleSelectionChange">
+   <el-table stripe border height="700" id="Tab" ref="multipleTable" :data="tableContent" tooltip-effect="dark" style="width: 1050px ;heighrt:200;" @selection-change="handleSelectionChange"
+   v-loading="tableloading"
+  element-loading-text="數據更新中，請稍後"
+  border>
     <el-table-column type="selection" width="50"></el-table-column>
     <el-table-column type="index" :index="indexMethod"></el-table-column>
       <el-table-column prop="Project" label="Project" width="200" show-overflow-tooltip>
@@ -133,7 +136,9 @@
                 {#phase:[],#}
                 showEdit: [], //显示编辑框
                 showBtn: [],
-                showBtnOrdinary: true
+                showBtnOrdinary: true,
+                tableloading:false,
+                elbuttonloading:false,
             }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -194,6 +199,8 @@
             },
             //上传搜索项：以此选项搜索符合条件的内容
              selectMsg :function(){
+                this.tableloading=true;
+                this.elbuttonloading=true;
                let Customer = this.$refs.Customer.value;
                let Project = this.$refs.Project.value;
                let Phase0 = this.$refs.Phase0.value;
@@ -214,6 +221,8 @@
                         this.customer[i]= this.tableContent[i].Customer;
                         {#this.phase[i] = this.tableContent[i].Phase;#}
                     }
+                    this.tableloading=false;
+                   this.elbuttonloading=false;
                 })
              },
             //点击编辑
