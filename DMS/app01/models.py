@@ -37,6 +37,7 @@ class UserInfo(models.Model):
     password = models.CharField(max_length=64)
     username = models.CharField(max_length=32)
     CNname = models.CharField(max_length=32, default='')
+    # Customer = models.CharField(max_length=32, null=True, blank=True, default='')
     Tel = models.CharField(max_length=32 ,null=True, blank=True,default='')
     Seat = models.CharField(max_length=108, choices=SeatChoice, default='KS-Plant5')
     email = models.EmailField()

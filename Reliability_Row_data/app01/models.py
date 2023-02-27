@@ -188,7 +188,9 @@ class ProjectinfoinDCT(models.Model):
     PQE = models.CharField('PQE', max_length=500, null=True, blank=True)
     SS = models.CharField("SS", max_length=30, null=True, blank=True)
     LD = models.CharField('LD', max_length=20, null=True, blank=True)
+    LDNum = models.CharField('LDNum', max_length=20, null=True, blank=True)
     DQAPL = models.CharField('DQAPL', max_length=20, null=True, blank=True)
+    DQAPLNum = models.CharField('DQAPLNum', max_length=20, null=True, blank=True)
     ModifiedDate = models.CharField('ModifiedDate', max_length=100, default="", null=True, blank=True)
 
 # class lessonlearn_Project(models.Model):

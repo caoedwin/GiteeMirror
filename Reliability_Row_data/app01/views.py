@@ -84,7 +84,10 @@ def ImportProjectinfoFromDCT():
                        "PPA": i['PPA'],
                        "PQE": i['PQE'],
                        "SS": i['SS'],
-                       "LD": i['LD'], "DQAPL": i['DQAPL'],
+                       "LD": i['LD'].split("-")[0],
+                       "LDNum": i['LD'].split("-")[1] if len(i['LD'].split("-"))==2 else "",
+                       "DQAPL": i['DQAPL'].split("-")[0],
+                       "DQAPLNum": i['DQAPL'].split("-")[1] if len(i['DQAPL'].split("-"))==2 else "",
                        "ModifiedDate": i['ModifyDate']
                        }
         # print(localPrjCre)
@@ -455,7 +458,7 @@ def ProjectInfoSearch(request):
                      "Prjengcode2": i.PrjEngCode2, "Mkt_Code": i.ProjectName,
                      "Size": i.Size, "CPU": i.CPU, "Platform": i.Platform, "VGA": i.VGA, "OS_Support": i.OSSupport,
                      "Type": i.Type,
-                     "PPA": i.PPA, "PQE": i.PQE, "SS": i.SS, "LD": i.LD, "DQA_PL": i.DQAPL,
+                     "PPA": i.PPA, "PQE": i.PQE, "SS": i.SS, "LD": i.LD, "LDNum": i.LDNum, "DQA_PL": i.DQAPL, "DQA_PLNum": i.DQAPLNum,
                      "Modified_Date": i.ModifiedDate}
                 )
             pass
@@ -477,7 +480,7 @@ def ProjectInfoSearch(request):
                      "Prjengcode2": i.PrjEngCode2, "Mkt_Code": i.ProjectName,
                      "Size": i.Size, "CPU": i.CPU, "Platform": i.Platform, "VGA": i.VGA, "OS_Support": i.OSSupport,
                      "Type": i.Type,
-                     "PPA": i.PPA, "PQE": i.PQE, "SS": i.SS, "LD": i.LD, "DQA_PL": i.DQAPL,
+                     "PPA": i.PPA, "PQE": i.PQE, "SS": i.SS, "LD": i.LD, "LDNum": i.LDNum, "DQA_PL": i.DQAPL, "DQA_PLNum": i.DQAPLNum,
                      "Modified_Date": i.ModifiedDate}
                 )
             pass
