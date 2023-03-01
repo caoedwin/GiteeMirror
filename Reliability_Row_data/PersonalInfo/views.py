@@ -5171,7 +5171,11 @@ def Summary2(request):
                     )
                 seniorityDiagram["seniorityDiagramData"] = seniorityDiagramData
             else:
-                pass  # 往年数据算年资无意义
+                seniorityTable = [
+                    {"Seniority": "往年數據的在職年資無意義", "A31": "Null", "A32": "Null", "C38": "Null", "senioritySummary": "Null"}
+                ]
+                # print(seniorityTable)
+                # pass  # 往年数据算年资无意义
             # print(seniorityTable,seniorityDiagram)
 
             # By学历
