@@ -526,7 +526,12 @@ class TestProjectSWAIO(models.Model):
         ('', ''),
         ('B(SDV)', 'B(SDV)'),
         ('C(SIT)', 'C(SIT)'),
+        ('Wave2', 'Wave2'),
+        ('Wave3', 'Wave3'),
         ('EELP+', 'EELP+'),
+        ('OOC', 'OOC'),
+        ('OOC2', 'OOC2'),
+        ('OOC3', 'OOC3'),
         ('Others', 'Others'),
     )
     Customer = models.CharField('Customer', choices=Customer_choice,max_length=20)
@@ -596,7 +601,12 @@ class TestPlanSWAIO(models.Model):
         ('', ''),
         ('B(SDV)', 'B(SDV)'),
         ('C(SIT)', 'C(SIT)'),
+        ('Wave2', 'Wave2'),
+        ('Wave3', 'Wave3'),
         ('EELP+', 'EELP+'),
+        ('OOC', 'OOC'),
+        ('OOC2', 'OOC2'),
+        ('OOC3', 'OOC3'),
         ('Others', 'Others'),
     )
     Choose = (

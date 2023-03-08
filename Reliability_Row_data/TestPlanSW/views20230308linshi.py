@@ -190,14 +190,16 @@ def TestPlanSW_summary(request):
                     SKUQ = 0
                     if TestPlanSW.objects.filter(**check_dic):
                         # print(TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTime")))
-                        BaseTime__sum = TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))["BaseTime__sum"]
-                        CodeBS = round(BaseTime__sum / 60, 0) if BaseTime__sum else 0
-                        BaseTimeSupport__sum = TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
-                                               "BaseTimeSupport__sum"]
-                        CodeFS = round(BaseTimeSupport__sum / 60, 0) if BaseTimeSupport__sum else 0
-                        TimewConfigFollowmatrix__sum = TestPlanSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
-                                "TimewConfigFollowmatrix__sum"]
-                        CodeTCM = round(TimewConfigFollowmatrix__sum / 60, 0) if TimewConfigFollowmatrix__sum else 0
+                        CodeBS = round(TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))["BaseTime__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))["BaseTime__sum"] else 0
+
+                        CodeFS = round(TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
+                                               "BaseTimeSupport__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
+                            "BaseTimeSupport__sum"] else 0
+
+                        CodeTCM = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
+                                "TimewConfigFollowmatrix__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
+                            "TimewConfigFollowmatrix__sum"] else 0
                         Projectinfos = TestProjectSW.objects.filter(**check_dic_Pro).first()
                         SKUlist = [Projectinfos.SKU1, Projectinfos.SKU2, Projectinfos.SKU3, Projectinfos.SKU4,
                                    Projectinfos.SKU5,
@@ -220,26 +222,41 @@ def TestPlanSW_summary(request):
                         for j in SKUlist:
                             if j:
                                 SKUQ += 1
-                        ConfigAutomationTime__sum = TestPlanSW.objects.filter(**check_dic).aggregate(
+
+                        CodeCAT = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigAutomationTime"))[
-                                "ConfigAutomationTime__sum"]
-                        CodeCAT = round(ConfigAutomationTime__sum / 60, 0) if ConfigAutomationTime__sum else 0
-                        ConfigLeverageTime__sum = TestPlanSW.objects.filter(**check_dic).aggregate(
+                                "ConfigAutomationTime__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigAutomationTime"))[
+                            "ConfigAutomationTime__sum"] else 0
+
+                        CodeCLT = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigLeverageTime"))[
-                                "ConfigLeverageTime__sum"]
-                        CodeCLT = round(ConfigLeverageTime__sum / 60, 0) if ConfigLeverageTime__sum else 0
-                        ConfigSmartTime__sum = TestPlanSW.objects.filter(**check_dic).aggregate(
+                                "ConfigLeverageTime__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigLeverageTime"))[
+                            "ConfigLeverageTime__sum"] else 0
+
+                        CodeCST = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigSmartTime"))[
-                                "ConfigSmartTime__sum"]
-                        CodeCST = round(ConfigSmartTime__sum / 60, 0) if ConfigSmartTime__sum else 0
-                        AttendTimeOptimize__sum = TestPlanSW.objects.filter(**check_dic).aggregate(
+                                "ConfigSmartTime__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigSmartTime"))[
+                            "ConfigSmartTime__sum"] else 0
+
+                        CodeATO = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(
                                 Sum("AttendTimeOptimize"))[
-                                "AttendTimeOptimize__sum"]
-                        CodeATO = round(AttendTimeOptimize__sum / 60, 0) if AttendTimeOptimize__sum else 0
-                        ConfigRetestTime__sum = TestPlanSW.objects.filter(**check_dic).aggregate(
+                                "AttendTimeOptimize__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(
+                                Sum("AttendTimeOptimize"))[
+                            "AttendTimeOptimize__sum"] else 0
+
+                        CodeCRT = round(
+                            TestPlanSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigRetestTime"))[
-                                "ConfigRetestTime__sum"]
-                        CodeCRT = round(ConfigRetestTime__sum / 60, 0) if ConfigRetestTime__sum else 0
+                                "ConfigRetestTime__sum"] / 60, 0) if TestPlanSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigRetestTime"))[
+                            "ConfigRetestTime__sum"] else 0
 
 
                         HC = 0 if not TestProjectSW.objects.filter(**check_dic_Pro).first().Full_Function_Duration else round(CodeATO / 6 / TestProjectSW.objects.filter(
@@ -264,36 +281,56 @@ def TestPlanSW_summary(request):
                     HC_R = 0
                     HCO_R = 0
                     if RetestItemSW.objects.filter(**check_dic):
-                        BaseTime__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))[
-                                "BaseTime__sum"]
-                        CodeBS_R = round(BaseTime__sum_R / 60, 0) if BaseTime__sum_R else 0
-                        BaseTimeSupport__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
-                                             "BaseTimeSupport__sum"]
-                        CodeFS_R = round(BaseTimeSupport__sum_R / 60, 0) if BaseTimeSupport__sum_R else 0
-                        TimewConfigFollowmatrix__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
-                                "TimewConfigFollowmatrix__sum"]
-                        CodeTCM_R = round(TimewConfigFollowmatrix__sum_R / 60, 0) if TimewConfigFollowmatrix__sum_R else 0
 
-                        ConfigAutomationTime__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(
+                        CodeBS_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))[
+                                "BaseTime__sum"] / 60,
+                            0) if RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTime"))["BaseTime__sum"] else 0
+
+                        CodeFS_R = round(RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
+                                             "BaseTimeSupport__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(Sum("BaseTimeSupport"))[
+                            "BaseTimeSupport__sum"] else 0
+
+                        CodeTCM_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
+                                "TimewConfigFollowmatrix__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(Sum("TimewConfigFollowmatrix"))[
+                            "TimewConfigFollowmatrix__sum"] else 0
+
+
+                        CodeCAT_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigAutomationTime"))[
-                                "ConfigAutomationTime__sum"]
-                        CodeCAT_R = round(ConfigAutomationTime__sum_R / 60, 0) if ConfigAutomationTime__sum_R else 0
-                        ConfigLeverageTime__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(
+                                "ConfigAutomationTime__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigAutomationTime"))[
+                            "ConfigAutomationTime__sum"] else 0
+
+                        CodeCLT_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigLeverageTime"))[
-                                "ConfigLeverageTime__sum"]
-                        CodeCLT_R = round(ConfigLeverageTime__sum_R / 60, 0) if ConfigLeverageTime__sum_R else 0
-                        ConfigSmartTime__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(
+                                "ConfigLeverageTime__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigLeverageTime"))[
+                            "ConfigLeverageTime__sum"] else 0
+
+                        CodeCST_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigSmartTime"))[
-                                "ConfigSmartTime__sum"]
-                        CodeCST_R = round(ConfigSmartTime__sum_R / 60, 0) if ConfigSmartTime__sum_R else 0
-                        AttendTimeOptimize__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(
+                                "ConfigSmartTime__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigSmartTime"))[
+                            "ConfigSmartTime__sum"] else 0
+
+                        CodeATO_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(
                                 Sum("AttendTimeOptimize"))[
-                                "AttendTimeOptimize__sum"]
-                        CodeATO_R = round(AttendTimeOptimize__sum_R / 60, 0) if AttendTimeOptimize__sum_R else 0
-                        ConfigRetestTime__sum_R = RetestItemSW.objects.filter(**check_dic).aggregate(
+                                "AttendTimeOptimize__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(
+                                Sum("AttendTimeOptimize"))[
+                            "AttendTimeOptimize__sum"] else 0
+
+                        CodeCRT_R = round(
+                            RetestItemSW.objects.filter(**check_dic).aggregate(
                                 Sum("ConfigRetestTime"))[
-                                "ConfigRetestTime__sum"]
-                        CodeCRT_R = round(ConfigRetestTime__sum_R / 60, 0) if ConfigRetestTime__sum_R else 0
+                                "ConfigRetestTime__sum"] / 60, 0) if RetestItemSW.objects.filter(**check_dic).aggregate(
+                                Sum("ConfigRetestTime"))[
+                            "ConfigRetestTime__sum"] else 0
 
 
                         HC_R = 0 if not TestProjectSW.objects.filter(**check_dic_Pro).first().Full_Function_Duration else round(CodeATO_R / 6 / TestProjectSW.objects.filter(
@@ -5767,25 +5804,25 @@ def TestPlanSW_search(request):
             Retestitems = RetestItemSW.objects.filter(Projectinfo=ProjectSum).first()
             # print(Retestitems)
             #, Owner__contains="DQA"
-            basetimesum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            basetimesum = TestPlanSW.objects.filter(Projectinfo=ProjectSum,Owner__contains="DQA").values('Category2').annotate(
                 Sum('BaseTime')).order_by('Category2')
             # basetimesumtotal = TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(
             #     Sum('BaseTime'))
             # print(basetimesum,'yy')
             # print(basetimesumtotal)
-            BTSsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            BTSsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('BaseTimeSupport')).order_by('Category2')
-            TFCsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            TFCsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('TimewConfigFollowmatrix')).order_by('Category2')
-            CATsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            CATsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('ConfigAutomationTime')).order_by('Category2')
-            CLTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            CLTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('ConfigLeverageTime')).order_by('Category2')
-            CSTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            CSTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('ConfigSmartTime')).order_by('Category2')
-            ATOsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            ATOsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('AttendTimeOptimize')).order_by('Category2')
-            CRTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category2').annotate(
+            CRTsum = TestPlanSW.objects.filter(Projectinfo=ProjectSum).values('Category2').annotate(
                 Sum('ConfigRetestTime')).order_by('Category2')
             # print(basetimesum)
             # print(basetimesum[1])
@@ -5925,32 +5962,32 @@ def TestPlanSW_search(request):
                 basetime_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('BaseTime'))['BaseTime__sum']/60, 0)
             else:
                 basetime_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']:
-                BTS1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']:
+                BTS1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('BaseTimeSupport'))['BaseTimeSupport__sum']/60, 0)
             else:
                 BTS1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('TimewConfigFollowmatrix'))['TimewConfigFollowmatrix__sum']:
-                TFC1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('TimewConfigFollowmatrix'))['TimewConfigFollowmatrix__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('TimewConfigFollowmatrix'))['TimewConfigFollowmatrix__sum']:
+                TFC1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('TimewConfigFollowmatrix'))['TimewConfigFollowmatrix__sum']/60, 0)
             else:
                 TFC1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigAutomationTime'))['ConfigAutomationTime__sum']:
-                CAT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigAutomationTime'))['ConfigAutomationTime__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigAutomationTime'))['ConfigAutomationTime__sum']:
+                CAT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigAutomationTime'))['ConfigAutomationTime__sum']/60, 0)
             else:
                 CAT1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigLeverageTime'))['ConfigLeverageTime__sum']:
-                CLT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigLeverageTime'))['ConfigLeverageTime__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigLeverageTime'))['ConfigLeverageTime__sum']:
+                CLT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigLeverageTime'))['ConfigLeverageTime__sum']/60, 0)
             else:
                 CLT1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigSmartTime'))['ConfigSmartTime__sum']:
-                CST1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigSmartTime'))['ConfigSmartTime__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigSmartTime'))['ConfigSmartTime__sum']:
+                CST1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigSmartTime'))['ConfigSmartTime__sum']/60, 0)
             else:
                 CST1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('AttendTimeOptimize'))['AttendTimeOptimize__sum']:
-                ATO1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('AttendTimeOptimize'))['AttendTimeOptimize__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('AttendTimeOptimize'))['AttendTimeOptimize__sum']:
+                ATO1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('AttendTimeOptimize'))['AttendTimeOptimize__sum']/60, 0)
             else:
                 ATO1_Total = 0
-            if TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigRetestTime'))['ConfigRetestTime__sum']:
-                CRT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigRetestTime'))['ConfigRetestTime__sum']/60, 0)
+            if TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigRetestTime'))['ConfigRetestTime__sum']:
+                CRT1_Total = round(TestPlanSW.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigRetestTime'))['ConfigRetestTime__sum']/60, 0)
             else:
                 CRT1_Total = 0
             if 'FFRT' in Phase:#FFRT，2，3，4，5，6上面的都一样，只是多了个Others，category,要在RetestItem里面算
@@ -8668,19 +8705,19 @@ def TestPlanSW_search_AIO(request):
             #     Sum('BaseTime'))
             # print(basetimesum,'yy')
             # print(basetimesumtotal)
-            BTSsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            BTSsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('Basetimesupport')).order_by('Category')
-            TFCsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            TFCsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('Configalltesttime')).order_by('Category')
-            CATsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            CATsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('ConfigAutomationtime')).order_by('Category')
-            CLTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            CLTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('ConfigLeveragetime')).order_by('Category')
-            CSTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            CSTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('ConfigSmarttime')).order_by('Category')
-            ATOsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            ATOsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('AttendtimeOptimize')).order_by('Category')
-            CRTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").values('Category').annotate(
+            CRTsum = TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).values('Category').annotate(
                 Sum('ConfigRetesttime')).order_by('Category')
             Num = 0
             for i in basetimesum:
@@ -8695,13 +8732,13 @@ def TestPlanSW_search_AIO(request):
                 Sum('AT_AttendTime')).order_by('Category')
             allSum.insert(0, {'category': 'Total',
                               'basetime': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('AT_AttendTime'))['AT_AttendTime__sum']/60, 0),
-                              'BTS': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('Basetimesupport'))['Basetimesupport__sum']/60, 0),
-                              'TFC': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('Configalltesttime'))['Configalltesttime__sum']/60, 0),
-                              'CAT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigAutomationtime'))['ConfigAutomationtime__sum']/60, 0),
-                              'CLT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigLeveragetime'))['ConfigLeveragetime__sum']/60, 0),
-                              'CST': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigSmarttime'))['ConfigSmarttime__sum']/60, 0),
-                              'ATO': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('AttendtimeOptimize'))['AttendtimeOptimize__sum']/60, 0),
-                              'CRT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum, Owner__contains="DQA").aggregate(Sum('ConfigRetesttime'))['ConfigRetesttime__sum']/60, 0),
+                              'BTS': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('Basetimesupport'))['Basetimesupport__sum']/60, 0),
+                              'TFC': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('Configalltesttime'))['Configalltesttime__sum']/60, 0),
+                              'CAT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigAutomationtime'))['ConfigAutomationtime__sum']/60, 0),
+                              'CLT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigLeveragetime'))['ConfigLeveragetime__sum']/60, 0),
+                              'CST': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigSmarttime'))['ConfigSmarttime__sum']/60, 0),
+                              'ATO': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('AttendtimeOptimize'))['AttendtimeOptimize__sum']/60, 0),
+                              'CRT': round(TestPlanSWAIO.objects.filter(Projectinfo=ProjectSum).aggregate(Sum('ConfigRetesttime'))['ConfigRetesttime__sum']/60, 0),
                               # 'HC': round(HC_Total, 2), 'HCOT': round(HCOT_Total, 2)
                               }
                           )

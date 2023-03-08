@@ -655,6 +655,8 @@ def PersonalInfo_search(request):
                 checkPerdic['DepartmentCode'] = LessonSearch
             if GroupEmployeesSearch and GroupEmployeesSearch != "All":
                 checkPerdic['GroupNum'] = GroupEmployeesSearch
+            if not YearSearch:
+                YearSearch = YearNow
             if not YearSearch or YearSearch == YearNow:  # 当年的到PersonalInfo里面查找,年份为空默认查找当年数据
                 for i in PersonalInfo.objects.filter(**checkPerdic):
                     if i.Status == "在職":
@@ -734,8 +736,14 @@ def PersonalInfo_search(request):
                     )
         if request.POST.get("isGetData") == "selectDetail":
             YearSearch = request.POST.get("Year")
+            YearNow = str(datetime.datetime.now().year)
+            if not YearSearch:
+                YearSearch = YearNow
             GroupNumSearch = request.POST.get("GroupEmployees")#不管是PersonalInfo還是PersonalInfoHisByYear裏面的數據，都用工號到PersonalInfo裏面搜索，因爲晉升記錄鏈接的他，并且頭像都是一樣的
-            registinfo = PersonalInfo.objects.get(GroupNum=GroupNumSearch)
+            if not YearSearch or YearSearch == YearNow:
+                registinfo = PersonalInfo.objects.get(GroupNum=GroupNumSearch)
+            else:
+                registinfo = PersonalInfoHisByYear.objects.get(GroupNum=GroupNumSearch, Year=YearSearch)
             # print(Positions.objects.filter(Positions_Code=registinfo.PositionNow).first(),registinfo.PositionNow)
             if Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first():
                 CurrentTitle = Positions.objects.filter(Item=registinfo.PositionNow, Year=YearSearch).first().Positions_Name
