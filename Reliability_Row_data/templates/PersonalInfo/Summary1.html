@@ -84,6 +84,11 @@ p {
         background-image: linear-gradient(to right, rgba(0,139,139,0), rgba(0,139,139,1));
         {#background-image: linear-gradient(to right, rgba(70,130,180,0), rgba(70,130,180,1));#}
     }
+    .el-table .cell {
+  white-space: pre;
+  {% comment %}// white-space: pre-wrap; // 也行。{% endcomment %}
+
+}
     </style>
 {% endblock %}
 {% block content %}
@@ -125,6 +130,8 @@ p {
 
     </div>
        <p class="selectItem" v-cloak  v-if="showCustomer1" style="color: #000000;font-size: medium;">當前表格信息：${ showCustomer1 }/${ showYear1 }</p>
+    <el-collapse v-model="activeNames" @change="handleChange">
+    {% comment %}<el-collapse-item title="各部加班時數" name="1">
         <template v-cloak>
           <el-table stripe border  :data="tableData1" style="width: 100%;" :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900}" id="out-table1"
           v-loading="tableloading"
@@ -133,7 +140,7 @@ p {
             <el-table-column prop="Department" label="部門名稱 --> (人均加班時數)" align="center" width="120"></el-table-column>
             <el-table-column prop="QM" label="QM" align="center" width="80"></el-table-column>
 {#            <el-table-column prop="IDL_Sum" label="IDL 人數 (扣除課/理級主管/產假人員/作業人員)" align="center" width="120"></el-table-column>#}
-            <el-table-column prop="IDL_Sum" label="IDL 人數 " align="center" width="120"></el-table-column>
+            <el-table-column prop="IDL_Sum" label="人數 " align="center" width="120"></el-table-column>
             <el-table-column prop="Jan" label="Jan" align="center" width="80"></el-table-column>
             <el-table-column prop="Feb" label="Feb" align="center"  width="80"></el-table-column>
             <el-table-column prop="Mar" label="Mar" align="center" width="80"></el-table-column>
@@ -156,31 +163,35 @@ p {
           <div class="Quatity" id="main2" style="height:500px;"></div>
       </div>
       <hr>
-      {% comment %}<div class="row" style="white-space: nowrap;">
-         <div class="col-md-3">
-            <template>
-                <div class="block">
-                    <label style="color: #ffffff;font-size: medium" for="Year">月份</label>
-                        <el-date-picker
-                              v-model="selectedMonth1"
-                              id="selectedMonth1"
-                              type="month"
-                              ref="selectedMonth1"
-                              value-format="yyyy-MM"
-                              placeholder="选择月">
-                        </el-date-picker>
-                </div>
-            </template>
-             <div class="inputError" v-cloak v-show="customerError">月份未選擇</div>
-            </div>
-              <div class="col-md-1">
-        <el-button size="small" style="background:#428bca;color:#fff;margin-top: 5px" value="Search" name="Search" @click="SEARCH2">Search</el-button>
-    </div>
-      </div>
-      <!--柱状图2-->
-      <div  class="container-echart" id="echarts1" v-cloak>
-          <div class="Quatity" id="main3" style="height:450px;"></div>
-      </div>{% endcomment %}
+    </el-collapse-item>{% endcomment %}
+    <el-collapse-item title="By 月份" name="2">
+        <div class="professionTablecontent">
+                       <el-table border :data="overtimeTable1" :span-method="daLeiSpanMethod" {% comment %}show-summary{% endcomment %}
+                       v-loading="tableloading2"
+                        element-loading-text="數據更新中，請稍後"
+                        border>
+                            <el-table-column prop="Chu" label="处" align="center"></el-table-column>
+                            <el-table-column prop="Program" label="项目" align="center"></el-table-column>
+                            <el-table-column prop="Jan" label="Jan" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Feb" label="Feb" align="center"  width="80"></el-table-column>
+                            <el-table-column prop="Mar" label="Mar" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Apr" label="Apr" align="center" width="80"></el-table-column>
+                            <el-table-column prop="May" label="May" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Jun" label="Jun" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Jul" label="Jul" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Aug" label="Aug" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Sep" label="Sep" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Oct" label="Oct" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Nov" label="Nov" align="center" width="80"></el-table-column>
+                            <el-table-column prop="Dec" label="Dec" align="center" width="80"></el-table-column>
+                       </el-table>
+                  </div>
+        <div class="container-echart"v-cloak>
+                      <div  id="monthDiagram1" style="height:400px;"></div>
+                      <div  id="monthDiagram2" style="height:400px;"></div>
+                  </div>
+    </el-collapse-item>
+    </el-collapse>
 
 </div>
 {% endblock %}
@@ -199,6 +210,7 @@ p {
         delimiters: ['${', '}'],
         data: function () {
             return {
+                activeNames:['1','2','3','4'],
                 Sum:{},
                 tableData1: [],
                 tableData2: [],
@@ -226,9 +238,14 @@ p {
                 customerError:false,
                 title: [],
                 Top10:[],
+                overtimeTable1:[],
+                heBingNum:[],
+                monthDiagram1Data:[],
+                monthDiagram2Data:[],
                 condition:null,
                 elbuttonloading: false,
                 tableloading: false,
+                tableloading2: false,
             }
         },
         mounted() {        // 页面渲染后触发该区域内容 即页面初始化
@@ -236,6 +253,9 @@ p {
             this.addDate();
        },
         methods: {
+            handleChange(val) {               //折疊面板變化
+                console.log(val);
+            },
 
 
             handleChange(val) {
@@ -252,8 +272,13 @@ p {
             getdata: function (e) {
                 this.elbuttonloading = true;
                 this.tableloading = true;
-                var myChart3 = echarts.init(document.getElementById('main2'));
-                    myChart3.showLoading() // 在获取数据之前, 显示加载动画
+                this.tableloading2 = true;
+                this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
+                this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
+                {#var myChart3 = echarts.init(document.getElementById('main2'));#}
+                {#    myChart3.showLoading() // 在获取数据之前, 显示加载动画#}
                 let data = {"isGetData": e,};
                 axios.post("/PersonalInfo/Summary1/", Qs.stringify(data), {
                     headers: {
@@ -263,11 +288,16 @@ p {
                 }).then((res) => {
                     this.selectItem = res.data.select;
                     this.tableData1 = res.data['content1'];
+                    this.overtimeTable1 = res.data['overtimeTable1'];
+                    this.heBingNum=res.data.heBingNum;
                     this.tableData2 = res.data['content2'];
                     this.Summary = res.data['Summary'];
                     this.Month = res.data['Month'];
                     this.Month_Singal = res.data['Month_Singal'];
                     this.Test_Status = res.data['Test_Status'];
+                    this.monthDiagram1Data=res.data.monthDiagram1Data;   //月份圖
+                    this.monthDiagram2Data=res.data.monthDiagram2Data;
+                    this.monthDiagram();
                     //1
                     var Month_label = [];
                     for (var i = 0; i < this.Month.length; i++) {
@@ -411,19 +441,20 @@ p {
                     {% comment %}var myChart4 = echarts.init(document.getElementById('main3'));{% endcomment %}
 
                     // 使用刚指定的配置项和数据显示图表。
-                    myChart3.setOption(option3, true);
+                    {#myChart3.setOption(option3, true);#}
 
                     {% comment %}myChart4.setOption(option4, true);{% endcomment %}
 
                     window.addEventListener('resize', function() {
-                            myChart3.resize();
+                            {#myChart3.resize();#}
                             {% comment %}myChart4.resize();{% endcomment %}
                          })
-                    myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                    {#myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画#}
 
                 });
                 this.elbuttonloading = false;
                 this.tableloading = false;
+                this.tableloading2 = false;
             },
 
             SEARCH1: function () {
@@ -432,8 +463,15 @@ p {
                     this.customerError = true;
                     return false;
                 }else{
+                    {% comment %}var myChart3 = echarts.init(document.getElementById('main2'));
+                        myChart3.showLoading() // 在获取数据之前, 显示加载动画{% endcomment %}
+                    this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                    this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                    this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
+                    this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
                     this.elbuttonloading = true;
                     this.tableloading = true;
+                    this.tableloading2 = true;
                     this.customerError = false;
                     {#let Department_Code = this.$refs.Department_Code.value;#}
                     let Date = this.$refs.selectedYear1.value;
@@ -448,10 +486,15 @@ p {
                     }).then((res) => {
                     this.selectItem = res.data.select;
                     this.tableData1 = res.data['content1'];
+                    this.overtimeTable1 = res.data['overtimeTable1'];
+                    this.heBingNum=res.data.heBingNum;
                     this.Summary = res.data['Summary'];
                     this.Month = res.data['Month'];
                     this.Month_Singal = res.data['Month_Singal'];
                     this.Test_Status = res.data['Test_Status'];
+                    this.monthDiagram1Data=res.data.monthDiagram1Data;   //月份圖
+                    this.monthDiagram2Data=res.data.monthDiagram2Data;
+                    this.monthDiagram();
                     //1
                     var Month_label = [];
                     for (var i = 0; i < this.Month.length; i++) {
@@ -523,190 +566,353 @@ p {
                         ],
                         series: this.Month
                     };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
 
                     // 使用刚指定的配置项和数据显示图表。
-                    myChart3.setOption(option3, true);
+                    {#myChart3.setOption(option3, true);#}
 
                     {#myChart4.setOption(option4, true);#}
 
                     window.addEventListener('resize', function() {
-                            myChart3.resize();
+                            {#myChart3.resize();#}
                             {#myChart4.resize();#}
                          })
                     this.elbuttonloading = false;
                     this.tableloading = false;
+                    this.tableloading2 = false;
+                    {#myChart3.hideLoading(); // 当服务器数据获取成功之后, 隐藏加载动画#}
                 });
             }
 
             },
 
-            SEARCH2: function () {
-                if (this.$refs.selectedMonth1.value == '') {
-                    this.customerError = true;
-                    return false;
-                } else {
-                    this.customerError = false;
-                    let Month = this.$refs.selectedMonth1.value;
-                    let data = {
-                        "isGetData": "SEARCH2",
-                        "Month": Month,
-                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
-                    }
-                    axios.post("/PersonalInfo/Summary1/", Qs.stringify(data, {indices: false}), {
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
-                    }).then((res) => {
-                    this.selectItem = res.data.select;
-                    //this.tableData1 = res.data['content1'];
-                    this.Summary = res.data['Summary'];
-                    this.Month = res.data['Month'];
-                    this.Month_Singal = res.data['Month_Singal'];
-                    this.Test_Status = res.data['Test_Status'];
-                    {#this.settable = false;#}
+            monthDiagram(){
+                let _this = this
+                const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 11,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
 
-                    //var Month_label = [];
-                    //for (var i = 0; i < this.Month.length; i++) {
-                    //    var getMonth_label = this.Month[i].name;
-                    //    Month_label.push(getMonth_label);
-                   // }
-
-                    var Month_Singal_label = [];
-                    for (var i = 0; i < this.Month_Singal.length; i++) {
-                        var getMonth_Singal_label = this.Month_Singal[i].name;
-                        Month_Singal_label.push(getMonth_Singal_label);
-                    }
-                    {% comment %}
-                      var option3 = {
-                        color: ['#589800', '#FF0000', '#0080FF', '#B766AD'],
-                        title: {
-                            text: '有效加班時數',
-                            textStyle: {
-                                fontSize: 20,
-                            },
-                            x: 'center',
-                            y: 'top',
-                            textAlign: 'left',
-                        },
-                        toolbox:{//保存圖片
-                            feature:{
-                                saveAsImage:{}
+                var option1 = {
+                    color: ['#FFC0CB', '#9370DB', '#87CEFA', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
+                    title: {
+                        text: '平均加班對比',
+                        textStyle: {
+                        fontSize:30
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
                             }
-                        },
-                        tooltip: {
-                            trigger: 'axis',
-                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                            },
-                            textAlign: 'left',
-                        },
-                        legend: {
-                            left: 'center',
-                            top: 'bottom',
-                            data: Month_label,
-                        },
-                        grid: {
-                            left: '3%',
-                            right: '4%',
-                            bottom: '3%',
-                            containLabel: true
-                        },
-                        xAxis: [
-                            {
-                                type: 'category',
-                                data: this.Summary.Department_key,
-                                axisLabel: {//坐标轴刻度标签的相关设置。
+                        }
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        data: ['A31', 'A32', 'C38',]
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                            axisLabel: {//坐标轴刻度标签的相关设置。
                                     interval: 0,
                                     rotate: "45"
                                 },
-                                axisTick: {
-                                    alignWithLabel: true
-                                }
-                            }
-
-                        ],
-                        yAxis: [
-                            {
-                                type: 'value'
-                            }
-                        ],
-                        series: this.Month
-                    };
-                    var myChart3 = echarts.init(document.getElementById('main2'));
-                 {% endcomment %}
-                    var option4 = {
-                        tooltip: {
-                            trigger: 'axis',
                             axisPointer: {
-                                type: 'cross',
-                                crossStyle: {
-                                    color: '#999'
-                                }
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '加班/人',
+                            min: 0,
+                            {#max: 1000,#}
+                            {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
+                            {#interval: 200,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
+                            axisLabel: {
+                                formatter: '{value}'
                             }
                         },
-                        toolbox: {
-                            feature: {
-                                dataView: {show: true, readOnly: false},
-                                magicType: {show: true, type: ['line', 'bar']},
-                                restore: {show: true},
-                                saveAsImage: {show: true}
-                            }
-                        },
-                        legend: {
-                            left: 'center',
-                            top: 'bottom',
-                            data: this.Month_Singal_label
-                        },
-                        grid: {
-                            left: '3%',
-                            right: '4%',
-                            bottom: '3%',
-                            containLabel: true
-                        },
-                        xAxis: [
-                            {
-                                type: 'category',
-                                data: this.Summary.Department_key,
-                                axisLabel : {//坐标轴刻度标签的相关设置。
-                                interval:0,
-                                rotate:"45"
-                            },
-                                axisPointer: {
-                                    type: 'shadow'
-                                }
-                            }
+
+                    ],
+                    series:this.monthDiagram1Data,
+                };
+                {% comment %}var option2 = {
+                    color: ['#808080'],
+                    title: [{
+                        text: '平均請假對比',
+                        textStyle: {
+                        fontSize:30
+                        }
+
+                    },
+                        //x軸表格
+                        {
+                        text: '\n人數\n占總%',
+                        bottom: 24, // 控制表格Y轴方向
+                        left: 0,
+                        textStyle: {
+                          color: '#000000',
+                          lineHeight: 26,
+                          fontSize: 16,
+                          fontWeight:'normal',
+                      }
+
+                    }
                         ],
-                        yAxis: [
-                            {
-                                type: 'value',
-                                max: 100,
-                                interval: 20,
-                                name: '當月加班時數',
-                            },
-                            {
-                                max: 150,
-                                interval: 30,
-                                type: 'value',
-                                name: 'IDL人數',
+
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
                             }
-                        ],
-                        series: this.Month_Singal,
-                    };
+                        }
+                    },
+                    grid: {
+                      bottom: 120,
+                      left: '80px',
+                      right: '50px'
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        data: ['A31', 'A32', 'C38',]
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                            {#axisLabel: {//坐标轴刻度标签的相关设置。#}
+                            {#        interval: 0,#}
+                            {#        rotate: "45"#}
+                            {#    },#}
+                            axisTick: {
+                                length: 94 // 竖线的长度
+                            },
+                            axisLabel: {//坐标轴刻度标签的相关设置。
+                                    interval: 0,
+                                    rotate: "45"//x軸表格的竪綫綫，就是吧x的刻度延長
+                                //x軸表格
+                              formatter(value, index) {
+                                  console.log(value)
+                                var data1 = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                                {#var data1 = ["助技員", "技術員", "助工師", "工程師", "資工師", "副課長", "襄理"]#}
+                                var data2 = _this.monthDiagram2Data.LIZHI
+                                var data3 = _this.monthDiagram2Data.LIZHILV
+                                {#var data2 = [32, 30, 63, 23, 48, 4, 4]#}
+                                {#  console.log(data2,data3)#}
+                                var indexNum = 0
+                                for (var i = 0; i < data1.length; i++) {
+                                  if (value === data1[i]) {
+                                    indexNum = i
+                                  }
+                                }
+                                return (
+                                  '{table|' +
+                                  value +
+                                  '}\n{table|' +
+                                  data2[indexNum] +
+                                  '}\n{table|'+
+                                  data3[indexNum] +
+                                  '}\n{table|' +
+                                  '}'
+                                )
+                              },
+                              rich: {
+                                table: {
+                                  lineHeight: 30,
+                                  align: 'center',
+                                  fontSize:16
 
-                    var myChart4 = echarts.init(document.getElementById('main3'));
+                                }
+                              }
 
-                    // 使用刚指定的配置项和数据显示图表。
-                    //myChart3.setOption(option3, true);
+                            },
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '請假/人',
+                            min: 0,
+                            {#max: 30,#}
+                            {#interval: 5,#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        },
+                        //第二y軸
+                        {
+                            type: 'value',
+                            name: '離職率%',
+                            min: 0,
+                            {#max: 0.3,#}
+                            {#interval: 0.05,#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        }
+                    ],
+                    series: this.monthDiagram2Data,
+                    {#graphic: list#}//x軸表格的橫綫
+                };{% endcomment %}
+                var option2 = {
+                    color: ['#FFC0CB', '#9370DB', '#87CEFA', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
+                    title: {
+                        text: '平均請假對比',
+                        textStyle: {
+                        fontSize:30
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
+                            }
+                        }
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        data: ['A31', 'A32', 'C38',]
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                            axisLabel: {//坐标轴刻度标签的相关设置。
+                                    interval: 0,
+                                    rotate: "45"
+                                },
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '請假/人',
+                            min: 0,
+                            {#max: 1000,#}
+                            {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
+                            {#interval: 200,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        },
 
-                    myChart4.setOption(option4, true);
+                    ],
+                    series:this.monthDiagram2Data,
+                };
+                _this.myChart1.clear();
+                _this.myChart2.clear();
+                _this.myChart1.setOption(option1);
+                _this.myChart2.setOption(option2);
+                window.addEventListener('resize', ()=>{
+                   _this.myChart1.resize();
+                   _this.myChart2.resize();
+                 // 使用刚指定的配置项和数据显示图表。
+                })
+                   _this.myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                   _this.myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+            },
 
-                    window.addEventListener('resize', function() {
-                           // myChart3.resize();
-                            myChart4.resize();
-                         })
-
-                });
-            }
-                    {#this.settable = true;#}
+            daLeiSpanMethod({ row, column, rowIndex, columnIndex }) {
+                if (columnIndex === 0) {    //用于设置要合并的列
+                      if (rowIndex===0) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[0],　　　　　//合并的行数
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }else if (rowIndex===this.heBingNum[0]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[1],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }else if (rowIndex===this.heBingNum[0]+this.heBingNum[1]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[2],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }else if (rowIndex===this.heBingNum[0]+this.heBingNum[1]+this.heBingNum[2]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[3],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                        }else if (rowIndex===this.heBingNum[0]+this.heBingNum[1]+this.heBingNum[2]+this.heBingNum[3]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[4],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }else if (rowIndex===this.heBingNum[0]+this.heBingNum[1]+this.heBingNum[2]+this.heBingNum[3]+this.heBingNum[4]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[5],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }else if (rowIndex===this.heBingNum[0]+this.heBingNum[1]+this.heBingNum[2]+this.heBingNum[3]+this.heBingNum[4]+this.heBingNum[5]) {   //用于设置合并开始的行号
+                        return {
+                          rowspan:this.heBingNum[6],　　　　　//合并的行
+                          colspan: 1          //合并的列数，设为０则直接不显示
+                        };
+                      }
+                      else {
+                        return {
+                          rowspan: 0,
+                          colspan: 0
+                        };
+                      }
+                }
             },
 
         }

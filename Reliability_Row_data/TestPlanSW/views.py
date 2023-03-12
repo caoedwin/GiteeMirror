@@ -8231,7 +8231,7 @@ def TestPlanSW_Edit_AIO(request):
                 # print(responseData)
                 check_dic_list = []
                 check_list_list = []
-                Phase = responseData['phase']
+                Phase = str(responseData['phase'])
 
                 if Phase == '0':
                     Phase = 'B(SDV)'

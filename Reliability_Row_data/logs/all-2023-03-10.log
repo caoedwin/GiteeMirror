@@ -1,0 +1,1433 @@
+[2023-03-10 07:54:59,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 302 0
+[2023-03-10 07:54:59,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-03-10 07:55:00,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-03-10 07:55:00,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-03-10 07:55:00,940] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 07:55:00,950] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2023-03-10 07:55:02,716] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 07:55:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-03-10 07:55:02,730] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-03-10 07:55:02,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-03-10 07:55:03,003] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 07:55:03,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-03-10 07:55:03,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 07:55:03,167] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 07:55:03,258] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 07:55:03,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 07:55:08,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 07:55:08,776] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 07:55:08,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 07:55:08,943] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 07:55:09,011] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 07:55:09,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 07:55:13,166] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 07:55:13 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 07:55:13,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 07:55:24,076] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4077, in Summary1
+    print(k.GroupNum)
+AttributeError: 'tuple' object has no attribute 'GroupNum'
+[2023-03-10 07:55:24,080] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 07:55:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 07:55:24,080] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103447
+[2023-03-10 08:03:56,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:03:56,578] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:03:56,621] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:03:56,747] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:03:56,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:03:57,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:03:58,295] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:03:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:03:58,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:04:09,685] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0
+AttributeError: 'list' object has no attribute 'filter'
+[2023-03-10 08:04:09,689] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:04:09 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:04:09,689] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107462
+[2023-03-10 08:22:21,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:22:21,532] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:22:21,539] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:22:21,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:22:22,015] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:22:22,561] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:22:23,835] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:22:23 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:22:23,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:22:41,379] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:22:41 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:22:41,386] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 08:24:51,260] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:24:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:24:51,276] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 08:25:52,245] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4083, in Summary1
+    print(m["Customer"])
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 08:25:52,252] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:25:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:25:52,253] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103528
+[2023-03-10 08:26:26,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:26:26,298] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:26:26,302] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:26:26,420] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:26:26,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:26:26,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:26:27,503] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:26:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:26:27,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:26:50,201] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:26:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:26:50,217] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 08:27:54,601] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:27:54 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:27:54,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 08:29:14,611] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:29:14 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:29:14,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 08:51:14,304] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0
+AttributeError: 'list' object has no attribute 'filter'
+[2023-03-10 08:51:14,309] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:51:14 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:51:14,310] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107462
+[2023-03-10 08:52:13,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:52:13,844] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:52:13,857] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:52:14,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:52:14,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:52:15,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:52:18,122] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:52:18 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:52:18,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:52:29,717] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4082, in Summary1
+    print(m, m["customer"])
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 08:52:29,721] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:52:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:52:29,722] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107388
+[2023-03-10 08:53:01,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:53:02,098] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:53:02,114] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:53:02,467] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:53:02,813] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:53:03,443] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:53:04,644] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:53:04 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:53:04,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:53:17,393] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0
+AttributeError: 'list' object has no attribute 'filter'
+[2023-03-10 08:53:17,397] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:53:17 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:53:17,398] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107647
+[2023-03-10 08:55:36,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:55:36,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:55:37,199] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:55:37,221] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:55:37,225] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:55:37,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:55:38,706] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:55:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:55:38,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:55:51,099] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0
+AttributeError: 'list' object has no attribute 'filter'
+[2023-03-10 08:55:51,102] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:55:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:55:51,102] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107228
+[2023-03-10 08:56:38,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 08:56:39,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 08:56:40,648] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:56:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:56:40,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 08:56:41,627] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 08:56:41,639] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 08:56:41,644] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 08:56:41,691] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 08:56:53,543] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4083, in Summary1
+    print(m["Customer"])
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 08:56:53,548] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 08:56:53 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 08:56:53,548] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 106978
+[2023-03-10 09:09:37,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:09:37,444] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:09:37,839] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:09:38,286] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:09:38,295] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:09:38,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:09:40,062] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:09:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:09:40,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:09:48,849] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4073, in Summary1
+    GroupNum=F["GroupNum"], Year=YearSearch).first().Customer, CharField()))
+TypeError: 'type' object is not subscriptable
+[2023-03-10 09:09:48,854] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:09:48 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:09:48,854] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101568
+[2023-03-10 09:12:43,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:12:43,992] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:12:44,000] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:12:44,477] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:12:44,480] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:12:45,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:12:47,566] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:12:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:12:47,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:12:56,353] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4073, in Summary1
+    GroupNum=F["GroupNum"], Year=YearSearch).first().Customer)
+TypeError: 'type' object is not subscriptable
+[2023-03-10 09:12:56,357] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:12:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:12:56,357] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101676
+[2023-03-10 09:54:34,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:54:34,321] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:54:34,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:54:34,491] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:54:34,684] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:54:34,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:54:36,355] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:54:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:54:36,363] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:54:50,515] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4091, in Summary1
+    if num["Customer"] == i["Customer"]:
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 09:54:50,519] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:54:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:54:50,521] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107454
+[2023-03-10 09:56:32,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:56:33,665] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:56:33,687] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:56:33,699] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:56:34,278] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:56:34,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:56:35,256] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:56:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:56:35,274] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:56:58,718] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4092, in Summary1
+    if num["Customer"] == i["Customer"]:
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 09:56:58,721] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:56:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:56:58,722] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107196
+[2023-03-10 09:57:46,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:57:46,596] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:57:46,600] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:57:46,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:57:46,615] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:57:47,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:57:48,391] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:57:48 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:57:48,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:58:01,471] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4093, in Summary1
+    overtimedic[j[0]] += num.Total
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+[2023-03-10 09:58:01,476] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:58:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:58:01,476] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107023
+[2023-03-10 09:58:53,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 09:58:53,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 09:58:53,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 09:58:53,967] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 09:58:53,970] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 09:58:54,389] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 09:58:56,120] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:58:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:58:56,140] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 09:59:18,922] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 09:59:18 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 09:59:18,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10044
+[2023-03-10 10:03:27,077] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:03:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:03:27,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9951
+[2023-03-10 10:15:20,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 10:15:20,918] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 10:15:21,138] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 10:15:21,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 10:15:21,180] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 10:15:21,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:15:22,730] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:15:22 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:15:22,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 10:15:40,224] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4092, in Summary1
+    if PersonalInfoHisByYear.objects.filter(GroupNum=num.GroupNum, Year=YearSearch).first().Customer == i["Customer"]:
+AttributeError: 'NoneType' object has no attribute 'Customer'
+[2023-03-10 10:15:40,249] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:15:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:15:40,252] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 107382
+[2023-03-10 10:21:42,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 10:21:43,082] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 10:21:43,117] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 10:21:43,247] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 10:21:43,300] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 10:21:43,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:21:44,489] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:21:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:21:44,494] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 10:22:04,225] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:22:04 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:22:04,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10044
+[2023-03-10 10:22:30,570] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:22:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:22:30,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9737
+[2023-03-10 10:22:41,273] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:22:41 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:22:41,335] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 3847
+[2023-03-10 10:23:02,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/workovertime/?Year=2020 HTTP/1.1" 302 0
+[2023-03-10 10:23:02,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/PersonalInfo/workovertime/%3FYear%3D2020 HTTP/1.1" 200 4102
+[2023-03-10 10:23:02,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-03-10 10:23:02,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-03-10 10:23:03,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:23:05,529] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:23:05 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2023-03-10 10:23:05,541] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-03-10 10:23:06,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42020
+[2023-03-10 10:23:07,025] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:23:08,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:23:14,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/workovertime/ HTTP/1.1" 200 1356521
+[2023-03-10 10:23:14,539] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:23:21,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/workovertime/?Year=2020 HTTP/1.1" 200 288332
+[2023-03-10 10:23:21,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:23:56,777] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:23:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:23:56,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 3847
+[2023-03-10 10:29:23,104] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4128, in Summary1
+    leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+KeyError: 'Jan'
+[2023-03-10 10:29:23,134] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:29:23 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:29:23,137] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 108192
+[2023-03-10 10:30:11,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 10:30:11,601] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 10:30:11,604] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 10:30:11,871] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 10:30:12,106] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 10:30:12,290] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:30:13,763] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:30:13 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:30:13,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 10:30:29,457] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:30:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:30:29,475] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10116
+[2023-03-10 10:31:22,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:31:22,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/leaveinfo/ HTTP/1.1" 200 49183
+[2023-03-10 10:31:22,550] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:31:27,669] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/leaveinfo/add/ HTTP/1.1" 200 29141
+[2023-03-10 10:31:27,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:31:31,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:31:33,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfohisbyyear/ HTTP/1.1" 200 3748603
+[2023-03-10 10:31:33,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:31:56,637] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:31:59,054] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:05,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfohisbyyear/3250/change/ HTTP/1.1" 200 39753
+[2023-03-10 10:32:05,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:32:12,314] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:25,319] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:26,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:28,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:33,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:36,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:39,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:40,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:32:43,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 10:33:44,488] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:33:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/PersonalInfo/leaveinfo/add/ POST
+[2023-03-10 10:33:44,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/PersonalInfo/leaveinfo/add/ HTTP/1.1" 200 30729
+[2023-03-10 10:33:44,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:36:45,531] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:36:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/PersonalInfo/leaveinfo/add/ POST
+[2023-03-10 10:36:45,539] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/PersonalInfo/leaveinfo/add/ HTTP/1.1" 302 0
+[2023-03-10 10:36:45,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/leaveinfo/ HTTP/1.1" 200 53595
+[2023-03-10 10:36:45,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:37:00,941] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/leaveinfo/1077/change/ HTTP/1.1" 200 30045
+[2023-03-10 10:37:00,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:37:07,010] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:37:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/PersonalInfo/leaveinfo/1077/change/ POST
+[2023-03-10 10:37:07,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/PersonalInfo/leaveinfo/1077/change/ HTTP/1.1" 302 0
+[2023-03-10 10:37:07,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/leaveinfo/ HTTP/1.1" 200 53595
+[2023-03-10 10:37:07,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 10:37:28,588] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:37:28 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:37:28,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10132
+[2023-03-10 10:39:31,514] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:39:31 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:39:31,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10119
+[2023-03-10 10:42:26,124] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:42:26 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:42:26,143] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 3895
+[2023-03-10 10:42:41,094] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 10:42:41 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 10:42:41,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 9809
+[2023-03-10 11:00:13,492] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4077, in Summary1
+    GroupNum=F("GroupNum"), Year=YearSearch).first() else "员工%s 該年份的Customer缺失" % k.GroupNum)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 979, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): C38.
+[2023-03-10 11:00:13,497] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:00:13 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:00:13,498] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 110225
+[2023-03-10 11:01:16,036] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:01:16,148] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:01:16,193] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:01:16,387] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:01:16,448] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:01:16,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:01:18,040] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:01:18 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:01:18,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:01:29,675] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4077, in Summary1
+    GroupNum=F("GroupNum"), Year=YearSearch).first() else "员工%s 該年份的Customer缺失" % F("GroupNum"))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 979, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): A32.
+[2023-03-10 11:01:29,680] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:01:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:01:29,681] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 111613
+[2023-03-10 11:02:13,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:02:14,470] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:02:14,472] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:02:14,979] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:02:14,989] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:02:15,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:02:19,313] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:02:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:02:19,336] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:02:30,099] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4077, in Summary1
+    GroupNum=F("GroupNum"), Year=YearSearch).first() else '')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 979, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): C38.
+[2023-03-10 11:02:30,109] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:02:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:02:30,110] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 110125
+[2023-03-10 11:03:34,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:03:34,871] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:03:34,886] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:03:34,900] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:03:34,904] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:03:35,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:03:36,724] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:03:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:03:36,747] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:03:44,902] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4076, in Summary1
+    GroupNum=F("GroupNum"), Year=YearSearch).first().Customer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 979, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): A32.
+[2023-03-10 11:03:44,907] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:03:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:03:44,908] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 111478
+[2023-03-10 11:07:43,208] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:07:43,980] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:07:43,987] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:07:44,011] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:07:44,504] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:07:44,656] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:07:45,775] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:07:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:07:45,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:08:06,135] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:08:06 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:08:06,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10119
+[2023-03-10 11:12:04,631] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:12:04 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:12:04,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10119
+[2023-03-10 11:13:03,116] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    print(m["Customer"])
+TypeError: 'WorkOvertime' object is not subscriptable
+[2023-03-10 11:13:03,126] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:13:03 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:13:03,127] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103910
+[2023-03-10 11:13:42,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:13:43,922] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:13:43,927] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:13:44,032] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:13:44,572] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:13:44,727] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:13:46,043] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:13:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:13:46,063] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:13:56,482] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4082, in Summary1
+    for m in WorkOvertimeQuerySet:
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 449, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 50, in pre_sql_setup
+    self.setup_query()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 41, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 244, in get_select
+    sql, params = self.compile(col, select_format=True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 392, in compile
+    return node.output_field.select_format(self, sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 259, in output_field
+    raise FieldError('Cannot resolve expression type, unknown output_field')
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+[2023-03-10 11:13:56,491] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:13:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:13:56,491] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 153430
+[2023-03-10 11:15:12,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:15:13,674] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:15:13,678] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:15:13,696] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:15:14,290] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:15:14,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:15:15,803] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:15:15 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:15:15,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:15:24,003] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4082, in Summary1
+    for m in list(WorkOvertimeQuerySet):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 449, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 50, in pre_sql_setup
+    self.setup_query()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 41, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 244, in get_select
+    sql, params = self.compile(col, select_format=True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 392, in compile
+    return node.output_field.select_format(self, sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 259, in output_field
+    raise FieldError('Cannot resolve expression type, unknown output_field')
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+[2023-03-10 11:15:24,008] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:15:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:15:24,009] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 153442
+[2023-03-10 11:15:48,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:15:49,011] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:15:49,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:15:49,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:15:49,297] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:15:49,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:15:51,287] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:15:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:15:51,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:15:56,688] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4085, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1181, in build_filter
+    condition = self.build_lookup(lookups, reffed_expression, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1084, in build_lookup
+    lookup_class = lhs.get_lookup(lookup_name)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 316, in get_lookup
+    return self.output_field.get_lookup(lookup)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 259, in output_field
+    raise FieldError('Cannot resolve expression type, unknown output_field')
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+[2023-03-10 11:15:56,704] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:15:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:15:56,705] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143494
+[2023-03-10 11:16:41,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:16:41,835] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:16:42,350] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:16:42,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:16:42,393] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:16:42,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:16:44,529] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:16:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:16:44,541] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:16:52,213] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4086, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1181, in build_filter
+    condition = self.build_lookup(lookups, reffed_expression, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1084, in build_lookup
+    lookup_class = lhs.get_lookup(lookup_name)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 316, in get_lookup
+    return self.output_field.get_lookup(lookup)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 259, in output_field
+    raise FieldError('Cannot resolve expression type, unknown output_field')
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+[2023-03-10 11:16:52,225] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:16:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:16:52,227] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143458
+[2023-03-10 11:20:12,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:20:13,467] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:20:13,470] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:20:13,496] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:20:13,497] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:20:13,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:20:15,368] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:20:15 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:20:15,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:20:20,793] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4085, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1181, in build_filter
+    condition = self.build_lookup(lookups, reffed_expression, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1084, in build_lookup
+    lookup_class = lhs.get_lookup(lookup_name)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 316, in get_lookup
+    return self.output_field.get_lookup(lookup)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 259, in output_field
+    raise FieldError('Cannot resolve expression type, unknown output_field')
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+[2023-03-10 11:20:20,799] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:20:20 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:20:20,800] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143458
+[2023-03-10 11:39:00,326] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 11:39:00,496] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 11:39:00,497] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 11:39:00,747] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 11:39:00,821] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 11:39:01,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 11:39:02,613] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:39:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:39:02,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 11:39:11,947] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:39:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:39:11,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10039
+[2023-03-10 11:39:51,445] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:39:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:39:51,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10039
+[2023-03-10 11:41:19,072] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:41:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:41:19,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10039
+[2023-03-10 11:49:47,397] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:49:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:49:47,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10039
+[2023-03-10 11:53:34,090] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 11:53:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 11:53:34,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10119
+[2023-03-10 12:03:38,418] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=Value(F("Department_Code")[0:7], CharField()))
+TypeError: 'F' object is not subscriptable
+[2023-03-10 12:03:38,423] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 12:03:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 12:03:38,423] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101971
+[2023-03-10 12:06:58,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 12:06:59,628] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 12:06:59,633] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 12:06:59,650] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 12:07:00,258] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 12:07:00,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 12:07:01,668] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 12:07:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 12:07:01,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 12:07:10,131] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=F("Department_Code")[0:7])
+TypeError: 'F' object is not subscriptable
+[2023-03-10 12:07:10,135] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 12:07:10 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 12:07:10,136] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101931
+[2023-03-10 13:03:37,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:03:37,180] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:03:37,233] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:03:37,313] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:03:37,372] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:03:37,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:03:38,376] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:03:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:03:38,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:03:44,176] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=Value(F("Department_Code")[0:7], CharField()))
+TypeError: 'F' object is not subscriptable
+[2023-03-10 13:03:44,181] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:03:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:03:44,181] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101971
+[2023-03-10 13:06:58,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:06:59,998] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:07:00,008] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:07:00,029] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:07:00,703] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:07:00,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:07:02,080] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:07:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:07:02,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:07:07,763] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4083, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？annotate，就像filter一样，不改变查询集但是返回一个新的查询集。你需要重新分配
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Customer' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, chuinfo, id
+[2023-03-10 13:07:07,768] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:07:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:07:07,768] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143559
+[2023-03-10 13:07:56,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:07:56,532] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:07:56,535] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:07:56,978] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:07:56,981] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:07:57,444] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:07:58,665] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:07:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:07:58,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:08:07,277] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4083, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？annotate，就像filter一样，不改变查询集但是返回一个新的查询集。你需要重新分配
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Customer' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, chuinfo, id
+[2023-03-10 13:08:07,282] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:08:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:08:07,283] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143559
+[2023-03-10 13:09:12,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:09:13,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:09:13,513] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:09:13,517] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:09:13,553] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:09:13,554] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:09:14,836] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:09:14 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:09:14,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:09:24,766] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4083, in Summary1
+    WorkOvertimeQuerySet.filter(Customer=i["Customer"]).aggregate(Sum("Total"))["Total__sum"] if WorkOvertimeQuerySet.filter(Customer=i["Customer"]) else 0 # queryset增加字段二次运用时，无法保存下来，用的是原始的数据？annotate，就像filter一样，不改变查询集但是返回一个新的查询集。你需要重新分配
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+[2023-03-10 13:09:24,771] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:09:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:09:24,771] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 112422
+[2023-03-10 13:10:24,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:10:25,224] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:10:25,228] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:10:25,764] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:10:25,768] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:10:25,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:10:27,164] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:10:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:10:27,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:10:35,544] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=F("Department_Code")[:8])
+TypeError: 'F' object is not subscriptable
+[2023-03-10 13:10:35,551] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:10:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:10:35,553] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101929
+[2023-03-10 13:11:10,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:11:12,262] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:11:12,270] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:11:12,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:11:12,296] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:11:12,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:11:13,166] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:11:13 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:11:13,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:11:19,008] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=str(F("Department_Code"))[:8])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 979, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): F(Depart.
+[2023-03-10 13:11:19,022] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:11:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:11:19,023] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 111388
+[2023-03-10 13:44:08,103] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:44:08,845] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:44:08,846] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:44:08,854] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:44:09,214] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:44:09,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:44:10,611] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:44:10 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:44:10,629] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:44:46,782] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departme' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    "Department_Code"[:8], "GroupNum", "Year", "Mounth", "Total")
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departme' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, id
+[2023-03-10 13:44:46,811] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:44:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:44:46,813] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143084
+[2023-03-10 13:45:49,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:45:49,971] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:45:49,976] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:45:50,034] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:45:50,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:45:50,594] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:45:51,882] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:45:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:45:51,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:46:00,367] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departme' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    "GroupNum", "Year", "Mounth", "Total")
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departme' into field. Choices are: CNName, Classes, Department_Code, Department_Des, GroupNum, Mounth, NationalHoliday, Peacetime, PerNature, PeriodHoliday, RegistDate, SalaryRange, Total, Year, id
+[2023-03-10 13:46:00,373] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:46:00 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:46:00,373] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 143212
+[2023-03-10 13:52:08,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:52:09,680] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:52:09,686] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:52:09,699] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:52:10,225] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:52:10,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:52:12,110] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:52:12 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:52:12,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:52:20,877] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4075, in Summary1
+    chuinfo=Substr("Department_Code", 1, 8))
+NameError: name 'Substr' is not defined
+[2023-03-10 13:52:20,882] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:52:20 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:52:20,883] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101931
+[2023-03-10 13:54:49,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:54:50,495] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:54:51,376] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:54:51,398] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:54:51,402] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:54:52,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:54:52,839] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:54:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:54:52,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:55:02,916] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4084, in Summary1
+    WorkOvertimeQuerySet.values("chuinfo").annotate(Sum("Total"))["Total__sum"]# queryset增加字段二次运用时，无法保存下来，用的是原始的数据？annotate，就像filter一样，不改变查询集但是返回一个新的查询集。你需要重新分配
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 278, in __getitem__
+    raise TypeError
+TypeError
+[2023-03-10 13:55:02,920] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:55:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:55:02,921] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 108740
+[2023-03-10 13:55:30,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:55:52,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/workovertime/?Year=2021 HTTP/1.1" 200 1581095
+[2023-03-10 13:55:53,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-03-10 13:58:15,025] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 13:58:15,164] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 13:58:15,167] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 13:58:15,368] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 13:58:15,482] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 13:58:15,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 13:58:16,705] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:58:16 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:58:16,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 13:58:31,906] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4125, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+TypeError: unsupported operand type(s) for /: 'QuerySet' and 'int'
+[2023-03-10 13:58:31,934] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 13:58:31 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 13:58:31,936] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 105137
+[2023-03-10 14:12:39,164] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 14:12:39,334] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 14:12:39,335] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 14:12:39,548] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 14:12:39,632] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 14:12:39,857] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 14:12:44,229] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:12:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:12:44,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 14:12:55,726] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4088, in Summary1
+    if PersonalInfoHisByYear.objects.filter(DepartmentCode__contains=n.chuinfo, Year=YearSearch).first().Customer == i["Customer"]:
+AttributeError: 'dict' object has no attribute 'chuinfo'
+[2023-03-10 14:12:55,751] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:12:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:12:55,753] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 104588
+[2023-03-10 14:14:24,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 14:14:24,852] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 14:14:25,566] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 14:14:25,593] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 14:14:25,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 14:14:26,316] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 14:14:27,116] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:14:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:14:27,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 14:14:39,160] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4090, in Summary1
+    print(overtimedic[j[0]])
+KeyError: 'Feb'
+[2023-03-10 14:14:39,172] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:14:39 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:14:39,173] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103192
+[2023-03-10 14:15:37,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 14:15:38,500] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 14:15:38,506] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 14:15:38,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 14:15:39,144] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 14:15:39,223] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 14:15:40,172] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:15:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:15:40,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 14:15:49,111] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4091, in Summary1
+    print(overtimedic[j[0]])
+KeyError: 'Feb'
+[2023-03-10 14:15:49,122] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:15:49 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:15:49,123] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103195
+[2023-03-10 14:17:14,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 14:17:15,326] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 14:17:15,336] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 14:17:15,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 14:17:16,060] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 14:17:16,062] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 14:17:16,947] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:17:16 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:17:16,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6836
+[2023-03-10 14:17:27,960] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:17:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:17:27,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10120
+[2023-03-10 14:18:55,772] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:18:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:18:55,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10119
+[2023-03-10 14:47:12,118] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:47:12 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:47:12,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10107
+[2023-03-10 14:49:04,239] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 14:49:04 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 14:49:04,260] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10107
+[2023-03-10 15:17:25,222] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:17:25 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 15:17:25,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10120
+[2023-03-10 15:28:07,155] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:28:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 15:28:07,179] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10120
+[2023-03-10 15:34:06,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 42772
+[2023-03-10 15:34:07,525] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 15:34:07,989] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 15:34:08,131] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 15:34:08,141] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 15:34:08,143] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 15:34:09,232] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:34:09 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 15:34:09,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 15:34:19,928] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:34:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 15:34:19,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10120
+[2023-03-10 15:34:37,570] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:34:37 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 15:34:37,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 15:48:41,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 54625
+[2023-03-10 15:48:41,162] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 15:48:41,163] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 15:48:41,309] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 15:48:41,310] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 15:48:41,442] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 15:48:44,732] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:48:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-03-10 15:48:44,746] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 31850
+[2023-03-10 15:56:55,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 54625
+[2023-03-10 15:56:57,102] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 15:56:57,111] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 15:56:57,525] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 15:56:57,529] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 15:56:57,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 15:57:01,124] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 15:57:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-03-10 15:57:01,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 31850
+[2023-03-10 16:24:26,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 51092
+[2023-03-10 16:24:27,354] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:24:27,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:24:28,400] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:24:28,400] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:24:28,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:24:32,731] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:24:32 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:24:32,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 16:26:27,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50725
+[2023-03-10 16:26:28,793] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:26:28,803] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:26:29,810] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:26:29,814] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:26:30,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:26:31,129] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:26:31 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:26:31,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 16:28:28,929] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 54625
+[2023-03-10 16:28:29,063] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:28:29,067] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:28:29,124] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:28:29,128] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:28:29,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:28:32,816] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:28:32 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-03-10 16:28:32,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 31850
+[2023-03-10 16:28:38,083] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:28:38,089] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:28:38,093] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:28:38,335] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:31:13,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50631
+[2023-03-10 16:31:14,469] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:31:14,483] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:31:15,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:31:15,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:31:15,396] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:31:16,084] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:31:16 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:31:16,102] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 16:32:00,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50651
+[2023-03-10 16:32:01,392] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:32:01,400] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:32:01,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:32:02,259] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:32:02,260] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:32:02,903] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:32:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:32:02,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 16:32:26,147] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50618
+[2023-03-10 16:32:27,103] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:32:27,107] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:32:27,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:32:28,161] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:32:28,167] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:32:28,494] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:32:28 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:32:28,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 16:38:54,205] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 16:38:55,371] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 16:38:55,377] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 16:38:55,388] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 16:38:55,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 16:38:56,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 16:38:56,614] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 16:38:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 16:38:56,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 17:08:17,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 17:08:19,156] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 17:08:19,167] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 17:08:19,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 17:08:20,325] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 17:08:20,345] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 17:08:20,648] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4220, in Summary1
+    monthDiagram1Data_data.append(i[j])
+KeyError: 'Apr'
+[2023-03-10 17:08:20,652] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:08:20 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:08:20,653] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 105632
+[2023-03-10 17:11:30,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 17:11:31,557] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 17:11:31,562] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 17:11:32,317] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 17:11:32,329] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 17:11:33,197] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 17:11:35,574] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4226, in Summary1
+    'name': i["Customer"],
+KeyError: 'Customer'
+[2023-03-10 17:11:35,582] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:11:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:11:35,583] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 105512
+[2023-03-10 17:12:25,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 17:12:26,446] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 17:12:26,450] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 17:12:27,208] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 17:12:27,222] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 17:12:27,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 17:12:29,417] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:12:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:12:29,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 6872
+[2023-03-10 17:12:46,982] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:12:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:12:47,003] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 10120
+[2023-03-10 17:13:53,078] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 17:13:54,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 17:13:54,009] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 17:13:54,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 17:13:54,843] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 17:13:54,848] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 17:13:56,182] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:13:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:13:56,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 8111
+[2023-03-10 17:14:21,113] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:14:21 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:14:21,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 11534
+[2023-03-10 17:16:19,198] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 50208
+[2023-03-10 17:16:20,535] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-10 17:16:20,543] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-10 17:16:20,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-10 17:16:20,809] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-10 17:16:20,831] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-10 17:16:23,086] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:16:23 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:16:23,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 8282
+[2023-03-10 17:16:38,712] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-10 17:16:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-10 17:16:38,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 11705
