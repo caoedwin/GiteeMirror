@@ -3136,7 +3136,7 @@ def Summary1(request):
         #     'yAxisIndex': 1,
         #     'data': [628, 622, 625, 615, 602, 588, 635, 612, 613, 631, 646, 667]
         # }
-    ]  # X轴是固定的1~12月
+    ]  # X轴是固定的1~12月 平均加班
     monthDiagram2Data = [
         # {
         #     'name': 'A31',
@@ -3165,7 +3165,7 @@ def Summary1(request):
         #     'yAxisIndex': 1,
         #     'data': [628, 622, 625, 615, 602, 588, 635, 612, 613, 631, 646, 667]
         # }
-    ]  # X轴是固定的1~12月
+    ]  # X轴是固定的1~12月 平均請假
     monthDiagram3Data = [
         # {
         #     'name': 'A31',
@@ -3194,6 +3194,48 @@ def Summary1(request):
         #     'yAxisIndex': 1,
         #     'data': [628, 622, 625, 615, 602, 588, 635, 612, 613, 631, 646, 667]
         # }
+    ]  # X轴是固定的1~12月
+    monthDiagramA31Data = [
+        # {
+        #     'name': '平均加班',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+        # },
+        # {
+        #     'name': '平均請假',
+        #     'type': 'bar',
+        #     'yAxisIndex': 1,
+        #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+        # },
+
+    ]  # X轴是固定的1~12月
+    monthDiagramA32Data = [
+        # {
+        #     'name': '平均加班',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+        # },
+        # {
+        #     'name': '平均請假',
+        #     'type': 'bar',
+        #     'yAxisIndex': 1,
+        #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+        # },
+
+    ]  # X轴是固定的1~12月
+    monthDiagramC38Data = [
+        # {
+        #     'name': '平均加班',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+        # },
+        # {
+        #     'name': '平均請假',
+        #     'type': 'bar',
+        #     'yAxisIndex': 1,
+        #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+        # },
+
     ]  # X轴是固定的1~12月
 
     mock_data2 = [
@@ -4269,6 +4311,72 @@ def Summary1(request):
                         },
                     }
                 )
+        monthDiagramA31Data = [
+            # {
+            #     'name': '平均加班',
+            #     'type': 'bar',
+            #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+            # },
+            # {
+            #     'name': '平均請假',
+            #     'type': 'bar',
+            #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+            # },
+
+        ]
+        for i in monthDiagram1Data:
+            if i['name'] == 'A31':
+                monthDiagramA31Data.append(
+                    {
+                        'name': '平均加班',
+                        'type': 'line',
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
+            elif i['name'] == 'A32':
+                monthDiagramA32Data.append(
+                    {
+                        'name': '平均加班',
+                        'type': 'line',
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
+            elif i['name'] == 'C38':
+                monthDiagramC38Data.append(
+                    {
+                        'name': '平均加班',
+                        'type': 'line',
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
+        for i in monthDiagram2Data:
+            if i['name'] == 'A31':
+                monthDiagramA31Data.append(
+                    {
+                        'name': '平均請假',
+                        'type': 'line',
+                        'yAxisIndex': 1,
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
+            elif i['name'] == 'A32':
+                monthDiagramA32Data.append(
+                    {
+                        'name': '平均請假',
+                        'type': 'line',
+                        'yAxisIndex': 1,
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
+            elif i['name'] == 'C38':
+                monthDiagramC38Data.append(
+                    {
+                        'name': '平均請假',
+                        'type': 'line',
+                        'yAxisIndex': 1,
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
 
 
 
@@ -4285,6 +4393,9 @@ def Summary1(request):
             "monthDiagram1Data": monthDiagram1Data,
             "monthDiagram2Data": monthDiagram2Data,
             "monthDiagram3Data": monthDiagram3Data,
+            "monthDiagramA31Data": monthDiagramA31Data,
+            "monthDiagramA32Data": monthDiagramA32Data,
+            "monthDiagramC38Data": monthDiagramC38Data,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
