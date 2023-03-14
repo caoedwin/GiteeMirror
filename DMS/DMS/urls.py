@@ -36,6 +36,7 @@ urlpatterns = [
     path(r'Change_Skin/', views.Change_Skin),
     path(r'index/', views.index),
     path(r'Summary/', views.Summary),
+    path(r'Summary_ABO/', views.Summary_ABO),
     path(r'SysAdmin/UserInfo-edit/', views.UserInfoedit),
     re_path('^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),#增加此行
     re_path('^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),#增加此行

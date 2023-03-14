@@ -283,15 +283,15 @@ p {
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 this.tableloading2 = true;
-                this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                this.myChart1 = echarts.init(document.getElementById('monthDiagram1'),  'dark');
                 this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
                 this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
-                this.myChart7 = echarts.init(document.getElementById('monthDiagramA31'));
+                this.myChart7 = echarts.init(document.getElementById('monthDiagramA31'),  'dark');
                 this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart8 = echarts.init(document.getElementById('monthDiagramA32'));
                 this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
-                this.myChart9 = echarts.init(document.getElementById('monthDiagramC38'));
+                this.myChart9 = echarts.init(document.getElementById('monthDiagramC38'),  'dark');
                 this.myChart9.showLoading() // 在获取数据之前, 显示加载动画
                 {#var myChart3 = echarts.init(document.getElementById('main2'));#}
                 {#    myChart3.showLoading() // 在获取数据之前, 显示加载动画#}
@@ -484,15 +484,15 @@ p {
                 }else{
                     {% comment %}var myChart3 = echarts.init(document.getElementById('main2'));
                         myChart3.showLoading() // 在获取数据之前, 显示加载动画{% endcomment %}
-                    this.myChart1 = echarts.init(document.getElementById('monthDiagram1'));
+                    this.myChart1 = echarts.init(document.getElementById('monthDiagram1'),  'dark');
                     this.myChart1.showLoading() // 在获取数据之前, 显示加载动画
                     this.myChart2 = echarts.init(document.getElementById('monthDiagram2'));
                     this.myChart2.showLoading() // 在获取数据之前, 显示加载动画
-                    this.myChart7 = echarts.init(document.getElementById('monthDiagramA31'));
+                    this.myChart7 = echarts.init(document.getElementById('monthDiagramA31',  'dark'));
                     this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
                     this.myChart8 = echarts.init(document.getElementById('monthDiagramA32'));
                     this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
-                    this.myChart9 = echarts.init(document.getElementById('monthDiagramC38'));
+                    this.myChart9 = echarts.init(document.getElementById('monthDiagramC38'),  'dark');
                     this.myChart9.showLoading() // 在获取数据之前, 显示加载动画
                     this.elbuttonloading = true;
                     this.tableloading = true;

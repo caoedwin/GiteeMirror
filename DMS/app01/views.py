@@ -11,6 +11,8 @@ from django.conf import settings
 import datetime,json,requests,time,simplejson
 from requests_ntlm import HttpNtlmAuth
 from DeviceLNV.models import DeviceLNV
+from DeviceABO.models import DeviceABO
+from DeviceA39.models import DeviceA39
 from ComputerMS.models import ComputerLNV
 from ChairCabinetMS.models import ChairCabinetLNV
 
@@ -787,6 +789,141 @@ def Summary(request):
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'Summary.html', locals())
+
+@csrf_exempt
+def Summary_ABO(request):
+    if not request.session.get('is_login', None):
+        return redirect('/login/')
+    # print(request.method)
+    selectItem = [
+        # {"value": "1234567", "number": "姚麗麗"}, {"value": "2234567", "number": "張亞萍"},
+    ]
+    for i in UserInfo.objects.all().values("CNname", "account").distinct().order_by("account"):
+        selectItem.append({"value": i["account"], "number": i["CNname"]})
+
+    mock_data1 = [
+        # {"id": "1", "Customer": "C38",
+        #  "NID": "1514", "DevID": "All Function", "IntfCtgry": "USB_A",
+        #  "DevCtgry": "keyboard", "Devproperties": "USB1.0", "Devsize": "--",
+        #  "DevVendor": "Lenovo", "DevModel": "SK-8815(L)", "DevName": "Lenovo Enhanced Performance USB Keyboard",
+        #  "BrwStatus": ""
+        #  },
+    ]
+
+    mock_data2 = [
+        # {"id": "1", "CollectDate": "2019-2-11", "UnifiedNumber": "GI027569",
+        #  "MaterialPN": "ELZP3010009", "MachineStatus": "使用中", },
+    ]
+
+    mock_data3 = [
+        # {"id": "1", "GYNumber": "DQA-C-002", "Position": "V2FA-29",
+        #  "UseStatus": "閑置中", "CollectDate": "2019-2-11"},
+    ]
+
+    mock_data4 = [
+        # {"id": "1", "GYNumber": "DQA-Y-002", "Position": "V2FA-29",
+        #  "UseStatus": "閑置中", "CollectDate": "2019-2-11"},
+    ]
+
+    if request.method == "POST":
+        if request.POST.get('isGetData') == "first":
+            pass
+        if request.POST.get('isGetData') == "SEARCH":
+            BorrowerNum = request.POST.get('BorrowerNum')
+            Borrower = request.POST.get('Borrower')
+
+            check_dic1 = {'Usrname': Borrower,
+                                'BR_per_code': BorrowerNum, 'BrwStatus__in': ['已借出', '固定設備', '預定確認中', '歸還確認中', '續借確認中']}
+            # print(check_dic1)
+            mock_datalist1 = DeviceABO.objects.filter(**check_dic1)
+            for i in mock_datalist1:
+                if i.Plandate and i.Btime and not i.Rtime:
+                    if datetime.datetime.now().date() > i.Plandate:
+                        Exceed_days = round(
+                            float(
+                                str((datetime.datetime.now().date() - i.Plandate)).split(' ')[
+                                    0]),
+                            0)
+                    else:
+                        Exceed_days = ''
+                    if datetime.datetime.now().date() > i.Btime:
+                        usedays = round(
+                            float(
+                                str((datetime.datetime.now().date() - i.Btime)).split(' ')[
+                                    0]),
+                            0)
+                    else:
+                        usedays = ''
+                else:
+                    usedays = ''
+                    Exceed_days = ''
+                Useyears = ''
+                if i.Pchsdate:
+                    if datetime.datetime.now().date() > i.Pchsdate:
+                        Useyears = round(
+                            float(
+                                str((datetime.datetime.now().date() - i.Pchsdate)).split(' ')[
+                                    0]) / 365,
+                            1)
+                addnewdate_str = ''
+                if i.addnewdate:
+                    addnewdate_str = str(i.addnewdate)
+                else:
+                    addnewdate_str = ''
+                Pchsdate_str = ''
+                if i.Pchsdate:
+                    Pchsdate_str = str(i.Pchsdate)
+                else:
+                    Pchsdate_str = ''
+                Plandate_str = ''
+                if i.Plandate:
+                    Plandate_str = str(i.Plandate)
+                else:
+                    Plandate_str = ''
+                Btime_str = ''
+                if i.Btime:
+                    Btime_str = str(i.Btime)
+                else:
+                    Btime_str = ''
+                Rtime_str = ''
+                if i.Rtime:
+                    Rtime_str = str(i.Rtime)
+                else:
+                    Rtime_str = ''
+
+                mock_data1.append(
+                    {"id": i.id, "Customer": i.Customer,
+                     # "Plant": i.Plant,
+                     "NID": i.NID, "DevID": i.DevID, "IntfCtgry": i.IntfCtgry,
+                     "DevCtgry": i.DevCtgry, "Devproperties": i.Devproperties, "DevVendor": i.DevVendor,
+                     "Devsize": i.Devsize, "DevModel": i.DevModel,
+                     "DevName": i.DevName,
+                     "HWVer": i.HWVer, "FWVer": i.FWVer, "DevDescription": i.DevDescription,
+                     "PckgIncludes": i.PckgIncludes,
+                     "expirdate": i.expirdate, "DevPrice": i.DevPrice, "Source": i.Source,
+                     "Pchsdate": Pchsdate_str,
+                     "PN": i.PN,
+                     "LNV_ST": i.LSTA, "Purchase_NO": i.ApplicationNo, "Declaration_NO": i.DeclarationNo,
+                     "AssetNum": i.AssetNum, "UsYear": Useyears,
+                     "addnewname": i.addnewname, "addnewdate": addnewdate_str,
+                     "Comment": i.Comment, "uscyc": i.uscyc, "UsrTimes": i.UsrTimes,
+                     "DevStatus": i.DevStatus, "BrwStatus": i.BrwStatus,
+                     "Usrname": i.Usrname, 'Usrnumber': i.BR_per_code,
+                     "Plandate": Plandate_str, "useday": usedays, "Btime": Btime_str, "Rtime": Rtime_str,
+                     "Overday": Exceed_days},
+                )
+
+
+
+        data = {
+            "select": selectItem,
+            "content1": mock_data1,
+            "content2": mock_data2,
+            "content3": mock_data3,
+            "content4": mock_data4,
+        }
+        return HttpResponse(json.dumps(data), content_type="application/json")
+    return render(request, 'Summary_ABO.html', locals())
 
 
 from django.http import JsonResponse

@@ -6,10 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../DMS/templates/Summary_ABO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/DMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/app01/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2023-03-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-03-10.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2023-03-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-03-10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonalInfo/views20210302.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views20230314linshi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-03-13.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-03-13.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-03-13.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-03-13.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -59,7 +64,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="106" />
           <entry key="js" value="1" />
-          <entry key="py" value="50" />
+          <entry key="py" value="55" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
@@ -68,21 +73,21 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="106" />
           <entry key="JavaScript" value="1" />
-          <entry key="Python" value="50" />
+          <entry key="Python" value="55" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="5" />
-          <entry key="html" value="3408" />
-          <entry key="py" value="2653" />
+          <entry key="html" value="3411" />
+          <entry key="py" value="2845" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3408" />
-          <entry key="Python" value="2658" />
+          <entry key="HTML" value="3411" />
+          <entry key="Python" value="2850" />
         </counts>
       </usages-collector>
     </session>
@@ -92,11 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="1086" column="41" lean-forward="true" selection-start-line="1086" selection-start-column="41" selection-end-line="1086" selection-end-column="41" />
+            <state relative-caret-position="338">
+              <caret line="293" column="60" lean-forward="true" selection-start-line="293" selection-start-column="60" selection-end-line="293" selection-end-column="60" />
               <folding>
                 <element signature="e#3604#6070#0#DjangoTemplate" />
                 <element signature="n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" />
@@ -105,7 +110,6 @@
                 <element signature="n#style#0;n#div#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#el-collapse-item#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#10430#18133#0#HTML" />
                 <element signature="e#12273#14667#0#HTML" />
                 <element signature="e#14690#17372#0#DjangoTemplate" />
                 <element signature="e#18169#23479#0#HTML" />
@@ -115,53 +119,19 @@
                 <element signature="e#33339#35695#0#HTML" />
                 <element signature="e#35881#38865#0#HTML" />
                 <element signature="e#38897#41881#0#HTML" />
+                <element signature="e#41913#44897#0#HTML" />
                 <element signature="e#23551#25979#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="4375" column="40" selection-start-line="4375" selection-start-column="40" selection-end-line="4375" selection-end-column="40" />
+            <state relative-caret-position="86">
+              <caret line="3768" column="49" lean-forward="true" selection-start-line="3768" selection-start-column="49" selection-end-line="3768" selection-end-column="49" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#670#782#0" />
-                <element signature="e#836#994#0" />
-                <element signature="e#1320#2176#0" />
-                <element signature="e#2201#2596#0" />
-                <element signature="e#2624#2930#0" />
-                <element signature="e#2955#3510#0" />
-                <element signature="e#3556#21512#0" />
-                <element signature="e#21565#41066#0" />
-                <element signature="e#21830#22206#0" />
-                <element signature="e#22227#22864#0" />
-                <element signature="e#22892#24091#0" />
-                <element signature="e#24120#24501#0" />
-                <element signature="e#24518#25224#0" />
-                <element signature="e#26505#29132#0" />
-                <element signature="e#29199#29910#0" />
-                <element signature="e#41117#139360#0" />
-                <element signature="e#41490#42390#0" />
-                <element signature="e#42411#43048#0" />
-                <element signature="e#43065#44264#0" />
-                <element signature="e#44288#44346#0" />
-                <element signature="e#44372#44414#0" />
-                <element signature="e#44436#44476#0" />
-                <element signature="e#44497#44547#0" />
-                <element signature="e#44584#44650#0" />
-                <element signature="e#47194#49981#0" />
-                <element signature="e#50056#51278#0" />
-                <element signature="e#50327#50767#0" />
-                <element signature="e#51353#59041#0" />
-                <element signature="e#59113#79939#0" />
-                <element signature="e#80013#98212#0" />
-                <element signature="e#98406#107057#0" />
-                <element signature="e#121364#124991#0" />
-                <element signature="e#125080#130923#0" />
-                <element signature="e#139409#149151#0" />
                 <element signature="e#149198#181204#0" />
                 <element signature="e#181498#182744#0" />
                 <element signature="e#182766#186646#0" />
@@ -177,33 +147,20 @@
                 <element signature="e#187494#188343#0" />
                 <element signature="e#188364#188715#0" />
                 <element signature="e#188720#188732#0" />
-                <element signature="e#189780#214922#0" />
                 <element signature="e#190005#206907#0" />
                 <element signature="e#206954#207203#0" />
                 <element signature="e#207307#208072#0" />
                 <element signature="e#208511#214881#0" />
-                <element signature="e#208462#225364#0" />
-                <element signature="e#225399#241105#0" />
-                <element signature="e#241151#241400#0" />
-                <element signature="e#241504#242269#0" />
-                <element signature="e#249368#255671#0" />
-                <element signature="e#242870#243984#0" />
-                <element signature="e#244598#245084#0" />
-                <element signature="e#255899#265146#0" />
-                <element signature="e#249003#250529#0" />
-                <element signature="e#266141#268304#0" />
-                <element signature="e#243033#338975#0" />
-                <element signature="e#243284#244278#0" />
-                <element signature="e#244396#245384#0" />
-                <element signature="e#245407#246313#0" />
-                <element signature="e#246336#246686#0" />
-                <element signature="e#246704#246726#0" />
-                <element signature="e#246749#246877#0" />
-                <element signature="e#246898#247723#0" />
-                <element signature="e#248702#248962#0" />
-                <element signature="e#248983#249870#0" />
-                <element signature="e#249894#250443#0" />
-                <element signature="e#250815#294430#0" />
+                <element signature="e#219784#236686#0" />
+                <element signature="e#236721#252427#0" />
+                <element signature="e#252806#253571#0" />
+                <element signature="e#259107#266384#0" />
+                <element signature="e#254137#255648#0" />
+                <element signature="e#255691#256117#0" />
+                <element signature="e#265904#273590#0" />
+                <element signature="e#260819#262345#0" />
+                <element signature="e#262388#262817#0" />
+                <element signature="e#272879#368809#0" />
                 <element signature="e#294819#302580#0" />
                 <element signature="e#302615#310628#0" />
                 <element signature="e#310700#312028#0" />
@@ -220,6 +177,29 @@
                 <element signature="e#349682#349860#0" />
                 <element signature="e#349884#351023#0" />
                 <element signature="e#351160#352081#0" />
+                <element signature="e#474185#491303#0" />
+                <element signature="e#491347#493144#0" />
+                <element signature="e#493183#736591#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="273" column="19" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="19" />
+              <folding>
+                <element signature="e#97#714#0" />
+                <element signature="e#753#1770#0" />
+                <element signature="e#1807#2618#0" />
+                <element signature="e#2654#3145#0" />
+                <element signature="e#3182#3681#0" />
+                <element signature="e#3991#7047#0" />
+                <element signature="e#10250#11751#0" />
+                <element signature="e#11788#13826#0" />
+                <element signature="e#13866#15162#0" />
               </folding>
             </state>
           </provider>
@@ -239,9 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>myChart3</find>
-      <find>professionTable</find>
-      <find>daLeiSpanMethod</find>
       <find>br</find>
       <find>heBingNum</find>
       <find>RunnYearflag</find>
@@ -250,7 +227,6 @@
       <find>k.GroupNum</find>
       <find>k.Custome</find>
       <find>Item</find>
-      <find>aggregate</find>
       <find>anno</find>
       <find>basetimesum</find>
       <find>queryset</find>
@@ -267,8 +243,12 @@
       <find>myChart7</find>
       <find>DataRenCi</find>
       <find>yAxisIndex</find>
-      <find>DataCustomer</find>
       <find>monthDiagram1Data</find>
+      <find>i</find>
+      <find>DataCustomer</find>
+      <find>overtimedic</find>
+      <find>objects</find>
+      <find>aggregate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -328,8 +308,8 @@
         <option value="$PROJECT_DIR$/TestPlanSW/views.py" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/views.py" />
         <option value="$PROJECT_DIR$/PersonalInfo/models.py" />
-        <option value="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" />
         <option value="$PROJECT_DIR$/templates/PersonalInfo/Summary2.html" />
+        <option value="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" />
         <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
       </list>
     </option>
@@ -353,9 +333,9 @@
       <path value="$PROJECT_DIR$/static/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="336" />
-    <option name="y" value="138" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
     <option name="width" value="1917" />
     <option name="height" value="1032" />
   </component>
@@ -379,11 +359,6 @@
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
               <item name="PersonalInfo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="TestPlanSW" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -400,19 +375,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\djangoproject\Reliability_Row_data\TestPlanSW" />
-      <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSW" />
-      <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSWOS" />
-      <recent name="C:\djangoproject\Reliability_Row_data\templates" />
-      <recent name="C:\djangoproject\Reliability_Row_data\CQM\20220614SimpleJWT(Auth.User)" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\djangoproject\Reliability_Row_data\static\js\VUE\xlsx-style" />
       <recent name="C:\djangoproject\Reliability_Row_data\static\js\VUE\CQM_excelOut_test" />
       <recent name="C:\djangoproject\Reliability_Row_data\static\js\VUE\xlsx" />
       <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanME" />
       <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSW" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\djangoproject\Reliability_Row_data\PersonalInfo" />
+      <recent name="C:\djangoproject\Reliability_Row_data\TestPlanSW" />
+      <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSW" />
+      <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSWOS" />
+      <recent name="C:\djangoproject\Reliability_Row_data\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -914,10 +889,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.48235294" weight="0.25883153" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.48235294" visible="true" weight="0.25883153" />
       <window_info id="Favorites" order="1" sideWeight="0.5176471" side_tool="true" weight="0.13790761" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -981,13 +955,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="2125" column="52" selection-start-line="2125" selection-start-column="52" selection-end-line="2125" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1383,10 +1350,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="801" column="39" selection-start-line="801" selection-start-column="29" selection-end-line="801" selection-end-column="39" />
+          <folding>
+            <element signature="e#30635#32860#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
-          <caret line="8664" column="120" selection-start-line="8664" selection-start-column="102" selection-end-line="8664" selection-end-column="120" />
+          <caret line="8664" column="120" selection-end-line="9086" selection-end-column="77" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#838#3182#0" />
@@ -1422,10 +1399,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/views20230314linshi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11622" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="293" column="60" lean-forward="true" selection-start-line="293" selection-start-column="60" selection-end-line="293" selection-end-column="60" />
+          <folding>
+            <element signature="e#3604#6070#0#DjangoTemplate" />
+            <element signature="n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#el-collapse-item#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#12273#14667#0#HTML" />
+            <element signature="e#14690#17372#0#DjangoTemplate" />
+            <element signature="e#18169#23479#0#HTML" />
+            <element signature="e#20462#22853#0#HTML" />
+            <element signature="e#25249#28191#0#HTML" />
+            <element signature="e#27999#33308#0#DjangoTemplate" />
+            <element signature="e#33339#35695#0#HTML" />
+            <element signature="e#35881#38865#0#HTML" />
+            <element signature="e#38897#41881#0#HTML" />
+            <element signature="e#41913#44897#0#HTML" />
+            <element signature="e#23551#25979#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="153" column="18" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="18" />
+        <state relative-caret-position="236">
+          <caret line="273" column="19" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="19" />
           <folding>
             <element signature="e#97#714#0" />
             <element signature="e#753#1770#0" />
@@ -1435,61 +1446,16 @@
             <element signature="e#3991#7047#0" />
             <element signature="e#10250#11751#0" />
             <element signature="e#11788#13826#0" />
-            <element signature="e#15199#17332#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="801" column="39" selection-start-line="801" selection-start-column="29" selection-end-line="801" selection-end-column="39" />
-          <folding>
-            <element signature="e#30635#32860#0#HTML" />
+            <element signature="e#13866#15162#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="4375" column="40" selection-start-line="4375" selection-start-column="40" selection-end-line="4375" selection-end-column="40" />
+        <state relative-caret-position="86">
+          <caret line="3768" column="49" lean-forward="true" selection-start-line="3768" selection-start-column="49" selection-end-line="3768" selection-end-column="49" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#670#782#0" />
-            <element signature="e#836#994#0" />
-            <element signature="e#1320#2176#0" />
-            <element signature="e#2201#2596#0" />
-            <element signature="e#2624#2930#0" />
-            <element signature="e#2955#3510#0" />
-            <element signature="e#3556#21512#0" />
-            <element signature="e#21565#41066#0" />
-            <element signature="e#21830#22206#0" />
-            <element signature="e#22227#22864#0" />
-            <element signature="e#22892#24091#0" />
-            <element signature="e#24120#24501#0" />
-            <element signature="e#24518#25224#0" />
-            <element signature="e#26505#29132#0" />
-            <element signature="e#29199#29910#0" />
-            <element signature="e#41117#139360#0" />
-            <element signature="e#41490#42390#0" />
-            <element signature="e#42411#43048#0" />
-            <element signature="e#43065#44264#0" />
-            <element signature="e#44288#44346#0" />
-            <element signature="e#44372#44414#0" />
-            <element signature="e#44436#44476#0" />
-            <element signature="e#44497#44547#0" />
-            <element signature="e#44584#44650#0" />
-            <element signature="e#47194#49981#0" />
-            <element signature="e#50056#51278#0" />
-            <element signature="e#50327#50767#0" />
-            <element signature="e#51353#59041#0" />
-            <element signature="e#59113#79939#0" />
-            <element signature="e#80013#98212#0" />
-            <element signature="e#98406#107057#0" />
-            <element signature="e#121364#124991#0" />
-            <element signature="e#125080#130923#0" />
-            <element signature="e#139409#149151#0" />
             <element signature="e#149198#181204#0" />
             <element signature="e#181498#182744#0" />
             <element signature="e#182766#186646#0" />
@@ -1505,33 +1471,20 @@
             <element signature="e#187494#188343#0" />
             <element signature="e#188364#188715#0" />
             <element signature="e#188720#188732#0" />
-            <element signature="e#189780#214922#0" />
             <element signature="e#190005#206907#0" />
             <element signature="e#206954#207203#0" />
             <element signature="e#207307#208072#0" />
             <element signature="e#208511#214881#0" />
-            <element signature="e#208462#225364#0" />
-            <element signature="e#225399#241105#0" />
-            <element signature="e#241151#241400#0" />
-            <element signature="e#241504#242269#0" />
-            <element signature="e#249368#255671#0" />
-            <element signature="e#242870#243984#0" />
-            <element signature="e#244598#245084#0" />
-            <element signature="e#255899#265146#0" />
-            <element signature="e#249003#250529#0" />
-            <element signature="e#266141#268304#0" />
-            <element signature="e#243033#338975#0" />
-            <element signature="e#243284#244278#0" />
-            <element signature="e#244396#245384#0" />
-            <element signature="e#245407#246313#0" />
-            <element signature="e#246336#246686#0" />
-            <element signature="e#246704#246726#0" />
-            <element signature="e#246749#246877#0" />
-            <element signature="e#246898#247723#0" />
-            <element signature="e#248702#248962#0" />
-            <element signature="e#248983#249870#0" />
-            <element signature="e#249894#250443#0" />
-            <element signature="e#250815#294430#0" />
+            <element signature="e#219784#236686#0" />
+            <element signature="e#236721#252427#0" />
+            <element signature="e#252806#253571#0" />
+            <element signature="e#259107#266384#0" />
+            <element signature="e#254137#255648#0" />
+            <element signature="e#255691#256117#0" />
+            <element signature="e#265904#273590#0" />
+            <element signature="e#260819#262345#0" />
+            <element signature="e#262388#262817#0" />
+            <element signature="e#272879#368809#0" />
             <element signature="e#294819#302580#0" />
             <element signature="e#302615#310628#0" />
             <element signature="e#310700#312028#0" />
@@ -1548,33 +1501,9 @@
             <element signature="e#349682#349860#0" />
             <element signature="e#349884#351023#0" />
             <element signature="e#351160#352081#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="1086" column="41" lean-forward="true" selection-start-line="1086" selection-start-column="41" selection-end-line="1086" selection-end-column="41" />
-          <folding>
-            <element signature="e#3604#6070#0#DjangoTemplate" />
-            <element signature="n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#el-collapse-item#1;n#el-collapse#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#10430#18133#0#HTML" />
-            <element signature="e#12273#14667#0#HTML" />
-            <element signature="e#14690#17372#0#DjangoTemplate" />
-            <element signature="e#18169#23479#0#HTML" />
-            <element signature="e#20462#22853#0#HTML" />
-            <element signature="e#25249#28191#0#HTML" />
-            <element signature="e#27999#33308#0#DjangoTemplate" />
-            <element signature="e#33339#35695#0#HTML" />
-            <element signature="e#35881#38865#0#HTML" />
-            <element signature="e#38897#41881#0#HTML" />
-            <element signature="e#23551#25979#0#HTML" />
+            <element signature="e#474185#491303#0" />
+            <element signature="e#491347#493144#0" />
+            <element signature="e#493183#736591#0" />
           </folding>
         </state>
       </provider>

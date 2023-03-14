@@ -1,0 +1,219 @@
+[2023-03-14 10:31:57,618] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4203, in Summary1
+    overtimedic[j[0]] = 0.0
+UnboundLocalError: local variable 'overtimedic' referenced before assignment
+[2023-03-14 10:31:57,629] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 102634
+[2023-03-14 15:47:39,762] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4321, in Summary1
+    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().values("Customer", Substr("Department_Code", 1, 7)).order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+AttributeError: 'Substr' object has no attribute 'split'
+[2023-03-14 15:47:39,769] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 120634
+[2023-03-14 15:49:23,676] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departm' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4321, in Summary1
+    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().values("Customer", "Department_Code"[:7],).order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Departm' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+[2023-03-14 15:49:23,683] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 145777
+[2023-03-14 15:50:08,273] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Department_Code' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4321, in Summary1
+    for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().values("Customer", "Department_Code",).order_by(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Department_Code' into field. Choices are: Aalary, CNName, Customer, Department, DepartmentCode, ENLevel, Education, EngName, Experience, GraduationYear, GroupNum, IdCard, LastAchievements, LastPromotionData, Major, MajorAscription, MobileNum, NativeCity, NativeCounty, NativeProvince, NewCompany, PlanQuitDate, Portrait, PositionNow, PositionTimes, QuitDate, QuitDetail, QuitReason, RegistPosition, RegistrationDate, ResidenceCity, ResidenceCounty, ResidenceProvince, SAPNum, School, Sex, Status, Whereabouts, Year, id
+[2023-03-14 15:50:08,285] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 145913
+[2023-03-14 16:03:06,781] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4323, in Summary1
+    Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i).first().DepartmentCode[:7]
+AttributeError: 'NoneType' object has no attribute 'DepartmentCode'
+[2023-03-14 16:03:06,789] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 101301
+[2023-03-14 16:08:25,854] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4349, in Summary1
+    Mounth=j[1].split("-")[1]).aggregate("Total")["Total__sum"]
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 354, in aggregate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='aggregate')
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1254, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.aggregate() received non-expression(s): Total.
+[2023-03-14 16:08:25,868] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 113095
+[2023-03-14 16:16:55,916] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 3752, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+KeyError: 'Jan'
+[2023-03-14 16:16:55,988] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 102317
+[2023-03-14 16:18:15,127] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4283, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+KeyError: 'Jan'
+[2023-03-14 16:18:15,133] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 102719
+[2023-03-14 16:18:42,811] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4391, in Summary1
+    leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2023-03-14 16:18:42,816] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103406
+[2023-03-14 16:21:16,343] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4393, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2023-03-14 16:21:16,369] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103241
+[2023-03-14 16:22:55,042] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4395, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2023-03-14 16:22:55,083] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103241
+[2023-03-14 16:22:55,100] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 59
+[2023-03-14 16:22:59,064] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary1/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 4395, in Summary1
+    overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+[2023-03-14 16:22:59,065] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 500 103241
