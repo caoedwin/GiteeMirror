@@ -78,7 +78,7 @@
         <form class='form-Test' action="/signinLNV/" method="POST">
           <div class="form-group">
               <span style="font-weight: bolder;">Account:</span>
-              <input  type="text" id="inputAccount" placeholder="工號" required="required" autofocus="autofocus" name="inputAccount" style="border-radius: 5px;margin-left: 20px;">
+              <input  type="text" id="inputAccount" placeholder="工號" maxlength="8" required="required" autofocus="autofocus" name="inputAccount" style="border-radius: 5px;margin-left: 20px;">
           </div>
           <div class="form-group">
             <label style="font-weight: bolder">Password:</label>
@@ -86,7 +86,7 @@
           </div>
           <div class="form-group">
             <label style="font-weight: bolder">CNname:</label>
-            <input type="text" id="inputCNname" placeholder="中文名" required="required" name="inputCNname" style="border-radius: 5px;margin-left: 18px;">
+            <input type="text" id="inputCNname" placeholder="繁體中文名" required="required" name="inputCNname" style="border-radius: 5px;margin-left: 18px;">
           </div>
           <div class="form-group">
             <label style="font-weight: bolder">ENname:</label>
@@ -102,7 +102,7 @@
           </div>
           <div class="form-group">
             <label style="font-weight: bolder">Email:</label>
-            <input type="text" id="inputEmail" placeholder="Xxx_Xxx@compal.com" required="required" name="inputEmail" style="border-radius: 5px;margin-left: 40px;">
+            <input type="email" id="inputEmail" placeholder="Xxx_Xxx@compal.com" required="required" name="inputEmail" style="border-radius: 5px;margin-left: 40px;">
           </div>
           <div class="form-group">
                 <label style="font-weight: bolder">Role:</label>
