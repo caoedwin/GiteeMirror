@@ -92,10 +92,10 @@ def login(request):
     return render(request, 'login.html', locals())
 
 @csrf_exempt
-def signin(request):
+def signinLNV(request):
     # print("signin")
     message = ""
-    inputRoles = Role.objects.filter(name__contains="Users").exclude(name__contains="A39").order_by("name")
+    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="LNV").order_by("name")
     # print(inputRoles)
     if request.method == "POST":
         # message = "请检查填写的内容！"
@@ -116,7 +116,7 @@ def signin(request):
                     message = "注冊成功！"
                 else:
                     message = "角色内容不對，請聯係管理員！"
-                    return render(request, 'Signin.html', locals())
+                    return render(request, 'SigninLNV.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
                          }
@@ -126,7 +126,81 @@ def signin(request):
             for i in roles:
                 UserInfo.objects.filter(account=account).first().role.add(Role.objects.filter(name=i).first(), )
             return render(request, 'login.html', locals())
-    return render(request, 'Signin.html', locals())
+    return render(request, 'SigninLNV.html', locals())
+
+@csrf_exempt
+def signinABO(request):
+    # print("signin")
+    message = ""
+    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="ABO").order_by("name")
+    # print(inputRoles)
+    if request.method == "POST":
+        # message = "请检查填写的内容！"
+        account = request.POST.get('inputAccount')
+        password = request.POST.get('inputPassword1')
+        CNname = request.POST.get('inputCNname')
+        username = request.POST.get('inputUsrname')
+        Seat = request.POST.get('inputSeat')
+        email = request.POST.get('inputEmail')
+        role = request.POST.get('inputRole')
+        roles = request.POST.getlist('inputRole')
+        # print(role, roles)
+        if UserInfo.objects.filter(account=account).first():
+            message = "工號已注冊！"
+        else:
+            for i in roles:
+                if Role.objects.filter(name=i).first():
+                    message = "注冊成功！"
+                else:
+                    message = "角色内容不對，請聯係管理員！"
+                    return render(request, 'SigninABO.html', locals())
+            createdic = {"account": account, "password": password, "CNname": CNname,
+                         "username": username, "Seat": Seat, "email": email,
+                         }
+            # Role.objects.filter(name=role).first(),
+            print(createdic)
+            UserInfo.objects.create(**createdic)
+            for i in roles:
+                UserInfo.objects.filter(account=account).first().role.add(Role.objects.filter(name=i).first(), )
+            return render(request, 'login.html', locals())
+    return render(request, 'SigninABO.html', locals())
+
+@csrf_exempt
+def signinA31(request):
+    # print("signin")
+    message = ""
+    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="A31").order_by("name")
+    # print(inputRoles)
+    if request.method == "POST":
+        # message = "请检查填写的内容！"
+        account = request.POST.get('inputAccount')
+        password = request.POST.get('inputPassword1')
+        CNname = request.POST.get('inputCNname')
+        username = request.POST.get('inputUsrname')
+        Seat = request.POST.get('inputSeat')
+        email = request.POST.get('inputEmail')
+        role = request.POST.get('inputRole')
+        roles = request.POST.getlist('inputRole')
+        # print(role, roles)
+        if UserInfo.objects.filter(account=account).first():
+            message = "工號已注冊！"
+        else:
+            for i in roles:
+                if Role.objects.filter(name=i).first():
+                    message = "注冊成功！"
+                else:
+                    message = "角色内容不對，請聯係管理員！"
+                    return render(request, 'SigninABO.html', locals())
+            createdic = {"account": account, "password": password, "CNname": CNname,
+                         "username": username, "Seat": Seat, "email": email,
+                         }
+            # Role.objects.filter(name=role).first(),
+            print(createdic)
+            UserInfo.objects.create(**createdic)
+            for i in roles:
+                UserInfo.objects.filter(account=account).first().role.add(Role.objects.filter(name=i).first(), )
+            return render(request, 'login.html', locals())
+    return render(request, 'SigninA31.html', locals())
 
 @csrf_exempt
 def index(request):

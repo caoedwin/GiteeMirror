@@ -336,7 +336,9 @@ PERMISSION_MENU_KEY = 'k2'
 # 配置url权限白名单
 SAFE_URL = [
     r'/login/',
-    r'/signin/',
+    r'/signinLNV/',
+    r'/signinABO/',
+    r'/signinA31/',
     '/admin/.*',
     r'/Project_log/',
     r'/index/',

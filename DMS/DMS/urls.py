@@ -29,7 +29,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('ueditor/', include('DjangoUeditor.urls')), #添加DjangoUeditor的URL
     path(r'login/', views.login),
-    path(r'signin/', views.signin),
+    path(r'signinLNV/', views.signinLNV),
+    path(r'signinABO/', views.signinABO),
+    path(r'signinA31/', views.signinA31),
     path(r'', views.login),
     path(r'logout/', views.logout),
     path(r'Change_Password/', views.Change_Password),

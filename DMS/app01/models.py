@@ -30,6 +30,8 @@ class UserInfo(models.Model):
     """
     SeatChoice = (
         ('KS-Plant5', 'KS-Plant5'),
+        ('KS-Plant3', 'KS-Plant3'),
+        ('KS-Plant2', 'KS-Plant2'),
         ('CQ', 'CQ'),
         ('CD', 'CD'),
     )

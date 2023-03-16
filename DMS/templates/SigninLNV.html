@@ -75,7 +75,7 @@
     <div  class="card card-login mx-auto mt-6" style="background-color:rgba(255,255,255,0.3);">
       <div class="card-header" style="color:#FFF;">註冊(請填寫真實信息)</div>
       <div class="card-body" style="background-color: rgba(255,255,255,0.3);">
-        <form class='form-Test' action="/signin/" method="POST">
+        <form class='form-Test' action="/signinLNV/" method="POST">
           <div class="form-group">
               <span style="font-weight: bolder;">Account:</span>
               <input  type="text" id="inputAccount" placeholder="工號" required="required" autofocus="autofocus" name="inputAccount" style="border-radius: 5px;margin-left: 20px;">
@@ -96,8 +96,8 @@
             <label style="font-weight: bolder">Site:</label>
             <select id="inputSeat" name="inputSeat" style="margin-left: 50px">
                 <option value="KS-Plant5" selected>KS-Plant5</option>
-                <option value="CQ">CQ</option>
-                <option value="CD">CD</option>
+                {% comment %}<option value="CQ">CQ</option>
+                <option value="CD">CD</option>{% endcomment %}
             </select>
           </div>
           <div class="form-group">
