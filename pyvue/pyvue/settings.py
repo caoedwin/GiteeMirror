@@ -62,11 +62,12 @@ CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'pyvue.urls'
 
+print(BASE_DIR)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [],
-        'DIRS': [os.path.join(BASE_DIR, 'Templates')],  # demo add
+        'DIRS': [os.path.join(BASE_DIR, 'Templates/dist')],  # demo add
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

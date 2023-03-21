@@ -4,7 +4,7 @@
     <!-- show books list -->
     <ul>
       <li v-for="(book, index) in books" :key="index" style="display:block">
-        {{index}}-{{book.name}}-{{book.author}}-{{book.add_time}}
+        {{index}}.{{book.name}}-{{book.author}}-{{book.add_time}}
       </li>
     </ul>
     <!-- form to add a book -->
@@ -38,7 +38,9 @@ export default {
   methods: {
     loadBooks () {
       getBooks().then(response => {
-        this.books = response.data
+      console.log(response.data.data,"get")
+      console.log(response.data.data.results,"get1")
+        this.books = response.data.data.results
       })
     }, // load books list when visit the page
     bookSubmit () {
