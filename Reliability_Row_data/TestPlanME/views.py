@@ -1213,6 +1213,22 @@ def TestPlanME_Edit(request):
         #         {"customer": "DLAE3", "phase": [1, 2, 3]}],
         # "Other": [{"customer": "OTHER", "phase": [1, 2, 3]}]
     }
+    Keypartlist = [
+        #  {"Keypartname": "ID", "Keypartvalue": "1"},
+        # {"Keypartname": "Type", "Keypartvalue": "1"},
+        # {"Keypartname": "SKU", "Keypartvalue": "1"},
+        # {"Keypartname": "Planar", "Keypartvalue": "2"},
+        # {"Keypartname": "Panel", "Keypartvalue": "3"},
+        # {"Keypartname": "Stand", "Keypartvalue": "4"},
+        # {"Keypartname": "Cable", "Keypartvalue": "4"},
+        # {"Keypartname": "Connectorsource", "Keypartvalue": "4"},
+        # {"Keypartname": "SSD/HHD", "Keypartvalue": "4"},
+        # {"Keypartname": "Camera", "Keypartvalue": "4"},
+        # {"Keypartname": "ODD", "Keypartvalue": "4"},
+        # {"Keypartname": "Package", "Keypartvalue": "4"},
+        # {"Keypartname": "RegularAttendTime", "Keypartvalue": "4"},
+        # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": "4"}
+    ]
     Customer_list = TestProjectME.objects.all().values('Customer').distinct().order_by('Customer')
 
     for i in Customer_list:
@@ -1318,139 +1334,346 @@ def TestPlanME_Edit(request):
             return HttpResponse(json.dumps(updateData), content_type="application/json")
 
     if request.method == "POST" :
-        #str(request.body, encoding='utf-8')
-        # print (str(request.body, encoding='utf-8'))
-        # print(json.loads(request.body))
-        responseData =json.loads(request.body)
-        # print(responseData)
-        # print(request.body)
-        if 'ExcelData' in responseData.keys():
-            if responseData:
-                # print(responseData['Projectinfo'][2])
-                if responseData['Projectinfo'][2] == 0:
+        if request.POST:
+            if request.POST.get("isGetData") == "openKeypart":
+                Customer = request.POST.get("Customer")
+                Project = request.POST.get("Project")
+                Phase = request.POST.get('Phase')
+                if Phase == '0':
                     Phase = 'B(FVT)'
-                if responseData['Projectinfo'][2] == 1:
+                if Phase == '1':
                     Phase = 'C(SIT)'
-                if responseData['Projectinfo'][2] == 2:
+                if Phase == '2':
                     Phase = 'INV'
-                if responseData['Projectinfo'][2] == 3:
+                if Phase == '3':
                     Phase = 'Others'
-                dic_Project = {'Customer': responseData['Projectinfo'][0],
-                               'Project': responseData['Projectinfo'][1], 'Phase': Phase}
+                dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
                 # print(dic_Project)
-                item_nodata=[]
-                itemindata=[]
-                for i in TestItemME.objects.all():
-                    itemindata.append(i.ItemNo_d)
-                    # print(itemindata)
-                for i in responseData['ExcelData']:
-                    # print(type(i['phase']))
-                    # print(i)
-                    if i['Item No.'] in itemindata:
-                        itemsinfo = TestItemME.objects.get(Customer=responseData['Projectinfo'][0],ItemNo_d=i['Item No.'])
-
-                        Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
-                        editplan=TestPlanME.objects.filter(Items=itemsinfo,Projectinfo=Projectinfos).first()
-                        # print(type(editplan))
-                        if 'NormalAmount' in i.keys():
-                            editplan.NormalAmount=i['NormalAmount']
-                        if 'NormalFacilityTime' in i.keys():
-                            editplan.NormalFacilityTime = i['NormalFacilityTime']
-                        if 'NormalAttendTime' in i.keys():
-                            editplan.NormalAttendTime = i['NormalAttendTime']
-                        if 'NormalProgramtime' in i.keys():
-                            editplan.NormalProgramtime = i['NormalProgramtime']
-                        if 'RegCycles' in i.keys():
-                            editplan.RegCycles = i['RegCycles']
-                        if 'RegAmount' in i.keys():
-                            editplan.RegAmount = i['RegAmount']
-                        if 'RegFacilityTime' in i.keys():
-                            editplan.RegFacilityTime = i['RegFacilityTime']
-                        if 'RegAttendTime' in i.keys():
-                            editplan.RegAttendTime = i['RegAttendTime']
-                        if 'RegProgramtime' in i.keys():
-                            editplan.RegProgramtime = i['RegProgramtime']
-                        editplan.editor = request.session.get('user_name')
-                        editplan.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        editplan.save()
+                if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
+                    if KeypartAIO.objects.filter(**dic_Project).first():
+                        KeyPart = KeypartAIO.objects.filter(**dic_Project).first()
+                        Keypartlist = [
+                                        {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                                       {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                                       {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                                       {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                                       {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                                       {"Keypartname": "Stand", "Keypartvalue": KeyPart.Stand},
+                                       {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                                       {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                                       {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                                       {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                                       {"Keypartname": "ODD", "Keypartvalue": KeyPart.ODD},
+                                       {"Keypartname": "Package", "Keypartvalue": KeyPart.Package},
+                                       # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                                       # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                                       ]
                     else:
-                        item_nodata.append(i['Item No.'])
-                # print (item_nodata)
-                Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
-                for i in Projectinfos.testplanme_set.all().order_by('Items'):
-                    TestPlanInfo = {}
-                    TestPlanInfo['ItemNo'] = i.Items.ItemNo_d
-                    TestPlanInfo['Item'] = i.Items.Item_d
-                    TestPlanInfo['Facility Name'] = i.Items.Facility_Name_d
-                    TestPlanInfo['Voltage (our)'] = i.Items.Voltage_d
-                    TestPlanInfo['Sample Size'] = i.Items.Sample_Size_d
-                    TestPlanInfo['TTF'] = i.Items.TimePunits_Facility_d
-                    TestPlanInfo['TTM'] = i.Items.TimePunits_Manual_d
-                    TestPlanInfo['TTP'] = i.Items.TimePunits_Program_d
-                    TestPlanInfo['NTU'] = i.NormalAmount
-                    TestPlanInfo['RTR'] = i.RegCycles
-                    TestPlanInfo['RTU'] = i.RegAmount
-                    mock_data.append(TestPlanInfo)
+                        createFFRT = {
+                            "Customer": Customer, "Project": Project, 'Phase': Phase, "IDs": "", "Type": "", "SKU": "", "Planar": "", "Panel": "",
+                            "Stand": "", "Cable": "", "Connectorsource": "", "SSDHHD": "", "Camera": "", "ODD": "", "Package": "", "RegularAttendTime": "", "RegressiveAttendTime": "",
+                        }
+                        KeypartAIO.objects.create(**createFFRT)
+                        KeyPart = KeypartAIO.objects.filter(**dic_Project).first()
+                        Keypartlist = [
+                            {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                            {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                            {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                            {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                            {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                            {"Keypartname": "Stand", "Keypartvalue": KeyPart.Stand},
+                            {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                            {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                            {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                            {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                            {"Keypartname": "ODD", "Keypartvalue": KeyPart.ODD},
+                            {"Keypartname": "Package", "Keypartvalue": KeyPart.Package},
+                            # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                            # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                        ]
+                else:
+                    if KeypartC38NB.objects.filter(**dic_Project).first():
+                        KeyPart = KeypartC38NB.objects.filter(**dic_Project).first()
+                        Keypartlist = [
+                                        {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                                       {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                                       {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                                       {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                                       {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                                       {"Keypartname": "Hinge", "Keypartvalue": KeyPart.Hinge},
+                                       {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                                       {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                                        {"Keypartname": "Keyboard", "Keypartvalue": KeyPart.Keyboard},
+                                        {"Keypartname": "ClickPad", "Keypartvalue": KeyPart.ClickPad},
+                                       {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                                       {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                                        {"Keypartname": "Rubberfoot", "Keypartvalue": KeyPart.Rubberfoot},
+                                       {"Keypartname": "ODD(Option)", "Keypartvalue": KeyPart.ODD},
+                                       {"Keypartname": "Trap Door RJ45(Option)", "Keypartvalue": KeyPart.TrapDoorRJ45},
+                                       # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                                       # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                                       ]
+                    else:
+                        createFFRT = {
+                            "Customer": Customer, "Project": Project, 'Phase': Phase, "IDs": "", "Type": "", "SKU": "", "Planar": "", "Panel": "",
+                            "Hinge": "", "Cable": "", "Connectorsource": "", "Keyboard":"", "ClickPad":"", "SSDHHD": "", "Camera": "", "Rubberfoot":"",
+                            "ODD": "", "TrapDoorRJ45": "", "RegularAttendTime": "", "RegressiveAttendTime": "",
+                        }
+                        KeypartC38NB.objects.create(**createFFRT)
+                        KeyPart = KeypartC38NB.objects.filter(**dic_Project).first()
+                        Keypartlist = [
+                            {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                            {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                            {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                            {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                            {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                            {"Keypartname": "Hinge", "Keypartvalue": KeyPart.Hinge},
+                            {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                            {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                            {"Keypartname": "Keyboard", "Keypartvalue": KeyPart.Keyboard},
+                            {"Keypartname": "ClickPad", "Keypartvalue": KeyPart.ClickPad},
+                            {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                            {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                            {"Keypartname": "Rubberfoot", "Keypartvalue": KeyPart.Rubberfoot},
+                            {"Keypartname": "ODD(Option)", "Keypartvalue": KeyPart.ODD},
+                            {"Keypartname": "Trap Door RJ45(Option)", "Keypartvalue": KeyPart.TrapDoorRJ45},
+                            # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                            # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                        ]
+                canEdit = 0
+                current_user = request.session.get('user_name')
+                if TestProjectME.objects.filter(**dic_Project).first():
+                    for h in TestProjectME.objects.filter(**dic_Project):
+                        for i in h.Owner.all():
+                            # print(i.username,current_user)
+                            # print(type(i.username),type(current_user))
+                            if i.username == current_user:
+                                canEdit = 1
+                                break
                 updateData = {
                     "MockData": mock_data,
                     "selectMsg": combine,
-                    'canEdit': 1
+                    "Keypartlist": Keypartlist,
                 }
-
                 return HttpResponse(json.dumps(updateData), content_type="application/json")
-        if 'uploadData' in json.loads(request.body):
-            if responseData:
-                if responseData['uploadData'][0]['phase'] == 0:
+            if request.POST.get("isGetData") == "SAVE":
+                Customer = request.POST.get("Customer")
+                Project = request.POST.get("Project")
+                Phase = request.POST.get('Phase')
+                if Phase == '0':
                     Phase = 'B(FVT)'
-                if responseData['uploadData'][0]['phase'] == 1:
+                if Phase == '1':
                     Phase = 'C(SIT)'
-                if responseData['uploadData'][0]['phase'] == 2:
+                if Phase == '2':
                     Phase = 'INV'
-                if responseData['uploadData'][0]['phase'] == 3:
+                if Phase == '3':
                     Phase = 'Others'
-                dic_Project = {'Customer': responseData['uploadData'][0]['customer'] , 'Project': responseData['uploadData'][0]['project'] , 'Phase': Phase}
-                for i in responseData['uploadData']:
-                    # print(type(i['phase']))
-                    # print(i)
-                    Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
-                    itemsinfo=TestItemME.objects.get(Customer=responseData['uploadData'][0]['customer'], ItemNo_d=i['itemNo'])
-                    editplan=TestPlanME.objects.filter(Items=itemsinfo, Projectinfo=Projectinfos).first()
-                    # print(type(editplan))
-                    editplan.NormalAmount=i['NTU']
-                    editplan.NormalFacilityTime = i['NTF']
-                    editplan.NormalAttendTime = i['NTA']
-                    editplan.NormalProgramtime = i['NTP']
-                    editplan.RegCycles = i['RTR']
-                    editplan.RegAmount = i['RTU']
-                    editplan.RegFacilityTime = i['RTF']
-                    editplan.RegAttendTime = i['RTA']
-                    editplan.RegProgramtime = i['RTP']
-                    editplan.editor = request.session.get('user_name')
-                    editplan.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    editplan.save()
-                Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
-                for i in Projectinfos.testplanme_set.all().order_by('Items'):
-                    TestPlanInfo = {}
-                    TestPlanInfo['ItemNo'] = i.Items.ItemNo_d
-                    TestPlanInfo['Item'] = i.Items.Item_d
-                    TestPlanInfo['Facility Name'] = i.Items.Facility_Name_d
-                    TestPlanInfo['Voltage (our)'] = i.Items.Voltage_d
-                    TestPlanInfo['Sample Size'] = i.Items.Sample_Size_d
-                    TestPlanInfo['TTF'] = i.Items.TimePunits_Facility_d
-                    TestPlanInfo['TTM'] = i.Items.TimePunits_Manual_d
-                    TestPlanInfo['TTP'] = i.Items.TimePunits_Program_d
-                    TestPlanInfo['NTU'] = i.NormalAmount
-                    TestPlanInfo['RTR'] = i.RegCycles
-                    TestPlanInfo['RTU'] = i.RegAmount
-                    mock_data.append(TestPlanInfo)
-                # print (mock_data)
+                dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
+
+                Keypartname = request.POST.get("rows[Keypartname]")
+                Keypartvalue = request.POST.get("rows[Keypartvalue]")
+                # print(Customer)
+
+                if "C38(AIO)" in Customer or "T88(AIO)" in Customer:
+                    updatedic = {}
+                    updatedic[Keypartname] = Keypartvalue
+                    if KeypartAIO.objects.filter(**dic_Project).first():#edit
+
+                        KeypartAIO.objects.filter(**dic_Project).update(**updatedic)
+
+                    KeyPart = KeypartAIO.objects.filter(**dic_Project).first()
+                    Keypartlist = [
+                        {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                        {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                        {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                        {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                        {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                        {"Keypartname": "Stand", "Keypartvalue": KeyPart.Stand},
+                        {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                        {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                        {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                        {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                        {"Keypartname": "ODD", "Keypartvalue": KeyPart.ODD},
+                        {"Keypartname": "Package", "Keypartvalue": KeyPart.Package},
+                        # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                        # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                    ]
+                else:
+                    updatedic = {}
+                    if Keypartname == "ODD(Option)":
+                        Keypartname = "ODD"
+                    if Keypartname == "Trap Door RJ45(Option)":
+                        Keypartname = "TrapDoorRJ45"
+                    updatedic[Keypartname] = Keypartvalue
+                    if KeypartC38NB.objects.filter(**dic_Project).first():  # edit
+
+                        KeypartC38NB.objects.filter(**dic_Project).update(**updatedic)
+                        KeyPart = KeypartC38NB.objects.filter(**dic_Project).first()
+                        Keypartlist = [
+                            {"Keypartname": "IDs", "Keypartvalue": KeyPart.IDs},
+                            {"Keypartname": "Type", "Keypartvalue": KeyPart.Type},
+                            {"Keypartname": "SKU", "Keypartvalue": KeyPart.SKU},
+                            {"Keypartname": "Planar", "Keypartvalue": KeyPart.Planar},
+                            {"Keypartname": "Panel", "Keypartvalue": KeyPart.Panel},
+                            {"Keypartname": "Hinge", "Keypartvalue": KeyPart.Hinge},
+                            {"Keypartname": "Cable", "Keypartvalue": KeyPart.Cable},
+                            {"Keypartname": "Connectorsource", "Keypartvalue": KeyPart.Connectorsource},
+                            {"Keypartname": "Keyboard", "Keypartvalue": KeyPart.Keyboard},
+                            {"Keypartname": "ClickPad", "Keypartvalue": KeyPart.ClickPad},
+                            {"Keypartname": "SSDHHD", "Keypartvalue": KeyPart.SSDHHD},
+                            {"Keypartname": "Camera", "Keypartvalue": KeyPart.Camera},
+                            {"Keypartname": "Rubberfoot", "Keypartvalue": KeyPart.Rubberfoot},
+                            {"Keypartname": "ODD(Option)", "Keypartvalue": KeyPart.ODD},
+                            {"Keypartname": "Trap Door RJ45(Option)", "Keypartvalue": KeyPart.TrapDoorRJ45},
+                            # {"Keypartname": "RegularAttendTime", "Keypartvalue": KeyPart.RegularAttendTime},
+                            # {"Keypartname": "RegressiveAttendTime", "Keypartvalue": KeyPart.RegressiveAttendTime}
+                        ]
                 updateData = {
                     "MockData": mock_data,
                     "selectMsg": combine,
-                    'canEdit': 1
+                    "Keypartlist": Keypartlist,
                 }
+                return HttpResponse(json.dumps(updateData), content_type="application/json")
+        else:
+            #str(request.body, encoding='utf-8')
+            # print (str(request.body, encoding='utf-8'))
+            # print(json.loads(request.body))
 
-            return HttpResponse(json.dumps(updateData), content_type="application/json")
+            # print(responseData)
+            # print(request.body)
+            try:
+                responseData = json.loads(request.body)
+            except:
+                pass
+            else:
+                if 'ExcelData' in responseData.keys():
+                    if responseData:
+                        # print(responseData['Projectinfo'][2])
+                        if responseData['Projectinfo'][2] == 0:
+                            Phase = 'B(FVT)'
+                        if responseData['Projectinfo'][2] == 1:
+                            Phase = 'C(SIT)'
+                        if responseData['Projectinfo'][2] == 2:
+                            Phase = 'INV'
+                        if responseData['Projectinfo'][2] == 3:
+                            Phase = 'Others'
+                        dic_Project = {'Customer': responseData['Projectinfo'][0],
+                                       'Project': responseData['Projectinfo'][1], 'Phase': Phase}
+                        # print(dic_Project)
+                        item_nodata=[]
+                        itemindata=[]
+                        for i in TestItemME.objects.all():
+                            itemindata.append(i.ItemNo_d)
+                            # print(itemindata)
+                        for i in responseData['ExcelData']:
+                            # print(type(i['phase']))
+                            # print(i)
+                            if i['Item No.'] in itemindata:
+                                itemsinfo = TestItemME.objects.get(Customer=responseData['Projectinfo'][0],ItemNo_d=i['Item No.'])
+
+                                Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
+                                editplan=TestPlanME.objects.filter(Items=itemsinfo,Projectinfo=Projectinfos).first()
+                                # print(type(editplan))
+                                if 'NormalAmount' in i.keys():
+                                    editplan.NormalAmount=i['NormalAmount']
+                                if 'NormalFacilityTime' in i.keys():
+                                    editplan.NormalFacilityTime = i['NormalFacilityTime']
+                                if 'NormalAttendTime' in i.keys():
+                                    editplan.NormalAttendTime = i['NormalAttendTime']
+                                if 'NormalProgramtime' in i.keys():
+                                    editplan.NormalProgramtime = i['NormalProgramtime']
+                                if 'RegCycles' in i.keys():
+                                    editplan.RegCycles = i['RegCycles']
+                                if 'RegAmount' in i.keys():
+                                    editplan.RegAmount = i['RegAmount']
+                                if 'RegFacilityTime' in i.keys():
+                                    editplan.RegFacilityTime = i['RegFacilityTime']
+                                if 'RegAttendTime' in i.keys():
+                                    editplan.RegAttendTime = i['RegAttendTime']
+                                if 'RegProgramtime' in i.keys():
+                                    editplan.RegProgramtime = i['RegProgramtime']
+                                editplan.editor = request.session.get('user_name')
+                                editplan.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                editplan.save()
+                            else:
+                                item_nodata.append(i['Item No.'])
+                        # print (item_nodata)
+                        Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
+                        for i in Projectinfos.testplanme_set.all().order_by('Items'):
+                            TestPlanInfo = {}
+                            TestPlanInfo['ItemNo'] = i.Items.ItemNo_d
+                            TestPlanInfo['Item'] = i.Items.Item_d
+                            TestPlanInfo['Facility Name'] = i.Items.Facility_Name_d
+                            TestPlanInfo['Voltage (our)'] = i.Items.Voltage_d
+                            TestPlanInfo['Sample Size'] = i.Items.Sample_Size_d
+                            TestPlanInfo['TTF'] = i.Items.TimePunits_Facility_d
+                            TestPlanInfo['TTM'] = i.Items.TimePunits_Manual_d
+                            TestPlanInfo['TTP'] = i.Items.TimePunits_Program_d
+                            TestPlanInfo['NTU'] = i.NormalAmount
+                            TestPlanInfo['RTR'] = i.RegCycles
+                            TestPlanInfo['RTU'] = i.RegAmount
+                            mock_data.append(TestPlanInfo)
+                        updateData = {
+                            "MockData": mock_data,
+                            "selectMsg": combine,
+                            'canEdit': 1
+                        }
+
+                        return HttpResponse(json.dumps(updateData), content_type="application/json")
+                if 'uploadData' in json.loads(request.body):
+                    if responseData:
+                        if responseData['uploadData'][0]['phase'] == 0:
+                            Phase = 'B(FVT)'
+                        if responseData['uploadData'][0]['phase'] == 1:
+                            Phase = 'C(SIT)'
+                        if responseData['uploadData'][0]['phase'] == 2:
+                            Phase = 'INV'
+                        if responseData['uploadData'][0]['phase'] == 3:
+                            Phase = 'Others'
+                        dic_Project = {'Customer': responseData['uploadData'][0]['customer'] , 'Project': responseData['uploadData'][0]['project'] , 'Phase': Phase}
+                        for i in responseData['uploadData']:
+                            # print(type(i['phase']))
+                            # print(i)
+                            Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
+                            itemsinfo=TestItemME.objects.get(Customer=responseData['uploadData'][0]['customer'], ItemNo_d=i['itemNo'])
+                            editplan=TestPlanME.objects.filter(Items=itemsinfo, Projectinfo=Projectinfos).first()
+                            # print(type(editplan))
+                            editplan.NormalAmount=i['NTU']
+                            editplan.NormalFacilityTime = i['NTF']
+                            editplan.NormalAttendTime = i['NTA']
+                            editplan.NormalProgramtime = i['NTP']
+                            editplan.RegCycles = i['RTR']
+                            editplan.RegAmount = i['RTU']
+                            editplan.RegFacilityTime = i['RTF']
+                            editplan.RegAttendTime = i['RTA']
+                            editplan.RegProgramtime = i['RTP']
+                            editplan.editor = request.session.get('user_name')
+                            editplan.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            editplan.save()
+                        Projectinfos = TestProjectME.objects.filter(**dic_Project).first()
+                        for i in Projectinfos.testplanme_set.all().order_by('Items'):
+                            TestPlanInfo = {}
+                            TestPlanInfo['ItemNo'] = i.Items.ItemNo_d
+                            TestPlanInfo['Item'] = i.Items.Item_d
+                            TestPlanInfo['Facility Name'] = i.Items.Facility_Name_d
+                            TestPlanInfo['Voltage (our)'] = i.Items.Voltage_d
+                            TestPlanInfo['Sample Size'] = i.Items.Sample_Size_d
+                            TestPlanInfo['TTF'] = i.Items.TimePunits_Facility_d
+                            TestPlanInfo['TTM'] = i.Items.TimePunits_Manual_d
+                            TestPlanInfo['TTP'] = i.Items.TimePunits_Program_d
+                            TestPlanInfo['NTU'] = i.NormalAmount
+                            TestPlanInfo['RTR'] = i.RegCycles
+                            TestPlanInfo['RTU'] = i.RegAmount
+                            mock_data.append(TestPlanInfo)
+                        # print (mock_data)
+                        updateData = {
+                            "MockData": mock_data,
+                            "selectMsg": combine,
+                            'canEdit': 1
+                        }
+
+                    return HttpResponse(json.dumps(updateData), content_type="application/json")
+
 
 
 

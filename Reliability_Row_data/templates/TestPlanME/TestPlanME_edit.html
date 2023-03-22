@@ -228,6 +228,7 @@
     </div>
     <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px">查找</el-button>
     <el-button @click="saveData" v-cloak type="success" style="height:40px">保存</el-button>
+      <el-button size="small" style="background:#428bca;color:#fff;" v-if="canEdit==1" @click="openKeypart">Keypart</el-button>
       <!--<el-button @click="exportExcel"  style="height:40px">導出</el-button>-->
 </div>
   <div v-if="canEdit" class="fileUploadContent">
@@ -345,6 +346,34 @@
 {#    </el-table-column>#}
   </el-table>
 </div>
+
+    <el-dialog title="Keypart List" width="30%!important" :visible.sync="setKeypart">
+     <template>
+    <el-table stripe border :data="Keypartlist">
+    <el-table-column  label="Project" >
+        <template slot-scope="scope">
+            <el-input class="edit-cell" v-if="showEdit[scope.$index]"    v-model="scope.row.Keypartname"></el-input>
+            <span v-else>${ keypartname[scope.$index] }</span>
+       </template>
+    </el-table-column>
+    <el-table-column  :label="project" >
+        <template slot-scope="scope">
+            <el-input class="edit-cell" v-if="showEdit[scope.$index]"    v-model="scope.row.Keypartvalue"></el-input>
+            <span v-else>${ keypartvalue[scope.$index] }</span>
+       </template>
+    </el-table-column>
+        <el-table-column label="操作" align="center" fixed="right">
+        <template slot-scope="scope">
+            <el-button type="text" size="small"     @click.native="saveRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]">保存</el-button>
+            <el-button type="text" size="small"     @click.native="cancelRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]">取消</el-button>
+
+            <el-button type="text" size="small"     @click.native="editRow(scope.$index, scope.row)"    v-if="!showBtn[scope.$index]">编辑</el-button>
+        </template>
+    </el-table-column>
+  </el-table>
+         </template>
+</el-dialog>
+
   <div v-if="loading" v-cloak class="fullScreen">
     <section v-if="loading">
               <div class='sk-fading-circle'>
@@ -452,6 +481,13 @@
         tableloading:false,
         elbuttonloading:false,
         phaseName:["B(FVT)","C(SIT)","INV","Others",],
+          keypartname:[],
+        keypartvalue:[],
+          Keypartlist:[],
+          setKeypart:false,
+          showEdit:[], //显示编辑框
+          showBtn:[],
+        showBtnOrdinary: true,
         //需要用到輸入和變化值
         NTU:[],
         NTF:[],
@@ -518,6 +554,10 @@
                         this.RTU_temp[i]=this.tableData[i].RTU;
                         this.RTR_temp[i]=this.tableData[i].RTR;
                     }
+                    for(let i=0;i<this.Keypartlist.length;i++) {
+                         this.keypartname[i] = this.Keypartlist[i].Keypartname;
+                         this.keypartvalue[i] = this.Keypartlist[i].Keypartvalue;
+                     }
                     this.tableloading = false;
                     this.elbuttonloading = false;
                      // console.log(this.NTU,this.RTU,this.RTR,12);
@@ -1035,7 +1075,68 @@
 
             }
 
-        }
+        },
+        openKeypart(){
+                this.setKeypart=true;
+                let Customer = this.customer;
+                let Project = this.project;
+                let Phase = this.phase;
+                let data = {
+                        "isGetData": "openKeypart",
+                        "Customer": Customer,
+                        "Project": Project,
+                        "Phase": Phase,
+                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                    }
+                    axios.post("/TestPlanME/TestPlanME-edit/", Qs.stringify(data), {
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                    }).then((res) => {
+                    this.Keypartlist = res.data.Keypartlist;
+                     for(let i=0;i<this.Keypartlist.length;i++) {
+                         this.keypartname[i] = this.Keypartlist[i].Keypartname;
+                         this.keypartvalue[i] = this.Keypartlist[i].Keypartvalue;
+                     }
+                })
+            },
+            //編輯Keypart
+        editRow(index,row) {
+           this.$set(this.showEdit,index,true);
+           this.$set(this.showBtn,index,true);
+        },
+            //保存Keypart
+        saveRow(index,rows) {
+             let Customer = this.customer;
+             let Project = this.project;
+            let Phase = this.phase;
+              let data = {
+                        "isGetData": "SAVE",
+                        "rows":rows,
+                        "Customer": Customer,
+                        "Project": Project,
+                        "Phase": Phase,
+                        "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                    }
+                    axios.post("/TestPlanME/TestPlanME-edit/", Qs.stringify(data), {
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                    }).then((res) => {
+                    this.Keypartlist = res.data.Keypartlist;
+                         for(let i=0;i<this.Keypartlist.length;i++) {
+                         this.keypartname[i] = this.Keypartlist[i].Keypartname;
+                         this.keypartvalue[i] = this.Keypartlist[i].Keypartvalue;
+                     }
+
+
+                })
+                this.$set(this.showEdit, index, false);
+                this.$set(this.showBtn, index, false);//关闭页面
+         },
+            //取消编辑Keypart
+        cancelRow(index, row) {
+            this.Keypartlist[index].Keypartname=this.keypartname[index];
+            this.Keypartlist[index].Keypartvalue=this.keypartvalue[index];
+            this.$set(this.showEdit,index,false);
+            this.$set(this.showBtn,index,false) ;
+        },
     },
     //计算公式：根据所填选项，显示数据
     computed:{

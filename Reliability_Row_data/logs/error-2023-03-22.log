@@ -1,0 +1,94 @@
+[2023-03-22 14:56:13,340] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1340, in TestPlanME_Edit
+    responseData =json.loads(request.body)
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2023-03-22 14:56:13,353] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 103614
+[2023-03-22 14:59:32,646] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1340, in TestPlanME_Edit
+    responseData =json.loads(request.body)
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2023-03-22 14:59:32,659] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 103614
+[2023-03-22 15:00:52,130] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1538, in TestPlanME_Edit
+    responseData =json.loads(request.body)
+  File "C:\Python372\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python372\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python372\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2023-03-22 15:00:52,143] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 111967
+[2023-03-22 15:15:03,608] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1549, in TestPlanME_Edit
+    if 'ExcelData' in responseData.keys():
+AttributeError: 'bytes' object has no attribute 'keys'
+[2023-03-22 15:15:03,619] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 87247
+[2023-03-22 15:20:46,583] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1572, in TestPlanME_Edit
+    itemsinfo = TestItemME.objects.get(Customer=responseData['Projectinfo'][0],ItemNo_d=i['Item No.'])
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+TestPlanME.models.TestItemME.DoesNotExist: TestItemME matching query does not exist.
+[2023-03-22 15:20:46,598] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 108063
+[2023-03-22 15:22:34,520] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TestPlanME/TestPlanME-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\TestPlanME\views.py", line 1580, in TestPlanME_Edit
+    editplan.NormalFacilityTime = i['NormalFacilityTime']
+AttributeError: 'NoneType' object has no attribute 'NormalFacilityTime'
+[2023-03-22 15:22:34,532] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanME/TestPlanME-edit/ HTTP/1.1" 500 99682
