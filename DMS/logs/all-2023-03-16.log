@@ -118,3 +118,12 @@
 [2023-03-21 16:04:37,994] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
 [2023-03-21 16:04:38,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
 [2023-03-21 16:04:38,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-03-22 14:33:02,595] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-03-22 14:33:02,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-03-22 14:33:02,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-03-22 14:33:09,673] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-03-22 14:33:09,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-03-22 14:33:09,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 32708
+[2023-03-22 14:33:09,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/js/index.js?_=2022.4.9 HTTP/1.1" 304 0
+[2023-03-22 14:33:10,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-03-22 14:33:10,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
