@@ -4436,7 +4436,7 @@ def Summary1(request):
                     {
                         'name': i["Chu"],
                         'type': 'line',
-                        'stack': 'Total',
+                        # 'stack': 'Total',#堆叠数据累加
                         'data': monthDiagram1Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
@@ -4454,7 +4454,7 @@ def Summary1(request):
                     {
                         'name': i["Chu"],
                         'type': 'line',
-                        'stack': 'Total',
+                        # 'stack': 'Total',#堆叠数据累加
                         'data': monthDiagram2Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
@@ -4472,7 +4472,7 @@ def Summary1(request):
                     {
                         'name': i["Chu"],
                         'type': 'line',
-                        'stack': 'Total',
+                        # 'stack': 'Total',#堆叠数据累加
                         'data': monthDiagram3Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
