@@ -7,9 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/logs/all-2023-03-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/logs/all-2023-03-16.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonalInfo/views20230314linshi.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views20230314linshi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-03-22.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-03-22.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-03-22.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-03-22.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +62,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="115" />
           <entry key="js" value="2" />
-          <entry key="py" value="69" />
+          <entry key="py" value="71" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
@@ -69,7 +71,7 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="115" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="69" />
+          <entry key="Python" value="71" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
@@ -77,13 +79,13 @@
         <counts>
           <entry key="Django Console" value="5" />
           <entry key="html" value="3456" />
-          <entry key="py" value="2904" />
+          <entry key="py" value="2947" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3456" />
-          <entry key="Python" value="2909" />
+          <entry key="Python" value="2952" />
         </counts>
       </usages-collector>
     </session>
@@ -94,12 +96,34 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
+        <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="1060" column="47" selection-start-line="1060" selection-start-column="47" selection-end-line="1060" selection-end-column="47" />
+            <state relative-caret-position="429">
+              <caret line="4177" column="64" selection-start-line="4177" selection-start-column="52" selection-end-line="4177" selection-end-column="64" />
               <folding>
-                <element signature="e#30018#35327#0#DjangoTemplate" />
+                <element signature="e#185304#186550#0" />
+                <element signature="e#186572#190488#0" />
+                <element signature="e#190556#191470#0" />
+                <element signature="e#191515#192429#0" />
+                <element signature="e#192474#193388#0" />
+                <element signature="e#193430#193819#0" />
+                <element signature="e#193861#194250#0" />
+                <element signature="e#194292#194681#0" />
+                <element signature="e#194715#195180#0" />
+                <element signature="e#195198#195270#0" />
+                <element signature="e#195286#195490#0" />
+                <element signature="e#195503#196352#0" />
+                <element signature="e#196373#196724#0" />
+                <element signature="e#196729#196742#0" />
+                <element signature="e#197751#224611#0" />
+                <element signature="e#224965#242241#0" />
+                <element signature="e#242276#258775#0" />
+                <element signature="e#259154#259919#0" />
+                <element signature="e#260486#261997#0" />
+                <element signature="e#262040#262466#0" />
+                <element signature="e#268112#276402#0" />
+                <element signature="e#276557#278833#0" />
+                <element signature="e#278864#279266#0" />
               </folding>
             </state>
           </provider>
@@ -160,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Reliability_Row_data/settings.py" />
         <option value="$PROJECT_DIR$/CQM/forms.py" />
         <option value="$PROJECT_DIR$/templates/CQM/CQM_search.html" />
         <option value="$PROJECT_DIR$/templates/MQM/MQM_edit.html" />
@@ -210,6 +233,7 @@
         <option value="$PROJECT_DIR$/templates/TestPlanME/TestPlanME_edit.html" />
         <option value="$PROJECT_DIR$/TestPlanME/views.py" />
         <option value="$PROJECT_DIR$/templates/PersonalInfo/Summary1.html" />
+        <option value="$PROJECT_DIR$/PersonalInfo/views20230314linshi.py" />
         <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
       </list>
     </option>
@@ -234,10 +258,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1944" />
-    <option name="height" value="1044" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="2262" />
+    <option name="height" value="1350" />
   </component>
   <component name="ProjectId" id="1Td4In4Uk9cLegXCQfBqS8KHbx0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -803,8 +827,8 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info id="Favorites" order="0" sideWeight="0.52007645" side_tool="true" weight="0.25883153" />
-      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.47992352" visible="true" weight="0.25883153" />
+      <window_info id="Favorites" order="0" sideWeight="0.51896554" side_tool="true" weight="0.25883153" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="1" sideWeight="0.4810345" visible="true" weight="0.25883153" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
@@ -821,7 +845,7 @@
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50317967" weight="0.2989276" />
       <window_info anchor="bottom" id="SciView" order="14" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="16" sideWeight="0.5006605" visible="true" weight="0.2761394" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="16" sideWeight="0.5006605" visible="true" weight="0.22252011" />
       <window_info anchor="bottom" id="Messages" order="17" />
       <window_info anchor="bottom" id="Version Control" order="18" weight="0.3297587" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
@@ -1227,51 +1251,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/views20230314linshi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="3062" column="34" lean-forward="true" selection-start-line="3062" selection-start-column="34" selection-end-line="3062" selection-end-column="34" />
-          <folding>
-            <element signature="e#1210#1338#0" />
-            <element signature="e#2247#2642#0" />
-            <element signature="e#3602#21558#0" />
-            <element signature="e#21611#41112#0" />
-            <element signature="e#41163#139517#0" />
-            <element signature="e#139566#149308#0" />
-            <element signature="e#149355#181361#0" />
-            <element signature="e#194384#211286#0" />
-            <element signature="e#198053#198068#0" />
-            <element signature="e#211665#212430#0" />
-            <element signature="e#212722#219428#0" />
-            <element signature="e#219796#236698#0" />
-            <element signature="e#236733#252439#0" />
-            <element signature="e#252818#253583#0" />
-            <element signature="e#253874#260580#0" />
-            <element signature="e#260615#267289#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="4439" column="55" selection-start-line="4439" selection-start-column="55" selection-end-line="4439" selection-end-column="55" />
-          <folding>
-            <element signature="e#185304#186550#0" />
-            <element signature="e#186572#190488#0" />
-            <element signature="e#190556#191470#0" />
-            <element signature="e#191515#192429#0" />
-            <element signature="e#192474#193388#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
           <caret line="1060" column="47" selection-start-line="1060" selection-start-column="47" selection-end-line="1060" selection-end-column="47" />
           <folding>
             <element signature="e#30018#35327#0#DjangoTemplate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/views20230314linshi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="4257" column="42" lean-forward="true" selection-start-line="4257" selection-start-column="42" selection-end-line="4257" selection-end-column="42" />
+          <folding>
+            <element signature="e#3026#3581#0" />
+            <element signature="e#3628#21655#0" />
+            <element signature="e#21709#41603#0" />
+            <element signature="e#41655#142584#0" />
+            <element signature="e#142634#152378#0" />
+            <element signature="e#152426#185009#0" />
+            <element signature="e#185304#186550#0" />
+            <element signature="e#186572#190488#0" />
+            <element signature="e#190556#191470#0" />
+            <element signature="e#191515#192429#0" />
+            <element signature="e#192474#193388#0" />
+            <element signature="e#193430#193819#0" />
+            <element signature="e#193861#194250#0" />
+            <element signature="e#194292#194681#0" />
+            <element signature="e#194715#195180#0" />
+            <element signature="e#195198#195270#0" />
+            <element signature="e#195286#195490#0" />
+            <element signature="e#195503#196352#0" />
+            <element signature="e#196373#196724#0" />
+            <element signature="e#196729#196742#0" />
+            <element signature="e#197751#224611#0" />
+            <element signature="e#224965#242241#0" />
+            <element signature="e#242276#258775#0" />
+            <element signature="e#259294#259919#0" />
+            <element signature="e#260486#261997#0" />
+            <element signature="e#260540#261522#0" />
+            <element signature="e#261573#261997#0" />
+            <element signature="e#262040#262466#0" />
+            <element signature="e#268112#276402#0" />
+            <element signature="e#282030#379040#0" />
+            <element signature="e#282281#283275#0" />
+            <element signature="e#283393#284381#0" />
+            <element signature="e#284404#285310#0" />
+            <element signature="e#285333#285683#0" />
+            <element signature="e#285701#285723#0" />
+            <element signature="e#285746#285874#0" />
+            <element signature="e#285895#286720#0" />
+            <element signature="e#286745#287659#0" />
+            <element signature="e#287699#287959#0" />
+            <element signature="e#287980#288867#0" />
+            <element signature="e#288891#289440#0" />
+            <element signature="e#289464#289657#0" />
+            <element signature="e#289675#289712#0" />
+            <element signature="e#289812#333823#0" />
+            <element signature="e#334314#335296#0" />
+            <element signature="e#335347#335771#0" />
+            <element signature="e#342087#350100#0" />
+            <element signature="e#379083#519704#0" />
+            <element signature="e#519749#537121#0" />
+            <element signature="e#537166#538965#0" />
+            <element signature="e#523041#766449#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="4177" column="64" selection-start-line="4177" selection-start-column="52" selection-end-line="4177" selection-end-column="64" />
+          <folding>
+            <element signature="e#185304#186550#0" />
+            <element signature="e#186572#190488#0" />
+            <element signature="e#190556#191470#0" />
+            <element signature="e#191515#192429#0" />
+            <element signature="e#192474#193388#0" />
+            <element signature="e#193430#193819#0" />
+            <element signature="e#193861#194250#0" />
+            <element signature="e#194292#194681#0" />
+            <element signature="e#194715#195180#0" />
+            <element signature="e#195198#195270#0" />
+            <element signature="e#195286#195490#0" />
+            <element signature="e#195503#196352#0" />
+            <element signature="e#196373#196724#0" />
+            <element signature="e#196729#196742#0" />
+            <element signature="e#197751#224611#0" />
+            <element signature="e#224965#242241#0" />
+            <element signature="e#242276#258775#0" />
+            <element signature="e#259154#259919#0" />
+            <element signature="e#260486#261997#0" />
+            <element signature="e#262040#262466#0" />
+            <element signature="e#268112#276402#0" />
+            <element signature="e#276557#278833#0" />
+            <element signature="e#278864#279266#0" />
           </folding>
         </state>
       </provider>
