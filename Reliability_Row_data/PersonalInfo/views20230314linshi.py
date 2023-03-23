@@ -792,7 +792,7 @@ def PersonalInfo_search(request):
             for i in PersonalInfoHisByPer.objects.filter(GroupNum=GroupNumSearch).values("DepartmentCode", "CNName",
                                                                                          "PositionOld", "PositionNow",
                                                                                          "LastPromotionData").order_by(
-                    "LastPromotionData"):
+                "LastPromotionData"):
                 num += 1
                 print(i)
                 tableData.append(
@@ -3719,8 +3719,9 @@ def Summary1(request):
                             zaizhidic[j[0]] = zaizhimounth
                             # overtimedic
                             overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearNow,
-                                                                               Department_Code__contains=Department_Codechu,
-                                                                                Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
+                                                                            Department_Code__contains=Department_Codechu,
+                                                                            Mounth=j[1].split("-")[1]).aggregate(
+                                Sum("Total"))["Total__sum"]
                             if not overtimedic[j[0]]:
                                 overtimedic[j[0]] = 0.00
                             # WorkOvertimeQuerySet = WorkOvertime.objects.filter(Year=YearNow,
@@ -3737,8 +3738,9 @@ def Summary1(request):
 
                             # leavedic
                             leavedic[j[0]] = LeaveInfo.objects.filter(Year=YearNow,
-                                                                         Department_Code__contains=Department_Codechu,
-                                                                         Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
+                                                                      Department_Code__contains=Department_Codechu,
+                                                                      Mounth=j[1].split("-")[1]).aggregate(
+                                Sum("Total"))["Total__sum"]
                             if not leavedic[j[0]]:
                                 leavedic[j[0]] = 0.00
                             # LeaveInfoQuerySet = LeaveInfo.objects.filter(Year=YearNow,
@@ -4014,18 +4016,21 @@ def Summary1(request):
                             if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                                     Sum("Peacetime"))["Peacetime__sum"]:
                                 Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Peacetime"))["Peacetime__sum"]
+                                    WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j,
+                                                                Mounth=k[1]).aggregate(
+                                        Sum("Peacetime"))["Peacetime__sum"]
                             if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                                     Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
                                 Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("PeriodHoliday"))["PeriodHoliday__sum"]
+                                    WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j,
+                                                                Mounth=k[1]).aggregate(
+                                        Sum("PeriodHoliday"))["PeriodHoliday__sum"]
                             if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                                     Sum("NationalHoliday"))["NationalHoliday__sum"]:
                                 Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("NationalHoliday"))["NationalHoliday__sum"]
+                                    WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j,
+                                                                Mounth=k[1]).aggregate(
+                                        Sum("NationalHoliday"))["NationalHoliday__sum"]
                             # 请假时数，除了产假,方式一
                             # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                             #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
@@ -4103,13 +4108,13 @@ def Summary1(request):
                             if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                                     Sum("Total"))["Total__sum"]:
                                 Yuefen[k[0]] -= \
-                                LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Total"))["Total__sum"]
+                                    LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+                                        Sum("Total"))["Total__sum"]
                             if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
                                     Sum("Maternity"))["Maternity__sum"]:
                                 Yuefen[k[0]] += \
-                                LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Maternity"))["Maternity__sum"]
+                                    LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+                                        Sum("Maternity"))["Maternity__sum"]
 
                     mock_data1_dict["IDL_Sum"] = IDL_Sum
                     mock_data1_dict["Jan"] = Yuefen["Jan"]
@@ -4262,11 +4267,16 @@ def Summary1(request):
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
                             # overtimedic
-                            overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearNow,
-                                                                               Department_Code__contains=Department_Codechu,
-                                                                                Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
-                            if not overtimedic[j[0]]:
-                                overtimedic[j[0]] = 0.00
+
+                            overtimedic[j[0]] = 0.00
+                            if WorkOvertime.objects.filter(Year=YearNow,
+                                                           Department_Code__contains=Department_Codechu,
+                                                           Mounth=j[1].split("-")[1]).first():
+                                overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearNow,
+                                                                                Department_Code__contains=Department_Codechu,
+                                                                                Mounth=j[1].split("-")[1]).aggregate(
+                                    Sum("Total"))["Total__sum"]
+
                             # WorkOvertimeQuerySet = WorkOvertime.objects.filter(Year=YearNow,
                             #                                                    Mounth=j[1].split("-")[1]).annotate(
                             #     chuinfo=Substr("Department_Code", 1, 7))
@@ -4280,11 +4290,16 @@ def Summary1(request):
                             #         overtimedic[j[0]] = n["Total__sum"]
 
                             # leavedic
-                            leavedic[j[0]] = LeaveInfo.objects.filter(Year=YearNow,
-                                                                         Department_Code__contains=Department_Codechu,
-                                                                         Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
-                            if not leavedic[j[0]]:
-                                leavedic[j[0]] = 0.00
+
+                            leavedic[j[0]] = 0.00
+                            if LeaveInfo.objects.filter(Year=YearNow,
+                                                        Department_Code__contains=Department_Codechu,
+                                                        Mounth=j[1].split("-")[1]).first():
+                                leavedic[j[0]] = LeaveInfo.objects.filter(Year=YearNow,
+                                                                          Department_Code__contains=Department_Codechu,
+                                                                          Mounth=j[1].split("-")[1]).aggregate(
+                                    Sum("Total"))["Total__sum"]
+
                             # LeaveInfoQuerySet = LeaveInfo.objects.filter(Year=YearNow,
                             #                                              Mounth=j[1].split("-")[1]).annotate(
                             #     chuinfo=Substr("Department_Code", 1, 7))
@@ -4344,7 +4359,8 @@ def Summary1(request):
                 LeaveerrormegGroupNum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().order_by(
                         "Customer"):
-                    Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i["Customer"]).first().DepartmentCode[:7]
+                    Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i[
+                        "Customer"]).first().DepartmentCode[:7]
                     # print(Department_Codechu)
                     zaizhidic = {"Chu": i["Customer"], "Program": "人數"}
                     overtimedic = {"Chu": i["Customer"], "Program": "加班時數"}
@@ -4368,11 +4384,16 @@ def Summary1(request):
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
                             zaizhidic[j[0]] = zaizhimounth
                             # overtimedic
-                            overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearSearch,
-                                                                               Department_Code__contains=Department_Codechu,
-                                                                               Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
-                            if not overtimedic[j[0]]:
-                                overtimedic[j[0]] = 0.00
+
+                            overtimedic[j[0]] = 0.00
+                            if WorkOvertime.objects.filter(Year=YearSearch,
+                                                           Department_Code__contains=Department_Codechu,
+                                                           Mounth=j[1].split("-")[1]).first():
+                                overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearSearch,
+                                                                                Department_Code__contains=Department_Codechu,
+                                                                                Mounth=j[1].split("-")[1]).aggregate(
+                                    Sum("Total"))["Total__sum"]
+
                             # print(overtimedic[j[0]], 'yyy')
                             # WorkOvertimeQuerySet = WorkOvertime.objects.filter(Year=YearSearch,
                             #                                                    Mounth=j[1].split("-")[1]).annotate(
@@ -4388,11 +4409,16 @@ def Summary1(request):
                             # print(overtimedic[j[0]])
 
                             # leavedic
-                            leavedic[j[0]] = LeaveInfo.objects.filter(Year=YearSearch,
-                                                                                          Department_Code__contains=Department_Codechu,
-                                                                         Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
-                            if not leavedic[j[0]]:
-                                leavedic[j[0]] = 0.00
+
+                            leavedic[j[0]] = 0.00
+                            if LeaveInfo.objects.filter(Year=YearSearch,
+                                                        Department_Code__contains=Department_Codechu,
+                                                        Mounth=j[1].split("-")[1]).first():
+                                leavedic[j[0]] = LeaveInfo.objects.filter(Year=YearSearch,
+                                                                          Department_Code__contains=Department_Codechu,
+                                                                          Mounth=j[1].split("-")[1]).aggregate(
+                                    Sum("Total"))["Total__sum"]
+
                             # LeaveInfoQuerySet = LeaveInfo.objects.filter(Year=YearSearch,
                             #                                              Mounth=j[1].split("-")[1]).annotate(
                             #     chuinfo=Substr("Department_Code", 1, 7))
@@ -5428,7 +5454,7 @@ def Summary2(request):
                 Customer_region = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_region.append(i["Customer"])
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "NativeProvince").distinct().order_by("NativeProvince"):
@@ -5809,7 +5835,7 @@ def Summary2(request):
                 titleDiagramname = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     selectItem.append(i["Customer"])
                     legendData.append(i["Customer"])
                 PositionQuerySet = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
@@ -5985,7 +6011,7 @@ def Summary2(request):
                 Total_Summary = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Education").distinct().order_by(
-                        "Education"):
+                    "Education"):
                     educationDiagramname.append(i["Education"])
                     educationTable_data = {"Education": i["Education"]}
                     educationSummary = 0
@@ -6143,7 +6169,7 @@ def Summary2(request):
                 Customer_region = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_region.append(i["Customer"])
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "NativeProvince").distinct().order_by("NativeProvince"):
@@ -7279,8 +7305,8 @@ def Summary3(request):
                 if PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
                         "QuitDate"):
                     Search_start = \
-                    PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
-                        "QuitDate").first()["QuitDate"].strftime("%Y-%m-%d")
+                        PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
+                            "QuitDate").first()["QuitDate"].strftime("%Y-%m-%d")
                 Search_Endperiod = [Search_start, datetime.datetime.now().strftime("%Y-%m-%d")]
             # print(Search_Endperiod)
 
@@ -7732,14 +7758,14 @@ def Summary3(request):
                 selectItem_seniorityTable = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     selectItem_seniorityTable.append(i["Customer"])
                 seniorityTable1_Positioncode = []
                 seniorityTable1_Position = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "PositionNow").distinct().order_by(
-                        "PositionNow"):
+                    "PositionNow"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
                     seniorityTable1_Position.append(
@@ -7913,10 +7939,10 @@ def Summary3(request):
             else:
                 if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
                                                         QuitDate__range=Search_Endperiod).values(
-                        "QuitReason").distinct():
+                    "QuitReason").distinct():
                     for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
                                                                   QuitDate__range=Search_Endperiod).values(
-                            "QuitReason").distinct().order_by("QuitReason"):
+                        "QuitReason").distinct().order_by("QuitReason"):
                         reasonTable_dict = {"reason": i["QuitReason"]}
                         reasonsSummary = 0
                         reasonTable_dict['reasonSummary'] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
@@ -7971,12 +7997,12 @@ def Summary3(request):
                 educationSummary_Total = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Education").distinct().order_by(
-                        "Education"):
+                    "Education"):
                     educationTable_dict = {"Education": i["Education"]}
                     educationSummary = 0
                     for j in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                             "Customer").distinct().order_by(
-                            "Customer"):
+                        "Customer"):
                         educationTable_dict[j["Customer"]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                                   Status__in=["離職"],
                                                                                                   Education=i[
@@ -8015,7 +8041,7 @@ def Summary3(request):
                 TBCnum = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Education",
                                                                                "Major").distinct().order_by(
-                        "Education"):
+                    "Education"):
                     # if i["Education"] == "本科":
                     if MajorIfo.objects.filter(Education__contains=i["Education"], Major=i["Major"]).first():
                         professionTableData = {
@@ -8054,7 +8080,7 @@ def Summary3(request):
                 Customer_major = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
