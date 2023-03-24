@@ -3450,238 +3450,238 @@ def Summary1(request):
             YearSearch = request.POST.get("Date")
             Department_Code = request.POST.get("Department_Code")
             YearNow = str(datetime.datetime.now().year)
-            # Month
-            if not YearSearch or YearSearch == YearNow:
-                mounthnow = datetime.datetime.now().month
-                # for i in Departments.objects.filter(Year=YearNow, BU__isnull=True, KE__isnull=True):
-                #     print(i)
-                Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
-                              ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
-                for i in Departments.objects.filter(Year=YearNow, BU__isnull=False, KE__isnull=True):
-                    mock_data1_dict = {
-                        #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
-                        # "Mar": "23.93", "Apr": "60.07",
-                        # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
-                        # "Year_Average": "31.97"
-                    }
-                    mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
-                    mock_data1_dict["QM"] = PersonalInfo.objects.filter(GroupNum=i.Manager).first().CNName
-                    # print(mock_data1_dict["QM"])
-                    IDL_Sum = 0
-                    Yuefen = {"Jan": 0, "Feb": 0,
-                              "Mar": 0, "Apr": 0,
-                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
-                    for j in Departments.objects.filter(Year=YearNow, CHU=i.CHU, BU=i.BU,
-                                                        KE__isnull=False):  # 每个部下面的课的部门代码
-                        # print(i.Department_Code, j)
-                        # 每个课下的除了课长的所有人
-                        # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
-                        #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
-                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
-                        mounthnum = 1
-                        for k in Yuefenlist:
-                            if mounthnum > mounthnow:
-                                break
-                            else:
-                                # 加班时数
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Peacetime"))["Peacetime__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("Peacetime"))["Peacetime__sum"]
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("PeriodHoliday"))["PeriodHoliday__sum"]
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("NationalHoliday"))["NationalHoliday__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("NationalHoliday"))["NationalHoliday__sum"]
-                                # 请假时数，除了产假,方式一
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PublicHoliday"))["PublicHoliday__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("WorkInjury"))["WorkInjury__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("WorkInjury"))["WorkInjury__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Matters"))["Matters__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Matters"))["Matters__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("MattersContinuation"))["MattersContinuation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Sick"))["Sick__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Sick"))["Sick__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("SickContinuation"))["SickContinuation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("SickContinuation"))["SickContinuation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Marriage"))["Marriage__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Marriage"))["Marriage__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Bereavement"))["Bereavement__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Bereavement"))["Bereavement__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Special"))["Special__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Special"))["Special__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("OffDuty"))["OffDuty__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("OffDuty"))["OffDuty__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Compensatory"))["Compensatory__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Compensatory"))["Compensatory__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("NoScheduling"))["NoScheduling__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("NoScheduling"))["NoScheduling__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PaternityLeave"))["PaternityLeave__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Absenteeism"))["Absenteeism__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Absenteeism"))["Absenteeism__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Lactation"))["Lactation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Lactation"))["Lactation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Others"))["Others__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Others"))["Others__sum"]
-                                # 请假时数，除了产假,方式2
-                                if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Total"))["Total__sum"]:
-                                    Yuefen[k[0]] -= \
-                                        LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
-                                                                 Mounth=k[1]).aggregate(
-                                            Sum("Total"))["Total__sum"]
-                                if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Maternity"))["Maternity__sum"]:
-                                    Yuefen[k[0]] += \
-                                        LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
-                                                                 Mounth=k[1]).aggregate(
-                                            Sum("Maternity"))["Maternity__sum"]
-                            mounthnum += 1
-
-                    mock_data1_dict["IDL_Sum"] = IDL_Sum
-                    mock_data1_dict["Jan"] = Yuefen["Jan"]
-                    mock_data1_dict["Feb"] = Yuefen["Feb"]
-                    mock_data1_dict["Mar"] = Yuefen["Mar"]
-                    mock_data1_dict["Apr"] = Yuefen["Apr"]
-                    mock_data1_dict["May"] = Yuefen["May"]
-                    mock_data1_dict["Jun"] = Yuefen["Jun"]
-                    mock_data1_dict["Jul"] = Yuefen["Jul"]
-                    mock_data1_dict["Aug"] = Yuefen["Aug"]
-                    mock_data1_dict["Sep"] = Yuefen["Sep"]
-                    mock_data1_dict["Oct"] = Yuefen["Oct"]
-                    mock_data1_dict["Nov"] = Yuefen["Nov"]
-                    mock_data1_dict["Dec"] = Yuefen["Dec"]
-                    mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
-                                                  Yuefen["May"] + Yuefen["Jun"] + \
-                                                  Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
-                                                  Yuefen["Nov"] + Yuefen["Dec"]
-                    mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / mounthnow, 2)
-                    mock_data1.append(mock_data1_dict)
-                SubCount = 0
-                Monthly_Average = 0
-                Bunum = 0
-                mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
-                                       "Apr": 0,
-                                       "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
-                                       "Year_Sum": 0, "Year_Average": 0}
-                mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
-                                              "Apr": 0,
-                                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
-                                              "Dec": 0, }
-                for i in mock_data1:
-                    Bunum += 1
-                    mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
-                    mock_data1_SubCount["Jan"] += i["Jan"]
-                    mock_data1_SubCount["Feb"] += i["Feb"]
-                    mock_data1_SubCount["Mar"] += i["Mar"]
-                    mock_data1_SubCount["Apr"] += i["Apr"]
-                    mock_data1_SubCount["May"] += i["May"]
-                    mock_data1_SubCount["Jun"] += i["Jun"]
-                    mock_data1_SubCount["Jul"] += i["Jul"]
-                    mock_data1_SubCount["Aug"] += i["Aug"]
-                    mock_data1_SubCount["Sep"] += i["Sep"]
-                    mock_data1_SubCount["Oct"] += i["Oct"]
-                    mock_data1_SubCount["Nov"] += i["Nov"]
-                    mock_data1_SubCount["Dec"] += i["Dec"]
-                    mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
-                mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / mounthnow, 2)
-                mock_data1.append(mock_data1_SubCount)
-                if Bunum:
-                    mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
-                    mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
-                mock_data1.append(mock_data1_Monthly_Average)
-
-                for i in mock_data1:
-                    for j in Yuefenlist:
-                        if int(j[1]) > mounthnow:
-                            # print(j[0])
-                            i[j[0]] = ''
-            Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"),
-                          ("Jun", "6"),
-                          ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"),
-                          ("Dec", "12")]
-            mounthnow = datetime.datetime.now().month
-            for i in Yuefenlist:
-                if (not YearSearch or YearSearch == YearNow) and int(i[1]) > mounthnow:
-                    break
-                else:
-                    Month_data = []
-                    Department_key = []
-                    for j in mock_data1:
-                        if j["Department"] != "Sub- Count" and j["Department"] != "Monthly Average":
-                            Department_key.append(j["Department"])
-                            Month_data.append(j[i[0]])
-                    Monthdict = {
-                        "name": i[0],
-                        "type": "bar",
-                        "stack": "status",
-                        "barMaxWidth": 50,
-                        "data": Month_data
-                    }
-                    Month.append(Monthdict)
-            Summary["Department_key"] = Department_key
+            # # Month
+            # if not YearSearch or YearSearch == YearNow:
+            #     mounthnow = datetime.datetime.now().month
+            #     # for i in Departments.objects.filter(Year=YearNow, BU__isnull=True, KE__isnull=True):
+            #     #     print(i)
+            #     Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
+            #                   ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
+            #     for i in Departments.objects.filter(Year=YearNow, BU__isnull=False, KE__isnull=True):
+            #         mock_data1_dict = {
+            #             #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
+            #             # "Mar": "23.93", "Apr": "60.07",
+            #             # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
+            #             # "Year_Average": "31.97"
+            #         }
+            #         mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
+            #         mock_data1_dict["QM"] = PersonalInfo.objects.filter(GroupNum=i.Manager).first().CNName
+            #         # print(mock_data1_dict["QM"])
+            #         IDL_Sum = 0
+            #         Yuefen = {"Jan": 0, "Feb": 0,
+            #                   "Mar": 0, "Apr": 0,
+            #                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
+            #         for j in Departments.objects.filter(Year=YearNow, CHU=i.CHU, BU=i.BU,
+            #                                             KE__isnull=False):  # 每个部下面的课的部门代码
+            #             # print(i.Department_Code, j)
+            #             # 每个课下的除了课长的所有人
+            #             # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
+            #             #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+            #             IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
+            #             mounthnum = 1
+            #             for k in Yuefenlist:
+            #                 if mounthnum > mounthnow:
+            #                     break
+            #                 else:
+            #                     # 加班时数
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Peacetime"))["Peacetime__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("Peacetime"))["Peacetime__sum"]
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("PeriodHoliday"))["PeriodHoliday__sum"]
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("NationalHoliday"))["NationalHoliday__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("NationalHoliday"))["NationalHoliday__sum"]
+            #                     # 请假时数，除了产假,方式一
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PublicHoliday"))["PublicHoliday__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("WorkInjury"))["WorkInjury__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("WorkInjury"))["WorkInjury__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Matters"))["Matters__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Matters"))["Matters__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("MattersContinuation"))["MattersContinuation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Sick"))["Sick__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Sick"))["Sick__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("SickContinuation"))["SickContinuation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("SickContinuation"))["SickContinuation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Marriage"))["Marriage__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Marriage"))["Marriage__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Bereavement"))["Bereavement__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Bereavement"))["Bereavement__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Special"))["Special__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Special"))["Special__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("OffDuty"))["OffDuty__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("OffDuty"))["OffDuty__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Compensatory"))["Compensatory__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Compensatory"))["Compensatory__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("NoScheduling"))["NoScheduling__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("NoScheduling"))["NoScheduling__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PaternityLeave"))["PaternityLeave__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Absenteeism"))["Absenteeism__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Absenteeism"))["Absenteeism__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Lactation"))["Lactation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Lactation"))["Lactation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Others"))["Others__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Others"))["Others__sum"]
+            #                     # 请假时数，除了产假,方式2
+            #                     if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Total"))["Total__sum"]:
+            #                         Yuefen[k[0]] -= \
+            #                             LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                      Mounth=k[1]).aggregate(
+            #                                 Sum("Total"))["Total__sum"]
+            #                     if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Maternity"))["Maternity__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                      Mounth=k[1]).aggregate(
+            #                                 Sum("Maternity"))["Maternity__sum"]
+            #                 mounthnum += 1
+            #
+            #         mock_data1_dict["IDL_Sum"] = IDL_Sum
+            #         mock_data1_dict["Jan"] = Yuefen["Jan"]
+            #         mock_data1_dict["Feb"] = Yuefen["Feb"]
+            #         mock_data1_dict["Mar"] = Yuefen["Mar"]
+            #         mock_data1_dict["Apr"] = Yuefen["Apr"]
+            #         mock_data1_dict["May"] = Yuefen["May"]
+            #         mock_data1_dict["Jun"] = Yuefen["Jun"]
+            #         mock_data1_dict["Jul"] = Yuefen["Jul"]
+            #         mock_data1_dict["Aug"] = Yuefen["Aug"]
+            #         mock_data1_dict["Sep"] = Yuefen["Sep"]
+            #         mock_data1_dict["Oct"] = Yuefen["Oct"]
+            #         mock_data1_dict["Nov"] = Yuefen["Nov"]
+            #         mock_data1_dict["Dec"] = Yuefen["Dec"]
+            #         mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
+            #                                       Yuefen["May"] + Yuefen["Jun"] + \
+            #                                       Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
+            #                                       Yuefen["Nov"] + Yuefen["Dec"]
+            #         mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / mounthnow, 2)
+            #         mock_data1.append(mock_data1_dict)
+            #     SubCount = 0
+            #     Monthly_Average = 0
+            #     Bunum = 0
+            #     mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
+            #                            "Apr": 0,
+            #                            "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
+            #                            "Year_Sum": 0, "Year_Average": 0}
+            #     mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
+            #                                   "Apr": 0,
+            #                                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
+            #                                   "Dec": 0, }
+            #     for i in mock_data1:
+            #         Bunum += 1
+            #         mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
+            #         mock_data1_SubCount["Jan"] += i["Jan"]
+            #         mock_data1_SubCount["Feb"] += i["Feb"]
+            #         mock_data1_SubCount["Mar"] += i["Mar"]
+            #         mock_data1_SubCount["Apr"] += i["Apr"]
+            #         mock_data1_SubCount["May"] += i["May"]
+            #         mock_data1_SubCount["Jun"] += i["Jun"]
+            #         mock_data1_SubCount["Jul"] += i["Jul"]
+            #         mock_data1_SubCount["Aug"] += i["Aug"]
+            #         mock_data1_SubCount["Sep"] += i["Sep"]
+            #         mock_data1_SubCount["Oct"] += i["Oct"]
+            #         mock_data1_SubCount["Nov"] += i["Nov"]
+            #         mock_data1_SubCount["Dec"] += i["Dec"]
+            #         mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
+            #     mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / mounthnow, 2)
+            #     mock_data1.append(mock_data1_SubCount)
+            #     if Bunum:
+            #         mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
+            #     mock_data1.append(mock_data1_Monthly_Average)
+            #
+            #     for i in mock_data1:
+            #         for j in Yuefenlist:
+            #             if int(j[1]) > mounthnow:
+            #                 # print(j[0])
+            #                 i[j[0]] = ''
+            # Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"),
+            #               ("Jun", "6"),
+            #               ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"),
+            #               ("Dec", "12")]
+            # mounthnow = datetime.datetime.now().month
+            # for i in Yuefenlist:
+            #     if (not YearSearch or YearSearch == YearNow) and int(i[1]) > mounthnow:
+            #         break
+            #     else:
+            #         Month_data = []
+            #         Department_key = []
+            #         for j in mock_data1:
+            #             if j["Department"] != "Sub- Count" and j["Department"] != "Monthly Average":
+            #                 Department_key.append(j["Department"])
+            #                 Month_data.append(j[i[0]])
+            #         Monthdict = {
+            #             "name": i[0],
+            #             "type": "bar",
+            #             "stack": "status",
+            #             "barMaxWidth": 50,
+            #             "data": Month_data
+            #         }
+            #         Month.append(Monthdict)
+            # Summary["Department_key"] = Department_key
 
             # overtimeTable1
             # Search_Endperiod = request.POST.getlist("YearRange", [])
@@ -3824,432 +3824,432 @@ def Summary1(request):
             YearNow = str(datetime.datetime.now().year)
             # print(YearSearch)
 
-            # Month
-            if not YearSearch or YearSearch == YearNow:
-                mounthnow = datetime.datetime.now().month
-                # for i in Departments.objects.filter(Year=YearNow, BU__isnull=True, KE__isnull=True):
-                #     print(i)
-                Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
-                              ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
-                for i in Departments.objects.filter(Year=YearNow, BU__isnull=False, KE__isnull=True):
-                    mock_data1_dict = {
-                        #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
-                        # "Mar": "23.93", "Apr": "60.07",
-                        # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
-                        # "Year_Average": "31.97"
-                    }
-                    mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
-                    mock_data1_dict["QM"] = PersonalInfo.objects.filter(GroupNum=i.Manager).first().CNName
-                    # print(mock_data1_dict["QM"])
-                    IDL_Sum = 0
-                    Yuefen = {"Jan": 0, "Feb": 0,
-                              "Mar": 0, "Apr": 0,
-                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
-                    for j in Departments.objects.filter(Year=YearNow, CHU=i.CHU, BU=i.BU,
-                                                        KE__isnull=False):  # 每个部下面的课的部门代码
-                        # print(i.Department_Code, j)
-                        # 每个课下的除了课长的所有人
-                        # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
-                        #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
-                        IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
-                        mounthnum = 1
-                        for k in Yuefenlist:
-                            if mounthnum > mounthnow:
-                                break
-                            else:
-                                # 加班时数
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Peacetime"))["Peacetime__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("Peacetime"))["Peacetime__sum"]
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("PeriodHoliday"))["PeriodHoliday__sum"]
-                                if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("NationalHoliday"))["NationalHoliday__sum"]:
-                                    Yuefen[k[0]] += \
-                                        WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
-                                                                    Mounth=k[1]).aggregate(
-                                            Sum("NationalHoliday"))["NationalHoliday__sum"]
-                                # 请假时数，除了产假,方式一
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PublicHoliday"))["PublicHoliday__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("WorkInjury"))["WorkInjury__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("WorkInjury"))["WorkInjury__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Matters"))["Matters__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Matters"))["Matters__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("MattersContinuation"))["MattersContinuation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Sick"))["Sick__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Sick"))["Sick__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("SickContinuation"))["SickContinuation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("SickContinuation"))["SickContinuation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Marriage"))["Marriage__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Marriage"))["Marriage__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Bereavement"))["Bereavement__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Bereavement"))["Bereavement__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Special"))["Special__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Special"))["Special__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("OffDuty"))["OffDuty__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("OffDuty"))["OffDuty__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Compensatory"))["Compensatory__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Compensatory"))["Compensatory__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("NoScheduling"))["NoScheduling__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("NoScheduling"))["NoScheduling__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PaternityLeave"))["PaternityLeave__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Absenteeism"))["Absenteeism__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Absenteeism"))["Absenteeism__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Lactation"))["Lactation__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Lactation"))["Lactation__sum"]
-                                # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Others"))["Others__sum"]:
-                                #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                #     Sum("Others"))["Others__sum"]
-                                # 请假时数，除了产假,方式2
-                                if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Total"))["Total__sum"]:
-                                    Yuefen[k[0]] -= \
-                                        LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
-                                                                 Mounth=k[1]).aggregate(
-                                            Sum("Total"))["Total__sum"]
-                                if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
-                                        Sum("Maternity"))["Maternity__sum"]:
-                                    Yuefen[k[0]] += \
-                                        LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
-                                                                 Mounth=k[1]).aggregate(
-                                            Sum("Maternity"))["Maternity__sum"]
-                            mounthnum += 1
-
-                    mock_data1_dict["IDL_Sum"] = IDL_Sum
-                    mock_data1_dict["Jan"] = Yuefen["Jan"]
-                    mock_data1_dict["Feb"] = Yuefen["Feb"]
-                    mock_data1_dict["Mar"] = Yuefen["Mar"]
-                    mock_data1_dict["Apr"] = Yuefen["Apr"]
-                    mock_data1_dict["May"] = Yuefen["May"]
-                    mock_data1_dict["Jun"] = Yuefen["Jun"]
-                    mock_data1_dict["Jul"] = Yuefen["Jul"]
-                    mock_data1_dict["Aug"] = Yuefen["Aug"]
-                    mock_data1_dict["Sep"] = Yuefen["Sep"]
-                    mock_data1_dict["Oct"] = Yuefen["Oct"]
-                    mock_data1_dict["Nov"] = Yuefen["Nov"]
-                    mock_data1_dict["Dec"] = Yuefen["Dec"]
-                    mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
-                                                  Yuefen["May"] + Yuefen["Jun"] + \
-                                                  Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
-                                                  Yuefen["Nov"] + Yuefen["Dec"]
-                    mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / mounthnow, 2)
-                    mock_data1.append(mock_data1_dict)
-                SubCount = 0
-                Monthly_Average = 0
-                Bunum = 0
-                mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
-                                       "Apr": 0,
-                                       "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
-                                       "Year_Sum": 0, "Year_Average": 0}
-                mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
-                                              "Apr": 0,
-                                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
-                                              "Dec": 0, }
-                for i in mock_data1:
-                    Bunum += 1
-                    mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
-                    mock_data1_SubCount["Jan"] += i["Jan"]
-                    mock_data1_SubCount["Feb"] += i["Feb"]
-                    mock_data1_SubCount["Mar"] += i["Mar"]
-                    mock_data1_SubCount["Apr"] += i["Apr"]
-                    mock_data1_SubCount["May"] += i["May"]
-                    mock_data1_SubCount["Jun"] += i["Jun"]
-                    mock_data1_SubCount["Jul"] += i["Jul"]
-                    mock_data1_SubCount["Aug"] += i["Aug"]
-                    mock_data1_SubCount["Sep"] += i["Sep"]
-                    mock_data1_SubCount["Oct"] += i["Oct"]
-                    mock_data1_SubCount["Nov"] += i["Nov"]
-                    mock_data1_SubCount["Dec"] += i["Dec"]
-                    mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
-                mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / mounthnow, 2)
-                mock_data1.append(mock_data1_SubCount)
-                if Bunum:
-                    mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
-                    mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
-                mock_data1.append(mock_data1_Monthly_Average)
-
-                for i in mock_data1:
-                    for j in Yuefenlist:
-                        if int(j[1]) > mounthnow:
-                            # print(j[0])
-                            i[j[0]] = ''
-            else:
-                # for i in Departments.objects.filter(Q(Year=YearSearch)& Q(BU=None)&Q(KE=None)):
-                # for i in Departments.objects.filter(Year=YearSearch, BU=None, KE=None):
-                # for i in Departments.objects.filter(Year=YearSearch, BU__isnull=True, KE__isnull=True):
-                #     print(i)
-
-                Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
-                              ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
-                for i in Departments.objects.filter(Year=YearSearch, BU__isnull=False, KE__isnull=True):
-                    mock_data1_dict = {
-                        #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
-                        # "Mar": "23.93", "Apr": "60.07",
-                        # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
-                        # "Year_Average": "31.97"
-                    }
-                    mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
-                    mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
-                                                                                 GroupNum=i.Manager).first().CNName if PersonalInfoHisByYear.objects.filter(
-                        Year=YearSearch, GroupNum=i.Manager).first() else "該年份人員信心缺少該QM信息"
-                    # print(mock_data1_dict["QM"])
-                    IDL_Sum = 0
-                    Yuefen = {"Jan": 0, "Feb": 0,
-                              "Mar": 0, "Apr": 0,
-                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
-                    for j in Departments.objects.filter(Year=YearSearch, CHU=i.CHU, BU=i.BU,
-                                                        KE__isnull=False):  # 每个部下面的课的部门代码
-                        # print(i.Department_Code, j)
-                        # 每个课下的除了课长的所有人
-                        # IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).exclude(PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
-                        IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).count()
-                        for k in Yuefenlist:
-                            # 加班时数
-                            if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Peacetime"))["Peacetime__sum"]:
-                                Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Peacetime"))["Peacetime__sum"]
-                            if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
-                                Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("PeriodHoliday"))["PeriodHoliday__sum"]
-                            if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("NationalHoliday"))["NationalHoliday__sum"]:
-                                Yuefen[k[0]] += \
-                                WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("NationalHoliday"))["NationalHoliday__sum"]
-                            # 请假时数，除了产假,方式一
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PublicHoliday"))["PublicHoliday__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("WorkInjury"))["WorkInjury__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("WorkInjury"))["WorkInjury__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Matters"))["Matters__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Matters"))["Matters__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("MattersContinuation"))["MattersContinuation__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Sick"))["Sick__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Sick"))["Sick__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("SickContinuation"))["SickContinuation__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("SickContinuation"))["SickContinuation__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Marriage"))["Marriage__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Marriage"))["Marriage__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Bereavement"))["Bereavement__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Bereavement"))["Bereavement__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Special"))["Special__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Special"))["Special__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("OffDuty"))["OffDuty__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("OffDuty"))["OffDuty__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Compensatory"))["Compensatory__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Compensatory"))["Compensatory__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("NoScheduling"))["NoScheduling__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("NoScheduling"))["NoScheduling__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PaternityLeave"))["PaternityLeave__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Absenteeism"))["Absenteeism__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Absenteeism"))["Absenteeism__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Lactation"))["Lactation__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Lactation"))["Lactation__sum"]
-                            # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Others"))["Others__sum"]:
-                            #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                            #     Sum("Others"))["Others__sum"]
-                            # 请假时数，除了产假,方式2
-                            if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Total"))["Total__sum"]:
-                                Yuefen[k[0]] -= \
-                                LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Total"))["Total__sum"]
-                            if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Maternity"))["Maternity__sum"]:
-                                Yuefen[k[0]] += \
-                                LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
-                                    Sum("Maternity"))["Maternity__sum"]
-
-                    mock_data1_dict["IDL_Sum"] = IDL_Sum
-                    mock_data1_dict["Jan"] = Yuefen["Jan"]
-                    mock_data1_dict["Feb"] = Yuefen["Feb"]
-                    mock_data1_dict["Mar"] = Yuefen["Mar"]
-                    mock_data1_dict["Apr"] = Yuefen["Apr"]
-                    mock_data1_dict["May"] = Yuefen["May"]
-                    mock_data1_dict["Jun"] = Yuefen["Jun"]
-                    mock_data1_dict["Jul"] = Yuefen["Jul"]
-                    mock_data1_dict["Aug"] = Yuefen["Aug"]
-                    mock_data1_dict["Sep"] = Yuefen["Sep"]
-                    mock_data1_dict["Oct"] = Yuefen["Oct"]
-                    mock_data1_dict["Nov"] = Yuefen["Nov"]
-                    mock_data1_dict["Dec"] = Yuefen["Dec"]
-                    mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
-                                                  Yuefen["May"] + Yuefen["Jun"] + \
-                                                  Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
-                                                  Yuefen["Nov"] + Yuefen["Dec"]
-                    mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / 12, 2)
-                    mock_data1.append(mock_data1_dict)
-                SubCount = 0
-                Monthly_Average = 0
-                Bunum = 0
-                mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
-                                       "Apr": 0,
-                                       "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
-                                       "Year_Sum": 0, "Year_Average": 0}
-                mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
-                                              "Apr": 0,
-                                              "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
-                                              "Dec": 0, }
-                for i in mock_data1:
-                    Bunum += 1
-                    mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
-                    mock_data1_SubCount["Jan"] += i["Jan"]
-                    mock_data1_SubCount["Feb"] += i["Feb"]
-                    mock_data1_SubCount["Mar"] += i["Mar"]
-                    mock_data1_SubCount["Apr"] += i["Apr"]
-                    mock_data1_SubCount["May"] += i["May"]
-                    mock_data1_SubCount["Jun"] += i["Jun"]
-                    mock_data1_SubCount["Jul"] += i["Jul"]
-                    mock_data1_SubCount["Aug"] += i["Aug"]
-                    mock_data1_SubCount["Sep"] += i["Sep"]
-                    mock_data1_SubCount["Oct"] += i["Oct"]
-                    mock_data1_SubCount["Nov"] += i["Nov"]
-                    mock_data1_SubCount["Dec"] += i["Dec"]
-                    mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
-                mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / 12, 2)
-                mock_data1.append(mock_data1_SubCount)
-                if Bunum:
-                    mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
-                    mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
-                    mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
-                mock_data1.append(mock_data1_Monthly_Average)
-            Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"),
-                          ("Jun", "6"),
-                          ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"),
-                          ("Dec", "12")]
-            mounthnow = datetime.datetime.now().month
-            for i in Yuefenlist:
-                if (not YearSearch or YearSearch == YearNow) and int(i[1]) > mounthnow:
-                    break
-                else:
-                    Month_data = []
-                    Department_key = []
-                    for j in mock_data1:
-                        if j["Department"] != "Sub- Count" and j["Department"] != "Monthly Average":
-                            Department_key.append(j["Department"])
-                            Month_data.append(j[i[0]])
-                    Monthdict = {
-                        "name": i[0],
-                        "type": "bar",
-                        "stack": "status",
-                        "barMaxWidth": 50,
-                        "data": Month_data
-                    }
-                    Month.append(Monthdict)
-            Summary["Department_key"] = Department_key
+            # # Month
+            # if not YearSearch or YearSearch == YearNow:
+            #     mounthnow = datetime.datetime.now().month
+            #     # for i in Departments.objects.filter(Year=YearNow, BU__isnull=True, KE__isnull=True):
+            #     #     print(i)
+            #     Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
+            #                   ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
+            #     for i in Departments.objects.filter(Year=YearNow, BU__isnull=False, KE__isnull=True):
+            #         mock_data1_dict = {
+            #             #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
+            #             # "Mar": "23.93", "Apr": "60.07",
+            #             # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
+            #             # "Year_Average": "31.97"
+            #         }
+            #         mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
+            #         mock_data1_dict["QM"] = PersonalInfo.objects.filter(GroupNum=i.Manager).first().CNName
+            #         # print(mock_data1_dict["QM"])
+            #         IDL_Sum = 0
+            #         Yuefen = {"Jan": 0, "Feb": 0,
+            #                   "Mar": 0, "Apr": 0,
+            #                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
+            #         for j in Departments.objects.filter(Year=YearNow, CHU=i.CHU, BU=i.BU,
+            #                                             KE__isnull=False):  # 每个部下面的课的部门代码
+            #             # print(i.Department_Code, j)
+            #             # 每个课下的除了课长的所有人
+            #             # IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).exclude(
+            #             #     PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+            #             IDL_Sum += PersonalInfo.objects.filter(DepartmentCode=j).count()
+            #             mounthnum = 1
+            #             for k in Yuefenlist:
+            #                 if mounthnum > mounthnow:
+            #                     break
+            #                 else:
+            #                     # 加班时数
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Peacetime"))["Peacetime__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("Peacetime"))["Peacetime__sum"]
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("PeriodHoliday"))["PeriodHoliday__sum"]
+            #                     if WorkOvertime.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("NationalHoliday"))["NationalHoliday__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             WorkOvertime.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                         Mounth=k[1]).aggregate(
+            #                                 Sum("NationalHoliday"))["NationalHoliday__sum"]
+            #                     # 请假时数，除了产假,方式一
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PublicHoliday"))["PublicHoliday__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("WorkInjury"))["WorkInjury__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("WorkInjury"))["WorkInjury__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Matters"))["Matters__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Matters"))["Matters__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("MattersContinuation"))["MattersContinuation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Sick"))["Sick__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Sick"))["Sick__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("SickContinuation"))["SickContinuation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("SickContinuation"))["SickContinuation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Marriage"))["Marriage__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Marriage"))["Marriage__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Bereavement"))["Bereavement__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Bereavement"))["Bereavement__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Special"))["Special__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Special"))["Special__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("OffDuty"))["OffDuty__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("OffDuty"))["OffDuty__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Compensatory"))["Compensatory__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Compensatory"))["Compensatory__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("NoScheduling"))["NoScheduling__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("NoScheduling"))["NoScheduling__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PaternityLeave"))["PaternityLeave__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Absenteeism"))["Absenteeism__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Absenteeism"))["Absenteeism__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Lactation"))["Lactation__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Lactation"))["Lactation__sum"]
+            #                     # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Others"))["Others__sum"]:
+            #                     #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                     #     Sum("Others"))["Others__sum"]
+            #                     # 请假时数，除了产假,方式2
+            #                     if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Total"))["Total__sum"]:
+            #                         Yuefen[k[0]] -= \
+            #                             LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                      Mounth=k[1]).aggregate(
+            #                                 Sum("Total"))["Total__sum"]
+            #                     if LeaveInfo.objects.filter(Year=YearNow, Department_Code=j, Mounth=k[1]).aggregate(
+            #                             Sum("Maternity"))["Maternity__sum"]:
+            #                         Yuefen[k[0]] += \
+            #                             LeaveInfo.objects.filter(Year=YearNow, Department_Code=j,
+            #                                                      Mounth=k[1]).aggregate(
+            #                                 Sum("Maternity"))["Maternity__sum"]
+            #                 mounthnum += 1
+            #
+            #         mock_data1_dict["IDL_Sum"] = IDL_Sum
+            #         mock_data1_dict["Jan"] = Yuefen["Jan"]
+            #         mock_data1_dict["Feb"] = Yuefen["Feb"]
+            #         mock_data1_dict["Mar"] = Yuefen["Mar"]
+            #         mock_data1_dict["Apr"] = Yuefen["Apr"]
+            #         mock_data1_dict["May"] = Yuefen["May"]
+            #         mock_data1_dict["Jun"] = Yuefen["Jun"]
+            #         mock_data1_dict["Jul"] = Yuefen["Jul"]
+            #         mock_data1_dict["Aug"] = Yuefen["Aug"]
+            #         mock_data1_dict["Sep"] = Yuefen["Sep"]
+            #         mock_data1_dict["Oct"] = Yuefen["Oct"]
+            #         mock_data1_dict["Nov"] = Yuefen["Nov"]
+            #         mock_data1_dict["Dec"] = Yuefen["Dec"]
+            #         mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
+            #                                       Yuefen["May"] + Yuefen["Jun"] + \
+            #                                       Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
+            #                                       Yuefen["Nov"] + Yuefen["Dec"]
+            #         mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / mounthnow, 2)
+            #         mock_data1.append(mock_data1_dict)
+            #     SubCount = 0
+            #     Monthly_Average = 0
+            #     Bunum = 0
+            #     mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
+            #                            "Apr": 0,
+            #                            "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
+            #                            "Year_Sum": 0, "Year_Average": 0}
+            #     mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
+            #                                   "Apr": 0,
+            #                                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
+            #                                   "Dec": 0, }
+            #     for i in mock_data1:
+            #         Bunum += 1
+            #         mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
+            #         mock_data1_SubCount["Jan"] += i["Jan"]
+            #         mock_data1_SubCount["Feb"] += i["Feb"]
+            #         mock_data1_SubCount["Mar"] += i["Mar"]
+            #         mock_data1_SubCount["Apr"] += i["Apr"]
+            #         mock_data1_SubCount["May"] += i["May"]
+            #         mock_data1_SubCount["Jun"] += i["Jun"]
+            #         mock_data1_SubCount["Jul"] += i["Jul"]
+            #         mock_data1_SubCount["Aug"] += i["Aug"]
+            #         mock_data1_SubCount["Sep"] += i["Sep"]
+            #         mock_data1_SubCount["Oct"] += i["Oct"]
+            #         mock_data1_SubCount["Nov"] += i["Nov"]
+            #         mock_data1_SubCount["Dec"] += i["Dec"]
+            #         mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
+            #     mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / mounthnow, 2)
+            #     mock_data1.append(mock_data1_SubCount)
+            #     if Bunum:
+            #         mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
+            #     mock_data1.append(mock_data1_Monthly_Average)
+            #
+            #     for i in mock_data1:
+            #         for j in Yuefenlist:
+            #             if int(j[1]) > mounthnow:
+            #                 # print(j[0])
+            #                 i[j[0]] = ''
+            # else:
+            #     # for i in Departments.objects.filter(Q(Year=YearSearch)& Q(BU=None)&Q(KE=None)):
+            #     # for i in Departments.objects.filter(Year=YearSearch, BU=None, KE=None):
+            #     # for i in Departments.objects.filter(Year=YearSearch, BU__isnull=True, KE__isnull=True):
+            #     #     print(i)
+            #
+            #     Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"), ("Jun", "6"),
+            #                   ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"), ("Dec", "12")]
+            #     for i in Departments.objects.filter(Year=YearSearch, BU__isnull=False, KE__isnull=True):
+            #         mock_data1_dict = {
+            #             #            "Department": "KF0MAQAA00(DQA1 五部)", "QM": "謝信福", "IDL_Sum": "65", "Jan": "43.45", "Feb": "0.41",
+            #             # "Mar": "23.93", "Apr": "60.07",
+            #             # "May": "", "Jun": "", "Jul": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": "", "Year_Sum": "127.86",
+            #             # "Year_Average": "31.97"
+            #         }
+            #         mock_data1_dict["Department"] = i.Department_Code + "(" + i.CHU + i.BU + ")"
+            #         mock_data1_dict["QM"] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
+            #                                                                      GroupNum=i.Manager).first().CNName if PersonalInfoHisByYear.objects.filter(
+            #             Year=YearSearch, GroupNum=i.Manager).first() else "該年份人員信心缺少該QM信息"
+            #         # print(mock_data1_dict["QM"])
+            #         IDL_Sum = 0
+            #         Yuefen = {"Jan": 0, "Feb": 0,
+            #                   "Mar": 0, "Apr": 0,
+            #                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}
+            #         for j in Departments.objects.filter(Year=YearSearch, CHU=i.CHU, BU=i.BU,
+            #                                             KE__isnull=False):  # 每个部下面的课的部门代码
+            #             # print(i.Department_Code, j)
+            #             # 每个课下的除了课长的所有人
+            #             # IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).exclude(PositionNow__in=["6_2_Other", "6_2_ZG", "6_1_Other", "6_1_ZG"]).count()
+            #             IDL_Sum += PersonalInfoHisByYear.objects.filter(Year=YearSearch, DepartmentCode=j).count()
+            #             for k in Yuefenlist:
+            #                 # 加班时数
+            #                 if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Peacetime"))["Peacetime__sum"]:
+            #                     Yuefen[k[0]] += \
+            #                     WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Peacetime"))["Peacetime__sum"]
+            #                 if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("PeriodHoliday"))["PeriodHoliday__sum"]:
+            #                     Yuefen[k[0]] += \
+            #                     WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("PeriodHoliday"))["PeriodHoliday__sum"]
+            #                 if WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("NationalHoliday"))["NationalHoliday__sum"]:
+            #                     Yuefen[k[0]] += \
+            #                     WorkOvertime.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("NationalHoliday"))["NationalHoliday__sum"]
+            #                 # 请假时数，除了产假,方式一
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PublicHoliday"))["PublicHoliday__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PublicHoliday"))["PublicHoliday__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("WorkInjury"))["WorkInjury__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("WorkInjury"))["WorkInjury__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Matters"))["Matters__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Matters"))["Matters__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("MattersContinuation"))["MattersContinuation__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("MattersContinuation"))["MattersContinuation__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Sick"))["Sick__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Sick"))["Sick__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("SickContinuation"))["SickContinuation__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("SickContinuation"))["SickContinuation__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Marriage"))["Marriage__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Marriage"))["Marriage__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Bereavement"))["Bereavement__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Bereavement"))["Bereavement__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Special"))["Special__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Special"))["Special__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("OffDuty"))["OffDuty__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("OffDuty"))["OffDuty__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Compensatory"))["Compensatory__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Compensatory"))["Compensatory__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("EpidemicPrevention"))["EpidemicPrevention__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("NoScheduling"))["NoScheduling__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("NoScheduling"))["NoScheduling__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PaternityLeave"))["PaternityLeave__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PaternityLeave"))["PaternityLeave__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Absenteeism"))["Absenteeism__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Absenteeism"))["Absenteeism__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("PregnancyExamination"))["PregnancyExamination__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Lactation"))["Lactation__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Lactation"))["Lactation__sum"]
+            #                 # if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Others"))["Others__sum"]:
+            #                 #     Yuefen[k[0]] -= LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                 #     Sum("Others"))["Others__sum"]
+            #                 # 请假时数，除了产假,方式2
+            #                 if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Total"))["Total__sum"]:
+            #                     Yuefen[k[0]] -= \
+            #                     LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Total"))["Total__sum"]
+            #                 if LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Maternity"))["Maternity__sum"]:
+            #                     Yuefen[k[0]] += \
+            #                     LeaveInfo.objects.filter(Year=YearSearch, Department_Code=j, Mounth=k[1]).aggregate(
+            #                         Sum("Maternity"))["Maternity__sum"]
+            #
+            #         mock_data1_dict["IDL_Sum"] = IDL_Sum
+            #         mock_data1_dict["Jan"] = Yuefen["Jan"]
+            #         mock_data1_dict["Feb"] = Yuefen["Feb"]
+            #         mock_data1_dict["Mar"] = Yuefen["Mar"]
+            #         mock_data1_dict["Apr"] = Yuefen["Apr"]
+            #         mock_data1_dict["May"] = Yuefen["May"]
+            #         mock_data1_dict["Jun"] = Yuefen["Jun"]
+            #         mock_data1_dict["Jul"] = Yuefen["Jul"]
+            #         mock_data1_dict["Aug"] = Yuefen["Aug"]
+            #         mock_data1_dict["Sep"] = Yuefen["Sep"]
+            #         mock_data1_dict["Oct"] = Yuefen["Oct"]
+            #         mock_data1_dict["Nov"] = Yuefen["Nov"]
+            #         mock_data1_dict["Dec"] = Yuefen["Dec"]
+            #         mock_data1_dict["Year_Sum"] = Yuefen["Jan"] + Yuefen["Feb"] + Yuefen["Mar"] + Yuefen["Apr"] + \
+            #                                       Yuefen["May"] + Yuefen["Jun"] + \
+            #                                       Yuefen["Jul"] + Yuefen["Aug"] + Yuefen["Sep"] + Yuefen["Oct"] + \
+            #                                       Yuefen["Nov"] + Yuefen["Dec"]
+            #         mock_data1_dict["Year_Average"] = round(mock_data1_dict["Year_Sum"] / 12, 2)
+            #         mock_data1.append(mock_data1_dict)
+            #     SubCount = 0
+            #     Monthly_Average = 0
+            #     Bunum = 0
+            #     mock_data1_SubCount = {"Department": "Sub- Count", "QM": "", "IDL_Sum": 0, "Jan": 0, "Feb": 0, "Mar": 0,
+            #                            "Apr": 0,
+            #                            "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0,
+            #                            "Year_Sum": 0, "Year_Average": 0}
+            #     mock_data1_Monthly_Average = {"Department": "Monthly Average", "QM": "", "Jan": 0, "Feb": 0, "Mar": 0,
+            #                                   "Apr": 0,
+            #                                   "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0,
+            #                                   "Dec": 0, }
+            #     for i in mock_data1:
+            #         Bunum += 1
+            #         mock_data1_SubCount["IDL_Sum"] += i["IDL_Sum"]
+            #         mock_data1_SubCount["Jan"] += i["Jan"]
+            #         mock_data1_SubCount["Feb"] += i["Feb"]
+            #         mock_data1_SubCount["Mar"] += i["Mar"]
+            #         mock_data1_SubCount["Apr"] += i["Apr"]
+            #         mock_data1_SubCount["May"] += i["May"]
+            #         mock_data1_SubCount["Jun"] += i["Jun"]
+            #         mock_data1_SubCount["Jul"] += i["Jul"]
+            #         mock_data1_SubCount["Aug"] += i["Aug"]
+            #         mock_data1_SubCount["Sep"] += i["Sep"]
+            #         mock_data1_SubCount["Oct"] += i["Oct"]
+            #         mock_data1_SubCount["Nov"] += i["Nov"]
+            #         mock_data1_SubCount["Dec"] += i["Dec"]
+            #         mock_data1_SubCount["Year_Sum"] += i["Year_Sum"]
+            #     mock_data1_SubCount["Year_Average"] += round(mock_data1_SubCount["Year_Sum"] / 12, 2)
+            #     mock_data1.append(mock_data1_SubCount)
+            #     if Bunum:
+            #         mock_data1_Monthly_Average["Jan"] = round(mock_data1_SubCount["Jan"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Feb"] = round(mock_data1_SubCount["Feb"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Mar"] = round(mock_data1_SubCount["Mar"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Apr"] = round(mock_data1_SubCount["Apr"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["May"] = round(mock_data1_SubCount["May"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jun"] = round(mock_data1_SubCount["Jun"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Jul"] = round(mock_data1_SubCount["Jul"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Aug"] = round(mock_data1_SubCount["Aug"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Sep"] = round(mock_data1_SubCount["Sep"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Oct"] = round(mock_data1_SubCount["Oct"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Nov"] = round(mock_data1_SubCount["Nov"] / Bunum, 2)
+            #         mock_data1_Monthly_Average["Dec"] = round(mock_data1_SubCount["Dec"] / Bunum, 2)
+            #     mock_data1.append(mock_data1_Monthly_Average)
+            # Yuefenlist = [("Jan", "1"), ("Feb", "2"), ("Mar", "3"), ("Apr", "4"), ("May", "5"),
+            #               ("Jun", "6"),
+            #               ("Jul", "7"), ("Aug", "8"), ("Sep", "9"), ("Oct", "10"), ("Nov", "11"),
+            #               ("Dec", "12")]
+            # mounthnow = datetime.datetime.now().month
+            # for i in Yuefenlist:
+            #     if (not YearSearch or YearSearch == YearNow) and int(i[1]) > mounthnow:
+            #         break
+            #     else:
+            #         Month_data = []
+            #         Department_key = []
+            #         for j in mock_data1:
+            #             if j["Department"] != "Sub- Count" and j["Department"] != "Monthly Average":
+            #                 Department_key.append(j["Department"])
+            #                 Month_data.append(j[i[0]])
+            #         Monthdict = {
+            #             "name": i[0],
+            #             "type": "bar",
+            #             "stack": "status",
+            #             "barMaxWidth": 50,
+            #             "data": Month_data
+            #         }
+            #         Month.append(Monthdict)
+            # Summary["Department_key"] = Department_key
 
             # overtimeTable1
             # Search_Endperiod = request.POST.getlist("YearRange", [])
@@ -4523,20 +4523,71 @@ def Summary1(request):
         mounthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ]
 
         # overtimeTable1 Sum
+        heBingNum.append(6)
+        zaizhidic = {"Chu": "匯總", "Program": "人數"}
+        overtimedic = {"Chu": "匯總", "Program": "加班時數"}
+        leavedic = {"Chu": "匯總", "Program": "請假時數"}
+        overtimePdic = {"Chu": "匯總", "Program": "平均加班(A)"}
+        leavePdic = {"Chu": "匯總", "Program": "平均請假(B)"}
+        effectivePdic = {"Chu": "匯總", "Program": "有效加班\n(C=A-B)"}
+        for j in mounthname:
+            zaizhidic[j] = 0.00
+            overtimedic[j] = 0.00
+            leavedic[j] = 0.00
+            overtimePdic[j] = 0.00
+            leavePdic[j] = 0.00
+            effectivePdic[j] = 0.00
+            for i in overtimeTable1:
+                # print(j)
+                if j in i.keys():
+                    if i["Program"] == zaizhidic["Program"]:
+                        zaizhidic[j] += i[j]
+                    if i["Program"] == overtimedic["Program"]:
+                        overtimedic[j] += i[j]
+                    if i["Program"] == leavedic["Program"]:
+                        leavedic[j] += i[j]
+                    if i["Program"] == overtimePdic["Program"]:
+                        overtimePdic[j] += i[j]
+                    if i["Program"] == leavePdic["Program"]:
+                        leavePdic[j] += i[j]
+                    if i["Program"] == effectivePdic["Program"]:
+                        effectivePdic[j] += i[j]
+                else:
+                    del zaizhidic[j]
+                    del overtimedic[j]
+                    del leavedic[j]
+                    del overtimePdic[j]
+                    del leavePdic[j]
+                    del effectivePdic[j]
+                    break
+            else:
+                continue
+            break
+            #python里面for...else...表示如果这个循环正常的走完了则会执行else里面的代码，异常退出则不会执行，我们对内层循环做判断，符合条件了break则内存循环异常退出，对应的else也不会执行，然后再下一行是break完成外层循环的退出
+        overtimeTable1.append(zaizhidic)
+        overtimeTable1.append(overtimedic)
+        overtimeTable1.append(leavedic)
+        overtimeTable1.append(overtimePdic)
+        overtimeTable1.append(leavePdic)
+        overtimeTable1.append(effectivePdic)
+
+        # YearAverage
         for i in overtimeTable1:
             hang_Sum = 0.00
-            print(i)
+            # print(i)
+            mounthnum2 = 0
             for j in mounthname:
                 if j in i.keys():
                     hang_Sum += i[j]
-            i["Sum"] =hang_Sum
+                    mounthnum2 += 1
+            i["Average"] =round(hang_Sum / mounthnum2, 2)
 
         for i in overtimeTable1:
             monthDiagram1Data_data = []
             monthDiagram2Data_data = []
             monthDiagram4Data_data = []
             # monthDiagram3Data_data = []
-            if i["Program"] == "平均加班(A)":
+            if i["Program"] == "平均加班(A)" and i["Chu"] != "匯總":
                 for j in mounthname:
                     if j in i.keys():
                         monthDiagram1Data_data.append(i[j])
@@ -4554,7 +4605,7 @@ def Summary1(request):
                         },
                     }
                 )
-            if i["Program"] == "平均請假(B)":
+            if i["Program"] == "平均請假(B)" and i["Chu"] != "匯總":
                 for j in mounthname:
                     if j in i.keys():
                         monthDiagram2Data_data.append(i[j])
@@ -4572,7 +4623,7 @@ def Summary1(request):
                         },
                     }
                 )
-            if i["Program"] == "有效加班\n(C=A-B)":
+            if i["Program"] == "有效加班\n(C=A-B)" and i["Chu"] != "匯總":
                 for j in mounthname:
                     if j in i.keys():
                         monthDiagram4Data_data.append(i[j])
