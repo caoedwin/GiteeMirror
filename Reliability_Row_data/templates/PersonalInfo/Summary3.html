@@ -75,7 +75,11 @@ background-color: rgba(255,255,255,0.1);
                        <el-input type="text" v-model="search000"  placeholder="Search..."></el-input>
                       <el-button @click="exportExcel" type="success" v-if="canExport==0" style="height:40px;margin-left: 2px;float: right">導出</el-button>
                        <el-table border height="500px" id="out-table" @sort-change='sortChange' :default-sort = "{prop: 'DepartureDate', order: 'ascending'}" :data="datas.slice((currentPage-1)*pageSize,currentPage*pageSize)"
-                       v-loading="tableloading"
+                       :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor"
+                         v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
                            <el-table-column type="index" :index="indexMethod"></el-table-column>
@@ -127,6 +131,10 @@ background-color: rgba(255,255,255,0.1);
                   </div>
                     <div class="titleTablecontent">
                           <el-table border :data="titleTable" show-summary
+                                    :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor"
                           v-loading="tableloading1"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -157,6 +165,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="年資" name="4">
                     <div class="seniorityTablecontent">
                            <el-table border :data="seniorityTable" show-summary
+                                     :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor"
                            v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -184,6 +196,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="離職原因" name="8">
                     <div class="reasonTablecontent">
                            <el-table border :data="reasonTable" show-summary
+                                     :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor2"
                            v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -213,6 +229,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="專業" name="6">
                     <div class="professionTablecontent">
                            <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary
+                                     :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor3"
                            v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -1406,6 +1426,53 @@ background-color: rgba(255,255,255,0.1);
                 _this.myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
+
+            addColor({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 4) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+                if (columnIndex === 5) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFF8D7'
+                                   }
+                   }
+
+        },
+            addColor2({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 2) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+
+        },
+            addColor3({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 5) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+
+        },
+
+            changeRowColor({row, column, rowIndex, columnIndex}) {
+            if( rowIndex % 2 == 0){
+               return {
+                         background: 'white'
+               }
+            }else{
+               return {
+                         background: '#FFF0F5'
+                         {#background: '#FFFAF0'#}
+               }
+            }
+        },
             exportExcel:function (){
            /* 从表生成工作簿对象 */
 

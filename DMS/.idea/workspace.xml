@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary120230324linshi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-03-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-03-16.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error-2023-03-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error-2023-03-16.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-03-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-03-16.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-03-23.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-03-23.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-03-23.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-03-23.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-03-24.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-03-24.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2023-03-24.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2023-03-24.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-03-24.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-03-24.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary3.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,14 +54,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="41" />
+          <entry key="html" value="42" />
           <entry key="js" value="1" />
           <entry key="py" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="41" />
+          <entry key="HTML" value="42" />
           <entry key="JavaScript" value="1" />
           <entry key="Python" value="33" />
         </counts>
@@ -89,11 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loading</find>
-      <find>history</find>
-      <find>_this</find>
-      <find>historyloading</find>
-      <find>hisLoading</find>
       <find>歷史</find>
       <find>first</find>
       <find>alertdat</find>
@@ -119,6 +122,11 @@
       <find>axios</find>
       <find>Signin</find>
       <find>post</find>
+      <find>table</find>
+      <find>el-table</find>
+      <find>color</find>
+      <find>changeRowColor</find>
+      <find>addColor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1085,7 +1093,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-197" />
+    <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="2262" />
     <option name="height" value="1350" />
@@ -1107,11 +1115,6 @@
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="app01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMS" type="462c0819:PsiDirectoryNode" />
-              <item name="DMS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
@@ -1342,6 +1345,30 @@
     <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" weight="0.16711956" />
+      <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
+      <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.23958333" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32761088" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SciView" order="9" sideWeight="0.50158983" side_tool="true" weight="0.29307282" />
+      <window_info anchor="bottom" id="Database" order="10" sideWeight="0.50158983" side_tool="true" weight="0.24333926" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959514" weight="0.3059896" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32639793" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5023847" side_tool="true" weight="0.24333926" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
+      <window_info anchor="right" id="Find" order="4" weight="0.3275862" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.16711956" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
@@ -1364,7 +1391,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
       <window_info anchor="right" id="Find" order="4" weight="0.3275862" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1727,13 +1754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="1539" column="36" selection-start-line="1539" selection-start-column="21" selection-end-line="1539" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/AdapterPowerCode/M_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -1827,6 +1847,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="1120" column="116" selection-start-line="1120" selection-start-column="94" selection-end-line="1120" selection-end-column="116" />
+          <folding>
+            <element signature="n#el-dialog#0;n#div#0;n#!!top" />
+            <element signature="n#el-dialog#1;n#div#0;n#!!top" />
+            <element signature="n#el-dialog#2;n#div#0;n#!!top" />
+            <element signature="n#el-dialog#3;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#el-table#0;n#template#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#87570#89545#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>

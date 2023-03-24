@@ -4598,10 +4598,14 @@ def Summary1(request):
                         'name': i["Chu"],
                         'type': 'line',
                         # 'stack': 'Total',#堆叠数据累加
+                        "smooth": 'true',#平滑曲线
                         'data': monthDiagram1Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
                             'position': 'top'
+                        },
+                        'endLabel': {
+                            'show': 'true',
                         },
                     }
                 )
@@ -4616,10 +4620,14 @@ def Summary1(request):
                         'name': i["Chu"],
                         'type': 'line',
                         # 'stack': 'Total',#堆叠数据累加
+                        "smooth": 'true',  # 平滑曲线
                         'data': monthDiagram2Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
                             'position': 'top'
+                        },
+                        'endLabel': {
+                            'show': 'true',
                         },
                     }
                 )
@@ -4634,10 +4642,14 @@ def Summary1(request):
                         'name': i["Chu"],
                         'type': 'line',
                         # 'stack': 'Total',#堆叠数据累加
+                        "smooth": 'true',  # 平滑曲线
                         'data': monthDiagram4Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
                             'position': 'top'
+                        },
+                        'endLabel': {
+                            'show': 'true',
                         },
                     }
                 )
@@ -4660,6 +4672,7 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4668,6 +4681,7 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4676,6 +4690,7 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4685,6 +4700,7 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'yAxisIndex': 1,
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -4694,6 +4710,7 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'yAxisIndex': 1,
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -4703,6 +4720,7 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
                         'yAxisIndex': 1,
                         'data': i['data']  # 對應月份 從一月到十二月
                     },

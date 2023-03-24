@@ -49,6 +49,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="By 月份" name="1">
                    <div class="monthTablecontent">
                        <el-table border :data="monthTable" :span-method="objectSpanMethod"
+                                 :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor"
                        v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -77,6 +81,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="By 職稱" name="2">
                   <div class="titleTablecontent">
                        <el-table border :data="titleTable" show-summary
+                                 :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor2"
                        v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -93,6 +101,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="By 年資" name="3">
                   <div class="seniorityTablecontent">
                        <el-table border :data="seniorityTable" show-summary
+                                 :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor2"
                        v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -123,6 +135,10 @@ background-color: rgba(255,255,255,0.1);
               <el-collapse-item title="By 專業" name="4">
                   <div class="professionTablecontent">
                        <el-table border :data="professionTable" :span-method="daLeiSpanMethod" show-summary
+                                 :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        style="border-radius: 10px;word-break: keep-all"
+                                 {% comment %}stripe{% endcomment %}
+                                 :row-style="changeRowColor" :cell-style="addColor3"
                        v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -568,6 +584,46 @@ background-color: rgba(255,255,255,0.1);
                 this.myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
 
             },
+            addColor({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 14) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+
+        },
+            addColor2({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 4) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+
+        },
+            addColor3({row, column, rowIndex, columnIndex}) {
+                   if (columnIndex === 5) {
+                           return {
+                                     {% comment %}color: 'white',{% endcomment %}
+                                     background: '#FFEEDD'
+                                   }
+                   }
+
+        },
+
+            changeRowColor({row, column, rowIndex, columnIndex}) {
+            if( rowIndex % 2 == 0){
+               return {
+                         background: 'white'
+               }
+            }else{
+               return {
+                         background: '#FFF0F5'
+                         {#background: '#FFFAF0'#}
+               }
+            }
+        },
             monthDiagram(){
                 let _this = this
                 const list = []
