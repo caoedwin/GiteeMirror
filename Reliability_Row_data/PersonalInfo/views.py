@@ -3786,7 +3786,7 @@ def Summary1(request):
                             leavedic[j[0]] = 0.00
                             for n in All_LeaveInfo:
                                 if n['Mounth'] == j[1].split("-")[1]:
-                                    overtimedic[j[0]] = n['Total__sum']
+                                    leavedic[j[0]] = n['Total__sum']
                             # if LeaveInfo.objects.filter(Year=YearNow,
                             #                                              Department_Code__contains=Department_Codechu,
                             #                                              Mounth=j[1].split("-")[1]).first():
@@ -4354,7 +4354,7 @@ def Summary1(request):
                             leavedic[j[0]] = 0.00
                             for n in All_LeaveInfo:
                                 if n['Mounth'] == j[1].split("-")[1]:
-                                    overtimedic[j[0]] = n['Total__sum']
+                                    leavedic[j[0]] = n['Total__sum']
                             # if LeaveInfo.objects.filter(Year=YearNow,
                             #                                              Department_Code__contains=Department_Codechu,
                             #                                              Mounth=j[1].split("-")[1]).first():
@@ -4484,7 +4484,7 @@ def Summary1(request):
                             leavedic[j[0]] = 0.00
                             for n in All_LeaveInfo:
                                 if n['Mounth'] == j[1].split("-")[1]:
-                                    overtimedic[j[0]] = n['Total__sum']
+                                    leavedic[j[0]] = n['Total__sum']
                             # if LeaveInfo.objects.filter(Year=YearSearch,
                             #                                                               Department_Code__contains=Department_Codechu,
                             #                                              Mounth=j[1].split("-")[1]).first():
