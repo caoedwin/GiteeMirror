@@ -4541,17 +4541,17 @@ def Summary1(request):
                 # print(j)
                 if j in i.keys():
                     if i["Program"] == zaizhidic["Program"]:
-                        zaizhidic[j] += i[j]
+                        zaizhidic[j] = round(zaizhidic[j] + i[j], 2)
                     if i["Program"] == overtimedic["Program"]:
-                        overtimedic[j] += i[j]
+                        overtimedic[j] = round(overtimedic[j] + i[j], 2)
                     if i["Program"] == leavedic["Program"]:
-                        leavedic[j] += i[j]
+                        leavedic[j] = round(leavedic[j] + i[j], 2)
                     if i["Program"] == overtimePdic["Program"]:
-                        overtimePdic[j] += i[j]
+                        overtimePdic[j] = round(overtimePdic[j] + i[j], 2)
                     if i["Program"] == leavePdic["Program"]:
-                        leavePdic[j] += i[j]
+                        leavePdic[j] = round(leavePdic[j] + i[j], 2)
                     if i["Program"] == effectivePdic["Program"]:
-                        effectivePdic[j] += i[j]
+                        effectivePdic[j] = round(effectivePdic[j] + i[j], 2)
                 else:
                     del zaizhidic[j]
                     del overtimedic[j]
@@ -4564,12 +4564,12 @@ def Summary1(request):
                 continue
             break
             #python里面for...else...表示如果这个循环正常的走完了则会执行else里面的代码，异常退出则不会执行，我们对内层循环做判断，符合条件了break则内存循环异常退出，对应的else也不会执行，然后再下一行是break完成外层循环的退出
-        overtimeTable1.append(round(zaizhidic, 2))
-        overtimeTable1.append(round(overtimedic, 2))
-        overtimeTable1.append(round(leavedic, 2))
-        overtimeTable1.append(round(overtimePdic, 2))
-        overtimeTable1.append(round(leavePdic, 2))
-        overtimeTable1.append(round(effectivePdic, 2))
+        overtimeTable1.append(zaizhidic)
+        overtimeTable1.append(overtimedic)
+        overtimeTable1.append(leavedic)
+        overtimeTable1.append(overtimePdic)
+        overtimeTable1.append(leavePdic)
+        overtimeTable1.append(effectivePdic)
 
         # YearAverage
         for i in overtimeTable1:
