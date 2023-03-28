@@ -3809,7 +3809,7 @@ def Summary1(request):
                             # leavePdic
                             leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
                             # effectivePdic
-                            effectivePdic[j[0]] = overtimePdic[j[0]] - leavePdic[j[0]]
+                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 2)
                         mounthnum += 1
                     overtimeTable1.append(zaizhidic)
                     overtimeTable1.append(overtimedic)
@@ -4377,7 +4377,7 @@ def Summary1(request):
                             # leavePdic
                             leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
                             # effectivePdic
-                            effectivePdic[j[0]] = overtimePdic[j[0]] - leavePdic[j[0]]
+                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 2)
                         mounthnum += 1
                     overtimeTable1.append(zaizhidic)
                     overtimeTable1.append(overtimedic)
