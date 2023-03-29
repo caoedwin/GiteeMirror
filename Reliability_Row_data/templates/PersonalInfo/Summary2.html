@@ -149,6 +149,9 @@ background-color: rgba(255,255,255,0.1);
                            <el-table-column prop="professionSummary" label="合計" align="center"></el-table-column>
                        </el-table>
                   </div>
+                  <div class="container-echart"v-cloak>
+                      <div  id="professionDiagram1" style="height:400px;"></div>
+                  </div>
               </el-collapse-item>
 {#              <el-collapse-item title="By 地區" name="6">#}
 {#                  <div class="regionsTablecontent">#}
@@ -191,6 +194,7 @@ background-color: rgba(255,255,255,0.1);
                {#regionsTable:[],#}
                searchYear:null,
                monthDiagram1Data:[],
+               professionDiagram1:[],
                DataCustomer:[],
                DataCustomer1:[],
                DataRenCi:[],
@@ -219,6 +223,8 @@ background-color: rgba(255,255,255,0.1);
             getdata: function (e) {          //获取数据
                 this.elbuttonloading = true;
                 this.tableloading = true;
+                this.myChart8 = echarts.init(document.getElementById('professionDiagram1'));
+                this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
                 this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));
@@ -242,6 +248,10 @@ background-color: rgba(255,255,255,0.1);
 
                     this.heBingNum=res.data.heBingNum;
 
+                    this.professionDiagram1Data=res.data.professionDiagram1Data;
+                    this.profession_xAxis_data=res.data.profession_xAxis_data;
+                    this.professionCustomer=res.data.professionCustomer;
+                    this.professionDiagram();
                     this.monthDiagram1Data=res.data.monthDiagram1Data;   //月份圖
                     this.monthDiagram2Data=res.data.monthDiagram2Data;
                     this.monthDiagram();
@@ -259,6 +269,8 @@ background-color: rgba(255,255,255,0.1);
             search :function(){            //上传搜索项：以此选项搜索符合条件的内容
                 this.elbuttonloading = true;
                 this.tableloading = true;
+                this.myChart8 = echarts.init(document.getElementById('professionDiagram1'));
+                this.myChart8.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart7 = echarts.init(document.getElementById('seniorityDiagram1'));
                 this.myChart7.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart3 = echarts.init(document.getElementById('titleDiagramDQADIV'));
@@ -282,6 +294,10 @@ background-color: rgba(255,255,255,0.1);
 
                     this.heBingNum=res.data.heBingNum;
 
+                    this.professionDiagram1Data=res.data.professionDiagram1Data;
+                    this.profession_xAxis_data=res.data.profession_xAxis_data;
+                    this.professionCustomer=res.data.professionCustomer;
+                    this.professionDiagram();
                     this.monthDiagram1Data=res.data.monthDiagram1Data;
                     this.monthDiagram2Data=res.data.monthDiagram2Data;
                     this.monthDiagram();
@@ -674,7 +690,7 @@ background-color: rgba(255,255,255,0.1);
                         }
                     },
                     legend: {
-                        data: ['A31', 'A32', 'C38', '預算', '在職']
+                        data: ['預算', '在職', 'A31', 'A32', 'C38', 'ABO', ]
                     },
                     xAxis: [
                         {
@@ -872,6 +888,109 @@ background-color: rgba(255,255,255,0.1);
                 })
                    _this.myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                    _this.myChart2.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+            },
+            professionDiagram(){
+                let _this = this
+                const list = []
+              const bottom = 80 // 控制线的位置
+              const height = 26
+              for (var i = 0; i < 3; i++) {
+                list.push({
+                  type: 'line',
+                  bottom: bottom - i * height,
+                  right: 50,
+                  {#left: 50,#}
+                  style: {
+                    fill: '#000000',
+                    stroke: '#000000'
+                  },
+                  shape: { // 几条线
+                    x1: 11,
+                    y1: 0,
+                    x2: 2000,
+                    y2: 0
+                  }
+                })
+              }
+
+                var option8 = {
+                    color: ['#FFC0CB', '#9370DB', '#87CEFA', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
+                    title: {
+                        text: '在職專業類別統計',
+                        textStyle: {
+                        fontSize:30
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
+                            }
+                        }
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        {#data: ['A31', 'A32', 'C38',]#}
+                        data: this.professionCustomer
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            {#data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],#}
+                            data: this.profession_xAxis_data,
+                            axisLabel: {//坐标轴刻度标签的相关设置。
+                                    interval: 0,
+                                    rotate: "45"
+                                },
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '人次（專業類別）',
+                            min: 0,
+                            {#max: 1000,#}
+                            {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
+                            {#interval: 200,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        },
+                        {% comment %}{
+                            type: 'value',
+                            name: '預算/在職人次',
+                            min: 0,
+                            {#max: Math.ceil(Math.max.apply(null,this.DataRenCi)/5)*5,#}
+                            {#max: 1000,#}
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataRenCi)/5),#}
+                            {#interval: 200,#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        }{% endcomment %}
+                    ],
+                    series:this.professionDiagram1Data,
+                };
+                _this.myChart8.clear();
+                _this.myChart8.setOption(option8);
+                window.addEventListener('resize', ()=>{
+                   _this.myChart8.resize();
+                 // 使用刚指定的配置项和数据显示图表。
+                })
+                   _this.myChart8.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
             }
 
         }

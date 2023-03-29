@@ -3208,6 +3208,9 @@ def Summary1(request):
     heBingNum = [
         # 6, 6, 6,
     ]
+    monthDiagram_legend_data = [
+        # 'A31', 'A32', 'C38',
+    ]
     monthDiagram1Data = [
         # {
         #     'name': 'A31',
@@ -3353,6 +3356,20 @@ def Summary1(request):
 
     ]  # X轴是固定的1~12月
     monthDiagramC38Data = [
+        # {
+        #     'name': '平均加班',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+        # },
+        # {
+        #     'name': '平均請假',
+        #     'type': 'bar',
+        #     'yAxisIndex': 1,
+        #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+        # },
+
+    ]  # X轴是固定的1~12月
+    monthDiagramABOData = [
         # {
         #     'name': '平均加班',
         #     'type': 'bar',
@@ -3724,6 +3741,7 @@ def Summary1(request):
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
                 mounthnow = datetime.datetime.now().month
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
+                    monthDiagram_legend_data.append(i['Customer'])
                     Department_Codechu = PersonalInfo.objects.filter(Customer=i[
                         "Customer"]).first().DepartmentCode[:7]
                     zaizhidic = {"Chu": i["Customer"], "Program": "人數"}
@@ -4292,6 +4310,7 @@ def Summary1(request):
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
                 mounthnow = datetime.datetime.now().month
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
+                    monthDiagram_legend_data.append(i['Customer'])
                     Department_Codechu = PersonalInfo.objects.filter(Customer=i[
                         "Customer"]).first().DepartmentCode[:7]
                     zaizhidic = {"Chu": i["Customer"], "Program": "人數"}
@@ -4421,6 +4440,7 @@ def Summary1(request):
                 LeaveerrormegGroupNum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().order_by(
                         "Customer"):
+                    monthDiagram_legend_data.append(i['Customer'])
                     Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i["Customer"]).first().DepartmentCode[:7]
                     # print(Department_Codechu)
                     zaizhidic = {"Chu": i["Customer"], "Program": "人數"}
@@ -4694,6 +4714,15 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
+            elif i['name'] == 'ABO':
+                monthDiagramABOData.append(
+                    {
+                        'name': '平均加班',
+                        'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
         for i in monthDiagram2Data:
             if i['name'] == 'A31':
                 monthDiagramA31Data.append(
@@ -4725,6 +4754,16 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
+            elif i['name'] == 'ABO':
+                monthDiagramABOData.append(
+                    {
+                        'name': '平均請假',
+                        'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
+                        'yAxisIndex': 1,
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
 
         data = {
             "err_ok": "0",
@@ -4737,12 +4776,14 @@ def Summary1(request):
             "Month_Singal": Month_Singal,
             "Summary": Summary,
             "monthDiagram1Data": monthDiagram1Data,
+            "monthDiagram_legend_data": monthDiagram_legend_data,
             "monthDiagram2Data": monthDiagram2Data,
             "monthDiagram4Data": monthDiagram4Data,
             "monthDiagram3Data": monthDiagram3Data,
             "monthDiagramA31Data": monthDiagramA31Data,
             "monthDiagramA32Data": monthDiagramA32Data,
             "monthDiagramC38Data": monthDiagramC38Data,
+            "monthDiagramABOData": monthDiagramABOData,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
@@ -4824,6 +4865,34 @@ def Summary2(request):
         # {"Regions": "陝西", "A31": "20", "A32": "22", "C38": "23", "regionsSummary": "65"},
         # {"Regions": "甘肅", "A31": "5", "A32": "2", "C38": "8", "regionsSummary": "15"}
     ]
+    professionDiagram1Data = [
+        # {
+        #     'name': 'A31',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
+        # },
+        # {
+        #     'name': 'A32',
+        #     'type': 'bar',
+        #     'data': [189, 185, 194, 196, 195, 189]
+        # },
+        # {
+        #     'name': 'C38',
+        #     'type': 'bar',
+        #     'data': [210, 209, 210, 203, 199]
+        # },
+        # {
+        #     'name': 'ABO',
+        #     'type': 'bar',
+        #     'data': [210, 209, 210, 203, 199]
+        # },
+    ]
+    professionCustomer = [
+        # 'A31', 'A32', 'C38',
+    ]
+    profession_xAxis_data = [
+        # 'A31', 'A32', 'C38',
+    ]
     monthDiagram1Data = [
         # {
         #     'name': 'A31',
@@ -4853,6 +4922,10 @@ def Summary2(request):
         #     'data': [628, 622, 625, 615, 602, 588, 635, 612, 613, 631, 646, 667]
         # }
     ]  # X轴是固定的1~12月
+    monthDiagram1Customer = [
+        '預算', '在職',
+        # 'A31', 'A32', 'C38', 'ABO',
+    ]
     monthDiagram2Data = {
         # 'LIZHI': [13, 7, 18, 19, 14, 17, 21, 28, 18, 12, 7, 8],  # 對應月份 從一月到十二月
         # 'LIZHILV': [0.0207006, 0.011254, 0.0288, 0.0308943, 0.0232558, 0.0289115, 0.0330708, 0.0457516, 0.0293637,
@@ -4947,6 +5020,7 @@ def Summary2(request):
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
                 mounthnow = datetime.datetime.now().month
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
+                    monthDiagram1Customer.append(i["Customer"])
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
                     ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
@@ -5061,6 +5135,7 @@ def Summary2(request):
                 mounthnow = 12  # datetime.datetime.now().month
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().order_by(
                         "Customer"):
+                    monthDiagram1Customer.append(i["Customer"])
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
                     ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
@@ -5227,8 +5302,8 @@ def Summary2(request):
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
-                                # monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
-                                monthDiagram2Data_LIZHILV.append(i[j[0]])
+                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
+                                # monthDiagram2Data_LIZHILV.append(i[j[0]])
                             else:
                                 monthDiagram2Data_LIZHILV.append('')
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
@@ -5338,7 +5413,9 @@ def Summary2(request):
             titleDiagram["titleDiagramData"] = titleDiagramData
 
             # By年资
-            seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            # seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '0.25~1年',
+                                    '0.25年以下', ]
             if not YearSearch or YearSearch == YearNow:
                 # legendDataseniority = ["DQA"]  # 与By职称里的名称区分开
                 legendDataseniority = []  # 与By职称里的名称区分开
@@ -5587,6 +5664,33 @@ def Summary2(request):
             # print(heBingNum_sort)
             for i in heBingNum_sort:
                 heBingNum.append(i[1])
+            # {"daLei": "S.T.E.M", "Profession": "電氣信息類", "A31": "12", "A32": "54", "C38": "19", "professionSummary": "85"},
+            # {
+            #     'name': 'A31',
+            #     'type': 'bar',
+            #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
+            # },
+            #professionDiagram1Data
+            ProfessionCategory = MajorIfo.objects.all().values("Categories").distinct().order_by("Categories")
+            for i in ProfessionCategory:
+                profession_xAxis_data.append(i["Categories"])
+            for i in Customer_major:
+                professionCustomer.append(i)
+                CustomerCategorytotallist = []
+                for j in ProfessionCategory:
+                    CustomerCategorytotal = 0
+                    for k in professionTable:
+                        # print(k, j)
+                        if k["daLei"] == j["Categories"]:
+                            CustomerCategorytotal += k[i]
+                    CustomerCategorytotallist.append(CustomerCategorytotal)
+                professionDiagram1Data.append(
+                    {
+                        'name': i,
+                        'type': 'bar',
+                        'data': CustomerCategorytotallist  # 對應学科类别
+                    }
+                )
 
             # By地区
             if not YearSearch or YearSearch == YearNow:
@@ -5660,6 +5764,7 @@ def Summary2(request):
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
                 mounthnow = datetime.datetime.now().month
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
+                    monthDiagram1Customer.append(i["Customer"])
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
                     ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
@@ -5774,6 +5879,7 @@ def Summary2(request):
                 mounthnow = 12  # datetime.datetime.now().month
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().order_by(
                         "Customer"):
+                    monthDiagram1Customer.append(i["Customer"])
                     yusuandic = {"Customer": i["Customer"], "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Classify": "在職"}
                     ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
@@ -5942,11 +6048,12 @@ def Summary2(request):
                         monthDiagram2Data_LIZHILV = []
                         for j in mounthlist:
                             if j[0] in i.keys():
-                                # monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
-                                monthDiagram2Data_LIZHILV.append(i[j[0]])
+                                monthDiagram2Data_LIZHILV.append(float(i[j[0]].strip('%')))
+                                # monthDiagram2Data_LIZHILV.append(i[j[0]])
                             else:
                                 monthDiagram2Data_LIZHILV.append('')
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
+
 
             # By职称
             if not YearSearch or YearSearch == YearNow:
@@ -6047,7 +6154,8 @@ def Summary2(request):
             titleDiagram["titleDiagramData"] = titleDiagramData
 
             # By年资
-            seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            # seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '0.25~1年', '0.25年以下', ]
             if not YearSearch or YearSearch == YearNow:
                 # legendDataseniority = ["DQA"]
                 legendDataseniority = []
@@ -6302,6 +6410,33 @@ def Summary2(request):
             # print(heBingNum_sort)
             for i in heBingNum_sort:
                 heBingNum.append(i[1])
+            # {"daLei": "S.T.E.M", "Profession": "電氣信息類", "A31": "12", "A32": "54", "C38": "19", "professionSummary": "85"},
+            # {
+            #     'name': 'A31',
+            #     'type': 'bar',
+            #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
+            # },
+            # professionDiagram1Data
+            ProfessionCategory = MajorIfo.objects.all().values("Categories").distinct().order_by("Categories")
+            for i in ProfessionCategory:
+                profession_xAxis_data.append(i["Categories"])
+            for i in Customer_major:
+                professionCustomer.append(i)
+                CustomerCategorytotallist = []
+                for j in ProfessionCategory:
+                    CustomerCategorytotal = 0
+                    for k in professionTable:
+                        # print(k, j)
+                        if k["daLei"] == j["Categories"]:
+                            CustomerCategorytotal += k[i]
+                    CustomerCategorytotallist.append(CustomerCategorytotal)
+                professionDiagram1Data.append(
+                    {
+                        'name': i,
+                        'type': 'bar',
+                        'data': CustomerCategorytotallist  # 對應学科类别
+                    }
+                )
 
             # By地区
             if not YearSearch or YearSearch == YearNow:
@@ -6347,12 +6482,16 @@ def Summary2(request):
             "professionTable": professionTable,
             "regionsTable": regionsTable,
             "monthDiagram1Data": monthDiagram1Data,
+            "monthDiagram1Customer": monthDiagram1Customer,
             "monthDiagram2Data": monthDiagram2Data,
             "titleDiagram": titleDiagram,
             "seniorityDiagram": seniorityDiagram,
             "educationDiagram": educationDiagram,
             "selectItem": selectItem,
             "heBingNum": heBingNum,
+            "professionDiagram1Data": professionDiagram1Data,
+            "profession_xAxis_data": profession_xAxis_data,
+            "professionCustomer": professionCustomer,
 
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
@@ -6546,6 +6685,34 @@ def Summary3(request):
         #  "professionSummary": "65"},
         # {"daLei": "Non S.T.E.M", "Profession": "材料類", "A31": "5", "A32": "2", "C38": "8", "professionSummary": "15"}
     ]
+    professionDiagram1Data = [
+        # {
+        #     'name': 'A31',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
+        # },
+        # {
+        #     'name': 'A32',
+        #     'type': 'bar',
+        #     'data': [189, 185, 194, 196, 195, 189]
+        # },
+        # {
+        #     'name': 'C38',
+        #     'type': 'bar',
+        #     'data': [210, 209, 210, 203, 199]
+        # },
+        # {
+        #     'name': 'ABO',
+        #     'type': 'bar',
+        #     'data': [210, 209, 210, 203, 199]
+        # },
+    ]
+    professionCustomer = [
+        # 'A31', 'A32', 'C38',
+    ]
+    profession_xAxis_data = [
+        # 'A31', 'A32', 'C38',
+    ]
     # heBingNum = {"STEM": 3, "NON_STEM": 6}  # 要合併的行數
     heBingNum = [
         # 3, 6
@@ -6561,6 +6728,7 @@ def Summary3(request):
         #             {"Regions": "陝西", "A31": "20", "A32": "22", "C38": "23", "regionsSummary": "65"},
         #             {"Regions": "甘肅", "A31": "5", "A32": "2", "C38": "8", "regionsSummary": "15"}
     ]
+
     canExport = 0  # 0為DQA權限，可以導出
 
     onlineuser = request.session.get('account')
@@ -6707,9 +6875,11 @@ def Summary3(request):
                     titleSummary_Total += titleSummary
                     titleTable.append(titleTable_dict)
                 # titleSeniorityData&titleTable1
-                titleSeniorityData = [
-                    "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                ]
+                # titleSeniorityData = [
+                #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                # ]
+                titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                    '3个月以下', ]
                 for j in titleDiagram2Data_Position:
                     titleTable1_dict = {}
                     number025 = 0
@@ -6798,9 +6968,11 @@ def Summary3(request):
                     titleSummary_Total += titleSummary
                     titleTable.append(titleTable_dict)
                 # titleSeniorityData&titleTable1
-                titleSeniorityData = [
-                    "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                ]
+                # titleSeniorityData = [
+                #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                # ]
+                titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                      '3个月以下', ]
                 for j in titleDiagram2Data_Position:
                     titleTable1_dict = {}
                     number025 = 0
@@ -6861,8 +7033,8 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                # LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
-                LIZHIBI_titleDiagram2Data.append(i["titleDeparture"])
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
+                # LIZHIBI_titleDiagram2Data.append(i["titleDeparture"])
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -6882,7 +7054,9 @@ def Summary3(request):
                 ]
 
             # 年资
-            seniorityDiagramname = ['3个月以下', '3个月~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            # seniorityDiagramname = ['3个月以下', '3个月~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                    '3个月以下', ]
             if not YearSearch or YearSearch == YearNow:
                 selectItem_seniorityTable = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values("Customer").distinct().order_by(
@@ -7163,8 +7337,8 @@ def Summary3(request):
                 LABEL_seniorityDiagramData1.append(i["seniority"])
                 HEJILIZHI_seniorityDiagramData1.append(i["senioritySummary"])
                 if "seniorityDeparture" in i.keys():
-                    # LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
-                    LIZHIBI_seniorityDiagramData1.append(i["seniorityDeparture"])
+                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
+                    # LIZHIBI_seniorityDiagramData1.append(i["seniorityDeparture"])
             seniorityDiagramData1["LABEL"] = LABEL_seniorityDiagramData1
             seniorityDiagramData1["HEJILIZHI"] = HEJILIZHI_seniorityDiagramData1
             seniorityDiagramData1["LIZHIBI"] = LIZHIBI_seniorityDiagramData1
@@ -7220,9 +7394,10 @@ def Summary3(request):
             YUANYINBI = []
             if reasonTable:
                 for i in reasonTable:
+                    print(i["reasonDeparture"])
                     LABEL.append(i["reason"])
                     HEJIRENSHU.append(i["reasonSummary"])
-                    YUANYINBI.append(i["reasonDeparture"])
+                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]) / 100, 4))
             reasonDiagramData["LABEL"] = LABEL
             reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
             reasonDiagramData["YUANYINBI"] = YUANYINBI
@@ -7405,6 +7580,33 @@ def Summary3(request):
             # print(heBingNum_sort)
             for i in heBingNum_sort:
                 heBingNum.append(i[1])
+            # {"daLei": "S.T.E.M", "Profession": "電氣信息類", "A31": "12", "A32": "54", "C38": "19", "professionSummary": "85"},
+            # {
+            #     'name': 'A31',
+            #     'type': 'bar',
+            #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
+            # },
+            # professionDiagram1Data
+            ProfessionCategory = MajorIfo.objects.all().values("Categories").distinct().order_by("Categories")
+            for i in ProfessionCategory:
+                profession_xAxis_data.append(i["Categories"])
+            for i in Customer_major:
+                professionCustomer.append(i)
+                CustomerCategorytotallist = []
+                for j in ProfessionCategory:
+                    CustomerCategorytotal = 0
+                    for k in professionTable:
+                        # print(k, j)
+                        if k["daLei"] == j["Categories"]:
+                            CustomerCategorytotal += k[i]
+                    CustomerCategorytotallist.append(CustomerCategorytotal)
+                professionDiagram1Data.append(
+                    {
+                        'name': i,
+                        'type': 'bar',
+                        'data': CustomerCategorytotallist  # 對應学科类别
+                    }
+                    )
 
             # 地區
             if not YearSearch or YearSearch == YearNow:
@@ -7596,9 +7798,11 @@ def Summary3(request):
                     titleSummary_Total += titleSummary
                     titleTable.append(titleTable_dict)
                 # titleSeniorityData&titleTable1
-                titleSeniorityData = [
-                    "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                ]
+                # titleSeniorityData = [
+                #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                # ]
+                titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                      '3个月以下', ]
                 for j in titleDiagram2Data_Position:
                     titleTable1_dict = {}
                     number025 = 0
@@ -7688,9 +7892,11 @@ def Summary3(request):
                     titleSummary_Total += titleSummary
                     titleTable.append(titleTable_dict)
                 # titleSeniorityData&titleTable1
-                titleSeniorityData = [
-                    "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                ]
+                # titleSeniorityData = [
+                #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                # ]
+                titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                      '3个月以下', ]
                 for j in titleDiagram2Data_Position:
                     titleTable1_dict = {}
                     number025 = 0
@@ -7751,8 +7957,8 @@ def Summary3(request):
             for i in titleTable:
                 LABEL_titleDiagram2Data.append(i["Title"])
                 HEJILIZHI_titleDiagram2Data.append(i["titleSummary"])
-                # LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
-                LIZHIBI_titleDiagram2Data.append(i["titleDeparture"])
+                LIZHIBI_titleDiagram2Data.append(round(float(i["titleDeparture"].split("%")[0]), 4))
+                # LIZHIBI_titleDiagram2Data.append(i["titleDeparture"])
             titleDiagram2Data["LABEL"] = LABEL_titleDiagram2Data
             titleDiagram2Data["HEJILIZHI"] = HEJILIZHI_titleDiagram2Data
             titleDiagram2Data["LIZHIBI"] = LIZHIBI_titleDiagram2Data
@@ -7772,7 +7978,9 @@ def Summary3(request):
                 ]
 
             # 年资
-            seniorityDiagramname = ['3个月以下', '3个月~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            # seniorityDiagramname = ['3个月以下', '3个月~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
+            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                    '3个月以下', ]
             if not YearSearch or YearSearch == YearNow:
                 YearSearch = YearNow
                 selectItem_seniorityTable = []
@@ -8059,8 +8267,8 @@ def Summary3(request):
                 LABEL_seniorityDiagramData1.append(i["seniority"])
                 HEJILIZHI_seniorityDiagramData1.append(i["senioritySummary"])
                 if "seniorityDeparture" in i.keys():
-                    # LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
-                    LIZHIBI_seniorityDiagramData1.append(i["seniorityDeparture"])
+                    LIZHIBI_seniorityDiagramData1.append(round(float(i["seniorityDeparture"].split("%")[0]), 4))
+                    # LIZHIBI_seniorityDiagramData1.append(i["seniorityDeparture"])
             seniorityDiagramData1["LABEL"] = LABEL_seniorityDiagramData1
             seniorityDiagramData1["HEJILIZHI"] = HEJILIZHI_seniorityDiagramData1
             seniorityDiagramData1["LIZHIBI"] = LIZHIBI_seniorityDiagramData1
@@ -8122,7 +8330,7 @@ def Summary3(request):
                 for i in reasonTable:
                     LABEL.append(i["reason"])
                     HEJIRENSHU.append(i["reasonSummary"])
-                    YUANYINBI.append(i["reasonDeparture"])
+                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]) / 100, 4))
             reasonDiagramData["LABEL"] = LABEL
             reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
             reasonDiagramData["YUANYINBI"] = YUANYINBI
@@ -8306,6 +8514,27 @@ def Summary3(request):
             # print(heBingNum_sort)
             for i in heBingNum_sort:
                 heBingNum.append(i[1])
+            # professionDiagram1Data
+            ProfessionCategory = MajorIfo.objects.all().values("Categories").distinct().order_by("Categories")
+            for i in ProfessionCategory:
+                profession_xAxis_data.append(i["Categories"])
+            for i in Customer_major:
+                professionCustomer.append(i)
+                CustomerCategorytotallist = []
+                for j in ProfessionCategory:
+                    CustomerCategorytotal = 0
+                    for k in professionTable:
+                        # print(k, j)
+                        if k["daLei"] == j["Categories"]:
+                            CustomerCategorytotal += k[i]
+                    CustomerCategorytotallist.append(CustomerCategorytotal)
+                professionDiagram1Data.append(
+                    {
+                        'name': i,
+                        'type': 'bar',
+                        'data': CustomerCategorytotallist  # 對應学科类别
+                    }
+                )
 
             # 地區
             if not YearSearch or YearSearch == YearNow:
@@ -8408,9 +8637,11 @@ def Summary3(request):
                         titleTable.append(titleTable_dict)
                     # print(titleTable)
                     # titleSeniorityData&titleTable1
-                    titleSeniorityData = [
-                        "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                    ]
+                    # titleSeniorityData = [
+                    #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                    # ]
+                    titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                          '3个月以下', ]
                     for j in titleDiagram2Data_Position:
                         titleTable1_dict = {}
                         number025 = 0
@@ -8504,9 +8735,11 @@ def Summary3(request):
                         titleSummary_Total += titleSummary
                         titleTable.append(titleTable_dict)
                     # titleSeniorityData&titleTable1
-                    titleSeniorityData = [
-                        "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
-                    ]
+                    # titleSeniorityData = [
+                    #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
+                    # ]
+                    titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
+                                          '3个月以下', ]
                     for j in titleDiagram2Data_Position:
                         titleTable1_dict = {}
                         number025 = 0
@@ -8578,15 +8811,15 @@ def Summary3(request):
                 if titleTable1:
                     TitleText = titleTable1[0]["Title"]
                     titleSeniorityDiagram2 = [
-                        {"name": "3个月以下", "value": titleTable1[0]["3个月以下"]},
-                        {"name": "3个月~1年", "value": titleTable1[0]["3个月~1年"]},
-                        {"name": "1~2年", "value": titleTable1[0]["1~2年"]},
-                        {"name": "2~3年", "value": titleTable1[0]["2~3年"]},
-                        {"name": "3~5年", "value": titleTable1[0]["3~5年"]},
-                        {"name": "5~10年", "value": titleTable1[0]["5~10年"]},
-                        {"name": "10~15年", "value": titleTable1[0]["10~15年"]},
+                        {"name": "20年以上", "value": titleTable1[0]["20年以上"]},
                         {"name": "15~20年", "value": titleTable1[0]["15~20年"]},
-                        {"name": "20年以上", "value": titleTable1[0]["20年以上"]}
+                        {"name": "10~15年", "value": titleTable1[0]["10~15年"]},
+                        {"name": "5~10年", "value": titleTable1[0]["5~10年"]},
+                        {"name": "3~5年", "value": titleTable1[0]["3~5年"]},
+                        {"name": "2~3年", "value": titleTable1[0]["2~3年"]},
+                        {"name": "1~2年", "value": titleTable1[0]["1~2年"]},
+                        {"name": "3个月~1年", "value": titleTable1[0]["3个月~1年"]},
+                        {"name": "3个月以下", "value": titleTable1[0]["3个月以下"]},
                     ]
 
         data = {
@@ -8615,6 +8848,9 @@ def Summary3(request):
             "reasonTable": reasonTable,
             "reasonDiagramData": reasonDiagramData,
             "canExport": canExport,
+            "professionDiagram1Data": professionDiagram1Data,
+            "profession_xAxis_data": profession_xAxis_data,
+            "professionCustomer": professionCustomer,
 
         }
         return HttpResponse(json.dumps(data), content_type="application/json")

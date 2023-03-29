@@ -1,0 +1,128 @@
+[2023-03-29 09:04:31,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:04:31,620] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:04:31,770] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:04:32,327] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:04:32,523] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:04:33,395] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:04:35,503] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:04:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:04:35,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 226433
+[2023-03-29 09:21:53,703] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:21:54,222] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:21:54,222] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:21:54,601] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:21:54,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:21:55,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:21:56,251] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 7358, in Summary3
+    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")) / 100, 2))
+TypeError: float() argument must be a string or a number, not 'list'
+[2023-03-29 09:21:56,258] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:21:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:21:56,259] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 125966
+[2023-03-29 09:24:34,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:24:35,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:24:35,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:24:35,789] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:24:36,097] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:24:37,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:24:37,618] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary3/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 7359, in Summary3
+    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")) / 100, 2))
+TypeError: float() argument must be a string or a number, not 'list'
+[2023-03-29 09:24:37,625] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:24:37 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:24:37,626] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 500 126001
+[2023-03-29 09:25:32,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:25:33,084] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:25:33,087] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:25:33,312] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:25:33,321] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:25:34,377] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:25:35,579] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:25:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:25:35,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 226415
+[2023-03-29 09:34:40,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:34:40,934] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:34:40,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:34:41,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:34:41,203] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:34:41,616] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:34:45,026] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:34:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:34:45,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 226396
+[2023-03-29 09:40:37,025] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary3/ HTTP/1.1" 200 81405
+[2023-03-29 09:40:37,486] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:40:37,486] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:40:37,892] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:40:38,150] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:40:39,167] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:40:40,090] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:40:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:40:40,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 226360
+[2023-03-29 09:44:20,652] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:44:20 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary3/ POST
+[2023-03-29 09:44:20,661] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary3/ HTTP/1.1" 200 95109
+[2023-03-29 09:45:01,949] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 62031
+[2023-03-29 09:45:02,099] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:45:02,102] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:45:02,218] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:45:02,225] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:45:02,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:45:03,667] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:45:03 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-03-29 09:45:03,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 32335
+[2023-03-29 09:50:51,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 62031
+[2023-03-29 09:50:51,581] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:50:51,587] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:50:52,000] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:50:52,197] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:50:53,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:50:55,447] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:50:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-03-29 09:50:55,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 32325
+[2023-03-29 09:52:18,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 64219
+[2023-03-29 09:52:19,054] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 09:52:19,096] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 09:52:19,267] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 09:52:19,319] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 09:52:19,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 09:52:19,608] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 09:52:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 09:52:19,653] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5383
+[2023-03-29 10:35:53,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 64410
+[2023-03-29 10:35:54,067] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 10:35:54,080] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 10:35:54,255] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 10:35:54,291] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 10:35:54,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 10:35:54,574] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 10:35:54 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 10:35:54,587] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5434
+[2023-03-29 10:36:01,517] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 10:36:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 10:36:01,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 8398
+[2023-03-29 10:44:27,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 67827
+[2023-03-29 10:44:27,775] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 10:44:27,780] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 10:44:28,125] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 10:44:28,433] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 10:44:29,310] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 10:44:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 10:44:29,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5461
+[2023-03-29 10:44:29,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 10:46:45,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 67845
+[2023-03-29 10:46:46,505] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-03-29 10:46:46,508] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-03-29 10:46:46,974] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-03-29 10:46:46,977] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-03-29 10:46:47,257] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 10:46:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 10:46:47,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5461
+[2023-03-29 10:46:47,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-03-29 10:46:57,829] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-03-29 10:46:57 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-03-29 10:46:57,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 8339
