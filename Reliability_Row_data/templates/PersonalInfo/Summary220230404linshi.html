@@ -52,7 +52,7 @@ background-color: rgba(255,255,255,0.1);
                                  :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
                         style="border-radius: 10px;word-break: keep-all"
                                  {% comment %}stripe{% endcomment %}
-                                 :row-style="changeRowColor" :cell-style="addColor"  @row-click="selectDetail"
+                                 :row-style="changeRowColor" :cell-style="addColor"
                        v-loading="tableloading"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -166,43 +166,6 @@ background-color: rgba(255,255,255,0.1);
 {#              </el-collapse-item>#}
           </el-collapse>
     </div>
-
-    <div class="tableAround" v-cloak >
-      {% csrf_token %}
-     <!--數據表-->
-      <el-dialog :visible.sync="settable" width="80%">
-         <!--提示信息-->
-           <el-table border :data="monthTableDetail" :span-method="objectSpanMethod1"
-                                     :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-                            style="border-radius: 10px;word-break: keep-all"
-                                     {% comment %}stripe{% endcomment %}
-                                     :row-style="changeRowColor" :cell-style="addColor"
-                           v-loading="tableloading3"
-                            element-loading-text="數據更新中，請稍後"
-                            border>
-                               <el-table-column prop="Bubie" label="部" align="center"></el-table-column>
-                               <el-table-column prop="Classify" :label="searchYear" align="center"></el-table-column>
-                               <el-table-column prop="Jan" label="一月" align="center"></el-table-column>
-                               <el-table-column prop="Feb" label="二月" align="center"></el-table-column>
-                               <el-table-column prop="Mar" label="三月" align="center"></el-table-column>
-                               <el-table-column prop="Apr" label="四月" align="center"></el-table-column>
-                               <el-table-column prop="May" label="五月" align="center"></el-table-column>
-                               <el-table-column prop="Jun" label="六月" align="center"></el-table-column>
-                               <el-table-column prop="Jul" label="七月" align="center"></el-table-column>
-                               <el-table-column prop="Aug" label="八月" align="center"></el-table-column>
-                               <el-table-column prop="Sep" label="九月" align="center"></el-table-column>
-                               <el-table-column prop="Oct" label="十月" align="center"></el-table-column>
-                               <el-table-column prop="Nov" label="十一月" align="center"></el-table-column>
-                               <el-table-column prop="Dec" label="十二月" align="center"></el-table-column>
-                               <el-table-column prop="monthSummary" label="合計" align="center"></el-table-column>
-                           </el-table>
-      </el-dialog>
-          {% comment %}<div slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="exportExcelsub" v-cloak>導出</el-button>
-          </div>{% endcomment %}
-
-
-    </div>
 </div>
 {% endblock %}
 {% block scripts %}
@@ -224,8 +187,6 @@ background-color: rgba(255,255,255,0.1);
                {#activeNames:['1','2','3','4','5','6'],#}
                activeNames:['1','2','3','4'],
                monthTable:[],
-               monthTableDetail:[],
-                settable:false,
                titleTable:[],
                seniorityTable:[],
                {#educationTable:[],#}
@@ -245,7 +206,6 @@ background-color: rgba(255,255,255,0.1);
                heBingNum:[],
                 elbuttonloading: false,
                 tableloading: false,
-                tableloading3: false,
                 myChart7:{},
                 myChart3:{},
                 myChart2:{},
@@ -358,48 +318,11 @@ background-color: rgba(255,255,255,0.1);
                 })
                        this.searchYear=Year;
             },
-            selectDetail:function(row){
-                {#console.log("dd", row);#}
-            if (row.Customer!="合計"){
-                    this.settable=true;
-                    this.tableloading3=true;
-                    let _this=this;
-                   let data ={"isGetData":"SEARCH_Detail","Customer":row.Customer,"searchYear":this.searchYear,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-                   axios.post("/PersonalInfo/Summary2/",Qs.stringify(data), {
-                   headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
-                    }).then((res) => {
-                        this.monthTableDetail=res.data.monthTableDetail
-                            this.tableloading3=false;
-
-                        }).catch(function (e) {
-                               _this.loading=false;
-                                var warning =confirm("數據異常");
-                                //console.log("上傳錯誤信息"+e);
-                            });
-                }
-        },
-
             objectSpanMethod({ row, column, rowIndex, columnIndex }) {               //合併行
                 if (columnIndex === 0) {
                   if (rowIndex % 5 === 0) {
                     return {
                       rowspan: 5,
-                      colspan: 1
-                    };
-                  } else {
-                    return {
-                      rowspan: 0,
-                      colspan: 0
-                    };
-                  }
-                }
-            },
-
-            objectSpanMethod1({ row, column, rowIndex, columnIndex }) {               //合併行
-                if (columnIndex === 0) {
-                  if (rowIndex % 2 === 0) {
-                    return {
-                      rowspan: 2,
                       colspan: 1
                     };
                   } else {

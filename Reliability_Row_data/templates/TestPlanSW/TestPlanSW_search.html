@@ -559,7 +559,7 @@ p a{
   <div class="tableAround" v-cloak >
   {% csrf_token %}
  <!--數據表-->
-  <el-dialog :visible.sync="settable" width="70%">
+  <el-dialog :visible.sync="doLayout" width="70%">
      <!--提示信息-->
       <span class="selecttem" v-cloak  v-if="showCustomer&&showProject&&phaseName[showPhase]">當前表格信息：${ showCustomer }/${ showProject }/${ phaseName[showPhase]}/${ showCategory } <span v-if="showTips" v-cloak class="tips">(您所使用的賬號沒有編輯此表單的權限)</span><el-button type="primary" @click="exportExcelsub" style="float: right" v-cloak>導出</el-button></span>
       <el-table  height="700" border :data="tableData.slice((currentPage -1 )*pagesize,(currentPage)*pagesize)"

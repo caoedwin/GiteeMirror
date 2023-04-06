@@ -3823,11 +3823,11 @@ def Summary1(request):
                             #                                    Year=YearNow).first().Customer == i["Customer"]:
                             #         leavedic[j[0]] = n["Total__sum"]
                             # overtimePdic
-                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # leavePdic
-                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # effectivePdic
-                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 2)
+                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 1)
                         mounthnum += 1
                     overtimeTable1.append(zaizhidic)
                     overtimeTable1.append(overtimedic)
@@ -4345,7 +4345,7 @@ def Summary1(request):
                             zaizhidic[j[0]] = zaizhimounth
                             # overtimedic
 
-                            overtimedic[j[0]] = 0.00
+                            overtimedic[j[0]] = 0.0
                             for n in All_WorkOvertime:
                                 if n['Mounth'] == j[1].split("-")[1]:
                                     overtimedic[j[0]] = n['Total__sum']
@@ -4370,7 +4370,7 @@ def Summary1(request):
 
                             # leavedic
 
-                            leavedic[j[0]] = 0.00
+                            leavedic[j[0]] = 0.0
                             for n in All_LeaveInfo:
                                 if n['Mounth'] == j[1].split("-")[1]:
                                     leavedic[j[0]] = n['Total__sum']
@@ -4392,11 +4392,11 @@ def Summary1(request):
                             #                                    Year=YearNow).first().Customer == i["Customer"]:
                             #         leavedic[j[0]] = n["Total__sum"]
                             # overtimePdic
-                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # leavePdic
-                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # effectivePdic
-                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 2)
+                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 1)
                         mounthnum += 1
                     overtimeTable1.append(zaizhidic)
                     overtimeTable1.append(overtimedic)
@@ -4525,11 +4525,11 @@ def Summary1(request):
                             #         leavedic[j[0]] = n["Total__sum"]
 
                             # overtimePdic
-                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            overtimePdic[j[0]] = round(overtimedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # leavePdic
-                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 2) if zaizhimounth else 0.00
+                            leavePdic[j[0]] = round(leavedic[j[0]] / zaizhimounth, 1) if zaizhimounth else 0.00
                             # effectivePdic
-                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 2)
+                            effectivePdic[j[0]] = round(overtimePdic[j[0]] - leavePdic[j[0]], 1)
                         mounthnum += 1
                     # print(overtimeerrormegGroupNum)
                     # print(LeaveerrormegGroupNum)
@@ -4561,17 +4561,17 @@ def Summary1(request):
                 # print(j)
                 if j in i.keys():
                     if i["Program"] == zaizhidic["Program"]:
-                        zaizhidic[j] = round(zaizhidic[j] + i[j], 2)
+                        zaizhidic[j] = round(zaizhidic[j] + i[j], 1)
                     if i["Program"] == overtimedic["Program"]:
-                        overtimedic[j] = round(overtimedic[j] + i[j], 2)
+                        overtimedic[j] = round(overtimedic[j] + i[j], 1)
                     if i["Program"] == leavedic["Program"]:
-                        leavedic[j] = round(leavedic[j] + i[j], 2)
-                    if i["Program"] == overtimePdic["Program"]:
-                        overtimePdic[j] = round(overtimePdic[j] + i[j], 2)
-                    if i["Program"] == leavePdic["Program"]:
-                        leavePdic[j] = round(leavePdic[j] + i[j], 2)
-                    if i["Program"] == effectivePdic["Program"]:
-                        effectivePdic[j] = round(effectivePdic[j] + i[j], 2)
+                        leavedic[j] = round(leavedic[j] + i[j], 1)
+                    # if i["Program"] == overtimePdic["Program"]:
+                    #     overtimePdic[j] = round(overtimePdic[j] + i[j], 2)
+                    # if i["Program"] == leavePdic["Program"]:
+                    #     leavePdic[j] = round(leavePdic[j] + i[j], 2)
+                    # if i["Program"] == effectivePdic["Program"]:
+                    #     effectivePdic[j] = round(effectivePdic[j] + i[j], 2)
                 else:
                     del zaizhidic[j]
                     del overtimedic[j]
@@ -4584,6 +4584,11 @@ def Summary1(request):
                 continue
             break
             #python里面for...else...表示如果这个循环正常的走完了则会执行else里面的代码，异常退出则不会执行，我们对内层循环做判断，符合条件了break则内存循环异常退出，对应的else也不会执行，然后再下一行是break完成外层循环的退出
+        for j in mounthname:
+            if j in overtimedic.keys():
+                overtimePdic[j] = round(overtimedic[j] / zaizhidic[j], 1)
+                leavePdic[j] = round(leavedic[j] / zaizhidic[j], 1)
+                effectivePdic[j] = round(overtimePdic[j] - leavePdic[j], 1)
         overtimeTable1.append(zaizhidic)
         overtimeTable1.append(overtimedic)
         overtimeTable1.append(leavedic)
@@ -4811,6 +4816,27 @@ def Summary2(request):
         #  "Jul": "12", "Aug": "14", "Sep": "8", "Oct": "6", "Nov": "2", "Dec": "3", "monthSummary": ""},
         # {"Customer": "A31", "Classify": "離職率", "Jan": "3.49%", "Feb": "0.88%", "Mar": "3.62%", "Apr": "%", "May": "%",
         #  "Jun": "%", "Jul": "%", "Aug": "%", "Sep": "%", "Oct": "%", "Nov": "%", "Dec": "%", "monthSummary": "%"},
+
+    ]
+    monthTableDetail = [
+        # {"Customer": "一部", "Classify": "預算", "Jan": "244", "Feb": "240", "Mar": "236", "Apr": "232", "May": "229",
+        #  "Jun": "226", "Jul": "283", "Aug": "280", "Sep": "277", "Oct": "274", "Nov": "271", "Dec": "268",
+        #  "monthSummary": "3060"},
+        # {"Customer": "一部", "Classify": "在職", "Jan": "229", "Feb": "228", "Mar": "221", "Apr": "216", "May": "208",
+        #  "Jun": "205", "Jul": "230", "Aug": "216", "Sep": "209", "Oct": "217", "Nov": "223", "Dec": "230",
+        #  "monthSummary": "1111"},
+        # {"Customer": "二部", "Classify": "預算", "Jan": "244", "Feb": "240", "Mar": "236", "Apr": "232", "May": "229",
+        #  "Jun": "226", "Jul": "283", "Aug": "280", "Sep": "277", "Oct": "274", "Nov": "271", "Dec": "268",
+        #  "monthSummary": "3060"},
+        # {"Customer": "二部", "Classify": "在職", "Jan": "229", "Feb": "228", "Mar": "221", "Apr": "216", "May": "208",
+        #  "Jun": "205", "Jul": "230", "Aug": "216", "Sep": "209", "Oct": "217", "Nov": "223", "Dec": "230",
+        #  "monthSummary": "1111"},
+        # {"Customer": "三部", "Classify": "預算", "Jan": "244", "Feb": "240", "Mar": "236", "Apr": "232", "May": "229",
+        #  "Jun": "226", "Jul": "283", "Aug": "280", "Sep": "277", "Oct": "274", "Nov": "271", "Dec": "268",
+        #  "monthSummary": "3060"},
+        # {"Customer": "三部", "Classify": "在職", "Jan": "229", "Feb": "228", "Mar": "221", "Apr": "216", "May": "208",
+        #  "Jun": "205", "Jul": "230", "Aug": "216", "Sep": "209", "Oct": "217", "Nov": "223", "Dec": "230",
+        #  "monthSummary": "1111"},
 
     ]
     searchYear = YearNow = str(datetime.datetime.now().year)  # 初始化時月份表格中的動態年份標題 （如初始化時沒有默認數據則不需要）
@@ -6472,9 +6498,204 @@ def Summary2(request):
                     regionsTableData["regionsSummary"] = regionsSummary
                     regionsTable.append(regionsTableData)
             regionsTable = sorted(regionsTable, key=lambda x: x.__getitem__("regionsSummary"), reverse=True)
+        if request.POST.get("isGetData") == "SEARCH_Detail":
+            Customer = request.POST.get("Customer")
+            YearSearch = request.POST.get("searchYear")
+            YearNow = str(datetime.datetime.now().year)
+            if not YearSearch or YearSearch == YearNow:  # 当年的到PersonalInfo里面查找,年份为空默认查找当年数据
+                if (int(YearNow) % 4) == 0:
+                    if (int(YearNow) % 100) == 0:
+                        if (int(YearNow) % 400) == 0:
+                            # print("{0} 是闰年".format(YearNow))  # 整百年能被400整除的是闰年
+                            mounthlist = [("Jan", "-1-31"), ("Feb", "-2-29"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                          ("May", "-5-31"), ("Jun", "-6-30"),
+                                          ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                          ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                        else:
+                            # print("{0} 不是闰年".format(YearNow))
+                            mounthlist = [("Jan", "-1-31"), ("Feb", "-2-28"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                          ("May", "-5-31"), ("Jun", "-6-30"),
+                                          ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                          ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                    else:
+                        # print("{0} 是闰年".format(YearNow))  # 非整百年能被4整除的为闰年
+                        mounthlist = [("Jan", "-1-31"), ("Feb", "-2-29"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                      ("May", "-5-31"), ("Jun", "-6-30"),
+                                      ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                      ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                else:
+                    # print("{0} 不是闰年".format(YearNow))
+                    mounthlist = [("Jan", "-1-31"), ("Feb", "-2-28"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                  ("May", "-5-31"),
+                                  ("Jun", "-6-30"),
+                                  ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                  ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                # mounthlist = ["Jan", "Fer", "Mar", "Apr", "May", "Jun",
+                #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
+                mounthnow = datetime.datetime.now().month
+                for i in Departments.objects.filter(Year=YearNow, Customer=Customer).exclude(Department_Code__contains="000").annotate(
+                        Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
+                                                                                  "Department_Codebu").distinct():
+                    # print(i)
+                    buinfo = i["Department_Codebu"]
+                    if Departments.objects.filter(Year=YearNow, Department_Code__contains=i["Department_Codebu"]).first().BU:
+                        buinfo = Departments.objects.filter(Year=YearNow, Department_Code__contains=i["Department_Codebu"]).first().BU
+                    yusuandic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "預算"}
+                    zaizhidic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "在職"}
+                    # ruzhidic = {"Bubie": i["DepartmentCode"], "Classify": "入職"}
+                    # lizhidic = {"Bubie": i["DepartmentCode"], "Classify": "離職"}
+                    # lizhilvdic = {"Bubie": i["DepartmentCode"], "Classify": "離職率"}
+                    mounthnum = 1
+                    for j in mounthlist:
+                        if mounthnum > mounthnow:
+                            break
+                        else:
+                            print(MainPower.objects.filter(Year=YearNow, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0])))
+                            yusuandic[j[0]] = \
+                                MainPower.objects.filter(Year=YearNow, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0]))[
+                                    j[0] + "__sum"]
+                            if not yusuandic[j[0]]:
+                                yusuandic[j[0]] = 0
+                            DateNow_begin = datetime.datetime.strptime(YearNow + "-" + j[1].split("-")[1] + "-1",
+                                                                       '%Y-%m-%d')
+                            # print(DateNow_begin)
+                            DateNow = datetime.datetime.strptime(YearNow + j[1], '%Y-%m-%d')
+                            Test_Endperiod = [DateNow_begin, DateNow]
+                            zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                                                                       RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
+                            zaizhidic[j[0]] = zaizhimounth
+                            # ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
+                            #                                              RegistrationDate__range=Test_Endperiod).count()
+                            # # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
+                            # #                                              QuitDate__lte=DateNow).count()
+                            # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
+                            #                                              QuitDate__range=Test_Endperiod).count()
+                            # if zaizhidic[j[0]]:
+                            #     lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
+                            # else:
+                            #     lizhilvdic[j[0]] = 0
+                            # lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
+                        mounthnum += 1
+                    monthTableDetail.append(yusuandic)
+                    monthTableDetail.append(zaizhidic)
+                    # monthTableDetail.append(ruzhidic)
+                    # monthTableDetail.append(lizhidic)
+                    # monthTableDetail.append(lizhilvdic)
+
+            else:
+                if (int(YearSearch) % 4) == 0:
+                    if (int(YearSearch) % 100) == 0:
+                        if (int(YearSearch) % 400) == 0:
+                            # print("{0} 是闰年".format(YearSearch))  # 整百年能被400整除的是闰年
+                            mounthlist = [("Jan", "-1-31"), ("Feb", "-2-29"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                          ("May", "-5-31"), ("Jun", "-6-30"),
+                                          ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                          ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                        else:
+                            # print("{0} 不是闰年".format(YearSearch))
+                            mounthlist = [("Jan", "-1-31"), ("Feb", "-2-28"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                          ("May", "-5-31"), ("Jun", "-6-30"),
+                                          ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                          ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                    else:
+                        # print("{0} 是闰年".format(YearSearch))  # 非整百年能被4整除的为闰年
+                        mounthlist = [("Jan", "-1-31"), ("Feb", "-2-29"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                      ("May", "-5-31"), ("Jun", "-6-30"),
+                                      ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                      ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                else:
+                    # print("{0} 不是闰年".format(YearSearch))
+                    mounthlist = [("Jan", "-1-31"), ("Feb", "-2-28"), ("Mar", "-3-31"), ("Apr", "-4-30"),
+                                  ("May", "-5-31"),
+                                  ("Jun", "-6-30"),
+                                  ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
+                                  ("Nov", "-11-30"), ("Dec", "-12-31"), ]
+                mounthnow = 12  # datetime.datetime.now().month
+                for i in Departments.objects.filter(Year=YearSearch, Customer=Customer).exclude(Department_Code__contains="000").annotate(
+                        Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
+                                                                                  "Department_Codebu").distinct():
+                    # print(i)
+                    buinfo = i["Department_Codebu"]
+                    if Departments.objects.filter(Year=YearSearch,
+                                                  Department_Code__contains=i["Department_Codebu"]).first().BU:
+                        buinfo = Departments.objects.filter(Year=YearSearch,
+                                                            Department_Code__contains=i["Department_Codebu"]).first().BU
+                    yusuandic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "預算"}
+                    zaizhidic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "在職"}
+                    # ruzhidic = {"Customer": i["Customer"], "Classify": "入職"}
+                    # lizhidic = {"Customer": i["Customer"], "Classify": "離職"}
+                    # lizhilvdic = {"Customer": i["Customer"], "Classify": "離職率"}
+                    mounthnum = 1
+                    for j in mounthlist:
+                        if mounthnum > mounthnow:
+                            break
+                        else:
+                            yusuandic[j[0]] = \
+                                MainPower.objects.filter(Year=YearSearch, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0]))[
+                                    j[0] + "__sum"]
+                            if not yusuandic[j[0]]:
+                                yusuandic[j[0]] = 0
+
+                            DateNow_begin = datetime.datetime.strptime(YearSearch + "-" + j[1].split("-")[1] + "-1",
+                                                                       '%Y-%m-%d')
+                            # print(DateNow_begin)
+                            DateNow = datetime.datetime.strptime(YearSearch + j[1], '%Y-%m-%d')
+                            Test_Endperiod = [DateNow_begin, DateNow]
+                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"],
+                                                                                RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
+                            zaizhidic[j[0]] = zaizhimounth
+                            # ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                            #                                                       Year=YearSearch,
+                            #                                                       RegistrationDate__range=Test_Endperiod).count()
+                            # lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                            #                                                       Year=YearSearch,
+                            #                                                       QuitDate__range=Test_Endperiod).count()
+                            # if zaizhidic[j[0]]:
+                            #     lizhilvdic[j[0]] = round(float(lizhidic[j[0]] / zaizhidic[j[0]]), 4)
+                            # else:
+                            #     lizhilvdic[j[0]] = 0
+                            # lizhilvdic[j[0]] = '%.2f%%' % (lizhilvdic[j[0]] * 100)
+                        mounthnum += 1
+                    monthTableDetail.append(yusuandic)
+                    monthTableDetail.append(zaizhidic)
+                    # monthTableDetail.append(ruzhidic)
+                    # monthTableDetail.append(lizhidic)
+                    # monthTableDetail.append(lizhilvdic)
+
+            # Summary
+            for i in monthTableDetail:
+                # print(i)
+
+                if i["Classify"] == "離職率":
+
+                    # # i["monthSummary"] = '%.2f%%' % (round((i["Jan"] + i["Feb"] + i["Mar"] + i["Apr"] + i["May"] + \
+                    # #             i["Jan"] + i["Jul"] + i["Aug"] + i["Sep"] + i["Oct"] + \
+                    # #             i["Nov"] + i["Dec"]), 2)*100)
+                    # if everyzaizhi:
+                    #     i["monthSummary"] = '%.2f%%' % (round(everylizhi / everyzaizhi, 4) * 100)
+                    # else:
+                    #     i["monthSummary"] = '%.2f%%' % 0
+                    monthSummaryValue = 0
+                    for j in mounthlist:
+                        if j[0] in i.keys():
+                            monthSummaryValue += float(i[j[0]].split("%")[0]) / 100
+                    i["monthSummary"] = '%.2f%%' % (round(monthSummaryValue, 4) * 100)
+                else:
+                    monthSummaryValue = 0
+                    for j in mounthlist:
+                        if j[0] in i.keys():
+                            monthSummaryValue += i[j[0]]
+                    i["monthSummary"] = monthSummaryValue
+                    if i["Classify"] == "離職":
+                        everylizhi = monthSummaryValue
+                    elif i["Classify"] == "在職":
+                        everyzaizhi = monthSummaryValue
 
         data = {
             "monthTable": monthTable,
+            "monthTableDetail": monthTableDetail,
             "searchYear": searchYear,
             "titleTable": titleTable,
             "seniorityTable": seniorityTable,

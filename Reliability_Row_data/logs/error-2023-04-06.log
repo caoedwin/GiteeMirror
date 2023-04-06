@@ -1,0 +1,70 @@
+[2023-04-06 10:48:40,000] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6534, in Summary2
+    "Customer"], BU=i["Bu"]).first().DepartmentCode[:8]#到部是去前8位相同
+KeyError: 'Bu'
+[2023-04-06 10:48:40,004] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 86893
+[2023-04-06 10:53:55,908] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6533, in Summary2
+    if i['Bu']:#去除处级，处的部和课别信息都是None
+KeyError: 'Bu'
+[2023-04-06 10:53:55,919] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 86997
+[2023-04-06 10:54:32,506] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6535, in Summary2
+    "Customer"], BU=i["Bu"]).first().DepartmentCode[:8]#到部是去前8位相同
+KeyError: 'Bu'
+[2023-04-06 10:54:32,515] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 86915
+[2023-04-06 11:46:48,724] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/Summary2/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 6531, in Summary2
+    for i in Departments.objects.filter(Year=YearNow).annotate(Department_Codebu=Substr('DepartmentCode', 1, 8)).values("Department_Codebu").distinct():
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1008, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 988, in add_annotation
+    summarize=is_summary)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 597, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 509, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1570, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'DepartmentCode' into field. Choices are: BU, CHU, Companys, Customer, Department_Code, KE, Manager, Plants, Year, departments, id, parent, parent_id
+[2023-04-06 11:46:48,733] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 500 125544
