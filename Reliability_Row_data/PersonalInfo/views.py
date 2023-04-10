@@ -5055,7 +5055,12 @@ def Summary2(request):
                     mounthnum = 1
                     for j in mounthlist:
                         if mounthnum > mounthnow:
-                            break
+                            yusuandic[j[0]] = \
+                                MainPower.objects.filter(Year=YearNow, Customer=i["Customer"]).aggregate(Sum(j[0]))[
+                                    j[0] + "__sum"]
+                            if not yusuandic[j[0]]:
+                                yusuandic[j[0]] = 0
+                            # break
                         else:
                             yusuandic[j[0]] = \
                                 MainPower.objects.filter(Year=YearNow, Customer=i["Customer"]).aggregate(Sum(j[0]))[
@@ -5799,7 +5804,12 @@ def Summary2(request):
                     mounthnum = 1
                     for j in mounthlist:
                         if mounthnum > mounthnow:
-                            break
+                            yusuandic[j[0]] = \
+                                MainPower.objects.filter(Year=YearNow, Customer=i["Customer"]).aggregate(Sum(j[0]))[
+                                    j[0] + "__sum"]
+                            if not yusuandic[j[0]]:
+                                yusuandic[j[0]] = 0
+                            # break
                         else:
                             yusuandic[j[0]] = \
                                 MainPower.objects.filter(Year=YearNow, Customer=i["Customer"]).aggregate(Sum(j[0]))[
