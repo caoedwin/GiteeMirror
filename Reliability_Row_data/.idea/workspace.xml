@@ -7,9 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2023-04-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-04-06.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2023-04-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-04-06.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/DeviceLNV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DeviceLNV/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/templates/DeviceLNV/BorrowedDeviceLNV.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/templates/DeviceLNV/BorrowedDeviceLNV.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-04-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-04-10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-04-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-04-10.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,167 +95,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2316">
-              <caret line="362" column="36" lean-forward="true" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="36" />
-              <folding>
-                <element signature="n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" />
-                <element signature="n#style#0;n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#17493#17916#0#HTML" />
-                <element signature="e#21678#22101#0#HTML" />
-                <element signature="e#17987#20415#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="5061" column="51" selection-start-line="5061" selection-start-column="51" selection-end-line="5061" selection-end-column="51" />
-              <folding>
-                <element signature="e#3628#21655#0" />
-                <element signature="e#21709#41603#0" />
-                <element signature="e#41655#142584#0" />
-                <element signature="e#142634#152378#0" />
-                <element signature="e#152426#185009#0" />
-                <element signature="e#185052#294502#0" />
-                <element signature="e#185304#186550#0" />
-                <element signature="e#186572#190488#0" />
-                <element signature="e#190626#191540#0" />
-                <element signature="e#191585#192499#0" />
-                <element signature="e#192544#193458#0" />
-                <element signature="e#193503#194417#0" />
-                <element signature="e#194459#194848#0" />
-                <element signature="e#194890#195279#0" />
-                <element signature="e#195321#195710#0" />
-                <element signature="e#195752#196141#0" />
-                <element signature="e#196175#196640#0" />
-                <element signature="e#196963#197812#0" />
-                <element signature="e#197833#198184#0" />
-                <element signature="e#198189#198202#0" />
-                <element signature="e#199413#199422#0" />
-                <element signature="e#219207#220718#0" />
-                <element signature="e#220761#221187#0" />
-                <element signature="e#224113#224159#0" />
-                <element signature="e#226041#226084#0" />
-                <element signature="e#228617#228636#0" />
-                <element signature="e#264872#274557#0" />
-                <element signature="e#265388#266899#0" />
-                <element signature="e#266942#267368#0" />
-                <element signature="e#270294#270340#0" />
-                <element signature="e#274592#284567#0" />
-                <element signature="e#274833#276359#0" />
-                <element signature="e#276402#276831#0" />
-                <element signature="e#279922#279971#0" />
-                <element signature="e#282023#282069#0" />
-                <element signature="e#294796#295790#0" />
-                <element signature="e#295808#296802#0" />
-                <element signature="e#295908#296896#0" />
-                <element signature="e#296919#297825#0" />
-                <element signature="e#298261#298389#0" />
-                <element signature="e#298410#299235#0" />
-                <element signature="e#299265#299816#0" />
-                <element signature="e#299842#299880#0" />
-                <element signature="e#299972#300886#0" />
-                <element signature="e#301020#301280#0" />
-                <element signature="e#301301#302188#0" />
-                <element signature="e#302212#302761#0" />
-                <element signature="e#303415#304926#0" />
-                <element signature="e#303469#304451#0" />
-                <element signature="e#304502#304926#0" />
-                <element signature="e#304969#305395#0" />
-                <element signature="e#311357#312883#0" />
-                <element signature="e#312926#313355#0" />
-                <element signature="e#348787#394688#0" />
-                <element signature="e#349109#357013#0" />
-                <element signature="e#349157#350668#0" />
-                <element signature="e#350711#351137#0" />
-                <element signature="e#357048#365125#0" />
-                <element signature="e#357099#358625#0" />
-                <element signature="e#357156#358147#0" />
-                <element signature="e#358198#358625#0" />
-                <element signature="e#358668#359097#0" />
-                <element signature="e#365197#366525#0" />
-                <element signature="e#365273#366055#0" />
-                <element signature="e#366625#369602#0" />
-                <element signature="e#369696#372044#0" />
-                <element signature="e#372079#374715#0" />
-                <element signature="e#374942#375651#0" />
-                <element signature="e#376052#380664#0" />
-                <element signature="e#380699#380956#0" />
-                <element signature="e#381102#381975#0" />
-                <element signature="e#382010#383080#0" />
-                <element signature="e#383159#383451#0" />
-                <element signature="e#384213#387067#0" />
-                <element signature="e#387102#390181#0" />
-                <element signature="e#392416#393407#0" />
-                <element signature="e#393442#394579#0" />
-                <element signature="e#396627#402581#0" />
-                <element signature="e#396619#398130#0" />
-                <element signature="e#398173#398599#0" />
-                <element signature="e#402617#408373#0" />
-                <element signature="e#404561#406087#0" />
-                <element signature="e#406130#406559#0" />
-                <element signature="e#410894#556136#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26600">
-              <caret line="1400" column="27" selection-start-line="1400" selection-start-column="20" selection-end-line="1400" selection-end-column="27" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#el-collapse-item#4;n#el-collapse#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#19660#19759#0#HTML" />
-                <element signature="e#19798#20011#0#HTML" />
-                <element signature="e#20054#23153#0#HTML" />
-                <element signature="e#23214#23820#0#HTML" />
-                <element signature="e#23856#27125#0#HTML" />
-                <element signature="e#27158#28656#0#HTML" />
-                <element signature="e#28688#32206#0#HTML" />
-                <element signature="e#32276#34704#0#HTML" />
-                <element signature="e#34710#38108#0#DjangoTemplate" />
-                <element signature="e#38141#44644#0#HTML" />
-                <element signature="e#44676#51145#0#HTML" />
-                <element signature="e#45382#50810#0#HTML" />
-                <element signature="e#49212#50245#0#HTML" />
-                <element signature="e#51151#54432#0#DjangoTemplate" />
-                <element signature="e#54437#55585#0#DjangoTemplate" />
-                <element signature="e#55590#57354#0#DjangoTemplate" />
-                <element signature="e#57359#58491#0#DjangoTemplate" />
-                <element signature="e#58496#60270#0#DjangoTemplate" />
-                <element signature="e#66909#67476#0#HTML" />
-                <element signature="e#67538#67829#0#HTML" />
-                <element signature="e#67891#68182#0#HTML" />
-                <element signature="e#68250#68555#0#HTML" />
-                <element signature="e#68592#71310#0#HTML" />
-                <element signature="e#72509#116840#0#DjangoTemplate" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="190" column="106" selection-start-line="190" selection-start-column="106" selection-end-line="190" selection-end-column="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary120230324linshi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7467">
-              <caret line="393" column="26" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
+            <state relative-caret-position="544">
+              <caret line="566" column="21" lean-forward="true" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
+              <folding>
+                <element signature="e#18416#21098#0#DjangoTemplate" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -301,8 +149,8 @@
       <find>Customer</find>
       <find>[:7</find>
       <find>settable</find>
-      <find>if</find>
       <find>monthTable</find>
+      <find>if</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -388,8 +236,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="462" />
-    <option name="y" value="72" />
+    <option name="x" value="-9" />
+    <option name="y" value="54" />
     <option name="width" value="2262" />
     <option name="height" value="1350" />
   </component>
@@ -965,8 +813,36 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
+      <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.48" weight="0.25883153" />
+      <window_info id="Favorites" order="1" sideWeight="0.52" side_tool="true" weight="0.25883153" />
+      <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.497979" weight="0.20241287" />
+      <window_info anchor="bottom" id="Structure" order="5" sideWeight="0.502994" weight="0.23458445" />
+      <window_info anchor="bottom" id="Python Console" order="6" sideWeight="0.49636218" weight="0.47453085" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49717057" weight="0.32573727" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39814815" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" content_ui="combo" x="713" y="421" width="202" height="56" id="TODO" order="11" type="WINDOWED" weight="0.32956153" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50317967" weight="0.2989276" />
+      <window_info anchor="bottom" id="SciView" order="14" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
+      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="bottom" id="Messages" order="16" />
+      <window_info anchor="bottom" id="Version Control" order="17" weight="0.3297587" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" weight="0.29624665" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="337" height="637" id="Documentation" order="4" side_tool="true" weight="0.3293092" />
+    </layout>
+    <layout-to-restore>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
       <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.48" visible="true" weight="0.25883153" />
       <window_info id="Favorites" order="1" sideWeight="0.52" side_tool="true" weight="0.25883153" />
@@ -994,7 +870,7 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="337" height="637" id="Documentation" order="4" side_tool="true" weight="0.3293092" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1374,13 +1250,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary120230324linshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7467">
-          <caret line="393" column="26" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1414,20 +1283,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2316">
-          <caret line="362" column="36" lean-forward="true" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="36" />
-          <folding>
-            <element signature="n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#17493#17916#0#HTML" />
-            <element signature="e#21678#22101#0#HTML" />
-            <element signature="e#17987#20415#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
@@ -1457,8 +1312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="5061" column="51" selection-start-line="5061" selection-start-column="51" selection-end-line="5061" selection-end-column="51" />
+        <state relative-caret-position="158">
+          <caret line="5057" column="47" lean-forward="true" selection-start-line="5057" selection-start-column="47" selection-end-line="5057" selection-end-column="47" />
           <folding>
             <element signature="e#3628#21655#0" />
             <element signature="e#21709#41603#0" />
@@ -1544,6 +1399,30 @@
             <element signature="e#404561#406087#0" />
             <element signature="e#406130#406559#0" />
             <element signature="e#410894#556136#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2316">
+          <caret line="362" column="36" lean-forward="true" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="36" />
+          <folding>
+            <element signature="n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#el-table#0;n#div#0;n#el-collapse-item#0;n#el-collapse#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#17493#17916#0#HTML" />
+            <element signature="e#21678#22101#0#HTML" />
+            <element signature="e#17987#20415#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/Summary120230324linshi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="566" column="21" lean-forward="true" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
+          <folding>
+            <element signature="e#18416#21098#0#DjangoTemplate" />
           </folding>
         </state>
       </provider>

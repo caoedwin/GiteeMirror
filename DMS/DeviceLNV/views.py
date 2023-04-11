@@ -284,6 +284,10 @@ def BorrowedDeviceLNV(request):
             DevStatus = request.POST.get('DevStatus')
             if DevStatus and DevStatus != "All":
                 checkAdaPow['BrwStatus'] = DevStatus
+            OvertimeDev = request.POST.get('OvertimeDev')
+            OvertimeDevcheck = ''
+            if OvertimeDev and OvertimeDev != "All":
+                OvertimeDevcheck = OvertimeDev
 
 
             # mock_data
@@ -361,7 +365,6 @@ def BorrowedDeviceLNV(request):
                     Rtime_str = str(i.Rtime)
                 else:
                     Rtime_str = ''
-
                 mock_data.append(
                     {"id": i.id, "Customer": i.Customer, "Plant": i.Plant,
                      "NID": i.NID, "DevID": i.DevID, "IntfCtgry": i.IntfCtgry,
@@ -382,6 +385,11 @@ def BorrowedDeviceLNV(request):
                      "Plandate": Plandate_str, "useday": usedays, "Btime": Btime_str, "Rtime": Rtime_str,
                      "Overday": Exceed_days},
                 )
+                if OvertimeDevcheck:
+                    if OvertimeDevcheck == "是":
+                        mock_data = [ i for i in mock_data if i["Overday"]]
+                    elif OvertimeDevcheck == "否":
+                        mock_data = [i for i in mock_data if not i["Overday"]]
         if 'BORROW' in str(request.body):
             # print(1)
             checkAdaPow = {}
