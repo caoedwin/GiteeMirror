@@ -153,24 +153,24 @@ def BorrowedDeviceLNV(request):
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])
                         & Q(Devproperties__icontains=checkAdaPow['Devproperties']) & Q(
                             DevVendor=checkAdaPow['DevVendor'])
-                        & Q(Devsize=checkAdaPow['Devsize'])).filter(DevStatus__in=["Good", "Fixed"])
+                        & Q(Devsize=checkAdaPow['Devsize'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
                 elif "IntfCtgry" in checkAdaPow.keys() and "DevCtgry" in checkAdaPow.keys() and "Devproperties" in checkAdaPow.keys() and "DevVendor" in checkAdaPow.keys():
                     mock_datalist = DeviceLNV.objects.filter(
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])
                         & Q(Devproperties__icontains=checkAdaPow['Devproperties']) & Q(
-                            DevVendor=checkAdaPow['DevVendor'])).filter(DevStatus__in=["Good", "Fixed"])
+                            DevVendor=checkAdaPow['DevVendor'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
                 elif "IntfCtgry" in checkAdaPow.keys() and "DevCtgry" in checkAdaPow.keys() and "Devproperties" in checkAdaPow.keys():
                     mock_datalist = DeviceLNV.objects.filter(
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])
-                        & Q(Devproperties__icontains=checkAdaPow['Devproperties'])).filter(DevStatus__in=["Good", "Fixed"])
+                        & Q(Devproperties__icontains=checkAdaPow['Devproperties'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
                 elif "IntfCtgry" in checkAdaPow.keys() and "DevCtgry" in checkAdaPow.keys():
                     mock_datalist = DeviceLNV.objects.filter(
-                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])).filter(DevStatus__in=["Good", "Fixed"])
+                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']) & Q(DevCtgry=checkAdaPow['DevCtgry'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
                 elif "IntfCtgry" in checkAdaPow.keys():
                     mock_datalist = DeviceLNV.objects.filter(
-                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry'])).filter(DevStatus__in=["Good", "Fixed"])
+                        Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             else:
-                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed"])
+                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed", 'Long'])
             # print(mock_datalist)
             for i in mock_datalist:
                 # Photolist = []
@@ -293,15 +293,15 @@ def BorrowedDeviceLNV(request):
             # mock_data
             if IntfCtgry and IntfCtgry != "All" and Devproperties and Devproperties != "All":
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             elif IntfCtgry and IntfCtgry != "All" and (not Devproperties or Devproperties == "All"):
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             elif (not IntfCtgry or IntfCtgry == "All") and (Devproperties and Devproperties != "All"):
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             else:
-                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed"])
+                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed", 'Long'])
             if checkAdaPow:
                 # print(checkAdaPow)
                 # mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
@@ -434,15 +434,15 @@ def BorrowedDeviceLNV(request):
             # mock_data
             if IntfCtgry and IntfCtgry != "All" and Devproperties and Devproperties != "All":
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry) & Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             elif IntfCtgry and IntfCtgry != "All" and (not Devproperties or Devproperties == "All"):
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(IntfCtgry__icontains=IntfCtgry)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             elif (not IntfCtgry or IntfCtgry == "All") and (Devproperties and Devproperties != "All"):
                 mock_datalist = DeviceLNV.objects.filter(
-                    Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed"])
+                    Q(Devproperties__icontains=Devproperties)).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             else:
-                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed"])
+                mock_datalist = DeviceLNV.objects.all().filter(DevStatus__in=["Good", "Fixed", 'Long'])
             if checkAdaPow:
                 # print(checkAdaPow)
                 # mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
