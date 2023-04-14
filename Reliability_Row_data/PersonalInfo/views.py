@@ -7628,7 +7628,7 @@ def Summary3(request):
                     print(i["reasonDeparture"])
                     LABEL.append(i["reason"])
                     HEJIRENSHU.append(i["reasonSummary"])
-                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]) / 100, 4))
+                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]), 4))
             reasonDiagramData["LABEL"] = LABEL
             reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
             reasonDiagramData["YUANYINBI"] = YUANYINBI
@@ -8561,7 +8561,7 @@ def Summary3(request):
                 for i in reasonTable:
                     LABEL.append(i["reason"])
                     HEJIRENSHU.append(i["reasonSummary"])
-                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]) / 100, 4))
+                    YUANYINBI.append(round(float(i["reasonDeparture"].split("%")[0]), 4))
             reasonDiagramData["LABEL"] = LABEL
             reasonDiagramData["HEJIRENSHU"] = HEJIRENSHU
             reasonDiagramData["YUANYINBI"] = YUANYINBI
