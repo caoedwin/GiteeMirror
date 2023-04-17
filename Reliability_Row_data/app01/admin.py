@@ -977,7 +977,16 @@ class UserInfoAdmin(admin.ModelAdmin):
         # }),
     )
     filter_horizontal = ('role',)
-    list_display = ('account','password','username','email',)
+    list_display = ('account','password','username','email','show_role')
+    '''展示show_role'''
+
+    def show_role(self, obj):
+        role_list = []
+        for role in obj.role.all():
+            role_list.append(role.name)
+        return ','.join(role_list)
+
+    show_role.short_description = '角色'  # 设置表头
     # 列表里显示想要显示的字段
     list_per_page = 200
     # 满50条数据就自动分页
