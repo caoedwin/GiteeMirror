@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2023-04-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-04-12.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error-2023-04-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error-2023-04-12.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2023-04-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-04-12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-14.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-17.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,27 +45,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="45" />
+          <entry key="html" value="47" />
           <entry key="js" value="2" />
           <entry key="py" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="45" />
+          <entry key="HTML" value="47" />
           <entry key="JavaScript" value="2" />
           <entry key="Python" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="857" />
+          <entry key="html" value="859" />
           <entry key="py" value="299" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="857" />
+          <entry key="HTML" value="859" />
           <entry key="Python" value="299" />
         </counts>
       </usages-collector>
@@ -80,7 +75,26 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/R_Destine.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="45" column="101" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mock_data1</find>
-      <find>Summary</find>
       <find>axios</find>
       <find>Signin</find>
       <find>post</find>
@@ -123,6 +135,8 @@
       <find>&quot;Fixed&quot;</find>
       <find>size</find>
       <find>dialogDetialVisible</find>
+      <find>您正在取消申請</find>
+      <find>CancelReturn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/init_permission.py" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/R_Borrowed.html" />
         <option value="$PROJECT_DIR$/templates/Summary.html" />
         <option value="$PROJECT_DIR$/ComputerMS/models.py" />
@@ -182,6 +195,7 @@
         <option value="$PROJECT_DIR$/DeviceLNV/views.py" />
         <option value="$PROJECT_DIR$/DeviceA39/views.py" />
         <option value="$PROJECT_DIR$/DeviceABO/views.py" />
+        <option value="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" />
       </list>
     </option>
   </component>
@@ -1089,8 +1103,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="2262" />
     <option name="height" value="1350" />
   </component>
@@ -1107,6 +1121,17 @@
             <path>
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="ChairCabinetMS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1325,11 +1350,11 @@
     <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.2927989" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.2927989" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.50342464" side_tool="true" weight="0.2927989" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.49761525" visible="true" weight="0.23958333" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" visible="true" weight="0.23958333" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1380,20 +1405,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChairCabinetMS/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChairCabinetMS/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1818,6 +1829,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="340" column="72" selection-start-line="340" selection-start-column="53" selection-end-line="340" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/R_Destine.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="45" column="101" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
         </state>
       </provider>
     </entry>
