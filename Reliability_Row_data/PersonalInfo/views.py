@@ -2683,7 +2683,7 @@ def ManPower_edit(request):
                          "Ministry": i.BU, "Section": i.KE,
                          "Item": i.Item, "Title": i.Positions_Name, "CodeNoH01": i.CodeNoH01, "CodeNoH02": i.CodeNoH02,
                          "Year": i.Year, "Current_Workforce": Current_Workforce,
-                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jan,
+                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jun,
                          "Jul": i.Jul,
                          "Aug": i.Aug, "Sep": i.Sep,
                          "Oct": i.Oct, "Nov": i.Nov, "Dec": i.Dec},
@@ -2725,7 +2725,7 @@ def ManPower_edit(request):
                          "Ministry": i.BU, "Section": i.KE,
                          "Item": i.Item, "Title": i.Positions_Name, "CodeNoH01": i.CodeNoH01, "CodeNoH02": i.CodeNoH02,
                          "Year": i.Year, "Current_Workforce": Current_Workforce,
-                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jan,
+                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jun,
                          "Jul": i.Jul, "Aug": i.Aug, "Sep": i.Sep,
                          "Oct": i.Oct, "Nov": i.Nov, "Dec": i.Dec},
                     )
@@ -2764,8 +2764,8 @@ def ManPower_edit(request):
                 ManID = request.POST.get("id")
                 MainPowerupdate = {"Customer": request.POST.get("Customer"),
                                    "DepartmentCode": request.POST.get("Department_Code"),
-                                   "CHU": request.POST.get("Chu"), "BU": request.POST.get("Ministry"),
-                                   "KE": request.POST.get("Section"),
+                                   "CHU": request.POST.get("Chu"), "BU": request.POST.get("Ministry") if request.POST.get("Ministry")!="null" else "",
+                                   "KE": request.POST.get("Section") if request.POST.get("Section")!="null" else "",
                                    "Item": request.POST.get("Item"), "Positions_Name": request.POST.get("Title"),
                                    "CodeNoH01": request.POST.get("CodeNoH01"),
                                    "CodeNoH02": request.POST.get("CodeNoH02"),
@@ -2778,7 +2778,7 @@ def ManPower_edit(request):
                                    "Sep": request.POST.get("Sep"),
                                    "Oct": request.POST.get("Oct"), "Nov": request.POST.get("Nov"),
                                    "Dec": request.POST.get("Dec")}
-
+                print(MainPowerupdate)
                 MainPower.objects.filter(id=ManID).update(**MainPowerupdate)
 
                 checkMaindic = {
@@ -2813,7 +2813,7 @@ def ManPower_edit(request):
                          "Section": i.KE,
                          "Item": i.Item, "Title": i.Positions_Name, "CodeNoH01": i.CodeNoH01, "CodeNoH02": i.CodeNoH02,
                          "Year": i.Year, "Current_Workforce": Current_Workforce,
-                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jan,
+                         "Jan": i.Jan, "Feb": i.Feb, "Mar": i.Mar, "Apr": i.Apr, "May": i.May, "Jun": i.Jun,
                          "Jul": i.Jul, "Aug": i.Aug, "Sep": i.Sep,
                          "Oct": i.Oct, "Nov": i.Nov, "Dec": i.Dec},
                     )
@@ -3370,6 +3370,20 @@ def Summary1(request):
 
     ]  # X轴是固定的1~12月
     monthDiagramABOData = [
+        # {
+        #     'name': '平均加班',
+        #     'type': 'bar',
+        #     'data': [229, 228, 221, 216, 208, 205, 230, 216, 209, 217, 223, 230]  # 對應月份 從一月到十二月
+        # },
+        # {
+        #     'name': '平均請假',
+        #     'type': 'bar',
+        #     'yAxisIndex': 1,
+        #     'data': [189, 185, 194, 196, 195, 189, 196, 193, 192, 200, 205, 217]
+        # },
+
+    ]  # X轴是固定的1~12月
+    monthDiagramCDA31Data = [
         # {
         #     'name': '平均加班',
         #     'type': 'bar',
@@ -4728,6 +4742,15 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
+            elif i['name'] == 'ABO':
+                monthDiagramCDA31Data.append(
+                    {
+                        'name': '平均加班',
+                        'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
         for i in monthDiagram2Data:
             if i['name'] == 'A31':
                 monthDiagramA31Data.append(
@@ -4769,6 +4792,16 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
+            elif i['name'] == 'ABO':
+                monthDiagramCDA31Data.append(
+                    {
+                        'name': '平均請假',
+                        'type': 'line',
+                        "smooth": 'true',  # 平滑曲线
+                        'yAxisIndex': 1,
+                        'data': i['data']  # 對應月份 從一月到十二月
+                    },
+                )
 
         data = {
             "err_ok": "0",
@@ -4789,6 +4822,7 @@ def Summary1(request):
             "monthDiagramA32Data": monthDiagramA32Data,
             "monthDiagramC38Data": monthDiagramC38Data,
             "monthDiagramABOData": monthDiagramABOData,
+            "monthDiagramCDA31Data": monthDiagramCDA31Data,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-04-17.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-04-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/ManPower_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/ManPower_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/Summary2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,14 +48,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="47" />
+          <entry key="html" value="49" />
           <entry key="js" value="2" />
           <entry key="py" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="47" />
+          <entry key="HTML" value="49" />
           <entry key="JavaScript" value="2" />
           <entry key="Python" value="38" />
         </counts>
@@ -75,26 +78,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/R_Destine.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="45" column="101" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,8 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>axios</find>
-      <find>Signin</find>
       <find>post</find>
       <find>table</find>
       <find>el-table</find>
@@ -136,7 +118,9 @@
       <find>size</find>
       <find>dialogDetialVisible</find>
       <find>您正在取消申請</find>
+      <find>您</find>
       <find>CancelReturn</find>
+      <find>DeviceA39</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1102,8 +1086,8 @@
       <path value="$PROJECT_DIR$/static/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="142" />
     <option name="y" value="-11" />
     <option name="width" value="2262" />
     <option name="height" value="1350" />
@@ -1131,7 +1115,7 @@
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ChairCabinetMS" type="462c0819:PsiDirectoryNode" />
+              <item name="DeviceA39" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1347,14 +1331,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
+    <frame x="-7" y="-7" width="1508" height="900" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.2927989" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49657536" weight="0.2927989" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.50342464" side_tool="true" weight="0.2927989" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" visible="true" weight="0.23958333" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.23958333" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1374,11 +1358,11 @@
       <window_info anchor="right" id="Find" order="4" weight="0.3275862" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.16711956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.2927989" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
-      <window_info id="Favorites" order="2" sideWeight="0.5014837" side_tool="true" weight="0.22985469" />
+      <window_info id="Favorites" order="2" sideWeight="0.50342464" side_tool="true" weight="0.2927989" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" visible="true" weight="0.23958333" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49761525" weight="0.23958333" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1526,25 +1510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceA39/BorrowedDeviceA39.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="316" column="38" selection-start-line="316" selection-start-column="38" selection-end-line="316" selection-end-column="38" />
-          <caret line="316" column="56" selection-start-line="316" selection-start-column="56" selection-end-line="316" selection-end-column="56" />
-          <caret line="388" column="42" selection-start-line="388" selection-start-column="42" selection-end-line="388" selection-end-column="42" />
-          <caret line="388" column="60" selection-start-line="388" selection-start-column="60" selection-end-line="388" selection-end-column="60" />
-          <caret line="401" column="42" selection-start-line="401" selection-start-column="42" selection-end-line="401" selection-end-column="42" />
-          <caret line="401" column="60" selection-start-line="401" selection-start-column="60" selection-end-line="401" selection-end-column="60" />
-          <caret line="444" column="41" selection-start-line="444" selection-start-column="41" selection-end-line="444" selection-end-column="41" />
-          <caret line="444" column="59" selection-start-line="444" selection-start-column="59" selection-end-line="444" selection-end-column="59" />
-          <caret line="458" column="40" selection-start-line="458" selection-start-column="40" selection-end-line="458" selection-end-column="40" />
-          <caret line="461" column="40" selection-start-line="461" selection-start-column="40" selection-end-line="461" selection-end-column="40" />
-          <caret line="462" column="47" selection-start-line="462" selection-start-column="47" selection-end-line="462" selection-end-column="47" />
-          <caret line="586" column="43" selection-start-line="586" selection-start-column="43" selection-end-line="586" selection-end-column="43" />
-          <caret line="586" column="61" selection-start-line="586" selection-start-column="61" selection-end-line="586" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/DeviceA39/M_Borrow.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -1661,24 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DeviceA39/M_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="1480" column="38" selection-start-line="1480" selection-start-column="38" selection-end-line="1480" selection-end-column="38" />
-          <caret line="1550" column="37" selection-start-line="1550" selection-start-column="37" selection-end-line="1550" selection-end-column="37" />
-          <caret line="1578" column="39" selection-start-line="1578" selection-start-column="39" selection-end-line="1578" selection-end-column="39" />
-          <caret line="1582" column="39" selection-start-line="1582" selection-start-column="39" selection-end-line="1582" selection-end-column="39" />
-          <caret line="1682" column="38" selection-start-line="1682" selection-start-column="38" selection-end-line="1682" selection-end-column="38" />
-          <caret line="1693" column="38" selection-start-line="1693" selection-start-column="38" selection-end-line="1693" selection-end-column="38" />
-          <caret line="1709" column="40" selection-start-line="1709" selection-start-column="40" selection-end-line="1709" selection-end-column="40" />
-          <caret line="1867" column="46" selection-start-line="1867" selection-start-column="46" selection-end-line="1867" selection-end-column="46" />
-          <caret line="2010" column="45" selection-start-line="2010" selection-start-column="45" selection-end-line="2010" selection-end-column="45" />
-          <caret line="2079" column="40" selection-start-line="2079" selection-start-column="40" selection-end-line="2079" selection-end-column="40" />
-          <caret line="2162" column="40" selection-start-line="2162" selection-start-column="40" selection-end-line="2162" selection-end-column="40" />
-          <caret line="2186" column="37" selection-start-line="2186" selection-start-column="37" selection-end-line="2186" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/M_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1763,6 +1710,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="183" column="28" lean-forward="true" selection-start-line="183" selection-start-column="28" selection-end-line="183" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#1342#3411#0" />
+            <element signature="e#5088#6679#0" />
+            <element signature="e#5081#8108#0" />
+            <element signature="e#8148#8646#0" />
+            <element signature="e#8695#9957#0" />
+            <element signature="e#10003#16103#0" />
+            <element signature="e#16148#17680#0" />
+            <element signature="e#17721#35707#0" />
+            <element signature="e#35752#41454#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1808,6 +1767,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="165" column="14" lean-forward="true" selection-start-line="165" selection-start-column="14" selection-end-line="165" selection-end-column="14" />
+          <folding>
+            <element signature="e#2226#3162#0" />
+            <element signature="e#3187#3980#0" />
+            <element signature="e#4005#4078#0" />
+            <element signature="e#4099#4133#0" />
+            <element signature="e#4152#4186#0" />
+            <element signature="e#4210#4244#0" />
+            <element signature="e#4264#4298#0" />
+            <element signature="e#4316#4350#0" />
+            <element signature="e#4370#4400#0" />
+            <element signature="e#5573#6592#0" />
+            <element signature="e#13406#14271#0" />
+            <element signature="e#14327#20692#0" />
+            <element signature="e#20300#27210#0" />
+            <element signature="e#28189#63473#0" />
+            <element signature="e#28377#29313#0" />
+            <element signature="e#29338#30131#0" />
+            <element signature="e#30156#30229#0" />
+            <element signature="e#30250#30284#0" />
+            <element signature="e#30303#30337#0" />
+            <element signature="e#30361#30395#0" />
+            <element signature="e#30415#30449#0" />
+            <element signature="e#30467#30501#0" />
+            <element signature="e#30521#30551#0" />
+            <element signature="e#31724#32743#0" />
+            <element signature="e#32877#39526#0" />
+            <element signature="e#39602#40584#0" />
+            <element signature="e#40660#46948#0" />
+            <element signature="e#47022#54997#0" />
+            <element signature="e#55287#62908#0" />
+            <element signature="e#63515#90763#0" />
+            <element signature="e#90803#118904#0" />
+            <element signature="e#118947#147075#0" />
+            <element signature="e#147117#165544#0" />
+            <element signature="e#165586#185709#0" />
+            <element signature="e#185749#205674#0" />
+            <element signature="e#205718#324320#0" />
+            <element signature="e#324360#415642#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1832,6 +1830,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="175" column="35" lean-forward="true" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/R_Destine.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1839,10 +1844,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html">
+    <entry file="file://$PROJECT_DIR$/templates/DeviceA39/BorrowedDeviceA39.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
+        <state relative-caret-position="628">
+          <caret line="479" column="14" lean-forward="true" selection-start-line="479" selection-start-column="14" selection-end-line="479" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceA39/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="1582" column="39" selection-start-line="1582" selection-start-column="30" selection-end-line="1582" selection-end-column="39" />
         </state>
       </provider>
     </entry>

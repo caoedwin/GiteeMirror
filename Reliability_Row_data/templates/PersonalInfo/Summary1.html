@@ -203,6 +203,7 @@ p {
                       <div  id="monthDiagramA32" style="height:400px;"></div>
                       <div  id="monthDiagramC38" style="height:400px;"></div>
                       <div  id="monthDiagramABO" style="height:400px;"></div>
+                      <div  id="monthDiagramCDA31" style="height:400px;"></div>
                   </div>
     </el-collapse-item>
     </el-collapse>
@@ -261,6 +262,7 @@ p {
                 monthDiagramA32Data:[],
                 monthDiagramC38Data:[],
                 monthDiagramABOData:[],
+                monthDiagramCDA31Data:[],
                 condition:null,
                 elbuttonloading: false,
                 tableloading: false,
@@ -329,6 +331,8 @@ p {
                 this.myChart9.showLoading() // 在获取数据之前, 显示加载动画
                 this.myChart10 = echarts.init(document.getElementById('monthDiagramABO'),  'dark');
                 this.myChart10.showLoading() // 在获取数据之前, 显示加载动画
+                this.myChart11 = echarts.init(document.getElementById('monthDiagramCDA31'));
+                this.myChart11.showLoading() // 在获取数据之前, 显示加载动画
                 {#var myChart3 = echarts.init(document.getElementById('main2'));#}
                 {#    myChart3.showLoading() // 在获取数据之前, 显示加载动画#}
                 let data = {"isGetData": e,};
@@ -355,6 +359,7 @@ p {
                     this.monthDiagramA32Data=res.data.monthDiagramA32Data;
                     this.monthDiagramC38Data=res.data.monthDiagramC38Data;
                     this.monthDiagramABOData=res.data.monthDiagramABOData;
+                    this.monthDiagramCDA31Data=res.data.monthDiagramCDA31Data;
                     this.monthDiagram();
                     //1
                     var Month_label = [];
@@ -537,6 +542,8 @@ p {
                     this.myChart9.showLoading() // 在获取数据之前, 显示加载动画
                     this.myChart10 = echarts.init(document.getElementById('monthDiagramABO'),  'dark');
                     this.myChart10.showLoading() // 在获取数据之前, 显示加载动画
+                    this.myChart11 = echarts.init(document.getElementById('monthDiagramCDA31'));
+                    this.myChart11.showLoading() // 在获取数据之前, 显示加载动画
                     this.elbuttonloading = true;
                     this.tableloading = true;
                     this.tableloading2 = true;
@@ -568,6 +575,7 @@ p {
                     this.monthDiagramA32Data=res.data.monthDiagramA32Data;
                     this.monthDiagramC38Data=res.data.monthDiagramC38Data;
                     this.monthDiagramABOData=res.data.monthDiagramABOData;
+                    this.monthDiagramCDA31Data=res.data.monthDiagramCDA31Data;
                     this.monthDiagram();
                     //1
                     var Month_label = [];
@@ -1208,7 +1216,7 @@ p {
                 var option10 = {
                     color: ['#FFC0CB', '#9370DB', '#87CEFA', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
                     title: {
-                        text: 'ABO',
+                        text: 'CQABO',
                         textStyle: {
                         fontSize:30
                         }
@@ -1276,6 +1284,77 @@ p {
                     ],
                     series:this.monthDiagramABOData,
                 };
+                var option11 = {
+                    color: ['#FFC0CB', '#9370DB', '#87CEFA', '#9ACD32', '#F0E68C', '#778899', '#AFEEEE'],
+                    title: {
+                        text: 'CDA31',
+                        textStyle: {
+                        fontSize:30
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
+                            }
+                        }
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        data: ['平均加班', '平均請假',]
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                            {% comment %}axisLabel: {//坐标轴刻度标签的相关设置。
+                                    interval: 0,
+                                    rotate: "45"
+                                },
+                            axisPointer: {
+                                type: 'shadow'
+                            }{% endcomment %}
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '加班/人',
+                            min: 0,
+                            max: 100,
+                            {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
+                            interval: 12.5,
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        },
+                        {
+                            type: 'value',
+                            name: '請假/人',
+                            min: 0,
+                            {#max: Math.ceil(Math.max.apply(null,this.DataRenCi)/5)*5,#}
+                            max: 100,
+                            {#interval: Math.ceil(Math.max.apply(null,this.DataRenCi)/5),#}
+                            interval: 12.5,
+                            axisLabel: {
+                                formatter: '{value}'
+                            }
+                        }
+
+                    ],
+                    series:this.monthDiagramCDA31Data,
+                };
                 _this.myChart1.clear();
                 _this.myChart2.clear();
                 _this.myChart4.clear();
@@ -1283,6 +1362,7 @@ p {
                 _this.myChart8.clear();
                 _this.myChart9.clear();
                 _this.myChart10.clear();
+                _this.myChart11.clear();
                 _this.myChart1.setOption(option1);
                 _this.myChart2.setOption(option2);
                 _this.myChart4.setOption(option4);
@@ -1290,6 +1370,7 @@ p {
                 _this.myChart8.setOption(option8);
                 _this.myChart9.setOption(option9);
                 _this.myChart10.setOption(option10);
+                _this.myChart11.setOption(option11);
                 window.addEventListener('resize', ()=>{
                    _this.myChart1.resize();
                    _this.myChart2.resize();
@@ -1298,6 +1379,7 @@ p {
                    _this.myChart8.resize();
                    _this.myChart9.resize();
                    _this.myChart10.resize();
+                   _this.myChart11.resize();
                  // 使用刚指定的配置项和数据显示图表。
                 })
                    _this.myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
@@ -1307,6 +1389,7 @@ p {
                    _this.myChart8.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                    _this.myChart9.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                    _this.myChart10.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
+                   _this.myChart11.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
             },
 
             daLeiSpanMethod({ row, column, rowIndex, columnIndex }) {
