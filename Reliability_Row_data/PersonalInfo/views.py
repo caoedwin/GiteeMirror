@@ -4733,7 +4733,7 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
-            elif i['name'] == 'ABO':
+            elif i['name'] == 'CQABO':
                 monthDiagramABOData.append(
                     {
                         'name': '平均加班',
@@ -4742,7 +4742,7 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
-            elif i['name'] == 'ABO':
+            elif i['name'] == 'CDA31':
                 monthDiagramCDA31Data.append(
                     {
                         'name': '平均加班',
@@ -4782,7 +4782,7 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
-            elif i['name'] == 'ABO':
+            elif i['name'] == 'CQABO':
                 monthDiagramABOData.append(
                     {
                         'name': '平均請假',
@@ -4792,7 +4792,7 @@ def Summary1(request):
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
-            elif i['name'] == 'ABO':
+            elif i['name'] == 'CDA31':
                 monthDiagramCDA31Data.append(
                     {
                         'name': '平均請假',
