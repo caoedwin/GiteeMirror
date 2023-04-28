@@ -2121,14 +2121,14 @@ def PersonalInfo_edit(request):
                             'Year': responseData['historyYear'],
                             # 'GroupNum': modeldata['GroupNum'],
                         }
-                        if PersonalInfoHisByYear.objects.filter(
-                                **Check_dic):
-                            err_msg = """
-                                                    %s年的历史数据已经存在，如需覆盖请联系管理员
-                                                                                                    """ % responseData[
-                                'historyYear']
-                            startupload = 0
-                            err_ok = 2
+                        # if PersonalInfoHisByYear.objects.filter(
+                        #         **Check_dic):
+                        #     err_msg = """
+                        #                             %s年的历史数据已经存在，如需覆盖请联系管理员
+                        #                                                                             """ % responseData[
+                        #         'historyYear']
+                        #     startupload = 0
+                        #     err_ok = 2
                         if startupload:
                             for i in xlsxlist:
                                 modeldata = {}
@@ -2151,23 +2151,25 @@ def PersonalInfo_edit(request):
                                         else:
                                             modeldata[headermodel_PersonalInfo[key]] = value
                                 modeldata['Year'] = responseData['historyYear']
+                                checkHisPer = {'Year': modeldata['Year'], 'GroupNum': modeldata['GroupNum']}
                                 # print(modeldata)
-                                PersonalInfoHisByYear.objects.create(**modeldata)
-                                for perhis in PersonalInfoHisByYear.objects.filter(GroupNum=modeldata['GroupNum']):
-                                    if perhis.Portrait.all():
-                                        for photos in perhis.Portrait.all():
-                                            PersonalInfoHisByYear.objects.filter(
-                                                GroupNum=modeldata['GroupNum'],
-                                                Year=responseData['historyYear']).first().Portrait.add(photos.id)
-                                        break
-                                if PersonalInfo.objects.filter(GroupNum=modeldata['GroupNum']).first():
-                                    if PersonalInfo.objects.filter(
-                                            GroupNum=modeldata['GroupNum']).first().Portrait.all():
-                                        for photos in PersonalInfo.objects.filter(
+                                if not PersonalInfoHisByYear.objects.filter(**checkHisPer):
+                                    PersonalInfoHisByYear.objects.create(**modeldata)
+                                    for perhis in PersonalInfoHisByYear.objects.filter(GroupNum=modeldata['GroupNum']):
+                                        if perhis.Portrait.all():
+                                            for photos in perhis.Portrait.all():
+                                                PersonalInfoHisByYear.objects.filter(
+                                                    GroupNum=modeldata['GroupNum'],
+                                                    Year=responseData['historyYear']).first().Portrait.add(photos.id)
+                                            break
+                                    if PersonalInfo.objects.filter(GroupNum=modeldata['GroupNum']).first():
+                                        if PersonalInfo.objects.filter(
                                                 GroupNum=modeldata['GroupNum']).first().Portrait.all():
-                                            PersonalInfoHisByYear.objects.filter(
-                                                GroupNum=modeldata['GroupNum'],
-                                                Year=responseData['historyYear']).first().Portrait.add(photos.id)
+                                            for photos in PersonalInfo.objects.filter(
+                                                    GroupNum=modeldata['GroupNum']).first().Portrait.all():
+                                                PersonalInfoHisByYear.objects.filter(
+                                                    GroupNum=modeldata['GroupNum'],
+                                                    Year=responseData['historyYear']).first().Portrait.add(photos.id)
 
 
                     else:  # 存到PersonalInfo&PersonalInfoHisByPer
@@ -2427,6 +2429,9 @@ def ManPower_search(request):
         # "四部": [{"Section": "KM0MAQABA0"}],
     }
 
+    for i in MainPower.objects.all().values("Customer").distinct().order_by("Customer"):
+        selectCustomer.append(i['Customer'])
+
     for i in MainPower.objects.all().values("Year").distinct().order_by("Year"):
         YearCHU = []
         for j in MainPower.objects.filter(Year=i['Year']).values("CHU").distinct().order_by("CHU"):
@@ -2552,6 +2557,7 @@ def ManPower_search(request):
                     selectSection[i['BU']] = YearCHU
         data = {
             "canEdit": canEdit,
+            "selectCustomer": selectCustomer,
             "content": mock_data,
             "selectCustomer": selectCustomer,
             "selectYear": selectYear,
