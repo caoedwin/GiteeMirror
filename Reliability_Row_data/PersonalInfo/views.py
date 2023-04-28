@@ -607,8 +607,9 @@ def PersonalInfo_search(request):
                     Seniority = round(
                         float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                 else:
-                    Seniority = round(
-                        float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                    if i.QuitDate != i.RegistrationDate:
+                        Seniority = round(
+                            float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                 Photolist = []
                 for h in i.Portrait.all():
                     Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -677,8 +678,9 @@ def PersonalInfo_search(request):
                         Seniority = round(
                             float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     else:
-                        Seniority = round(
-                            float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                        if i.QuitDate != i.RegistrationDate:
+                            Seniority = round(
+                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     Photolist = []
                     for h in i.Portrait.all():
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -716,8 +718,9 @@ def PersonalInfo_search(request):
                         Seniority = round(
                             float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     else:
-                        Seniority = round(
-                            float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                        if i.QuitDate != i.RegistrationDate:
+                            Seniority = round(
+                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     Photolist = []
                     for h in i.Portrait.all():
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -963,8 +966,9 @@ def PersonalInfo_edit(request):
                         Seniority = round(
                             float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     else:
-                        Seniority = round(
-                            float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                        if i.QuitDate != i.RegistrationDate:
+                            Seniority = round(
+                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                     Photolist = []
                     for h in i.Portrait.all():
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1042,8 +1046,9 @@ def PersonalInfo_edit(request):
                                 float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1083,8 +1088,9 @@ def PersonalInfo_edit(request):
                                 float(str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1353,8 +1359,9 @@ def PersonalInfo_edit(request):
                             Seniority = round(float(
                                 str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1396,8 +1403,9 @@ def PersonalInfo_edit(request):
                                     str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1617,8 +1625,9 @@ def PersonalInfo_edit(request):
                             Seniority = round(float(
                                 str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1660,8 +1669,9 @@ def PersonalInfo_edit(request):
                                     str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                 1)
                         else:
-                            Seniority = round(
-                                float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                            if i.QuitDate != i.RegistrationDate:
+                                Seniority = round(
+                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                         Photolist = []
                         for h in i.Portrait.all():
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
@@ -1738,8 +1748,9 @@ def PersonalInfo_edit(request):
                                 Seniority = round(float(
                                     str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             else:
-                                Seniority = round(
-                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                                if i.QuitDate != i.RegistrationDate:
+                                    Seniority = round(
+                                        float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             Photolist = []
                             for h in i.Portrait.all():
                                 Photolist.append(
@@ -1782,8 +1793,9 @@ def PersonalInfo_edit(request):
                                         str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                     1)
                             else:
-                                Seniority = round(
-                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                                if i.QuitDate != i.RegistrationDate:
+                                    Seniority = round(
+                                        float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             Photolist = []
                             for h in i.Portrait.all():
                                 Photolist.append(
@@ -2279,8 +2291,9 @@ def PersonalInfo_edit(request):
                                 Seniority = round(float(
                                     str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             else:
-                                Seniority = round(
-                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                                if i.QuitDate != i.RegistrationDate:
+                                    Seniority = round(
+                                        float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             Photolist = []
                             for h in i.Portrait.all():
                                 Photolist.append(
@@ -2323,8 +2336,9 @@ def PersonalInfo_edit(request):
                                         str((datetime.datetime.now().date() - i.RegistrationDate)).split(' ')[0]) / 365,
                                     1)
                             else:
-                                Seniority = round(
-                                    float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
+                                if i.QuitDate != i.RegistrationDate:
+                                    Seniority = round(
+                                        float(str((i.QuitDate - i.RegistrationDate)).split(' ')[0]) / 365, 1)
                             Photolist = []
                             for h in i.Portrait.all():
                                 Photolist.append(
