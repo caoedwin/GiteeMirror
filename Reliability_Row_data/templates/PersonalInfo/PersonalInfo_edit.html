@@ -194,6 +194,19 @@ label{
                   <el-form-item label="報到日期" prop="RegistrationDate">
                          <el-date-picker v-model="form.RegistrationDate" value-format="yyyy-MM-dd" type="date" placeholder="選擇日期" ></el-date-picker>
                   </el-form-item>
+                  <el-form-item label="轉職日期" prop="transferDate">
+                         <el-date-picker v-model="form.transferDate" value-format="yyyy-MM-dd" type="date" placeholder="選擇日期" ></el-date-picker>
+                  </el-form-item>
+                  <el-form-item label="原客户" prop="OldCustomer">
+                           <el-select v-model="form.OldCustomer" placeholder="请选择" >
+                                <el-option v-for="item in Customeroptions1" :key="item" :label="item" :value="item"></el-option>
+                          </el-select>
+                  </el-form-item>
+                  <el-form-item label="原課別" prop="OldDepartmentCode">
+                           <el-select v-model="form.OldDepartmentCode" placeholder="请选择" >
+                                <el-option v-for="item in Lessonoptions1" :key="item" :label="item" :value="item"></el-option>
+                          </el-select>
+                  </el-form-item>
                   <el-form-item label="预计離職日期">
                          <el-date-picker v-model="form.ExpectedDepartureDate" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期" ></el-date-picker>
                   </el-form-item>
@@ -417,6 +430,20 @@ label{
                   </el-form-item>
                   <el-form-item label="報到日期">
                          <el-date-picker v-model="form.RegistrationDate" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期" :disabled="!(permission===1)"></el-date-picker>
+                  </el-form-item>
+                 <el-form-item label="轉職日期">
+                         <el-date-picker v-model="form.transferDate" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期" :disabled="!(permission===1)"></el-date-picker>
+                  </el-form-item>
+                  <el-form-item label="原客户">
+                           <el-select v-model="form.OldCustomer" placeholder="请选择" :disabled="!(permission===1)">
+                                <el-option value=""></el-option>
+                                <el-option v-for="item in Customeroptions1" :key="item" :label="item" :value="item"></el-option>
+                          </el-select>
+                  </el-form-item>
+                  <el-form-item label="原課別">
+                           <el-select v-model="form.OldDepartmentCode" placeholder="请选择" :disabled="!(permission===1)">
+                                <el-option v-for="item in Lessonoptions1" :key="item" :label="item" :value="item"></el-option>
+                          </el-select>
                   </el-form-item>
                   <el-form-item label="预计離職日期">
                          <el-date-picker v-model="form.ExpectedDepartureDate" type="date" value-format="yyyy-MM-dd" placeholder="選擇日期" ></el-date-picker>
@@ -740,6 +767,9 @@ label{
                 form: {
                     Status: '',
                     RegistrationDate:'',
+                    transferDate:'',
+                    OldCustomer:'',
+                    OldDepartmentCode:'',
                     DepartureDate:'',
                     ExpectedDepartureDate:'',
                     DepartureReasons:'',
@@ -1088,6 +1118,11 @@ label{
                                             }else{
                                                 this.form.RegistrationDate=row.RegistrationDate;
                                             }
+                                            if(row.transferDate=='None'){
+                                                this.form.transferDate=''
+                                            }else{
+                                                this.form.transferDate=row.transferDate;
+                                            }
                                             if(row.DepartureDate=='None'){
                                                 this.form.DepartureDate=''
                                             }else{
@@ -1107,8 +1142,10 @@ label{
                                          this.form.NewCompanyName=row.NewCompanyName;
                                          this.form.Salary=row.Salary;
                                          this.form.Seniority=row.Seniority;
+                                         this.form.OldCustomer=row.OldCustomer;
                                          this.form.Customer=row.Customer;
                                          this.form.Department=row.Department;
+                                         this.form.OldDepartmentCode=row.OldDepartmentCode;
                                          this.form.Lesson=row.Lesson;
                                          this.form.GroupEmployees=row.GroupEmployees;
                                          this.form.SAPEmployees=row.SAPEmployees;
@@ -1265,6 +1302,11 @@ label{
                 }else{
                       this.formData.append('RegistrationDate', this.$refs.form.model.RegistrationDate)
                 }
+                if(this.$refs.form.model.transferDate instanceof Date){
+                      this.formData.append('transferDate', this.zhuanhuangeshi(this.$refs.form.model.transferDate))
+                }else{
+                      this.formData.append('transferDate', this.$refs.form.model.transferDate)
+                }
                 if(this.$refs.form.model.DepartureDate instanceof Date){
                       this.formData.append('DepartureDate', this.zhuanhuangeshi(this.$refs.form.model.DepartureDate))
                 }else{
@@ -1281,9 +1323,11 @@ label{
                 this.formData.append('NewCompanyName', this.$refs.form.model.NewCompanyName)
                 this.formData.append('Salary', this.$refs.form.model.Salary)
                 this.formData.append('Seniority', this.$refs.form.model.Seniority)
+                this.formData.append('OldCustomer', this.$refs.form.model.OldCustomer)
                 this.formData.append('Customer', this.$refs.form.model.Customer)
                 this.formData.append('Department', this.$refs.form.model.Department)
                 this.formData.append('Lesson', this.$refs.form.model.Lesson)
+                this.formData.append('OldDepartmentCode', this.$refs.form.model.OldDepartmentCode)
                 this.formData.append('GroupEmployees', this.$refs.form.model.GroupEmployees)
                 this.formData.append('SAPEmployees', this.$refs.form.model.SAPEmployees)
                 this.formData.append('ChineseName', this.$refs.form.model.ChineseName)
@@ -1535,6 +1579,7 @@ label{
                 this.formData.append('id', this.editID)
                 this.formData.append('Status', this.$refs.form.model.Status)
                 this.formData.append('RegistrationDate', this.$refs.form.model.RegistrationDate)
+                this.formData.append('transferDate', this.$refs.form.model.transferDate)
                 this.formData.append('DepartureDate', this.$refs.form.model.DepartureDate)
                 this.formData.append('ExpectedDepartureDate', this.$refs.form.model.ExpectedDepartureDate)
                 this.formData.append('DepartureReasons', this.$refs.form.model.DepartureReasons)
@@ -1544,8 +1589,10 @@ label{
                 this.formData.append('Salary', this.$refs.form.model.Salary)
                 this.formData.append('Seniority', this.$refs.form.model.Seniority)
                 this.formData.append('Customer', this.$refs.form.model.Customer)
+                this.formData.append('OldCustomer', this.$refs.form.model.OldCustomer)
                 this.formData.append('Department', this.$refs.form.model.Department)
                 this.formData.append('Lesson', this.$refs.form.model.Lesson)
+                this.formData.append('OldDepartmentCode', this.$refs.form.model.OldDepartmentCode)
                 this.formData.append('GroupEmployees', this.$refs.form.model.GroupEmployees)
                 this.formData.append('SAPEmployees', this.$refs.form.model.SAPEmployees)
                 this.formData.append('ChineseName', this.$refs.form.model.ChineseName)

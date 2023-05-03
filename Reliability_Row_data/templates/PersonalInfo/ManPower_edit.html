@@ -290,7 +290,7 @@ submit{% extends 'base.html' %}
       </el-form-item>
     </el-col>
 </el-row>
-<el-row>
+{% comment %}<el-row>
     <el-col span="10">
       <el-form-item label="CodeNoH01">
         <el-input v-model="form.CodeNoH01" :disabled="!(permission===1)"></el-input>
@@ -301,7 +301,7 @@ submit{% extends 'base.html' %}
         <el-input v-model="form.CodeNoH02" :disabled="!(permission===1)"></el-input>
       </el-form-item>
     </el-col>
-</el-row>
+</el-row>{% endcomment %}
 <el-row>
     <el-col span="10">
       <el-form-item label="年份">
@@ -454,7 +454,7 @@ submit{% extends 'base.html' %}
 {#                <span>${ title[scope.$index+(currentPage-1)*pageSize] }</span>#}
 {#            </template>#}
         </el-table-column>
-        <el-table-column prop="CodeNoH01" label="CodeNoH01" align="center" width="132">
+        {% comment %}<el-table-column prop="CodeNoH01" label="CodeNoH01" align="center" width="132">
 {#            <template slot-scope="scope">#}
 {#            <el-input class="edit-cell" v-model="scope.row.CodeNoH01"></el-input>#}
 {#                <span>${ codenoh01[scope.$index+(currentPage-1)*pageSize] }</span>#}
@@ -465,7 +465,7 @@ submit{% extends 'base.html' %}
 {#                <el-input class="edit-cell" v-model="scope.row.CodeNoH02"></el-input>#}
 {#                <span>${ codenoh02[scope.$index+(currentPage-1)*pageSize] }</span>#}
 {#            </template>#}
-        </el-table-column>
+        </el-table-column>{% endcomment %}
         <el-table-column prop="Year" label="年份" align="center" width="110">
 {#            <template slot-scope="scope">#}
 {#                <el-input class="edit-cell" v-model="scope.row.Year"></el-input>#}

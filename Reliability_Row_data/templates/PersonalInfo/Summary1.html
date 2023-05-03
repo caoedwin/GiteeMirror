@@ -737,7 +737,7 @@ p {
                         {
                             type: 'value',
                             name: '加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 1000,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 200,#}
@@ -928,7 +928,7 @@ p {
                         {
                             type: 'value',
                             name: '請假/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 1000,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 200,#}
@@ -987,7 +987,7 @@ p {
                         {
                             type: 'value',
                             name: '有效加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 1000,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 200,#}
@@ -1055,18 +1055,18 @@ p {
                                 formatter: '{value}'
                             }
                         },
-                        {
+                        {% comment %}{
                             type: 'value',
                             name: '請假/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataRenCi)/5)*5,#}
-                            max: 100,
+                            {#max: 100,#}
                             {#interval: Math.ceil(Math.max.apply(null,this.DataRenCi)/5),#}
                             interval: 12.5,
                             axisLabel: {
                                 formatter: '{value}'
                             }
-                        }
+                        }{% endcomment %}
 
                     ],
                     series:this.monthDiagramA31Data,
@@ -1117,7 +1117,7 @@ p {
                         {
                             type: 'value',
                             name: '加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 100,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 12.5,#}
@@ -1126,7 +1126,7 @@ p {
                                 formatter: '{value}'
                             }
                         },
-                        {
+                        {% comment %}{
                             type: 'value',
                             name: '請假/人',
                             min: 0,
@@ -1137,7 +1137,7 @@ p {
                             axisLabel: {
                                 formatter: '{value}'
                             }
-                        }
+                        }{% endcomment %}
 
                     ],
                     series:this.monthDiagramA32Data,
@@ -1188,7 +1188,7 @@ p {
                         {
                             type: 'value',
                             name: '加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 100,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 12.5,#}
@@ -1197,7 +1197,7 @@ p {
                                 formatter: '{value}'
                             }
                         },
-                        {
+                        {% comment %}{
                             type: 'value',
                             name: '請假/人',
                             min: 0,
@@ -1208,7 +1208,7 @@ p {
                             axisLabel: {
                                 formatter: '{value}'
                             }
-                        }
+                        }{% endcomment %}
 
                     ],
                     series:this.monthDiagramC38Data,
@@ -1259,7 +1259,7 @@ p {
                         {
                             type: 'value',
                             name: '加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 100,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 12.5,#}
@@ -1268,7 +1268,7 @@ p {
                                 formatter: '{value}'
                             }
                         },
-                        {
+                        {% comment %}{
                             type: 'value',
                             name: '請假/人',
                             min: 0,
@@ -1279,7 +1279,7 @@ p {
                             axisLabel: {
                                 formatter: '{value}'
                             }
-                        }
+                        }{% endcomment %}
 
                     ],
                     series:this.monthDiagramABOData,
@@ -1330,7 +1330,7 @@ p {
                         {
                             type: 'value',
                             name: '加班/人',
-                            min: 0,
+                            {#min: 0,#}
                             {#max: 100,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
                             {#interval: 12.5,#}
@@ -1339,7 +1339,7 @@ p {
                                 formatter: '{value}'
                             }
                         },
-                        {
+                        {% comment %}{
                             type: 'value',
                             name: '請假/人',
                             min: 0,
@@ -1350,7 +1350,7 @@ p {
                             axisLabel: {
                                 formatter: '{value}'
                             }
-                        }
+                        }{% endcomment %}
 
                     ],
                     series:this.monthDiagramCDA31Data,

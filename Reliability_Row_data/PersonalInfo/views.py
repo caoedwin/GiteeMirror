@@ -34,7 +34,7 @@ headermodel_MajorIfo = {
     '專業 for 公式查找': 'MajorForExcel',
 }
 headermodel_PersonalInfo = {
-    '狀態': 'Status', '報到日期': 'RegistrationDate', '離職日期': 'QuitDate', '預計離職日期': 'PlanQuitDate', '離職原因': 'QuitReason',
+    '狀態': 'Status', '報到日期': 'RegistrationDate', '轉職日期': 'transferDate', '原客户': 'OldCustomer', '原課別': 'OldDepartmentCode', '離職日期': 'QuitDate', '預計離職日期': 'PlanQuitDate', '離職原因': 'QuitReason',
     '離職詳情': 'QuitDetail', '離職去向': 'Whereabouts', '新公司名稱': 'NewCompany', '薪資': 'Aalary', '最近一次績效': 'LastAchievements',
     '客戶': 'Customer', '部門': 'Department', '課別': 'DepartmentCode', '集團員工': 'GroupNum', 'SAP員工': 'SAPNum',
     '中文姓名': 'CNName',
@@ -615,6 +615,9 @@ def PersonalInfo_search(request):
                     Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                 mock_data.append(
                     {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                     "transferDate": str(i.transferDate),
+                     "OldCustomer": i.OldCustomer,
+                     "OldDepartmentCode": i.OldDepartmentCode,
                      "DepartureDate": str(i.QuitDate),
                      "ExpectedDepartureDate": str(i.PlanQuitDate),
                      "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail, "DepartureTo": i.Whereabouts,
@@ -686,6 +689,9 @@ def PersonalInfo_search(request):
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                     mock_data.append(
                         {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                         "transferDate": str(i.transferDate),
+                         "OldCustomer": i.OldCustomer,
+                         "OldDepartmentCode": i.OldDepartmentCode,
                          "DepartureDate": str(i.QuitDate),
                          "ExpectedDepartureDate": str(i.PlanQuitDate),
                          "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -726,6 +732,9 @@ def PersonalInfo_search(request):
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                     mock_data.append(
                         {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                         "transferDate": str(i.transferDate),
+                         "OldCustomer": i.OldCustomer,
+                         "OldDepartmentCode": i.OldDepartmentCode,
                          "DepartureDate": str(i.QuitDate),
                          "ExpectedDepartureDate": str(i.PlanQuitDate),
                          "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -974,6 +983,9 @@ def PersonalInfo_edit(request):
                         Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                     mock_data.append(
                         {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                         "transferDate": str(i.transferDate),
+                         "OldCustomer": i.OldCustomer,
+                         "OldDepartmentCode": i.OldDepartmentCode,
                          "DepartureDate": str(i.QuitDate),
                          "ExpectedDepartureDate": str(i.PlanQuitDate),
                          "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1054,6 +1066,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1096,6 +1111,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1150,6 +1168,9 @@ def PersonalInfo_edit(request):
                 RegistrationDate = request.POST.get("RegistrationDate")
                 if RegistrationDate == "NaN-NaN-NaN" or RegistrationDate == "null" or RegistrationDate == "":
                     RegistrationDate = None
+                transferDate = request.POST.get("transferDate")
+                if transferDate == "NaN-NaN-NaN" or transferDate == "null" or transferDate == "":
+                    transferDate = None
                 # print(type(RegistrationDate))
                 QuitDate = request.POST.get("DepartureDate")
                 if QuitDate == "NaN-NaN-NaN" or QuitDate == "null" or QuitDate == "":
@@ -1175,6 +1196,8 @@ def PersonalInfo_edit(request):
                 if Aalary == "null":
                     Aalary = ''
                 Customer = request.POST.get("Customer")
+                OldCustomer = request.POST.get("OldCustomer")
+                OldDepartmentCode = request.POST.get("OldDepartmentCode")
                 Department = request.POST.get("Department")
                 DepartmentCode = request.POST.get("Lesson")
                 GroupNum = request.POST.get("GroupEmployees")
@@ -1202,7 +1225,11 @@ def PersonalInfo_edit(request):
                 ResidenceProvince = request.POST.get("HukouProvinces")
                 ResidenceCounty = request.POST.get("HukouCity")
                 MobileNum = request.POST.get("PhoneNumber")
-                updatadivPer = {"Status": Status, "RegistrationDate": RegistrationDate, "QuitDate": QuitDate,
+                updatadivPer = {"Status": Status, "RegistrationDate": RegistrationDate,
+                                "transferDate": transferDate,
+                                "OldCustomer": OldCustomer,
+                                "OldDepartmentCode": OldDepartmentCode,
+                                "QuitDate": QuitDate,
                                 "PlanQuitDate": PlanQuitDate,
                                 "QuitReason": QuitReason, "QuitDetail": QuitDetail, "Whereabouts": Whereabouts,
                                 "NewCompany": NewCompany,
@@ -1367,6 +1394,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1411,6 +1441,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1633,6 +1666,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1677,6 +1713,9 @@ def PersonalInfo_edit(request):
                             Photolist.append({'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                         mock_data.append(
                             {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                             "transferDate": str(i.transferDate),
+                             "OldCustomer": i.OldCustomer,
+                             "OldDepartmentCode": i.OldDepartmentCode,
                              "DepartureDate": str(i.QuitDate),
                              "ExpectedDepartureDate": str(i.PlanQuitDate),
                              "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1757,6 +1796,9 @@ def PersonalInfo_edit(request):
                                     {'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                             mock_data.append(
                                 {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                                 "transferDate": str(i.transferDate),
+                                 "OldCustomer": i.OldCustomer,
+                                 "OldDepartmentCode": i.OldDepartmentCode,
                                  "DepartureDate": str(i.QuitDate),
                                  "ExpectedDepartureDate": str(i.PlanQuitDate),
                                  "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -1802,6 +1844,9 @@ def PersonalInfo_edit(request):
                                     {'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                             mock_data.append(
                                 {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                                 "transferDate": str(i.transferDate),
+                                 "OldCustomer": i.OldCustomer,
+                                 "OldDepartmentCode": i.OldDepartmentCode,
                                  "DepartureDate": str(i.QuitDate),
                                  "ExpectedDepartureDate": str(i.PlanQuitDate),
                                  "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -2149,7 +2194,8 @@ def PersonalInfo_edit(request):
                                         if headermodel_PersonalInfo[key] == "RegistrationDate" or \
                                                 headermodel_PersonalInfo[
                                                     key] == "QuitDate" or headermodel_PersonalInfo[
-                                            key] == "LastPromotionData":
+                                            key] == "LastPromotionData" or headermodel_PersonalInfo[
+                                            key] == "transferDate":
                                             # value = value.replace('/', '-')
                                             # value = value.replace('.', '-')
                                             if len(value.split("/")) == 3:
@@ -2192,7 +2238,8 @@ def PersonalInfo_edit(request):
                                     if key in headermodel_PersonalInfo.keys():
                                         if headermodel_PersonalInfo[key] == "RegistrationDate" or \
                                                 headermodel_PersonalInfo[key] == "QuitDate" or headermodel_PersonalInfo[
-                                            key] == "LastPromotionData":
+                                            key] == "LastPromotionData" or headermodel_PersonalInfo[
+                                            key] == "transferDate":
                                             # value = value.replace('/', '-')
                                             # value = value.replace('.', '-')
                                             if len(value.split("/")) == 3:
@@ -2300,6 +2347,9 @@ def PersonalInfo_edit(request):
                                     {'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                             mock_data.append(
                                 {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                                 "transferDate": str(i.transferDate),
+                                 "OldCustomer": i.OldCustomer,
+                                 "OldDepartmentCode": i.OldDepartmentCode,
                                  "DepartureDate": str(i.QuitDate),
                                  "ExpectedDepartureDate": str(i.PlanQuitDate),
                                  "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -2345,6 +2395,9 @@ def PersonalInfo_edit(request):
                                     {'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                             mock_data.append(
                                 {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate),
+                                 "transferDate": str(i.transferDate),
+                                 "OldCustomer": i.OldCustomer,
+                                 "OldDepartmentCode": i.OldDepartmentCode,
                                  "DepartureDate": str(i.QuitDate),
                                  "ExpectedDepartureDate": str(i.PlanQuitDate),
                                  "DepartureReasons": i.QuitReason, "DepartureDetails": i.QuitDetail,
@@ -4732,7 +4785,11 @@ def Summary1(request):
                         'name': '平均加班',
                         'type': 'line',
                         "smooth": 'true',  # 平滑曲线
-                        'data': i['data']  # 對應月份 從一月到十二月
+                        'data': i['data'],  # 對應月份 從一月到十二月
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                     },
                 )
             elif i['name'] == 'A32':
@@ -4740,6 +4797,10 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -4749,6 +4810,10 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -4767,6 +4832,10 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -4777,8 +4846,12 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
-                        'yAxisIndex': 1,
+                        # 'yAxisIndex': 1, # 2个y轴刻度时指定用那个刻度
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4787,8 +4860,12 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
-                        'yAxisIndex': 1,
+                        # 'yAxisIndex': 1, # 2个y轴刻度时指定用那个刻度
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4797,8 +4874,12 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
-                        'yAxisIndex': 1,
+                        # 'yAxisIndex': 1, # 2个y轴刻度时指定用那个刻度
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4807,8 +4888,12 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
-                        'yAxisIndex': 1,
+                        # 'yAxisIndex': 1, # 2个y轴刻度时指定用那个刻度
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -4817,8 +4902,12 @@ def Summary1(request):
                     {
                         'name': '平均請假',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
-                        'yAxisIndex': 1,
+                        # 'yAxisIndex': 1, # 2个y轴刻度时指定用那个刻度
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
                 )
@@ -5129,7 +5218,14 @@ def Summary2(request):
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"], transferDate__gte=DateNow,
+                                                                       RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"], transferDate__gte=DateNow,
+                                                                       RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                          RegistrationDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -5245,7 +5341,16 @@ def Summary2(request):
                             zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"], Year=YearSearch,
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   RegistrationDate__range=Test_Endperiod).count()
@@ -5878,7 +5983,16 @@ def Summary2(request):
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                          RegistrationDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -5994,7 +6108,20 @@ def Summary2(request):
                             zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   RegistrationDate__range=Test_Endperiod).count()
@@ -6628,7 +6755,16 @@ def Summary2(request):
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"], OldDepartmentCode__contains=i["Department_Codebu"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                OldCustomer=i["Customer"], OldDepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              RegistrationDate__range=Test_Endperiod).count()
                             # # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -6709,7 +6845,20 @@ def Summary2(request):
                             zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"],
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                             Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"],
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],
+                                                                                             Year=YearSearch, OldDepartmentCode__contains=i["Department_Codebu"],
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, OldDepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                             #                                                       Year=YearSearch,
                             #                                                       RegistrationDate__range=Test_Endperiod).count()

@@ -87,6 +87,9 @@ class PersonalInfo(models.Model):
 
     Status = models.CharField("状态", max_length=10)#狀態
     RegistrationDate = models.DateField("报道日期", null=True, blank=True)#報到日期
+    OldCustomer = models.CharField("原客户", max_length=20, null=True, blank=True, default='')  # 客戶
+    transferDate = models.DateField("轉職日期", null=True, blank=True)#轉職日期
+    OldDepartmentCode = models.CharField("原部门代码", max_length=50, null=True, blank=True, default='')
     #离职信息
     QuitDate = models.DateField("离职日期", null=True, blank=True)#離職日期
     PlanQuitDate = models.DateField("预计离职日期", null=True, blank=True)#预计离职日期
@@ -139,6 +142,9 @@ class PersonalInfoHisByYear(models.Model):
     Year = models.CharField("年份", max_length=100)  # 數據年份
     Status = models.CharField("状态", max_length=10)#狀態
     RegistrationDate = models.DateField("报道日期", null=True, blank=True)#報到日期
+    transferDate = models.DateField("轉職日期", null=True, blank=True)  # 轉職日期
+    OldCustomer = models.CharField("原客户", max_length=20, null=True, blank=True, default='')  # 客戶
+    OldDepartmentCode = models.CharField("原部门代码", max_length=50, null=True, blank=True, default='')
     #离职信息
     QuitDate = models.DateField("离职日期", null=True, blank=True)#離職日期
     PlanQuitDate = models.DateField("预计离职日期", null=True, blank=True)#预计离职日期
