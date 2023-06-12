@@ -76,6 +76,7 @@ class CQM(models.Model):
     R1_PN_Description = models.CharField('R1_PN_Description',max_length=500, blank=True, null=True)
     Compal_R1_PN = models.CharField('Compal_R1_PN',max_length=100, blank=True, null=True)
     Compal_R3_PN = models.CharField('Compal_R3_PN',max_length=100, blank=True, null=True)
+    R1S = models.CharField('R1S', max_length=100, blank=True, null=True)
     Reliability = models.CharField('Reliability', choices=Testresult_list,  max_length=100, blank=True, null=True)
     Compatibility = models.CharField('Compatibility', choices=Testresult_list,  max_length=100, blank=True, null=True)
     Testresult = models.CharField('Testresult', choices=Testresult_list,  max_length=100, blank=True, null=True)

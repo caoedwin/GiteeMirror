@@ -79,6 +79,7 @@ class CQM_F(forms.Form):
     R1_PN_Description = forms.CharField(label="R1_PN_Description", max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Compal_R1_PN = forms.CharField(label="Compal_R1_PN", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Compal_R3_PN = forms.CharField(label="Compal_R3_PN", max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    R1S = forms.CharField(label="R1S", max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Reliability = forms.CharField(label="Reliability", max_length=100, required=False, widget=forms.Select(choices=Testresult_list,attrs={'id':'Reliability','class': 'form-control-new'}))
     Compatibility = forms.CharField(label="Compatibility", max_length=100, required=False, widget=forms.Select(choices=Testresult_list,attrs={'id':'Compatibility','class': 'form-control-new'}))
     Testresult = forms.CharField(label="Testresult", max_length=100, required=False, widget=forms.TextInput(attrs={'readonly':'true','id':'Testresult','class': 'form-control-new'}))

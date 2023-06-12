@@ -195,7 +195,7 @@ class CQMAdmin(admin.ModelAdmin):
     #     # }),
     # )
     list_display = ('Projectinfo', 'Customer', 'Project', 'Phase', 'Material_Group', 'Keyparts', 'Character', 'PID', 'VID',
-                     'HW',  'FW',  'Supplier',  'R1_PN_Description',  'Compal_R1_PN', 'Compal_R3_PN', 'Reliability', 'Compatibility',
+                     'HW',  'FW',  'Supplier',  'R1_PN_Description',  'Compal_R1_PN', 'Compal_R3_PN', 'R1S', 'Reliability', 'Compatibility',
                     'Testresult', 'ESD', 'EMI', 'RF', 'PMsummary', 'Controlrun', 'Comments', 'editor', 'edit_time', )
     # 列表里显示想要显示的字段
     list_per_page = 500
@@ -219,7 +219,7 @@ class CQMAdmin(admin.ModelAdmin):
         # ('Phase', UnionFieldListFilter),
     )
     search_fields = ('Projectinfo__Project', 'Customer', 'Project', 'Phase', 'Material_Group', 'Keyparts', 'Character', 'PID', 'VID',
-                     'HW',  'FW',  'Supplier',  'R1_PN_Description',  'Compal_R1_PN', 'Compal_R3_PN', 'Reliability', 'Compatibility',
+                     'HW',  'FW',  'Supplier',  'R1_PN_Description',  'Compal_R1_PN', 'Compal_R3_PN', 'R1S', 'Reliability', 'Compatibility',
                     'Testresult', 'ESD', 'EMI', 'RF', 'PMsummary', 'Controlrun', 'Comments', 'editor', 'edit_time',)  # 搜索字段
     # date_hierarchy = 'Start_time'  # 详细时间分层筛选
 

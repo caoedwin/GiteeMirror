@@ -216,6 +216,8 @@ input:focus{
 
           <el-table-column prop="Compal_R3_PN" label="Compal_R3_PN" align="center" width="140" sortable='custom'></el-table-column>
 
+          <el-table-column prop="R1S" label="R1S" align="center" width="140" sortable='custom'></el-table-column>
+
           <el-table-column prop="Comments" label="Comments" align="left" width="400" sortable='custom'>
               <template slot-scope="scope">
                   <el-tooltip class="item" effect="dark" placement="top">
@@ -386,6 +388,9 @@ $(document).ready(function() {
                     this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
                     console.log(this.dataList);
                 }else if (column.prop === 'Compal_R3_PN') {
+                    this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    console.log(this.dataList);
+                }else if (column.prop === 'R1S') {
                     this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
                     console.log(this.dataList);
                 }else if (column.prop === 'Phase') {

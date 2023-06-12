@@ -21,7 +21,7 @@ headermodel_CQM = {
                       'Testresult': 'Testresult','ESD': 'ESD',
                       'EMI': 'EMI','RF': 'RF',
                       'PMsummary': 'PMsummary','Controlrun': 'Controlrun',
-                      'Comments': 'Comments',
+                      'Comments': 'Comments', 'R1S': 'R1S',
 
 }
 # Create your views here.
@@ -102,10 +102,11 @@ def CQM_upload(request):
                                   'Supplier': request.POST.get('Supplier'), 'R1_PN_Description': request.POST.get('R1_PN_Description'),
                                   'Compal_R1_PN': request.POST.get('Compal_R1_PN'),
                                   'Compal_R3_PN': request.POST.get('Compal_R3_PN'),
+                                  'R1S': request.POST.get('R1S'),
 
                                  }
                     if request.POST.get('Comments'):
-                        Comments = request.session.get('user_name') +  '(%s)' % datetime.datetime.now().strftime(
+                        Comments = request.session.get('user_name') + '(%s)' % datetime.datetime.now().strftime(
                             "%Y-%m-%d %H:%M:%S") + ":" + '\n' + request.POST.get('Comments')
                     else:
                         Comments = ''
@@ -119,6 +120,7 @@ def CQM_upload(request):
                                   'Supplier': request.POST.get('Supplier'), 'R1_PN_Description': request.POST.get('R1_PN_Description'),
                                   'Compal_R1_PN': request.POST.get('Compal_R1_PN'),
                                   'Compal_R3_PN': request.POST.get('Compal_R3_PN'),
+                                  'R1S': request.POST.get('R1S'),
                                 'Reliability':request.POST.get('Reliability'),'Compatibility':request.POST.get('Compatibility'),
                                 'Testresult':request.POST.get('Testresult'),'ESD':request.POST.get('ESD'),
                                 'EMI':request.POST.get('EMI'),'RF':request.POST.get('RF'),
@@ -135,14 +137,13 @@ def CQM_upload(request):
                             # message_err=1
                             result = 1
                         else:
-                            print(Create_dic)
+                            # print(Create_dic)
                             CQM.objects.create(**Create_dic)
             else:
                 cleandata=CQM_M_lists.errors
         if 'type' in request.POST:
             # print(request.POST.get('type'))
             xlsxlist = request.POST.get('upload')
-            # print (simplejson.loads(xlsxlist))
             CQMList=[{'Customer':'Customer','Project':'Project','Phase':'Phase',
                      #  'Material_Group': 'Material_Group',
                      # 'Keyparts':'Keyparts','Character':'Character','PID':'PID',
@@ -152,7 +153,7 @@ def CQM_upload(request):
                      #  'Material_Group': 'Material_Group',
                      # 'Keyparts':'Keyparts','Character':'Character','PID':'PID',
                      # 'VID':'VID','HW':'HW','FW': 'FW','Supplier': 'Supplier','R1_PN_Description': 'R1_PN_Description',
-                      'Compal_R1_PN': 'Compal_R1_PN','Compal_R3_PN': 'Compal_R3_PN',}]
+                      'Compal_R1_PN': 'Compal_R1_PN', 'Compal_R3_PN': 'Compal_R3_PN',}]
             num = 1
             for i in simplejson.loads(xlsxlist):
                 if num > 1:
@@ -565,13 +566,10 @@ def CQM_upload(request):
                                     if i[j]:
                                         updatedic[j] = request.session.get('user_name') + '(%s)' % datetime.datetime.now().strftime(
                                             "%Y-%m-%d %H:%M:%S") + ":" + '\n' + i[j]
-
-                                        # print(updatedic[j])
                                 else:
                                     updatedic[j] = i[j]
                             updatedic['editor'] = request.session.get('user_name')
                             updatedic['edit_time'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                            # print(updatedic)
                             CQM.objects.create(**updatedic)
                             uploadsuccess.append(Check_dic)
             datajason = {
@@ -713,7 +711,7 @@ def CQM_edit(request):
             # print(check_dic)
             for i in CQM.objects.filter(**check_dic):
                 mock_data.append({"id":i.id, "Customer": i.Customer, 'Project':i.Project, "Phase":i.Phase, "Material_Group":i.Material_Group, "Keyparts":i.Keyparts,
-                                  "Character":i.Character, "PID":i.PID, "VID":i.VID, "HW":i.HW,
+                                  "Character":i.Character, "PID":i.PID, "VID":i.VID, "HW":i.HW,"R1S":i.R1S,
                                   "FW":i.FW, "Supplier":i.Supplier, "R1_PN_Description":i.R1_PN_Description, "Compal_R1_PN":i.Compal_R1_PN,
                                   "Compal_R3_PN":i.Compal_R3_PN,"Reliability":i.Reliability, "Compatibility":i.Compatibility,
                                   "Testresult":i.Testresult, "ESD":i.ESD, "EMI":i.EMI, "RF":i.RF,
@@ -790,7 +788,7 @@ def CQM_edit(request):
             update_dic = {'Project': resdata['Project'], 'Phase': resdata['Phase'], 'Material_Group': resdata['Material_Group'], 'Keyparts': resdata['Keyparts'],
                         'Character':resdata['Character'], 'PID': resdata['PID'], 'VID':resdata['VID'],
                         'HW':resdata['HW'], 'FW':resdata['FW'], 'Supplier':resdata['Supplier'],
-                        'R1_PN_Description':resdata['R1_PN_Description'], 'Compal_R1_PN':resdata['Compal_R1_PN'],
+                        'R1_PN_Description':resdata['R1_PN_Description'], 'Compal_R1_PN':resdata['Compal_R1_PN'],'R1S':resdata['R1S'],
                         'Compal_R3_PN':resdata['Compal_R3_PN'], 'Reliability':resdata['Reliability'],
                         'Compatibility':resdata['Compatibility'], 'Testresult':resdata['Testresult'], 'ESD': resdata['ESD'], 'EMI':resdata['EMI'],
                         'RF':resdata['RF'], 'PMsummary':resdata['PMsummary'],'Controlrun':resdata['Controlrun'],
@@ -848,7 +846,7 @@ def CQM_edit(request):
                                   "Material_Group": i.Material_Group, "Keyparts": i.Keyparts,
                                   "Character": i.Character, "PID": i.PID, "VID": i.VID, "HW": i.HW,
                                   "FW": i.FW, "Supplier": i.Supplier, "R1_PN_Description": i.R1_PN_Description,
-                                  "Compal_R1_PN": i.Compal_R1_PN,
+                                  "Compal_R1_PN": i.Compal_R1_PN, "R1S": i.R1S,
                                   "Compal_R3_PN": i.Compal_R3_PN, "Reliability": i.Reliability,
                                   "Compatibility": i.Compatibility,
                                   "Testresult": i.Testresult, "ESD": i.ESD, "EMI": i.EMI, "RF": i.RF,
@@ -886,7 +884,7 @@ def CQM_edit(request):
                                   "Material_Group": i.Material_Group, "Keyparts": i.Keyparts,
                                   "Character": i.Character, "PID": i.PID, "VID": i.VID, "HW": i.HW,
                                   "FW": i.FW, "Supplier": i.Supplier, "R1_PN_Description": i.R1_PN_Description,
-                                  "Compal_R1_PN": i.Compal_R1_PN,
+                                  "Compal_R1_PN": i.Compal_R1_PN, "R1S": i.R1S,
                                   "Compal_R3_PN": i.Compal_R3_PN, "Reliability": i.Reliability,
                                   "Compatibility": i.Compatibility,
                                   "Testresult": i.Testresult, "ESD": i.ESD, "EMI": i.EMI, "RF": i.RF,
@@ -1052,12 +1050,12 @@ def CQM_search(request):
             # if check_dic:
             if CQM.objects.filter(**check_dic):
                 for i in CQM.objects.filter(**check_dic):
-                    print(i.Projectinfo, i.Customer,i.Project)
+                    # print(i.Projectinfo, i.Customer,i.Project)
                     mock_data.append({"id": i.id, "Customer": i.Customer, 'Project': i.Project, "Phase": i.Phase,
                                       "Material_Group": i.Material_Group, "Keyparts": i.Keyparts,
                                       "Character": i.Character, "PID": i.PID, "VID": i.VID, "HW": i.HW,
                                       "FW": i.FW, "Supplier": i.Supplier, "R1_PN_Description": i.R1_PN_Description,
-                                      "Compal_R1_PN": i.Compal_R1_PN,
+                                      "Compal_R1_PN": i.Compal_R1_PN, "R1S": i.R1S,
                                       "Compal_R3_PN": i.Compal_R3_PN, "Reliability": i.Reliability,
                                       "Compatibility": i.Compatibility,
                                       "Testresult": i.Testresult, "ESD": i.ESD, "EMI": i.EMI, "RF": i.RF,

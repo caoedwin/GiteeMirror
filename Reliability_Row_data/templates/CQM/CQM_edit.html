@@ -334,7 +334,13 @@
             <template slot-scope="scope">
             <el-input class="edit-cell" v-if="showEdit[scope.$index] && (statu === 4 || statu === 5)&&canEdit "    v-model="scope.row.Compal_R3_PN"></el-input>
                 <span v-else="showEdit[scope.$index] && (statu === 4 || statu === 5)">${ compal_r3[scope.$index+(currentPage-1)*pageSize] }</span>
-       </template>
+            </template>
+        </el-table-column>
+        <el-table-column label="R1S" align="center" width="116">
+            <template slot-scope="scope">
+            <el-input class="edit-cell" v-if="showEdit[scope.$index] && (statu === 4 || statu === 5)&&canEdit "    v-model="scope.row.R1S"></el-input>
+                <span v-else="showEdit[scope.$index] && (statu === 4 || statu === 5)">${ r1s[scope.$index+(currentPage-1)*pageSize] }</span>
+            </template>
         </el-table-column>
         <el-table-column label="Comments" width="400" align="left">
                 <template slot-scope="scope">
@@ -431,6 +437,7 @@ $(document).ready(function() {
              r1_pn:[],
              compal_r1:[],
              compal_r3:[],
+             r1s:[],
              phase:[],
              reliability:[],
              compatibility:[],
@@ -542,6 +549,7 @@ $(document).ready(function() {
                         this.r1_pn[i] = this.tableContent[i].R1_PN_Description;
                         this.compal_r1[i] = this.tableContent[i].Compal_R1_PN;
                         this.compal_r3[i] = this.tableContent[i].Compal_R3_PN;
+                        this.r1s[i] = this.tableContent[i].R1S;
                         this.phase[i] = this.tableContent[i].Phase;
                         this.reliability[i] = this.tableContent[i].Reliability;
                         this.compatibility[i] = this.tableContent[i].Compatibility;
@@ -605,6 +613,7 @@ $(document).ready(function() {
                         this.r1_pn[i] = this.tableContent[i].R1_PN_Description;
                         this.compal_r1[i] = this.tableContent[i].Compal_R1_PN;
                         this.compal_r3[i] = this.tableContent[i].Compal_R3_PN;
+                        this.r1s[i] = this.tableContent[i].R1S;
                         this.reliability[i] = this.tableContent[i].Reliability;
                         this.compatibility[i] = this.tableContent[i].Compatibility;
                         this.testresult[i] = this.tableContent[i].Testresult;
@@ -641,6 +650,7 @@ $(document).ready(function() {
             this.tableContent[index].R1_PN_Description=this.r1_pn[index];
             this.tableContent[index].Compal_R1_PN=this.compal_r1[index];
             this.tableContent[index].Compal_R3_PN=this.compal_r3[index];
+            this.tableContent[index].R1S=this.r1s[index];
             this.tableContent[index].Phase=this.phase[index];
             this.tableContent[index].Reliability=this.reliability[index];
             this.tableContent[index].Compatibility=this.compatibility[index];
@@ -808,6 +818,7 @@ $(document).ready(function() {
                         this.r1_pn[i] = this.tableContent[i].R1_PN_Description;
                         this.compal_r1[i] = this.tableContent[i].Compal_R1_PN;
                         this.compal_r3[i] = this.tableContent[i].Compal_R3_PN;
+                        this.r1s[i] = this.tableContent[i].R1S;
                         this.phase[i] = this.tableContent[i].Phase;
                         this.reliability[i] = this.tableContent[i].Reliability;
                         this.compatibility[i] = this.tableContent[i].Compatibility;

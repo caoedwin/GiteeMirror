@@ -4692,8 +4692,10 @@ def Summary1(request):
                 if j in i.keys():
                     hang_Sum += i[j]
                     mounthnum2 += 1
-            i["Average"] =round(hang_Sum / mounthnum2, 2)
-
+            if i["Program"]== "人数":
+                i["Average"] =round(hang_Sum / mounthnum2)
+            else:
+                i["Average"] = round(hang_Sum / mounthnum2, 1)
         for i in overtimeTable1:
             monthDiagram1Data_data = []
             monthDiagram2Data_data = []

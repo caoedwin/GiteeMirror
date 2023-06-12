@@ -724,3 +724,75 @@ TypeError: 'bool' object is not callable
 [2023-05-03 17:04:40,331] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-03 17:04:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-edit/ POST
 [2023-05-03 17:04:40,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 200 14244
 [2023-05-03 17:04:46,804] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/departments/ HTTP/1.1" 200 511688
+[2023-05-05 11:50:35,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PersonalInfo-edit/ HTTP/1.1" 302 0
+[2023-05-05 11:50:35,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-05-05 11:50:36,167] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-05-05 11:50:36,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-05-05 11:50:40,982] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 11:50:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-05-05 11:50:41,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-05-05 11:50:41,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-05-05 11:50:41,669] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47607
+[2023-05-05 11:50:41,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 11:52:09,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/PublicArea/ HTTP/1.1" 200 47499
+[2023-05-05 11:52:10,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 11:52:10,211] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 11:52:10 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/PublicArea/ POST
+[2023-05-05 11:52:10,224] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PublicArea/ HTTP/1.1" 200 10612
+[2023-05-05 11:52:16,897] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/ManPower-edit/ HTTP/1.1" 200 62479
+[2023-05-05 11:52:17,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 11:52:17,531] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 11:52:17 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/ManPower-edit/ POST
+[2023-05-05 11:52:17,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/ManPower-edit/ HTTP/1.1" 200 47061
+[2023-05-05 11:52:27,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 66372
+[2023-05-05 11:52:27,819] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/fonts/element-icons.woff HTTP/1.1" 304 0
+[2023-05-05 11:52:27,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 11:52:29,220] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 11:52:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 11:52:29,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 13398
+[2023-05-05 11:52:34,922] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 11:52:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 11:52:34,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 12:59:19,000] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 12:59:18 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 12:59:19,026] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 13:23:40,993] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 13:23:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 13:23:41,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 13:59:25,648] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 13:59:25 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 13:59:25,665] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 14:14:33,564] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 14:14:33 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 14:14:33,580] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 16:27:52,139] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:27:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:27:52,179] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1894
+[2023-05-05 16:27:55,959] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:27:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:27:55,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 16:29:46,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-05-05 16:29:46,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-05-05 16:29:46,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:29:53,227] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:29:53 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2023-05-05 16:29:53,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-05-05 16:29:54,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42087
+[2023-05-05 16:29:54,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:29:56,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:30:00,544] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/departments/ HTTP/1.1" 200 511688
+[2023-05-05 16:30:00,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:30:06,484] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:30:17,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfo/ HTTP/1.1" 200 3012311
+[2023-05-05 16:30:17,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:31:39,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfo/?GroupNum=20564439 HTTP/1.1" 200 295122
+[2023-05-05 16:31:40,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:31:49,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfo/13062/change/?_changelist_filters=GroupNum%3D20564439 HTTP/1.1" 200 40833
+[2023-05-05 16:31:49,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:32:03,222] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:33:14,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:33:28,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:34:19,123] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22870
+[2023-05-05 16:34:24,567] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:34:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/PersonalInfo/personalinfo/13062/change/ POST
+[2023-05-05 16:34:24,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/PersonalInfo/personalinfo/13062/change/?_changelist_filters=GroupNum%3D20564439 HTTP/1.1" 200 41222
+[2023-05-05 16:34:24,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:34:38,118] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:34:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/PersonalInfo/personalinfo/13062/change/ POST
+[2023-05-05 16:34:38,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/PersonalInfo/personalinfo/13062/change/?_changelist_filters=GroupNum%3D20564439 HTTP/1.1" 302 0
+[2023-05-05 16:34:38,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/PersonalInfo/personalinfo/?GroupNum=20564439 HTTP/1.1" 200 295293
+[2023-05-05 16:34:38,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-05-05 16:34:47,380] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:34:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:34:47,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1894
+[2023-05-05 16:34:50,249] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:34:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:34:50,267] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1929
+[2023-05-05 16:34:58,031] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:34:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:34:58,054] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1894
+[2023-05-05 16:42:21,145] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-05-05 16:42:21 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-05-05 16:42:21,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 1894
