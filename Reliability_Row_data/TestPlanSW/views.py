@@ -1605,7 +1605,7 @@ def TestPlanSW_summary(request):
                 # print(Projectlist_top)
                 Projectlist_top = list(set(Projectlist_top))
                 Phaselist_top = list(set(Phaselist_top))
-                Phasesortorder = {'B(FVT)': 0, 'C(SIT)': 1, 'SIT2': 2, 'GSKU': 3, 'FFRT': 4, 'FFRT2': 5, 'FFRT3': 6, 'FFRT4': 7,
+                Phasesortorder = {'B(FVT)': 0, 'C(SIT)': 1, 'SIT2': 2, 'GSKU': 3, 'Downgrade': 22, 'FFRT': 4, 'FFRT2': 5, 'FFRT3': 6, 'FFRT4': 7,
                                   'FFRT5': 8, 'FFRT6': 9, 'Wave': 10, 'Wave2': 11, 'Wave3': 12, 'Wave4': 13,
                                   'Wave5': 14, 'OOC': 15, 'OOC2': 16, 'OOC3': 17, 'OOC4': 18, 'OOC5': 19, 'OOC6': 20,
                                   'Others': 21}
@@ -2388,6 +2388,8 @@ def TestPlanSW_Edit(request):
                     PhaseValue = 20
                 if m['Phase'] == "Others":
                     PhaseValue = 21
+                if m['Phase'] == "Downgrade":
+                    PhaseValue = 22
                 phaselist.append(PhaseValue)
             Projectinfo['phase'] = phaselist
             Projectinfo['project'] = j['Project']
@@ -2471,6 +2473,9 @@ def TestPlanSW_Edit(request):
             if Phase == '21':
                 Phase = 'Others'
                 PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                PhaseinItem = ['C(SIT)', 'FFRT']
 
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
@@ -2680,6 +2685,9 @@ def TestPlanSW_Edit(request):
             if Phase == '21':
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -2961,6 +2969,9 @@ def TestPlanSW_Edit(request):
             if Phase == '21':
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -3262,6 +3273,9 @@ def TestPlanSW_Edit(request):
             if Phase == '21':
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # update 直接找到这条的ID就可以了，他的关联的Test Item是不会变的。
             # for h in PhaseinItem:
             #     dic_Item = {'Customer': Customer, 'Phase': h}
@@ -3479,6 +3493,9 @@ def TestPlanSW_Edit(request):
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # submit目前只有FFRT会有新增，其他的不会有，所以值加到RetestItemSW里面，他没有关联TestItem
             # for h in PhaseinItem:
             #     dic_Item = {'Customer': Customer, 'Phase': h}
@@ -3647,6 +3664,9 @@ def TestPlanSW_Edit(request):
                 if Phase == '21':
                     Phase = 'Others'
                     # PhaseinItem = ['Others']
+                if Phase == '22':
+                    Phase = 'Downgrade'
+                    # PhaseinItem = ['C(SIT)', 'FFRT']
                 # print(Phase)
                 dic_Project = {'Customer': responseData['customer'],
                                'Project': responseData['project'], 'Phase': Phase}
@@ -5172,6 +5192,9 @@ def TestPlanSW_Edit(request):
             if Phase == '21':
                 Phase = 'Others'
                 PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                PhaseinItem = ['C(SIT)', 'FFRT']
 
             dic_Project_search = {'Customer': responseData['customer'],
                                'Project': responseData['project'], 'Phase': Phase}
@@ -5470,6 +5493,8 @@ def TestPlanSW_search(request):
                     PhaseValue = 20
                 if m['Phase'] == "Others":
                     PhaseValue = 21
+                if m['Phase'] == "Downgrade":
+                    PhaseValue = 22
                 phaselist.append(PhaseValue)
             Projectinfo['phase'] = phaselist
             Projectinfo['project'] = j['Project']
@@ -5554,6 +5579,9 @@ def TestPlanSW_search(request):
             if Phase == '21':
                 Phase = 'Others'
                 PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                PhaseinItem = ['C(SIT)', 'FFRT']
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
             # func = lambda z: dict([(x, y) for y, x in z.items()])
@@ -5714,6 +5742,9 @@ def TestPlanSW_search(request):
             if Phase == '21':
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -6279,6 +6310,9 @@ def TestPlanSW_search(request):
             if Phase == '21':
                 Phase = 'Others'
                 # PhaseinItem = ['Others']
+            if Phase == '22':
+                Phase = 'Downgrade'
+                # PhaseinItem = ['C(SIT)', 'FFRT']
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
