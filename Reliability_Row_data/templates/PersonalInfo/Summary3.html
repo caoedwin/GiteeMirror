@@ -96,6 +96,7 @@ background-color: rgba(255,255,255,0.1);
                            <el-table-column prop="DepartureDate" label="離職日期" align="center" sortable='custom'></el-table-column>
                            {% comment %}<el-table-column prop="LastPerformance" label="最近一次績效" align="center" sortable='custom'></el-table-column>{% endcomment %}
                            <el-table-column prop="DepartureReasons" label="離職去向" align="center" sortable='custom'></el-table-column>
+                           <el-table-column prop="QuitReason" label="离职原因" align="center" sortable='custom'></el-table-column>
                        </el-table>
                       <div class="block">
                         <el-pagination  @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[1, 2, 100, 200]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="total_computed">
@@ -377,6 +378,9 @@ background-color: rgba(255,255,255,0.1);
                     }else if (column.prop === 'LastPerformance') {
                         this.dataList = this.perinTable.sort(this.sortFun(column.prop, column.order === 'ascending'));
                     }else if (column.prop === 'DepartureReasons') {
+                        this.dataList = this.perinTable.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                        console.log(this.dataList);
+                    }else if (column.prop === 'QuitReason') {
                         this.dataList = this.perinTable.sort(this.sortFun(column.prop, column.order === 'ascending'));
                         console.log(this.dataList);
                     }

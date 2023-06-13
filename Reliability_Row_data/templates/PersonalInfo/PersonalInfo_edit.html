@@ -181,7 +181,7 @@ label{
           <br/>
          <el-button  type="danger" v-if="permission===1" @click="multiDelete" style="margin-left: 20px;">批量刪除</el-button>
          <el-button @click="appendData()" v-if="permission===1" v-cloak type="success" style="margin-left: 20px;">新增信息</el-button>
-     <el-dialog :visible.sync="appendss">
+     <el-dialog :visible.sync="appendss" :close-on-click-modal="false">
            <template>
             <el-form ref="form"  :model="form" :rules="rules"  :label-position="labelPosition" label-width="130px">
                   <el-form-item label="狀態" prop="Status">
@@ -418,7 +418,7 @@ label{
              </el-form>
         </template>
      </el-dialog>
-    <el-dialog :visible.sync="update">
+    <el-dialog :visible.sync="update" :close-on-click-modal="false">
         <template>
              <el-form ref="form"  :model="form"  :label-position="labelPosition" label-width="130px">
                   <el-form-item label="狀態">

@@ -50,22 +50,22 @@ class DepartmentsAdmin(admin.ModelAdmin):
 @admin.register(Positions)
 class PositionsAdmin(admin.ModelAdmin):
 
-    list_display = ('Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',)
+    list_display = ('Year', 'Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',)
     # 列表里显示想要显示的字段
     list_per_page = 500
     # 满50条数据就自动分页
-    ordering = ('-Item',)
+    ordering = ('-Year',)
     #后台数据列表排序方式
     list_display_links = ('Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',)
     # 设置哪些字段可以点击进入编辑界面
     # list_editable = ('Object',)
     # 筛选器
     list_filter = (
-        'Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',
+        'Year', 'Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',
         # ('Customer', UnionFieldListFilter),
         # ('Phase', UnionFieldListFilter),
     )
-    search_fields = ('Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',)  # 搜索字段
+    search_fields = ('Year', 'Grade', 'Item', 'Nationality', 'Positions_Code', 'Positions_Name',)  # 搜索字段
     # date_hierarchy = 'Start_time'  # 详细时间分层筛选
 
 @admin.register(MajorIfo)

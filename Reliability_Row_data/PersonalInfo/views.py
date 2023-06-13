@@ -7185,33 +7185,47 @@ def Summary3(request):
             YearNow = str(datetime.datetime.now().year)
             # 离职人员信息
             if not YearSearch or YearSearch == YearNow:
-                for Per in PersonalInfo.objects.filter(Status="離職"):
+                for Per in PersonalInfo.objects.filter(Status="離職").order_by("-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
+                    Positions_SearchYear = Per.QuitDate.strftime('%Y')
+                    # print(Positions_SearchYear, Positions.objects.filter(Item=Per.PositionNow,
+                    #                                                      Year=Positions_SearchYear))
                     perinTable.append(
                         {"RegistrationDate": Per.RegistrationDate.strftime('%Y-%m-%d'), "Seniority": Seniority,
                          "Customer": Per.Customer, "Department": Per.Department,
                          "Lesson": Per.DepartmentCode, "GroupEmployees": Per.GroupNum, "ChineseName": Per.CNName,
                          "EnglishName": Per.EngName,
-                         "Gender": Per.Sex, "CurrentTitle": Per.PositionNow,
+                         "Gender": Per.Sex,
+                         "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
+                                                                  Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
+                             Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
+                         Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
-                         "DepartureReasons": Per.Whereabouts}
+                         "DepartureReasons": Per.Whereabouts,
+                         "QuitReason": Per.QuitReason,}
                     )
             else:
-                for Per in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]):
+                for Per in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).order_by("-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
+                    Positions_SearchYear = Per.QuitDate.strftime('%Y')
                     perinTable.append(
                         {"RegistrationDate": Per.RegistrationDate.strftime('%Y-%m-%d'), "Seniority": Seniority,
                          "Customer": Per.Customer,
                          "Department": Per.Department,
                          "Lesson": Per.DepartmentCode, "GroupEmployees": Per.GroupNum, "ChineseName": Per.CNName,
                          "EnglishName": Per.EngName,
-                         "Gender": Per.Sex, "CurrentTitle": Per.PositionNow,
+                         "Gender": Per.Sex,
+                         "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
+                                                                  Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
+                             Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
+                         Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
-                         "DepartureReasons": Per.Whereabouts}
+                         "DepartureReasons": Per.Whereabouts,
+                         "QuitReason": Per.QuitReason,}
                     )
 
             # 離職去向分析
@@ -8091,7 +8105,7 @@ def Summary3(request):
             print(Search_Endperiod)
             if Search_Endperiod == ['']:
                 # print(PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by("QuitDate"))
-                if PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by("QuitDate"):
+                if PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by("-QuitDate"):
                     Search_start = PersonalInfo.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
                         "QuitDate").first()["QuitDate"].strftime("%Y-%m-%d")
                 if PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
@@ -8104,34 +8118,47 @@ def Summary3(request):
 
             # 离职人员信息
             if not YearSearch or YearSearch == YearNow:
-                for Per in PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod):
+                for Per in PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod).order_by("-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
+                    Positions_SearchYear = Per.QuitDate.strftime('%Y')
                     perinTable.append(
                         {"RegistrationDate": Per.RegistrationDate.strftime('%Y-%m-%d'), "Seniority": Seniority,
                          "Customer": Per.Customer, "Department": Per.Department,
                          "Lesson": Per.DepartmentCode, "GroupEmployees": Per.GroupNum, "ChineseName": Per.CNName,
                          "EnglishName": Per.EngName,
-                         "Gender": Per.Sex, "CurrentTitle": Per.PositionNow,
+                         "Gender": Per.Sex,
+                         "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
+                                                                  Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
+                             Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
+                         Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
-                         "DepartureReasons": Per.Whereabouts}
+                         "DepartureReasons": Per.Whereabouts,
+                         "QuitReason": Per.QuitReason,
+                         }
                     )
             else:
                 for Per in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
-                                                                QuitDate__range=Search_Endperiod):
+                                                                QuitDate__range=Search_Endperiod).order_by("-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
+                    Positions_SearchYear = Per.QuitDate.strftime('%Y')
                     perinTable.append(
                         {"RegistrationDate": Per.RegistrationDate.strftime('%Y-%m-%d'), "Seniority": Seniority,
                          "Customer": Per.Customer,
                          "Department": Per.Department,
                          "Lesson": Per.DepartmentCode, "GroupEmployees": Per.GroupNum, "ChineseName": Per.CNName,
                          "EnglishName": Per.EngName,
-                         "Gender": Per.Sex, "CurrentTitle": Per.PositionNow,
+                         "Gender": Per.Sex,
+                         "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
+                                                                  Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
+                             Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
+                         Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
-                         "DepartureReasons": Per.Whereabouts}
+                         "DepartureReasons": Per.Whereabouts,
+                         "QuitReason": Per.QuitReason,}
                     )
             # print(perinTable)
 
