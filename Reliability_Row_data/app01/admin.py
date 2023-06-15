@@ -942,15 +942,31 @@ class PermissionAdmin(admin.ModelAdmin):
 class RoleAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields' : ('name','perms')
+            'fields' : ('name', 'perms')
         }),
         # ('Advanced options',{
         #     'classes': ('collapse',),
         #     'fields' : ('Start_time', 'End_time', 'Result_time','Result','Comments')
         # }),
     )
+    list_display = ('name', 'show_pers', 'show_users')
+    def show_users(self, obj):
+        user_list = []
+        for user in obj.userinfo_set.all():
+            # print(user)
+            user_list.append(user.username)
+        return '， '.join(user_list)
+
+    show_users.short_description = '成員'  # 设置表头
+    def show_pers(self, obj):
+        per_list = []
+        for perm in obj.perms.all():
+            print(perm,1)
+            per_list.append(perm.url)
+        return '， '.join(per_list)
+
+    show_pers.short_description = '權限'  # 设置表头
     filter_horizontal = ('perms',)
-    list_display = ('name',)
     # 列表里显示想要显示的字段
     list_per_page = 200
     # 满50条数据就自动分页
