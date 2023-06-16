@@ -126,15 +126,6 @@
     <div style="margin-top: 20px">
     <el-button type="danger" v-if="multipleSelectionFlag" @click="multiDelete">批量删除</el-button>
   </div>
-    <el-table stripe border {% comment %}height="700"{% endcomment %} ref="multipleTable" :data="excel_dic" tooltip-effect="dark" style="width: 95% ;heighrt:200;"
-   {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}
-            :cell-style="cellStyle"
-   v-loading="tableloading"
-  element-loading-text="數據更新中，請稍後"
-  border>
-    <el-table-column v-if="key_list[0]" v-for="(item,index) in key_list" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item">
-      </el-table-column>
-   </el-table>
 </template>
 
 </div>
@@ -156,8 +147,6 @@
 
                 visible: false,
                 tableContent: [],
-                excel_dic: [],
-                key_list: [],
                 multipleSelectionFlag:false,
                 multiDeleteVisible:false,
                 multipleSelection: [],
@@ -273,10 +262,6 @@
                 }).then((res) => {
                   {#console.log(res.data.content,'search');#}
                   this.tableContent=res.data.content;
-                  {#console.log(res.data);#}
-                  {#console.log(res.data.err_ok);#}
-                   this.excel_dic=res.data.excel_dic;
-                  this.key_list=res.data.key_list;
                   for(let i=0;i<this.tableContent.length;i++){
                         this.Customer[i]=this.tableContent[i].Customer;
                         this.Phase[i]=this.tableContent[i].Phase;
@@ -458,33 +443,7 @@
                     // 如不进行判断则勾选完毕后批量删除按钮还是会在
                     this.multipleSelectionFlag = false;
                 }
-            },
-            cellStyle({row,column,rowIndex,columnIndex}){
-                console.log(columnIndex);
-                {#console.log(columnIndex,row[key_list[columnIndex]]);#}
-                {#console.log(column);#}
-              {#  if (Object === 'P' ) {#}
-              {#    return {#}
-              {#        background: '#a8c97f'#}
-              {#    }#}
-              {#}#}
-              {#if (Object === 'F' ) {#}
-              {#    return {#}
-              {#        background: '#F56C6C'#}
-              {#    }#}
-              {#}#}
-              {#if (Object === 'NS' ) {#}
-              {#    return {#}
-              {#        background: '#8b968d'#}
-              {#    }#}
-              {#}#}
-              {#if (Object === 'B' ) {#}
-              {#    return {#}
-              {#        background: 'oldlace'#}
-              {#    }#}
-              {#}#}
-
-      },
+            }
         }
     })
 </script>

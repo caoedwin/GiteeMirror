@@ -1047,9 +1047,9 @@ p {
                             type: 'value',
                             name: '加班/人',
                             min: 0,
-                            max: 100,
+                            {#max: 100,#}
                             {#max: Math.ceil(Math.max.apply(null,this.DataCustomer)/5)*5,#}
-                            interval: 12.5,
+                            {#interval: 12.5,#}
                             {#interval: Math.ceil(Math.max.apply(null,this.DataCustomer)/5),#}
                             axisLabel: {
                                 formatter: '{value}'

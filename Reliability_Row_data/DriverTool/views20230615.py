@@ -156,41 +156,6 @@ def DriverList_upload(request):
         DriverList_M_lists = DriverList()
         return render(request, 'DriverTool/DriverList_upload.html', locals())
     return render(request, 'DriverTool/DriverList_upload.html',locals())
-
-import pandas as pd
-import pprint
-from pathlib import Path
-import os, sys
-def read_excel(src_file,header=0,sheetnum=0):
-    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
-         0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-    # # 显示所有列
-    pd.set_option('display.max_columns', None)
-    # # 显示所有行
-    # pd.set_options('display.max_rows', None)
-    # pprint.pprint(df)
-    dataexcel = df.values[:, :]
-    # datatest = []
-    # for i in dataexcel:
-    #     ls = []
-    #     for j in i:
-    #         ls.append(j)
-    #     datatest.append(ls)
-    # print(list(df.columns))
-    # pprint.pprint(datatest)
-    df = df.fillna('')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)是虽然不报错，但是传到前端反序列化后无法获取数据
-    excel_dic = df.to_dict('records')
-    key_data = list(df.columns)
-    # pprint.pprint(excel_dic)
-    df.to_excel('C:/media/ABOTestPlan/upload.xlsx', sheet_name="sheet1", index=False,
-                engine='openpyxl')
-    with pd.ExcelWriter(src_file, engine="openpyxl", mode='a', if_sheet_exists='replace') as writer:
-        df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
-    return excel_dic,key_data
-
-
-
-
 @csrf_exempt
 def DriverList_edit(request):
     if not request.session.get('is_login', None):
@@ -235,8 +200,6 @@ def DriverList_edit(request):
     image = [
         # {"Image": "v24.1 GMl"}, {"Image": "v22.0 GMl"}
     ]
-    excel_dic = []
-    key_list = []
 
     for i in DriverList_M.objects.all().values('Customer').distinct().order_by('Customer'):
         Customerlist=[]
@@ -276,11 +239,6 @@ def DriverList_edit(request):
                 # print(i)
                 image.append({'Image' : i['Image']})
         if request.POST.get('isGetData') == 'SEARCH':
-            src_file = "C:/media/ABOTestPlan/0ba205ae62d8e3a58239c3c424393cb7.xlsx"
-            excel_dic = read_excel(src_file)[0]
-            print(type(excel_dic))
-            key_list = read_excel(src_file)[1]
-
             Customer= request.POST.get('Customer')
             Project=request.POST.get('Project')
             Phase=request.POST.get('Phase')
@@ -399,11 +357,9 @@ def DriverList_edit(request):
             "select": selectItem,
             "selectedDriver": dr,
             "selectedImage": image,
-            "excel_dic": excel_dic,
-            "key_list": key_list,
             # "status":status
         }
-        # print(type(json.dumps(data)),json.dumps(data))
+        # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'DriverTool/DriverList_edit.html', locals())
 

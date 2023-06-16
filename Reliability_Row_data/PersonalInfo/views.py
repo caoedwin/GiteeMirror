@@ -4825,6 +4825,10 @@ def Summary1(request):
                     {
                         'name': '平均加班',
                         'type': 'line',
+                        'label': {
+                            'show': 'true',
+                            'position': 'top'
+                        },
                         "smooth": 'true',  # 平滑曲线
                         'data': i['data']  # 對應月份 從一月到十二月
                     },
@@ -5189,6 +5193,9 @@ def Summary2(request):
                                   ("Nov", "-11-30"), ("Dec", "-12-31"), ]
                 # mounthlist = ["Jan", "Fer", "Mar", "Apr", "May", "Jun",
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
+                # print(PersonalInfo.objects.filter(~Q(transferDate__isnull=True)).filter(OldCustomer=''))#日期类型的字段不能用‘’，要用xxxx__isnull=True
+                # print(PersonalInfo.objects.exclude(Q(transferDate__isnull=True)).filter(OldCustomer=''))#日期类型的字段不能用‘’，要用xxxx__isnull=True
+                # print(PersonalInfo.objects.exclude(Q(transferDate__isnull=True)))
                 mounthnow = datetime.datetime.now().month
                 for i in PersonalInfo.objects.all().values("Customer").distinct().order_by("Customer"):
                     monthDiagram1Customer.append(i["Customer"])
@@ -5228,8 +5235,9 @@ def Summary2(request):
                                 OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
-                                                                         RegistrationDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
+                                                                         RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -5353,9 +5361,10 @@ def Summary2(request):
                                 OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
-                                                                                  RegistrationDate__range=Test_Endperiod).count()
+                                                                                  RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()
@@ -5995,8 +6004,9 @@ def Summary2(request):
                                 OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
-                                                                         RegistrationDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
+                                                                         RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -6124,9 +6134,10 @@ def Summary2(request):
                                 QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
-                                                                                  RegistrationDate__range=Test_Endperiod).count()
+                                                                                  RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()

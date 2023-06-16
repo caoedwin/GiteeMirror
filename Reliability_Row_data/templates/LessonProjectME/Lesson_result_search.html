@@ -537,6 +537,7 @@
       cellStyle({row,column,rowIndex,columnIndex}){
          let bg = '';//颜色临时存放量
           //生成出行号、列号、结果的集合
+          {#console.log(typeof (row.project), row.project)#}
          let resultArr = row.project.map((res,index) => {
              let colIndex = 8+2*index;
              return { result : res.result,index:colIndex,row:rowIndex} })

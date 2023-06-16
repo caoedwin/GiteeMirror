@@ -551,3 +551,183 @@ Traceback (most recent call last):
     per_list.append(perm.menu.title)
 AttributeError: 'NoneType' object has no attribute 'title'
 [2023-06-15 10:55:27,161] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/app01/role/ HTTP/1.1" 500 386765
+[2023-06-15 14:38:57,419] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 253, in DriverList_edit
+    read_excel()
+TypeError: read_excel() missing 1 required positional argument: 'src_file'
+[2023-06-15 14:38:57,429] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 91823
+[2023-06-15 14:39:40,935] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 253, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 165, in read_excel
+    df = pd.read_excel(src_file, header=5, sheet_name=int(sheetnum)).iloc[:,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1292, in parse
+    **kwds,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 537, in parse
+    sheet = self.get_sheet_by_index(asheetname)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 546, in get_sheet_by_index
+    self.raise_if_bad_sheet_by_index(index)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 469, in raise_if_bad_sheet_by_index
+    f"Worksheet index {index} is invalid, {n_sheets} worksheets found"
+ValueError: Worksheet index 2 is invalid, 2 worksheets found
+[2023-06-15 14:39:40,943] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 130687
+[2023-06-15 14:40:24,611] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 253, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 165, in read_excel
+    df = pd.read_excel(src_file, header=5, sheet_name=int(sheetnum)).iloc[:,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1292, in parse
+    **kwds,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 537, in parse
+    sheet = self.get_sheet_by_index(asheetname)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 546, in get_sheet_by_index
+    self.raise_if_bad_sheet_by_index(index)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 469, in raise_if_bad_sheet_by_index
+    f"Worksheet index {index} is invalid, {n_sheets} worksheets found"
+ValueError: Worksheet index 2 is invalid, 2 worksheets found
+[2023-06-15 14:40:24,619] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 130688
+[2023-06-15 14:42:02,765] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 253, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 167, in read_excel
+    pprint(df)
+TypeError: 'module' object is not callable
+[2023-06-15 14:42:02,767] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 96922
+[2023-06-15 15:59:29,053] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 273, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 182, in read_excel
+    engine='xlsxwriter')
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 835, in write
+    writer, engine=engine, storage_options=storage_options
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 199, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: 'C:/media/ABOTestPlan/upload.xlsx'
+[2023-06-15 15:59:29,057] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 147110
+[2023-06-15 16:00:18,281] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 273, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 183, in read_excel
+    with pd.ExcelWriter('C:/media/ABOTestPlan/upload1.xlsx', engine="openpyxl", mode='a', if_sheet_exists='overlay') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/media/ABOTestPlan/upload1.xlsx'
+[2023-06-15 16:00:18,283] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 127635
+[2023-06-15 16:01:19,087] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 273, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 183, in read_excel
+    with pd.ExcelWriter('C:/media/ABOTestPlan/upload.xlsx', engine="openpyxl", mode='a', if_sheet_exists='overlay') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 944, in __init__
+    f"'{if_sheet_exists}' is not valid for if_sheet_exists. "
+ValueError: 'overlay' is not valid for if_sheet_exists. Valid options are 'error', 'new' and 'replace'.
+[2023-06-15 16:01:19,101] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 122155
+[2023-06-15 16:12:39,166] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 273, in DriverList_edit
+    read_excel(src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 165, in read_excel
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1192, in __init__
+    content_or_path=path_or_buffer, storage_options=storage_options
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1071, in inspect_excel_format
+    content_or_path, "rb", storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/media/ABOTestPlan/0ba205ae62d8e3a58239c3c424393cb7.xlsx'
+[2023-06-15 16:12:39,169] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 123257
