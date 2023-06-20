@@ -1,0 +1,559 @@
+[2023-06-20 10:39:14,250] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 301, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 201, in save_exel
+    with pd.ExcelWriter('src_file', mode='a', engine='openpyxl') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'src_file'
+[2023-06-20 10:39:14,264] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 128568
+[2023-06-20 10:39:53,287] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 301, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 201, in save_exel
+    with pd.ExcelWriter('src_file', mode='a', engine='openpyxl') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'src_file'
+[2023-06-20 10:39:53,290] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 128568
+[2023-06-20 10:40:53,431] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 301, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 204, in save_exel
+    df.to_excel(writer, sheet_name=int(sheetnum), index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 449, in write_cells
+    wks.title = sheet_name
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\child.py", line 81, in title
+    raise ValueError("Title must have at least one character")
+ValueError: Title must have at least one character
+[2023-06-20 10:40:53,453] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 140468
+[2023-06-20 11:43:35,374] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 301, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 201, in save_exel
+    with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: 'C:/media/ABOTestPlan/do.xlsx'
+[2023-06-20 11:43:35,387] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 128749
+[2023-06-20 11:44:22,779] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 301, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 203, in save_exel
+    wb.remove(wb['st3'])  # 删除需要覆盖的sheet
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 289, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet st3 does not exist.'
+[2023-06-20 11:44:22,780] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 116206
+[2023-06-20 11:45:08,256] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 302, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 204, in save_exel
+    wb.remove(wb['st3'])  # 删除需要覆盖的sheet
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 289, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet st3 does not exist.'
+[2023-06-20 11:45:08,268] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 116191
+[2023-06-20 11:49:08,577] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 302, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 204, in save_exel
+    wb.remove(wb['st3'])  # 删除需要覆盖的sheet
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 289, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet st3 does not exist.'
+[2023-06-20 11:49:08,587] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 116204
+[2023-06-20 11:53:21,333] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 302, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 205, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 11:53:21,358] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 141993
+[2023-06-20 11:57:09,133] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 302, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 205, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 11:57:09,138] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 141847
+[2023-06-20 13:03:51,554] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 209, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Torsion Pic' already exists and if_sheet_exists is set to 'error'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 307, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 210, in save_exel
+    writer.save()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1020, in __exit__
+    self.close()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1024, in close
+    content = self.save()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 80, in save
+    self.book.save(self.handles.handle)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 408, in save
+    save_workbook(self, filename)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 293, in save_workbook
+    writer.save()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 89, in write_data
+    archive.writestr(ARC_WORKBOOK, writer.write())
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 148, in write
+    self.write_views()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 135, in write_views
+    active = get_active_sheet(self.wb)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 33, in get_active_sheet
+    raise IndexError("At least one sheet must be visible")
+IndexError: At least one sheet must be visible
+[2023-06-20 13:03:51,582] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 163708
+[2023-06-20 13:04:48,554] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 304, in DriverList_edit
+    excel_dic = read_excel(src_file)[0]
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 165, in read_excel
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1233, in __init__
+    self._reader = self._engines[engine](self._io, storage_options=storage_options)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 522, in __init__
+    super().__init__(filepath_or_buffer, storage_options=storage_options)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 420, in __init__
+    self.book = self.load_workbook(self.handles.handle)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 534, in load_workbook
+    filepath_or_buffer, read_only=True, data_only=True, keep_links=False
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 317, in load_workbook
+    reader.read()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 279, in read
+    self.read_worksheets()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 216, in read_worksheets
+    rels = get_dependents(self.archive, rels_path)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\packaging\relationship.py", line 130, in get_dependents
+    src = archive.read(filename)
+  File "C:\Python372\lib\zipfile.py", line 1428, in read
+    with self.open(name, "r", pwd) as fp:
+  File "C:\Python372\lib\zipfile.py", line 1488, in open
+    raise BadZipFile("Bad magic number for file header")
+zipfile.BadZipFile: Bad magic number for file header
+[2023-06-20 13:04:48,570] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 151234
+[2023-06-20 13:06:16,629] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 307, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 209, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 13:06:16,648] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 141582
+[2023-06-20 13:11:17,632] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 307, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 209, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False, if_sheet_exists='replace')  ##sheet st3的内容更新成st1值
+TypeError: to_excel() got an unexpected keyword argument 'if_sheet_exists'
+[2023-06-20 13:11:17,635] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 116570
+[2023-06-20 13:40:51,231] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 310, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 211, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=True)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 13:40:51,235] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 141743
+[2023-06-20 14:32:08,512] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 312, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 207, in save_exel
+    df2.to_excel(writer, index=True, sheet_name=sheetname[0])
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 14:32:08,517] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 142039
+[2023-06-20 14:38:14,544] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 312, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 208, in save_exel
+    writer.close()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1020, in __exit__
+    self.close()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1024, in close
+    content = self.save()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 80, in save
+    self.book.save(self.handles.handle)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 408, in save
+    save_workbook(self, filename)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Python372\lib\zipfile.py", line 1228, in __init__
+    self.start_dir = self.fp.tell()
+ValueError: I/O operation on closed file
+[2023-06-20 14:38:14,563] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 139946
+[2023-06-20 14:55:31,281] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 211, in save_exel
+    book = load_workbook(src_file)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 316, in load_workbook
+    data_only, keep_links)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 124, in __init__
+    self.archive = _validate_archive(fn)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 96, in _validate_archive
+    archive = ZipFile(filename, 'r')
+  File "C:\Python372\lib\zipfile.py", line 1222, in __init__
+    self._RealGetContents()
+  File "C:\Python372\lib\zipfile.py", line 1289, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 313, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 214, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False, header=False)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1020, in __exit__
+    self.close()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1024, in close
+    content = self.save()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 80, in save
+    self.book.save(self.handles.handle)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 408, in save
+    save_workbook(self, filename)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 293, in save_workbook
+    writer.save()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 89, in write_data
+    archive.writestr(ARC_WORKBOOK, writer.write())
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 148, in write
+    self.write_views()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 135, in write_views
+    active = get_active_sheet(self.wb)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 33, in get_active_sheet
+    raise IndexError("At least one sheet must be visible")
+IndexError: At least one sheet must be visible
+[2023-06-20 14:55:31,312] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 194319
+[2023-06-20 15:01:29,399] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 211, in save_exel
+    book = load_workbook(src_file)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 316, in load_workbook
+    data_only, keep_links)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 124, in __init__
+    self.archive = _validate_archive(fn)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 96, in _validate_archive
+    archive = ZipFile(filename, 'r')
+  File "C:\Python372\lib\zipfile.py", line 1222, in __init__
+    self._RealGetContents()
+  File "C:\Python372\lib\zipfile.py", line 1289, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 313, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 214, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=False, header=False)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1020, in __exit__
+    self.close()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1024, in close
+    content = self.save()
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 80, in save
+    self.book.save(self.handles.handle)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\workbook.py", line 408, in save
+    save_workbook(self, filename)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 293, in save_workbook
+    writer.save()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\writer\excel.py", line 89, in write_data
+    archive.writestr(ARC_WORKBOOK, writer.write())
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 148, in write
+    self.write_views()
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 135, in write_views
+    active = get_active_sheet(self.wb)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\workbook\_writer.py", line 33, in get_active_sheet
+    raise IndexError("At least one sheet must be visible")
+IndexError: At least one sheet must be visible
+[2023-06-20 15:01:29,405] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 194319
+[2023-06-20 15:35:43,695] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 313, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 207, in save_exel
+    df2.to_excel(writer, sheet_name=sheetname[0], index=True)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 15:35:43,716] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 142021
+[2023-06-20 15:53:20,557] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 313, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 203, in save_exel
+    with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    engine_kwargs=engine_kwargs,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 926, in __init__
+    path, mode, storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: 'C:/media/ABOTestPlan/do.xlsx'
+[2023-06-20 15:53:20,559] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 133521
+[2023-06-20 16:14:40,850] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 321, in DriverList_edit
+    save_exel(excel_dic,src_file)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 219, in save_exel
+    i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 2291, in to_excel
+    storage_options=storage_options,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\formats\excel.py", line 845, in write
+    freeze_panes=freeze_panes,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 437, in write_cells
+    f"Sheet '{sheet_name}' already exists and "
+ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
+[2023-06-20 16:14:40,871] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 149672

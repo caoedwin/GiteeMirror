@@ -178,15 +178,52 @@ def read_excel(src_file,header=0,sheetnum=0):
     #     datatest.append(ls)
     # print(list(df.columns))
     # pprint.pprint(datatest)
-    df = df.fillna('')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)是虽然不报错，但是传到前端反序列化后无法获取数据
+    df = df.fillna('')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据
     excel_dic = df.to_dict('records')
+    hangnum = 1
+    for i in excel_dic:
+        i["dataid"] = hangnum
+        hangnum += 1
     key_data = list(df.columns)
     # pprint.pprint(excel_dic)
-    df.to_excel('C:/media/ABOTestPlan/upload.xlsx', sheet_name="sheet1", index=False,
-                engine='openpyxl')
-    with pd.ExcelWriter(src_file, engine="openpyxl", mode='a', if_sheet_exists='replace') as writer:
-        df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
+    # df.to_excel('C:/media/ABOTestPlan/upload.xlsx', sheet_name="sheet1", index=False,
+    #             engine='openpyxl')
+    # with pd.ExcelWriter(src_file, engine="openpyxl", mode='a', if_sheet_exists='replace') as writer:
+    #     df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
     return excel_dic,key_data
+from openpyxl import load_workbook
+def save_exel(save_data,src_file,header=0,sheetnum=0):
+    df1 = pd.read_excel(src_file, sheet_name=None)
+    sheetname = list(df1)
+    df2 = pd.DataFrame(save_data)
+    # excel_writer = pd.ExcelWriter(r'C:\Users\Administrator\Desktop\test2.xlsx')  # 定义writer，选择文件（文件可以不存在,相当于新建文件)
+    # data1.to_excel(excel_writer, sheet_name='sheet_data1')
+    # data2.to_excel(excel_writer, sheet_name='sheet_data2')
+    # excel_writer.save()  # 保存文件   ---data1和data2都在，原数据被覆盖
+    #无法保证打结果的始终在最左列
+    # with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
+    #     wb = writer.book  # openpyxl.workbook.workbook.Workbook 获取所有sheet
+    #     wb.remove(wb[sheetname[0]])  # 删除需要覆盖的sheet
+    #     # print(wb.sheetnames)
+    #     # df2.to_excel(writer, sheet_name=sheetname[0], index=True)  ##sheet st3的内容更新成st1值
+    # with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
+    #     df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
+
+    #无法读取公式，样式，注解
+    excel_list = [df2]
+    for i in sheetname:
+        if i != sheetname[0]:
+            excel_list.append(pd.read_excel(src_file, sheet_name=i))
+    with pd.ExcelWriter(src_file, engine='openpyxl') as writer:
+        num = 0
+        for i in excel_list:
+            i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
+            num += 1
+
+
+
+
+
 
 
 
@@ -237,6 +274,8 @@ def DriverList_edit(request):
     ]
     excel_dic = []
     key_list = []
+    canExport = 1
+    canEdit = 1
 
     for i in DriverList_M.objects.all().values('Customer').distinct().order_by('Customer'):
         Customerlist=[]
@@ -276,10 +315,11 @@ def DriverList_edit(request):
                 # print(i)
                 image.append({'Image' : i['Image']})
         if request.POST.get('isGetData') == 'SEARCH':
-            src_file = "C:/media/ABOTestPlan/0ba205ae62d8e3a58239c3c424393cb7.xlsx"
+            src_file = "C:/media/ABOTestPlan/do.xlsx"
             excel_dic = read_excel(src_file)[0]
-            print(type(excel_dic))
+            # print(type(excel_dic))
             key_list = read_excel(src_file)[1]
+            save_exel(excel_dic,src_file)
 
             Customer= request.POST.get('Customer')
             Project=request.POST.get('Project')
@@ -401,6 +441,8 @@ def DriverList_edit(request):
             "selectedImage": image,
             "excel_dic": excel_dic,
             "key_list": key_list,
+            "canExport": canExport,
+            "canEdit": canEdit,
             # "status":status
         }
         # print(type(json.dumps(data)),json.dumps(data))
