@@ -190,6 +190,22 @@ def read_excel(src_file,header=0,sheetnum=0):
     #             engine='openpyxl')
     # with pd.ExcelWriter(src_file, engine="openpyxl", mode='a', if_sheet_exists='replace') as writer:
     #     df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
+    from openpyxl import load_workbook
+    #读取所有批注
+    workbook = load_workbook(src_file)
+    first_sheet = workbook.get_sheet_names()[0]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
+
+    comments = []
+    rownum = 0
+    for row in worksheet.rows:
+        cellnum = 0
+        for cell in row:
+            if cell.comment:
+                comments.append([rownum, cellnum, cell.comment.text])
+            cellnum += 1
+        rownum += 1
+    print(comments)
     return excel_dic,key_data
 from openpyxl import load_workbook
 def save_exel(save_data,src_file,header=0,sheetnum=0):
@@ -319,7 +335,7 @@ def DriverList_edit(request):
             excel_dic = read_excel(src_file)[0]
             # print(type(excel_dic))
             key_list = read_excel(src_file)[1]
-            save_exel(excel_dic,src_file)
+            # save_exel(excel_dic,src_file)
 
             Customer= request.POST.get('Customer')
             Project=request.POST.get('Project')

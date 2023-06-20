@@ -557,3 +557,43 @@ Traceback (most recent call last):
     f"Sheet '{sheet_name}' already exists and "
 ValueError: Sheet 'LCD Assembly Torsion-generic' already exists and if_sheet_exists is set to 'error'.
 [2023-06-20 16:14:40,871] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 149672
+[2023-06-20 16:51:19,426] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 332, in DriverList_edit
+    excel_dic = read_excel(src_file)[0]
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 195, in read_excel
+    worksheet = load_workbook(excel_dic,data_only=True).worksheets[0]
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 316, in load_workbook
+    data_only, keep_links)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 124, in __init__
+    self.archive = _validate_archive(fn)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\reader\excel.py", line 78, in _validate_archive
+    file_format = os.path.splitext(filename)[-1].lower()
+  File "C:\Python372\lib\ntpath.py", line 202, in splitext
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not list
+[2023-06-20 16:51:19,428] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 145964
+[2023-06-20 16:54:30,596] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /DriverTool/DriverList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 335, in DriverList_edit
+    excel_dic = read_excel(src_file)[0]
+  File "C:\djangoproject\Reliability_Row_data\DriverTool\views.py", line 205, in read_excel
+    comments.append(rownum, cellnum, [cell.comment.text])
+TypeError: append() takes exactly one argument (3 given)
+[2023-06-20 16:54:30,600] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /DriverTool/DriverList_edit/ HTTP/1.1" 500 118758
