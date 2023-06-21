@@ -92,6 +92,7 @@ urlpatterns = [
     path('SpecDownload/', include('SpecDownload.urls', namespace='SpecDownload')),
     path('Issue_Notes/', include('Issue_Notes.urls', namespace='Issue_Notes')),
     path('KnowIssue/', include('KnowIssue.urls', namespace='KnowIssue')),
+    path('ABOTestPlan/', include('ABOTestPlan.urls', namespace='ABOTestPlan')),
     path('PersonalInfo/', include('PersonalInfo.urls', namespace='PersonnalInfo')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

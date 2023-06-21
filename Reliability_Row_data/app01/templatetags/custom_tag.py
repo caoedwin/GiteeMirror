@@ -146,7 +146,9 @@ def get_menu_html(menu_data):
             if item.get('url'): # 说明循环到了菜单最里层的url
                 menu_html += url_str.format(permission_url=item['url'],
                                             # active="rbac-active" if item['open'] else "",
-                                            permission_title=item['title'][4:])
+                                            permission_title=item['title'].split("_")[2] if len(item['title'].split("_"))>=2 else item['title'],
+                                            # permission_title=item['title'][4:],
+                                            )
                 # print (menu_html)
                 # print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
             else:
@@ -215,6 +217,8 @@ def get_menu_html(menu_data):
                         Class = "ti-light-bulb"
                     if item['title'] == 'Automation效益':
                         Class = "ti-panel"
+                    if item['title'] == 'ABO':
+                        Class = "ti-view-list-alt"
 
                     menu_html += option_str.format(Class=Class,menu_title=item['title'],
                                                    sub_menu=sub_menu)  # ,

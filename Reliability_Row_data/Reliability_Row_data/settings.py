@@ -187,6 +187,7 @@ INSTALLED_APPS = [
     'PersonalInfo',
     'OBIDeviceResult',
     'AutoResult',
+    'ABOTestPlan',
 ]
 
 MIDDLEWARE = [
