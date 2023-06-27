@@ -70,7 +70,7 @@
                 this.tableloading=true;
                 this.elbuttonloading=true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/ABOTestPlan/ABOTestPlan_edit/", Qs.stringify(data), {
+                axios.post("/ABOTestPlan/ABOTestPlan_edit/{{ article.id }}", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
@@ -81,6 +81,13 @@
                   this.canEdit = res.data.canEdit;
                   this.tableloading=false;
                    this.elbuttonloading=false;
+                   if(this.errMsg){
+                            this.$alert(this.errMsg, '提示', {
+                                  type: 'warning',
+                                })
+                        }else {
+
+                        }
                 });
             },
 
@@ -208,7 +215,7 @@
           this.loading=true;
           //console.log(uploadData);//$("[name='csrfmiddlewaretoken']").val()
           {#axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload},{#}
-          axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":this.excel_dic},{
+          axios.post("/ABOTestPlan/ABOTestPlan_edit/{{ article.id }}" ,{"uploadData":this.excel_dic},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
                     console.log(res.data,"first");//上传成功的操作
@@ -223,6 +230,13 @@
                   this.selectItem=res.data.select;
                   this.tableloading=false;
                    this.elbuttonloading=false;
+                   if(this.errMsg){
+                            this.$alert(this.errMsg, '提示', {
+                                  type: 'warning',
+                                })
+                        }else {
+
+                        }
                 }).catch(function (e) {
                         this.loading=false;
                         var warning =confirm("上傳異常");

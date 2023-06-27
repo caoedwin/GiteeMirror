@@ -1,0 +1,310 @@
+[2023-06-26 08:34:17,997] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 375, in ABOTestPlan_summary
+    Result = info_excel_tongji(path_list)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 161, in info_excel_tongji
+    TestProess = (P_value_num + F_value_num) / (P_value_num + F_value_num + B_value_num + Na_value_num)
+ZeroDivisionError: float division by zero
+[2023-06-26 08:34:17,999] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 97474
+[2023-06-26 08:50:51,917] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 375, in ABOTestPlan_summary
+    Result = info_excel_tongji(path_list)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 113, in info_excel_tongji
+    df = df.loc.replace("", "?")
+AttributeError: '_LocIndexer' object has no attribute 'replace'
+[2023-06-26 08:50:51,924] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 96466
+[2023-06-26 08:53:46,736] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 378, in ABOTestPlan_summary
+    Result = info_excel_tongji(path_list)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 116, in info_excel_tongji
+    df = df.loc.replace("", "?")
+AttributeError: '_LocIndexer' object has no attribute 'replace'
+[2023-06-26 08:53:46,745] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 96347
+[2023-06-26 08:58:37,269] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 378, in ABOTestPlan_summary
+    SKU = excel_dic[0][0]['SKU/Unit']
+IndexError: list index out of range
+[2023-06-26 08:58:37,272] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 88123
+[2023-06-26 09:32:27,651] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 368, in ABOTestPlan_summary
+    Result = info_excel_tongji(path_list)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 95, in info_excel_tongji
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[50:,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1192, in __init__
+    content_or_path=path_or_buffer, storage_options=storage_options
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1071, in inspect_excel_format
+    content_or_path, "rb", storage_options=storage_options, is_text=False
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\common.py", line 711, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: 'c:/media/ABOTestPlan/T88/Test1/B Phase/Compatibility/~$ME-ENV005_All.xlsx'
+[2023-06-26 09:32:27,654] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 123044
+[2023-06-26 11:03:25,726] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 454, in ABOTestPlan_summary
+    return HttpResponse(json.dumps(data), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+[2023-06-26 11:03:25,737] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 107282
+[2023-06-26 11:06:02,779] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 453, in ABOTestPlan_summary
+    print(type(json.dumps(data)),json.dumps(data))
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+[2023-06-26 11:06:02,781] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 107405
+[2023-06-26 11:07:27,481] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 454, in ABOTestPlan_summary
+    return HttpResponse(json.dumps(data), content_type="application/json")
+  File "C:\Python372\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python372\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python372\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python372\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+[2023-06-26 11:07:27,483] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 107245
+[2023-06-26 11:15:30,884] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 396, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 31, in Copy_forders
+    shutil.copy(dirs, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 244, in copy
+    dst = os.path.join(dst, os.path.basename(src))
+  File "C:\Python372\lib\ntpath.py", line 214, in basename
+    return split(p)[1]
+  File "C:\Python372\lib\ntpath.py", line 183, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not list
+[2023-06-26 11:15:30,886] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 102661
+[2023-06-26 11:17:58,623] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 399, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 33, in Copy_forders
+    shutil.copy(dirs, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 244, in copy
+    dst = os.path.join(dst, os.path.basename(src))
+  File "C:\Python372\lib\ntpath.py", line 214, in basename
+    return split(p)[1]
+  File "C:\Python372\lib\ntpath.py", line 183, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not list
+[2023-06-26 11:17:58,636] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 102698
+[2023-06-26 11:19:34,241] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 399, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 35, in Copy_forders
+    shutil.copy(files, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 244, in copy
+    dst = os.path.join(dst, os.path.basename(src))
+  File "C:\Python372\lib\ntpath.py", line 214, in basename
+    return split(p)[1]
+  File "C:\Python372\lib\ntpath.py", line 183, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not list
+[2023-06-26 11:19:34,251] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 103298
+[2023-06-26 11:22:10,493] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 399, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 35, in Copy_forders
+    shutil.copy(files, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 244, in copy
+    dst = os.path.join(dst, os.path.basename(src))
+  File "C:\Python372\lib\ntpath.py", line 214, in basename
+    return split(p)[1]
+  File "C:\Python372\lib\ntpath.py", line 183, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not list
+[2023-06-26 11:22:10,507] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 103296
+[2023-06-26 11:28:20,347] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 404, in ABOTestPlan_summary
+    for path in os.listdir(folder_path_Sys):
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'c:/media/ABOTestPlanSys/T88_Test1_B Phase_Compatibility'
+[2023-06-26 11:28:20,360] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 87909
+[2023-06-26 11:34:04,194] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 402, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 37, in Copy_forders
+    shutil.copy(src_file, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 245, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Python372\lib\shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+PermissionError: [Errno 13] Permission denied: 'c:/media/ABOTestPlan/T88/Test1/B Phase/Compatibility\\~$ME-ENV005_All.xlsx'
+[2023-06-26 11:34:04,196] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 101445
+[2023-06-26 11:50:36,092] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 404, in ABOTestPlan_summary
+    Copy_forders(folder_path, folder_path_Sys)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 39, in Copy_forders
+    shutil.copy(src_file, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 245, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Python372\lib\shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+PermissionError: [Errno 13] Permission denied: 'c:/media/ABOTestPlan/T88/Test1/B Phase/Compatibility\\~$ME-ENV005_All.xlsx'
+[2023-06-26 11:50:36,095] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 101417
+[2023-06-26 16:39:01,412] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 483, in ABOTestPlan_summary
+    "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+IndexError: tuple index out of range
+[2023-06-26 16:39:01,421] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 89161

@@ -1411,3 +1411,40 @@ FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'c:\\media/AB
 [2023-06-21 17:01:11,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 230
 [2023-06-21 17:01:17,683] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-21 17:01:17 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
 [2023-06-21 17:01:17,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 230
+[2023-06-23 08:24:46,228] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 302 0
+[2023-06-23 08:24:46,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-23 08:24:46,297] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-23 08:24:46,309] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-06-23 08:24:46,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-23 08:24:49,112] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-23 08:24:49 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-06-23 08:24:49,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-06-23 08:24:49,294] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47983
+[2023-06-23 08:24:49,435] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-23 08:24:49,469] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-23 08:24:49,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 47983
+[2023-06-23 08:24:49,561] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-23 08:24:49,624] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-23 08:24:49,750] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23246
+[2023-06-23 08:24:59,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 32807
+[2023-06-23 08:24:59,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-23 08:24:59,300] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-23 08:24:59,474] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-23 08:24:59,476] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-23 08:24:59,595] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-23 08:24:59 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-23 08:24:59,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23246
+[2023-06-23 08:24:59,609] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 230
+[2023-06-23 08:25:08,064] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 249, in ABOTestPlan_summary
+    folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/' + Customer + "/" + Project + "/" + Phase + "/" + Category
+TypeError: can only concatenate str (not "NoneType") to str
+[2023-06-23 08:25:08,066] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-23 08:25:08 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-23 08:25:08,066] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 500 86725

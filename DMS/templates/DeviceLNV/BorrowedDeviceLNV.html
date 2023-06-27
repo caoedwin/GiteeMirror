@@ -574,7 +574,7 @@
                 console.log(this.moreDetails)
             },
             showDetial(row, column, cell, event) {
-            if( column.label == "設備序號" ) {
+            if( column.label == "設備序號" ) {return true
                 {#console.log(row);#}
                 {% comment %}this.dialogDetialVisible = true;
                 this.tableDetail[0]  = row;{% endcomment %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,reverse
 from django.views.decorators.csrf import csrf_exempt
 import datetime,os
 
@@ -10,12 +10,54 @@ import datetime,json,simplejson,requests,time
 import pandas as pd
 import pprint
 from pathlib import Path
-import os, sys
+import os, sys, shutil
 from django.conf import settings
+from openpyxl import load_workbook
+import numpy as np
 # Create your views here.
 
-def read_excel(src_file,header=0,sheetnum=0):
-    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
+def Copy_forders(forderpath, folder_path_Sys):
+    #判断是否有人在搜索
+    # cycles = 0
+    # while cycles < 10:
+    #     if os.path.exists(folder_path_Sys):
+    #         time.sleep(1)
+    #         cycles += 1
+    #     else:
+    #         break
+    # 经常用到的(如果文件夹不存在，则创建该文件夹)
+    if not os.path.exists(folder_path_Sys):
+        os.makedirs(folder_path_Sys)
+    if os.path.exists(folder_path_Sys):
+        # root 所指的是当前正在遍历的这个文件夹的本身的地址
+        # dirs 是一个 list，内容是该文件夹中所有的目录的名字(不包括子目录)
+        # files 同样是 list, 内容是该文件夹中所有的文件(不包括子目录)
+        for root, dirs, files in os.walk(forderpath):
+            for file in files:
+                print(file)
+                if not file.startswith('~$'):
+                    src_file = os.path.join(root, file)
+                    shutil.copy(src_file, folder_path_Sys)
+                    # print(src_file)
+    return
+
+
+# def Del_forders(folder_path_Sys):
+#     cycles = 0
+#     while cycles < 10:
+#         try:
+#             shutil.rmtree(folder_path_Sys)
+#         except Exception as e:
+#             print(e)
+#             time.sleep(1)
+#             cycles += 1
+#         else:
+#             break
+#         return
+
+
+def read_excel(src_file,header=0,sheetnum=1):
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
     pd.set_option('display.max_columns', None)
@@ -33,7 +75,7 @@ def read_excel(src_file,header=0,sheetnum=0):
     # pprint.pprint(datatest)
     df = df.fillna('')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据
     excel_dic = df.to_dict('records')
-    print("111", excel_dic)
+    # print("111", excel_dic)
     hangnum = 1
     for i in excel_dic:
         i["dataid"] = hangnum
@@ -44,10 +86,10 @@ def read_excel(src_file,header=0,sheetnum=0):
     #             engine='openpyxl')
     # with pd.ExcelWriter(src_file, engine="openpyxl", mode='a', if_sheet_exists='replace') as writer:
     #     df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
-    from openpyxl import load_workbook
+
     #读取所有批注
     workbook = load_workbook(src_file)
-    first_sheet = workbook.get_sheet_names()[0]
+    first_sheet = workbook.get_sheet_names()[1]
     worksheet = workbook.get_sheet_by_name(first_sheet)
 
     comments = []
@@ -59,14 +101,116 @@ def read_excel(src_file,header=0,sheetnum=0):
                 comments.append([rownum, cellnum, cell.comment.text])
             cellnum += 1
         rownum += 1
-    print(comments)
-    return excel_dic,key_data
-from openpyxl import load_workbook
+    # print(comments)
+    for i in excel_dic:
+        i["comments"] = []
+    for i in comments:
+        # print(i,excel_dic[i[0]])
+        excel_dic_num = i[0] - 1
+        if "comments" in excel_dic[excel_dic_num].keys():
+            excel_dic[excel_dic_num]["comments"].append(i)
+
+    return excel_dic,key_data, comments
+
+def info_excel(src_file,header=0,sheetnum=0):
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
+         :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+    # # 显示所有列
+    pd.set_option('display.max_columns', None)
+    # # 显示所有行
+    # pd.set_options('display.max_rows', None)
+    # pprint.pprint(df)
+    dataexcel = df.values[:, :]
+    # datatest = []
+    # for i in dataexcel:
+    #     ls = []
+    #     for j in i:
+    #         ls.append(j)
+    #     datatest.append(ls)
+    # print(list(df.columns))
+    # pprint.pprint(datatest)
+    df = df.fillna('')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据
+    excel_dic = df.to_dict('records')
+    # print("111", excel_dic)
+    hangnum = 1
+    for i in excel_dic:
+        i["dataid"] = hangnum
+        hangnum += 1
+    key_data = list(df.columns)
+    return excel_dic, key_data
+
+def info_excel_tongji(src_file,header=0,sheetnum=1):
+    #您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[50:,
+         1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+    # # 显示所有列
+    pd.set_option('display.max_columns', None)
+    # # 显示所有行
+    # pd.set_options('display.max_rows', None)
+    # df = df.fillna('?')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据, None,NA,NAN,NAT,Null都被认为是缺失值
+    # df = df.fillna(method='ffill')
+    key_data = list(df.columns)
+    df = df.replace("", "?")
+
+    P_value = df.eq('P').sum()
+    All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
+    F_value = df.eq('F').sum()
+    All_tongjidata_F = pd.DataFrame([F_value.values], columns=F_value.index).to_dict('records')
+    B_value = df.eq('B').sum()
+    All_tongjidata_B = pd.DataFrame([B_value.values], columns=B_value.index).to_dict('records')
+    NS_value = df.eq('NS').sum()
+    All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
+    NaN_value = df.eq('?').sum()
+    All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+    print(All_tongjidata_F)
+    P_value_num = 0
+    F_value_num = 0
+    B_value_num = 0
+    NS_value_num = 0
+    Na_value_num = 0
+    lienum = 0
+    for i in key_data:
+        if lienum >=1 :#因为读文件时时从第二列开始，要统计的时第三列开始的值
+            if All_tongjidata_P[0][i] > 0:
+                P_value_num += All_tongjidata_P[0][i] - 1
+            F_value_num += All_tongjidata_F[0][i]
+            B_value_num += All_tongjidata_B[0][i]
+            NS_value_num += All_tongjidata_NS[0][i]
+            Na_value_num += All_tongjidata_NaN[0][i]
+        lienum += 1
+    CaseStatus = ""
+    if F_value_num > 0:
+        CaseStatus = "Fail"
+    else:
+        CaseStatus = "Pass"
+    TestProess = (P_value_num + F_value_num) / (P_value_num + F_value_num + B_value_num + Na_value_num)
+    TestProess = "%.2f%%" % (TestProess * 100)
+
+    # 读取所有批注
+    workbook = load_workbook(src_file)
+    first_sheet = workbook.get_sheet_names()[1]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
+
+    comments = []
+    rownum = 0
+    for row in worksheet.rows:
+        cellnum = 0
+        for cell in row:
+            if cell.comment:
+                comments.append([cell.comment.text])
+            cellnum += 1
+        rownum += 1
+    # print(comments)
+
+    # print("PPP", CaseStatus, TestProess)
+    return CaseStatus, TestProess, comments
+
+
 def save_exel(save_data,src_file,header=0,sheetnum=0):
     df1 = pd.read_excel(src_file, sheet_name=None)
     sheetname = list(df1)
     df2 = pd.DataFrame(save_data)
-    print("2222", df2)
+    # print("2222", df2)
     foo = pd.DataFrame({
         'temp': ['message1', 'message2', 'message3'],
         'var2': [1, 2, 3],
@@ -108,23 +252,23 @@ def save_exel(save_data,src_file,header=0,sheetnum=0):
             i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
             num += 1
 
-def recursion_dir_all_file(path):
-    '''
-    :param path: 文件夹目录
-    '''
-    file_list = []
-    for dir_path, dirs, files in os.walk(path):
-        for file in files:
-            file_path = os.path.join(dir_path, file)
-            if "\\" in file_path:
-                file_path = file_path.replace('\\', '/')
-            file_list.append(file_path)
-        for dir in dirs:
-            file_list.extend(recursion_dir_all_file(os.path.join(dir_path, dir)))
-    return file_list
+# def recursion_dir_all_file(path):
+#     '''
+#     :param path: 文件夹目录
+#     '''
+#     file_list = []
+#     for dir_path, dirs, files in os.walk(path):
+#         for file in files:
+#             file_path = os.path.join(dir_path, file)
+#             if "\\" in file_path:
+#                 file_path = file_path.replace('\\', '/')
+#             file_list.append(file_path)
+#         for dir in dirs:
+#             file_list.extend(recursion_dir_all_file(os.path.join(dir_path, dir)))
+#     return file_list
 
 @csrf_exempt
-def ABOTestPlan_edit(request):
+def ABOTestPlan_search(request):
     if not request.session.get('is_login', None):
         return redirect('/login/')
     Skin = request.COOKIES.get('Skin_raw')
@@ -133,13 +277,17 @@ def ABOTestPlan_edit(request):
         Skin = "/static/src/blue.jpg"
     weizhi="ABOTestPlan/edit"
     # status='0'
+    filepath = request.session.get('sessionABOEdit')
+    # print(filepath,222)
 
     excel_dic = []
     key_list = []
+    comments = []
     canExport = 1
-    canEdit = 1
+    canEdit = 0
+    # TestID = id
 
-
+    # print(request.method)
     if request.method == "POST":
 
         # print(request.POST, request.method)
@@ -152,14 +300,68 @@ def ABOTestPlan_edit(request):
         # test = request.POST
         # for i in test:
         #     print(test[i])
-        if request.POST.get('isGetData') == 'SEARCH':
-            src_file = "C:/media/ABOTestPlan/do.xlsx"
-            excel_dic = read_excel(src_file)[0]
-            # print(type(excel_dic))
-            key_list = read_excel(src_file)[1]
-            save_exel(excel_dic,src_file)
+        if request.POST.get('isGetData') == 'first':
+            # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+            if filepath:
+                if os.path.exists(filepath):
+                    excel_dic = read_excel(filepath)[0]
+                    key_list = read_excel(filepath)[1]
+                    comments = read_excel(filepath)[2]
 
+            # save_exel(excel_dic,src_file)
+        data = {
+            "err_ok": "0",
+            "excel_dic": excel_dic,
+            "key_list": key_list,
+            "comments": comments,
+            "canExport": canExport,
+            "canEdit": canEdit,
+            # "status":status
+        }
+        # print(type(json.dumps(data)),json.dumps(data))
+        return HttpResponse(json.dumps(data), content_type="application/json")
+    return render(request, 'ABOTestPlan/ABOTestPlan_search.html', locals())
 
+@csrf_exempt
+def ABOTestPlan_edit(request):
+    if not request.session.get('is_login', None):
+        return redirect('/login/')
+    Skin = request.COOKIES.get('Skin_raw')
+    # print(Skin)
+    if not Skin:
+        Skin = "/static/src/blue.jpg"
+    weizhi="ABOTestPlan/edit"
+    # status='0'
+    filepath = request.session.get('sessionABOEdit')
+    # print(filepath,222)
+
+    excel_dic = []
+    key_list = []
+    canExport = 1
+    canEdit = 1
+    # TestID = id
+
+    print(request.method)
+    if request.method == "POST":
+
+        # print(request.POST, request.method)
+        # print(request.body)
+        # print(type(request.body),type(request.POST))
+        # responseData = json.loads(request.body)
+        # print(responseData)
+        # if request.POST.get('isGetData') == 'first':
+
+        # test = request.POST
+        # for i in test:
+        #     print(test[i])
+        if request.POST.get('isGetData') == 'first':
+            # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+            if filepath:
+                if os.path.exists(filepath):
+                    excel_dic = read_excel(filepath)[0]
+                    key_list = read_excel(filepath)[1]
+
+            # save_exel(excel_dic,src_file)
         data = {
             "err_ok": "0",
             "excel_dic": excel_dic,
@@ -199,12 +401,24 @@ def ABOTestPlan_summary(request):
         #                     {"Project": "ELMV3", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
         #                     {"Project": "ELMV4", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}]
     }
+    tabledata = [
+        # {"TestID": "ME-ENV001", "TestItems": "Operation Temperature Test1", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Pass", "Percent": "100%", "BugNo": "", "filepath": "/ABOTestPlan/ABOTestPlan_edit/",},
+        # {"TestID": "ME-ENV002", "TestItems": "Operation Temperature Test2", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Fail", "Percent": "90%", "BugNo": "bug-212096.panel白斑", "filepath": "",},
+        # {"TestID": "ME-ENV003", "TestItems": "Operation Temperature Test3", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Block", "Percent": "0%", "BugNo": "", "filepath": "",},
+        # {"TestID": "ME-ENV004", "TestItems": "Operation Temperature Test4", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "NS", "Percent": "", "BugNo": "tttttttttttttttttttt", "filepath": "",},
+    ]
     excel_dic = []
     key_list = []
     canExport = 1
     canEdit = 1
+    err_msg = ""
 
     folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+    folder_path_Sys = settings.MEDIA_ROOT + '/ABOTestPlanSys/'  # 指定文件夹路径
     subforders = []
     for dirpath, dirnames, filenames in os.walk(folder_path):
         for dirname in dirnames:
@@ -221,12 +435,12 @@ def ABOTestPlan_summary(request):
         elif len(i.split("/")) == 3:
             subforders_name3.append(i)
         else:
-            print(i)
+            # print(i)
+            pass
     for i in subforders_name1:
         projectincustomer = []
         for j in subforders_name2:
             phaseinproject = []
-            {"Project": "EL531", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}
             if i in j:
                 for k in subforders_name3:
                     if j in k:
@@ -234,7 +448,7 @@ def ABOTestPlan_summary(request):
                 projectincustomer.append({"Project": j.replace(i + "/", ""), "Phase0": phaseinproject})
         selectItem[i] = projectincustomer
     # print(selectItem)
-
+    # print(request.method)
     if request.method == "POST":
         if request.POST.get('isGetData') == 'first':
             pass
@@ -244,29 +458,65 @@ def ABOTestPlan_summary(request):
             Customer = request.POST.get('Customer')
             Project = request.POST.get('Project')
             Phase = request.POST.get('Phase')
-            Category = request.POST.get('Category')
-            print(Customer)
-            folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/' + Customer + "/" + Project + "/" + Phase + "/" + Category
+            Category = request.POST.get('Categorys')
+            # print(Customer, Category,111)
+            folder_path = folder_path + Customer + "/" + Project + "/" + Phase + "/" + Category
             folder_path = folder_path.replace("\\", "/").replace("//", "/")
+            folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
+            folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
+            try:
 
-            file_ext = ['.xls', '.xlsx']
+                Copy_forders(folder_path, folder_path_Sys)
+                #
+                if os.path.exists(folder_path_Sys):
+                    file_ext = ['.xls', '.xlsx']
+                    i = 0
+                    for path in os.listdir(folder_path_Sys):
+                        path_list = os.path.join(folder_path_Sys, path)  # 连接当前目录及文件或文件夹名称
+                        path_list = path_list.replace("\\", "/")
+                        if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
+                            if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
+                                # print(path_list, path)  # 打印输出
+                                Result = info_excel_tongji(path_list)
+                                excel_dic = info_excel(path_list)
+                                SKU = excel_dic[0][0]['SKU/Unit']
+                                Owner = excel_dic[0][0]['Owner']
+                                TestSchedule = excel_dic[0][0]['Test Schedule']
+                                # print(excel_dic)
+                                tabledata.append(
+                                    {
+                                        "TestID": path.split(".")[0].split("_")[0],
+                                        "TestItems": path.split(".")[0].split("_")[1],
+                                        "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                                        "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                        "filepath": path_list,
+                                    }
+                                )
+                                i += 1  # 对.xls、.xlsx文件进行计数
+                    print('目录下共有' + str(i) + '个xls、xlsx文件')
+                    #
+                    # Del_forders(folder_path_Sys)
+            except Exception as e:
+                err_msg = str(e)
 
-            i = 0
-            for path in os.listdir(folder_path):
-                path_list = os.path.join(folder_path, path)  # 连接当前目录及文件或文件夹名称
-                if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
-                    if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
-                        print(path_list)  # 打印输出
-                        i += 1  # 对.xls、.xlsx文件进行计数
-            print('目录下共有' + str(i) + '个xls、xlsx文件')
-            # excel_dic = read_excel(src_file)[0]
-            # print(type(excel_dic))
-            # key_list = read_excel(src_file)[1]
-            # save_exel(excel_dic,src_file)
+
+
+        if request.POST.get("isGetData") == "ABOTestPlan_edit":
+            #cookie
+            # Redirect = redirect('/Lesson_search/')
+            # Compatibilityv = request.POST.get('isGetData')
+            # Redirect.set_cookie('cookieSWME', Compatibilityv, 3600 * 24 )
+            # return Redirect#这里虽然返回了Redirect的路径，但是由于时axios传输，返回页面没有用，到那时必须要加，不然cookie设置不成功。
+            filepath = request.POST.get('filepath')
+            # print(filepath, "111")
+            request.session['sessionABOEdit'] = filepath
+            request.session.set_expiry(12 * 60 * 60)
+            return render(request, 'ABOTestPlan/ABOTestPlan_Summary.html')
 
 
         data = {
-            "err_ok": "0",
+            "err_msg": err_msg,
+            "tabledata": tabledata,
             "select": selectItem,
             "excel_dic": excel_dic,
             "key_list": key_list,
@@ -274,6 +524,6 @@ def ABOTestPlan_summary(request):
             "canEdit": canEdit,
             # "status":status
         }
-        # print(type(json.dumps(data)),json.dumps(data))
+        # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'ABOTestPlan/ABOTestPlan_Summary.html', locals())

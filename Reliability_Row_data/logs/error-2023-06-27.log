@@ -1,0 +1,96 @@
+[2023-06-27 10:02:16,392] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 304, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 105, in read_excel
+    if "comments" in excel_dic[comments[0]].keys():
+TypeError: list indices must be integers or slices, not list
+[2023-06-27 10:02:16,396] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108210
+[2023-06-27 10:03:26,344] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 305, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 105, in read_excel
+    print(i,excel_dic[comments[0]])
+TypeError: list indices must be integers or slices, not list
+[2023-06-27 10:03:26,346] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108223
+[2023-06-27 10:47:14,961] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 307, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 109, in read_excel
+    excel_dic[i[0]-1]["comments"].append(i)
+AttributeError: 'str' object has no attribute 'append'
+[2023-06-27 10:47:14,964] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108355
+[2023-06-27 10:49:41,065] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 308, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 110, in read_excel
+    excel_dic[excel_dic_num]["comments"].append(i)
+AttributeError: 'str' object has no attribute 'append'
+[2023-06-27 10:49:41,068] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108561
+[2023-06-27 10:50:02,324] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 308, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 110, in read_excel
+    excel_dic[excel_dic_num]["comments"].append(i)
+AttributeError: 'str' object has no attribute 'append'
+[2023-06-27 10:50:02,328] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108559
+[2023-06-27 10:53:02,530] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_search/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 308, in ABOTestPlan_search
+    excel_dic = read_excel(filepath)[0]
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 110, in read_excel
+    excel_dic[excel_dic_num]["comments"].append(i)
+AttributeError: 'str' object has no attribute 'append'
+[2023-06-27 10:53:02,534] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 500 108556

@@ -24,6 +24,7 @@ from django.views.static import serve
 from django.conf import settings
 #导入配置文件里的文件上传配置
 from app01 import views
+from ABOTestPlan import views as ABOviews
 from django.conf.urls import url
 
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token
