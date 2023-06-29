@@ -349,6 +349,127 @@ def INVGantt_search(request):
     return render(request, 'INVGantt/INVGantt_search.html', locals())
 
 @csrf_exempt
+def INVGantt_searchByProject(request):
+    if not request.session.get('is_login', None):
+        return redirect('/login/')
+    Skin = request.COOKIES.get('Skin_raw')
+    # print(Skin)
+    if not Skin:
+        Skin = "/static/src/blue.jpg"
+    weizhi="INVGantt/INVGantt_search"
+    selectItem = {
+        # "C38(NB)": [{"Project": "EL531", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #             {"Project": "EL532", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #             {"Project": "EL533", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #             {"Project": "EL534", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]}],
+        # "C38(AIO)": [{"Project": "EL535", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #              {"Project": "EL536", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #              {"Project": "EL537", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #              {"Project": "EL538", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]}],
+        # "A39": [{"Project": "EL531", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #         {"Project": "EL532", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #         {"Project": "EL533", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #         {"Project": "EL534", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]}],
+        # "Other": [{"Project": "ELMV2", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #           {"Project": "ELMV3", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
+        #           {"Project": "ELMV4", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]}]
+    }
+    selectCategory = [
+        # "adapter", "Battery", "Finger Print"
+    ]
+
+    selectStatus = [
+        # "Pass", "Fail", "Testing"
+    ]
+
+    selectLenovo_TP_PN = [
+        # "SSA1B09974", "SSA1B09975", "SM30N76643"
+    ]
+
+    selectCompal_TP_PN = [
+        # "DD900017P50", "SKM1A25395", "PK05400A800"
+    ]
+    mock_data = [
+        # {"id": "1", "Customer": "C38(NB)", "INV_Number": "TBD", "INV_Model": "FLY00", "Project_Name": "FLY00",
+        #           "Year": "2020", "Unit_Qty": "24", "TP_Kinds": "1", "Qualify_Cycles": "", "Status": "Planning",
+        #           "TP_Cat": "CPU", "Trial_Run_Type": "New Source","TP_Vendor": "Intel",
+        #           "TP_Key_Parameter": "I7-10870H 2.2G/8C/16M Match to G1B,G1R,G2R,G3R VGA", "Lenovo_TP_PN": "SSA1B09975",
+        #           "Compal_TP_PN": "","Issue_Link": "", "Remark": "", "Attend_Time": "1", "Get_INV": "",
+        #           "Month": "","Test_Start":"","Test_End":""},
+        ]
+    canExport = 0
+    roles = []
+    onlineuser = request.session.get('account')
+    # print(UserInfo.objects.get(account=onlineuser))
+    for i in UserInfo.objects.get(account=onlineuser).role.all():
+        roles.append(i.name)
+    for i in roles:
+        if 'admin' in i:
+            # editPpriority = 4
+            canExport = 1
+        # elif 'DQA' in i and 'edit' in i:
+        #     canExport = 1
+    for i in INVGantt.objects.all().values('Customer').distinct().order_by('Customer'):
+        # print(i)
+        Project = []
+        for j in INVGantt.objects.filter(Customer=i['Customer']).values('INV_Model').distinct().order_by('INV_Model'):
+            # CompalPNlist=[]
+            # for k in CQM.objects.filter(Customer=i['Customer'],Project=j['Project']).values('CompalPN').distinct().order_by('CompalPN'):
+            #     CompalPNlist.append(k['CompalPN'])
+            Project.append({"Project": j['INV_Model'],})#"CompalPN":CompalPNlist})
+        selectItem[i['Customer']] = Project
+    for i in INVGantt.objects.all().values('TP_Cat').distinct().order_by('TP_Cat'):
+        selectCategory.append(i['TP_Cat'])
+    for i in INVGantt.objects.all().values('Status').distinct().order_by('Status'):
+        selectStatus.append(i['Status'])
+    for i in INVGantt.objects.all().values('Lenovo_TP_PN').distinct().order_by('Lenovo_TP_PN'):
+        selectLenovo_TP_PN.append(i['Lenovo_TP_PN'])
+    for i in INVGantt.objects.all().values('Compal_TP_PN').distinct().order_by('Compal_TP_PN'):
+        selectCompal_TP_PN.append(i['Compal_TP_PN'])
+    if request.method == 'POST':
+        # print(request,type(request),request.POST)
+        if request.POST.get('isGetData') == 'SEARCH':
+            check_dic = {}
+            if request.POST.get('Customer'):
+                check_dic['Customer'] = request.POST.get('Customer')
+            if request.POST.get('Project'):
+                check_dic['INV_Model'] = request.POST.get('Project')
+            if request.POST.get('Category'):
+                check_dic['TP_Cat'] = request.POST.get('Category')
+            if request.POST.get('Status'):
+                check_dic['Status'] = request.POST.get('Status')
+            if request.POST.get('Lenovo_TP_PN'):
+                check_dic['Lenovo_TP_PN'] = request.POST.get('Lenovo_TP_PN')
+            if request.POST.get('Compal_TP_PN'):
+                check_dic['Compal_TP_PN'] = request.POST.get('Compal_TP_PN')
+            for i in INVGantt.objects.filter(**check_dic):
+                # print(i.Test_Start, str(i.Test_End), str(i.Edittime))
+                mock_data.append({"id":i.id, "Customer": i.Customer, 'INV_Number':i.INV_Number, "INV_Model":i.INV_Model, "Project_Name":i.Project_Name, "Unit_Origin":i.Unit_Origin, "Year":i.Year,
+                                  "Unit_Qty":i.Unit_Qty, "TP_Kinds":i.TP_Kinds, "Qualify_Cycles":i.Qualify_Cycles, "Status":i.Status,
+                                  "TP_Cat":i.TP_Cat, "Trial_Run_Type":i.Trial_Run_Type, "TP_Vendor":i.TP_Vendor, "TP_Key_Parameter":i.TP_Key_Parameter,
+                                  "Lenovo_TP_PN":i.Lenovo_TP_PN,"Compal_TP_PN":i.Compal_TP_PN, "Issue_Link":i.Issue_Link,
+                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "Get_INV":i.Get_INV, "Month":i.Month,
+                                  "Test_Start":str(i.Test_Start), "Test_End":str(i.Test_End),
+                                  "Editor":i.Editor, "Edittime":str(i.Edittime), })
+        data = {
+            "err_ok": "0",
+            "content": mock_data,
+            "select": selectItem,
+
+            "selectStatus": selectStatus,
+            # "selectCompal_R3_PN":selectCompal_R3_PN,
+            "selectCategory": selectCategory,
+            "selectLenovo_TP_PN": selectLenovo_TP_PN,
+            "selectCompal_TP_PN": selectCompal_TP_PN,
+            'canExport': canExport,
+        }
+        # print(data)
+        return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+    return render(request, 'INVGantt/INVGantt_searchByProject.html', locals())
+
+@csrf_exempt
 def INVGantt_edit(request):
     if not request.session.get('is_login', None):
         return redirect('/login/')

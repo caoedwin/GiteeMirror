@@ -5,6 +5,7 @@ urlpatterns = [
 path('INVGantt-upload/', views.INVGantt_upload, name='INVGantt_upload'),
 
     path('INVGantt-search/', views.INVGantt_search, name='INVGantt_search'),
+    path('INVGantt-searchByProject/', views.INVGantt_searchByProject, name='INVGantt_searchByProject'),
 
     path('INVGantt-edit/', views.INVGantt_edit, name='INVGantt_edit'),
 
