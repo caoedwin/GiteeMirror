@@ -35,6 +35,18 @@
     line-height: 23px;
     text-align: left;
 }
+      .selectItem{
+    font-size: 15px;
+    font-weight: bold;
+    color: aliceblue;
+    white-space: nowrap;
+}
+  .tips{
+    font-size: 20px;
+    font-weight: bold;
+    color: coral;
+    margin-left: 15px;
+}
     </style>
 {% endblock %}
 {% block content %}
@@ -42,6 +54,7 @@
 <template>
 
     <div class="col-md-2">
+        <span  class="selectItem" v-cloak  v-if="showinfo">當前表格信息：${ showinfo }<span v-if=!"canEdit" v-cloak class="tips">(您所使用的賬號沒有編輯此表單的權限)</span></span>
                         <el-button size="small"  v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                         <el-button @click="saveData"v-if="canEdit==1" v-cloak type="success" style="height:40px">保存</el-button>
         </div>
@@ -87,6 +100,7 @@
                 comments: [],
                 showcomments: '',
                 tipsdisable:'',
+                showinfo:"",
                 canExport:null,
                 canEdit:null,
 
@@ -114,6 +128,7 @@
                    this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
                   this.key_list=res.data.key_list;
                    this.comments=res.data.comments;
+                   this.showinfo=res.data.showinfo;
                   this.canExport = res.data.canExport;
                   this.canEdit = res.data.canEdit;
                   this.tableloading=false;
@@ -286,6 +301,7 @@
                    this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
                   this.key_list=res.data.key_list;
                   this.comments=res.data.comments;
+                  this.showinfo=res.data.showinfo;
                   this.canExport = res.data.canExport;
                   this.canEdit = res.data.canEdit;
 

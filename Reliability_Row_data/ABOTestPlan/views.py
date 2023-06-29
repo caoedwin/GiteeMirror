@@ -206,16 +206,10 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     return CaseStatus, TestProess, comments
 
 
-def save_exel(save_data,src_file,header=0,sheetnum=0):
-    df1 = pd.read_excel(src_file, sheet_name=None)
-    sheetname = list(df1)
-    df2 = pd.DataFrame(save_data)
-    # print("2222", df2)
-    foo = pd.DataFrame({
-        'temp': ['message1', 'message2', 'message3'],
-        'var2': [1, 2, 3],
-        'col3': [4, 5, 6]
-    })
+def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
+    df1 = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[:,
+         0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+    sheetname = list(pd.read_excel(src_file, sheet_name=None))
 
     # Setup a DataFrame with corresponding hover values
     # tooltips_df = pd.DataFrame({
@@ -240,17 +234,21 @@ def save_exel(save_data,src_file,header=0,sheetnum=0):
     #     # df2.to_excel(writer, sheet_name=sheetname[0], index=True)  ##sheet st3的内容更新成st1值
     # with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
     #     df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
-
+    for i in save_data:
+        df1.loc[i["row"], i["lie"]] = i["value"]
     #无法保存公式，样式，注解
-    excel_list = [df2]
+    excel_list = []
+    # print(sheetname)
     for i in sheetname:
-        if i != sheetname[0]:
+        if i != sheetname[1]:
             excel_list.append(pd.read_excel(src_file, sheet_name=i))
+    excel_list.insert(1, df1)#保证位置不变，df1的sheet_name时1
     with pd.ExcelWriter(src_file, engine='openpyxl') as writer:
         num = 0
         for i in excel_list:
             i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
             num += 1
+    shutil.copy(src_file, folder_path_Sys)
 
 # def recursion_dir_all_file(path):
 #     '''
@@ -283,6 +281,7 @@ def ABOTestPlan_search(request):
     excel_dic = []
     key_list = []
     comments = []
+    showinfo = ''
     canExport = 1
     canEdit = 0
     # TestID = id
@@ -307,13 +306,14 @@ def ABOTestPlan_search(request):
                     excel_dic = read_excel(filepath)[0]
                     key_list = read_excel(filepath)[1]
                     comments = read_excel(filepath)[2]
+                    showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\','/') + '/ABOTestPlanSys/', "")
 
-            # save_exel(excel_dic,src_file)
         data = {
             "err_ok": "0",
             "excel_dic": excel_dic,
             "key_list": key_list,
             "comments": comments,
+            "showinfo": showinfo,
             "canExport": canExport,
             "canEdit": canEdit,
             # "status":status
@@ -339,9 +339,11 @@ def ABOTestPlan_edit(request):
     key_list = []
     canExport = 1
     canEdit = 1
+    showinfo = ''
+    errMsg = ''
+    folder_path_Sys = settings.MEDIA_ROOT + '/ABOTestPlanSys/'  # 指定文件夹路径
     # TestID = id
 
-    print(request.method)
     if request.method == "POST":
 
         # print(request.POST, request.method)
@@ -354,20 +356,56 @@ def ABOTestPlan_edit(request):
         # test = request.POST
         # for i in test:
         #     print(test[i])
-        if request.POST.get('isGetData') == 'first':
-            # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
-            if filepath:
-                if os.path.exists(filepath):
-                    excel_dic = read_excel(filepath)[0]
-                    key_list = read_excel(filepath)[1]
+        if request.POST:
+            if 'first' in str(request.body):
+                try:
+                    # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+                    if filepath:
+                        if os.path.exists(filepath):
+                            excel_dic = read_excel(filepath)[0]
+                            key_list = read_excel(filepath)[1]
+                            comments = read_excel(filepath)[2]
+                            showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
+                except Exception as e:
+                    errMsg = e
+        else:
+            try:
+                request.body
+                print(request.body)
+            except:
+                # print('1')
+                pass
+            else:
+                if 'save' in str(request.body):
+                    try:
+                        responseData = json.loads(request.body)
+                        uploaddata = responseData['uploadData']
+                        showinfo = responseData['showinfo']
+                        folder_path_Sys = filepath
+                        print(uploaddata, 'uploaddata')
+                        print(folder_path_Sys, 'folder_path_Sys')
+                        val = filepath.count('_')
+                        filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
+                        print(filepath)
+                        if filepath:
+                            if os.path.exists(filepath):
+                                print('start')
+                                save_exel(folder_path_Sys,uploaddata, filepath)
+                                excel_dic = read_excel(filepath)[0]
+                                key_list = read_excel(filepath)[1]
+                                comments = read_excel(filepath)[2]
+                    except Exception as e:
+                        errMsg = e
 
-            # save_exel(excel_dic,src_file)
+                    # save_exel(excel_dic,src_file)
         data = {
             "err_ok": "0",
+            "errMsg": errMsg,
             "excel_dic": excel_dic,
             "key_list": key_list,
             "canExport": canExport,
             "canEdit": canEdit,
+            "showinfo": showinfo,
             # "status":status
         }
         # print(type(json.dumps(data)),json.dumps(data))

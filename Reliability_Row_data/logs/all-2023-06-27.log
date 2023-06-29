@@ -366,3 +366,193 @@ AttributeError: 'str' object has no attribute 'append'
 [2023-06-27 11:56:13,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
 [2023-06-27 11:56:19,653] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 11:56:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
 [2023-06-27 11:56:19,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-27 13:05:49,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-06-27 13:05:49,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-27 13:05:59,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 13:06:00,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 13:06:00,071] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 13:06:00,254] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 13:06:00,263] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 13:06:00,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 13:06:09,823] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 13:06:09 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 13:06:09,840] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-27 15:44:59,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39697
+[2023-06-27 15:44:59,932] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 15:44:59,938] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 15:45:00,108] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 15:45:00,163] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 15:45:00,290] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:45:00 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:45:00,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 247
+[2023-06-27 15:45:00,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 15:45:14,423] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:45:14 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:45:14,429] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 1760
+[2023-06-27 15:45:21,498] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:45:21 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:45:21,516] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-27 15:45:21,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 15:45:21,686] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 15:45:21,713] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 15:45:21,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 15:45:21,917] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 15:45:22,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 15:45:23,700] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:45:23 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 15:45:23,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 48811
+[2023-06-27 15:59:30,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39697
+[2023-06-27 15:59:30,867] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 15:59:30,880] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 15:59:30,950] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 15:59:30,952] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 15:59:31,048] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:59:31 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:59:31,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 247
+[2023-06-27 15:59:31,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 15:59:43,636] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:59:43 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:59:43,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 1760
+[2023-06-27 15:59:55,711] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:59:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 15:59:55,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-27 15:59:55,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 15:59:55,957] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 15:59:55,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 15:59:56,065] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 15:59:56,080] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 15:59:56,240] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 15:59:58,129] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 15:59:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 15:59:58,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-27 16:00:06,031] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:00:06,031] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:00:06,048] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:00:06,049] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:00:06,072] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:00:06,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:00:06,078] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:00:06,080] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:00:06,081] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:00:06,083] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:00:06,090] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:00:06,100] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:00:06,101] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:00:06,102] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:00:06,130] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:19,123] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:09:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:09:19,132] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-27 16:09:19,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 16:09:19,236] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:19,271] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:09:19,332] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:19,339] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:09:19,509] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:09:19,554] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:09:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 16:09:19,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 47595
+[2023-06-27 16:09:50,921] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:09:50,922] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:50,927] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:09:50,933] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:50,952] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:09:50,953] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:09:50,953] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:50,957] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:50,966] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:09:50,968] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:50,968] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:09:50,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:09:50,970] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:50,973] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:50,980] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:53,370] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:09:53 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:09:53,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-27 16:09:53,417] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 16:09:53,491] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:09:53,505] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:09:53,575] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:09:53,578] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:09:53,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:09:53,762] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:09:53 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 16:09:53,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 46327
+[2023-06-27 16:20:42,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39697
+[2023-06-27 16:20:42,997] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-27 16:20:43,001] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-27 16:20:43,071] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-27 16:20:43,074] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-27 16:20:43,176] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:20:43 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:20:43,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 247
+[2023-06-27 16:20:43,195] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:20:56,550] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:20:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:20:56,566] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 1760
+[2023-06-27 16:27:23,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23322
+[2023-06-27 16:27:27,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:27:44,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39697
+[2023-06-27 16:27:44,241] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:27:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:27:44,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 261
+[2023-06-27 16:27:44,262] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:27:58,629] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:27:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:27:58,647] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 1809
+[2023-06-27 16:34:11,481] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 69421
+[2023-06-27 16:34:11,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:34:11,893] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:34:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TestPlanME/TestPlanME-search/ POST
+[2023-06-27 16:34:11,902] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanME/TestPlanME-search/ HTTP/1.1" 200 3692
+[2023-06-27 16:34:11,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanME/TestPlanME-search/?action=get HTTP/1.1" 200 3562
+[2023-06-27 16:35:45,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 96833
+[2023-06-27 16:35:45,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:35:45,394] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:35:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2023-06-27 16:35:45,398] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=first HTTP/1.1" 200 1427
+[2023-06-27 16:35:45,403] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 145
+[2023-06-27 16:35:51,839] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:35:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2023-06-27 16:35:51,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 6284
+[2023-06-27 16:36:02,340] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:36:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TestPlanSWOS/TestPlanSWOS-search/ POST
+[2023-06-27 16:36:02,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TestPlanSWOS/TestPlanSWOS-search/ HTTP/1.1" 200 416
+[2023-06-27 16:36:05,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=getCategory&customer=C38(NB)&project=FLAT4_PTP%20Refresh&phase=1 HTTP/1.1" 200 16
+[2023-06-27 16:37:09,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSWOS/TestPlanSWOS-search/?action=getContent&customer=C38(NB)&project=FLAT4_PTP%20Refresh&phase=1&category= HTTP/1.1" 200 1979
+[2023-06-27 16:37:34,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:37:35,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:37:38,221] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:37:38 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-27 16:37:38,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-27 16:37:38,265] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-27 16:37:38,577] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-27 16:37:40,284] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-27 16:37:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-27 16:37:40,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-28 07:57:55,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 302 0
+[2023-06-28 07:57:55,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-28 07:57:55,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-06-28 07:57:55,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-28 07:57:57,593] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 07:57:57 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-06-28 07:57:57,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-06-28 07:57:57,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48059
+[2023-06-28 07:57:57,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48059
+[2023-06-28 07:57:58,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 07:58:02,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48059
+[2023-06-28 07:58:02,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48059
+[2023-06-28 07:58:02,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 07:58:34,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39697
+[2023-06-28 07:58:35,117] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 07:58:35 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-28 07:58:35,119] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 07:58:35,126] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 261
+[2023-06-28 08:02:37,797] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-28 08:02:37,797] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-28 08:02:37,798] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-28 08:02:37,843] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-28 08:02:57,546] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 08:02:57 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-28 08:02:57,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 1809
+[2023-06-28 08:03:04,595] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 08:03:04 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_summary/ POST
+[2023-06-28 08:03:04,608] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_summary/ HTTP/1.1" 200 39658
+[2023-06-28 08:03:04,683] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33994
+[2023-06-28 08:03:04,785] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-28 08:03:04,794] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-28 08:03:04,988] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-28 08:03:05,041] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-28 08:03:05,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 08:03:14,968] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 08:03:14 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-28 08:03:14,987] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-28 08:03:27,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33994
+[2023-06-28 08:03:28,237] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-28 08:03:28,299] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-28 08:03:29,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-28 08:03:29,422] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-28 08:03:29,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 08:03:34,537] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 08:03:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-28 08:03:34,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119
+[2023-06-28 08:03:56,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 33695
+[2023-06-28 08:03:56,580] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-28 08:03:56,598] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-28 08:03:56,755] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-28 08:03:56,799] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-06-28 08:03:56,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-28 08:03:58,651] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-28 08:03:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_search/ POST
+[2023-06-28 08:03:58,659] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_search/ HTTP/1.1" 200 49119

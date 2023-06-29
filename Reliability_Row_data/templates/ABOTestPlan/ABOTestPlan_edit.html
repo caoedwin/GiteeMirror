@@ -5,12 +5,56 @@
 {#<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">#}
     <link rel="stylesheet" href="/static/css/index.css">
     <link rel="stylesheet" href="/static/css/ElementUI.css">
+    <style>
+    .inputError{
+    text-align: center;
+    color: crimson;
+    background-color: beige;
+    width: 50%;
+    margin: 10px auto 5px;
+    position: relative;
+}
+  .inputError:before{
+    display:block;
+    content:'';
+    border-width:8px 8px 8px 8px;
+    border-style:solid;
+    border-color:transparent transparent beige transparent;
+
+    /* 定位 */
+    position:absolute;
+    left:50%;
+    top:-16px;
+}
+    .el-table .cell {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    {% comment %}white-space: normal;{% endcomment %}
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 23px;
+    text-align: left;
+}
+      .selectItem{
+    font-size: 15px;
+    font-weight: bold;
+    color: aliceblue;
+    white-space: nowrap;
+}
+  .tips{
+    font-size: 20px;
+    font-weight: bold;
+    color: coral;
+    margin-left: 15px;
+}
+    </style>
 {% endblock %}
 {% block content %}
 <div id="app">
 <template>
 
     <div class="col-md-2">
+        <span  class="selectItem" v-cloak  v-if="showinfo">當前表格信息：${ showinfo }<span v-if=!"canEdit" v-cloak class="tips">(您所使用的賬號沒有編輯此表單的權限)</span></span>
                         <el-button size="small"  v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                         <el-button @click="saveData"v-if="canEdit==1" v-cloak type="success" style="height:40px">保存</el-button>
         </div>
@@ -20,11 +64,23 @@
    v-loading="tableloading"
   element-loading-text="數據更新中，請稍後"
   border>
-    <el-table-column v-if="key_list[0]" v-for="(item,index) in key_list" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item">
+    <el-table-column v-if="key_list[0]" v-for="(item,index) in key_list" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item" :min-width="widths(index)">
             <template slot-scope="scope">
-                  <el-input v-if="canEdit && index >=2" placeholder="请输入内容" type="text" v-model="scope.row[item]" ></el-input>
-                  <span v-else="canEdit && index >=2" >${ scope.row[item]  }</span>
-{#                <el-button @click="update(scope,item,index)" type="text" size="small">编辑</el-button>#}
+                <el-input v-if="canEdit && index >= 2 && scope.$index <= 51" placeholder="请输入内容" type="text" v-model="scope.row[item]" ></el-input>
+                <el-select v-else-if="canEdit && index >= 2 && scope.$index > 51" class="edit-cell" filterable allow-create v-model="scope.row[item]">
+                        <el-option value="P"></el-option>
+                        <el-option value="F"></el-option>
+                        <el-option value="B"></el-option>
+                        <el-option value="NS"></el-option>
+                        <el-option value="NonCheck"></el-option>
+                  </el-select>
+                  <span v-else-if="canEdit && index < 2" >${ scope.row[item]  }</span>
+{#                <span v-if="canEdit && index <2" >${ scope.row[item]  }</span>#}
+{#                <div v-else>#}
+{#                  <el-input {% comment %}v-else-if="canEdit && index >= 2 && scope.row.$index <= 51"{% endcomment %} placeholder="请输入内容" type="text" v-model="scope.row.item" ></el-input>#}
+
+{#                </div>#}
+                {% comment %}<el-button @click="update(scope,item,index)" type="text" size="small">编辑</el-button>{% endcomment %}
               </template>
       </el-table-column>
    </el-table>
@@ -51,6 +107,11 @@
                 excel_dic: [],
                 excel_dic_origin: [],
                 key_list: [],
+                comments: [],
+                showcomments: '',
+                tipsdisable:'',
+                showinfo:"",
+                errMsg:'',
                 canExport:null,
                 canEdit:null,
 
@@ -70,15 +131,18 @@
                 this.tableloading=true;
                 this.elbuttonloading=true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/ABOTestPlan/ABOTestPlan_edit/{{ article.id }}", Qs.stringify(data), {
+                axios.post("/ABOTestPlan/ABOTestPlan_edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
                    {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
                    this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
                   this.key_list=res.data.key_list;
+                   this.comments=res.data.comments;
+                   this.showinfo=res.data.showinfo;
                   this.canExport = res.data.canExport;
                   this.canEdit = res.data.canEdit;
+                  this.errMsg = res.data.errMsg;
                   this.tableloading=false;
                    this.elbuttonloading=false;
                    if(this.errMsg){
@@ -91,6 +155,14 @@
                 });
             },
 
+            widths(num){
+                if(num == 1){
+                    return 500
+                }
+                else{
+                    return 100
+                }
+            },
             cellStyle({row,column,rowIndex,columnIndex}){
                 {#console.log(columnIndex);#}
                 {#console.log(columnIndex,row[this.key_list[columnIndex]]);#}
@@ -193,9 +265,13 @@
                 {#console.log(this.excel_dic_origin[i],2);#}
                 console.log(JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i]))
                 if (JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i])) {
-                    upload.push(
-                        this.excel_dic[i]
-                    )
+                    for(let j=0;j<this.key_list.length;j++){
+                        if (JSON.stringify(this.excel_dic[i][this.key_list[j]])!=JSON.stringify(this.excel_dic_origin[i][this.key_list[j]])) {
+                            upload.push(
+                                {"row":i, "lie":this.key_list[j], "value":this.excel_dic[i][this.key_list[j]]}
+                            )
+                        }
+                    }
                 };
             }
 
@@ -215,19 +291,20 @@
           this.loading=true;
           //console.log(uploadData);//$("[name='csrfmiddlewaretoken']").val()
           {#axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload},{#}
-          axios.post("/ABOTestPlan/ABOTestPlan_edit/{{ article.id }}" ,{"uploadData":this.excel_dic},{
+          axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload,"isGetData":"save","showinfo":this.showinfo,},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
-                    console.log(res.data,"first");//上传成功的操作
+                    {#console.log(res.data,"first");//上传成功的操作#}
 
                      this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
                      {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
                    this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
                   this.key_list=res.data.key_list;
+                   this.comments=res.data.comments;
+                   this.showinfo=res.data.showinfo;
                   this.canExport = res.data.canExport;
                   this.canEdit = res.data.canEdit;
-
-                  this.selectItem=res.data.select;
+                  this.errMsg = res.data.errMsg;
                   this.tableloading=false;
                    this.elbuttonloading=false;
                    if(this.errMsg){
@@ -250,6 +327,7 @@
       },
             update:function(scopse,item,index){
                 console.log(item, index, scopse);
+                console.log(scopse.row);
                 console.log(scopse.row[item]);
             },
         }
