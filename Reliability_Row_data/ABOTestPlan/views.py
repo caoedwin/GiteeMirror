@@ -206,6 +206,45 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     return CaseStatus, TestProess, comments
 
 
+def style_color(df, colors):
+    """
+
+    :param df: pd.DataFrame
+    :param colors: 字典 内容是 {标题:颜色}
+    :return:
+    """
+    return df.style.apply(style_apply, colors=colors)
+
+
+def style_apply(series, colors, back_ground=''):
+    """
+    :param series: 传过来的数据是DataFramt中的一列  类型为pd.Series
+    :param colors: 内容是字典 其中key 为标题名  value 为颜色
+    :param back_ground: 北京颜色
+    :return:
+    """
+    series_name = series.name[0]
+    a = list()
+    # 为了给每一个单元格上色
+    # for col in series:
+    #     # 其中 col 为pd.DataFrame 中的 一个小单元格  大家可以根据不同需求为单元格设置不同的颜色
+    #     # 获取什么一级标题获取什么颜色
+    #     if series_name in colors:
+    #         for title_name in colors:
+    #             if title_name == series_name:
+    #                 back_ground = 'background-color: ' + colors[title_name]
+    #                 # '; border-left-color: #080808'
+    #     a.append(back_ground)
+    for col in series:
+        # 其中 col 为pd.DataFrame 中的 一个小单元格  大家可以根据不同需求为单元格设置不同的颜色
+        if col in colors.keys():
+            back_ground = 'background-color: ' + colors[col]
+        else:
+            back_ground = 'background-color: #FFFFFF'
+                # '; border-left-color: #080808'
+        a.append(back_ground)
+    return a
+
 def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
     df1 = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
@@ -236,13 +275,15 @@ def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
     #     df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
     for i in save_data:
         df1.loc[i["row"], i["lie"]] = i["value"]
+
+    style_df = style_color(df1, {"P": '#00FF00', "F": '#FF0000', "B": '#FDF5E6', "NS": '#8b968d'})
     #无法保存公式，样式，注解
     excel_list = []
     # print(sheetname)
     for i in sheetname:
         if i != sheetname[1]:
             excel_list.append(pd.read_excel(src_file, sheet_name=i))
-    excel_list.insert(1, df1)#保证位置不变，df1的sheet_name时1
+    excel_list.insert(1, style_df)#保证位置不变，df1的sheet_name时1
     with pd.ExcelWriter(src_file, engine='openpyxl') as writer:
         num = 0
         for i in excel_list:
