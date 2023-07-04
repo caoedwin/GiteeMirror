@@ -397,6 +397,11 @@ def INVGantt_searchByProject(request):
         #           "Compal_TP_PN": "","Issue_Link": "", "Remark": "", "Attend_Time": "1", "Get_INV": "",
         #           "Month": "","Test_Start":"","Test_End":""},
         ]
+    mock_data1 = [
+        # {"Customer": "C38(NB)", "Project_Name": "FLY00",
+        #
+        #           "TP_Cat": "CPU", "Total": "3",},
+    ]
     canExport = 0
     roles = []
     onlineuser = request.session.get('account')
@@ -412,11 +417,11 @@ def INVGantt_searchByProject(request):
     for i in INVGantt.objects.all().values('Customer').distinct().order_by('Customer'):
         # print(i)
         Project = []
-        for j in INVGantt.objects.filter(Customer=i['Customer']).values('INV_Model').distinct().order_by('INV_Model'):
+        for j in INVGantt.objects.filter(Customer=i['Customer']).values('Project_Name').distinct().order_by('Project_Name'):
             # CompalPNlist=[]
             # for k in CQM.objects.filter(Customer=i['Customer'],Project=j['Project']).values('CompalPN').distinct().order_by('CompalPN'):
             #     CompalPNlist.append(k['CompalPN'])
-            Project.append({"Project": j['INV_Model'],})#"CompalPN":CompalPNlist})
+            Project.append({"Project": j['Project_Name'],})#"CompalPN":CompalPNlist})
         selectItem[i['Customer']] = Project
     for i in INVGantt.objects.all().values('TP_Cat').distinct().order_by('TP_Cat'):
         selectCategory.append(i['TP_Cat'])
@@ -430,30 +435,61 @@ def INVGantt_searchByProject(request):
         # print(request,type(request),request.POST)
         if request.POST.get('isGetData') == 'SEARCH':
             check_dic = {}
+            Search_Endperiod = request.POST.getlist("Date",
+                                                    ['0000-00-00', '0000-00-00'])  # 经尝试这个默认值与没有这个搜索条件是一样的效果
+            #獲取的月份，是前一個月的最後一天，2-4月，是1/31-3/31
             if request.POST.get('Customer'):
                 check_dic['Customer'] = request.POST.get('Customer')
             if request.POST.get('Project'):
-                check_dic['INV_Model'] = request.POST.get('Project')
-            if request.POST.get('Category'):
-                check_dic['TP_Cat'] = request.POST.get('Category')
-            if request.POST.get('Status'):
-                check_dic['Status'] = request.POST.get('Status')
-            if request.POST.get('Lenovo_TP_PN'):
-                check_dic['Lenovo_TP_PN'] = request.POST.get('Lenovo_TP_PN')
-            if request.POST.get('Compal_TP_PN'):
-                check_dic['Compal_TP_PN'] = request.POST.get('Compal_TP_PN')
-            for i in INVGantt.objects.filter(**check_dic):
+                check_dic['Project_Name'] = request.POST.get('Project')
+            # print(Search_Endperiod)
+            if Search_Endperiod != ['0000-00-00', '0000-00-00']:
+                #2023-01-31T16:00:00.000Z
+                duringTime = [datetime.datetime.strptime(Search_Endperiod[0], '%Y-%m-%d'),
+                              datetime.datetime.strptime(Search_Endperiod[1].split('-')[0] + "-" + str(int(Search_Endperiod[1].split('-')[1]) + 1) + "-01", '%Y-%m-%d')]
+                # print(duringTime)
+                for i in INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).values("TP_Cat").distinct():
+                    # print(i)
+                    mock_data1.append(
+                        {
+                            "Customer": request.POST.get('Customer'), "Project_Name": request.POST.get('Project'), "TP_Cat": i['TP_Cat'],
+                            "Total": INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).values("TP_Cat").filter(TP_Cat=i['TP_Cat']).count(),
+                        }
+                    )
+
+        if request.POST.get('isGetData') == 'SEARCH_Detail':
+            check_dic = {}
+            Search_Endperiod = request.POST.getlist("Date",
+                                                    ['0000-00-00', '0000-00-00'])  # 经尝试这个默认值与没有这个搜索条件是一样的效果
+            # 獲取的月份，是前一個月的最後一天，2-4月，是1/31-3/31
+            if request.POST.get('Customer'):
+                check_dic['Customer'] = request.POST.get('Customer')
+            if request.POST.get('Project_Name'):
+                check_dic['Project_Name'] = request.POST.get('Project_Name')
+            if request.POST.get('TP_Cat'):
+                check_dic['TP_Cat'] = request.POST.get('TP_Cat')
+            # print(Search_Endperiod)
+            duringTime = [datetime.datetime.strptime(Search_Endperiod[0], '%Y-%m-%d'),
+                          datetime.datetime.strptime(Search_Endperiod[1].split('-')[0] + "-" + str(
+                              int(Search_Endperiod[1].split('-')[1]) + 1) + "-01", '%Y-%m-%d')]
+            # print(duringTime)
+            for i in INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)):
                 # print(i.Test_Start, str(i.Test_End), str(i.Edittime))
-                mock_data.append({"id":i.id, "Customer": i.Customer, 'INV_Number':i.INV_Number, "INV_Model":i.INV_Model, "Project_Name":i.Project_Name, "Unit_Origin":i.Unit_Origin, "Year":i.Year,
-                                  "Unit_Qty":i.Unit_Qty, "TP_Kinds":i.TP_Kinds, "Qualify_Cycles":i.Qualify_Cycles, "Status":i.Status,
-                                  "TP_Cat":i.TP_Cat, "Trial_Run_Type":i.Trial_Run_Type, "TP_Vendor":i.TP_Vendor, "TP_Key_Parameter":i.TP_Key_Parameter,
-                                  "Lenovo_TP_PN":i.Lenovo_TP_PN,"Compal_TP_PN":i.Compal_TP_PN, "Issue_Link":i.Issue_Link,
-                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "Get_INV":i.Get_INV, "Month":i.Month,
-                                  "Test_Start":str(i.Test_Start), "Test_End":str(i.Test_End),
-                                  "Editor":i.Editor, "Edittime":str(i.Edittime), })
+                mock_data.append(
+                    {"id": i.id, "Customer": i.Customer, 'INV_Number': i.INV_Number, "INV_Model": i.INV_Model,
+                     "Project_Name": i.Project_Name, "Unit_Origin": i.Unit_Origin, "Year": i.Year,
+                     "Unit_Qty": i.Unit_Qty, "TP_Kinds": i.TP_Kinds, "Qualify_Cycles": i.Qualify_Cycles,
+                     "Status": i.Status,
+                     "TP_Cat": i.TP_Cat, "Trial_Run_Type": i.Trial_Run_Type, "TP_Vendor": i.TP_Vendor,
+                     "TP_Key_Parameter": i.TP_Key_Parameter,
+                     "Lenovo_TP_PN": i.Lenovo_TP_PN, "Compal_TP_PN": i.Compal_TP_PN, "Issue_Link": i.Issue_Link,
+                     "Remark": i.Remark, "Attend_Time": i.Attend_Time, "Get_INV": i.Get_INV, "Month": i.Month,
+                     "Test_Start": str(i.Test_Start), "Test_End": str(i.Test_End),
+                     "Editor": i.Editor, "Edittime": str(i.Edittime), })
         data = {
             "err_ok": "0",
             "content": mock_data,
+            "tableContent1": mock_data1,
             "select": selectItem,
 
             "selectStatus": selectStatus,

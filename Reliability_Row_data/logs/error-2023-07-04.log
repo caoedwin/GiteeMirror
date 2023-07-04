@@ -1,0 +1,64 @@
+[2023-07-04 12:04:49,130] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 448, in INVGantt_searchByProject
+    duringTime = datetime.datetime.strptime(Search_Endperiod, '%Y-%m-%d')
+TypeError: strptime() argument 1 must be str, not list
+[2023-07-04 12:04:49,132] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 105401
+[2023-07-04 12:06:38,415] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 448, in INVGantt_searchByProject
+    duringTime = [datetime.datetime.strptime(Search_Endperiod[0], '%Y-%m-%d'),
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 362, in _strptime
+    data_string[found.end():])
+ValueError: unconverted data remains: T16:00:00.000Z
+[2023-07-04 12:06:38,428] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 114098
+[2023-07-04 13:32:51,343] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 476, in INVGantt_searchByProject
+    for i in INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)):
+UnboundLocalError: local variable 'duringTime' referenced before assignment
+[2023-07-04 13:32:51,355] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 105661
+[2023-07-04 14:13:11,344] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 448, in INVGantt_searchByProject
+    duringTime = [datetime.datetime.strptime(Search_Endperiod[0].split("T")[0], '%Y-%m-%d'),
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2020-01' does not match format '%Y-%m-%d'
+[2023-07-04 14:13:11,368] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 113847

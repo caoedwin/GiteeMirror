@@ -301,3 +301,58 @@
 [2023-06-29 16:38:12,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 27074
 [2023-06-29 16:38:19,535] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:38:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-search/ POST
 [2023-06-29 16:38:19,544] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 30284
+[2023-06-29 16:44:44,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 50185
+[2023-06-29 16:44:45,159] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-29 16:44:45,227] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:44:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-search/ POST
+[2023-06-29 16:44:45,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 26458
+[2023-06-29 16:44:48,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42050
+[2023-06-29 16:44:48,763] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/ HTTP/1.1" 500 59
+[2023-06-29 16:44:49,104] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42050
+[2023-06-29 16:44:49,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-29 16:44:59,169] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-29 16:44:59,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 101601
+[2023-06-29 16:44:59,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:45:09,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/49/change/ HTTP/1.1" 200 20880
+[2023-06-29 16:45:09,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:45:17,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 42050
+[2023-06-29 16:45:17,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-29 16:45:21,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 101601
+[2023-06-29 16:45:21,688] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:45:25,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/add/ HTTP/1.1" 200 20217
+[2023-06-29 16:45:25,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:46:07,233] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:46:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/app01/permission/add/ POST
+[2023-06-29 16:46:07,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/permission/add/ HTTP/1.1" 302 0
+[2023-06-29 16:46:07,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 102649
+[2023-06-29 16:46:07,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:46:14,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 102490
+[2023-06-29 16:46:20,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23322
+[2023-06-29 16:46:22,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 58438
+[2023-06-29 16:46:22,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:46:29,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/1/change/ HTTP/1.1" 200 25110
+[2023-06-29 16:46:29,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:46:32,842] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:46:32 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/app01/role/1/change/ POST
+[2023-06-29 16:46:32,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/role/1/change/ HTTP/1.1" 302 0
+[2023-06-29 16:46:34,995] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 58593
+[2023-06-29 16:46:35,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-06-29 16:46:42,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2023-06-29 16:46:42,179] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-29 16:46:42,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-06-29 16:46:42,278] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-06-29 16:46:45,412] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-29 16:46:45,547] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:46:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-06-29 16:46:45,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-06-29 16:46:45,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-06-29 16:46:45,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-06-29 16:46:46,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-06-29 16:46:49,039] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-29 16:46:49,065] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-29 16:46:49,073] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-29 16:46:49,082] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-29 16:47:04,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 50273
+[2023-06-29 16:47:05,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-06-29 16:47:05,462] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-06-29 16:47:05 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-search/ POST
+[2023-06-29 16:47:05,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 26458
+[2023-06-29 16:47:08,333] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-06-29 16:47:08,337] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-06-29 16:47:08,348] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-06-29 16:47:08,353] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
