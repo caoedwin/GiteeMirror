@@ -58,7 +58,7 @@
                         <el-button :loading="elbuttonloading" size="small"  v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
                         <el-button :loading="elbuttonloading" @click="saveData"v-if="canEdit==1" v-cloak type="success" style="height:40px">保存</el-button>
         </div>
-    <el-table id="out-exceltable"  stripe border {% comment %}height="700"{% endcomment %} ref="multipleTable" :data="excel_dic" tooltip-effect="dark" style="width: 95% ;heighrt:200;"
+    <el-table v-if="canEdit==1" id="out-exceltable"  stripe border {% comment %}height="700"{% endcomment %} ref="multipleTable" :data="excel_dic" tooltip-effect="dark" style="width: 95% ;heighrt:200;"
    {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}
         :cell-class-name="tableCellClassName" @cell-click="cellClick"
         :cell-style="cellStyle"
@@ -75,6 +75,22 @@
           </template>
       </el-table-column>
    </el-table>
+    <el-table v-else="canEdit==1" id="out-exceltable"  stripe border {% comment %}height="700"{% endcomment %} ref="multipleTable" :data="excel_dic" tooltip-effect="dark" style="width: 95% ;heighrt:200;"
+       {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}
+                :cell-style="cellStyle"
+       v-loading="tableloading"
+      element-loading-text="數據更新中，請稍後"
+      border>
+        <el-table-column v-if="key_list[0]" v-for="(item,index) in key_list" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item" :min-width="widths(index)">
+            <template slot-scope="scope">
+                <el-tooltip v-if="tooltipshow(scope)" placement="right" effect="dark">
+                    <div v-html="ToBreak(scope)" slot="content"></div>
+                                <div class="oneLine">${ scope.row[item] }</div>
+                   </el-tooltip>
+                <span v-else="tooltipshow(scope)">${ scope.row[item]  }</span>
+              </template>
+          </el-table-column>
+       </el-table>
 </template>
  <!-- comments -->
         <el-dialog :title="name" :visible.sync="dialogVisible" top='40px' width="25%" center class="dialog_box" :close-on-click-modal="false">

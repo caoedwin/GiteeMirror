@@ -406,9 +406,21 @@ def ABOTestPlan_edit(request):
     excel_dic = []
     key_list = []
     canExport = 1
-    canEdit = 1
+    canEdit = 0
     showinfo = ''
     errMsg = ''
+
+    onlineuser = request.session.get('account')
+    roles = []
+    if UserInfo.objects.filter(account=onlineuser).first():
+        for i in UserInfo.objects.filter(account=onlineuser).first().role.all():
+            roles.append(i.name)
+    # print(roles)
+    # editPpriority = 100
+    for i in roles:
+        if 'admin' == i or 'DQA_ABO_Admin' == i:
+            canEdit = 1
+
     folder_path_Sys = settings.MEDIA_ROOT + '/ABOTestPlanSys/'  # 指定文件夹路径
     # TestID = id
 
