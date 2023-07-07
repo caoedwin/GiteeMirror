@@ -160,22 +160,24 @@
             },
             // 拿到行和列对应的值
             cellClick(row, index) {
-                {% comment %}console.log('点击后获取的数据:','行：',row, '列：',index);{% endcomment %}
+                {#console.log('点击后获取的数据:','行：',row, '列：',index,index.index);#}
                 {% comment %}console.log(Object.keys(row["commentsedit"]),index.label);
                 console.log(Object.keys(row["commentsedit"]).includes(index.label));{% endcomment %}
-                this.dialogVisible = true;
-                {#this.ruleForm = {"result":row[index.label]};#}
-                {#this.tableTimer = index.label //当前单元格的列名称#}
-                this.ruleForm.hang = row.index //当前单元格的值
-                this.ruleForm.lie = index.label //当前单元格的值
-                this.ruleForm.result = row[index.label] //当前单元格的值
-                if(Object.keys(row["commentsedit"]).includes(index.label)){
-                    this.ruleForm.comments = row["commentsedit"][index.label][2] //当前单元格的值
+                if(index.index>=2){
+                    this.dialogVisible = true;
+                    {#this.ruleForm = {"result":row[index.label]};#}
+                    {#this.tableTimer = index.label //当前单元格的列名称#}
+                    this.ruleForm.hang = row.index //当前单元格的值
+                    this.ruleForm.lie = index.label //当前单元格的值
+                    this.ruleForm.result = row[index.label] //当前单元格的值
+                    if(Object.keys(row["commentsedit"]).includes(index.label)){
+                        this.ruleForm.comments = row["commentsedit"][index.label][2] //当前单元格的值
+                    }else{
+                        this.ruleForm.comments = ''
+                    }
                 }else{
-                    this.ruleForm.comments = ''
+                    this.dialogVisible = false;
                 }
-
-
             },
             // 表格高度
             initTableHeight() {
@@ -187,7 +189,7 @@
 
             // 弹框内提交
             subForm(formName) {
-                {#console.log(formName);#}
+                console.log(formName);
                 var lienum=0;
                 for(let i=0;i<this.key_list.length;i++){
                     {#console.log(this.key_list[i],formName.lie,"111",this.key_list[i]==formName.lie)#}
@@ -263,6 +265,7 @@
                         return false
                     }
                 }{% endcomment %}
+                {#console.log("yyy",comm)#}
 
                 if(Object.keys(comm.row["commentsedit"]).includes(comm.column.label)){
                     return true
@@ -380,6 +383,7 @@
            //獲取到改變的input的序列號
           var upload = [];
           var upload_zhushi = [];
+          var upload_zhushi_changelog = [];
           var key_list_save = [];
                 for(let j=0;j<this.key_list.length;j++){
                     key_list_save.push(this.key_list[j])
@@ -427,14 +431,17 @@
                                         upload_zhushi.push(
                                             {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
                                         )
+                                        upload_zhushi_changelog.push(
+                                        {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                        )/*如果upload_zhushi_changelog跟upload都没改变，就不需要保存，无需操作excel文档；如果改变了要把原来的comments一起保存，传递upload_zhushi*/
                                     }
                             }
                         }
                 }
             }
-
+            console.log(upload,"ge", upload_zhushi);
           //數據無變化
-          if(upload.length == 0 && upload_zhushi.length == 0){
+          if(upload.length == 0 && upload_zhushi_changelog.length == 0){
               alert("數據未發生變化");
               return false;
           }
