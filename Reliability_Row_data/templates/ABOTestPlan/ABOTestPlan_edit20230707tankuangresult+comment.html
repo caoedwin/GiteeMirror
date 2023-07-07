@@ -160,8 +160,8 @@
             },
             // 拿到行和列对应的值
             cellClick(row, index) {
-                {% comment %}console.log('点击后获取的数据:','行：',row, '列：',index);
-                console.log(Object.keys(row["commentsedit"]),index.label);
+                {% comment %}console.log('点击后获取的数据:','行：',row, '列：',index);{% endcomment %}
+                {% comment %}console.log(Object.keys(row["commentsedit"]),index.label);
                 console.log(Object.keys(row["commentsedit"]).includes(index.label));{% endcomment %}
                 this.dialogVisible = true;
                 {#this.ruleForm = {"result":row[index.label]};#}
@@ -187,7 +187,7 @@
 
             // 弹框内提交
             subForm(formName) {
-                console.log(formName);
+                {#console.log(formName);#}
                 var lienum=0;
                 for(let i=0;i<this.key_list.length;i++){
                     {#console.log(this.key_list[i],formName.lie,"111",this.key_list[i]==formName.lie)#}
