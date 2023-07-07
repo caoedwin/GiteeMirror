@@ -55,36 +55,48 @@
 
     <div class="col-md-2">
         <span  class="selectItem" v-cloak  v-if="showinfo">當前表格信息：${ showinfo }<span v-if=!"canEdit" v-cloak class="tips">(您所使用的賬號沒有編輯此表單的權限)</span></span>
-                        <el-button size="small"  v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
-                        <el-button @click="saveData"v-if="canEdit==1" v-cloak type="success" style="height:40px">保存</el-button>
+                        <el-button :loading="elbuttonloading" size="small"  v-if="canExport==1" @click="exportExcel" type="info" >Export</el-button>
+                        <el-button :loading="elbuttonloading" @click="saveData"v-if="canEdit==1" v-cloak type="success" style="height:40px">保存</el-button>
         </div>
     <el-table id="out-exceltable"  stripe border {% comment %}height="700"{% endcomment %} ref="multipleTable" :data="excel_dic" tooltip-effect="dark" style="width: 95% ;heighrt:200;"
    {% comment %}:default-sort = "{prop: 'Project', order: 'descending'}"{% endcomment %}
-            :cell-style="cellStyle"
-   v-loading="tableloading"
-  element-loading-text="數據更新中，請稍後"
-  border>
+        :cell-class-name="tableCellClassName" @cell-click="cellClick"
+        :cell-style="cellStyle"
+          v-loading="tableloading"
+          element-loading-text="數據更新中，請稍後"
+          border>
     <el-table-column v-if="key_list[0]" v-for="(item,index) in key_list" :label="{% comment %}'Project: '+{% endcomment %}item" :prop="item" :min-width="widths(index)">
-            <template slot-scope="scope">
-                <el-input v-if="canEdit && index >= 2 && scope.$index <= 51" placeholder="请输入内容" type="text" v-model="scope.row[item]" ></el-input>
-                <el-select v-else-if="canEdit && index >= 2 && scope.$index > 51" class="edit-cell" filterable allow-create v-model="scope.row[item]">
+        <template slot-scope="scope">
+               <el-tooltip v-if="tooltipshow(scope)" placement="right" effect="dark">
+                    <div v-html="ToBreak(scope)" slot="content"></div>
+                    <div class="oneLine">${ scope.row[item] }</div>
+               </el-tooltip>
+               <span v-else="tooltipshow(scope)">${ scope.row[item]  }</span>
+          </template>
+      </el-table-column>
+   </el-table>
+</template>
+ <!-- 新增修改 -->
+        <el-dialog :title="name" :visible.sync="dialogVisible" top='40px' width="25%" center class="dialog_box">
+            <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="结果:">
+                    {% comment %}<el-input v-model="ruleForm.result" size="small" placeholder="请输入内容"></el-input>{% endcomment %}
+                    <el-select class="edit-cell" filterable allow-create v-model="ruleForm.result">
                         <el-option value="P"></el-option>
                         <el-option value="F"></el-option>
                         <el-option value="B"></el-option>
                         <el-option value="NS"></el-option>
                         <el-option value="NonCheck"></el-option>
                   </el-select>
-                  <span v-else-if="canEdit && index < 2" >${ scope.row[item]  }</span>
-{#                <span v-if="canEdit && index <2" >${ scope.row[item]  }</span>#}
-{#                <div v-else>#}
-{#                  <el-input {% comment %}v-else-if="canEdit && index >= 2 && scope.row.$index <= 51"{% endcomment %} placeholder="请输入内容" type="text" v-model="scope.row.item" ></el-input>#}
-
-{#                </div>#}
-                {% comment %}<el-button @click="update(scope,item,index)" type="text" size="small">编辑</el-button>{% endcomment %}
-              </template>
-      </el-table-column>
-   </el-table>
-</template>
+                </el-form-item>
+                <el-form-item label="Comments:">
+                    <el-input v-model="ruleForm.comments" type="textarea" size="small" placeholder="请输入内容"></el-input>
+                </el-form-item>
+            </el-form>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="subForm(ruleForm)" size='small' type="primary" class="btn">确认</el-button>
+            </span>
+        </el-dialog>
 
 </div>
 {% endblock %}
@@ -105,6 +117,12 @@
 
                 visible: false,
                 excel_dic: [],
+                ruleForm: {
+                    hang:"",
+                    lie:"",
+                    result:"",
+                    comments:"",
+                },
                 excel_dic_origin: [],
                 key_list: [],
                 comments: [],
@@ -120,12 +138,86 @@
                 showBtnOrdinary: true,
                 tableloading:false,
                 elbuttonloading:false,
+                dialogVisible :false,
             }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
             this.getdata("first");
         },
         methods: {
+            // 给行和列赋值
+            tableCellClassName({
+                row,
+                column,
+                rowIndex,
+                columnIndex
+            }) {
+                //注意这里是解构
+                //利用单元格的 className 的回调方法，给行列索引赋值
+                row.index = rowIndex;
+                column.index = columnIndex;
+            },
+            // 拿到行和列对应的值
+            cellClick(row, index) {
+                {% comment %}console.log('点击后获取的数据:','行：',row, '列：',index);{% endcomment %}
+                {% comment %}console.log(Object.keys(row["commentsedit"]),index.label);
+                console.log(Object.keys(row["commentsedit"]).includes(index.label));{% endcomment %}
+                this.dialogVisible = true;
+                {#this.ruleForm = {"result":row[index.label]};#}
+                {#this.tableTimer = index.label //当前单元格的列名称#}
+                this.ruleForm.hang = row.index //当前单元格的值
+                this.ruleForm.lie = index.label //当前单元格的值
+                this.ruleForm.result = row[index.label] //当前单元格的值
+                if(Object.keys(row["commentsedit"]).includes(index.label)){
+                    this.ruleForm.comments = row["commentsedit"][index.label][2] //当前单元格的值
+                }else{
+                    this.ruleForm.comments = ''
+                }
+
+
+            },
+            // 表格高度
+            initTableHeight() {
+                let that = this
+                var menus = that.$refs.menus.offsetHeight //搜索栏高度
+                var footer = that.$refs.footer.offsetHeight //分页高度
+                that.height = window.innerHeight - menus - footer - 25 + 'px'
+            },
+
+            // 弹框内提交
+            subForm(formName) {
+                {#console.log(formName);#}
+                var lienum=0;
+                for(let i=0;i<this.key_list.length;i++){
+                    {#console.log(this.key_list[i],formName.lie,"111",this.key_list[i]==formName.lie)#}
+                    if(this.key_list[i]==formName.lie){
+                         lienum=i
+                    }
+                }
+                /*注释变动了,但是注释变为空，直接舍弃，否则会有注释，只是注释为空字符串*/
+                if(formName.comments!=''){
+                    this.excel_dic[formName.hang][formName.lie] = formName.result;
+                    this.excel_dic[formName.hang]["commentsedit"][formName.lie] = [formName.hang, lienum, formName.comments, formName.lie]
+                    {#console.log(this.excel_dic[formName.hang]);#}
+                    let val = this.excel_dic[formName.hang]
+                    /* this.tableData为表格的数据源、indexs是当前行，val是当前行修改后的数据。
+                    如果table的列改变了会直接更新，如果table的列没变，只是table绑定的非显示数据变了，必须要将整个一行重新赋值，table才会认为发生变化，并重新渲染*/
+                    this.$set(this.excel_dic, formName.hang, val);
+                }else{
+                    if(Object.keys(this.excel_dic[formName.hang]["commentsedit"]).includes(formName.lie)){
+                        this.excel_dic[formName.hang][formName.lie] = formName.result;
+                        delete this.excel_dic[formName.hang]["commentsedit"][formName.lie]/*如果原本有则直接删除*/
+                        let val = this.excel_dic[formName.hang]
+                        /* this.tableData为表格的数据源、indexs是当前行，val是当前行修改后的数据。
+                        如果table的列改变了会直接更新，如果table的列没变，只是table绑定的非显示数据变了，必须要将整个一行重新赋值，table才会认为发生变化，并重新渲染*/
+                        this.$set(this.excel_dic, formName.hang, val);
+                    }
+                }
+
+                this.dialogVisible = false;
+
+
+            },
             //获取数据
             getdata: function (e) {
                 this.tableloading=true;
@@ -163,6 +255,34 @@
                     return 100
                 }
             },
+            tooltipshow (comm){
+                {% comment %}for(let i=0;i<comm.row.comments.length;i++){
+                    if(comm.column.label==this.key_list[comm.row.comments[i][1]]){
+                        return true
+                    }else {
+                        return false
+                    }
+                }{% endcomment %}
+
+                if(Object.keys(comm.row["commentsedit"]).includes(comm.column.label)){
+                    return true
+                }else {
+                    return false
+                }
+
+            },
+            ToBreak (val) {
+                {% comment %}for(let i=0;i<val.row.comments.length;i++){
+                    if(val.column.label==this.key_list[val.row.comments[i][1]]){
+                        return val.row.comments[i][2].replace('\n', '<br />')
+                    }
+                }{% endcomment %}
+
+                if(Object.keys(val.row["commentsedit"]).includes(val.column.label)){
+                    return val.row.commentsedit[val.column.label][2].replace('\n', '<br />')
+                }
+
+        },
             cellStyle({row,column,rowIndex,columnIndex}){
                 {#console.log(columnIndex);#}
                 {#console.log(columnIndex,row[this.key_list[columnIndex]]);#}
@@ -259,24 +379,62 @@
           //console.log(this.$refs.mult);
            //獲取到改變的input的序列號
           var upload = [];
-          {#let  self= this;#}
+          var upload_zhushi = [];
+          var key_list_save = [];
+                for(let j=0;j<this.key_list.length;j++){
+                    key_list_save.push(this.key_list[j])
+                }
+          key_list_save.push("commentsedit");
+            {#console.log(this.key_list,key_list_save);#}
             for(let i = 0;i<this.excel_dic.length;i++) {
                 {#console.log(this.excel_dic[i],1);#}
                 {#console.log(this.excel_dic_origin[i],2);#}
-                console.log(JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i]))
+                {#console.log(JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i]))#}
                 if (JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i])) {
-                    for(let j=0;j<this.key_list.length;j++){
-                        if (JSON.stringify(this.excel_dic[i][this.key_list[j]])!=JSON.stringify(this.excel_dic_origin[i][this.key_list[j]])) {
-                            upload.push(
-                                {"row":i, "lie":this.key_list[j], "value":this.excel_dic[i][this.key_list[j]]}
+                    for(let j=0;j<key_list_save.length;j++){
+                        if (JSON.stringify(this.excel_dic[i][key_list_save[j]])!=JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
+                            if(key_list_save[j]=="commentsedit"){
+                                {% comment %}upload_zhushi.push(
+                                {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                )/*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/{% endcomment %}
+                            }else {
+                                upload.push(
+                                {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
                             )
+                            }
                         }
                     }
                 };
+
+            }
+            for(let i = 0;i<this.excel_dic.length;i++) {
+                for(let j=0;j<key_list_save.length;j++){
+                        if(key_list_save[j]=="commentsedit"){
+                            if (JSON.stringify(this.excel_dic[i][key_list_save[j]])==JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
+                                if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
+                                    {#console.log(1,JSON.stringify(this.excel_dic[i][key_list_save[j]]),JSON.stringify(this.excel_dic_origin[i][key_list_save[j]]))#}
+                                        /*注释没有变动，但是原本注释就不为空*/
+                                    upload_zhushi.push(
+                                        {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
+                                    )
+                                    /*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/
+                                }
+                            }else{
+                                {#console.log(2,JSON.stringify(this.excel_dic[i][key_list_save[j]]))#}
+                                /*注释变动了*/
+                                if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
+                                    /*注释变动了,但是整行所有列的注释变为空，直接舍弃，否则会有注释，只是注释为空字符串*/
+                                        upload_zhushi.push(
+                                            {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
+                                        )
+                                    }
+                            }
+                        }
+                }
             }
 
           //數據無變化
-          if(upload.length == 0){
+          if(upload.length == 0 && upload_zhushi.length == 0){
               alert("數據未發生變化");
               return false;
           }
@@ -287,11 +445,12 @@
           {#    "customer":this.customer,#}
           {#    "project":this.project,#}
           {#    "phase":this.phase#}
-
+            this.tableloading=true;
+            this.elbuttonloading=true;
           this.loading=true;
           //console.log(uploadData);//$("[name='csrfmiddlewaretoken']").val()
           {#axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload},{#}
-          axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload,"isGetData":"save","showinfo":this.showinfo,},{
+          axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload,"upload_zhushi":upload_zhushi,"isGetData":"save","showinfo":this.showinfo,},{
                     headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                 }).then((res) => {
                     {#console.log(res.data,"first");//上传成功的操作#}
@@ -330,7 +489,8 @@
                 console.log(scopse.row);
                 console.log(scopse.row[item]);
             },
-        }
+        },
+
     })
 </script>
 {% endblock %}

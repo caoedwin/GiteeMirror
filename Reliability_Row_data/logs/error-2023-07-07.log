@@ -1,0 +1,407 @@
+[2023-07-07 08:21:06,402] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 444, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 285, in save_exel
+    df1.loc[i["row"], key].comment = values[2]
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:21:06,432] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 93598
+[2023-07-07 08:24:39,363] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 445, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 286, in save_exel
+    df1.loc[i["row"], key].comment.text = values[2]
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:24:39,365] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 91082
+[2023-07-07 08:27:03,828] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 447, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 258, in save_exel
+    print(j.comment.text)
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:27:03,831] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 90808
+[2023-07-07 08:30:00,615] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'D'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 445, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 256, in save_exel
+    print(df1.loc[60,"D"].comment.text)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 925, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1100, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 862, in _getitem_lowerdim
+    return getattr(section, self.name)[new_key]
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 931, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1164, in _getitem_axis
+    return self._get_label(key, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1113, in _get_label
+    return self.obj.xs(label, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 3776, in xs
+    loc = index.get_loc(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'D'
+[2023-07-07 08:30:00,619] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 183589
+[2023-07-07 08:30:31,598] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'B'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 445, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 256, in save_exel
+    print(df1.loc[60,'B'].comment.text)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 925, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1100, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 862, in _getitem_lowerdim
+    return getattr(section, self.name)[new_key]
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 931, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1164, in _getitem_axis
+    return self._get_label(key, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1113, in _get_label
+    return self.obj.xs(label, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 3776, in xs
+    loc = index.get_loc(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'B'
+[2023-07-07 08:30:31,602] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 183585
+[2023-07-07 08:32:01,797] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: '"Unnamed: 3"'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 445, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 256, in save_exel
+    print(df1.loc[60,'"Unnamed: 3"'].comment.text)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 925, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1100, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 862, in _getitem_lowerdim
+    return getattr(section, self.name)[new_key]
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 931, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1164, in _getitem_axis
+    return self._get_label(key, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1113, in _get_label
+    return self.obj.xs(label, axis=axis)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\generic.py", line 3776, in xs
+    loc = index.get_loc(key)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: '"Unnamed: 3"'
+[2023-07-07 08:32:01,802] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 184026
+[2023-07-07 08:32:21,818] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 445, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 256, in save_exel
+    print(df1.loc[60,"Unnamed: 3"].comment.text)
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:32:21,820] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 90505
+[2023-07-07 08:48:56,939] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 465, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 259, in save_exel
+    print(df1.loc[60,"Unnamed: 3"].comment.text)
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:48:56,949] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 90795
+[2023-07-07 08:49:23,606] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 465, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 259, in save_exel
+    print(df1.loc[60,"Unnamed: 3"].comment.text)
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 08:49:23,612] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 91059
+[2023-07-07 09:19:56,866] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 465, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 260, in save_exel
+    print(df1.loc[60,"Unnamed: 3"].comment.text)
+AttributeError: 'str' object has no attribute 'comment'
+[2023-07-07 09:19:56,868] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 91416
+[2023-07-07 09:20:24,894] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 317, in save_exel
+    ws[lie_num + hangnum] = comment
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\worksheet.py", line 304, in __setitem__
+    self[key].value = value
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 239, in value
+    self._bind_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 222, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert Comment: test1 by Edwin to Excel
+[2023-07-07 09:20:24,896] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 105755
+[2023-07-07 09:23:34,871] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 317, in save_exel
+    ws[lie_num + hangnum] = comment
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\worksheet.py", line 304, in __setitem__
+    self[key].value = value
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 239, in value
+    self._bind_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 222, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert Comment: test1 by Edwin to Excel
+[2023-07-07 09:23:34,873] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 105765
+[2023-07-07 09:25:57,877] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 465, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 318, in save_exel
+    ws[lie_num + hangnum] = comment
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\worksheet.py", line 304, in __setitem__
+    self[key].value = value
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 239, in value
+    self._bind_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 222, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert Comment: test1 by Edwin to Excel
+[2023-07-07 09:25:57,879] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 105793
+[2023-07-07 09:26:53,842] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 465, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 308, in save_exel
+    ws = worksheet.active
+AttributeError: 'Worksheet' object has no attribute 'active'
+[2023-07-07 09:26:53,843] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 92903
+[2023-07-07 09:27:22,330] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 317, in save_exel
+    worksheet[lie_num + hangnum] = comment
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\worksheet.py", line 304, in __setitem__
+    self[key].value = value
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 239, in value
+    self._bind_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\cell\cell.py", line 222, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert Comment: test1 by Edwin to Excel
+[2023-07-07 09:27:22,333] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 105619
+[2023-07-07 09:28:23,769] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 318, in save_exel
+    workbook.save()
+TypeError: save() missing 1 required positional argument: 'filename'
+[2023-07-07 09:28:23,779] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 94240
+[2023-07-07 09:33:04,059] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 319, in save_exel
+    shutil.copy(src_file, folder_path_Sys)
+  File "C:\Python372\lib\shutil.py", line 245, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Python372\lib\shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+PermissionError: [Errno 13] Permission denied: 'c:/media/ABOTestPlanSys/T88_ProjectName1_B Phase_Compatibility/ME-ENV004_upload.xlsx'
+[2023-07-07 09:33:04,061] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 105885
+[2023-07-07 10:24:13,753] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOTestPlan/ABOTestPlan_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 464, in ABOTestPlan_edit
+    save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+  File "C:\djangoproject\Reliability_Row_data\ABOTestPlan\views.py", line 284, in save_exel
+    df1.loc[i["row"], i["lie"]] = i["value"]
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 723, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1689, in _setitem_with_indexer
+    self._setitem_with_indexer(new_indexer, value, name)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1730, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 1751, in _setitem_with_indexer_split_path
+    value = self._align_series(indexer, Series(value))
+  File "C:\Python372\mecheck\lib\site-packages\pandas\core\indexing.py", line 2149, in _align_series
+    raise ValueError("Incompatible indexer with Series")
+ValueError: Incompatible indexer with Series
+[2023-07-07 10:24:13,765] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 144827

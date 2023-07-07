@@ -13,6 +13,10 @@ from pathlib import Path
 import os, sys, shutil
 from django.conf import settings
 from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter as ExcelColumn
+from openpyxl.utils import column_index_from_string as Col2Int
+from openpyxl.comments import Comment
+
 import numpy as np
 # Create your views here.
 
@@ -98,17 +102,20 @@ def read_excel(src_file,header=0,sheetnum=1):
         cellnum = 0
         for cell in row:
             if cell.comment:
-                comments.append([rownum, cellnum, cell.comment.text])
+                # print(row, cell)
+                comments.append([rownum-1, cellnum, cell.comment.text, key_data[cellnum]])
             cellnum += 1
         rownum += 1
     # print(comments)
     for i in excel_dic:
         i["comments"] = []
+        i["commentsedit"] = {}
     for i in comments:
         # print(i,excel_dic[i[0]])
-        excel_dic_num = i[0] - 1
+        excel_dic_num = i[0]
         if "comments" in excel_dic[excel_dic_num].keys():
-            excel_dic[excel_dic_num]["comments"].append(i)
+            excel_dic[excel_dic_num]["comments"].append(i)#for summary,需要将所有comments心是在一起
+            excel_dic[excel_dic_num]["commentsedit"][i[3]] = i#for edit，编辑修改内容，需要将修改的注释内容精确到单元格
 
     return excel_dic,key_data, comments
 
@@ -197,7 +204,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
         cellnum = 0
         for cell in row:
             if cell.comment:
-                comments.append([cell.comment.text])
+                comments.append(["\n", cell.comment.text])
             cellnum += 1
         rownum += 1
     # print(comments)
@@ -245,11 +252,11 @@ def style_apply(series, colors, back_ground=''):
         a.append(back_ground)
     return a
 
-def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
+def save_exel(folder_path_Sys,save_data,upload_zhushi,src_file,auther,header=0,sheetnum=1):
+    # excel_file = pd.ExcelFile(src_file)
     df1 = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     sheetname = list(pd.read_excel(src_file, sheet_name=None))
-
     # Setup a DataFrame with corresponding hover values
     # tooltips_df = pd.DataFrame({
     #     'temp': ['i am message 1', 'i am foo', 'i am lala'],
@@ -275,9 +282,14 @@ def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
     #     df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
     for i in save_data:
         df1.loc[i["row"], i["lie"]] = i["value"]
+    # for i in upload_zhushi:
+    #     print(i["value"])
+    #     for key,values in i["value"].items():
+    #         print(key,values[2],i["row"])
+    #         df1.loc[i["row"], key].comment.text = values[2]
 
     style_df = style_color(df1, {"P": '#00FF00', "F": '#FF0000', "B": '#FDF5E6', "NS": '#8b968d'})
-    #无法保存公式，样式，注解
+    #无法保存公式，注解, 图片
     excel_list = []
     # print(sheetname)
     for i in sheetname:
@@ -289,6 +301,21 @@ def save_exel(folder_path_Sys,save_data,src_file,header=0,sheetnum=1):
         for i in excel_list:
             i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
             num += 1
+    # 读取所有批注
+    workbook = load_workbook(src_file)
+    first_sheet = workbook.get_sheet_names()[1]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
+
+    comments = []
+    rownum = 0
+    for i in upload_zhushi:
+        for key, values in i['value'].items():
+            hangnum = str(values[0] + 2)#行数时从1开始，index时从0开始，所以加1；前端由于将第一行作为表头，前端的index本就比excel的index小1，读取时传到前端前也减了1，所以读取前端时也要再加1
+            lie_num = str(ExcelColumn(values[1] + 1)) #列数时从1开始，index时从0开始，所以加1
+            comment = Comment(str(values[2]), str(auther))
+            # print(lie_num + hangnum, comment)
+            worksheet[lie_num + hangnum].comment = comment
+    workbook.save(src_file)
     shutil.copy(src_file, folder_path_Sys)
 
 # def recursion_dir_all_file(path):
@@ -412,31 +439,35 @@ def ABOTestPlan_edit(request):
         else:
             try:
                 request.body
-                print(request.body)
+                # print(request.body)
             except:
                 # print('1')
                 pass
             else:
                 if 'save' in str(request.body):
-                    try:
-                        responseData = json.loads(request.body)
-                        uploaddata = responseData['uploadData']
-                        showinfo = responseData['showinfo']
-                        folder_path_Sys = filepath
-                        print(uploaddata, 'uploaddata')
-                        print(folder_path_Sys, 'folder_path_Sys')
-                        val = filepath.count('_')
-                        filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
-                        print(filepath)
-                        if filepath:
-                            if os.path.exists(filepath):
-                                print('start')
-                                save_exel(folder_path_Sys,uploaddata, filepath)
-                                excel_dic = read_excel(filepath)[0]
-                                key_list = read_excel(filepath)[1]
-                                comments = read_excel(filepath)[2]
-                    except Exception as e:
-                        errMsg = e
+                    # try:
+                    responseData = json.loads(request.body)
+                    uploaddata = responseData['uploadData']
+                    upload_zhushi = responseData['upload_zhushi']
+                    showinfo = responseData['showinfo']
+                    folder_path_Sys = filepath
+                    print(uploaddata, 'uploaddata')
+                    print(upload_zhushi, 'upload_zhushi')
+                    # print(folder_path_Sys, 'folder_path_Sys')
+                    val = filepath.count('_')
+                    filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
+                    # print(filepath)
+                    auther = request.session.get('user_name')
+                    if filepath:
+                        if os.path.exists(filepath):
+                            # print('start')
+                            save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+                            excel_dic = read_excel(filepath)[0]
+                            key_list = read_excel(filepath)[1]
+                            comments = read_excel(filepath)[2]
+                    # except Exception as e:
+                    #     print(e)
+                    #     errMsg = str(e)
 
                     # save_exel(excel_dic,src_file)
         data = {

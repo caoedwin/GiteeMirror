@@ -169,6 +169,8 @@ def BorrowedDeviceA39(request):
                 elif "IntfCtgry" in checkAdaPow.keys():
                     mock_datalist = DeviceA39.objects.filter(
                         Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry'])).filter(DevStatus__in=["Good", "Fixed", 'Long'])
+                else:
+                    mock_datalist = DeviceA39.objects.filter(**checkAdaPow).filter(DevStatus__in=["Good", "Fixed", 'Long'])
             else:
                 mock_datalist = DeviceA39.objects.all().filter(DevStatus__in=["Good", "Fixed", 'Long'])
             # print(mock_datalist)
@@ -6358,6 +6360,8 @@ def M_edit(request):
                     elif "IntfCtgry" in checkAdaPow.keys():
                         mock_datalist = DeviceA39.objects.filter(
                             Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+                    else:
+                        mock_datalist = DeviceA39.objects.filter(**checkAdaPow)
                 else:
                     mock_datalist = DeviceA39.objects.all()
                 # print(mock_datalist)
@@ -6603,6 +6607,8 @@ def M_edit(request):
                     elif "IntfCtgry" in checkAdaPow.keys():
                         mock_datalist = DeviceA39.objects.filter(
                             Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+                    else:
+                        mock_datalist = DeviceA39.objects.filter(**checkAdaPow)
                 else:
                     mock_datalist = DeviceA39.objects.all()
                 # print(mock_datalist)
@@ -6783,6 +6789,8 @@ def M_edit(request):
                         elif "IntfCtgry" in checkAdaPow.keys():
                             mock_datalist = DeviceA39.objects.filter(
                                 Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+                        else:
+                            mock_datalist = DeviceA39.objects.filter(**checkAdaPow)
                     else:
                         mock_datalist = DeviceA39.objects.all()
                     for i in mock_datalist:
@@ -7182,6 +7190,8 @@ def M_edit(request):
                         elif "IntfCtgry" in checkAdaPow.keys():
                             mock_datalist = DeviceA39.objects.filter(
                                 Q(IntfCtgry__icontains=checkAdaPow['IntfCtgry']))
+                        else:
+                            mock_datalist = DeviceA39.objects.filter(**checkAdaPow)
                     else:
                         mock_datalist = DeviceA39.objects.all()
                     for i in mock_datalist:
