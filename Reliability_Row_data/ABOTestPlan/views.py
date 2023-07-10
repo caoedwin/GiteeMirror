@@ -252,7 +252,25 @@ def style_apply(series, colors, back_ground=''):
         a.append(back_ground)
     return a
 
-def save_exel(folder_path_Sys,save_data,upload_zhushi,src_file,auther,header=0,sheetnum=1):
+def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_file,auther,header=0,sheetnum=1):
+    # 读取所有批注
+    workbook = load_workbook(src_file)
+    first_sheet = workbook.get_sheet_names()[1]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
+
+    #修改前，先把原来文件里面的comments记录下来
+    comments = []
+    rownum = 0
+    for row in worksheet.rows:
+        cellnum = 0
+        for cell in row:
+            if cell.comment:
+                # print(row, cell)
+                comments.append([rownum, cellnum, cell.comment.text])
+            cellnum += 1
+        rownum += 1
+    # print(comments)
+
     # excel_file = pd.ExcelFile(src_file)
     df1 = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
@@ -301,20 +319,32 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,src_file,auther,header=0,s
         for i in excel_list:
             i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
             num += 1
-    # 读取所有批注
+
+
+    commentNum = 0
+    for i in comments:
+        for j in upload_zhushi:
+            # print(i,j)
+            if i[0] == j[0] and i[1] == j[1]:
+                comments[commentNum] = j#修改的替换
+                upload_zhushi.remove(j)#剩下的就是新增的
+        for j in upload_zhushi_delete:
+            # print(i, j)
+            if i[0] == j[0] and i[1] == j[1]:
+                del comments[commentNum]#删除的
+        commentNum += 1
+    comments = comments + upload_zhushi
+    # print(upload_zhushi,'shengyu')
+    # print('zong',comments)
+    #保存comments
     workbook = load_workbook(src_file)
     first_sheet = workbook.get_sheet_names()[1]
     worksheet = workbook.get_sheet_by_name(first_sheet)
-
-    comments = []
-    rownum = 0
-    for i in upload_zhushi:
-        for key, values in i['value'].items():
-            hangnum = str(values[0] + 2)#行数时从1开始，index时从0开始，所以加1；前端由于将第一行作为表头，前端的index本就比excel的index小1，读取时传到前端前也减了1，所以读取前端时也要再加1
-            lie_num = str(ExcelColumn(values[1] + 1)) #列数时从1开始，index时从0开始，所以加1
-            comment = Comment(str(values[2]), str(auther))
-            # print(lie_num + hangnum, comment)
-            worksheet[lie_num + hangnum].comment = comment
+    for i in comments:
+        hangnum = str(i[0] + 1)
+        lie_num = str(ExcelColumn(i[1] + 1))
+        comment = Comment(str(i[2]), str(auther))
+        worksheet[lie_num + hangnum].comment = comment
     workbook.save(src_file)
     shutil.copy(src_file, folder_path_Sys)
 
@@ -461,10 +491,12 @@ def ABOTestPlan_edit(request):
                     responseData = json.loads(request.body)
                     uploaddata = responseData['uploadData']
                     upload_zhushi = responseData['upload_zhushi']
+                    upload_zhushi_delete = responseData['upload_zhushi_delete']
                     showinfo = responseData['showinfo']
                     folder_path_Sys = filepath
-                    print(uploaddata, 'uploaddata')
-                    print(upload_zhushi, 'upload_zhushi')
+                    # print(uploaddata, 'uploaddata')
+                    # print(upload_zhushi, 'upload_zhushi')
+                    # print(upload_zhushi_delete, 'upload_zhushi_delete')
                     # print(folder_path_Sys, 'folder_path_Sys')
                     val = filepath.count('_')
                     filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
@@ -473,7 +505,7 @@ def ABOTestPlan_edit(request):
                     if filepath:
                         if os.path.exists(filepath):
                             # print('start')
-                            save_exel(folder_path_Sys,uploaddata,upload_zhushi, filepath,auther)
+                            save_exel(folder_path_Sys,uploaddata,upload_zhushi,upload_zhushi_delete, filepath,auther)
                             excel_dic = read_excel(filepath)[0]
                             key_list = read_excel(filepath)[1]
                             comments = read_excel(filepath)[2]

@@ -141,6 +141,8 @@
                     comments:"",
                 },
                 excel_dic_origin: [],
+                upload_zhushi: [],
+                upload_zhushi_delete: [],
                 key_list: [],
                 comments: [],
                 showcomments: '',
@@ -205,7 +207,7 @@
 
             // 弹框内提交
             subForm(formName) {
-                console.log(formName);
+                {#console.log(formName);#}
                 var lienum=0;
                 for(let i=0;i<this.key_list.length;i++){
                     {#console.log(this.key_list[i],formName.lie,"111",this.key_list[i]==formName.lie)#}
@@ -214,23 +216,47 @@
                     }
                 }
                 this.excel_dic[formName.hang][formName.lie] = formName.result;
+                /*针对保存前重复修改同一个好几次的，把之前的都删除，保留最近的一次修改记录*/
+                for(let i=0;i<this.upload_zhushi.length;i++){
+                    {#console.log(formName.hang + 1,this.upload_zhushi[i][0],lienum,this.upload_zhushi[i][1])#}
+                    if((formName.hang + 1)==this.upload_zhushi[i][0]&&lienum==this.upload_zhushi[i][1]){
+                        {#console.log(i,this.upload_zhushi);#}
+                        this.upload_zhushi.splice(i,1);
+                    }
+                }
+                for(let i=0;i<this.upload_zhushi_delete.length;i++){
+                    if((formName.hang + 1)==this.upload_zhushi_delete[i][0]&&lienum==this.upload_zhushi_delete[i][1]){
+                        this.upload_zhushi_delete.splice(i,1);
+                    }
+                }
+
                 /*注释变动了,但是注释变为空，直接舍弃，否则会有注释，只是注释为空字符串*/
                 if(formName.comments!=''){
-                    this.excel_dic[formName.hang]["commentsedit"][formName.lie] = [formName.hang, lienum, formName.comments, formName.lie]
+                    this.excel_dic[formName.hang]["commentsedit"][formName.lie] = [formName.hang, lienum, formName.comments, formName.lie];
                     {#console.log(this.excel_dic[formName.hang]);#}
-                    let val = this.excel_dic[formName.hang]
+                    let val = this.excel_dic[formName.hang];
                     /* this.tableData为表格的数据源、indexs是当前行，val是当前行修改后的数据。
                     如果table的列改变了会直接更新，如果table的列没变，只是table绑定的非显示数据变了，必须要将整个一行重新赋值，table才会认为发生变化，并重新渲染*/
                     this.$set(this.excel_dic, formName.hang, val);
+                    if(Object.keys(this.excel_dic_origin[formName.hang]["commentsedit"]).includes(formName.lie)) {
+                        {#console.log(this.excel_dic_origin[formName.hang]["commentsedit"][formName.lie],this.excel_dic[formName.hang]["commentsedit"][formName.lie])#}
+                        if (this.excel_dic_origin[formName.hang]["commentsedit"][formName.lie][2] != this.excel_dic[formName.hang]["commentsedit"][formName.lie][2]) {
+                            this.upload_zhushi.push([formName.hang + 1, lienum, formName.comments, formName.lie]);
+                        }
+                    }else {
+                        this.upload_zhushi.push([formName.hang + 1, lienum, formName.comments, formName.lie]);
+                    }
                 }else{
                     if(Object.keys(this.excel_dic[formName.hang]["commentsedit"]).includes(formName.lie)){
-                        delete this.excel_dic[formName.hang]["commentsedit"][formName.lie]/*如果原本有则直接删除*/
-                        let val = this.excel_dic[formName.hang]
+                        delete this.excel_dic[formName.hang]["commentsedit"][formName.lie];/*如果原本有则直接删除*/
+                        this.upload_zhushi_delete.push([formName.hang + 1, lienum, formName.comments, formName.lie]);
+                        let val = this.excel_dic[formName.hang];
                         /* this.tableData为表格的数据源、indexs是当前行，val是当前行修改后的数据。
                         如果table的列改变了会直接更新，如果table的列没变，只是table绑定的非显示数据变了，必须要将整个一行重新赋值，table才会认为发生变化，并重新渲染*/
                         this.$set(this.excel_dic, formName.hang, val);
                     }
                 }
+                {#console.log('end',this.upload_zhushi,this.upload_zhushi_delete);#}
 
                 this.dialogVisible = false;
 
@@ -395,112 +421,118 @@
         return wbout;},1000) ;
         },
             saveData:function () {
-          //console.log(this.$refs.mult);
-           //獲取到改變的input的序列號
-          var upload = [];
-          var upload_zhushi = [];
-          var upload_zhushi_changelog = [];
-          var key_list_save = [];
-                for(let j=0;j<this.key_list.length;j++){
-                    key_list_save.push(this.key_list[j])
-                }
-          key_list_save.push("commentsedit");
-            {#console.log(this.key_list,key_list_save);#}
-            for(let i = 0;i<this.excel_dic.length;i++) {
-                {#console.log(this.excel_dic[i],1);#}
-                {#console.log(this.excel_dic_origin[i],2);#}
-                {#console.log(JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i]))#}
-                if (JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i])) {
-                    for(let j=0;j<key_list_save.length;j++){
-                        if (JSON.stringify(this.excel_dic[i][key_list_save[j]])!=JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
-                            if(key_list_save[j]=="commentsedit"){
-                                {% comment %}upload_zhushi.push(
-                                {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
-                                )/*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/{% endcomment %}
-                            }else {
-                                upload.push(
-                                {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
-                            )
+                  //console.log(this.$refs.mult);
+                   //獲取到改變的input的序列號
+                  var upload = [];
+                  var upload_zhushi = [];
+                  var upload_zhushi_changelog = [];
+                  var key_list_save = [];
+                        for(let j=0;j<this.key_list.length;j++){
+                            key_list_save.push(this.key_list[j])
+                        }
+                  key_list_save.push("commentsedit");
+                    {#console.log(this.key_list,key_list_save);#}
+                    for(let i = 0;i<this.excel_dic.length;i++) {
+                        {#console.log(this.excel_dic[i],1);#}
+                        {#console.log(this.excel_dic_origin[i],2);#}
+                        {#console.log(JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i]))#}
+                        if (JSON.stringify(this.excel_dic[i])!=JSON.stringify(this.excel_dic_origin[i])) {
+                            for(let j=0;j<key_list_save.length;j++){
+                                if (JSON.stringify(this.excel_dic[i][key_list_save[j]])!=JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
+                                    if(key_list_save[j]=="commentsedit"){
+                                        {% comment %}upload_zhushi.push(
+                                        {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                        )/*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/{% endcomment %}
+                                    }else {
+                                        upload.push(
+                                        {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                    )
+                                    }
+                                }
                             }
+                        };
+
+                    }
+                    {% comment %}for(let i = 0;i<this.excel_dic.length;i++) {
+                        for(let j=0;j<key_list_save.length;j++){
+                                if(key_list_save[j]=="commentsedit"){
+                                    if (JSON.stringify(this.excel_dic[i][key_list_save[j]])==JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
+                                        if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
+                                            {#console.log(1,JSON.stringify(this.excel_dic[i][key_list_save[j]]),JSON.stringify(this.excel_dic_origin[i][key_list_save[j]]))#}
+                                                /*注释没有变动，但是原本注释就不为空*/
+                                            upload_zhushi.push(
+                                                {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
+                                            )
+                                            /*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/
+                                            /*这部分交给后端，再保存之前读取最新的comments，并保存，否则在进入改case的编辑页面到保存这段时间内别人修改的非相同单元格的注释会被覆盖*/
+                                        }
+                                    }else{
+                                        {#console.log(2,JSON.stringify(this.excel_dic[i][key_list_save[j]]))#}
+                                        /*注释变动了*/
+                                        if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
+                                            /*注释变动了,但是整行所有列的注释变为空，直接舍弃，否则会有注释，只是注释为空字符串*/
+                                                console.log(typeof(Object.keys(this.excel_dic_origin[i][key_list_save[j]])),Object.keys(this.excel_dic_origin[i][key_list_save[j]]))
+                                                upload_zhushi.push(
+                                                    {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
+                                                )
+                                                upload_zhushi_changelog.push(
+                                                {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                                )/*如果upload_zhushi_changelog跟upload都没改变，就不需要保存，无需操作excel文档；如果改变了要把原来的comments一起保存，传递upload_zhushi*/
+                                            }
+                                    }
+                                }
                         }
                     }
-                };
+                    console.log(upload,"ge", upload_zhushi);{% endcomment %}
+                  //數據無變化
+                  if(upload.length == 0 && this.upload_zhushi.length == 0 && this.upload_zhushi_delete.length == 0){
+                      alert("數據未發生變化");
+                      return false;
+                  }
+                  //上傳數據
+                  {% comment %}console.log(upload,"tes");
+                  console.log(this.upload_zhushi,"this.upload_zhushi");
+                  console.log(this.upload_zhushi_delete,"this.upload_zhushi_delete");{% endcomment %}
+                  {#let uploadData={#}
+                  {#    "DataContent":upload,#}
+                  {#    "customer":this.customer,#}
+                  {#    "project":this.project,#}
+                  {#    "phase":this.phase#}
+                    this.tableloading=true;
+                    this.elbuttonloading=true;
+                  this.loading=true;
+                  //console.log(uploadData);//$("[name='csrfmiddlewaretoken']").val()
+                  {#axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload},{#}
+                  axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload,"upload_zhushi":this.upload_zhushi,"upload_zhushi_delete":this.upload_zhushi_delete,"isGetData":"save","showinfo":this.showinfo,},{
+                            headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+                        }).then((res) => {
+                            {#console.log(res.data,"first");//上传成功的操作#}
 
-            }
-            for(let i = 0;i<this.excel_dic.length;i++) {
-                for(let j=0;j<key_list_save.length;j++){
-                        if(key_list_save[j]=="commentsedit"){
-                            if (JSON.stringify(this.excel_dic[i][key_list_save[j]])==JSON.stringify(this.excel_dic_origin[i][key_list_save[j]])) {
-                                if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
-                                    {#console.log(1,JSON.stringify(this.excel_dic[i][key_list_save[j]]),JSON.stringify(this.excel_dic_origin[i][key_list_save[j]]))#}
-                                        /*注释没有变动，但是原本注释就不为空*/
-                                    upload_zhushi.push(
-                                        {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
-                                    )
-                                    /*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/
+                             this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
+                             {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
+                           this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
+                          this.key_list=res.data.key_list;
+                           this.comments=res.data.comments;
+                           this.showinfo=res.data.showinfo;
+                          this.canExport = res.data.canExport;
+                          this.canEdit = res.data.canEdit;
+                          this.errMsg = res.data.errMsg;
+                          this.tableloading=false;
+                           this.elbuttonloading=false;
+                           this.upload_zhushi=[];
+                           this.upload_zhushi_delete=[];
+                           if(this.errMsg){
+                                    this.$alert(this.errMsg, '提示', {
+                                          type: 'warning',
+                                        })
+                                }else {
+
                                 }
-                            }else{
-                                {#console.log(2,JSON.stringify(this.excel_dic[i][key_list_save[j]]))#}
-                                /*注释变动了*/
-                                if(JSON.stringify(this.excel_dic[i][key_list_save[j]])!='{}'){
-                                    /*注释变动了,但是整行所有列的注释变为空，直接舍弃，否则会有注释，只是注释为空字符串*/
-                                        upload_zhushi.push(
-                                            {"row": i, "lie": key_list_save[j], "value": this.excel_dic[i][key_list_save[j]]}
-                                        )
-                                        upload_zhushi_changelog.push(
-                                        {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
-                                        )/*如果upload_zhushi_changelog跟upload都没改变，就不需要保存，无需操作excel文档；如果改变了要把原来的comments一起保存，传递upload_zhushi*/
-                                    }
-                            }
-                        }
-                }
-            }
-            console.log(upload,"ge", upload_zhushi);
-          //數據無變化
-          if(upload.length == 0 && upload_zhushi_changelog.length == 0){
-              alert("數據未發生變化");
-              return false;
-          }
-          //上傳數據
-          {#console.log(upload,"tes");#}
-          {#let uploadData={#}
-          {#    "DataContent":upload,#}
-          {#    "customer":this.customer,#}
-          {#    "project":this.project,#}
-          {#    "phase":this.phase#}
-            this.tableloading=true;
-            this.elbuttonloading=true;
-          this.loading=true;
-          //console.log(uploadData);//$("[name='csrfmiddlewaretoken']").val()
-          {#axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload},{#}
-          axios.post("/ABOTestPlan/ABOTestPlan_edit/" ,{"uploadData":upload,"upload_zhushi":upload_zhushi,"isGetData":"save","showinfo":this.showinfo,},{
-                    headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-                }).then((res) => {
-                    {#console.log(res.data,"first");//上传成功的操作#}
-
-                     this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
-                     {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
-                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
-                  this.key_list=res.data.key_list;
-                   this.comments=res.data.comments;
-                   this.showinfo=res.data.showinfo;
-                  this.canExport = res.data.canExport;
-                  this.canEdit = res.data.canEdit;
-                  this.errMsg = res.data.errMsg;
-                  this.tableloading=false;
-                   this.elbuttonloading=false;
-                   if(this.errMsg){
-                            this.$alert(this.errMsg, '提示', {
-                                  type: 'warning',
-                                })
-                        }else {
-
-                        }
-                }).catch(function (e) {
-                        this.loading=false;
-                        var warning =confirm("上傳異常");
-                        console.log("上傳錯誤信息"+e);
-                    });
+                        }).catch(function (e) {
+                                this.loading=false;
+                                var warning =confirm("上傳異常");
+                                console.log("上傳錯誤信息"+e);
+                            });
 
 
 
