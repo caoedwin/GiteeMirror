@@ -16,9 +16,24 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter as ExcelColumn
 from openpyxl.utils import column_index_from_string as Col2Int
 from openpyxl.comments import Comment
+from openpyxl.styles import Side, Border, Font, Alignment
 
 import numpy as np
 # Create your views here.
+
+from win32com.client import Dispatch
+import pythoncom
+def just_open(filename):
+    pythoncom.CoInitialize()
+    xlApp = Dispatch("Excel.Application")
+
+    xlApp.Visible = False
+
+    xlBook = xlApp.Workbooks.Open(filename)
+
+    xlBook.Save()
+
+    xlBook.Close()
 
 def Copy_forders(forderpath, folder_path_Sys):
     #判断是否有人在搜索
@@ -38,7 +53,7 @@ def Copy_forders(forderpath, folder_path_Sys):
         # files 同样是 list, 内容是该文件夹中所有的文件(不包括子目录)
         for root, dirs, files in os.walk(forderpath):
             for file in files:
-                print(file)
+                # print(file)
                 if not file.startswith('~$'):
                     src_file = os.path.join(root, file)
                     shutil.copy(src_file, folder_path_Sys)
@@ -61,12 +76,32 @@ def Copy_forders(forderpath, folder_path_Sys):
 
 
 def read_excel(src_file,header=0,sheetnum=1):
+    """
+        注意：如果该工作簿是用openpyxl创建的，并且在创建后未曾用Microsoft
+        Excel打开过，那么想要读取公式计算结果是无法得到正确结果的，只会读出None。
+
+        其原因如下：
+
+        　　当xlsx表格被生成并在Excel程序中打开并保存之后（这个过程Excel会把公式结果计算出来），该文件中所有单元格附带有两套值，一套是公式全都没有计算的，一套是公式计算了结果的。此时，openpyxl以data_only = False打开可以读取公式，以data_only = True打开可以得到公式计算出的结果。
+
+        　　如果openpyxl创建的工作簿没有被Excel打开并保存，则只有data_only = False的一套值，没有公式计算结果的那一套值。所以data_only = True读取会得到None。
+
+        　　另外：如果用openpyxl的data_only = True状态打开文件，并且最后用save()
+        函数保存了后，则xlsx文件中的公式会被替换为计算结果（即消除了公式）。
+
+        　　而如果用openpyxl的data_only = False状态下打开文件，最后用save()
+        函数保存了的话，原xlsx文件也会只剩下data_only = False的那套值（即公式），另一套（data_only = True）的值会丢失，如想重新获得两套值，则仍旧需要手动用Excel程序打开该文件并保存一次。
+
+        　　那么能否不用手动用Excel程序打开就能读取公式计算结果呢？可以的！使用win32com自动打开文件并保存一下就好了。代码如下：
+    """
+    just_open(src_file)
+    #打开后，pandas也能督导公式运算后的值
     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
     pd.set_option('display.max_columns', None)
     # # 显示所有行
-    # pd.set_options('display.max_rows', None)
+    pd.set_option('display.max_rows', None)
     # pprint.pprint(df)
     dataexcel = df.values[:, :]
     # datatest = []
@@ -92,15 +127,22 @@ def read_excel(src_file,header=0,sheetnum=1):
     #     df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
 
     #读取所有批注
+    # work_book = openpyxl.load_workbook('test.xlsx', data_only=True)
     workbook = load_workbook(src_file)
     first_sheet = workbook.get_sheet_names()[1]
     worksheet = workbook.get_sheet_by_name(first_sheet)
 
     comments = []
+    excel_fx = []
     rownum = 0
     for row in worksheet.rows:
         cellnum = 0
         for cell in row:
+            cell_value = worksheet.cell(row=rownum + 1, column=cellnum + 1).value
+            if cell_value:
+                if str(cell_value).startswith('='):
+                    # print(cell_value)
+                    excel_fx.append([rownum + 1, cellnum + 1, cell_value])
             if cell.comment:
                 # print(row, cell)
                 comments.append([rownum-1, cellnum, cell.comment.text, key_data[cellnum]])
@@ -148,16 +190,17 @@ def info_excel(src_file,header=0,sheetnum=0):
 
 def info_excel_tongji(src_file,header=0,sheetnum=1):
     #您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
-    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[50:,
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[42:,
          1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
     pd.set_option('display.max_columns', None)
     # # 显示所有行
-    # pd.set_options('display.max_rows', None)
+    pd.set_option('display.max_rows', None)
     # df = df.fillna('?')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据, None,NA,NAN,NAT,Null都被认为是缺失值
     # df = df.fillna(method='ffill')
     key_data = list(df.columns)
     df = df.replace("", "?")
+    pprint.pprint(df)
 
     P_value = df.eq('P').sum()
     All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
@@ -169,7 +212,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
     NaN_value = df.eq('?').sum()
     All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
-    print(All_tongjidata_F)
+    # print(All_tongjidata_NaN)
     P_value_num = 0
     F_value_num = 0
     B_value_num = 0
@@ -186,6 +229,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
             Na_value_num += All_tongjidata_NaN[0][i]
         lienum += 1
     CaseStatus = ""
+    print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
     if F_value_num > 0:
         CaseStatus = "Fail"
     else:
@@ -254,16 +298,22 @@ def style_apply(series, colors, back_ground=''):
 
 def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_file,auther,header=0,sheetnum=1):
     # 读取所有批注
-    workbook = load_workbook(src_file)
-    first_sheet = workbook.get_sheet_names()[1]
-    worksheet = workbook.get_sheet_by_name(first_sheet)
+    workbook1 = load_workbook(src_file)
+    first_sheet1 = workbook1.get_sheet_names()[1]
+    worksheet1 = workbook1.get_sheet_by_name(first_sheet1)
 
     #修改前，先把原来文件里面的comments记录下来
     comments = []
+    excel_fx = []
     rownum = 0
-    for row in worksheet.rows:
+    for row in worksheet1.rows:
         cellnum = 0
         for cell in row:
+            cell_value = worksheet1.cell(row=rownum + 1, column=cellnum + 1).value
+            if cell_value:
+                if str(cell_value).startswith('='):
+                    # print(cell_value)
+                    excel_fx.append([rownum+1, cellnum+1, cell_value])
             if cell.comment:
                 # print(row, cell)
                 comments.append([rownum, cellnum, cell.comment.text])
@@ -313,7 +363,7 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
     for i in sheetname:
         if i != sheetname[1]:
             excel_list.append(pd.read_excel(src_file, sheet_name=i))
-    excel_list.insert(1, style_df)#保证位置不变，df1的sheet_name时1
+    excel_list.insert(1, style_df)#保证位置不变，df1的sheet_name是1
     with pd.ExcelWriter(src_file, engine='openpyxl') as writer:
         num = 0
         for i in excel_list:
@@ -336,15 +386,41 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
     comments = comments + upload_zhushi
     # print(upload_zhushi,'shengyu')
     # print('zong',comments)
-    #保存comments
+
+
+
+
+    # 保存comments
     workbook = load_workbook(src_file)
     first_sheet = workbook.get_sheet_names()[1]
     worksheet = workbook.get_sheet_by_name(first_sheet)
+
+    # 设置线条的样式和颜色
+    side = Side(style="thick", color="000000")
+    # 设置单元格的边框线条
+    border = Border(top=side, bottom=side, left=side, right=side)
+    # 设置宽高
+    # # row_dimensions中指定要设置高度的行
+    # ws.row_dimensions[2].height = 50
+    # column_dimensions中指定要设置宽度的列
+    worksheet.column_dimensions['B'].width = 80
+
+    # ws['A1'].alignment = Alignment(wrap_text=True)
+    for row in worksheet:
+        for cell in row:
+            cell.border = border
+            # 设置单元格自动换行
+            cell.alignment = Alignment(wrap_text=True)
+        rownum += 1
+
     for i in comments:
         hangnum = str(i[0] + 1)
         lie_num = str(ExcelColumn(i[1] + 1))
         comment = Comment(str(i[2]), str(auther))
         worksheet[lie_num + hangnum].comment = comment
+    # 保存公式最好放在保存前最后一步
+    for i in excel_fx:
+        worksheet.cell(row=i[0], column=i[1], value=i[2])
     workbook.save(src_file)
     shutil.copy(src_file, folder_path_Sys)
 
@@ -477,6 +553,7 @@ def ABOTestPlan_edit(request):
                             comments = read_excel(filepath)[2]
                             showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
                 except Exception as e:
+                    print(e)
                     errMsg = e
         else:
             try:
