@@ -220,7 +220,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     # df = df.fillna(method='ffill')
     key_data = list(df.columns)
     df = df.replace("", "?")
-    pprint.pprint(df)
+    # pprint.pprint(df)
 
     P_value = df.eq('P').sum()
     All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
@@ -230,7 +230,9 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     All_tongjidata_B = pd.DataFrame([B_value.values], columns=B_value.index).to_dict('records')
     NS_value = df.eq('NS').sum()
     All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
-    NaN_value = df.eq('?').sum()
+    # NaN_value = df.eq('?').sum()
+    # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+    NaN_value = df.eq('X').sum()
     All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
     # print(All_tongjidata_NaN)
     P_value_num = 0
@@ -249,7 +251,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
             Na_value_num += All_tongjidata_NaN[0][i]
         lienum += 1
     CaseStatus = ""
-    print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
+    # print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
     if F_value_num > 0:
         CaseStatus = "Fail"
     else:
