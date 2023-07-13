@@ -307,3 +307,4 @@ Traceback (most recent call last):
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type com_error is not JSON serializable
 [2023-07-12 11:36:31,184] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 102916
+[2023-07-12 16:27:39,668] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 500 59

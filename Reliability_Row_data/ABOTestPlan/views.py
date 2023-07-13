@@ -94,8 +94,36 @@ def read_excel(src_file,header=0,sheetnum=1):
 
         　　那么能否不用手动用Excel程序打开就能读取公式计算结果呢？可以的！使用win32com自动打开文件并保存一下就好了。代码如下：
     """
-    just_open(src_file)
-    #打开后，pandas也能督导公式运算后的值
+    # just_open(src_file)
+
+    # work_book = openpyxl.load_workbook('test.xlsx', data_only=True)
+    workbook = load_workbook(src_file, data_only=False)
+    first_sheet = workbook.get_sheet_names()[1]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
+    excel_fx = []
+    rownum = 0
+    for row in worksheet.rows:
+        cellnum = 0
+        for cell in row:
+            cell_value = worksheet.cell(row=rownum + 1, column=cellnum + 1).value
+            # print(cell_value)
+            if cell_value:
+                if str(cell_value).startswith('='):
+                    # print(cell_value)
+                    excel_fx.append([rownum + 1, cellnum + 1, cell_value])
+            cellnum += 1
+        rownum += 1
+    workbook2 = load_workbook(src_file, data_only=True)
+    first_sheet2 = workbook2.get_sheet_names()[1]
+    worksheet2 = workbook2.get_sheet_by_name(first_sheet2)
+    # print(excel_fx,1)
+    if excel_fx:
+        cell_value = worksheet2.cell(row=excel_fx[0][0], column=excel_fx[0][1]).value
+        # print(cell_value, 2)
+        if not cell_value:
+            # print("open")
+            just_open(src_file)
+    #打开just_open后，pandas也能督导公式运算后的值
     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[:,
          0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
@@ -127,22 +155,14 @@ def read_excel(src_file,header=0,sheetnum=1):
     #     df.to_excel(writer, sheet_name='Sheet1', index=False)  # engine="openpyxl"
 
     #读取所有批注
-    # work_book = openpyxl.load_workbook('test.xlsx', data_only=True)
-    workbook = load_workbook(src_file)
-    first_sheet = workbook.get_sheet_names()[1]
-    worksheet = workbook.get_sheet_by_name(first_sheet)
+
 
     comments = []
-    excel_fx = []
+
     rownum = 0
     for row in worksheet.rows:
         cellnum = 0
         for cell in row:
-            cell_value = worksheet.cell(row=rownum + 1, column=cellnum + 1).value
-            if cell_value:
-                if str(cell_value).startswith('='):
-                    # print(cell_value)
-                    excel_fx.append([rownum + 1, cellnum + 1, cell_value])
             if cell.comment:
                 # print(row, cell)
                 comments.append([rownum-1, cellnum, cell.comment.text, key_data[cellnum]])
@@ -298,7 +318,7 @@ def style_apply(series, colors, back_ground=''):
 
 def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_file,auther,header=0,sheetnum=1):
     # 读取所有批注
-    workbook1 = load_workbook(src_file)
+    workbook1 = load_workbook(src_file, data_only=False)
     first_sheet1 = workbook1.get_sheet_names()[1]
     worksheet1 = workbook1.get_sheet_by_name(first_sheet1)
 
@@ -477,9 +497,10 @@ def ABOTestPlan_search(request):
             # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
             if filepath:
                 if os.path.exists(filepath):
-                    excel_dic = read_excel(filepath)[0]
-                    key_list = read_excel(filepath)[1]
-                    comments = read_excel(filepath)[2]
+                    readdata = read_excel(filepath)
+                    excel_dic = readdata[0]
+                    key_list = readdata[1]
+                    comments = readdata[2]
                     showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\','/') + '/ABOTestPlanSys/', "")
 
         data = {
@@ -548,13 +569,14 @@ def ABOTestPlan_edit(request):
                     # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
                     if filepath:
                         if os.path.exists(filepath):
-                            excel_dic = read_excel(filepath)[0]
-                            key_list = read_excel(filepath)[1]
-                            comments = read_excel(filepath)[2]
+                            readdata = read_excel(filepath)
+                            excel_dic = readdata[0]
+                            key_list = readdata[1]
+                            comments = readdata[2]
                             showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
                 except Exception as e:
                     print(e)
-                    errMsg = e
+                    errMsg = str(e)
         else:
             try:
                 request.body
@@ -564,31 +586,32 @@ def ABOTestPlan_edit(request):
                 pass
             else:
                 if 'save' in str(request.body):
-                    # try:
-                    responseData = json.loads(request.body)
-                    uploaddata = responseData['uploadData']
-                    upload_zhushi = responseData['upload_zhushi']
-                    upload_zhushi_delete = responseData['upload_zhushi_delete']
-                    showinfo = responseData['showinfo']
-                    folder_path_Sys = filepath
-                    # print(uploaddata, 'uploaddata')
-                    # print(upload_zhushi, 'upload_zhushi')
-                    # print(upload_zhushi_delete, 'upload_zhushi_delete')
-                    # print(folder_path_Sys, 'folder_path_Sys')
-                    val = filepath.count('_')
-                    filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
-                    # print(filepath)
-                    auther = request.session.get('user_name')
-                    if filepath:
-                        if os.path.exists(filepath):
-                            # print('start')
-                            save_exel(folder_path_Sys,uploaddata,upload_zhushi,upload_zhushi_delete, filepath,auther)
-                            excel_dic = read_excel(filepath)[0]
-                            key_list = read_excel(filepath)[1]
-                            comments = read_excel(filepath)[2]
-                    # except Exception as e:
-                    #     print(e)
-                    #     errMsg = str(e)
+                    try:
+                        responseData = json.loads(request.body)
+                        uploaddata = responseData['uploadData']
+                        upload_zhushi = responseData['upload_zhushi']
+                        upload_zhushi_delete = responseData['upload_zhushi_delete']
+                        showinfo = responseData['showinfo']
+                        folder_path_Sys = filepath
+                        # print(uploaddata, 'uploaddata')
+                        # print(upload_zhushi, 'upload_zhushi')
+                        # print(upload_zhushi_delete, 'upload_zhushi_delete')
+                        # print(folder_path_Sys, 'folder_path_Sys')
+                        val = filepath.count('_')
+                        filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
+                        # print(filepath)
+                        auther = request.session.get('user_name')
+                        if filepath:
+                            if os.path.exists(filepath):
+                                # print('start')
+                                save_exel(folder_path_Sys,uploaddata,upload_zhushi,upload_zhushi_delete, filepath,auther)
+                                readdata = read_excel(filepath)
+                                excel_dic = readdata[0]
+                                key_list = readdata[1]
+                                comments = readdata[2]
+                    except Exception as e:
+                        print(e)
+                        errMsg = str(e)
 
                     # save_exel(excel_dic,src_file)
         data = {
