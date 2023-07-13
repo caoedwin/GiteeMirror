@@ -795,7 +795,7 @@ def ABOTestPlan_summary(request):
             folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
             folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
             try:
-    
+
                 Copy_forders(folder_path, folder_path_Sys)
                 #
                 # 也可以使用 with 语句创建线程池
@@ -803,9 +803,9 @@ def ABOTestPlan_summary(request):
                 #     for i in range(1, 14):
                 #         pool.submit(async_add, i)
                 # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                pool = ThreadPoolExecutor(max_workers=12, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                pool = ThreadPoolExecutor(max_workers=8, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                pool1 = ThreadPoolExecutor(max_workers=12, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                pool1 = ThreadPoolExecutor(max_workers=8, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 if os.path.exists(folder_path_Sys):
                     file_ext = ['.xls', '.xlsx']
                     i = 0
