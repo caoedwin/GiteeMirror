@@ -803,9 +803,11 @@ def ABOTestPlan_summary(request):
                 #     for i in range(1, 14):
                 #         pool.submit(async_add, i)
                 # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                pool = ThreadPoolExecutor(max_workers=8, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
+                pool = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                pool1 = ThreadPoolExecutor(max_workers=8, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
+                pool1 = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 if os.path.exists(folder_path_Sys):
                     file_ext = ['.xls', '.xlsx']
                     i = 0
