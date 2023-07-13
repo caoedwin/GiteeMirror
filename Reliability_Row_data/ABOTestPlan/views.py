@@ -18,6 +18,11 @@ from openpyxl.utils import column_index_from_string as Col2Int
 from openpyxl.comments import Comment
 from openpyxl.styles import Side, Border, Font, Alignment
 
+import threading
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
+#ThreadPoolExecutor线程池ProcessPoolExecutor进程池
+
+
 import numpy as np
 # Create your views here.
 
@@ -181,8 +186,8 @@ def read_excel(src_file,header=0,sheetnum=1):
 
     return excel_dic,key_data, comments
 
-def info_excel(src_file,header=0,sheetnum=0):
-    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum)).iloc[:,
+def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum0)).iloc[:,
          :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
     pd.set_option('display.max_columns', None)
@@ -206,7 +211,76 @@ def info_excel(src_file,header=0,sheetnum=0):
         i["dataid"] = hangnum
         hangnum += 1
     key_data = list(df.columns)
+
+    # # 您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
+    # df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[42:,
+    #      1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+    # # # 显示所有列
+    # pd.set_option('display.max_columns', None)
+    # # # 显示所有行
+    # pd.set_option('display.max_rows', None)
+    # # df = df.fillna('?')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据, None,NA,NAN,NAT,Null都被认为是缺失值
+    # # df = df.fillna(method='ffill')
+    # key_data = list(df.columns)
+    # df = df.replace("", "?")
+    # # pprint.pprint(df)
+    #
+    # P_value = df.eq('P').sum()
+    # All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
+    # F_value = df.eq('F').sum()
+    # All_tongjidata_F = pd.DataFrame([F_value.values], columns=F_value.index).to_dict('records')
+    # B_value = df.eq('B').sum()
+    # All_tongjidata_B = pd.DataFrame([B_value.values], columns=B_value.index).to_dict('records')
+    # NS_value = df.eq('NS').sum()
+    # All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
+    # # NaN_value = df.eq('?').sum()
+    # # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+    # NaN_value = df.eq('X').sum()
+    # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+    # # print(All_tongjidata_NaN)
+    # P_value_num = 0
+    # F_value_num = 0
+    # B_value_num = 0
+    # NS_value_num = 0
+    # Na_value_num = 0
+    # lienum = 0
+    # for i in key_data:
+    #     if lienum >= 1:  # 因为读文件时时从第二列开始，要统计的时第三列开始的值
+    #         if All_tongjidata_P[0][i] > 0:
+    #             P_value_num += All_tongjidata_P[0][i] - 1
+    #         F_value_num += All_tongjidata_F[0][i]
+    #         B_value_num += All_tongjidata_B[0][i]
+    #         NS_value_num += All_tongjidata_NS[0][i]
+    #         Na_value_num += All_tongjidata_NaN[0][i]
+    #     lienum += 1
+    # CaseStatus = ""
+    # # print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
+    # if F_value_num > 0:
+    #     CaseStatus = "Fail"
+    # else:
+    #     CaseStatus = "Pass"
+    # TestProess = (P_value_num + F_value_num) / (P_value_num + F_value_num + B_value_num + Na_value_num)
+    # TestProess = "%.2f%%" % (TestProess * 100)
+    #
+    # # 读取所有批注
+    # workbook = load_workbook(src_file)
+    # first_sheet = workbook.get_sheet_names()[1]
+    # worksheet = workbook.get_sheet_by_name(first_sheet)
+    #
+    # comments = []
+    # rownum = 0
+    # for row in worksheet.rows:
+    #     cellnum = 0
+    #     for cell in row:
+    #         if cell.comment:
+    #             comments.append(["\n", cell.comment.text])
+    #         cellnum += 1
+    #     rownum += 1
+    # # print(comments)
+
+    # print("PPP", CaseStatus, TestProess)
     return excel_dic, key_data
+    # return excel_dic, key_data, CaseStatus, TestProess, comments
 
 def info_excel_tongji(src_file,header=0,sheetnum=1):
     #您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
@@ -721,9 +795,17 @@ def ABOTestPlan_summary(request):
             folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
             folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
             try:
-
+    
                 Copy_forders(folder_path, folder_path_Sys)
                 #
+                # 也可以使用 with 语句创建线程池
+                # with ThreadPoolExecutor(max_workers=3) as pool:
+                #     for i in range(1, 14):
+                #         pool.submit(async_add, i)
+                # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                pool = ThreadPoolExecutor(max_workers=12, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                pool1 = ThreadPoolExecutor(max_workers=12, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 if os.path.exists(folder_path_Sys):
                     file_ext = ['.xls', '.xlsx']
                     i = 0
@@ -733,8 +815,13 @@ def ABOTestPlan_summary(request):
                         if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
                             if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
                                 # print(path_list, path)  # 打印输出
-                                Result = info_excel_tongji(path_list)
-                                excel_dic = info_excel(path_list)
+                                excel_dic_process = pool.submit(info_excel, path_list)#多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                excel_dic = excel_dic_process.result()#多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                # Result = info_excel_tongji(path_list)
+                                # excel_dic = info_excel(path_list)
+                                # print(excel_dic)
                                 SKU = excel_dic[0][0]['SKU/Unit']
                                 Owner = excel_dic[0][0]['Owner']
                                 TestSchedule = excel_dic[0][0]['Test Schedule']
@@ -745,14 +832,19 @@ def ABOTestPlan_summary(request):
                                         "TestItems": path.split(".")[0].split("_")[1],
                                         "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
                                         "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                        # "Status": excel_dic[2], "Percent": excel_dic[3], "BugNo": excel_dic[4],
                                         "filepath": path_list,
                                     }
                                 )
                                 i += 1  # 对.xls、.xlsx文件进行计数
+                    # pool.shutdown(wait=True)
+                    pool.shutdown()#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                    pool1.shutdown()#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
                     print('目录下共有' + str(i) + '个xls、xlsx文件')
                     #
                     # Del_forders(folder_path_Sys)
             except Exception as e:
+                print(e)
                 err_msg = str(e)
 
 
