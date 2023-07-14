@@ -51,6 +51,53 @@
 {% endblock %}
 {% block content %}
 <div id="app">
+<div class="row" style="white-space: nowrap;">
+                    <div class="col-md-2">
+                    <label for="Customer" style="color: #fff;">Customer</label>
+           <select id="Customer" ref="Customer"  @change="changeCustomer" v-model="selectedCustomer" style="height:30px;width:80px;border-radius:5px 5px 5px 5px;">
+               <option value=""> </option>
+               <option v-for="(item,key,index) in selectItem" >${ key }</option>
+           </select>
+                        <div class="inputError" v-cloak v-show="customerError">客戶別未選擇</div>
+                    </div>
+                    <div class="col-md-2">
+                        　<label for="Project" style="color: #fff;">Project</label>
+           <select id="Project" ref="Project" @change="changeProject" v-model="selectedProject" style="height:30px;border-radius:5px 5px 5px 5px;width:80px;">
+               <option></option>
+               <option v-for="(item,key,index) in selectProject">${ item.Project }</option>
+           </select>
+                        <div class="inputError" v-cloak v-show="projectError">專案未選擇</div>
+                    </div>
+         <div class="col-md-2">
+                        　　<label for="Phase0 " style="color: #fff;">Phase</label>
+             <select id="Phase0" ref="Phase0" {% comment %}@change="changePhase0" {% endcomment %}v-model="selectedPhase0" style="height:30px;border-radius:5px 5px 5px 5px;width:80px;">
+               <option></option>
+               <option v-for="(item,key,index) in selectPhase0">${ item }</option>
+           </select>
+             <div class="inputError" v-cloak v-show="phase0Error">Phase未選擇</div>
+                    </div>
+         <div class="col-md-2">
+                        　　<label for="Categorys" style="color: #fff;">Category</label>
+             <select id="Categorys" ref="Categorys" @change="changeCategorys" v-model="selectedCategorys" style="height:30px;border-radius:5px 5px 5px 5px;width:80px;">
+               <option></option>
+               <option v-for="(item,key,index) in selectCategorys">${ item }</option>
+           </select>
+             <div class="inputError" v-cloak v-show="categorysError">Category未選擇</div>
+                    </div>
+         <div class="col-md-2">
+                        　　<label for="case" style="color: #fff;">Case</label>
+             <select id="case" ref="case" v-model="selectedcase" style="height:30px;border-radius:5px 5px 5px 5px;width:80px;">
+               <option></option>
+               <option v-for="(item,key,index) in selectcase">${ item }</option>
+           </select>
+             <div class="inputError" v-cloak v-show="caseError">Category未選擇</div>
+                    </div>
+
+
+                    <div class="col-md-1">
+                        <el-button :loading="elbuttonloading" size="small" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="selectMsg">Search</el-button>
+                    </div><br>
+    </div>
 <template>
 
     <div class="col-md-2">
@@ -159,6 +206,25 @@
                 tableloading:false,
                 elbuttonloading:false,
                 dialogVisible :false,
+
+                selectItem:{},
+                selectProject:[],
+                selectedCustomer:null,
+                selectedProject:null,
+                selectedPhase0:null,
+                selectedCategorys:null,
+                selectPhase0:null,
+                selectCategorys:["Compatibility", "Reliability"],
+                selectedcase:null,
+                Customer:[],
+                Phase:[],
+                driver:[],
+                customerError:false,
+                projectError:false,
+                phase0Error:false,
+                categorysError:false,
+                caseError:false,
+                selectcase:[],
             }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
@@ -238,7 +304,7 @@
                     let val = this.excel_dic[formName.hang];
                     /* this.tableData为表格的数据源、indexs是当前行，val是当前行修改后的数据。
                     如果table的列改变了会直接更新，如果table的列没变，只是table绑定的非显示数据变了，必须要将整个一行重新赋值，table才会认为发生变化，并重新渲染*/
-                    this.$set(this.excel_dic, formName.hang, val);
+
                     if(Object.keys(this.excel_dic_origin[formName.hang]["commentsedit"]).includes(formName.lie)) {
                         {#console.log(this.excel_dic_origin[formName.hang]["commentsedit"][formName.lie],this.excel_dic[formName.hang]["commentsedit"][formName.lie])#}
                         if (this.excel_dic_origin[formName.hang]["commentsedit"][formName.lie][2] != this.excel_dic[formName.hang]["commentsedit"][formName.lie][2]) {
@@ -247,6 +313,7 @@
                     }else {
                         this.upload_zhushi.push([formName.hang + 1, lienum, formName.comments, formName.lie]);
                     }
+                    this.$set(this.excel_dic, formName.hang, val);
                 }else{
                     if(Object.keys(this.excel_dic[formName.hang]["commentsedit"]).includes(formName.lie)){
                         delete this.excel_dic[formName.hang]["commentsedit"][formName.lie];/*如果原本有则直接删除*/
@@ -274,6 +341,7 @@
                     this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
                    {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
                    this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
+                    this.selectItem=res.data.select;
                   this.key_list=res.data.key_list;
                    this.comments=res.data.comments;
                    this.showinfo=res.data.showinfo;
@@ -291,6 +359,103 @@
                         }
                 });
             },
+
+            changeCustomer:function () {
+                 if(this.$refs.Customer.value ==""){
+                      this.selectProject=[""];
+                      return false;
+                 }
+                 this.selectProject=this.selectItem[this.$refs.Customer.value];
+                 this.selectedProject="";
+            },
+            changeProject:function(index){
+                if(this.$refs.Project.value ==""){
+                      this.selectPhase0=[""];
+                      return false;
+                 }
+                for(let index=0;index<this.selectItem[this.selectedCustomer].length;index++){
+                     if(this.selectItem[this.selectedCustomer][index]["Project"]==this.selectedProject){
+                        this.selectPhase0=this.selectItem[this.selectedCustomer][index]["Phase0"];
+                    }
+                }
+            },
+            changeCategorys:function(index){
+                if(this.$refs.Categorys.value ==""){
+                      this.selectcase=[""];
+                      return false;
+                 }
+                let Customer = this.$refs.Customer.value;
+                let Project = this.$refs.Project.value;
+                let Phase0 = this.$refs.Phase0.value;
+                let Categorys = this.$refs.Categorys.value;
+                let data ={"isGetData":"changeCategorys","Customer":Customer,"Project":Project,"Phase":Phase0,"Categorys":Categorys,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+                axios.post("/ABOTestPlan/ABOTestPlan_edit/",Qs.stringify(data), {
+                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                }).then((res) => {
+                    this.selectcase=res.data.selectcase;
+                     });
+            },
+            selectMsg :function(){
+                if(this.$refs.Customer.value==''){
+                       //alert("客戶別未選擇");
+                        this.customerError = true;
+                        return false;
+               }
+               this.customerError = false;
+               if(this.$refs.Project.value==''){
+                       //alert("客戶別未選擇");
+                        this.projectError = true;
+                        return false;
+               }
+               this.projectError = false;
+               if(this.$refs.Phase0.value==''){
+                       //alert("客戶別未選擇");
+                        this.phase0Error = true;
+                        return false;
+               }
+               this.phase0Error = false;
+               if(this.$refs.Categorys.value==''){
+                       //alert("客戶別未選擇");
+                        this.categorysError = true;
+                        return false;
+               }
+               this.categorysError = false;
+               if(this.$refs.case.value==''){
+                       //alert("客戶別未選擇");
+                        this.caseError = true;
+                        return false;
+               }
+               this.caseError = false;
+                this.tableloading=true;
+                this.elbuttonloading=true;
+                {#console.log(this.tableloading);#}
+               let Customer = this.$refs.Customer.value;
+               let Project = this.$refs.Project.value;
+               let Phase0 = this.$refs.Phase0.value;
+               let Categorys = this.$refs.Categorys.value;
+               let cases = this.$refs.case.value;
+               let data ={"isGetData":"SEARCH","Customer":Customer,"Project":Project,"Phase":Phase0,"Categorys":Categorys,"cases":cases,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+               axios.post("/ABOTestPlan/ABOTestPlan_edit/",Qs.stringify(data), {
+               headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                }).then((res) => {
+                  {#console.log(res.data.content,'search');#}
+                this.tabledata=res.data.tabledata;
+                this.excel_dic=res.data.excel_dic;
+                  this.selectItem=res.data.select;
+                  this.showinfo=res.data.showinfo;
+                  this.tableloading=false;
+                   this.elbuttonloading=false;
+                   {#console.log(this.tableloading);#}
+                   this.errMsg = res.data.err_msg;
+                   if(this.errMsg){
+                            this.$alert(this.errMsg, '提示', {
+                                  type: 'warning',
+                                })
+                        }else {
+
+                        }
+                })
+             },
 
             widths(num){
                 if(num == 1){
@@ -546,6 +711,55 @@
                 console.log(scopse.row[item]);
             },
         },
+        watch: {
+       //關閉customer和project 未輸入提示 以及依據選項產生聯動
+       selectedCustomer(newValue,oldValue){
+           //關閉錯誤提示
+           this.customerError = false;
+           console.log(this.customerError);
+           //清除上次搜索過的記錄
+           this.selectedProject='';
+           this.selectedPhase0='';
+           this.selectedCategorys='';
+           this.selectedcase='';
+           this.selectProject=this.selectItem[this.$refs.Customer.value];;
+           immediate:true
+       },
+       selectedProject(newValue,oldValue){
+           //關閉錯誤提示
+           this.projectError = false;
+           //清除上次搜索過的記錄
+           this.selectedPhase0='';
+           this.selectedCategorys='';
+           this.selectedcase='';
+           if(this.customer == ''){
+               return false;
+           }
+           //console.log(this.selectMsg['0'][this.customer]);
+           //遍歷所有數據進行查找
+           for(let index =0; index < this.selectItem[this.selectedCustomer].length;index++){
+               //查找當前選項
+                if(this.selectItem[this.selectedCustomer][index]['project'] == newValue){
+                    this.selectPhase0 = this.selectItem[this.selectedCustomer][index]["Phase0"];
+                    return ;
+                }
+           }
+       },
+       selectedPhase0(newValue,oldValue){
+           this.phase0Error = false;
+           this.categoryError= false;
+           this.category='';
+
+       },
+       selectedCategorys(newValue, oldValue){
+         this.categorysError= false;
+         this.caseError= false;
+       },
+        selectcase(newValue, oldValue){
+     this.caseError= false;
+   },
+       //监听数组产生出已修改的ID，根据这些ID再判断是否发生更改
+},
 
     })
 </script>

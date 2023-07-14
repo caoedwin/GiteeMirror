@@ -187,6 +187,7 @@ def read_excel(src_file,header=0,sheetnum=1):
     return excel_dic,key_data, comments
 
 def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
+    print(datetime.datetime.now())
     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum0)).iloc[:,
          :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
@@ -211,80 +212,10 @@ def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
         i["dataid"] = hangnum
         hangnum += 1
     key_data = list(df.columns)
+    print(datetime.datetime.now(), 2)
 
-    # # 您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
-    # df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[42:,
-    #      1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-    # # # 显示所有列
-    # pd.set_option('display.max_columns', None)
-    # # # 显示所有行
-    # pd.set_option('display.max_rows', None)
-    # # df = df.fillna('?')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据, None,NA,NAN,NAT,Null都被认为是缺失值
-    # # df = df.fillna(method='ffill')
-    # key_data = list(df.columns)
-    # df = df.replace("", "?")
-    # # pprint.pprint(df)
-    #
-    # P_value = df.eq('P').sum()
-    # All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
-    # F_value = df.eq('F').sum()
-    # All_tongjidata_F = pd.DataFrame([F_value.values], columns=F_value.index).to_dict('records')
-    # B_value = df.eq('B').sum()
-    # All_tongjidata_B = pd.DataFrame([B_value.values], columns=B_value.index).to_dict('records')
-    # NS_value = df.eq('NS').sum()
-    # All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
-    # # NaN_value = df.eq('?').sum()
-    # # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
-    # NaN_value = df.eq('X').sum()
-    # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
-    # # print(All_tongjidata_NaN)
-    # P_value_num = 0
-    # F_value_num = 0
-    # B_value_num = 0
-    # NS_value_num = 0
-    # Na_value_num = 0
-    # lienum = 0
-    # for i in key_data:
-    #     if lienum >= 1:  # 因为读文件时时从第二列开始，要统计的时第三列开始的值
-    #         if All_tongjidata_P[0][i] > 0:
-    #             P_value_num += All_tongjidata_P[0][i] - 1
-    #         F_value_num += All_tongjidata_F[0][i]
-    #         B_value_num += All_tongjidata_B[0][i]
-    #         NS_value_num += All_tongjidata_NS[0][i]
-    #         Na_value_num += All_tongjidata_NaN[0][i]
-    #     lienum += 1
-    # CaseStatus = ""
-    # # print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
-    # if F_value_num > 0:
-    #     CaseStatus = "Fail"
-    # else:
-    #     CaseStatus = "Pass"
-    # TestProess = (P_value_num + F_value_num) / (P_value_num + F_value_num + B_value_num + Na_value_num)
-    # TestProess = "%.2f%%" % (TestProess * 100)
-    #
-    # # 读取所有批注
-    # workbook = load_workbook(src_file)
-    # first_sheet = workbook.get_sheet_names()[1]
-    # worksheet = workbook.get_sheet_by_name(first_sheet)
-    #
-    # comments = []
-    # rownum = 0
-    # for row in worksheet.rows:
-    #     cellnum = 0
-    #     for cell in row:
-    #         if cell.comment:
-    #             comments.append(["\n", cell.comment.text])
-    #         cellnum += 1
-    #     rownum += 1
-    # # print(comments)
-
-    # print("PPP", CaseStatus, TestProess)
-    return excel_dic, key_data
-    # return excel_dic, key_data, CaseStatus, TestProess, comments
-
-def info_excel_tongji(src_file,header=0,sheetnum=1):
-    #您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
-    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[42:,
+    # 您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
+    df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[42:,
          1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
     pd.set_option('display.max_columns', None)
@@ -316,7 +247,7 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     Na_value_num = 0
     lienum = 0
     for i in key_data:
-        if lienum >=1 :#因为读文件时时从第二列开始，要统计的时第三列开始的值
+        if lienum >= 1:  # 因为读文件时时从第二列开始，要统计的时第三列开始的值
             if All_tongjidata_P[0][i] > 0:
                 P_value_num += All_tongjidata_P[0][i] - 1
             F_value_num += All_tongjidata_F[0][i]
@@ -350,7 +281,83 @@ def info_excel_tongji(src_file,header=0,sheetnum=1):
     # print(comments)
 
     # print("PPP", CaseStatus, TestProess)
-    return CaseStatus, TestProess, comments
+    print(datetime.datetime.now(),3)
+    # return excel_dic, key_data
+    file_name = src_file.split("/")[-1]
+    # print(file_name)
+    return excel_dic, key_data, CaseStatus, TestProess, comments, file_name
+
+# def info_excel_tongji(src_file,header=0,sheetnum=1):
+#     print(datetime.datetime.now(),2)
+#     #您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
+#     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum),keep_default_na=False).iloc[42:,
+#          1:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+#     # # 显示所有列
+#     pd.set_option('display.max_columns', None)
+#     # # 显示所有行
+#     pd.set_option('display.max_rows', None)
+#     # df = df.fillna('?')  # 替换 Nan, 否则没有双引号的Nan，json.dumps(data)时虽然不报错，但是传到前端反序列化后无法获取数据, None,NA,NAN,NAT,Null都被认为是缺失值
+#     # df = df.fillna(method='ffill')
+#     key_data = list(df.columns)
+#     df = df.replace("", "?")
+#     # pprint.pprint(df)
+#
+#     P_value = df.eq('P').sum()
+#     All_tongjidata_P = pd.DataFrame([P_value.values], columns=P_value.index).to_dict('records')
+#     F_value = df.eq('F').sum()
+#     All_tongjidata_F = pd.DataFrame([F_value.values], columns=F_value.index).to_dict('records')
+#     B_value = df.eq('B').sum()
+#     All_tongjidata_B = pd.DataFrame([B_value.values], columns=B_value.index).to_dict('records')
+#     NS_value = df.eq('NS').sum()
+#     All_tongjidata_NS = pd.DataFrame([NS_value.values], columns=NS_value.index).to_dict('records')
+#     # NaN_value = df.eq('?').sum()
+#     # All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+#     NaN_value = df.eq('X').sum()
+#     All_tongjidata_NaN = pd.DataFrame([NaN_value.values], columns=NaN_value.index).to_dict('records')
+#     # print(All_tongjidata_NaN)
+#     P_value_num = 0
+#     F_value_num = 0
+#     B_value_num = 0
+#     NS_value_num = 0
+#     Na_value_num = 0
+#     lienum = 0
+#     for i in key_data:
+#         if lienum >=1 :#因为读文件时时从第二列开始，要统计的时第三列开始的值
+#             if All_tongjidata_P[0][i] > 0:
+#                 P_value_num += All_tongjidata_P[0][i] - 1
+#             F_value_num += All_tongjidata_F[0][i]
+#             B_value_num += All_tongjidata_B[0][i]
+#             NS_value_num += All_tongjidata_NS[0][i]
+#             Na_value_num += All_tongjidata_NaN[0][i]
+#         lienum += 1
+#     CaseStatus = ""
+#     # print(P_value_num, F_value_num, B_value_num, NS_value_num, Na_value_num)
+#     if F_value_num > 0:
+#         CaseStatus = "Fail"
+#     else:
+#         CaseStatus = "Pass"
+#     TestProess = (P_value_num + F_value_num) / (P_value_num + F_value_num + B_value_num + Na_value_num)
+#     TestProess = "%.2f%%" % (TestProess * 100)
+#
+#     # 读取所有批注
+#     workbook = load_workbook(src_file)
+#     first_sheet = workbook.get_sheet_names()[1]
+#     worksheet = workbook.get_sheet_by_name(first_sheet)
+#
+#     comments = []
+#     rownum = 0
+#     for row in worksheet.rows:
+#         cellnum = 0
+#         for cell in row:
+#             if cell.comment:
+#                 comments.append(["\n", cell.comment.text])
+#             cellnum += 1
+#         rownum += 1
+#     # print(comments)
+#
+#     # print("PPP", CaseStatus, TestProess)
+#     print(datetime.datetime.now(),3)
+#     return CaseStatus, TestProess, comments
 
 
 def style_color(df, colors):
@@ -613,6 +620,71 @@ def ABOTestPlan_edit(request):
     showinfo = ''
     errMsg = ''
 
+    selectItem = {
+        # "C38(NB)": [{"Project": "EL531", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                       {"Project": "EL532", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                       {"Project": "EL533", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                       {"Project": "EL534", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}],
+        #           "C38(AIO)": [{"Project": "EL535", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                        {"Project": "EL536", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                        {"Project": "EL537", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                        {"Project": "EL538", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}],
+        #           "A39": [{"Project": "EL531", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                   {"Project": "EL532", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                   {"Project": "EL533", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                   {"Project": "EL534", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}],
+        #           "Other": [{"Project": "ELMV2", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                     {"Project": "ELMV3", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
+        #                     {"Project": "ELMV4", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}]
+    }
+    selectcase = []
+    tabledata = [
+        # {"TestID": "ME-ENV001", "TestItems": "Operation Temperature Test1", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Pass", "Percent": "100%", "BugNo": "", "filepath": "/ABOTestPlan/ABOTestPlan_edit/",},
+        # {"TestID": "ME-ENV002", "TestItems": "Operation Temperature Test2", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Fail", "Percent": "90%", "BugNo": "bug-212096.panel白斑", "filepath": "",},
+        # {"TestID": "ME-ENV003", "TestItems": "Operation Temperature Test3", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "Block", "Percent": "0%", "BugNo": "", "filepath": "",},
+        # {"TestID": "ME-ENV004", "TestItems": "Operation Temperature Test4", "SKU": "1a#14~16,2a#7~8", "Owner": "DQA", "Schedule": "9/8~9/14",
+        #  "Status": "NS", "Percent": "", "BugNo": "tttttttttttttttttttt", "filepath": "",},
+    ]
+    excel_dic = []
+    key_list = []
+    canExport = 1
+    canEdit = 1
+    err_msg = ""
+
+    folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+    folder_path_Sys = settings.MEDIA_ROOT + '/ABOTestPlanSys/'  # 指定文件夹路径
+    subforders = []
+    for dirpath, dirnames, filenames in os.walk(folder_path):
+        for dirname in dirnames:
+            subforders.append(os.path.join(dirpath, dirname).replace(folder_path, "").replace("\\", "/"))
+            # print(os.path.join(dirpath, dirname).replace(folder_path, ""))
+    subforders_name1 = []
+    subforders_name2 = []
+    subforders_name3 = []
+    for i in subforders:
+        if len(i.split("/")) == 1:
+            subforders_name1.append(i)
+        elif len(i.split("/")) == 2:
+            subforders_name2.append(i)
+        elif len(i.split("/")) == 3:
+            subforders_name3.append(i)
+        else:
+            # print(i)
+            pass
+    for i in subforders_name1:
+        projectincustomer = []
+        for j in subforders_name2:
+            phaseinproject = []
+            if i in j:
+                for k in subforders_name3:
+                    if j in k:
+                        phaseinproject.append(k.replace(j + "/", ""))
+                projectincustomer.append({"Project": j.replace(i + "/", ""), "Phase0": phaseinproject})
+        selectItem[i] = projectincustomer
+
     onlineuser = request.session.get('account')
     roles = []
     if UserInfo.objects.filter(account=onlineuser).first():
@@ -650,6 +722,49 @@ def ABOTestPlan_edit(request):
                             key_list = readdata[1]
                             comments = readdata[2]
                             showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
+                except Exception as e:
+                    print(e)
+                    errMsg = str(e)
+            if request.POST.get('isGetData') == 'changeCategorys':
+                Customer = request.POST.get('Customer')
+                Project = request.POST.get('Project')
+                Phase = request.POST.get('Phase')
+                Category = request.POST.get('Categorys')
+                # print(Customer, Category,111)
+                folder_path = folder_path + Customer + "/" + Project + "/" + Phase + "/" + Category
+                folder_path = folder_path.replace("\\", "/").replace("//", "/")
+                # folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
+                # folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
+                try:
+                    for path in os.listdir(folder_path):
+                        selectcase.append(path)
+                except Exception as e:
+                    print(e)
+                    err_msg = str(e)
+            if 'SEARCH' in str(request.body):
+                try:
+                    Customer = request.POST.get('Customer')
+                    Project = request.POST.get('Project')
+                    Phase = request.POST.get('Phase')
+                    Category = request.POST.get('Categorys')
+                    cases = request.POST.get('cases')
+                    folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+                    # print(Customer, Category,111)
+                    filepathsearch = folder_path + Customer + "/" + Project + "/" + Phase + "/" + Category + "/" + cases
+                    filepathsearch = filepathsearch.replace("\\", "/").replace("//", "/")
+                    folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category) + "/" + cases
+                    folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
+                    # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+                    shutil.copy(filepathsearch, folder_path_Sys)
+                    if folder_path_Sys:
+                        if os.path.exists(folder_path_Sys):
+                            readdata = read_excel(folder_path_Sys)
+                            excel_dic = readdata[0]
+                            key_list = readdata[1]
+                            comments = readdata[2]
+                            showinfo = folder_path_Sys.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
+                            request.session['sessionABOEdit'] = folder_path_Sys
+                            request.session.set_expiry(12 * 60 * 60)
                 except Exception as e:
                     print(e)
                     errMsg = str(e)
@@ -699,6 +814,9 @@ def ABOTestPlan_edit(request):
             "canEdit": canEdit,
             "showinfo": showinfo,
             # "status":status
+            "select": selectItem,
+            "selectcase": selectcase,
+
         }
         # print(type(json.dumps(data)),json.dumps(data))
         return HttpResponse(json.dumps(data), content_type="application/json")
@@ -783,7 +901,6 @@ def ABOTestPlan_summary(request):
         if request.POST.get('isGetData') == 'first':
             pass
 
-
         if request.POST.get('isGetData') == 'SEARCH':
             Customer = request.POST.get('Customer')
             Project = request.POST.get('Project')
@@ -795,8 +912,9 @@ def ABOTestPlan_summary(request):
             folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
             folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
             try:
-
+                # print(datetime.datetime.now())
                 Copy_forders(folder_path, folder_path_Sys)
+                # print(datetime.datetime.now())
                 #
                 # 也可以使用 with 语句创建线程池
                 # with ThreadPoolExecutor(max_workers=3) as pool:
@@ -804,13 +922,16 @@ def ABOTestPlan_summary(request):
                 #         pool.submit(async_add, i)
                 # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
-                pool = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                pool = ThreadPoolExecutor(max_workers=60, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # pool = ProcessPoolExecutor(6)# 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
                 # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
                 # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
-                pool1 = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # pool1 = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                # pool1 = ProcessPoolExecutor(6)  # 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
                 if os.path.exists(folder_path_Sys):
                     file_ext = ['.xls', '.xlsx']
-                    i = 0
+                    # i = 0
+                    all_result = []
                     for path in os.listdir(folder_path_Sys):
                         path_list = os.path.join(folder_path_Sys, path)  # 连接当前目录及文件或文件夹名称
                         path_list = path_list.replace("\\", "/")
@@ -819,32 +940,39 @@ def ABOTestPlan_summary(request):
                                 # print(path_list, path)  # 打印输出
                                 excel_dic_process = pool.submit(info_excel, path_list)#多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
                                 excel_dic = excel_dic_process.result()#多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
-                                Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
-                                Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                # Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                # Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
                                 # Result = info_excel_tongji(path_list)
                                 # excel_dic = info_excel(path_list)
                                 # print(excel_dic)
-                                SKU = excel_dic[0][0]['SKU/Unit']
-                                Owner = excel_dic[0][0]['Owner']
-                                TestSchedule = excel_dic[0][0]['Test Schedule']
-                                # print(excel_dic)
-                                tabledata.append(
-                                    {
-                                        "TestID": path.split(".")[0].split("_")[0],
-                                        "TestItems": path.split(".")[0].split("_")[1],
-                                        "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
-                                        "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
-                                        # "Status": excel_dic[2], "Percent": excel_dic[3], "BugNo": excel_dic[4],
-                                        "filepath": path_list,
-                                    }
-                                )
-                                i += 1  # 对.xls、.xlsx文件进行计数
-                    # pool.shutdown(wait=True)
-                    pool.shutdown()#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
-                    pool1.shutdown()#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
-                    print('目录下共有' + str(i) + '个xls、xlsx文件')
+                                all_result.append(excel_dic)
+
+                                # i += 1  # 对.xls、.xlsx文件进行计数
+                    # pool.shutdown()
+                    pool.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                    # pool1.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                    # print('目录下共有' + str(i) + '个xls、xlsx文件')
                     #
                     # Del_forders(folder_path_Sys)
+                for i in all_result:
+                    # print(i)
+                    key = i[5]
+                    SKU = i[0][0]['SKU/Unit']
+                    Owner = i[0][0]['Owner']
+                    TestSchedule = i[0][0]['Test Schedule']
+                    # print(excel_dic)
+                    path_list = os.path.join(folder_path_Sys, key)  # 连接当前目录及文件或文件夹名称
+                    path_list = path_list.replace("\\", "/")
+                    tabledata.append(
+                        {
+                            "TestID": key.split(".")[0].split("_")[0],
+                            "TestItems": key.split(".")[0].split("_")[1],
+                            "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                            # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                            "Status": i[2], "Percent": i[3], "BugNo": i[4],
+                            "filepath": path_list,
+                        }
+                    )
             except Exception as e:
                 print(e)
                 err_msg = str(e)
