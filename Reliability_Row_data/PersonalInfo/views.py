@@ -4439,7 +4439,16 @@ def Summary1(request):
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # overtimedic
 
                             overtimedic[j[0]] = 0.0
@@ -4565,10 +4574,19 @@ def Summary1(request):
                             # print(DateNow_begin)
                             DateNow = datetime.datetime.strptime(YearSearch + j[1], '%Y-%m-%d')
                             Test_Endperiod = [DateNow_begin, DateNow]
-                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
-                                                                                RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],Year=YearSearch,
+                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],Year=YearSearch,
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],Year=YearSearch,
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # overtimedic
                             
                             overtimedic[j[0]] = 0.00
@@ -4702,8 +4720,8 @@ def Summary1(request):
                 if j in i.keys():
                     hang_Sum += i[j]
                     mounthnum2 += 1
-            if i["Program"]== "人数":
-                i["Average"] =round(hang_Sum / mounthnum2, 0)
+            if i["Program"] == "人數":
+                i["Average"] =round(hang_Sum / mounthnum2)
             else:
                 i["Average"] = round(hang_Sum / mounthnum2, 1)
         for i in overtimeTable1:
