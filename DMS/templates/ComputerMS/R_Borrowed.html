@@ -334,11 +334,13 @@
             RENEW:function(){
                 let flag = 0;
                 for(let i=0;i<this.selectNumber.length;i++){
-                    if(this.selectNumber[i]==this.$refs.form.model.Number){
+                    {#console.log(this.selectNumber[i].value,this.$refs.form.model.Number,this.selectNumber[i]==this.$refs.form.model.Number);#}
+                    if(this.selectNumber[i].value==this.$refs.form.model.Number){
                         flag = 1;
                         break;
                     }
                 }
+                {#console.log(flag,flag == 1);#}
                 if(flag == 1){
                    this.$refs.form.validate((valid) => {
                     if (valid) {
