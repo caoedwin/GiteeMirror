@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/templates/ChairCabinetMS/R_Borrowed.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/templates/ChairCabinetMS/R_Borrowed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/templates/ComputerMS/R_Borrowed.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/templates/ComputerMS/R_Borrowed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ABOTestPlan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ABOTestPlan/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2023-07-13.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-07-13.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error-2023-07-13.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error-2023-07-13.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2023-07-13.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-07-13.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/INVGantt/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-07-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-07-14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-07-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-07-14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/MQM/MQM_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/MQM/MQM_edit.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,32 +70,32 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="312" />
+          <entry key="html" value="314" />
           <entry key="js" value="2" />
-          <entry key="py" value="253" />
+          <entry key="py" value="260" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="312" />
+          <entry key="HTML" value="314" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="253" />
+          <entry key="Python" value="260" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="5" />
-          <entry key="html" value="8641" />
-          <entry key="py" value="12204" />
+          <entry key="html" value="8720" />
+          <entry key="py" value="13640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="8641" />
-          <entry key="Python" value="12209" />
+          <entry key="HTML" value="8720" />
+          <entry key="Python" value="13645" />
         </counts>
       </usages-collector>
     </session>
@@ -99,40 +105,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ABOTestPlan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="784" column="32" selection-start-line="784" selection-start-column="24" selection-end-line="784" selection-end-column="32" />
+            <state relative-caret-position="-53">
+              <caret line="374" lean-forward="true" selection-start-line="374" selection-end-line="374" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#1058#1857#0" />
+                <element signature="e#967#1144#0" />
+                <element signature="e#1215#2026#0" />
                 <element signature="e#1860#1895#0" />
                 <element signature="e#2213#6129#0" />
-                <element signature="e#6327#10199#0" />
+                <element signature="e#2213#2981#1" />
+                <element signature="e#6399#10303#0" />
                 <element signature="e#10225#10279#0" />
                 <element signature="e#9928#10069#0" />
                 <element signature="e#10125#11093#0" />
-                <element signature="e#11212#16036#0" />
                 <element signature="e#16038#16073#0" />
                 <element signature="e#16596#18455#0" />
+                <element signature="e#23245#38374#0" />
                 <element signature="e#22341#23782#0" />
                 <element signature="e#23803#24798#0" />
+                <element signature="e#27179#28544#0" />
+                <element signature="e#27683#32714#0" />
+                <element signature="e#28640#30344#0" />
+                <element signature="e#37793#56090#0" />
                 <element signature="e#23158#24535#0" />
                 <element signature="e#24552#25511#0" />
-                <element signature="e#30477#35081#0" />
-                <element signature="e#33956#34520#0" />
+                <element signature="e#47553#54647#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="315" column="66" selection-start-line="315" selection-start-column="66" selection-end-line="315" selection-end-column="66" />
+            <state relative-caret-position="229">
+              <caret line="310" column="78" selection-start-line="310" selection-start-column="72" selection-end-line="310" selection-end-column="78" />
               <folding>
+                <element signature="e#10888#11947#0#HTML" />
+                <element signature="e#11999#12257#0#HTML" />
                 <element signature="e#15816#17176#0#HTML" />
                 <element signature="e#17218#17510#0#HTML" />
                 <element signature="e#17553#18058#0#HTML" />
@@ -149,24 +162,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="37" column="62" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="62" />
-              <folding>
-                <element signature="e#9612#11061#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="258" column="16" lean-forward="true" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
+            <state relative-caret-position="786">
+              <caret line="260" column="37" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="37" />
               <folding>
-                <element signature="e#3699#5224#0#HTML" />
+                <element signature="e#7034#8349#0#HTML" />
                 <element signature="e#8384#10786#0#HTML" />
                 <element signature="e#12321#12613#0#HTML" />
                 <element signature="e#12656#13161#0#HTML" />
@@ -174,15 +175,6 @@
                 <element signature="e#14132#16583#0#HTML" />
                 <element signature="e#16611#18075#0#HTML" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit20230705linshi.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="258" column="27" lean-forward="true" selection-start-line="258" selection-start-column="27" selection-end-line="258" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -201,36 +193,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>can</find>
-      <find>canEdit</find>
-      <find>objec</find>
-      <find>push</find>
-      <find>upload</find>
-      <find>upload_zhushi_delete</find>
-      <find>upload_zhushi</find>
-      <find>info_excel_tongji</find>
-      <find>pd</find>
-      <find>INV_Model</find>
-      <find>print</find>
-      <find>info_excel</find>
-      <find>ThreadPoolExecutor</find>
-      <find>shutil</find>
-      <find>selectMsg</find>
-      <find>Customer</find>
-      <find>changeCustomer</find>
-      <find>src_file</find>
       <find>selectPhase0</find>
       <find>changePhase0</find>
       <find>selectcase</find>
       <find>selectedCategorys</find>
       <find>selectCategorys</find>
-      <find>selectItem</find>
       <find>selectProject</find>
       <find>Categorys</find>
       <find>selectDriver</find>
       <find>caseError</find>
+      <find>exist</find>
+      <find>shape</find>
       <find>tabledata</find>
+      <find>\n</find>
+      <find>excel_dic</find>
+      <find>v-if</find>
       <find>showinfo</find>
+      <find>.replace(&quot;]&quot;, &quot;&quot;)</find>
+      <find>ExcelColumn</find>
+      <find>rownum</find>
+      <find>save_data</find>
+      <find>selectItem</find>
+      <find>upload</find>
+      <find>print</find>
+      <find>upload_zhushi_changelog</find>
+      <find>upload_zhushi</find>
+      <find>upload_zhushi_delete</find>
+      <find>save_exel</find>
+      <find>filepath</find>
+      <find>info_excel</find>
+      <find>lienum</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -242,7 +234,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_edit_AIO.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_search_AIO.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_edit_AIO.html" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_search_AIO.html" />
@@ -286,13 +277,14 @@
         <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_edit.html" />
         <option value="$PROJECT_DIR$/INVGantt/urls.py" />
         <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
-        <option value="$PROJECT_DIR$/INVGantt/views.py" />
         <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_searchByProject.html" />
         <option value="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_search.html" />
-        <option value="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html" />
         <option value="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit20230707tankuangresult+comment.html" />
-        <option value="$PROJECT_DIR$/ABOTestPlan/views.py" />
+        <option value="$PROJECT_DIR$/INVGantt/views.py" />
+        <option value="$PROJECT_DIR$/templates/MQM/MQM_edit.html" />
         <option value="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit.html" />
+        <option value="$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html" />
+        <option value="$PROJECT_DIR$/ABOTestPlan/views.py" />
       </list>
     </option>
   </component>
@@ -352,7 +344,7 @@
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="ABOTestPlan" type="462c0819:PsiDirectoryNode" />
+              <item name="PersonalInfo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
@@ -363,13 +355,7 @@
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ABOTestPlan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="DriverTool" type="462c0819:PsiDirectoryNode" />
+              <item name="MQM" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -383,7 +369,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DMS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -904,7 +890,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.2798913" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.2798913" />
       <window_info id="Favorites" order="1" sideWeight="0.5277311" side_tool="true" weight="0.2798913" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -924,7 +910,7 @@
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" />
       <window_info anchor="bottom" id="Version Control" order="17" weight="0.3297587" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.3150134" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.25067025" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -960,23 +946,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/middleware/checkper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="82" selection-start-line="82" selection-end-line="98" selection-end-column="11" />
-          <folding>
-            <element signature="e#4987#6320#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1256,40 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#838#3182#0" />
-            <element signature="e#3200#3255#0" />
-            <element signature="e#3274#4013#0" />
-            <element signature="e#4034#4403#0" />
-            <element signature="e#4415#4876#0" />
-            <element signature="e#4910#5294#0" />
-            <element signature="e#5305#5635#0" />
-            <element signature="e#5658#6049#0" />
-            <element signature="e#6073#6475#0" />
-            <element signature="e#7351#23551#0" />
-            <element signature="e#23926#47096#0" />
-            <element signature="e#47131#70131#0" />
-            <element signature="e#70198#104120#0" />
-            <element signature="e#70821#79003#0" />
-            <element signature="e#104792#351015#0" />
-            <element signature="e#364658#369057#0" />
-            <element signature="e#369066#369111#0" />
-            <element signature="e#372120#407222#0" />
-            <element signature="e#407445#421162#0" />
-            <element signature="e#421234#430637#0" />
-            <element signature="e#430708#438405#0" />
-            <element signature="e#438414#438466#0" />
-            <element signature="e#537526#543049#0" />
-            <element signature="e#543107#553974#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1326,59 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="7180" column="4" selection-start-line="7180" selection-start-column="4" selection-end-line="7191" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#731#844#0" />
-            <element signature="e#899#1057#0" />
-            <element signature="e#1227#1359#0" />
-            <element signature="e#1387#2321#0" />
-            <element signature="e#2346#2741#0" />
-            <element signature="e#2769#3075#0" />
-            <element signature="e#3100#3655#0" />
-            <element signature="e#3702#21729#0" />
-            <element signature="e#21783#42420#0" />
-            <element signature="e#42472#147445#0" />
-            <element signature="e#147495#157420#0" />
-            <element signature="e#157468#190184#0" />
-            <element signature="e#190227#302917#0" />
-            <element signature="e#303211#304205#0" />
-            <element signature="e#304229#305809#0" />
-            <element signature="e#305927#306915#0" />
-            <element signature="e#306938#307844#0" />
-            <element signature="e#307867#308217#0" />
-            <element signature="e#313152#361979#0" />
-            <element signature="e#313434#314945#0" />
-            <element signature="e#430424#431016#0" />
-            <element signature="e#431042#431250#0" />
-            <element signature="e#431269#432528#0" />
-            <element signature="e#432554#432651#0" />
-            <element signature="e#432670#434690#0" />
-            <element signature="e#434715#434998#0" />
-            <element signature="e#435056#435461#0" />
-            <element signature="e#435484#436749#0" />
-            <element signature="e#436888#438326#0" />
-            <element signature="e#438355#438624#0" />
-            <element signature="e#438688#439158#0" />
-            <element signature="e#440114#441253#0" />
-            <element signature="e#441283#441834#0" />
-            <element signature="e#441860#441898#0" />
-            <element signature="e#441927#441965#0" />
-            <element signature="e#442037#442059#0" />
-            <element signature="e#442089#443010#0" />
-            <element signature="e#443582#500187#0" />
-            <element signature="e#501636#503101#0" />
-            <element signature="e#503136#504690#0" />
-            <element signature="e#504817#505928#0" />
-            <element signature="e#505963#507178#0" />
-            <element signature="e#577258#594604#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-534439269/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1386,21 +1268,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="126" column="13" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit20230707tankuangresult+comment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="518" column="14" selection-end-line="518" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="37" column="62" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="62" />
+          <folding>
+            <element signature="e#9612#11061#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/PythonProject/DDISExcel/excelTrans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="380" column="14" selection-start-line="380" selection-start-column="12" selection-end-line="380" selection-end-column="14" />
+        <state relative-caret-position="-3486">
+          <caret line="161" column="22" lean-forward="true" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPlanSW/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4826">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#838#3182#0" />
+            <element signature="e#3200#3255#0" />
+            <element signature="e#3274#4013#0" />
+            <element signature="e#4034#4403#0" />
+            <element signature="e#4415#4876#0" />
+            <element signature="e#4910#5294#0" />
+            <element signature="e#5305#5635#0" />
+            <element signature="e#5658#6049#0" />
+            <element signature="e#6073#6475#0" />
+            <element signature="e#7351#23551#0" />
+            <element signature="e#23926#47096#0" />
+            <element signature="e#47131#70131#0" />
+            <element signature="e#70198#104120#0" />
+            <element signature="e#70821#79003#0" />
+            <element signature="e#104792#351015#0" />
+            <element signature="e#364658#369057#0" />
+            <element signature="e#369066#369111#0" />
+            <element signature="e#372120#407222#0" />
+            <element signature="e#407445#421162#0" />
+            <element signature="e#421234#430637#0" />
+            <element signature="e#430708#438405#0" />
+            <element signature="e#438414#438466#0" />
+            <element signature="e#537526#543049#0" />
+            <element signature="e#543107#553974#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="114">
+          <caret line="484" column="31" lean-forward="true" selection-start-line="484" selection-start-column="31" selection-end-line="484" selection-end-column="31" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#465#12126#0" />
             <element signature="e#12175#19172#0" />
-            <element signature="e#19230#28374#0" />
             <element signature="e#19482#21244#0" />
             <element signature="e#21266#21320#0" />
             <element signature="e#21341#21384#0" />
@@ -1424,17 +1364,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/MQM/MQM_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="126" column="13" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="13" />
+        <state relative-caret-position="162">
+          <caret line="83" column="148" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="148" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit20230707tankuangresult+comment.html">
+    <entry file="file://C:/Python372/mecheck/Lib/site-packages/pandas/_config/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="518" column="14" selection-end-line="518" selection-end-column="14" />
+        <state relative-caret-position="46">
+          <caret line="382" selection-start-line="382" selection-end-line="382" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="5258" column="29" selection-start-line="5258" selection-start-column="16" selection-end-line="5258" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#731#844#0" />
+            <element signature="e#899#1057#0" />
+            <element signature="e#1227#1359#0" />
+            <element signature="e#1387#2321#0" />
+            <element signature="e#2346#2741#0" />
+            <element signature="e#2769#3075#0" />
+            <element signature="e#3100#3655#0" />
+            <element signature="e#3702#21729#0" />
+            <element signature="e#21783#42420#0" />
+            <element signature="e#42472#147445#0" />
+            <element signature="e#147495#157420#0" />
+            <element signature="e#157468#190184#0" />
+            <element signature="e#190227#302917#0" />
+            <element signature="e#303211#304205#0" />
+            <element signature="e#304229#305809#0" />
+            <element signature="e#305927#306915#0" />
+            <element signature="e#306938#307844#0" />
+            <element signature="e#307867#308217#0" />
+            <element signature="e#313434#314945#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1447,10 +1416,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="258" column="16" lean-forward="true" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
+        <state relative-caret-position="786">
+          <caret line="260" column="37" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="37" />
           <folding>
-            <element signature="e#3699#5224#0#HTML" />
+            <element signature="e#7034#8349#0#HTML" />
             <element signature="e#8384#10786#0#HTML" />
             <element signature="e#12321#12613#0#HTML" />
             <element signature="e#12656#13161#0#HTML" />
@@ -1461,47 +1430,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="37" column="62" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="62" />
-          <folding>
-            <element signature="e#9612#11061#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ABOTestPlan/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="784" column="32" selection-start-line="784" selection-start-column="24" selection-end-line="784" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#1058#1857#0" />
-            <element signature="e#1860#1895#0" />
-            <element signature="e#2213#6129#0" />
-            <element signature="e#6327#10199#0" />
-            <element signature="e#10225#10279#0" />
-            <element signature="e#9928#10069#0" />
-            <element signature="e#10125#11093#0" />
-            <element signature="e#11212#16036#0" />
-            <element signature="e#16038#16073#0" />
-            <element signature="e#16596#18455#0" />
-            <element signature="e#22341#23782#0" />
-            <element signature="e#23803#24798#0" />
-            <element signature="e#23158#24535#0" />
-            <element signature="e#24552#25511#0" />
-            <element signature="e#30477#35081#0" />
-            <element signature="e#33956#34520#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ABOTestPlan/ABOTestPlan_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="315" column="66" selection-start-line="315" selection-start-column="66" selection-end-line="315" selection-end-column="66" />
+        <state relative-caret-position="229">
+          <caret line="310" column="78" selection-start-line="310" selection-start-column="72" selection-end-line="310" selection-end-column="78" />
           <folding>
+            <element signature="e#10888#11947#0#HTML" />
+            <element signature="e#11999#12257#0#HTML" />
             <element signature="e#15816#17176#0#HTML" />
             <element signature="e#17218#17510#0#HTML" />
             <element signature="e#17553#18058#0#HTML" />
@@ -1512,6 +1447,37 @@
             <element signature="e#22532#23029#0#HTML" />
             <element signature="e#23087#23941#0#HTML" />
             <element signature="e#23978#27093#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ABOTestPlan/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <caret line="374" lean-forward="true" selection-start-line="374" selection-end-line="374" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#967#1144#0" />
+            <element signature="e#1215#2026#0" />
+            <element signature="e#1860#1895#0" />
+            <element signature="e#2213#6129#0" />
+            <element signature="e#2213#2981#1" />
+            <element signature="e#6399#10303#0" />
+            <element signature="e#10225#10279#0" />
+            <element signature="e#9928#10069#0" />
+            <element signature="e#10125#11093#0" />
+            <element signature="e#16038#16073#0" />
+            <element signature="e#16596#18455#0" />
+            <element signature="e#23245#38374#0" />
+            <element signature="e#22341#23782#0" />
+            <element signature="e#23803#24798#0" />
+            <element signature="e#27179#28544#0" />
+            <element signature="e#27683#32714#0" />
+            <element signature="e#28640#30344#0" />
+            <element signature="e#37793#56090#0" />
+            <element signature="e#23158#24535#0" />
+            <element signature="e#24552#25511#0" />
+            <element signature="e#47553#54647#0" />
           </folding>
         </state>
       </provider>

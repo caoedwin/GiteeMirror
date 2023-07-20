@@ -81,7 +81,7 @@
         <el-table-column label="Project" align="center" width="120" fixed>
             <template slot-scope="scope">
             <el-input class="edit-cell" v-if="showEdit[scope.$index] && (statu === 6 || statu === 4)"    v-model="scope.row.Project"></el-input>
-                <span v-else="showEdit[scope.$index] && (statu === 6 || statu === 4)">${ project[scope.$index+(currentPage-1)*pageSize] }</span>
+                    <span v-else="showEdit[scope.$index] && (statu === 6 || statu === 4)">${ project[scope.$index+(currentPage-1)*pageSize] }</span>
        </template>
         </el-table-column>
         <el-table-column label="Category" align="center" width="156" fixed>

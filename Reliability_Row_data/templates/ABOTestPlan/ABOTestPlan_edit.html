@@ -611,7 +611,7 @@
                                         )/*注释如果只传递变更的，后端保存时会删除未变更的，所以comments要将所有的都传递过去*/{% endcomment %}
                                     }else {
                                         upload.push(
-                                        {"row":i, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
+                                        {"row":i, "lienum":j, "lie":key_list_save[j], "value":this.excel_dic[i][key_list_save[j]]}
                                     )
                                     }
                                 }

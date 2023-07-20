@@ -445,8 +445,12 @@ def INVGantt_searchByProject(request):
             # print(Search_Endperiod)
             if Search_Endperiod != ['0000-00-00', '0000-00-00']:
                 #2023-01-31T16:00:00.000Z
+                if int(Search_Endperiod[1].split('-')[1]) != 12:
+                    endtime = datetime.datetime.strptime(Search_Endperiod[1].split('-')[0] + "-" + str(int(Search_Endperiod[1].split('-')[1]) + 1) + "-01", '%Y-%m-%d')
+                else:
+                    endtime = datetime.datetime.strptime(str(int(Search_Endperiod[1].split('-')[0]) + 1) + "-" + str(int(Search_Endperiod[1].split('-')[1]) + 1 - 12) + "-01", '%Y-%m-%d')
                 duringTime = [datetime.datetime.strptime(Search_Endperiod[0], '%Y-%m-%d'),
-                              datetime.datetime.strptime(Search_Endperiod[1].split('-')[0] + "-" + str(int(Search_Endperiod[1].split('-')[1]) + 1) + "-01", '%Y-%m-%d')]
+                              endtime]
                 # print(duringTime)
                 for i in INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).values("TP_Cat").distinct():
                     # print(i)
@@ -469,9 +473,15 @@ def INVGantt_searchByProject(request):
             if request.POST.get('TP_Cat'):
                 check_dic['TP_Cat'] = request.POST.get('TP_Cat')
             # print(Search_Endperiod)
+            if int(Search_Endperiod[1].split('-')[1]) != 12:
+                endtime = datetime.datetime.strptime(
+                    Search_Endperiod[1].split('-')[0] + "-" + str(int(Search_Endperiod[1].split('-')[1]) + 1) + "-01",
+                    '%Y-%m-%d')
+            else:
+                endtime = datetime.datetime.strptime(str(int(Search_Endperiod[1].split('-')[0]) + 1) + "-" + str(
+                    int(Search_Endperiod[1].split('-')[1]) + 1 - 12) + "-01", '%Y-%m-%d')
             duringTime = [datetime.datetime.strptime(Search_Endperiod[0], '%Y-%m-%d'),
-                          datetime.datetime.strptime(Search_Endperiod[1].split('-')[0] + "-" + str(
-                              int(Search_Endperiod[1].split('-')[1]) + 1) + "-01", '%Y-%m-%d')]
+                          endtime]
             # print(duringTime)
             for i in INVGantt.objects.filter(**check_dic).filter(Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)):
                 # print(i.Test_Start, str(i.Test_End), str(i.Edittime))

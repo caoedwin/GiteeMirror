@@ -1,0 +1,69 @@
+[2023-07-20 09:40:39,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-07-20 09:40:39,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-07-20 09:40:39,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-07-20 09:40:39,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-07-20 09:40:39,729] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/sb-admin.css HTTP/1.1" 304 0
+[2023-07-20 09:40:39,729] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+[2023-07-20 09:40:39,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[2023-07-20 09:40:39,732] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/test1.css HTTP/1.1" 304 0
+[2023-07-20 09:40:39,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+[2023-07-20 09:40:39,735] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/jquery-easing/jquery.easing.min.js HTTP/1.1" 304 0
+[2023-07-20 09:40:39,735] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+[2023-07-20 09:40:39,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/yellow.jpg HTTP/1.1" 304 0
+[2023-07-20 09:40:41,769] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-07-20 09:40:41,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-07-20 09:40:41,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 30779
+[2023-07-20 09:40:41,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 30779
+[2023-07-20 09:40:42,171] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:40:42 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-07-20 09:40:42,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1433
+[2023-07-20 09:40:42,249] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-07-20 09:40:42,250] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-07-20 09:40:51,129] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:40:51,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:41:12,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 37249
+[2023-07-20 09:41:12,218] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 37249
+[2023-07-20 09:41:12,499] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:12 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Borrowed/ POST
+[2023-07-20 09:41:12,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 18120
+[2023-07-20 09:41:12,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:41:23,036] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:23 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Borrowed/ POST
+[2023-07-20 09:41:23,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 17741
+[2023-07-20 09:41:31,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Destine/ HTTP/1.1" 200 28759
+[2023-07-20 09:41:31,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Destine/ HTTP/1.1" 200 28759
+[2023-07-20 09:41:32,075] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:32 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Destine/ POST
+[2023-07-20 09:41:32,088] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Destine/ HTTP/1.1" 200 15
+[2023-07-20 09:41:32,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:41:34,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Transfer/ HTTP/1.1" 200 28863
+[2023-07-20 09:41:34,110] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Transfer/ HTTP/1.1" 200 28863
+[2023-07-20 09:41:34,226] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:34 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Transfer/ POST
+[2023-07-20 09:41:34,235] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Transfer/ HTTP/1.1" 200 405
+[2023-07-20 09:41:34,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:41:37,512] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:37 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Transfer/ POST
+[2023-07-20 09:41:37,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Transfer/ HTTP/1.1" 200 15
+[2023-07-20 09:41:40,108] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 37249
+[2023-07-20 09:41:40,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 37249
+[2023-07-20 09:41:40,364] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:41:40 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ChairCabinetMS/R_Borrowed/ POST
+[2023-07-20 09:41:40,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ChairCabinetMS/R_Borrowed/ HTTP/1.1" 200 18110
+[2023-07-20 09:41:40,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:42:58,002] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 37607
+[2023-07-20 09:42:58,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 37607
+[2023-07-20 09:42:58,353] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:42:58 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2023-07-20 09:42:58,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 17878
+[2023-07-20 09:42:58,555] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:43:07,344] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:43:07 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2023-07-20 09:43:07,357] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 17412
+[2023-07-20 09:43:14,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 30214
+[2023-07-20 09:43:14,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Transfer/ HTTP/1.1" 200 30214
+[2023-07-20 09:43:15,070] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:43:15 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2023-07-20 09:43:15,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 538
+[2023-07-20 09:43:15,204] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702
+[2023-07-20 09:43:19,741] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:43:19 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/R_Transfer/ POST
+[2023-07-20 09:43:19,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Transfer/ HTTP/1.1" 200 15
+[2023-07-20 09:48:28,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 35416
+[2023-07-20 09:48:29,004] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 35416
+[2023-07-20 09:48:29,539] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:48:29 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/BorrowedComputer/ POST
+[2023-07-20 09:48:29,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/BorrowedComputer/ HTTP/1.1" 200 149351
+[2023-07-20 09:48:31,248] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 37607
+[2023-07-20 09:48:31,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ComputerMS/R_Borrowed/ HTTP/1.1" 200 37607
+[2023-07-20 09:48:31,514] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-07-20 09:48:31 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ComputerMS/R_Borrowed/ POST
+[2023-07-20 09:48:31,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ComputerMS/R_Borrowed/ HTTP/1.1" 200 17869
+[2023-07-20 09:48:41,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21702

@@ -5278,8 +5278,10 @@ def Summary2(request):
                             RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
-                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(
-                            RegistrationDate__range=Test_Endperiod).count()
+                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(
+                            RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                            Q(transferDate__isnull=True)).filter(OldCustomer='',
+                                                                 transferDate__range=Test_Endperiod).count()
                         # totallizhidic[j[0]] = PersonalInfo.objects.filter(
                         #     QuitDate__lte=DateNow).count()
                         totallizhidic[j[0]] = PersonalInfo.objects.filter(
@@ -6047,8 +6049,10 @@ def Summary2(request):
                             RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
-                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(
-                            RegistrationDate__range=Test_Endperiod).count()
+                        totalruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(
+                            RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                            Q(transferDate__isnull=True)).filter(OldCustomer='',
+                                                                 transferDate__range=Test_Endperiod).count()
                         # totallizhidic[j[0]] = PersonalInfo.objects.filter(
                         #     QuitDate__lte=DateNow).count()
                         totallizhidic[j[0]] = PersonalInfo.objects.filter(
@@ -6178,8 +6182,11 @@ def Summary2(request):
                             Year=YearSearch,
                             QuitDate__lte=DateNow).count()
                         totalzaizhidic[j[0]] = zaizhimounth
-                        totalruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
-                                                                                   RegistrationDate__range=Test_Endperiod).count()
+                        totalruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(
+                            Year=YearSearch,
+                            RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
+                            Q(transferDate__isnull=True)).filter(OldCustomer='',
+                                                                 transferDate__range=Test_Endperiod).count()
                         totallizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                    QuitDate__range=Test_Endperiod).count()
                         if totalzaizhidic[j[0]]:

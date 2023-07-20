@@ -27,7 +27,7 @@
     top:-16px;
 }
     .el-table .cell {
-    -webkit-box-sizing: border-box;
+    -webkit-box-sizfilepathing: border-box;
     box-sizing: border-box;
     {% comment %}white-space: normal;{% endcomment %}
     white-space: pre-wrap;
@@ -94,7 +94,8 @@
     <el-table-column type="index" width="50"></el-table-column>
     <el-table-column width="120" label="Test ID" prop="TestID" align="left" sortable>
         <template slot-scope="scope">
-                <a class="sub-body" @click="handleClick(scope.row)" style="text-decoration:underline;color:blue;">${ scope.row.TestID }</a>
+                <a class="sub-body" v-if="canEdit==1" @click="handleClick(scope.row)" style="text-decoration:underline;color:blue;">${ scope.row.TestID }</a>
+            <span v-else>${ scope.row.TestID }</span>
         </template>
     </el-table-column>
     <el-table-column min-width="360" label="Test Items" prop="TestItems" align="left" sortable></el-table-column>
@@ -168,10 +169,10 @@
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.selectItem=res.data.select;
-                    this.tabledata=res.data.tabledata
-                    this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
+                    this.tabledata=res.data.tabledata;
+                    this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
                    {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
-                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
+                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
                   this.key_list=res.data.key_list;
                   this.canExport = res.data.canExport;
                   this.canEdit = res.data.canEdit;
@@ -227,6 +228,10 @@
                 this.tabledata=res.data.tabledata;
                 this.excel_dic=res.data.excel_dic;
                   this.selectItem=res.data.select;
+                  this.tabledata=res.data.tabledata;
+                  this.key_list=res.data.key_list;
+                  this.canExport = res.data.canExport;
+                  this.canEdit = res.data.canEdit;
                   this.tableloading=false;
                    this.elbuttonloading=false;
                    {#console.log(this.tableloading);#}
@@ -250,6 +255,7 @@
                     }
                 });{% endcomment %}
                 //console.log(row);
+                {#console.log(row.filepath)#}
                 let msg = {
               "isGetData" : "ABOTestPlan_edit" ,
                 filepath:row.filepath,

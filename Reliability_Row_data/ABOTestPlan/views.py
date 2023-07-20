@@ -16,7 +16,7 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter as ExcelColumn
 from openpyxl.utils import column_index_from_string as Col2Int
 from openpyxl.comments import Comment
-from openpyxl.styles import Side, Border, Font, Alignment
+from openpyxl.styles import Side, Border, Font, Alignment, PatternFill
 
 import threading
 from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
@@ -29,6 +29,7 @@ import numpy as np
 from win32com.client import Dispatch
 import pythoncom
 def just_open(filename):
+    print("just open")
     pythoncom.CoInitialize()
     xlApp = Dispatch("Excel.Application")
 
@@ -41,6 +42,7 @@ def just_open(filename):
     xlBook.Close()
 
 def Copy_forders(forderpath, folder_path_Sys):
+    print("Copy_forders")
     #判断是否有人在搜索
     # cycles = 0
     # while cycles < 10:
@@ -100,7 +102,7 @@ def read_excel(src_file,header=0,sheetnum=1):
         　　那么能否不用手动用Excel程序打开就能读取公式计算结果呢？可以的！使用win32com自动打开文件并保存一下就好了。代码如下：
     """
     # just_open(src_file)
-
+    print("read_excel")
     # work_book = openpyxl.load_workbook('test.xlsx', data_only=True)
     workbook = load_workbook(src_file, data_only=False)
     first_sheet = workbook.get_sheet_names()[1]
@@ -187,7 +189,8 @@ def read_excel(src_file,header=0,sheetnum=1):
     return excel_dic,key_data, comments
 
 def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
-    print(datetime.datetime.now())
+    # print("info_excel")
+    # print(datetime.datetime.now())
     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum0)).iloc[:,
          :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
     # # 显示所有列
@@ -212,7 +215,7 @@ def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
         i["dataid"] = hangnum
         hangnum += 1
     key_data = list(df.columns)
-    print(datetime.datetime.now(), 2)
+    # print(datetime.datetime.now(), 2)
 
     # 您可以使用参数keep_default_na 和na_values 手动设置所有NA 值docs：防止pandas在读取excel时删除'NA‘字符串
     df = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[42:,
@@ -275,13 +278,13 @@ def info_excel(src_file,header=0,sheetnum0=0,sheetnum=1):
         cellnum = 0
         for cell in row:
             if cell.comment:
-                comments.append(["\n", cell.comment.text])
+                comments.append(["\n" + cell.comment.text])
             cellnum += 1
         rownum += 1
     # print(comments)
 
     # print("PPP", CaseStatus, TestProess)
-    print(datetime.datetime.now(),3)
+    # print(datetime.datetime.now(),3)
     # return excel_dic, key_data
     file_name = src_file.split("/")[-1]
     # print(file_name)
@@ -400,106 +403,35 @@ def style_apply(series, colors, back_ground=''):
     return a
 
 def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_file,auther,header=0,sheetnum=1):
+    print("save_exel")
     # 读取所有批注
-    workbook1 = load_workbook(src_file, data_only=False)
-    first_sheet1 = workbook1.get_sheet_names()[1]
-    worksheet1 = workbook1.get_sheet_by_name(first_sheet1)
+    workbook = load_workbook(src_file, data_only=False)
+    first_sheet = workbook.get_sheet_names()[1]
+    worksheet = workbook.get_sheet_by_name(first_sheet)
 
     #修改前，先把原来文件里面的comments记录下来
-    comments = []
+    # comments = []
     excel_fx = []
     rownum = 0
-    for row in worksheet1.rows:
+    for row in worksheet.rows:
         cellnum = 0
         for cell in row:
-            cell_value = worksheet1.cell(row=rownum + 1, column=cellnum + 1).value
+            cell_value = worksheet.cell(row=rownum + 1, column=cellnum + 1).value
             if cell_value:
                 if str(cell_value).startswith('='):
                     # print(cell_value)
                     excel_fx.append([rownum+1, cellnum+1, cell_value])
-            if cell.comment:
-                # print(row, cell)
-                comments.append([rownum, cellnum, cell.comment.text])
+            # if cell.comment:
+            #     # print(row, cell)
+            #     comments.append([rownum, cellnum, cell.comment.text])
             cellnum += 1
         rownum += 1
     # print(comments)
 
-    # excel_file = pd.ExcelFile(src_file)
-    df1 = pd.read_excel(src_file, header=header, sheet_name=int(sheetnum), keep_default_na=False).iloc[:,
-         0:]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
-    sheetname = list(pd.read_excel(src_file, sheet_name=None))
-    # Setup a DataFrame with corresponding hover values
-    # tooltips_df = pd.DataFrame({
-    #     'temp': ['i am message 1', 'i am foo', 'i am lala'],
-    #     'var2': ' another random message',
-    #     'col3': 'more random messages'
-    # })
-    #
-    # # Assign tooltips
-    # foo.style.set_tooltips(tooltips_df)
-    # foo.to_excel('C:/media/ABOTestPlan/tips.xlsx', sheet_name="sheet1", index=False)
-    # print("333", foo)
-    # excel_writer = pd.ExcelWriter(r'C:\Users\Administrator\Desktop\test2.xlsx')  # 定义writer，选择文件（文件可以不存在,相当于新建文件)
-    # data1.to_excel(excel_writer, sheet_name='sheet_data1')
-    # data2.to_excel(excel_writer, sheet_name='sheet_data2')
-    # excel_writer.save()  # 保存文件   ---data1和data2都在，原数据被覆盖
-    #无法保证打结果的始终在最左列
-    # with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
-    #     wb = writer.book  # openpyxl.workbook.workbook.Workbook 获取所有sheet
-    #     wb.remove(wb[sheetname[0]])  # 删除需要覆盖的sheet
-    #     # print(wb.sheetnames)
-    #     # df2.to_excel(writer, sheet_name=sheetname[0], index=True)  ##sheet st3的内容更新成st1值
-    # with pd.ExcelWriter(src_file, mode='a', engine='openpyxl') as writer:
-    #     df2.to_excel(writer, sheet_name=sheetname[0], index=False)  ##sheet st3的内容更新成st1值
-    for i in save_data:
-        df1.loc[i["row"], i["lie"]] = i["value"]
-    # for i in upload_zhushi:
-    #     print(i["value"])
-    #     for key,values in i["value"].items():
-    #         print(key,values[2],i["row"])
-    #         df1.loc[i["row"], key].comment.text = values[2]
-
-    style_df = style_color(df1, {"P": '#00FF00', "F": '#FF0000', "B": '#FDF5E6', "NS": '#8b968d'})
-    #无法保存公式，注解, 图片
-    excel_list = []
-    # print(sheetname)
-    for i in sheetname:
-        if i != sheetname[1]:
-            excel_list.append(pd.read_excel(src_file, sheet_name=i))
-    excel_list.insert(1, style_df)#保证位置不变，df1的sheet_name是1
-    with pd.ExcelWriter(src_file, engine='openpyxl') as writer:
-        num = 0
-        for i in excel_list:
-            i.to_excel(writer, sheet_name=sheetname[num], index=False)  ##sheet st3的内容更新成st1值
-            num += 1
-
-
-    commentNum = 0
-    for i in comments:
-        for j in upload_zhushi:
-            # print(i,j)
-            if i[0] == j[0] and i[1] == j[1]:
-                comments[commentNum] = j#修改的替换
-                upload_zhushi.remove(j)#剩下的就是新增的
-        for j in upload_zhushi_delete:
-            # print(i, j)
-            if i[0] == j[0] and i[1] == j[1]:
-                del comments[commentNum]#删除的
-        commentNum += 1
-    comments = comments + upload_zhushi
-    # print(upload_zhushi,'shengyu')
-    # print('zong',comments)
-
-
-
-
-    # 保存comments
-    workbook = load_workbook(src_file)
-    first_sheet = workbook.get_sheet_names()[1]
-    worksheet = workbook.get_sheet_by_name(first_sheet)
-
     # 设置线条的样式和颜色
-    side = Side(style="thick", color="000000")
+    side = Side(
+                style="medium",  # 边框样式，可选dashDot、dashDotDot、dashed、dotted、double、hair、medium、mediumDashDot、mediumDashDotDot、mediumDashed、slantDashDot、thick、thin
+                color="000000")
     # 设置单元格的边框线条
     border = Border(top=side, bottom=side, left=side, right=side)
     # 设置宽高
@@ -508,23 +440,72 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
     # column_dimensions中指定要设置宽度的列
     worksheet.column_dimensions['B'].width = 80
 
+    fill_P = PatternFill(
+        patternType="solid",  # 填充类型，可选none、solid、darkGray、mediumGray、lightGray、lightDown、lightGray、lightGrid
+        fgColor="0000FF00",  # 前景色，16进制rgb
+        bgColor="0000FF00",  # 背景色，16进制rgb
+        # fill_type=None,     # 填充类型
+        # start_color=None,   # 前景色，16进制rgb
+        # end_color=None      # 背景色，16进制rgb
+    )
+    fill_F = PatternFill(
+        patternType="solid",  # 填充类型，可选none、solid、darkGray、mediumGray、lightGray、lightDown、lightGray、lightGrid
+        fgColor="00FF0000",  # 前景色，16进制rgb
+        bgColor="00FF0000",  # 背景色，16进制rgb
+    )
+    fill_B = PatternFill(
+        patternType="solid",  # 填充类型，可选none、solid、darkGray、mediumGray、lightGray、lightDown、lightGray、lightGrid
+        fgColor="00FFFFCC",  # 前景色，16进制rgb
+        bgColor="00FFFFCC",  # 背景色，16进制rgb
+    )
+    fill_NS = PatternFill(
+        patternType="solid",  # 填充类型，可选none、solid、darkGray、mediumGray、lightGray、lightDown、lightGray、lightGrid
+        fgColor="00C0C0C0",  # 前景色，16进制rgb
+        bgColor="00C0C0C0",  # 背景色，16进制rgb
+    )
+    fill_Normal = PatternFill(
+        patternType="solid",  # 填充类型，可选none、solid、darkGray、mediumGray、lightGray、lightDown、lightGray、lightGrid
+        fgColor="00FFFFFF",  # 前景色，16进制rgb
+        bgColor="00FFFFFF",  # 背景色，16进制rgb
+    )
+
+    for i in save_data:
+        worksheet.cell(i["row"] + 2, i["lienum"] + 1).value = i["value"]
     # ws['A1'].alignment = Alignment(wrap_text=True)
+    rownum = 0
     for row in worksheet:
+        cellnum = 0
         for cell in row:
+            if cell.value == "P":
+                cell.fill = fill_P
+            elif cell.value == "B":
+                cell.fill = fill_B
+            elif cell.value == "F":
+                cell.fill = fill_F
+            elif cell.value == "NS":
+                cell.fill = fill_NS
+            else:
+                cell.fill = fill_Normal
             cell.border = border
             # 设置单元格自动换行
             cell.alignment = Alignment(wrap_text=True)
+            cellnum += 1
         rownum += 1
 
+    comments = upload_zhushi + upload_zhushi_delete
     for i in comments:
         hangnum = str(i[0] + 1)
         lie_num = str(ExcelColumn(i[1] + 1))
         comment = Comment(str(i[2]), str(auther))
-        worksheet[lie_num + hangnum].comment = comment
+        if i[2]:
+            worksheet[lie_num + hangnum].comment = comment
+        else:
+            worksheet[lie_num + hangnum].comment = None
     # 保存公式最好放在保存前最后一步
     for i in excel_fx:
         worksheet.cell(row=i[0], column=i[1], value=i[2])
     workbook.save(src_file)
+    # print(src_file, folder_path_Sys)
     shutil.copy(src_file, folder_path_Sys)
 
 # def recursion_dir_all_file(path):
@@ -651,7 +632,7 @@ def ABOTestPlan_edit(request):
     excel_dic = []
     key_list = []
     canExport = 1
-    canEdit = 1
+    canEdit = 0
     err_msg = ""
 
     folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
@@ -693,7 +674,7 @@ def ABOTestPlan_edit(request):
     # print(roles)
     # editPpriority = 100
     for i in roles:
-        if 'admin' == i or 'DQA_ABO_Admin' == i:
+        if 'admin' == i or 'DQA_ABO_Admin' == i or 'DQA_ABO_PL' == i or 'DQA_ABO_Tester' == i:
             canEdit = 1
 
     folder_path_Sys = settings.MEDIA_ROOT + '/ABOTestPlanSys/'  # 指定文件夹路径
@@ -715,6 +696,15 @@ def ABOTestPlan_edit(request):
             if 'first' in str(request.body):
                 try:
                     # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+                    # # print(Customer, Category,111)
+                    # filepathsearch = folder_path + Customer + "/" + Project + "/" + Phase + "/" + Category + "/" + cases
+                    # filepathsearch = filepathsearch.replace("\\", "/").replace("//", "/")
+                    # folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (
+                    # Customer, Project, Phase, Category) + "/" + cases
+                    # folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
+                    # # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
+                    # shutil.copy(filepathsearch, folder_path_Sys)
+                    # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
                     if filepath:
                         if os.path.exists(filepath):
                             readdata = read_excel(filepath)
@@ -722,6 +712,7 @@ def ABOTestPlan_edit(request):
                             key_list = readdata[1]
                             comments = readdata[2]
                             showinfo = filepath.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
+
                 except Exception as e:
                     print(e)
                     errMsg = str(e)
@@ -788,6 +779,8 @@ def ABOTestPlan_edit(request):
                         # print(upload_zhushi, 'upload_zhushi')
                         # print(upload_zhushi_delete, 'upload_zhushi_delete')
                         # print(folder_path_Sys, 'folder_path_Sys')
+                        oldstr = filepath.split("/")[-1]
+                        folder_path_Sys_summary = filepath.replace(oldstr, '1Summary.xlsx')
                         val = filepath.count('_')
                         filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
                         # print(filepath)
@@ -800,6 +793,66 @@ def ABOTestPlan_edit(request):
                                 excel_dic = readdata[0]
                                 key_list = readdata[1]
                                 comments = readdata[2]
+                        #每次保存时将数据更新到1Summry.xlsx中去，但是当里面有几百条数据时好像也挺花时间的，影响save的时间
+                        # print(folder_path_Sys_summary)
+                        if os.path.exists(folder_path_Sys):
+                            # print(oldstr,folder_path_Sys_summary)
+                            excel_data = []
+                            excel_info = info_excel(folder_path_Sys)
+                            # print(excel_info)
+                            # 将列表转换为DataFrame
+                            excel_data.append(excel_info)
+                            tabledata1 = []
+                            for i in excel_data:
+                                # print(i)
+                                key = i[5]
+                                SKU = i[0][0]['SKU/Unit']
+                                Owner = i[0][0]['Owner']
+                                TestSchedule = i[0][0]['Test Schedule']
+                                # print(excel_dic)
+                                tabledata1.append(
+                                    {
+                                        "TestID": key.split(".")[0].split("_")[0],
+                                        "TestItems": key.split(".")[0].split("_")[1],
+                                        "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                                        # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                        "Status": i[2], "Percent": i[3], "BugNo": i[4],
+                                        "filepath": folder_path_Sys,
+                                    }
+                                )
+                        # print(tabledata1)
+                        if not os.path.exists(folder_path_Sys_summary):
+                            # 将列表转换为DataFrame
+                            df = pd.DataFrame(tabledata1)
+                            # 将DataFrame输出到Excel文件
+                            df.to_excel(folder_path_Sys_summary, index=False)
+                        else:
+                            df = pd.read_excel(folder_path_Sys_summary, header=0, sheet_name=0).iloc[:,
+                                 :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+                            rownum = df[(df.TestItems == tabledata1[0]["TestItems"])].index.tolist()
+                            allrownum = df.shape[0] - 1
+                            # print(filepath)
+                            # print(tabledata1[0])
+                            # print(rownum, allrownum)
+                            if rownum:
+                                # print("tihuan")
+                                df = df.drop(index=rownum)
+                                # print(df,"drop")
+                                df_part1 = df.loc[0:rownum[0] - 1]
+                                df_part2 = df.loc[rownum[0]:allrownum]
+                                dffinal = df_part1.append(tabledata1[0], ignore_index=True)
+                                dffinal = dffinal.append(df_part2, ignore_index=True)
+                            else:
+                                # print(df,1)
+                                # print(pd.DataFrame(tabledata))
+                                dffinal = df.append(tabledata1[0], ignore_index=True)
+                                # print(pd.DataFrame(tabledata1[0]))
+                                # print(df)
+
+                            dffinal.sort_values(by=["TestID"], inplace=True)  # 多条件从小到大
+                            dffinal.reset_index(drop=True)
+                            # print(dffinal)
+                            dffinal.to_excel(folder_path_Sys_summary, index=False)
                     except Exception as e:
                         print(e)
                         errMsg = str(e)
@@ -862,7 +915,18 @@ def ABOTestPlan_summary(request):
     excel_dic = []
     key_list = []
     canExport = 1
-    canEdit = 1
+    canEdit = 0
+    onlineuser = request.session.get('account')
+    roles = []
+    if UserInfo.objects.filter(account=onlineuser).first():
+        for i in UserInfo.objects.filter(account=onlineuser).first().role.all():
+            roles.append(i.name)
+    # print(roles)
+    # editPpriority = 100
+    for i in roles:
+        if 'admin' == i or 'DQA_ABO_Admin' == i or 'DQA_ABO_PL' == i or 'DQA_ABO_Tester' == i:
+            canEdit = 1
+    # canExport = canEdit
     err_msg = ""
 
     folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
@@ -911,68 +975,183 @@ def ABOTestPlan_summary(request):
             folder_path = folder_path.replace("\\", "/").replace("//", "/")
             folder_path_Sys = folder_path_Sys + "%s_%s_%s_%s" % (Customer, Project, Phase, Category)
             folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
+            folder_path_Sys_summary = folder_path_Sys + "/" + '1Summary.xlsx'
             try:
-                # print(datetime.datetime.now())
-                Copy_forders(folder_path, folder_path_Sys)
-                # print(datetime.datetime.now())
-                #
-                # 也可以使用 with 语句创建线程池
-                # with ThreadPoolExecutor(max_workers=3) as pool:
-                #     for i in range(1, 14):
-                #         pool.submit(async_add, i)
-                # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
-                pool = ThreadPoolExecutor(max_workers=60, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                # pool = ProcessPoolExecutor(6)# 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
-                # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
-                # pool1 = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
-                # pool1 = ProcessPoolExecutor(6)  # 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
-                if os.path.exists(folder_path_Sys):
-                    file_ext = ['.xls', '.xlsx']
-                    # i = 0
-                    all_result = []
-                    for path in os.listdir(folder_path_Sys):
-                        path_list = os.path.join(folder_path_Sys, path)  # 连接当前目录及文件或文件夹名称
-                        path_list = path_list.replace("\\", "/")
-                        if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
-                            if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
-                                # print(path_list, path)  # 打印输出
-                                excel_dic_process = pool.submit(info_excel, path_list)#多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
-                                excel_dic = excel_dic_process.result()#多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
-                                # Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
-                                # Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
-                                # Result = info_excel_tongji(path_list)
-                                # excel_dic = info_excel(path_list)
-                                # print(excel_dic)
-                                all_result.append(excel_dic)
-
-                                # i += 1  # 对.xls、.xlsx文件进行计数
-                    # pool.shutdown()
-                    pool.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
-                    # pool1.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
-                    # print('目录下共有' + str(i) + '个xls、xlsx文件')
+                file_ext = ['.xls', '.xlsx']
+                if not os.path.exists(folder_path_Sys_summary):
+                    # print(datetime.datetime.now())
+                    Copy_forders(folder_path, folder_path_Sys)
+                    # print(datetime.datetime.now())
                     #
-                    # Del_forders(folder_path_Sys)
-                for i in all_result:
-                    # print(i)
-                    key = i[5]
-                    SKU = i[0][0]['SKU/Unit']
-                    Owner = i[0][0]['Owner']
-                    TestSchedule = i[0][0]['Test Schedule']
-                    # print(excel_dic)
-                    path_list = os.path.join(folder_path_Sys, key)  # 连接当前目录及文件或文件夹名称
-                    path_list = path_list.replace("\\", "/")
-                    tabledata.append(
-                        {
-                            "TestID": key.split(".")[0].split("_")[0],
-                            "TestItems": key.split(".")[0].split("_")[1],
-                            "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
-                            # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
-                            "Status": i[2], "Percent": i[3], "BugNo": i[4],
-                            "filepath": path_list,
-                        }
-                    )
+                    # 也可以使用 with 语句创建线程池
+                    # with ThreadPoolExecutor(max_workers=3) as pool:
+                    #     for i in range(1, 14):
+                    #         pool.submit(async_add, i)
+                    # pool = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                    # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
+                    pool = ThreadPoolExecutor(max_workers=60, thread_name_prefix='Excel_info')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                    # pool = ProcessPoolExecutor(6)# 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
+                    # pool1 = ThreadPoolExecutor(6)#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                    # 实例化一个线程池对象，max_workers 设置线程池中能同时运行的最大线程数目，如果不指定默认是 cpu 核数的5倍，thread_name_prefix用来指定线程名前缀
+                    # pool1 = ThreadPoolExecutor(max_workers=30, thread_name_prefix='Excel_tongji')#多线程第一步：创建8个线程，由于python GIL锁，导致多线程速度更慢了
+                    # pool1 = ProcessPoolExecutor(6)  # 实例化获得一个进程池, 参数传入一个整数，代表进程池的大小,不传的话会默认开设当前计算机CPU 个数的进程
+                    if os.path.exists(folder_path_Sys):
+                        # i = 0
+                        all_result = []
+                        for path in os.listdir(folder_path_Sys):
+                            if "1Summary" not in path:
+                                path_list = os.path.join(folder_path_Sys, path)  # 连接当前目录及文件或文件夹名称
+                                path_list = path_list.replace("\\", "/")
+                                if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
+                                    if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
+                                        # print(path_list, path)  # 打印输出
+                                        excel_dic_process = pool.submit(info_excel, path_list)#多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                        excel_dic = excel_dic_process.result()#多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                        # Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                        # Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                        # Result = info_excel_tongji(path_list)
+                                        # excel_dic = info_excel(path_list)
+                                        # print(excel_dic)
+                                        all_result.append(excel_dic)
+
+                                        # i += 1  # 对.xls、.xlsx文件进行计数
+                        # pool.shutdown()
+                        pool.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                        # pool1.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                        # print('目录下共有' + str(i) + '个xls、xlsx文件')
+                        #
+                        # Del_forders(folder_path_Sys)
+                    for i in all_result:
+                        # print(i)
+                        key = i[5]
+                        SKU = i[0][0]['SKU/Unit']
+                        Owner = i[0][0]['Owner']
+                        TestSchedule = i[0][0]['Test Schedule']
+                        # print(excel_dic)
+                        path_list = os.path.join(folder_path_Sys, key)  # 连接当前目录及文件或文件夹名称
+                        path_list = path_list.replace("\\", "/")
+                        tabledata.append(
+                            {
+                                "TestID": key.split(".")[0].split("_")[0],
+                                "TestItems": key.split(".")[0].split("_")[1],
+                                "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                                # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                "Status": i[2], "Percent": i[3], "BugNo": i[4],
+                                "filepath": path_list,
+                            }
+                        )
+
+                        # 将列表转换为DataFrame
+                        df = pd.DataFrame(tabledata)
+                        # 将DataFrame输出到Excel文件
+                        df.to_excel(folder_path_Sys_summary, index=False)
+                else:
+                    Copy_forders(folder_path, folder_path_Sys)
+                    df = pd.read_excel(folder_path_Sys_summary, header=0, sheet_name=0).iloc[:,
+                         :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+                    # # 显示所有列
+                    pd.set_option('display.max_columns', None)
+                    # # 显示所有行
+                    # pd.set_option('display.max_rows', None)
+                    # pprint.pprint(df)
+                    dataexcel = df.values[:, :]
+                    # datatest = []
+                    # for i in dataexcel:
+                    #     ls = []
+                    #     for j in i:
+                    #         ls.append(j)
+                    #     datatest.append(ls)
+                    # print(list(df.columns))
+                    # pprint.pprint(datatest)
+                    excel_dic1 = df.to_dict('records')
+                    # print("111", excel_dic1)
+                    # key_data = list(df.columns)
+                    for i in excel_dic1:
+                        # print(i)
+                        tabledata.append(
+                            {
+                                "TestID": i["TestID"],
+                                "TestItems": i["TestItems"],
+                                "SKU": i["SKU"], "Owner": i["Owner"], "TestSchedule": i["TestSchedule"],
+                                # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                "Status": i["Status"], "Percent": i["Percent"], "BugNo": i["BugNo"].replace("[", "").replace("]", "").replace("'", "").replace("\\n", "\n"),
+                                "filepath": i["filepath"],
+                            }
+                        )
+
+                    pool = ThreadPoolExecutor(max_workers=60, thread_name_prefix='Excel_info')
+                    if os.path.exists(folder_path_Sys):
+                        # i = 0
+                        filenames_notinsummary = []
+                        for path in os.listdir(folder_path):
+                            if path not in str(tabledata):
+                                filenames_notinsummary.append(path)
+                        # print(filenames_notinsummary)
+                        all_result = []
+                        if filenames_notinsummary:
+                            for path in filenames_notinsummary:
+                                    path_list = os.path.join(folder_path_Sys, path)  # 连接当前目录及文件或文件夹名称
+                                    path_list = path_list.replace("\\", "/")
+                                    if os.path.isfile(path_list):  # 判断当前文件或文件夹是否是文件，把文件夹排除
+                                        if (os.path.splitext(path_list)[1]) in file_ext:  # 判断取得文件的扩展名是否是.xls、.xlsx
+                                            # print(path_list, path)  # 打印输出
+                                            excel_dic_process = pool.submit(info_excel, path_list)#多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                            excel_dic = excel_dic_process.result()#多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                            # Result_process = pool1.submit(info_excel_tongji, path_list)  # 多线程第二步：在线程池中发任务，由于python GIL锁，导致多线程速度更慢了
+                                            # Result = Result_process.result()  # 多线程第二步：接收多线程执行函数的返回值，由于python GIL锁，导致多线程速度更慢了
+                                            # Result = info_excel_tongji(path_list)
+                                            # excel_dic = info_excel(path_list)
+                                            # print(excel_dic)
+                                            all_result.append(excel_dic)
+
+                                            # i += 1  # 对.xls、.xlsx文件进行计数
+                            # pool.shutdown()
+                            pool.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                            # pool1.shutdown(wait=True)#多线程第三步：等待线程池把任务都执行完毕，由于python GIL锁，导致多线程速度更慢了
+                            # print('目录下共有' + str(i) + '个xls、xlsx文件')
+                            tabledata_notinsummary = []
+                            if all_result:
+                                for i in all_result:
+                                    # print(i)
+                                    key = i[5]
+                                    SKU = i[0][0]['SKU/Unit']
+                                    Owner = i[0][0]['Owner']
+                                    TestSchedule = i[0][0]['Test Schedule']
+                                    # print(excel_dic)
+                                    path_list = os.path.join(folder_path_Sys, key)  # 连接当前目录及文件或文件夹名称
+                                    path_list = path_list.replace("\\", "/")
+                                    tabledata.append(
+                                        {
+                                            "TestID": key.split(".")[0].split("_")[0],
+                                            "TestItems": key.split(".")[0].split("_")[1],
+                                            "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                                            # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                            "Status": i[2], "Percent": i[3], "BugNo": i[4],
+                                            "filepath": path_list,
+                                        }
+                                    )
+                                    tabledata_notinsummary.append(
+                                        {
+                                            "TestID": key.split(".")[0].split("_")[0],
+                                            "TestItems": key.split(".")[0].split("_")[1],
+                                            "SKU": SKU, "Owner": Owner, "TestSchedule": TestSchedule,
+                                            # "Status": Result[0], "Percent": Result[1], "BugNo": Result[2],
+                                            "Status": i[2], "Percent": i[3], "BugNo": i[4],
+                                            "filepath": path_list,
+                                        }
+                                    )
+                                if tabledata_notinsummary:
+                                    df = pd.read_excel(folder_path_Sys_summary, header=0, sheet_name=0).iloc[:,
+                                         :]  # ‘,’前面是行，后面是列，sheet_name指定sheet，可是是int第几个，可以是名称，header从第几行开始读取
+                                    # print(df,"drop")
+                                    df = df.append(pd.DataFrame(tabledata_notinsummary), ignore_index=True)
+                                    # print(pd.DataFrame(tabledata_notinsummary))
+                                    # 将DataFrame输出到Excel文件
+                                    df.sort_values(by=["TestID"], inplace=True)  # 多条件从小到大
+                                    df.reset_index(drop=True)
+                                    # print(dffinal)
+                                    df.to_excel(folder_path_Sys_summary, index=False)
+
             except Exception as e:
                 print(e)
                 err_msg = str(e)

@@ -358,40 +358,56 @@
 
 
             RENEW:function(){
-               this.$refs.form.validate((valid) => {
-                if (valid) {
-                   let ID = this.multipleSelection[0].id;
-                   let GYNumber = this.multipleSelection[0].GYNumber;
-                   let Number = this.$refs.form.model.Number;
-                   let Name = this.number;
-                   let data ={"isGetData":"Transfer","ID": ID,"GYNumber":GYNumber,
-                              "Number": Number,"Name": Name,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
-                   axios.post("/ChairCabinetMS/R_Borrowed/", Qs.stringify(data), {
-                       headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
-                   }).then((res) => {
-                         this.errMessage = res.data.errMessage;
-                         if(this.errMessage != ""){
-                              this.$alert(this.errMessage, '提示', {
+                let flag = 0;
+                for(let i=0;i<this.selectNumber.length;i++){
+                    if(this.selectNumber[i]==this.$refs.form.model.Number){
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag == 1){
+                    this.$refs.form.validate((valid) => {
+                        if (valid) {
+                           let ID = this.multipleSelection[0].id;
+                           let GYNumber = this.multipleSelection[0].GYNumber;
+                           let Number = this.$refs.form.model.Number;
+                           let Name = this.number;
+                           console.log(ID,GYNumber, Number,Name);
+                           let data ={"isGetData":"Transfer","ID": ID,"GYNumber":GYNumber,
+                                      "Number": Number,"Name": Name,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()};
+                           axios.post("/ChairCabinetMS/R_Borrowed/", Qs.stringify(data), {
+                               headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                           }).then((res) => {
+                                 this.errMessage = res.data.errMessage;
+                                 if(this.errMessage != ""){
+                                      this.$alert(this.errMessage, '提示', {
+                                            type: 'warning',
+                                      });
+                                      this.Info=true;
+                                 }else{
+                                     this.$message({
+                                             message: '轉賬成功',
+                                             type: 'success'
+                                     });
+                                     this.Info=false;
+                                     this.$refs.multipleTable.clearSelection();
+                                     this.$refs.form.resetFields();
+                                 }
+                                 this.tableContent = res.data.content;
+                                 this.totalNum=this.tableContent.length;
+                           })
+                           }else {
+                                console.log('error submit!!');
+                                return false;
+                              }
+                   });
+                }else{
+                    this.$alert("此账号尚未注册", '提示', {
                                     type: 'warning',
                               });
                               this.Info=true;
-                         }else{
-                             this.$message({
-                                     message: '轉賬成功',
-                                     type: 'success'
-                             });
-                             this.Info=false;
-                             this.$refs.multipleTable.clearSelection();
-                             this.$refs.form.resetFields();
-                         }
-                         this.tableContent = res.data.content;
-                         this.totalNum=this.tableContent.length;
-                   })
-                   }else {
-                        console.log('error submit!!');
-                        return false;
-                      }
-                   });
+                }
+
             },
 
         },
