@@ -3857,10 +3857,20 @@ def Summary1(request):
                             # print(DateNow_begin)
                             DateNow = datetime.datetime.strptime(YearNow + j[1], '%Y-%m-%d')
                             Test_Endperiod = [DateNow_begin, DateNow]
+
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
-                            zaizhidic[j[0]] = zaizhimounth
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                Customer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                                OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            # print(zaizhimounthTransefer)
+                            zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # overtimedic
 
                             overtimedic[j[0]] = 0.00
@@ -4693,7 +4703,7 @@ def Summary1(request):
                     hang_Sum += i[j]
                     mounthnum2 += 1
             if i["Program"]== "人数":
-                i["Average"] =round(hang_Sum / mounthnum2)
+                i["Average"] =round(hang_Sum / mounthnum2, 0)
             else:
                 i["Average"] = round(hang_Sum / mounthnum2, 1)
         for i in overtimeTable1:
