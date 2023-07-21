@@ -291,6 +291,8 @@ USE_TZ = False
 
 DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 
+TIMEOUT = 600 # 设置超时时间为30秒
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 

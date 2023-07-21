@@ -780,8 +780,13 @@ def ABOTestPlan_edit(request):
                         # print(folder_path_Sys, 'folder_path_Sys')
                         oldstr = filepath.split("/")[-1]
                         folder_path_Sys_summary = filepath.replace(oldstr, '1Summary.xlsx')
-                        val = filepath.count('_')
-                        filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
+                        strs = filepath.split("ABOTestPlanSys")
+                        # print(strs)
+                        val = strs[1].count('_')
+                        # print(strs[1].replace("_", "/", val-1))
+                        filepath = strs[0] + "ABOTestPlan" + strs[1].replace("_", "/", val - 1)
+                        # print(filepath,os.path.exists(filepath))
+                        # filepath = filepath.replace("_", "/", val-1).replace('/ABOTestPlanSys/', '/ABOTestPlan/')
                         # print(filepath)
                         auther = request.session.get('user_name')
                         if filepath:
