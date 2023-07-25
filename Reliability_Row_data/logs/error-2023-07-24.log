@@ -1,0 +1,72 @@
+[2023-07-24 10:34:39,279] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 467, in INVGantt_searchByProject
+    Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(year=ExtractYear('create_time'),month=ExtractMonth('create_time'))\
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1008, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 988, in add_annotation
+    summarize=is_summary)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\functions\datetime.py", line 64, in resolve_expression
+    copy = super().resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 597, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 509, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1570, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'create_time' into field. Choices are: Attend_Time, Compal_TP_PN, Customer, Editor, Edittime, Get_INV, INV_Model, INV_Number, Issue_Link, Lenovo_TP_PN, Month, Project_Name, Qualify_Cycles, Remark, Status, TP_Cat, TP_Key_Parameter, TP_Kinds, TP_Vendor, Test_End, Test_Start, Trial_Run_Type, Unit_Origin, Unit_Qty, Year, id
+[2023-07-24 10:34:39,299] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 151499
+[2023-07-24 10:54:12,151] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 474, in INVGantt_searchByProject
+    tableDatamouth_key_start.append(i["year"] +  "-" + i["month"])
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+[2023-07-24 10:54:12,153] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 106856
+[2023-07-24 11:06:55,752] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 484, in INVGantt_searchByProject
+    tableDatamouth_key = list(union_set).sorted()
+AttributeError: 'list' object has no attribute 'sorted'
+[2023-07-24 11:06:55,753] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 107106
+[2023-07-24 15:41:50,501] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 495, in INVGantt_searchByProject
+    starttime = str(j.Test_Start).split("-")[0] + "-" + str(int(j.Test_Start)).split("-")[1]
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'datetime.date'
+[2023-07-24 15:41:50,502] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 107616

@@ -1,0 +1,649 @@
+[2023-07-24 10:34:39,279] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 467, in INVGantt_searchByProject
+    Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(year=ExtractYear('create_time'),month=ExtractMonth('create_time'))\
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1008, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 988, in add_annotation
+    summarize=is_summary)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\functions\datetime.py", line 64, in resolve_expression
+    copy = super().resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 597, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\expressions.py", line 509, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1570, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'create_time' into field. Choices are: Attend_Time, Compal_TP_PN, Customer, Editor, Edittime, Get_INV, INV_Model, INV_Number, Issue_Link, Lenovo_TP_PN, Month, Project_Name, Qualify_Cycles, Remark, Status, TP_Cat, TP_Key_Parameter, TP_Kinds, TP_Vendor, Test_End, Test_Start, Trial_Run_Type, Unit_Origin, Unit_Qty, Year, id
+[2023-07-24 10:34:39,296] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:34:39 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:34:39,299] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 151499
+[2023-07-24 10:36:10,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58789
+[2023-07-24 10:36:10,942] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 10:36:10,959] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 10:36:11,120] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 10:36:11,127] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 10:36:11,297] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:36:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:36:11,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 10:36:11,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 10:36:22,502] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:36:22 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:36:22,516] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 10:36:50,217] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:36:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:36:50,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 10:39:39,108] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:39:39 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:39:39,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 10:41:46,458] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:41:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:41:46,468] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 10:52:01,952] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:52:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:52:01,959] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 10:54:12,151] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 474, in INVGantt_searchByProject
+    tableDatamouth_key_start.append(i["year"] +  "-" + i["month"])
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+[2023-07-24 10:54:12,152] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:54:12 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:54:12,153] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 106856
+[2023-07-24 10:54:52,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58789
+[2023-07-24 10:54:52,599] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 10:54:52,610] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 10:54:52,766] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 10:54:52,769] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 10:54:52,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 10:54:52,957] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:54:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:54:52,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 10:55:06,292] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 10:55:06 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 10:55:06,316] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:04:00,887] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:04:00 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:04:00,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:05:05,405] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:05:05 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:05:05,413] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:05:36,704] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:05:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:05:36,721] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:06:55,752] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 484, in INVGantt_searchByProject
+    tableDatamouth_key = list(union_set).sorted()
+AttributeError: 'list' object has no attribute 'sorted'
+[2023-07-24 11:06:55,753] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:06:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:06:55,753] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 107106
+[2023-07-24 11:07:40,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58789
+[2023-07-24 11:07:40,965] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 11:07:40,975] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 11:07:41,148] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 11:07:41,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 11:07:41,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 11:07:41,320] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:07:41 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:07:41,327] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 11:07:50,773] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:07:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:07:50,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:10:03,168] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:10:03 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:10:03,186] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 29574
+[2023-07-24 11:10:34,269] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:10:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:10:34,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 11:11:33,465] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:11:33 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:11:33,472] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 28306
+[2023-07-24 11:27:36,086] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 11:27:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 11:27:36,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 12:56:40,779] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 12:56:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 12:56:40,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 12:57:54,721] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 12:57:54 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 12:57:54,737] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 12:59:30,163] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 12:59:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 12:59:30,185] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 15:41:50,501] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 495, in INVGantt_searchByProject
+    starttime = str(j.Test_Start).split("-")[0] + "-" + str(int(j.Test_Start)).split("-")[1]
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'datetime.date'
+[2023-07-24 15:41:50,502] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:41:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:41:50,502] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 107616
+[2023-07-24 15:43:40,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:43:40,519] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:43:40,527] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:43:40,690] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:43:40,695] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:43:40,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:43:40,927] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:43:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:43:40,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:43:48,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:43:48,094] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:43:48,107] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:43:48,274] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:43:48,280] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:43:48,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:43:48,512] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:43:48 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:43:48,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:43:50,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:43:50,820] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:43:50,826] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:43:50,906] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:43:50,911] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:43:51,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:43:51,146] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:43:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:43:51,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:43:51,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:43:51,373] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:43:51,377] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:43:51,436] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:43:51,436] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:43:51,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:43:51,610] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:43:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:43:51,621] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:44:19,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:44:19,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:44:19,735] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:44:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:44:19,747] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:44:21,036] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:44:21,037] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:44:21,043] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:44:21,047] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:44:27,239] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:44:27,243] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:44:27,244] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:44:27,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:44:28,832] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:44:28,892] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:44:28,900] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:44:28,959] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:44:28,960] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:44:29,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:44:29,157] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:44:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:44:29,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:46:00,429] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:46:00,561] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:46:00,564] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:46:00,634] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:46:00,663] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:46:00,802] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:46:00,816] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:46:00 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:46:00,825] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:46:28,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:46:28,840] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:46:28,859] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:46:29,006] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:46:29,012] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:46:29,642] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:46:29 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:46:29,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:46:29,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:47:17,512] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:47:17,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:47:17,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:47:17,676] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:47:17,677] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:47:17,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:47:17,810] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:47:17 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:47:17,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:47:57,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:47:57,726] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:47:57,816] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:47:58,136] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:47:58,212] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:47:58,795] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:47:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:47:58,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:47:58,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:18,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:18,605] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:18,636] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:18,817] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:18,819] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:18,932] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:18,937] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:18 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:18,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:43,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:44,042] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:44,059] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:44,225] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:44,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:44,361] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:44,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:44,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:44,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:44,955] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:44,962] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:45,020] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:45,025] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:45,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:45,163] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:45,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:45,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:45,931] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:45,939] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:46,003] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:46,007] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:46,141] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:46,148] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:46,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:46,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:46,251] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:46,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:46,315] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:46,315] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:46,422] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:46,437] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:46,445] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:50:47,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:50:47,646] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:50:47,653] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:50:47,710] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:50:47,712] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:50:47,839] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:50:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:50:47,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:50:47,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:51:22,594] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-07-24 15:51:22,604] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-07-24 15:51:22,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-07-24 15:51:22,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-07-24 15:51:24,791] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:51:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-07-24 15:51:24,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-07-24 15:51:24,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-07-24 15:51:24,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,931] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,934] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,944] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,954] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_zerogrid.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_style.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/home_menu.css HTTP/1.1" 304 0
+[2023-07-24 15:51:24,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,964] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,967] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,983] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,985] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,988] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/semantic.ui.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,991] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,991] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/prism.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,991] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,996] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,997] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,997] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,997] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table.js HTTP/1.1" 304 0
+[2023-07-24 15:51:24,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/main.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/table-column.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/input.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/image.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,006] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/icon.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 304 0
+[2023-07-24 15:51:25,011] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 304 0
+[2023-07-24 15:51:25,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/index.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/2.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,117] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/message.js HTTP/1.1" 304 0
+[2023-07-24 15:51:25,118] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/5.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,118] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 304 0
+[2023-07-24 15:51:25,119] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/10.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 304 0
+[2023-07-24 15:51:25,122] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d HTTP/1.1" 304 0
+[2023-07-24 15:51:25,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 0
+[2023-07-24 15:51:25,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/4.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,127] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/3.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/timg3.jfif HTTP/1.1" 304 0
+[2023-07-24 15:51:25,130] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/6.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,130] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/9.jfif HTTP/1.1" 304 0
+[2023-07-24 15:51:25,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_05.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/8.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/timg.jfif HTTP/1.1" 304 0
+[2023-07-24 15:51:25,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/1.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/7.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:25,219] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-07-24 15:51:25,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 304 0
+[2023-07-24 15:51:25,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 304 0
+[2023-07-24 15:51:25,550] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:51:33,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 200 53859
+[2023-07-24 15:51:33,447] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 304 0
+[2023-07-24 15:51:33,448] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 304 0
+[2023-07-24 15:51:33,457] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 304 0
+[2023-07-24 15:51:33,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 304 0
+[2023-07-24 15:51:33,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/fonts/element-icons.ttf HTTP/1.1" 304 0
+[2023-07-24 15:51:33,788] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:51:33 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /ABOTestPlan/ABOTestPlan_edit/ POST
+[2023-07-24 15:51:33,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /ABOTestPlan/ABOTestPlan_edit/ HTTP/1.1" 200 292
+[2023-07-24 15:51:33,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:51:50,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:51:51,038] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:51:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:51:51,050] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:51:51,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:51:57,109] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:51:57,168] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:51:57,177] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:51:57,260] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:51:57,264] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:51:57,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:51:57,465] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:51:57 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:51:57,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 15:53:44,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 15:53:44,947] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 15:53:44,952] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 15:53:45,116] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 15:53:45,121] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 15:53:45,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 15:53:45,263] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 15:53:45 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 15:53:45,271] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:01:56,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23410
+[2023-07-24 16:01:59,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:02:54,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 69577
+[2023-07-24 16:02:54,327] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 200 771071
+[2023-07-24 16:02:54,807] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:02:54 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-07-24 16:02:54,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5109
+[2023-07-24 16:02:55,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:03:12,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 16:03:13,010] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:03:13 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:03:13,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:03:13,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:03:19,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23410
+[2023-07-24 16:03:19,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:03:27,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 16:03:27,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:03:27,681] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:03:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:03:27,688] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:03:30,882] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:03:30,884] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:03:30,886] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:03:30,914] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:04:25,320] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:04:25,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:05:20,738] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:05:20,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:05:48,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-search/ HTTP/1.1" 200 50273
+[2023-07-24 16:05:48,286] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:05:48,311] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:05:48,494] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:05:48,495] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:05:48,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:05:48,673] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:05:48 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-search/ POST
+[2023-07-24 16:05:48,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-search/ HTTP/1.1" 200 26458
+[2023-07-24 16:06:09,351] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:06:09,359] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:06:09,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:06:09,367] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:09,373] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:06:09,373] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:06:09,381] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:06:09,382] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:06:09,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:09,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:09,391] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:06:09,393] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:06:09,394] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:06:09,397] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:09,399] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:06:09,400] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:06:09,404] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:09,407] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:34,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58795
+[2023-07-24 16:06:34,417] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:06:34,432] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:06:34,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:06:34,613] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:06:34,726] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:06:34,731] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:06:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:06:34,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:08:44,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58844
+[2023-07-24 16:08:44,425] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:08:44,440] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:08:44,567] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:08:44,607] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:08:44,757] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:08:44,756] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:08:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:08:44,764] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:08:46,441] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58844
+[2023-07-24 16:08:46,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2023-07-24 16:08:46,466] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2023-07-24 16:08:46,468] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2023-07-24 16:08:46,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 18695
+[2023-07-24 16:08:46,470] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1008
+[2023-07-24 16:08:46,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3016
+[2023-07-24 16:08:46,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 41765
+[2023-07-24 16:08:46,476] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17438
+[2023-07-24 16:08:46,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 32590
+[2023-07-24 16:08:46,481] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2023-07-24 16:08:46,481] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2023-07-24 16:08:46,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 200 74827
+[2023-07-24 16:08:46,482] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91469
+[2023-07-24 16:08:46,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144883
+[2023-07-24 16:08:46,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12440
+[2023-07-24 16:08:46,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7576
+[2023-07-24 16:08:46,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 27501
+[2023-07-24 16:08:46,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97367
+[2023-07-24 16:08:46,493] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69811
+[2023-07-24 16:08:46,494] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2023-07-24 16:08:46,495] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2023-07-24 16:08:46,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61867
+[2023-07-24 16:08:46,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2023-07-24 16:08:46,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4462
+[2023-07-24 16:08:46,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24271
+[2023-07-24 16:08:46,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2023-07-24 16:08:46,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2023-07-24 16:08:46,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43251
+[2023-07-24 16:08:46,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42860
+[2023-07-24 16:08:46,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2023-07-24 16:08:46,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2023-07-24 16:08:46,511] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2023-07-24 16:08:46,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2023-07-24 16:08:46,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2023-07-24 16:08:46,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2023-07-24 16:08:46,515] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d HTTP/1.1" 200 92064
+[2023-07-24 16:08:46,515] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2023-07-24 16:08:46,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 462902
+[2023-07-24 16:08:46,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2023-07-24 16:08:46,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13704
+[2023-07-24 16:08:46,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93680
+[2023-07-24 16:08:46,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 26204
+[2023-07-24 16:08:46,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480575
+[2023-07-24 16:08:46,529] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2613
+[2023-07-24 16:08:46,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2023-07-24 16:08:46,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2023-07-24 16:08:46,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/cqmspec.png HTTP/1.1" 200 9675
+[2023-07-24 16:08:46,536] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2023-07-24 16:08:46,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2023-07-24 16:08:46,539] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:08:46,568] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:08:46,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2023-07-24 16:08:46,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2023-07-24 16:08:46,680] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:08:46,683] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:08:46,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:08:46,810] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:08:46 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:08:46,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:08:47,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58844
+[2023-07-24 16:08:47,737] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/chartist/chartist.min.css HTTP/1.1" 200 11508
+[2023-07-24 16:08:47,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/calendar2/pignose.calendar.min.css HTTP/1.1" 200 14709
+[2023-07-24 16:08:47,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/font-awesome.min.css HTTP/1.1" 200 41765
+[2023-07-24 16:08:47,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/themify-icons.css HTTP/1.1" 200 18695
+[2023-07-24 16:08:47,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.carousel.min.css HTTP/1.1" 200 3016
+[2023-07-24 16:08:47,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css HTTP/1.1" 200 232694
+[2023-07-24 16:08:47,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/weather-icons.css HTTP/1.1" 200 32590
+[2023-07-24 16:08:47,744] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/owl.theme.default.min.css HTTP/1.1" 200 1008
+[2023-07-24 16:08:47,746] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/menubar/sidebar.css HTTP/1.1" 200 17438
+[2023-07-24 16:08:47,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/bootstrap-icons.css HTTP/1.1" 200 74827
+[2023-07-24 16:08:47,749] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/uploadbutton.css HTTP/1.1" 200 175
+[2023-07-24 16:08:47,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/lib/helper.css HTTP/1.1" 200 55773
+[2023-07-24 16:08:47,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144883
+[2023-07-24 16:08:47,753] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 91469
+[2023-07-24 16:08:47,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/index.css HTTP/1.1" 200 232694
+[2023-07-24 16:08:47,757] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.min.js HTTP/1.1" 200 97367
+[2023-07-24 16:08:47,757] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/menubar/sidebar.js HTTP/1.1" 200 7576
+[2023-07-24 16:08:47,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/jquery.nanoscroller.min.js HTTP/1.1" 200 12440
+[2023-07-24 16:08:47,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 1906
+[2023-07-24 16:08:47,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/preloader/pace.min.js HTTP/1.1" 200 27501
+[2023-07-24 16:08:47,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.init.js HTTP/1.1" 200 258
+[2023-07-24 16:08:47,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/bootstrap.min.js HTTP/1.1" 200 69811
+[2023-07-24 16:08:47,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/pignose.calendar.min.js HTTP/1.1" 200 24271
+[2023-07-24 16:08:47,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/calendar-2/moment.latest.min.js HTTP/1.1" 200 61867
+[2023-07-24 16:08:47,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress.min.js HTTP/1.1" 200 4462
+[2023-07-24 16:08:47,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/circle-progress/circle-progress-init.js HTTP/1.1" 200 1252
+[2023-07-24 16:08:47,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/sparkline.init.js HTTP/1.1" 200 9974
+[2023-07-24 16:08:47,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/sparklinechart/jquery.sparkline.min.js HTTP/1.1" 200 43251
+[2023-07-24 16:08:47,772] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.woff?-fvbane HTTP/1.1" 200 0
+[2023-07-24 16:08:47,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel.min.js HTTP/1.1" 200 42860
+[2023-07-24 16:08:47,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/lib/owl-carousel/owl.carousel-init.js HTTP/1.1" 200 1044
+[2023-07-24 16:08:47,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/001.png HTTP/1.1" 200 2015
+[2023-07-24 16:08:47,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/blue.jpg HTTP/1.1" 200 60343
+[2023-07-24 16:08:47,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d HTTP/1.1" 200 92064
+[2023-07-24 16:08:47,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/mail.png HTTP/1.1" 200 3002
+[2023-07-24 16:08:47,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/date.js HTTP/1.1" 200 764
+[2023-07-24 16:08:47,783] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/datapicker.js HTTP/1.1" 200 11813
+[2023-07-24 16:08:47,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/axios.min.js HTTP/1.1" 200 13704
+[2023-07-24 16:08:47,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/polyfill.min.js HTTP/1.1" 200 97799
+[2023-07-24 16:08:47,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/vue.min.js HTTP/1.1" 200 93680
+[2023-07-24 16:08:47,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.core.min.js HTTP/1.1" 200 480575
+[2023-07-24 16:08:47,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/qs.js HTTP/1.1" 200 26204
+[2023-07-24 16:08:47,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/datatables/jquery.dataTables.js HTTP/1.1" 200 462902
+[2023-07-24 16:08:47,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/FileSaver.min.js HTTP/1.1" 200 2613
+[2023-07-24 16:08:47,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/es6/babel.min.js HTTP/1.1" 200 791258
+[2023-07-24 16:08:47,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xlsx/xlsx.js HTTP/1.1" 200 5900
+[2023-07-24 16:08:47,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/index.js HTTP/1.1" 200 563790
+[2023-07-24 16:08:47,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/cqmspec.png HTTP/1.1" 200 9675
+[2023-07-24 16:08:47,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/back/call.png HTTP/1.1" 200 1850
+[2023-07-24 16:08:47,802] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:08:47,840] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:08:47,846] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/admin/assets/fonts/themify.ttf?-fvbane HTTP/1.1" 200 0
+[2023-07-24 16:08:47,866] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[2023-07-24 16:08:47,957] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:08:47,959] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:08:48,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:08:48,079] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:08:48 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:08:48,085] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:09:11,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58845
+[2023-07-24 16:09:11,238] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:09:11,255] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:09:11,403] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:09:11,460] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:09:11,606] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:09:11,617] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:09:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:09:11,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:10:15,267] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 57543
+[2023-07-24 16:10:15,351] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:10:15,360] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:10:15,461] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:10:15,468] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:10:15,652] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:10:15,657] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:10:15 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:10:15,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:11:11,421] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58820
+[2023-07-24 16:11:11,775] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:11:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:11:11,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:11:11,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:11:11,878] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:11:11,881] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:11:11,887] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:11:11,888] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:11:42,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58820
+[2023-07-24 16:11:42,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:11:42,985] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:11:42 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:11:42,993] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:11:43,066] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:11:43,069] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:11:43,072] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:11:43,074] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:12:39,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23410
+[2023-07-24 16:12:39,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:12:48,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58820
+[2023-07-24 16:12:48,940] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:12:48,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:12:48,978] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:12:48,981] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:12:49,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:12:49,077] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:12:49 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:12:49,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:14:38,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58519
+[2023-07-24 16:14:40,346] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:14:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:14:40,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-24 16:14:40,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-24 16:14:41,835] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-24 16:14:41,841] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-24 16:14:41,849] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-24 16:14:41,854] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-24 16:16:25,028] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:16:25 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:16:25,040] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 16:17:17,595] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:17:17 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:17:17,615] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092
+[2023-07-24 16:40:20,770] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:40:20 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:40:20,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 28306
+[2023-07-24 16:40:36,784] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:40:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:40:36,806] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26427
+[2023-07-24 16:40:40,182] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:40:40 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:40:40,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 28282
+[2023-07-24 16:40:51,847] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-24 16:40:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-24 16:40:51,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 27086
+[2023-07-25 09:41:41,717] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 302 0
+[2023-07-25 09:41:41,765] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-07-25 09:41:42,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-07-25 09:41:42,052] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-07-25 09:41:43,962] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-25 09:41:43 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-07-25 09:41:43,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-07-25 09:41:44,205] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-07-25 09:41:44,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-07-25 09:41:44,502] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-25 09:41:45,658] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-25 09:41:46,776] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-25 09:41:46,797] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-25 09:41:46,799] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-25 09:41:46,810] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-25 09:41:46,820] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-25 09:41:51,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 58519
+[2023-07-25 09:41:52,319] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-07-25 09:41:52,337] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-25 09:41:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-25 09:41:52,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25764
+[2023-07-25 09:41:52,630] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-07-25 09:41:52,643] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-07-25 09:41:52,657] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-07-25 09:41:52,658] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-07-25 13:15:27,545] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-07-25 13:15:27 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-07-25 13:15:27,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26092

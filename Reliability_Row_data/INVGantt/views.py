@@ -6,7 +6,7 @@ from .forms import INVGantt_F
 from .models import INVGantt
 from app01.models import ProjectinfoinDCT, UserInfo
 from django.db.models import Max,Min,Sum,Count,Q
-from django.db.models.functions import ExtractYear
+from django.db.models.functions import ExtractYear, ExtractMonth, TruncMonth
 # Create your views here.
 @csrf_exempt
 def INVGantt_upload(request):
@@ -402,6 +402,8 @@ def INVGantt_searchByProject(request):
         #
         #           "TP_Cat": "CPU", "Total": "3",},
     ]
+    tableDatamouth = []
+    tableDatamouth_key = []
     canExport = 0
     roles = []
     onlineuser = request.session.get('account')
@@ -461,6 +463,47 @@ def INVGantt_searchByProject(request):
                         }
                     )
 
+
+                tableDatamouth_key_start = []
+                for i in INVGantt.objects.filter(**check_dic).filter(
+                    Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(year=ExtractYear('Test_Start'),month=ExtractMonth('Test_Start'))\
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('id')):
+                    # print(i)
+                    tableDatamouth_key_start.append(str(i["year"]) +  "-" + str(i["month"]))
+                tableDatamouth_key_end = []
+                for i in INVGantt.objects.filter(**check_dic).filter(
+                        Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(
+                    year=ExtractYear('Test_End'), month=ExtractMonth('Test_End')) \
+                        .values('year', 'month').order_by('year', 'month').annotate(count=Count('id')):
+                # for i in INVGantt.objects.filter(**check_dic).filter(
+                #         Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(month=TruncMonth('Test_End')) \
+                #         .values('year', 'month').order_by('year', 'month').annotate(count=Count('id')):
+                #     print(i)
+                    tableDatamouth_key_end.append(str(i["year"]) +  "-" + str(i["month"]))
+                # tableDatamouth_key = list(set(tableDatamouth_key_start) | set(tableDatamouth_key_end))
+                union_set = set(tableDatamouth_key_start).union(set(tableDatamouth_key_end))
+                tableDatamouth_key = sorted(list(union_set))
+                # print(tableDatamouth_key_start)
+                # print(tableDatamouth_key_end)
+                # print(tableDatamouth_key)
+                tableDatamouth_dic = {"Project_Name": request.POST.get('Project')}
+                for i in tableDatamouth_key:
+                    i_num = 0
+                    i_num_kuayue = 0
+                    for j in INVGantt.objects.filter(**check_dic).filter(
+                            Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)):
+                        starttime = str(j.Test_Start).split("-")[0] + "-" + str(int(str(j.Test_Start).split("-")[1]))
+                        endtime = str(j.Test_End).split("-")[0] + "-" + str(int(str(j.Test_End).split("-")[1]))
+                        if starttime == i:
+                            if starttime == endtime:
+                                    i_num += 1
+                            else:
+                                    i_num_kuayue += 1
+                        tableDatamouth_dic[str(i)] = str(i_num) + "(" + str(i_num_kuayue) + ")"
+                tableDatamouth.append(tableDatamouth_dic)
+                # print(tableDatamouth)
+
+
         if request.POST.get('isGetData') == 'SEARCH_Detail':
             check_dic = {}
             Search_Endperiod = request.POST.getlist("Date",
@@ -501,6 +544,8 @@ def INVGantt_searchByProject(request):
             "content": mock_data,
             "tableContent1": mock_data1,
             "select": selectItem,
+            "tableDatamouth": tableDatamouth,
+            "tableDatamouth_key": tableDatamouth_key,
 
             "selectStatus": selectStatus,
             # "selectCompal_R3_PN":selectCompal_R3_PN,
