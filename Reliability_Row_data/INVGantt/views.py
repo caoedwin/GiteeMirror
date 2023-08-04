@@ -356,7 +356,7 @@ def INVGantt_searchByProject(request):
     # print(Skin)
     if not Skin:
         Skin = "/static/src/blue.jpg"
-    weizhi="INVGantt/INVGantt_search"
+    weizhi="INVGantt/INVGantt-searchByProject"
     selectItem = {
         # "C38(NB)": [{"Project": "EL531", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
         #             {"Project": "EL532", "CompalPN": ["LTCX0093GB0", "LTCX0093HB0", "LTCX0093IB0", "LTCX0094RB0"]},
@@ -463,13 +463,13 @@ def INVGantt_searchByProject(request):
                         }
                     )
 
-
+                # 不能有跨3個月以上的，否則邏輯不成立，數據會失真
                 tableDatamouth_key_start = []
                 for i in INVGantt.objects.filter(**check_dic).filter(
                     Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(year=ExtractYear('Test_Start'),month=ExtractMonth('Test_Start'))\
             .values('year', 'month').order_by('year', 'month').annotate(count=Count('id')):
                     # print(i)
-                    tableDatamouth_key_start.append(str(i["year"]) +  "-" + str(i["month"]))
+                    tableDatamouth_key_start.append(str(i["year"]) + "-" + str(i["month"]))
                 tableDatamouth_key_end = []
                 for i in INVGantt.objects.filter(**check_dic).filter(
                         Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(
@@ -479,27 +479,68 @@ def INVGantt_searchByProject(request):
                 #         Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)).annotate(month=TruncMonth('Test_End')) \
                 #         .values('year', 'month').order_by('year', 'month').annotate(count=Count('id')):
                 #     print(i)
-                    tableDatamouth_key_end.append(str(i["year"]) +  "-" + str(i["month"]))
+                    tableDatamouth_key_end.append(str(i["year"]) + "-" + str(i["month"]))
                 # tableDatamouth_key = list(set(tableDatamouth_key_start) | set(tableDatamouth_key_end))
                 union_set = set(tableDatamouth_key_start).union(set(tableDatamouth_key_end))
-                tableDatamouth_key = sorted(list(union_set))
+                tableDatamouth_key_sort = sorted(list(union_set))
                 # print(tableDatamouth_key_start)
                 # print(tableDatamouth_key_end)
                 # print(tableDatamouth_key)
+                tableDatamouth_key = []
+                for i in tableDatamouth_key_sort:
+                    if len(i.split("-")[1]) == 1:
+                        tableDatamouth_key.append(i.split("-")[0] + "-0" +i.split("-")[1])
+                    else:
+                        tableDatamouth_key.append(i)
+                # print(tableDatamouth_key)
                 tableDatamouth_dic = {"Project_Name": request.POST.get('Project')}
+                mouthdata = []
                 for i in tableDatamouth_key:
+                    i_num_first = 0
                     i_num = 0
                     i_num_kuayue = 0
                     for j in INVGantt.objects.filter(**check_dic).filter(
                             Q(Test_Start__range=duringTime) | Q(Test_End__range=duringTime)):
-                        starttime = str(j.Test_Start).split("-")[0] + "-" + str(int(str(j.Test_Start).split("-")[1]))
-                        endtime = str(j.Test_End).split("-")[0] + "-" + str(int(str(j.Test_End).split("-")[1]))
+                        # starttime = str(j.Test_Start).split("-")[0] + "-" + str(int(str(j.Test_Start).split("-")[1]))
+                        starttime = str(j.Test_Start).split("-")[0] + "-" + str(str(j.Test_Start).split("-")[1])
+                        # endtime = str(j.Test_End).split("-")[0] + "-" + str(int(str(j.Test_End).split("-")[1]))
+                        endtime = str(j.Test_End).split("-")[0] + "-" + str(str(j.Test_End).split("-")[1])
+                        # print(starttime,endtime, i)
+                        # print(datetime.datetime.strptime(starttime, "%Y-%m-%d"),datetime.datetime.strptime(endtime, "%Y-%m-%d"))
+                        # print(datetime.datetime.strptime(endtime, "%Y-%m-%d") - datetime.datetime.strptime(starttime, "%Y-%m-%d"))
                         if starttime == i:
                             if starttime == endtime:
                                     i_num += 1
                             else:
                                     i_num_kuayue += 1
-                        tableDatamouth_dic[str(i)] = str(i_num) + "(" + str(i_num_kuayue) + ")"
+                                    # # 获取两个日期之间的月份数
+                                    # start_date = datetime.datetime.strptime(starttime, '%Y-%m')
+                                    # start_year, start_month = start_date.year, start_date.month
+                                    # end_date = datetime.datetime.strptime(endtime, '%Y-%m')
+                                    # end_year, end_month = end_date.year, end_date.month
+                                    # interval = (end_year - start_year) * 12 + (end_month - start_month)
+                                    # # print(interval)
+                                    #
+                                    # cur_ym = []
+                                    # cur_ym_num = []
+                                    # for k in range(interval + 1):
+                                    #     now_month = start_month + k
+                                    #     year_tmp, month_tmp = start_year + now_month // 12, now_month % 12
+                                    #     if month_tmp == 0:
+                                    #         month_tmp = 12
+                                    #         year_tmp -= 1
+                                    #     cur_date = datetime.datetime.strptime(f'{year_tmp}-{month_tmp}', '%Y-%m')
+                                    #     interval_date = cur_date.strftime('%Y-%m')
+                                    #     cur_ym.append(interval_date)
+                                    # print(cur_ym_num = [cur_ym, ])
+                        if endtime == i and starttime != endtime:
+                            i_num_first += 1
+                            #如果有跨超过两个月的，只影响到“非本月开始”的数据（既不是分本月开始，也不是分本鱼结束），可以在此处继续分情况统计统计，starttime != endtime，算出starttime与endtime之间有几个月，中间的每个月都加一次，
+                            #并且，记录年月的key，如果tableDatamouth_key中没有，加到里面去
+                    # tableDatamouth_dic[str(i)] = str(i_num) + "(" + str(i_num_kuayue) + ")"
+                    # tableDatamouth_dic[str(i)] = [0, i_num, i_num_kuayue]
+                    mouthdata.append({"mouthname": str(i), "first": i_num_first, "second": i_num, "third": i_num_kuayue})
+                tableDatamouth_dic["mouth"] = mouthdata
                 tableDatamouth.append(tableDatamouth_dic)
                 # print(tableDatamouth)
 

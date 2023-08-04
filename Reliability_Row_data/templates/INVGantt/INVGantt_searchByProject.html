@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}CQM_search{% endblock %}
+{% block title %}INVGantt-searchByProject{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/index.css">
 <style>
@@ -177,20 +177,30 @@ input:focus{
               <div class="col-md-1">
                         <el-button size="small" @click="exportExcel1" type="info" v-if="canExport==1" >Export</el-button>
                 </div>
-             <el-table  id="out-table2" height="100" border :data="tableDatamouth" ref="multipleTable" style="min-width: 100%;border-radius: 10px"
+             <el-table  id="out-table2" height="200" border :data="tableDatamouth" ref="multipleTable" style="min-width: 100%;border-radius: 10px"
                  row-click="rowClick"
                   @sort-change='sortChange'
-                 :header-cell-style="{
+                        border
+                 {% comment %}:header-cell-style="{
                    'background-color':'#fafafa',
                    'font-weight':'800',
                    'border-bottom':'1px solid rgb(103, 194, 58)'
-                }"
+                }"{% endcomment %}
+                        :header-cell-style="headerStyleEvent"
 
                 v-loading="tableloading1"
               element-loading-text="正在加载中，请稍后"
               border>
                     <el-table-column prop="Project_Name" label="Prj" align="center" min-width="120"></el-table-column>
-                  <el-table-column v-if="tableDatamouth_key" v-for="(item,index) in tableDatamouth_key" :label="item" :prop="item">
+                  <el-table-column v-if="tableDatamouth_key" v-for="(item,index) in tableDatamouth_key" :label="item" {% comment %}:prop="item"{% endcomment %}>
+                          <el-table-column label="非本月開始" style="text-align: center;" :prop="'mouth.'+index+'.first'" min-width="100"></el-table-column>
+                          <el-table-column label="本月開始結束" :prop="'mouth.'+index+'.second'"min-width="120"></el-table-column>
+                          <el-table-column label="本月開始" :prop="'mouth.'+index+'.third'" min-width="100"></el-table-column>
+                      {% comment %}<template slot-scope="scope">
+                          <span>${ scope.row[item][0] }</span>
+                          <span>${ scope.row[item][1] }</span>
+                          <span>${ scope.row[item][2] }</span>
+                      </template>{% endcomment %}
                   </el-table-column>
               </el-table>
           </el-collapse-item>
@@ -202,6 +212,11 @@ input:focus{
                   <el-input type="text" v-model="search1" id="sh" placeholder="关键字搜索......"></el-input>
                   <el-table  id="out-table1" border stripe height="400" :data="datas1.slice((currentPage1-1)*pageSize1,currentPage1*pageSize1)"style="width: 100%"
                      @row-click="selectDetail"
+                     :header-cell-style="{
+                       'background-color':'#F8F8FF',
+                       'font-weight':'800',
+                       'border-bottom':'1px solid rgb(103, 194, 58)'
+                    }"
                   v-loading="tableloading1"
                         element-loading-text="數據更新中，請稍後"
                         border>
@@ -717,7 +732,17 @@ $(document).ready(function() {
                   //console.log(val.replace('\n', '<br />'),"val")
                   return val.replace('\n', '<br />')
               }
-            }
+            },
+            headerStyleEvent({ row, column, rowIndex, columnIndex }) {
+                {#console.log(row,column);#}
+                  if (column.label == "非本月開始") {
+                    return 'background-color:#FFFAFA'
+                  } else if (column.label == "本月開始結束") {
+                    return 'background-color:#F0FFF0'
+                  } else if (column.label == "本月開始") {
+                    return 'background-color:#FFFFF0'
+                  }
+                },
         },
         computed:{
                 datas(){//必须是el-table里面绑定的数据变量,不能与axios接受的变量名一样

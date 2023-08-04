@@ -338,9 +338,9 @@
                 axios.post("/ABOTestPlan/ABOTestPlan_edit/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
-                    this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic))
+                    this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
                    {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
-                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic))
+                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
                     this.selectItem=res.data.select;
                   this.key_list=res.data.key_list;
                    this.comments=res.data.comments;
@@ -439,12 +439,20 @@
                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                   {#console.log(res.data.content,'search');#}
-                this.tabledata=res.data.tabledata;
-                this.excel_dic=res.data.excel_dic;
-                  this.selectItem=res.data.select;
-                  this.showinfo=res.data.showinfo;
+                    this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
+                   {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
+                   this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
+                    this.selectItem=res.data.select;
+                  this.key_list=res.data.key_list;
+                   this.comments=res.data.comments;
+                   this.showinfo=res.data.showinfo;
+                  this.canExport = res.data.canExport;
+                  this.canEdit = res.data.canEdit;
+                  this.errMsg = res.data.errMsg;
                   this.tableloading=false;
                    this.elbuttonloading=false;
+                  this.selectItem=res.data.select;
+                  this.showinfo=res.data.showinfo;
                    {#console.log(this.tableloading);#}
                    this.errMsg = res.data.err_msg;
                    if(this.errMsg){

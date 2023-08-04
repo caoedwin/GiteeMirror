@@ -1,0 +1,220 @@
+[2023-08-01 15:39:52,621] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 498, in INVGantt_searchByProject
+    print(datetime.datetime.strftime(starttime, "Y%-m%"),datetime.datetime.strftime(endtime, "Y%-m%"))
+TypeError: descriptor 'strftime' requires a 'datetime.date' object but received a 'str'
+[2023-08-01 15:39:52,622] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 15:39:52 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 15:39:52,623] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 108178
+[2023-08-01 15:44:06,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 15:44:07,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 15:44:07,100] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 15:44:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 15:44:07,107] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 15:44:08,769] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 15:44:08,771] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 15:44:08,784] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 15:44:08,787] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 15:44:42,828] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 498, in INVGantt_searchByProject
+    print(datetime.datetime.strptime(starttime, "Y%-m%"),datetime.datetime.strptime(endtime, "Y%-m%"))
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 351, in _strptime
+    (bad_directive, format)) from None
+ValueError: '-' is a bad directive in format 'Y%-m%'
+[2023-08-01 15:44:42,840] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 15:44:42 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 15:44:42,843] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 134532
+[2023-08-01 15:45:47,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 15:45:47,147] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 15:45:47,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 15:45:47,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 15:45:47,545] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 15:45:47 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 15:45:47,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 15:45:49,588] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 15:45:49,589] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 15:46:12,016] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 498, in INVGantt_searchByProject
+    print(datetime.datetime.strptime(starttime, "%Y-%m-%d"),datetime.datetime.strptime(endtime, "%Y-%m-%d"))
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2020-6' does not match format '%Y-%m-%d'
+[2023-08-01 15:46:12,029] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 15:46:12 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 15:46:12,033] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 116891
+[2023-08-01 16:06:54,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 16:06:56,599] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:06:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:06:56,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 16:06:56,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 16:06:59,161] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 16:06:59,162] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 16:06:59,178] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 16:06:59,179] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 16:07:11,165] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 507, in INVGantt_searchByProject
+    start_date = datetime.strptime(starttime_data, '%Y-%m')
+AttributeError: module 'datetime' has no attribute 'strptime'
+[2023-08-01 16:07:11,177] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:07:11 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:07:11,181] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 108370
+[2023-08-01 16:07:47,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 16:07:50,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 16:07:50,252] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:07:50 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:07:50,260] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 16:07:52,318] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 16:07:52,323] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 16:07:52,329] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 16:07:52,331] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 16:07:59,496] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 508, in INVGantt_searchByProject
+    start_date = datetime.strptime(starttime_data, '%Y-%m')
+AttributeError: module 'datetime' has no attribute 'strptime'
+[2023-08-01 16:07:59,506] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:07:59 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:07:59,508] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 108277
+[2023-08-01 16:09:20,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 16:09:24,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 16:09:24,125] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:09:24 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:09:24,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 16:09:25,831] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 16:09:25,832] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 16:09:25,849] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 16:09:25,851] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 16:09:34,390] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 521, in INVGantt_searchByProject
+    cur_date = datetime.strptime(f'{year_tmp}-{month_tmp}', '%Y-%m')
+AttributeError: module 'datetime' has no attribute 'strptime'
+[2023-08-01 16:09:34,401] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:09:34 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:09:34,403] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 110160
+[2023-08-01 16:09:54,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 16:09:55,868] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:09:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:09:55,877] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 16:09:56,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 16:09:59,215] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 16:09:59,219] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 16:09:59,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 16:09:59,229] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 16:10:09,822] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:10:09 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:10:09,846] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26291
+[2023-08-01 16:18:30,237] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:18:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:18:30,244] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26291
+[2023-08-01 16:19:54,826] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:19:54 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:19:54,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26291
+[2023-08-01 16:20:36,420] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:20:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:20:36,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26291
+[2023-08-01 16:36:33,517] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /INVGantt/INVGantt-searchByProject/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\INVGantt\views.py", line 529, in INVGantt_searchByProject
+    print(cur_ym_num = [cur_ym, ])
+TypeError: 'cur_ym_num' is an invalid keyword argument for print()
+[2023-08-01 16:36:33,519] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:36:33 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:36:33,520] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 500 110539
+[2023-08-01 16:36:55,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-01 16:36:56,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-01 16:36:56,024] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:36:56 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:36:56,036] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-01 16:36:58,602] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-01 16:36:58,604] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-01 16:36:58,608] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-01 16:36:58,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-01 16:37:03,005] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:37:03 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:37:03,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26291
+[2023-08-01 16:40:53,784] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:40:53 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:40:53,803] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26299
+[2023-08-01 16:46:07,825] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:46:07 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:46:07,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26299
+[2023-08-01 16:47:44,199] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:47:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:47:44,214] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 28330
+[2023-08-01 16:49:30,789] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:49:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:49:30,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26299
+[2023-08-01 16:49:55,064] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:49:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:49:55,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26299
+[2023-08-01 16:52:09,526] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:52:09 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:52:09,533] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26286
+[2023-08-01 16:52:30,359] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:52:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:52:30,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26299
+[2023-08-01 16:53:06,822] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-01 16:53:06 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-01 16:53:06,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26286
+[2023-08-02 11:07:16,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 302 0
+[2023-08-02 11:07:16,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-02 11:07:17,027] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-02 11:07:17,035] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-02 11:07:19,193] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-02 11:07:19 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-08-02 11:07:19,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-08-02 11:07:19,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-08-02 11:07:19,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48147
+[2023-08-02 11:07:20,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-02 11:07:20,901] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-02 11:07:20,917] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-02 11:07:20,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-02 11:07:20,937] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-02 11:07:20,951] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-02 11:07:20,968] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-02 11:07:25,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 59523
+[2023-08-02 11:07:26,200] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23410
+[2023-08-02 11:07:26,271] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-02 11:07:26 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-02 11:07:26,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 25812
+[2023-08-02 11:07:29,483] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-02 11:07:29,486] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-02 11:07:29,507] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-02 11:07:29,508] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-08-02 11:07:37,362] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-02 11:07:37 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /INVGantt/INVGantt-searchByProject/ POST
+[2023-08-02 11:07:37,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /INVGantt/INVGantt-searchByProject/ HTTP/1.1" 200 26286
