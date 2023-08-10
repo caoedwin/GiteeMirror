@@ -681,22 +681,24 @@
                             headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
                         }).then((res) => {
                             {#console.log(res.data,"first");//上传成功的操作#}
-
-                             this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
+                            console.log(res.data.errMsg,!res.data.errMsg,'first');
+                            if(!res.data.errMsg){
+                                this.excel_dic=JSON.parse(JSON.stringify(res.data.excel_dic));
                              {#就是在赋值的时候转一下json格式，这样指的就不是地址了。#}
-                           this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
-                          this.key_list=res.data.key_list;
-                           this.comments=res.data.comments;
-                           this.showinfo=res.data.showinfo;
-                          this.canExport = res.data.canExport;
-                          this.canEdit = res.data.canEdit;
+                               this.excel_dic_origin=JSON.parse(JSON.stringify(res.data.excel_dic));
+                              this.key_list=res.data.key_list;
+                               this.comments=res.data.comments;
+                               this.showinfo=res.data.showinfo;
+                              this.canExport = res.data.canExport;
+                              this.canEdit = res.data.canEdit;
+                            }
                           this.errMsg = res.data.errMsg;
                           this.tableloading=false;
                            this.elbuttonloading=false;
                            this.upload_zhushi=[];
                            this.upload_zhushi_delete=[];
                            if(this.errMsg){
-                                    this.$alert(this.errMsg, '提示', {
+                                    this.$alert(this.errMsg, '文件被占用，请稍后重新保存', {
                                           type: 'warning',
                                         })
                                 }else {
