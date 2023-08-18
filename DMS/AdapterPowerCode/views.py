@@ -3383,6 +3383,14 @@ def M_edit(request):
                             break
                         if 'Number' in modeldata.keys():
                             startupload = 1
+                            if 'MaterialPN' in modeldata.keys():
+                                if modeldata['MaterialPN'][-4:] != modeldata['Number'][:4]:
+                                    # print(modeldata['MaterialPN'][-4:], modeldata['Number'][:4])
+                                    startupload = 0
+                                    errMsg = err_msg = """
+                                                        第"%s"條數據，編號:%s的前四位与MaterialPN:%s的后四位不一致
+                                                                            """ % (rownum, modeldata['Number'], modeldata['MaterialPN'])
+                                    break
                         else:
                             # canEdit = 0
                             startupload = 0

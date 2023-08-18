@@ -102,7 +102,11 @@ def get_structure_data(request):
                 # for m in i["children"]:
                 #     print(len(m["children"]), m["children"])
                 for j in i['children']:#第三级菜单则按照title字母顺序排序
-                    j['children'].sort(key=lambda x: x["title"])
+                    if j['children']:
+                        if "children" in j['children'][0].keys():  # edwin：对有四级菜单，按照第三季级菜单的个数对二级菜单排序，只有二级的不需要排序
+                            j["children"].sort(key=lambda x: len(x["children"]))
+                    else:
+                        j['children'].sort(key=lambda x: x["title"])
     menu_data.sort(key=lambda x: x["title"])  # 第一级菜单按照title字母顺序排序
     # print (menu_data)
     return menu_data
@@ -219,8 +223,16 @@ def get_menu_html(menu_data):
                         Class = "ti-panel"
                     if item['title'] == 'ABO':
                         Class = "ti-view-list-alt"
+                    if item['title'] == 'Input':
+                        Class = "ti-view-list-alt"
+                    if item['title'] == '我的':
+                        Class = "ti-view-list-alt"
+                    if item['title'] == 'Summary':
+                        Class = "ti-view-list-alt"
+                    if item['title'] == '人員測試履歷':
+                        Class = "ti-view-list-alt"
 
-                    menu_html += option_str.format(Class=Class,menu_title=item['title'],
+                    menu_html += option_str.format(Class=Class,menu_title=item['title'].split("_")[2] if len(item['title'].split("_"))>=2 else item['title'],
                                                    sub_menu=sub_menu)  # ,
                     # display="" if item['open'] else "rbac-hide",
                     # status="open" if item['open'] else "close")

@@ -110,13 +110,13 @@ class ProjectinfoinDCTAdmin(admin.ModelAdmin):
     #     #     'fields' : ('Start_time', 'End_time', 'Result_time','Result','Comments')
     #     # }),
     # )
-    list_display = ('Year', 'ComPrjCode', 'PrjEngCode1', 'PrjEngCode2', 'ProjectName', "Size", "CPU", "Platform", "VGA", "OSSupport", "SS", "LD", "DQAPL",)
+    list_display = ('Year', 'ComPrjCode', 'PrjEngCode1', 'PrjEngCode2', 'ProjectName', "Size", "CPU", "Platform", "VGA", "OSSupport", "SS", "LD", "DQAPL", "DQAPLNum",)
     # 列表里显示想要显示的字段
     list_per_page = 500
     # 满50条数据就自动分页
     ordering = ('-Year',)
     #后台数据列表排序方式
-    list_display_links = ('Year', 'ComPrjCode', 'PrjEngCode1', 'PrjEngCode2', 'ProjectName', "CPU", "Size", "Platform", "VGA", "OSSupport", "SS", "LD", "DQAPL",)
+    list_display_links = ('Year', 'ComPrjCode', 'PrjEngCode1', 'PrjEngCode2', 'ProjectName', "CPU", "Size", "Platform", "VGA", "OSSupport", "SS", "LD", "DQAPL", "DQAPLNum",)
     # 设置哪些字段可以点击进入编辑界面
     # list_editable = ('Object',)
     # 筛选器

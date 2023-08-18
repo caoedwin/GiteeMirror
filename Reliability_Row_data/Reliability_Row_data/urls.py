@@ -95,6 +95,7 @@ urlpatterns = [
     path('KnowIssue/', include('KnowIssue.urls', namespace='KnowIssue')),
     path('ABOTestPlan/', include('ABOTestPlan.urls', namespace='ABOTestPlan')),
     path('PersonalInfo/', include('PersonalInfo.urls', namespace='PersonnalInfo')),
+    path('PersonalExperience/', include('PersonalExperience.urls', namespace='PersonalExperience')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

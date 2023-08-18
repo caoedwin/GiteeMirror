@@ -749,7 +749,7 @@ def ABOTestPlan_edit(request):
                     folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
                     # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
                     shutil.copy(filepathsearch, folder_path_Sys)
-                    print(folder_path_Sys)
+                    # print(folder_path_Sys)
                     if folder_path_Sys:
                         if os.path.exists(folder_path_Sys):
                             readdata = read_excel(folder_path_Sys)
@@ -759,7 +759,7 @@ def ABOTestPlan_edit(request):
                             showinfo = folder_path_Sys.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
                             request.session['sessionABOEdit'] = folder_path_Sys
                             request.session.set_expiry(12 * 60 * 60)
-                            print(showinfo,1)
+                            # print(showinfo,1)
                 except Exception as e:
                     print(e)
                     errMsg = str(e)
