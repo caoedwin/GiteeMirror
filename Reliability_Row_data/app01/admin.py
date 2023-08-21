@@ -985,12 +985,12 @@ class RoleAdmin(admin.ModelAdmin):
 class UserInfoAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields' : ('account','password','username','email','role')
+            'fields' : ('account','password','username','email','role',)
         }),
-        # ('Advanced options',{
-        #     'classes': ('collapse',),
-        #     'fields' : ('Start_time', 'End_time', 'Result_time','Result','Comments')
-        # }),
+        ('Advanced options',{
+            'classes': ('collapse',),
+            'fields' : ('department','is_active','is_staff','is_SVPuser')
+        }),
     )
     filter_horizontal = ('role',)
     list_display = ('account','password','username','email','show_role')

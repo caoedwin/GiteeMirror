@@ -35,6 +35,12 @@ class UserInfo(models.Model):
         ('CQ', 'CQ'),
         ('CD', 'CD'),
     )
+    DEPARTMENT_CHOICES = {
+        (1, '测试部门'),
+        (2, '开发部门'),
+        (3, 'PM'),
+        (4, '其它部门'),
+    }
     account = models.CharField(max_length=32,unique=True)
     password = models.CharField(max_length=64)
     username = models.CharField(max_length=32)
@@ -43,6 +49,10 @@ class UserInfo(models.Model):
     Tel = models.CharField(max_length=32 ,null=True, blank=True,default='')
     Seat = models.CharField(max_length=108, choices=SeatChoice, default='KS-Plant5')
     email = models.EmailField()
+    department = models.IntegerField(verbose_name='部门', choices=DEPARTMENT_CHOICES, default=1)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_SVPuser = models.BooleanField(default=False)
     role = models.ManyToManyField("Role")
     Photo = models.ManyToManyField(Imgs, related_name='imgs', blank=True, verbose_name='图片表')
 

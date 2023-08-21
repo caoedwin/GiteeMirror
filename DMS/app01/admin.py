@@ -91,10 +91,10 @@ class UserInfoAdmin(admin.ModelAdmin):
         (None, {
             'fields' : ('account','password','CNname','username','Tel','Seat', 'email','role',"Photo")
         }),
-        # ('Advanced options',{
-        #     'classes': ('collapse',),
-        #     'fields' : ('Start_time', 'End_time', 'Result_time','Result','Comments')
-        # }),
+        ('Advanced options',{
+            'classes': ('collapse',),
+            'fields' : ('department','is_active','is_staff','is_SVPuser')
+        }),
     )
     filter_horizontal = ('role',)
     list_display = ('account', 'password', 'CNname','username','Tel','Seat', 'email', 'show_role')
