@@ -119,6 +119,7 @@ def signinLNV(request):
                     return render(request, 'SigninLNV.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
+                         "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
                          }
             # Role.objects.filter(name=role).first(),
             print(createdic)
@@ -156,7 +157,7 @@ def signinABO(request):
                     return render(request, 'SigninABO.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
-                         "Seat": 'KS-Plant5', "department": 1, "Seatis_active": True, "is_staff": False, "is_SVPuser": False,
+                         "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
                          }
             # Role.objects.filter(name=role).first(),
             print(createdic)
@@ -194,7 +195,7 @@ def signinA31(request):
                     return render(request, 'SigninABO.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
-                         "Seat": 'CQ',"department": 1, "Seatis_active": True, "is_staff": False, "is_SVPuser": False,
+                         "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
                          }
             # Role.objects.filter(name=role).first(),
             print(createdic)

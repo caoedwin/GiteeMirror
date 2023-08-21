@@ -72,3 +72,31 @@
 [2023-08-21 16:25:06,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
 [2023-08-21 16:25:06,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
 [2023-08-21 16:25:06,649] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2023-08-21 16:51:14,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /signinA31/ HTTP/1.1" 200 6634
+[2023-08-21 16:51:14,660] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-21 16:51:14,740] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-21 16:51:14,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-21 16:51:14,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-08-21 16:52:57,483] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /signinA31/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 202, in signinA31
+    UserInfo.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'Seatis_active' is an invalid keyword argument for this function
+[2023-08-21 16:52:57,513] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:52:57,515] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /signinA31/ HTTP/1.1" 500 97340
+[2023-08-21 16:52:57,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-21 16:52:57,700] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823

@@ -1,1 +1,26 @@
 [2023-08-21 16:24:56,356] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:52:57,483] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /signinA31/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 202, in signinA31
+    UserInfo.objects.create(**createdic)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 411, in create
+    obj = self.model(**kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
+TypeError: 'Seatis_active' is an invalid keyword argument for this function
+[2023-08-21 16:52:57,513] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:52:57,515] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /signinA31/ HTTP/1.1" 500 97340
+[2023-08-21 16:54:32,112] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:54:47,431] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:54:54,225] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-08-21 16:54:56,609] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
