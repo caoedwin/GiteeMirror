@@ -11,6 +11,7 @@ def get_structure_data(request):
     menu = request.session[settings.SESSION_MENU_KEY]
     all_menu = menu[settings.ALL_MENU_KEY]
     permission_url = menu[settings.PERMISSION_MENU_KEY]
+    permission_url_account = str(menu[settings.PERMISSION_MENU_KEY1])
     # print (all_menu)
     # print(permission_url)
     # all_menu = [
@@ -53,6 +54,10 @@ def get_structure_data(request):
         # 添加两个状态：显示 和 展开
         url['status'] = True
         pattern = url['url']
+        if url['url'] in permission_url_account:
+            url['per'] = True
+        else:
+            url['open'] = False
         if re.match(pattern, request_rul):
             url['open'] = True
         else:
@@ -112,19 +117,34 @@ def get_structure_data(request):
     return menu_data
 
 
-def get_menu_html(menu_data):
+def get_menu_html(menu_data, indexnum):
     """显示：菜单 + [子菜单] + 权限(url)"""
+    '''
+    el-menu需要router来路由，不识别django的路由，适合前后端分离项目。url路由使用a标签
+    '''
+    '''
+            <el-submenu index=1>
+                    <el-menu-item-group title={Group_title}>
+                        <a href="/index/"><el-menu-item index="1-1">选项1</el-menu-item></a>
+                        <el-submenu index="1-2">
+                          <span slot="title">选项4</span>
+                          <el-menu-item index="1-2-1">选项1</el-menu-item>
+                        </el-submenu>
+                    </el-menu-item-group>
+        '''
     option_str = """
-          <li><a class="sidebar-sub-toggle"><i class={Class}></i>{menu_title}<span class="sidebar-collapse-icon ti-angle-down"></span></a>
-                <ul>
+          <el-submenu index="{index}">
+                <span slot="title">{spanname}</span>
                     {sub_menu}
-                </ul>
-            </li>
+          </el-submenu>
     """
 
     url_str = """
-        <li><a href="{permission_url}">{permission_title}</a></li>
+        <a href="{permission_url}"><el-menu-item index="{index_sub}">{permission_title}</el-menu-item></a>
     """
+    url_str_noper = """
+            <el-menu-item index="{index_sub}" disabled>{permission_title}</el-menu-item>
+        """
 
     """
      menu_data = [
@@ -143,96 +163,39 @@ def get_menu_html(menu_data):
     """
     # print("menu_data:",menu_data)
     menu_html = ''
+    indexnum_sub = 0
+    # print(indexnum,"index")
     for item in menu_data:
+        indexnum_sub += 1
         if not item['status']: # 如果用户权限不在某个菜单下，即item['status']=False, 不显示
             continue
         else:
             if item.get('url'): # 说明循环到了菜单最里层的url
-                menu_html += url_str.format(permission_url=item['url'],
-                                            # active="rbac-active" if item['open'] else "",
-                                            permission_title=item['title'].split("_")[2] if len(item['title'].split("_"))>=2 else item['title'],
-                                            # permission_title=item['title'][4:],
-                                            )
+                if item.get('per'):
+                    print(item)
+                    menu_html += url_str.format(permission_url=item['url'],
+                                                # active="rbac-active" if item['open'] else "",
+                                                index_sub=str(indexnum) + "-" + str(indexnum_sub),
+                                                permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+                                                # permission_title=item['title'][4:],
+                                                )
+                else:
+                    menu_html += url_str_noper.format(
+                                                # active="rbac-active" if item['open'] else "",
+                                                index_sub=str(indexnum) + "-" + str(indexnum_sub),
+                                                permission_title=item['title'].split("_")[2] if len(
+                                                    item['title'].split("_")) >= 2 else item['title'],
+                                                # permission_title=item['title'][4:],
+                                                )
                 # print (menu_html)
                 # print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
             else:
                 # print(item['title'])
                 if item.get('children'):
                     # print(item['title'])
-                    sub_menu = get_menu_html(item['children'])
-                    Class=""
-                    if item['title']=='Lesson Learn':
-                        Class="ti-file"
-                    if item['title'] == 'SW&ME':
-                        Class ="ti-agenda"
-                    if item['title'] == 'Compatibility':
-                        Class ="ti-layout-grid4-alt"
-                    if item['title'] == 'QIL':
-                        Class ="ti-layout-grid2-alt"
-                    if item['title'] == 'Reliability Test Data':
-                        Class = "ti-archive"
-                    if item['title'] == 'Package G Value':
-                        Class = "ti-layout"
-                    if item['title'] == 'Bouncing':
-                        Class = "ti-panel"
-                    if item['title'] == 'CDM':
-                        Class = "ti-view-list-alt"
-                    if item['title'] == 'XQM':
-                        Class ="ti-files"
-                    if item['title'] == 'CQM':
-                        Class = "ti-target"
-                    if item['title'] == 'MQM':
-                        Class = "ti-bar-chart-alt"
-                    if item['title'] == 'DriverToolList':
-                        Class = "ti-layout-cta-right"
-                    if item['title'] == 'Others':
-                        Class = "ti-map"
-                    if item['title'] == 'Known issue list':
-                        Class = "ti-layout-column3"
-                    if item['title'] == 'Runin Report':
-                        Class = "ti-layout-list-thumb"
-                    if item['title'] == 'Test Plan':
-                        Class = "ti-bar-chart-alt"
-                    if item['title'] == 'ME':
-                        Class = "ti-layout-media-overlay-alt"
-                    if item['title'] == 'SW':
-                        Class ="ti-layout-width-default"
-                    if item['title'] == 'SW-OR':
-                        Class ="ti-layout-width-default"
-                    if item['title'] == 'INV':
-                        Class ="ti-layout-list-large-image"
-                    if item['title'] == 'SpecDownload':
-                        Class ="ti-layout-accordion-list"
-                    if item['title'] == 'Issue Notes':
-                        Class ="ti-layout-column3"
-                    if item['title'] == 'Issue List':
-                        Class ="ti-bookmark"
-                    if item['title'] == 'Known Issue':
-                        Class ="ti-envelope"
-                    if item['title'] == 'DepartmentManage':
-                        Class ="ti-cloud"
-                    if item['title'] == 'PersonalInfo':
-                        Class = "ti-id-badge"
-                    if item['title'] == '公共區域':
-                        Class = "ti-comment"
-                    if item['title'] == 'ProjectInfo':
-                        Class = "ti-search"
-                    if item['title'] == 'OBIDeviceResult':
-                        Class = "ti-light-bulb"
-                    if item['title'] == 'Automation效益':
-                        Class = "ti-panel"
-                    if item['title'] == 'ABO':
-                        Class = "ti-view-list-alt"
-                    if item['title'] == 'Input':
-                        Class = "ti-view-list-alt"
-                    if item['title'] == '我的':
-                        Class = "ti-view-list-alt"
-                    if item['title'] == 'Summary':
-                        Class = "ti-view-list-alt"
-                    if item['title'] == '人員測試履歷':
-                        Class = "ti-view-list-alt"
+                    sub_menu = get_menu_html(item['children'], str(indexnum) + "-" + str(indexnum_sub))
 
-                    menu_html += option_str.format(Class=Class,menu_title=item['title'].split("_")[2] if len(item['title'].split("_"))>=2 else item['title'],
+                    menu_html += option_str.format(index=str(indexnum) + "-" + str(indexnum_sub), spanname=item['title'].split("_")[2] if len(item['title'].split("_"))>=2 else item['title'],
                                                    sub_menu=sub_menu)  # ,
                     # display="" if item['open'] else "rbac-hide",
                     # status="open" if item['open'] else "close")
@@ -255,8 +218,11 @@ def rbac_menu(request):
     :param request:
     :return:
     """
+    # print(request.session[settings.SESSION_MENU_KEY])
     menu_data = get_structure_data(request)
-    menu_html = get_menu_html(menu_data)
+    # print(menu_data)
+    menu_html = get_menu_html(menu_data, 2)
+    # print(menu_html,111)
 
     return mark_safe(menu_html)
     # 因为标签无法使用safe过滤器，这里用mark_safe函数来实现

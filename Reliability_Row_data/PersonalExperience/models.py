@@ -11,6 +11,8 @@ class PerExperience(models.Model):
     Proposer_Num = models.CharField("申請人工號", max_length=10)
     Proposer_Name = models.CharField("申請人姓名(中)", max_length=20)
     Department_Code = models.CharField("課別", max_length=20)
+    Item = models.CharField("职称项次", max_length=20, default='')
+    Positions_Name = models.CharField("职称", max_length=20, default='')
     Dalei = models.CharField("大类", max_length=20, choices=Dalei_choice, null=True, blank=True)
     Project = models.CharField("Project", max_length=50)
     SS_Date = models.DateField("SS時間", null=True, blank=True)

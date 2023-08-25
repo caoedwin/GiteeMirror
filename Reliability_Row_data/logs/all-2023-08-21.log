@@ -6,3 +6,24 @@
 [2023-08-21 16:18:07,347] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/21/change/ HTTP/1.1" 200 30793
 [2023-08-21 16:18:07,366] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/collapse.js HTTP/1.1" 200 1183
 [2023-08-21 16:18:07,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-08-22 16:08:40,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/My-application/ HTTP/1.1" 302 0
+[2023-08-22 16:08:40,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-22 16:08:40,344] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-22 16:08:40,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-22 16:08:40,370] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-22 16:08:43,163] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-22 16:08:43 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-08-22 16:08:43,215] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-08-22 16:08:43,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 49268
+[2023-08-22 16:08:43,808] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-22 16:08:43,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 49268
+[2023-08-22 16:08:43,887] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-22 16:08:43,977] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-22 16:08:44,040] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-22 16:08:44,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24531
+[2023-08-22 16:08:50,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/My-application/ HTTP/1.1" 200 51794
+[2023-08-22 16:08:50,747] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-22 16:08:50,777] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-22 16:08:50,936] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-22 16:08:51,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24531
+[2023-08-22 16:08:51,180] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-22 16:08:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/PublicArea/ POST
+[2023-08-22 16:08:51,197] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PublicArea/ HTTP/1.1" 200 10612

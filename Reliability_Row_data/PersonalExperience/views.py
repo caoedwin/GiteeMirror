@@ -4,7 +4,7 @@ import datetime, json, simplejson, requests, time
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app01.models import UserInfo, ProjectinfoinDCT
-from PersonalInfo.models import PersonalInfo
+from PersonalInfo.models import PersonalInfo, Positions
 from django.db.models import Max, Min, Sum, Count, Q, F, Value, CharField
 from django.db.models.functions import Substr
 from operator import itemgetter, attrgetter
@@ -53,16 +53,24 @@ def NPI_upload(request):
                                                                                          updata_dic['Function'], updata_dic['SubFunction_Com'],
                                                                                          updata_dic['Role'])
             else:
+                # 填寫人信息
                 updata_dic['Proposer_Name'] = PersonalInfos.CNName
-                updata_dic['Dalei'] = "NPI"
                 updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
+                updata_dic['Item'] = PersonalInfos.PositionNow
+                YearNow = datetime.datetime.now().strftime("%Y")
+                updata_dic['Positions_Name'] = Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow).first().\
+                    Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow) else ''
+                # 機種名變更可能隨之變動
+                updata_dic['Dalei'] = "NPI"
                 updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
                 updata_dic['SS_Date'] = request.POST.get('SS_Date')
+                # 流程變更
+                updata_dic['Status'] = "待簽核"
+
                 updata_dic['Comments'] = request.POST.get('Comments')
                 updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
-                updata_dic['Status'] = "待簽核"
                 if updata_dic['Approved_Officer']:
                     PerExperience.objects.create(**updata_dic)
                 else:
@@ -111,21 +119,30 @@ def INV_upload(request):
             updata_dic['Time_Interval'] = request.POST.get('Month')
             updata_dic['Year'] = request.POST.get('Year')
             if PerExperience.objects.filter(**updata_dic):
-                errMsgNumber = "您已申请过：Project:%s-Phase:%s-Function:%s-SubFunction:%s-Role:%s" % (updata_dic['Project'], updata_dic['Phase'],
-                                                                                         updata_dic['Function'], updata_dic['SubFunction_Com'],
+                errMsgNumber = "您已申请过：Project:%s-Function:%s-Time_Interval:%s-Year:%s-Role:%s" % (updata_dic['Project'],
+                                                                                         updata_dic['Function'], updata_dic['Time_Interval'], updata_dic['Year'],
                                                                                          updata_dic['Role'])
             else:
+                #個人信息
                 updata_dic['Proposer_Name'] = PersonalInfos.CNName
+                updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
+                updata_dic['Item'] = PersonalInfos.PositionNow
+                YearNow = datetime.datetime.now().strftime("%Y")
+                updata_dic['Positions_Name'] = Positions.objects.filter(Item=PersonalInfos.PositionNow,
+                                                                        Year=YearNow).first(). \
+                    Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow, Year=YearNow) else ''
+                # 機種名變更可能隨之變動
                 updata_dic['Dalei'] = "INV"
                 updata_dic['KeypartNum'] = request.POST.get('KeypartNum')
-                updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
                 updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
                 updata_dic['SS_Date'] = request.POST.get('SS_Date')
+                #流程變更
+                updata_dic['Status'] = "待簽核"
+
                 updata_dic['Comments'] = request.POST.get('Comments')
                 updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
-                updata_dic['Status'] = "待簽核"
                 if updata_dic['Approved_Officer']:
                     PerExperience.objects.create(**updata_dic)
                 else:
@@ -201,15 +218,24 @@ def OSR_upload(request):
                                                                                          updata_dic['Role'])
             else:
                 updata_dic['Proposer_Name'] = PersonalInfos.CNName
-                updata_dic['Dalei'] = "OSR"
                 updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
+                updata_dic['Item'] = PersonalInfos.PositionNow
+                YearNow = datetime.datetime.now().strftime("%Y")
+                updata_dic['Positions_Name'] = Positions.objects.filter(Item=PersonalInfos.PositionNow,
+                                                                        Year=YearNow).first(). \
+                    Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow, Year=YearNow) else ''
+                # 機種名變更可能隨之變動
+                updata_dic['Dalei'] = "OSR"
                 updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
                 # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
                 updata_dic['SS_Date'] = request.POST.get('SS_Date')
+                # 流程變更
+                updata_dic['Status'] = "待簽核"
+
                 updata_dic['Comments'] = request.POST.get('Comments')
                 updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
-                updata_dic['Status'] = "待簽核"
+
                 if updata_dic['Approved_Officer']:
                     PerExperience.objects.create(**updata_dic)
                 else:
@@ -236,16 +262,179 @@ def My_application(request):
         Skin = "/static/src/blue.jpg"
     weizhi = "PersonalExperience/My_application"
 
+    tableData = [
+        # {"id": 1, "Approved_Officer": "郭四梅", "Status": "待簽核", "Department_Code": "KM0MAQAEA0", "Proposer_Num": "715859",
+        #  "Proposer_Name": "郭四梅", "Position_Now": "副理", "Project": "GLMS1", "SS_Date": "2023/1/1", "Year": "2023",
+        #  "Time_Interval": "上半年", "Phase": "OOC", "Role": "QM", "Function": "Compatibility",
+        #  "SubFunction_Com": "Multimedia",
+        #  "KeypartNum": 3, "Comments": "234",
+        #  },
+        # {"id": 2, "Approved_Officer": "郭四梅", "Status": "同意", "Department_Code": "KM0MAQAEA0", "Proposer_Num": "715859",
+        #  "Proposer_Name": "郭四梅", "Position_Now": "副理", "Project": "GLMS1", "SS_Date": "2023/1/1", "Year": "2023",
+        #  "Time_Interval": "上半年", "Phase": "OSR-Win11", "Role": "QM", "Function": "Compatibility",
+        #  "SubFunction_Com": "Multimedia",
+        #  "KeypartNum": 3, "Comments": "",
+        #  },
+        # {"id": 3, "Approved_Officer": "郭四梅", "Status": "拒絕", "Department_Code": "KM0MAQAEA0", "Proposer_Num": "715859",
+        #  "Proposer_Name": "郭四梅", "Position_Now": "副理", "Project": "GLMS1", "SS_Date": "2023/1/1", "Year": "2023",
+        #  "Time_Interval": "上半年", "Phase": "", "Role": "QM", "Function": "Compatibility",
+        #  "SubFunction_Com": "Multimedia",
+        #  "KeypartNum": 3, "Comments": "",
+        #  },
+    ]
 
+    sectionProject = [
+        # {"value": "GLMS1", "SS_Date": "2021/02/03"}, {"value": "HLS4I", "SS_Date": "2021/02/04"},
+    ]
+    for i in ProjectinfoinDCT.objects.all():
+        datastr = i.SS.split(' ')[0].split('/')
+        sectionProject.append({"value": i.ComPrjCode, "SS_Date": datastr[2] + "-" + datastr[0] + "-" + datastr[1]})
 
-    if request.method == 'POST':
+    sectionPhase = [
+        # "Win11", "Win10", "XP"
+    ]
+    for i in OSR_OSinfo.objects.all():
+        sectionPhase.append(i.OSinfo)
 
-        data = {
-            "err_Msg": "",
-        }
-        # print(data)
-        return HttpResponse(json.dumps(data), content_type="application/json")
+    account_login = request.session.get('account')
+    PersonalInfos = PersonalInfo.objects.filter(
+        Q(GroupNum=account_login) | Q(SAPNum=account_login)).first()
 
+    errMsgNumber = ''
+    try:
+        if request.method == "POST":
+            if request.POST.get('isGetData') == 'first':
+                for i in PerExperience.objects.filter(Proposer_Num=account_login):
+                    tableData.append(
+                        {"id": i.id, "Approved_Officer": PersonalInfo.objects.filter(
+                            Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first().CNName if
+                        PersonalInfo.objects.filter(Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first() else "人員信息中未匹配到該工號%s" % i.Approved_Officer,
+                         "Status": i.Status, "Department_Code": i.Department_Code,
+                         "Proposer_Num": i.Proposer_Num,
+                         "Proposer_Name": i.Proposer_Name, "Position_Now": i.Positions_Name,
+                         "Project": i.Project, "SS_Date": i.SS_Date.strftime("%Y-%m-%d"),
+                         "Year": i.Year if i.Year else '',
+                         "Time_Interval": i.Time_Interval if i.Time_Interval else '', "Phase": i.Phase if i.Phase else '', "Role": i.Role, "Function": i.Function,
+                         "SubFunction_Com": i.SubFunction_Com if i.SubFunction_Com else '',
+                         "KeypartNum": int(i.KeypartNum) if i.KeypartNum else '', "Comments": i.Comments if i.Comments else '',
+                         "Item": i.Item, "Dalei": i.Dalei,
+
+                         }
+                    )
+            elif request.POST.get('action') == 'addSubmit':
+                ID = request.POST.get('ID')
+                updata_dic = {}
+                updata_dic['Proposer_Num'] = request.session.get('account')
+                # updata_dic['Proposer_NameE'] = request.session.get('user_name')
+                PersonalInfos = PersonalInfo.objects.filter(
+                    Q(GroupNum=updata_dic['Proposer_Num']) | Q(SAPNum=updata_dic['Proposer_Num'])).first()
+                # print(PersonalInfos)
+                updata_dic['Project'] = request.POST.get('Project')
+                updata_dic['Role'] = request.POST.get('Role')
+                updata_dic['Function'] = request.POST.get('Function')
+                # NPI&OSR
+                if request.POST.get('SubFunction'):
+                    updata_dic['SubFunction_Com'] = request.POST.get('SubFunction')
+                if request.POST.get('Phase'):
+                    updata_dic['Phase'] = request.POST.get('Phase')
+                #INV
+                if request.POST.get('Month'):
+                    updata_dic['Time_Interval'] = request.POST.get('Month')
+                if request.POST.get('Year'):
+                    updata_dic['Year'] = request.POST.get('Year')
+                if PerExperience.objects.exclude(id=ID).filter(**updata_dic) and 'Phase' in updata_dic.keys():
+                    errMsgNumber = "您已申请过：Project:%s-Phase:%s-Function:%s-SubFunction:%s-Role:%s" % (updata_dic['Project'], updata_dic['Phase'],
+                                                                                             updata_dic['Function'], updata_dic['SubFunction_Com'],
+                                                                                             updata_dic['Role'])
+                elif PerExperience.objects.exclude(id=ID).filter(**updata_dic) and 'Phase' not in updata_dic.keys():
+                    errMsgNumber = "您已申请过：Project:%s-Phase:%s-Function:%s-SubFunction:%s-Role:%s" % (updata_dic['Project'], updata_dic['Phase'],
+                                                                                             updata_dic['Function'], updata_dic['SubFunction_Com'],
+                                                                                             updata_dic['Role'])
+                else:
+                    # 機種名變更可能隨之變動
+                    if 'Phase' in updata_dic.keys():
+                        if "OSR" in  updata_dic['Phase']:
+                            updata_dic['Dalei'] = "OSR"
+                        else:
+                            updata_dic['Dalei'] = "NPI"
+                    else:
+                        updata_dic['Dalei'] = "INV"
+                    updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(
+                        ComPrjCode=request.POST.get('Project')).first().DQAPLNum
+                    updata_dic['SS_Date'] = request.POST.get('SS_Date')
+                    #流程變更
+                    updata_dic['Status'] = "待簽核"
+
+                    updata_dic['Comments'] = request.POST.get('Comments')
+                    updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
+
+                    if updata_dic['Approved_Officer']:
+                        PerExperience.objects.filter(id=ID).update(**updata_dic)
+                    else:
+                        errMsgNumber = "Project:%s DQAPL的工号缺失" % updata_dic['Project']
+
+                for i in PerExperience.objects.filter(Proposer_Num=account_login):
+                    tableData.append(
+                        {"id": i.id, "Approved_Officer": PersonalInfo.objects.filter(
+                            Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first().CNName if
+                        PersonalInfo.objects.filter(Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first() else "人員信息中未匹配到該工號%s" % i.Approved_Officer,
+                         "Status": i.Status, "Department_Code": i.Department_Code,
+                         "Proposer_Num": i.Proposer_Num,
+                         "Proposer_Name": i.Proposer_Name, "Position_Now": i.Positions_Name,
+                         "Project": i.Project, "SS_Date": i.SS_Date.strftime("%Y-%m-%d"),
+                         "Year": i.Year if i.Year else '',
+                         "Time_Interval": i.Time_Interval if i.Time_Interval else '', "Phase": i.Phase if i.Phase else '', "Role": i.Role, "Function": i.Function,
+                         "SubFunction_Com": i.SubFunction_Com if i.SubFunction_Com else '',
+                         "KeypartNum": int(i.KeypartNum) if i.KeypartNum else '', "Comments": i.Comments if i.Comments else '',
+                         "Item": i.Item, "Dalei": i.Dalei,
+
+                         }
+                    )
+
+            else:
+                try:
+                    request.body
+                    # print(request.body)
+                except:
+                    # print('1')
+                    pass
+                else:
+                    # print('2')
+                    if 'Delete' in str(request.body):
+                        responseData = json.loads(request.body)
+                        for i in responseData['DeleteId']:
+                            PerExperience.objects.filter(id=i).delete()
+
+                        for i in PerExperience.objects.filter(Proposer_Num=account_login):
+                            tableData.append(
+                                {"id": i.id, "Approved_Officer": PersonalInfo.objects.filter(
+                                    Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first().CNName if
+                                PersonalInfo.objects.filter(Q(GroupNum=i.Approved_Officer) | Q(
+                                    SAPNum=i.Approved_Officer)).first() else "人員信息中未匹配到該工號%s" % i.Approved_Officer,
+                                 "Status": i.Status, "Department_Code": i.Department_Code,
+                                 "Proposer_Num": i.Proposer_Num,
+                                 "Proposer_Name": i.Proposer_Name, "Position_Now": i.Positions_Name,
+                                 "Project": i.Project, "SS_Date": i.SS_Date.strftime("%Y-%m-%d"),
+                                 "Year": i.Year if i.Year else '',
+                                 "Time_Interval": i.Time_Interval if i.Time_Interval else '',
+                                 "Phase": i.Phase if i.Phase else '', "Role": i.Role, "Function": i.Function,
+                                 "SubFunction_Com": i.SubFunction_Com if i.SubFunction_Com else '',
+                                 "KeypartNum": int(i.KeypartNum) if i.KeypartNum else '',
+                                 "Comments": i.Comments if i.Comments else '',
+                                 "Item": i.Item, "Dalei": i.Dalei,
+
+                                 }
+                            )
+            data = {
+                "EXPtable": tableData,
+                "sectionProject": sectionProject,
+                "sectionPhase": sectionPhase,
+                "errMsgNumber": errMsgNumber,
+
+            }
+            return HttpResponse(json.dumps(data), content_type="application/json")
+    except Exception as e:
+        errMsgNumber = str(e)
     return render(request, 'PersonalExperience/My_application.html', locals())
 
 @csrf_exempt
