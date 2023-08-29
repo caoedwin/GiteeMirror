@@ -1218,3 +1218,37 @@ AttributeError: 'Settings' object has no attribute 'PERMISSION_MENU_KEY_account'
 [2023-08-25 16:59:42,589] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
 [2023-08-25 16:59:42,599] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
 [2023-08-25 16:59:51,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 21105
+[2023-08-25 17:08:39,525] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48894
+[2023-08-25 17:08:39,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48894
+[2023-08-25 17:08:39,652] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-08-25 17:08:39,686] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-25 17:08:39,862] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-08-25 17:08:39,981] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-08-25 17:08:40,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24162
+[2023-08-28 08:29:49,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2023-08-28 08:29:49,867] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-28 08:29:49,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-28 08:29:49,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-28 08:29:55,056] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-28 08:29:55 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-08-28 08:29:55,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-08-28 08:29:55,225] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48889
+[2023-08-28 08:29:55,379] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 48889
+[2023-08-28 08:29:55,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-08-28 08:47:21,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 24152
+[2023-08-28 08:47:21,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-08-28 08:48:15,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Navigation/ HTTP/1.1" 200 112208
+[2023-08-28 08:48:15,922] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/test20.jpg HTTP/1.1" 304 0
+[2023-08-28 08:48:15,923] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/test12.jpg HTTP/1.1" 304 0
+[2023-08-28 08:48:16,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-08-28 09:39:37,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 24794
+[2023-08-28 09:39:37,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22554
+[2023-08-28 09:39:54,550] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 24794
+[2023-08-28 09:39:54,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22554
+[2023-08-28 09:40:00,973] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2023-08-28 09:40:00,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-28 09:40:01,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-08-28 09:40:01,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4677
+[2023-08-28 09:40:03,207] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-08-28 09:40:03 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-08-28 09:40:03,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-08-28 09:40:03,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 24794
+[2023-08-28 09:40:03,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 22554
