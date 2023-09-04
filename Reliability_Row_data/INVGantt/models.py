@@ -143,7 +143,7 @@ class INVGantt(models.Model):
     TP_Vendor = models.CharField("TP_Vendor", max_length=100)
     TP_Key_Parameter = models.CharField("TP_Key_Parameter", max_length=500)
     Lenovo_TP_PN = models.CharField("Lenovo_TP_PN", max_length=100)
-    Compal_TP_PN = models.CharField("Compal_TP_PN", max_length=100)
+    Compal_TP_PN = models.CharField("Compal_TP_PN", max_length=200)
     Issue_Link = models.CharField("Issue_Link", max_length=100)
     Remark = models.CharField("Remark", max_length=1000)
     Attend_Time = models.CharField("Attend_Time", max_length=100)

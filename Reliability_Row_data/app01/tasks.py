@@ -6,10 +6,19 @@ from CQM.models import CQM
 from DriverTool.models import DriverList_M, ToolList_M
 import datetime
 from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
 
 # 自定义要执行的task任务
 #在项目manage.py统计目录下cmd或pycharmTerminal运行celery worker -A mydjango -l info -P eventlet，celery -A mydjango beat -l info
 #窗口不能关闭
+@task
+def Ongoing_flag():
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'scheduleflag.txt'
+    print(file_flag)
+    with open(file_flag, 'w') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+
 @task
 def ProjectSync():
     print("Start")

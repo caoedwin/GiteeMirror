@@ -397,16 +397,20 @@ def CQM_upload(request):
                             Check_dic['Compal_R1_PN'] = i['Compal_R1_PN']
                             exsitdata['Compal_R1_PN'] = i['Compal_R1_PN']
                         else:
-                            exsitdata['Compal_R1_PN'] =''
+                            exsitdata['Compal_R1_PN'] = ''
                         if 'Compal_R3_PN' in i.keys():
                             Check_dic['Compal_R3_PN'] = i['Compal_R3_PN']
                             exsitdata['Compal_R3_PN'] = i['Compal_R3_PN']
                         else:
-                            exsitdata['Compal_R3_PN'] =''
+                            exsitdata['Compal_R3_PN'] = ''
+                        if 'R1S' in i.keys():
+                            Check_dic['R1S'] = i['R1S']
+                            exsitdata['R1S'] = i['R1S']
+                        else:
+                            exsitdata['R1S'] = ''
                         if CQM.objects.filter(**Check_dic).first():#已存在的不覆盖，提示去edit修改,如果允许excel修改的话这里需要将CQM_history也记录下来
                             err_ok = 1
                             CQMList.append(exsitdata)
-
 
                             # updatedic = {}
                             # updatedic['Projectinfo'] = Projectinfo

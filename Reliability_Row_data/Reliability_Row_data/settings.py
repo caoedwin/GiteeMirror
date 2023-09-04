@@ -510,6 +510,12 @@ CELERY_TIMEZONE = 'Asia/Shanghai'#要与系统时区TIME_ZONE一致
 
 from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
+    'task-flag': {
+        'task': 'app01.tasks.Ongoing_flag',
+        'schedule': 60.0#5.0, # 每5秒执行一次
+        # 'schedule': crontab(minute='30', hour='8', day_of_week='1,2,3,4,5')#每周的1-5，10点0分执行
+        # 'args': ()
+    },
     # 周期性任务
     'task-one': {
         'task': 'app01.tasks.ProjectSync',
