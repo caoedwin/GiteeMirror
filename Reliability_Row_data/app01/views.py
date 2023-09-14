@@ -239,9 +239,9 @@ def login(request):
     # 不允许重复登录
     if request.session.get('is_login', None):
         return redirect('/index/')
-    print(request.method)
+    # print(request.method)
     fbclid = request.GET.get('fbclid')
-    print(request.GET.get('next'), fbclid, '11', request.POST.get('next', '/'))
+    # print(request.GET.get('next'), fbclid, '11', request.POST.get('next', '/'))
 
 
     if request.method == "POST":
@@ -260,16 +260,16 @@ def login(request):
         user = UserInfo.objects.filter(account=Account).first()
         # print(type(user),type(user_obj))
         if user:
-
             # print (user.password)
             if user.password == Password:
                 # 往session字典内写入用户状态和数据,你完全可以往里面写任何数据，不仅仅限于用户相关！
+                # request.session.clear_expired()  # 将所有Session失效日期小于当前日期的数据删除，将过期的删除
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.username
                 request.session['account'] = Account
                 # request.session['Skin'] = "/static/src/blue.jpg"
-                request.session.set_expiry(5*60)
+                request.session.set_expiry(12*60*60)
                 # print('11')
                 Skin = request.COOKIES.get('Skin_raw')
                 # print(Skin)
@@ -281,11 +281,16 @@ def login(request):
                 # print('21')
                 # print(settings.MEDIA_ROOT,settings.MEDIA_URL)
                 # return HttpResponseRedirect(request.session['login_from'])
-                print(request.POST.get('next', '/'),'postnext')
-                if request.GET.get('next'):
+                Non_login_path = request.session.get('Non_login_path')
+                print(Non_login_path,'Non_login_path')
+                if Non_login_path:
                     # 记住来源的url，如果没有则设置为首页('/')
-                    print(request.GET.get('next'), request.META.get('HTTP_REFERER'), 'tttt')
-                    return redirect(request.GET.get('next'))
+                    return redirect(Non_login_path)
+                # print(request.POST.get('next', '/'),'postnext')
+                # if request.GET.get('next'):
+                #     # 记住来源的url，如果没有则设置为首页('/')
+                #     print(request.GET.get('next'), request.META.get('HTTP_REFERER'), 'tttt')
+                #     return redirect(request.GET.get('next'))
                 else:
                     # return redirect('/index/')
                     return redirect(request.META.get('HTTP_REFERER'))
@@ -749,11 +754,11 @@ def logout(request):
         # print('logout')
         return redirect("/login/")
     #flush()方法是比较安全的一种做法，而且一次性将session中的所有内容全部清空，确保不留后患。但也有不好的地方，那就是如果你在session中夹带了一点‘私货’，会被一并删除，这一点一定要注意
-    request.session.flush()
+    # request.session.flush()#不用是为了保留Non_login_path
     # 或者使用下面的方法
-    # del request.session['is_login']
-    # del request.session['user_id']
-    # del request.session['user_name']
+    del request.session['is_login']
+    del request.session['user_id']
+    del request.session['user_name']
     return redirect("/login/")
 
 @csrf_exempt

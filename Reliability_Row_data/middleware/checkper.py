@@ -37,6 +37,12 @@ class RbacMiddleware(MiddlewareMixin):
             # print("request:",request_url)
             # print (re.match(url, request_url))
             if re.match(url, request_url):
+                if '/login/' not in request_url and '/logout/' not in request_url:
+                    # print(path, 'path')
+                    request.session['Non_login_path'] = request_url
+                    # print(request.session.get('Non_login_path'))
+                    request.session.set_expiry(
+                        24 * 60 * 60)  # None：会使用全局的session配置。在settings.py中可以设置SESSION_COOKIE_AGE来配置全局的过期时间。默认是1209600秒，也就是2周的时间。
 
                 return None
 
@@ -56,6 +62,12 @@ class RbacMiddleware(MiddlewareMixin):
             # print(re.match(url, request_url))
             if re.match(url_pattern, request_url):
                 flag = True
+                if '/login/' not in request_url and '/logout/' not in request_url:
+                    # print(path, 'path')
+                    request.session['Non_login_path'] = request_url
+                    # print(request.session.get('Non_login_path'))
+                    request.session.set_expiry(
+                        24 * 60 * 60)
                 break
         if flag:
             # print("yes")
