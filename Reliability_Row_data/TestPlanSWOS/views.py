@@ -8,6 +8,7 @@ from app01.models import UserInfo, ProjectinfoinDCT
 import datetime,json,simplejson
 from django.db.models import Max,Min,Sum,Count,Q
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models.functions import ExtractMonth, ExtractYear
 
 
 # Create your views here.
@@ -137,7 +138,58 @@ def TestPlanSW_summary(request):
     # print(request.method,request.POST, request.GET, 'yyy')
     # print(request.body)
     # print(request.POST)
+
     if request.method == "POST":
+        Project_NB_OS_mode_info = [
+            # {"Year": "2018", "OS_Ver": "RS4", "WinX_Preload": 14, "WinX_S_Preload": 0},
+            # {"Year": "2018", "OS_Ver": "RS5", "WinX_Preload": 14, "WinX_S_Preload": 0},
+            # {"Year": "2018", "OS_Ver": "RS5 PTP Refresh", "WinX_Preload": 14, "WinX_S_Preload": 0},
+        ]
+        Project_dic = {
+
+        }
+        for i in TestProjectSW.objects.all().values('Project').distinct():
+            Project_dic[i['Project']] = [
+                TestProjectSW.objects.filter(Project=i["Project"]).annotate(Year=ExtractYear('ScheduleBegin')).values(
+                    "Year").order_by("Year").first()["Year"],
+                i['Project'].split("_")[0],
+                i['Project'].split("_")[1].split(' ')[1] if len(i['Project'].split("_")) > 1 and len(
+                    i['Project'].split("_")[1].split(' ')[1]) > 1 else "机种名不合规",
+                i['Project'].split("_")[2] if len(i['Project'].split("_")) > 2 else "",
+            ]
+            # print(TestProjectSW.objects.filter(Project=i["Project"]).values("ScheduleBegin").order_by("ScheduleBegin"))
+        # print(Project_dic)
+        for key, value in Project_dic.items():
+            if value[3]:
+                if "Smode" not in value[3]:  # PTP Refresh
+                    OS_Ver = value[2] + " " + value[3]
+                else:
+                    OS_Ver = value[2]
+            else:
+                OS_Ver = value[2]
+            check_dicdata = {"Year": value[0], "OS_Ver": OS_Ver}
+            if check_dicdata not in Project_NB_OS_mode_info:
+                Project_NB_OS_mode_info.append(check_dicdata)
+        for i in Project_NB_OS_mode_info:
+            WinX_num = 0
+            WinX_S_num = 0
+            for key, value in Project_dic.items():
+                if value[3]:
+                    if "Smode" not in value[3]:  # PTP Refresh
+                        OS_Ver = value[2] + " " + value[3]
+                    else:
+                        OS_Ver = value[2]
+                else:
+                    OS_Ver = value[2]
+                if value[0] == i['Year'] and OS_Ver == i['OS_Ver']:
+                    if "Smode" in value[3]:
+                        WinX_S_num += 1
+                    else:
+                        WinX_num += 1
+            i['WinX_Preload'] = WinX_num
+            i['WinX_S_Preload'] = WinX_S_num
+        print(Project_NB_OS_mode_info)
+
         if request.POST.get("isGetData") == "first":
             Customer = "C38(NB)"
             defaultproject = TestProjectSW.objects.filter(Customer=Customer).values("Project").distinct().order_by("-ScheduleBegin")

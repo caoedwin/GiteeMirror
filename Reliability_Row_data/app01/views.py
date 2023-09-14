@@ -22,6 +22,7 @@ from django.conf import settings
 import datetime,json,requests,time,simplejson
 from requests_ntlm import HttpNtlmAuth
 from INVGantt.models import INVGantt
+from django.http import HttpResponseRedirect
 # from app01.templatetags.custom_tag import *
 
 # class TestUEditorForm(forms.Form):
@@ -238,8 +239,10 @@ def login(request):
     # 不允许重复登录
     if request.session.get('is_login', None):
         return redirect('/index/')
-    # print(request.method)
-    # print('test')
+    print(request.method)
+    fbclid = request.GET.get('fbclid')
+    print(request.GET.get('next'), fbclid, '11', request.POST.get('next', '/'))
+
 
     if request.method == "POST":
         # login_form = UserForm(request.POST)
@@ -266,7 +269,7 @@ def login(request):
                 request.session['user_name'] = user.username
                 request.session['account'] = Account
                 # request.session['Skin'] = "/static/src/blue.jpg"
-                request.session.set_expiry(12*60*60)
+                request.session.set_expiry(5*60)
                 # print('11')
                 Skin = request.COOKIES.get('Skin_raw')
                 # print(Skin)
@@ -277,7 +280,15 @@ def login(request):
                 init_permission(request, user_obj)  # 调用init_permission，初始化权限
                 # print('21')
                 # print(settings.MEDIA_ROOT,settings.MEDIA_URL)
-                return redirect('/index/')
+                # return HttpResponseRedirect(request.session['login_from'])
+                print(request.POST.get('next', '/'),'postnext')
+                if request.GET.get('next'):
+                    # 记住来源的url，如果没有则设置为首页('/')
+                    print(request.GET.get('next'), request.META.get('HTTP_REFERER'), 'tttt')
+                    return redirect(request.GET.get('next'))
+                else:
+                    # return redirect('/index/')
+                    return redirect(request.META.get('HTTP_REFERER'))
             else:
                 message = "密码不正确！"
         else:

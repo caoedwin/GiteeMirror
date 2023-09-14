@@ -8,6 +8,12 @@ class PerExperience(models.Model):
         ('OSR', 'OSR'),
         ('INV', 'INV'),
     )
+    Status_choice = (
+        ('', ''),
+        ('待簽核', '待簽核'),
+        ('同意', '同意'),
+        ('拒絕', '拒絕'),
+    )
     Proposer_Num = models.CharField("申請人工號", max_length=10)
     Proposer_Name = models.CharField("申請人姓名(中)", max_length=20)
     Department_Code = models.CharField("課別", max_length=20)
@@ -25,7 +31,7 @@ class PerExperience(models.Model):
     KeypartNum = models.CharField("Keypart數量", max_length=100, null=True, blank=True)
     Comments = models.CharField("Comments", max_length=1000, null=True, blank=True)
     Approved_Officer = models.CharField("簽核人員工號", max_length=10)
-    Status = models.CharField("狀態", max_length=10)
+    Status = models.CharField("狀態", choices=Status_choice, max_length=10)
     EditTime = models.DateField("EditTime", null=True, blank=True)
     class Meta:
         verbose_name = '個人測試履歷'#不写verbose_name, admin中默认的注册名会加s

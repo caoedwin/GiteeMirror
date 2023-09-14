@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}My-application{% endblock %}
+{% block title %}人员履历-我的履历{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
 <style>
@@ -23,6 +23,25 @@ color:white;
  .el-pagination__total,.el-pagination__jump{
     color:white;
 }
+
+#sh {
+        font-size:18px;
+        font-family:微软雅黑;
+        border: 2px solid #9f9ca1;
+}
+#sh::-webkit-input-placeholder{
+        color:#2f97a8;
+        font-family:微软雅黑;
+}
+#sh::-moz-placeholder{
+        color:#2f97a8;
+        font-family:微软雅黑;
+}
+#sh:-ms-input-placeholder{
+        color:#2f97a8;
+        font-family:微软雅黑;
+}
+
 
 </style>
 {% endblock %}
@@ -216,9 +235,10 @@ color:white;
      </el-dialog>
 
 <template>
+<el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input><br>
 <el-table height="700" ref="multipleTable" border stripe
           @selection-change="handleSelectionChange" :row-key="getRowKeys"
-          :data="EXPtable.slice((currentPage-1)*pageSize,(currentPage)*pageSize)"
+          :data="datas.slice((currentPage-1)*pageSize,(currentPage)*pageSize)"
           :header-cell-style="{
                            'background-color':'#fafafa',
                            'font-weight':'800',
@@ -230,7 +250,7 @@ color:white;
         <el-table-column  prop="Department_Code" label="課別" align="center"></el-table-column>
         <el-table-column  prop="Proposer_Num" label="工號" align="center"></el-table-column>
         <el-table-column  prop="Proposer_Name" label="姓名(中)" align="center"></el-table-column>
-        <el-table-column  prop="Position_Now" label="職稱" align="center"></el-table-column>
+        <el-table-column  prop="Position_Now" label="現職稱" align="center"></el-table-column>
         <el-table-column  prop="Project" label="Project" align="center"></el-table-column>
         <el-table-column  prop="SS_Date" label="SS時間" align="center"></el-table-column>
         <el-table-column  prop="Year" label="年份" align="center"></el-table-column>
@@ -244,7 +264,7 @@ color:white;
 </el-table>
 <br/>
 <div class="block">
-    <el-pagination  @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[10, 50, 100, 200]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="totalNum">
+    <el-pagination  @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[10, 50, 100, 200]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="total_computed">
     </el-pagination>
 </div>
 </template>
@@ -265,7 +285,8 @@ color:white;
         data: function () {
             return {
 
-            EXPtable:[],
+            search:'',
+            tableContent:[],
             sectionProject: [],
             sectionSubFun: [],
             sectionPhase: [],
@@ -353,10 +374,10 @@ color:white;
                 axios.post("/PersonalExperience/My-application/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
-                    this.EXPtable=res.data.EXPtable;
+                    this.tableContent=res.data.EXPtable;
                     this.sectionProject=res.data.sectionProject;
                     this.sectionPhase=res.data.sectionPhase;
-                    this.totalNum=this.EXPtable.length;
+                    this.totalNum=this.tableContent.length;
                     let date = new Date();
                     this.sectionYear.push(date.getFullYear() - 1);
                     this.sectionYear.push(date.getFullYear());
@@ -479,8 +500,8 @@ color:white;
                             } //改变头格式，原生默认上传json格式
                         }).then((res) => {
                             this.formData = new FormData();
-                            this.EXPtable=res.data.EXPtable;
-                            this.totalNum=this.EXPtable.length;
+                            this.tableContent=res.data.EXPtable;
+                            this.totalNum=this.tableContent.length;
                             this.errMsgNumber = res.data.errMsgNumber;
                             if (this.errMsgNumber) {
                                 this.$alert(this.errMsgNumber, '提示', {
@@ -518,15 +539,15 @@ color:white;
                         this.formData.append('Phase', this.$refs[formName].model.Phase);
                         this.formData.append('Comments', this.$refs[formName].model.Comments);
                         this.formData.append("action", 'addSubmit');
-                        axios.post("/PersonalExperience/My-application/", this.formData, {
+                        axios.post("/PersonalExperience/My-application/", this.formData,{
                             headers: {
                                 'Content-Type': 'multipart/form-data',
                                 'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
                             } //改变头格式，原生默认上传json格式
                         }).then((res) => {
                             this.formData = new FormData();
-                            this.EXPtable=res.data.EXPtable;
-                            this.totalNum=this.EXPtable.length;
+                            this.tableContent=res.data.EXPtable;
+                            this.totalNum=this.tableContent.length;
                             this.errMsgNumber = res.data.errMsgNumber;
                             if (this.errMsgNumber) {
                                 this.$alert(this.errMsgNumber, '提示', {
@@ -566,8 +587,8 @@ color:white;
                              });
                              let data ={"isGetData":"Delete","DeleteId":params,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                              axios.post("/PersonalExperience/My-application/",data).then((res) => {
-                                        this.EXPtable=res.data.EXPtable;
-                                        this.totalNum=this.EXPtable.length;
+                                        this.tableContent=res.data.EXPtable;
+                                        this.totalNum=this.tableContent.length;
                                     })
                                     this.$refs.multipleTable.clearSelection()
                              this.$message({
@@ -593,6 +614,24 @@ color:white;
             },
 
         },
+        computed:{
+                datas(){//必须是el-table里面绑定的数据变量,不能与axios接受的变量名一样
+                    //console.log(111)
+                    const search=this.search;
+                    if(search){
+                        return this.tableContent.filter(data=>{//axios返回时接受数据的变量
+                            return Object.keys(data).some(key=>{
+                                return String(data[key]).toLowerCase().indexOf(search.toLowerCase())>-1
+                            })
+                        })
+                    }
+                    return this.tableContent//axios返回时接受数据的变量
+                },
+                total_computed () {
+                    this.Totalsize = this.datas.length;//edwin:export数据的个数
+                  return this.datas.length//必须是el-table里面绑定的数据变量
+                }
+            },
     })
     </script>
 
