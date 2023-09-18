@@ -176,7 +176,8 @@ def TestPlanSW_summary(request):
                 check_dic_Pro = {"Customer": Customer, "Project": Project, "Phase": Phase}
                 if TestProjectSW.objects.filter(**check_dic_Pro).first():
                     check_dic = {"Customer": Customer, "Phase": Phase,
-                                 "Projectinfo": TestProjectSW.objects.filter(**check_dic_Pro).first()}
+                                 "Projectinfo": TestProjectSW.objects.filter(**check_dic_Pro).first(),
+                                 "Owner__contains": "DQA"}
                     CodeBS = 0
                     CodeFS = 0
                     CodeTCM = 0
