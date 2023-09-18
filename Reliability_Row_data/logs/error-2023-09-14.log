@@ -1,0 +1,84 @@
+[2023-09-15 09:29:58,373] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:29:58,376] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:08,506] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:08,507] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:28,543] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:28,544] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:59,119] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:59,121] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:33:02,075] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:33:02,077] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:33:22,512] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:33:22,514] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 83094

@@ -485,6 +485,8 @@ SAFE_URL = [
     '/api-auth/.*',
     '/api/token/.*',
     '/CQM/api/.*',
+    '/PersonalInfo/api_Per/.*',
+    '/PersonalInfo/Perapi/',
     '/docs/.*',
     # '/redit_Lesson/.*',
     # r'/CDM/CDM-upload/',

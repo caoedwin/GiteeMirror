@@ -9365,6 +9365,44 @@ def Summary3(request):
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'PersonalInfo/Summary3.html', locals())
 
+from rest_framework.views import APIView
+from rest_framework.renderers import JSONRenderer
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from .authentication import MyJWTAuthentication
+from .permissions import MyPermission
+from .serializers import PersonalInfoserilizer
+class PerSeriView(APIView):
+    authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
+    # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+    # 所有用户都可以访问
+    # def get(self, request, *args, **kwargs):
+    #     return APIResponse(0, '自定义读 OK')
+    #
+    # # 必须是 自定义“管理员”分组 下的用户
+    # def post(self, request, *args, **kwargs):
+    #     return APIResponse(0, '自定义写 OK')
+    def get(self, request):
+        # print(request.GET)
+        # cqm = CQM.objects.all()
+        # print(2 ,request.auth)
+        cqm = []
+        checklist = {}
+        if request.GET.get("SAPNum"):
+            checklist['SAPNum'] = request.GET.get("SAPNum")
+        if request.GET.get("GroupNum"):
+            checklist['GroupNum'] = request.GET.get("GroupNum")
+        if request.GET.get("Customer"):
+            checklist['Customer'] = request.GET.get("Customer")
+        if request.GET.get("Status"):
+            checklist['Status'] = request.GET.get("Status")
+        if request.GET.get("DepartmentCode"):
+            checklist['DepartmentCode'] = request.GET.get("DepartmentCode")
+        pers = PersonalInfo.objects.filter(**checklist)
+        ser = PersonalInfoserilizer(instance=pers, many=True)
+        jsondata = JSONRenderer().render(ser.data)
+        return HttpResponse(jsondata, content_type='application/json', status=200)
+        # return Response('测试认证组件')
 
 @csrf_exempt
 def PublicArea(request):
@@ -9657,7 +9695,6 @@ def PublicArea(request):
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'PublicArea/PublicArea_Edit.html', locals())
-
 
 @csrf_exempt
 def codeareacheck(code):

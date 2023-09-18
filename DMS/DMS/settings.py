@@ -157,6 +157,7 @@ INSTALLED_APPS = [
     'DeviceA39',
     'ComputerMS',
     'ChairCabinetMS',
+    'DeviceCQT88',
 
 ]
 

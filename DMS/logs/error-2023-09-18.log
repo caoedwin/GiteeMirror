@@ -1,0 +1,672 @@
+[2023-09-18 11:01:26,574] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:08:34,494] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:57:22,813] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 405, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 58, in ImportPersonalInfo
+    if r.text["token"]:
+TypeError: string indices must be integers
+[2023-09-18 11:57:22,816] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:57:22,817] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108144
+[2023-09-18 11:58:13,999] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 406, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 58, in ImportPersonalInfo
+    print(r.text["token"])
+TypeError: string indices must be integers
+[2023-09-18 11:58:14,002] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:58:14,003] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108166
+[2023-09-18 11:58:37,108] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 406, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 59, in ImportPersonalInfo
+    if r.text["token"]:
+TypeError: string indices must be integers
+[2023-09-18 11:58:37,121] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:58:37,122] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108062
+[2023-09-18 11:59:23,437] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 406, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 58, in ImportPersonalInfo
+    print(type(r.textr), r.text)
+AttributeError: 'Response' object has no attribute 'textr'
+[2023-09-18 11:59:23,439] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:59:23,439] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108298
+[2023-09-18 11:59:43,326] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 406, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 59, in ImportPersonalInfo
+    if r.text["token"]:
+TypeError: string indices must be integers
+[2023-09-18 11:59:43,328] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 11:59:43,328] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108076
+[2023-09-18 12:00:33,980] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 407, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 60, in ImportPersonalInfo
+    if r.json["token"]:
+TypeError: 'method' object is not subscriptable
+[2023-09-18 12:00:33,982] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 12:00:33,982] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108150
+[2023-09-18 12:03:54,038] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /SysAdmin/UserInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 406, in UserInfoedit
+    ImportPersonalInfo()
+  File "C:\djangoproject\DMS\app01\views.py", line 59, in ImportPersonalInfo
+    if r.text["token"]:
+TypeError: string indices must be integers
+[2023-09-18 12:03:54,039] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 12:03:54,040] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /SysAdmin/UserInfo-edit/ HTTP/1.1" 500 108105
+[2023-09-18 15:13:46,124] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:16:44,101] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:16:54,490] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:17:10,022] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:17:30,013] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:17:42,683] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:18:03,641] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:20:02,499] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:21:43,911] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:22:44,623] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:23:35,640] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:24:07,203] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:24:59,746] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:26:25,984] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:28:31,816] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:29:50,596] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:32:40,503] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:33:59,997] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:35:29,061] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:36:19,086] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:36:54,009] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:46:05,989] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-18 15:46:06,773] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:46:06,793] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230675
+[2023-09-18 15:46:28,869] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:46:28,872] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 245523
+[2023-09-18 15:48:15,646] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 261, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 158, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 158, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 152, in get_menu_html
+    item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:48:15,649] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230594
+[2023-09-18 15:48:16,518] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 261, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 158, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 158, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 152, in get_menu_html
+    item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:48:16,519] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 245703
+[2023-09-18 15:50:22,856] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:50:22,860] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230879
+[2023-09-18 15:50:24,013] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:50:24,019] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 245988
+[2023-09-18 15:52:54,595] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'][-1],
+IndexError: list index out of range
+[2023-09-18 15:52:54,597] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230895
+[2023-09-18 15:52:55,576] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 157, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 151, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'][-1],
+IndexError: list index out of range
+[2023-09-18 15:52:55,578] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 246004
+[2023-09-18 15:55:32,570] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 263, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 160, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 160, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 154, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:55:32,587] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230869
+[2023-09-18 15:55:33,622] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 263, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 160, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 160, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 154, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:55:33,628] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 245978
+[2023-09-18 15:58:40,439] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 353, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 264, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 161, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 161, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 155, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:58:40,441] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 230883
+[2023-09-18 15:58:41,647] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\DMS\middleware\checkper.py", line 72, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 264, in rbac_menu
+    menu_html = get_menu_html(menu_data)
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 161, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 161, in get_menu_html
+    sub_menu = get_menu_html(item['children'])
+  File "C:\djangoproject\DMS\app01\templatetags\custom_tag.py", line 155, in get_menu_html
+    permission_title=item['title'].split("_")[2] if len(item['title'].split("_")) >= 2 else item['title'],
+IndexError: list index out of range
+[2023-09-18 15:58:41,654] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 245992
+[2023-09-18 16:12:52,379] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

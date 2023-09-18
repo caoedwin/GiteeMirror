@@ -351,3 +351,117 @@
 [2023-09-14 15:28:47,359] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
 [2023-09-14 15:28:49,009] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-14 15:28:49 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /MQM/MQM_search/ POST
 [2023-09-14 15:28:49,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /MQM/MQM_search/ HTTP/1.1" 200 106663
+[2023-09-15 09:29:54,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-09-15 09:29:54,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:29:58,373] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:29:58,375] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:29:58 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:29:58,376] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:00,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:30:00,850] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:30:08,506] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:08,506] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:30:08 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:30:08,507] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:08,660] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:30:08,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:30:21,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-09-15 09:30:21,712] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:30:28,543] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:28,544] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:30:28 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:30:28,544] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:32,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:30:32,990] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:30:59,119] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:30:59,120] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:30:59 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:30:59,121] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:30:59,658] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:30:59,691] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:32:59,039] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-09-15 09:32:59,059] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:32:59,743] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:32:59,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:33:02,075] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:33:02,076] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:33:02 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:33:02,077] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 82586
+[2023-09-15 09:33:02,938] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-15 09:33:02,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:33:11,392] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 24152
+[2023-09-15 09:33:11,695] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-15 09:33:20,020] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2023-09-15 09:33:20,053] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-15 09:33:20,134] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24142
+[2023-09-15 09:33:22,512] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 285, in login
+    print(Non_login_path,'Non_login_path')
+OSError: [Errno 22] Invalid argument
+[2023-09-15 09:33:22,513] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-15 09:33:22 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /login/ POST
+[2023-09-15 09:33:22,514] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /login/ HTTP/1.1" 500 83094
+[2023-09-15 09:33:22,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24142

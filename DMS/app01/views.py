@@ -33,7 +33,55 @@ from ChairCabinetMS.models import ChairCabinetLNV
 # logger.error('Error')
 # logger.critical('Critical')
 
-
+def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', DepartmentCode=''):
+    url = r'http://127.0.0.1:8002/PersonalInfo/api_Per/login/'
+    url2 = r'http://127.0.0.1:8002/PersonalInfo/Perapi/?'
+    requests.adapters.DEFAULT_RETRIES = 1
+    # s = requests.session()
+    # s.keep_alive = False  # 关闭多余连接
+    # getTestSpec=requests.get(url)
+    # headers = {'Connection': 'close'}
+    try:
+        headers = \
+            {
+                "Content-Type": "application/json;charset=UTF-8"
+            }
+        body = \
+            {
+                "username":"API_CQM","password":"Qs!3m6Tc7"
+            }
+        r = requests.post(url, headers=headers, data=json.dumps(body))
+    except:
+        # time.sleep(0.1)
+        print("Can't connect to DDIS Sercer or get token failed")
+        return 0
+    # print(json.loads(r.text)["token"])
+    if json.loads(r.text)["token"]:
+        Auth_token = "Bearer " + json.loads(r.text)["token"]
+        try:
+            GroupNum = "C1010S3"
+            headers = \
+                {
+                    "Authorization": Auth_token
+                }
+            content = \
+                {
+                    "Customer": Customer,
+                    "SAPNum": SAPNum,
+                    "GroupNum": GroupNum,
+                    "Status": Status,
+                    "DepartmentCode": DepartmentCode,
+                }
+            getTestSpec = requests.get(url2, headers=headers, params=content)
+        except:
+            # time.sleep(0.1)
+            print("Got nothing, try request agian")
+            return 0
+        print(getTestSpec.json())
+    # print(type(getTestSpec.json()), getTestSpec.json())
+    #     for i in getTestSpec.json():
+    #         print(i)
+        return getTestSpec.json()
 
 @csrf_exempt
 def login(request):
@@ -206,6 +254,44 @@ def signinA31(request):
     return render(request, 'SigninA31.html', locals())
 
 @csrf_exempt
+def signinCQT88(request):
+    # print("signin")
+    message = ""
+    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="A31").order_by("name")
+    # print(inputRoles)
+    if request.method == "POST":
+        # message = "请检查填写的内容！"
+        account = request.POST.get('inputAccount')
+        password = request.POST.get('inputPassword1')
+        CNname = request.POST.get('inputCNname')
+        username = request.POST.get('inputUsrname')
+        Seat = request.POST.get('inputSeat')
+        email = request.POST.get('inputEmail')
+        role = request.POST.get('inputRole')
+        roles = request.POST.getlist('inputRole')
+        # print(role, roles)
+        if UserInfo.objects.filter(account=account).first():
+            message = "工號已注冊！"
+        else:
+            for i in roles:
+                if Role.objects.filter(name=i).first():
+                    message = "注冊成功！"
+                else:
+                    message = "角色内容不對，請聯係管理員！"
+                    return render(request, 'SigninABO.html', locals())
+            createdic = {"account": account, "password": password, "CNname": CNname,
+                         "username": username, "Seat": Seat, "email": email,
+                         "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
+                         }
+            # Role.objects.filter(name=role).first(),
+            print(createdic)
+            UserInfo.objects.create(**createdic)
+            for i in roles:
+                UserInfo.objects.filter(account=account).first().role.add(Role.objects.filter(name=i).first(), )
+            return render(request, 'login.html', locals())
+    return render(request, 'signinCQT88.html', locals())
+
+@csrf_exempt
 def index(request):
     if not request.session.get('is_login', None):
         return redirect('/login/')
@@ -357,6 +443,9 @@ def UserInfoedit(request):
     select.append(selectAccount)
     if request.method == "POST":
         if request.POST.get("isGetData") == "first":
+            Pers_list = ImportPersonalInfo()
+            if Pers_list:
+                pass
             for i in UserInfo.objects.all():
                 content.append({
                     "id": i.id, "account": i.account, "CNname": i.CNname, "username": i.username, "password": i.password, "Email": i.email,

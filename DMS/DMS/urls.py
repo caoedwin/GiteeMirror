@@ -32,6 +32,7 @@ urlpatterns = [
     path(r'signinLNV/', views.signinLNV),
     path(r'signinABO/', views.signinABO),
     path(r'signinA31/', views.signinA31),
+    path(r'signinCQT88/', views.signinCQT88),
     path(r'', views.login),
     path(r'logout/', views.logout),
     path(r'Change_Password/', views.Change_Password),
@@ -46,6 +47,7 @@ urlpatterns = [
     path('DeviceLNV/', include('DeviceLNV.urls', namespace='DeviceLNV')),
     path('DeviceA39/', include('DeviceA39.urls', namespace='DeviceA39')),
     path('DeviceABO/', include('DeviceABO.urls', namespace='DeviceABO')),
+    path('DeviceCQT88/', include('DeviceCQT88.urls', namespace='DeviceCQT88')),
     path('ComputerMS/', include('ComputerMS.urls', namespace='ComputerMS')),
     path('ChairCabinetMS/', include('ChairCabinetMS.urls', namespace='ChairCabinetMS')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
