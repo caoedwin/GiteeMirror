@@ -240,7 +240,7 @@ def signinA31(request):
                     message = "注冊成功！"
                 else:
                     message = "角色内容不對，請聯係管理員！"
-                    return render(request, 'SigninABO.html', locals())
+                    return render(request, 'SigninA31.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
                          "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
@@ -257,8 +257,8 @@ def signinA31(request):
 def signinCQT88(request):
     # print("signin")
     message = ""
-    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="A31").order_by("name")
-    # print(inputRoles)
+    inputRoles = Role.objects.filter(name__contains="Users").filter(name__contains="CQT88").order_by("name")
+    print(inputRoles)
     if request.method == "POST":
         # message = "请检查填写的内容！"
         account = request.POST.get('inputAccount')
@@ -278,7 +278,7 @@ def signinCQT88(request):
                     message = "注冊成功！"
                 else:
                     message = "角色内容不對，請聯係管理員！"
-                    return render(request, 'SigninABO.html', locals())
+                    return render(request, 'signinCQT88.html', locals())
             createdic = {"account": account, "password": password, "CNname": CNname,
                          "username": username, "Seat": Seat, "email": email,
                          "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,

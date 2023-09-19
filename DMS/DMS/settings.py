@@ -340,6 +340,7 @@ SAFE_URL = [
     r'/signinLNV/',
     r'/signinABO/',
     r'/signinA31/',
+    r'/signinCQT88/',
     '/admin/.*',
     r'/Project_log/',
     r'/index/',

@@ -95,9 +95,9 @@
           <div class="form-group">
             <label style="font-weight: bolder">Site:</label>
             <select id="inputSeat" name="inputSeat" style="margin-left: 50px">
-                <option value="KS-Plant5" selected>KS-Plant5</option>
-                {% comment %}<option value="CQ">CQ</option>
-                <option value="CD">CD</option>{% endcomment %}
+{#                <option value="KS-Plant5" selected>KS-Plant5</option>#}
+                <option value="CQ">CQ</option>
+{#                <option value="CD">CD</option>#}
             </select>
           </div>
           <div class="form-group">
@@ -110,7 +110,7 @@
                     {% for line in inputRoles %}
                         <p><label style="background: white">
 
-                            {% if line.name != 'Device_ABO_Users' %}
+                            {% if line.name != 'Device_CQT88_Users' %}
                             <input id="inputRole" name="inputRole" type="checkbox" checked value={{line.name}} />{{line.name}}
                             {% else %}
                             <input id="inputRole" name="inputRole" type="checkbox" value={{line.name}} />{{line.name}}

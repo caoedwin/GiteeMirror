@@ -130,7 +130,7 @@
               </el-col>
               <el-col span="12">
                   <el-form-item label="Sub Fun." prop="SubFunc">
-                    <el-select v-model="ruleForm.SubFunc" placeholder="请选择">
+                    <el-select v-model="ruleForm.SubFunc" clearable placeholder="">
                         <el-option
                             v-for="item in sectionSubFun"
                             :key="item.value"
@@ -243,9 +243,12 @@
                           Phase: [
                             { required: true, message: '请填写Phase', trigger: 'change' }
                           ],
+                          /*
                           SubFunc: [
                             { required: true, message: '请填写Sub Fun.', trigger: 'change' }
                           ],
+
+                           */
                 }
             };
         },
@@ -324,36 +327,74 @@
                         if (this.formData.length == 0) {
                             this.formData = new FormData();
                         }
-                        this.formData.append('Project', this.$refs[formName].model.Project);
-                        this.formData.append('Role', this.$refs[formName].model.Role);
-                        this.formData.append('SS_Date', this.$refs[formName].model.SS_Date);
-                        this.formData.append('Function', this.$refs[formName].model.Func);
-                        this.formData.append('SubFunction', this.$refs[formName].model.SubFunc);
-                        this.formData.append('Phase', this.$refs[formName].model.Phase);
-                        this.formData.append('Comments', this.$refs[formName].model.Comments);
-                        this.formData.append("action", 'addSubmit');
-                        console.log(this.formData);
-                        axios.post("/PersonalExperience/NPI-upload/", this.formData, {
-                            headers: {
-                                'Content-Type': 'multipart/form-data',
-                                'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                            } //改变头格式，原生默认上传json格式
-                        }).then((res) => {
-                            this.formData = new FormData();
-                            this.errMsgNumber = res.data.errMsgNumber;
-                            if (this.errMsgNumber) {
-                                this.$alert(this.errMsgNumber, '提示', {
-                                    type: 'warning',
-                                });
-                            } else {
-                                try {
-                                    this.$refs[formName].resetFields();
-                                } catch (e) {
+                        if(this.$refs[formName].model.Role === "TE"){
+                            if(this.$refs[formName].model.SubFunc === ""){
+                                   this.$alert("Sub Func.不能為空！", '提示', {
+                                        type: 'warning',
+                                   });
+                            }else {
+                                this.formData.append('Project', this.$refs[formName].model.Project);
+                                this.formData.append('Role', this.$refs[formName].model.Role);
+                                this.formData.append('SS_Date', this.$refs[formName].model.SS_Date);
+                                this.formData.append('Function', this.$refs[formName].model.Func);
+                                this.formData.append('SubFunction', this.$refs[formName].model.SubFunc);
+                                this.formData.append('Phase', this.$refs[formName].model.Phase);
+                                this.formData.append('Comments', this.$refs[formName].model.Comments);
+                                this.formData.append("action", 'addSubmit');
+                                console.log(this.formData);
+                                axios.post("/PersonalExperience/NPI-upload/", this.formData, {
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data',
+                                        'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                                    } //改变头格式，原生默认上传json格式
+                                }).then((res) => {
+                                    this.formData = new FormData();
+                                    this.errMsgNumber = res.data.errMsgNumber;
+                                    if (this.errMsgNumber) {
+                                        this.$alert(this.errMsgNumber, '提示', {
+                                            type: 'warning',
+                                        });
+                                    } else {
+                                        try {
+                                            this.$refs[formName].resetFields();
+                                        } catch (e) {
 
-                                }
+                                        }
+                                    }
+                                })
                             }
-                        })
-                    } else {
+                        } else {
+                                this.formData.append('Project', this.$refs[formName].model.Project);
+                                this.formData.append('Role', this.$refs[formName].model.Role);
+                                this.formData.append('SS_Date', this.$refs[formName].model.SS_Date);
+                                this.formData.append('Function', this.$refs[formName].model.Func);
+                                this.formData.append('SubFunction', this.$refs[formName].model.SubFunc);
+                                this.formData.append('Phase', this.$refs[formName].model.Phase);
+                                this.formData.append('Comments', this.$refs[formName].model.Comments);
+                                this.formData.append("action", 'addSubmit');
+                                console.log(this.formData);
+                                axios.post("/PersonalExperience/NPI-upload/", this.formData, {
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data',
+                                        'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                                    } //改变头格式，原生默认上传json格式
+                                }).then((res) => {
+                                    this.formData = new FormData();
+                                    this.errMsgNumber = res.data.errMsgNumber;
+                                    if (this.errMsgNumber) {
+                                        this.$alert(this.errMsgNumber, '提示', {
+                                            type: 'warning',
+                                        });
+                                    } else {
+                                        try {
+                                            this.$refs[formName].resetFields();
+                                        } catch (e) {
+
+                                        }
+                                    }
+                                })
+                        }
+                    }else {
                         console.log('error submit!!');
                         return false;
                     }
