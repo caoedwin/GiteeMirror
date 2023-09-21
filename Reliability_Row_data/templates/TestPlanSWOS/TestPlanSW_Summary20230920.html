@@ -12,18 +12,18 @@
     margin: 10px auto 5px;
     position: relative;
 }
-   .showDataArea {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 20px;
-        -moz-box-shadow: 0px 0px 10px #333333;
-        -webkit-box-shadow: 0px 0px 10px #333333;
-        box-shadow: 0px 0px 10px #333333;
-        border-radius: 10px;
-        background-color: rgba(255,255,255,0.1);
-        margin: 20px 0 20px 0;
-        width: 100%;
+     .showDataArea{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    -moz-box-shadow: 0px 0px 10px #333333;
+    -webkit-box-shadow: 0px 0px 10px #333333;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 20px 0 20px 0;
+    width: 100%;
 
 }
 .showDataArea .container-echart{
@@ -63,57 +63,83 @@
     color:yellowgreen;
     font-size: xx-large;
 }
-
-    .el-collapse-item__header{
-
-        background-image: linear-gradient(to right, rgba(0,139,139,0), rgba(0,139,139,1));
-        {#background-image: linear-gradient(to right, rgba(70,130,180,0), rgba(70,130,180,1));#}
-    }
-
-    /*
-    .el-collapse .el-collapse-item__wrap{
-
-        background-color: #F5F7FA;
-
-    }
-    */
-
     </style>
 {% endblock %}
 {% block content %}
     <div id="app">
-<el-collapse v-model="activeName"  @change="handleChange">
-
-    <el-collapse-item name="1">
-          <template slot="title">
-              <h5>OS Version</h5>
-          </template>
-        <div>
-               <el-table border :data="preloadTable"
-                         :header-cell-style="{'background-color':'#fafafa',color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',
-                                             fontWeight:900,'border-bottom':'1px solid rgb(103, 194, 58)'}"
-                         style="border-radius: 10px;word-break: keep-all"
-                         v-loading="pltableloading"
-                         element-loading-text="數據更新中，請稍後">
-                       <el-table-column prop="Year" label="Year" align="center"></el-table-column>
-                       <el-table-column prop="OS_Ver" label="OS Ver." align="center"></el-table-column>
-                       <el-table-column prop="WinX_Preload" label="WinX Preload" align="center"></el-table-column>
-                       <el-table-column prop="WinX_S_Preload" label="WinX_S Preload" align="center"></el-table-column>
-              </el-table>
-        </div>
-        <div class="container-echart" v-cloak>
-          <div  id="main1" style="height:500px;"></div>
-        </div>
-
-    </el-collapse-item>
-    <el-collapse-item name="2" >
-
-      <template slot="title" >
-         <h5>TestPlanSW Summary</h5>
-      </template>
+{#    <div class="row" style="white-space: nowrap;">#}
+{#                    <div class="col-md-2">#}
+{#                    <label style="color: #FFF" for="Customer1">客戶別:</label>#}
+{#           <select id="Customer1" ref="Customer1"   v-model="selectedCustomer1" style="height:30px;width:90px;border-radius:5px 5px 5px 5px;">#}
+{#               <option v-for="(item,key,index) in selectItem" >${ item }</option>#}
+{#           </select>#}
+{#                        <div class="inputError" v-cloak v-show="customerError1">客戶別未選擇</div>#}
+{#                    </div>#}
+{#    <div class="col-md-1">#}
+{#                        <el-button size="small" style="background:#428bca;color:#fff;"  @click="searchalert1">Search</el-button>#}
+{#                    </div>#}
+{#    <el-button size="small" style="background:#428bca;color:#fff;position:absolute;right:10px;top:140px;" v-if="showCustomer1 && canEdit==1" @click="openRDchange">RD Change</el-button>#}
+{#    </div>#}
+{#{% csrf_token %}#}
+{# <el-dialog title="導致FFRT多次測試的Function Team" width="27%!important" :visible.sync="setrdchange">#}
+{#     <template>#}
+{#    <el-table stripe border :data="rdchangelist">#}
+{#    <el-table-column  label="Function team" >#}
+{#        <template slot-scope="scope">#}
+{#            <el-input class="edit-cell" v-if="showEdit[scope.$index]"    v-model="scope.row.Functionteam"></el-input>#}
+{#            <span v-else>${ functionteam[scope.$index] }</span>#}
+{#       </template>#}
+{#    </el-table-column>#}
+{#    <el-table-column  label="Quantity" >#}
+{#        <template slot-scope="scope">#}
+{#            <el-input class="edit-cell" v-if="showEdit[scope.$index]"    v-model="scope.row.Quantity"></el-input>#}
+{#            <span v-else>${ quantity[scope.$index] }</span>#}
+{#       </template>#}
+{#    </el-table-column>#}
+{#        <el-table-column label="操作"  align="center" fixed="right">#}
+{#        <template slot-scope="scope">#}
+{#            <el-button type="text" size="small"     @click.native="saveRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]">保存</el-button>#}
+{#            <el-button type="text" size="small"     @click.native="cancelRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]">取消</el-button>#}
+{##}
+{#            <el-button type="text" size="small"     @click.native="editRow(scope.$index, scope.row)"    v-if="!showBtn[scope.$index]">编辑</el-button>#}
+{#        </template>#}
+{#    </el-table-column>#}
+{#  </el-table>#}
+{#         </template>#}
+{#</el-dialog>#}
+{##}
+{#    <el-dialog title="机种列表" :visible.sync="setproject">#}
+{#        <el-table stripe border :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="proinfomation" @row-click="selectpro">#}
+{#            <el-table-column property="YEAR" label="YEAR" width="90"sortable></el-table-column>#}
+{#            <el-table-column property="COMPRJCODE" label="COMPRJCODE" width="140" sortable></el-table-column>#}
+{#            <el-table-column property="CUSPRJCODE" label="CUSPRJCODE" width="140" sortable></el-table-column>#}
+{#            <el-table-column property="PROJECT" label="PROJECT" width="200"></el-table-column>#}
+{#            <el-table-column property="SIZE" label="SIZE" width="70"></el-table-column>#}
+{#            <el-table-column property="CPU" label="CPU" width="70"></el-table-column>#}
+{#            <el-table-column property="PLATFORM" label="PLATFORM" width="150"></el-table-column>#}
+{#            <el-table-column property="VGA" label="VGA" width="220"></el-table-column>#}
+{#            <el-table-column property="OS SUPPORT" label="OS SUPPORT" width="110"></el-table-column>#}
+{#            <el-table-column property="SS" label="SS" width="110" sortable></el-table-column>#}
+{#            <el-table-column property="LD" label="LD"></el-table-column>#}
+{#            <el-table-column property="DQA PL" label="DQA PL"></el-table-column>#}
+{#            </el-table>#}
+{#        </el-dialog>#}
+{#        <span class="selectItem" v-cloak v-if="showCustomer1&&showProject1" style="color: white">當前信息：${ showCustomer1 }/${ showProject1 }</span>#}
+{#        <div class="showDataArea" v-if="Sum" v-cloak>#}
+{#      <!--柱状图-->#}
+{#      <div class="container-echart"v-cloak>#}
+{#          <div class="Quatity" id="main" style="height:400px;"></div>#}
+{#      </div>#}
+{#      <!--regression cycle  and Dashboard-->#}
+{#      <div class="container-echart"v-cloak>#}
+{#          <div class="Quatity" id="main1" style="height:400px;"></div>#}
+{#          </div>#}
+{#      </div>#}
+{##}
+{#        <hr/>#}
     <div class="row" style="white-space: nowrap;">
                     <div class="col-md-2">
-                    <label style="color: black;font-weight: bolder;font-size: 16px;" for="Customer">客戶別:</label>
+                    <label style="color: #FFF" for="Customer">客戶別:</label>
            <select id="Customer" ref="Customer"   v-model="selectedCustomer" style="height:30px;width:90px;border-radius:5px 5px 5px 5px;">
                <option value=""> </option>
                <option v-for="(item,key,index) in selectItem" >${ item }</option>
@@ -137,7 +163,7 @@
             </div>
     <div class="col-md-1">
 
-       <el-button size="small" :loading="elbuttonloading" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT">Search</el-button>
+                        <el-button size="small" :loading="elbuttonloading" style="background:#428bca;color:#fff;" value="Search" name="Search" @click="SEARCHALERT">Search</el-button>
                     </div>
         <div class="col-md-1">
            <el-tooltip class="item" effect="dark" content="搜索一段時期内所有機種Top10的執行時間及復測時間(默認是按照ScheduleBegin排序的最近的10個機種)" placement="right"><i class="el-icon-question"></i></el-tooltip>
@@ -148,14 +174,14 @@
                     </div>
     </div>
         {% csrf_token %}
-    <el-dialog title="選擇查詢信息" :visible.sync="settable">
-    <el-table stripe border ref="projectTable"  style="min-width: 100%;border-radius: 10px"
+<el-dialog title="選擇查詢信息" :visible.sync="settable">
+  <el-table stripe border ref="projectTable"  style="min-width: 100%;border-radius: 10px"
        :header-cell-style="{
        'background-color':'#fafafa',
        'font-weight':'800',
        'border-bottom':'1px solid rgb(103, 194, 58)'}"
             :default-sort = "{prop: 'SS', order: 'descending'}" height="500" :data="searchalert"
-        v-loading="tableloading1"
+  v-loading="tableloading1"
         element-loading-text="數據更新中，請稍後"
         border>
     <el-table-column type="selection"></el-table-column>
@@ -181,7 +207,7 @@
         <el-button @click="cancel">取 消</el-button>
         <el-button type="primary" @click="getMsg">确 定</el-button>
       </span>
-    </el-dialog>
+</el-dialog>
               <span class="selectItem" v-cloak  v-if="showCustomer" style="color: white">當前表格信息：${ showCustomer }</span>
         <div class="showDataArea" v-if="Top10" v-cloak>
       <!--柱状图-->
@@ -190,38 +216,34 @@
           <el-button :loading="tableloading" type="primary" size="mini" id="selectall2" flag="1">All</el-button>
       </div>
       <!--regression cycle  and Dashboard-->
-      <div class="container-echart" v-cloak>
+      <div class="container-echart"v-cloak>
           <div class="Quatity" id="main3" style="height:400px;"></div>
           <el-button :loading="tableloading" type="primary" size="mini" id="selectall3" flag="1">All</el-button>
           </div>
       </div>
-    <template v-cloak>
-    <el-table stripe border  :data="tableData" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}"
-            v-loading="tableloading"
-            :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
-            element-loading-text="數據更新中，請稍後"
-            border>
-        <el-table-column prop="Project" label="Project" align="center" width="160" align="center" fixed sortable></el-table-column>
-        <el-table-column prop="Phase" label="Phase" align="center" width="160" align="center" fixed sortable ></el-table-column>
-        <el-table-column prop="CaseLibrarytime" label="Case Library time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="ProjectBasetime" label="Project Base time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="Timew/Comfig" label="Time w/Comfig-follow matrix" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="SKUQ" label="SKU Q'ty" align="center" width="120" align="center"></el-table-column>
-        <el-table-column prop="Config-Automationtime" label="Config-Automation time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="Config-Leveragetime" label="Config-Leverage time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="Config-Smarttime" label="Config-Smart time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="Attendtime-Optimize" label="Attend time-Optimize" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="Config-Retesttime" label="Config-Retest time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
-        <el-table-column prop="H/C" label="H/C" align="center" width="80" align="center" :formatter="stateFormat"></el-table-column>
-        {% comment %}<el-table-column prop="H/C+OT" label="H/C+OT" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>{% endcomment %}
-        <el-table-column prop="ATO/TCM" label="Attendtime-Optimize/TimeComfig-followMatrix" align="center" width="200" align="center" :formatter="stateFormat"></el-table-column>
-        </el-table>
-        </template>
+<template v-cloak>
+<el-table stripe border  :data="tableData" id="out-table" :default-sort = "{prop: 'Project', order: 'descending'}"
+v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        border>
+    <el-table-column prop="Project" label="Project" align="center" width="160" align="center" fixed sortable></el-table-column>
+    <el-table-column prop="Phase" label="Phase" align="center" width="160" align="center" fixed sortable ></el-table-column>
+    <el-table-column prop="CaseLibrarytime" label="Case Library time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="ProjectBasetime" label="Project Base time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="Timew/Comfig" label="Time w/Comfig-follow matrix" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="SKUQ" label="SKU Q'ty" align="center" width="120" align="center"></el-table-column>
+    <el-table-column prop="Config-Automationtime" label="Config-Automation time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="Config-Leveragetime" label="Config-Leverage time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="Config-Smarttime" label="Config-Smart time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="Attendtime-Optimize" label="Attend time-Optimize" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="Config-Retesttime" label="Config-Retest time" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>
+    <el-table-column prop="H/C" label="H/C" align="center" width="80" align="center" :formatter="stateFormat"></el-table-column>
+    {% comment %}<el-table-column prop="H/C+OT" label="H/C+OT" align="center" width="160" align="center" :formatter="stateFormat"></el-table-column>{% endcomment %}
+    <el-table-column prop="ATO/TCM" label="Attendtime-Optimize/TimeComfig-followMatrix" align="center" width="200" align="center" :formatter="stateFormat"></el-table-column>
+    </el-table>
+    </template>
 
-    </el-collapse-item>
-
-</el-collapse>
-</div>
+    </div>
 {% endblock %}
 {% block scripts %}
 <script src="/static/js/es6/polyfill.min.js"></script>
@@ -238,13 +260,10 @@
         delimiters: ['${', '}'],
         data: function () {
             return {
-                activeName: ['1','2'],
                 Sum:{},
                 tableData: [],
-                OSVersion: [],
-                preloadTable :[],
                 searchalert: [],
-                selectItem: [],
+               selectItem: [],
                 projectArray: [],
                 phaseArray:[],
                 combineArray:[],
@@ -256,10 +275,9 @@
                 datePicker:'',
                 elbuttonloading:false,
                 tableloading:false,
-                pltableloading:false,
                 tableloading1:false,
                 Top10:[],
-                coloroder:{'B(FVT)': "#FFC000", 'B(SDV)': "#FFC000", 'C(SIT)': "#00FFFF", 'SIT2': "#589800", 'GSKU':"#06fa24",'FFRT': "#00B0F0", 'FFRT2': "#00B0F0", 'FFRT3': "#00B0F0",
+                coloroder:{'B(FVT)': "#FFC000", 'B(SDV)': "#FFC000", 'C(SIT)': "#00FFFF", 'SIT2': "#589800", 'GSKU':"#06fa24", 'Downgrade':"#06fa46",'FFRT': "#00B0F0", 'FFRT2': "#00B0F0", 'FFRT3': "#00B0F0",
                             'FFRT4': "#00B0F0", 'FFRT5': "#00B0F0", 'FFRT6': "#00B0F0", 'Wave': "#FE2E64", 'Wave2': "#FE2E64", 'Wave3': "#FE2E64",
                             'Wave4': "#FE2E64", 'Wave5': "#FE2E64", 'OOC': "#9F81F7", 'OOC2': "#9F81F7", 'OOC3': "#9F81F7", 'OOC4': "#9F81F7",
                             'OOC5': "#9F81F7", 'OOC6': "#9F81F7", "EELP+": "#9F81F7", 'Others': "#272727"},
@@ -311,17 +329,9 @@
                    return $1 + ',';
                 }).replace(/\.$/, '');
                  },
-
-            handleChange(val) {
-                console.log(val);
-            },
-
             getdata: function (e) {
-                    this.pltableloading = true;
-                    this.elbuttonloading = true;
                     this.tableloading = true;
-                var myChart1 = echarts.init(document.getElementById('main1'));
-                    myChart1.showLoading() // 在获取数据之前, 显示加载动画
+                    this.elbuttonloading = true;
                 var myChart3 = echarts.init(document.getElementById('main2'));
                     myChart3.showLoading() // 在获取数据之前, 显示加载动画
                 var myChart4 = echarts.init(document.getElementById('main3'));
@@ -330,15 +340,6 @@
                 axios.post("/TestPlanSWOS/TestPlanSWOS-summary/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()}
                 }).then((res) => {
-                    this.preloadTable = res.data['preloadTable'];
-                    this.OSVersion = res.data['OSVersion'];
-                    let yearData = []
-                    for(let i=0;i<this.preloadTable.length; i++){
-                        let yeardata = this.preloadTable[i].Year
-                        if(!yearData.includes(yeardata)){
-                            yearData.push(yeardata)
-                        }
-                    }
                     this.selectItem = res.data.select;
                     this.tableData = res.data['content'];
                     this.Top10 = res.data['Top10'];
@@ -361,74 +362,7 @@
                     for(var i=0;i<Regression_Top10_label.length;i++){
                             colorcode.push(this.coloroder[Regression_Top10_label[i]]);
                     }
-
-                   const seriesData = this.OSVersion.map((item, index) => ({
-                      name: item.name,
-                      type: 'bar',
-                      barGap: 0,
-                      barWidth: 100,
-                      data: item.data.map(value => ({ value })),
-                   }));
-
-
-                // 指定图表的配置项和数据
-                var option1 = {
-                    color:['#A2CD5A','#66CD00','#FFFF93',"#FFEC8B","#FFD306",'#FF9D6F','#FF8F59','#FF8040','#FF5809','#F75000','#D94600','#BB3D00','#A23400','#FF8000',
-                        '#EA7500','#D26900','#BB5E00','#9F5000','#844200','#642100'],
-                    title: {
-                        text: 'OS Version',
-                        textStyle: {
-                        fontSize:30
-                }
-                    },
-                    toolbox:{//保存圖片
-                        feature:{
-                          mark: { show: true },
-                          dataView: { show: true, readOnly: false },
-                          magicType: { show: true, type: ['line', 'bar', 'stack'] },
-                          restore: { show: true },
-                          saveAsImage: { show: true }
-                        }
-                    },
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                        },
-                        textAlign:'left',
-                    },
-                    legend: {
-                            left: 'center',
-                            top: 'top',
-                            data: ["WinX", "WinX_S"],
-                    },
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    xAxis: [
-                            {
-                            type: 'category',
-                            data: yearData,
-                                axisLabel : {//坐标轴刻度标签的相关设置。
-                                interval:0,
-                                {#rotate:"45"#}
-                            },
-                            axisTick: {
-                                alignWithLabel: true
-                            }
-                        }
-
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value'
-                        }
-                    ],
-                    series:seriesData
-                };
+                    //console.log(colorcode)
 
 
                 // 指定图表的配置项和数据
@@ -543,7 +477,7 @@
                     // 使用刚指定的配置项和数据显示图表。
                     //myChart3.clear();
                     //myChart4.clear();
-                    myChart1.setOption(option1,true);
+                    //myChart3.setOption(option3,true);
                     myChart3.setOption(option3,true);
                     var selectArr = myChart3.getOption().legend[0].data;
                     //console.log(selectArr,myChart3.getOption().legend,myChart3.getOption().legend[0],"selectArr")
@@ -599,17 +533,14 @@
                         myChart4.setOption(option4,true);
                     });
                window.addEventListener('resize', ()=>{
-               myChart1.resize();
                myChart3.resize();
                myChart4.resize();
 
         })
-                    myChart1.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     myChart3.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     myChart4.hideLoading() // 当服务器数据获取成功之后, 隐藏加载动画
                     this.tableloading = false;
                     this.elbuttonloading = false;
-                    this.pltableloading = false;
                 });
             },
             SEARCHALERT: function () {

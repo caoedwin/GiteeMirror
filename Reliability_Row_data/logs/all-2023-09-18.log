@@ -360,3 +360,41 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 [2023-09-18 15:45:57,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
 [2023-09-18 15:45:57,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
 [2023-09-18 15:45:57,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-19 10:14:25,521] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 10:14:25 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2023-09-19 10:14:25,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 200 13985
+[2023-09-19 10:14:36,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/NPI-upload/ HTTP/1.1" 200 40091
+[2023-09-19 10:14:36,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/images/Func.png HTTP/1.1" 304 0
+[2023-09-19 10:14:36,607] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 10:14:36,766] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 10:14:36 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /CQM/CQM_upload/ POST
+[2023-09-19 10:14:36,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_upload/ HTTP/1.1" 200 43644
+[2023-09-19 10:17:00,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/OSR-upload/ HTTP/1.1" 200 44054
+[2023-09-19 10:17:00,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 10:17:01,016] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 10:17:01 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /CQM/CQM_upload/ POST
+[2023-09-19 10:17:01,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_upload/ HTTP/1.1" 200 43644
+[2023-09-19 10:29:43,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/NPI-upload/ HTTP/1.1" 200 40136
+[2023-09-19 10:29:44,470] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 10:29:44 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2023-09-19 10:29:44,475] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 10:29:44,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalExperience/NPI-upload/ HTTP/1.1" 200 14292
+[2023-09-19 10:30:10,077] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 10:30:10 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2023-09-19 10:30:10,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalExperience/NPI-upload/ HTTP/1.1" 200 14292
+[2023-09-19 11:50:20,321] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary1/ HTTP/1.1" 200 70319
+[2023-09-19 11:50:20,368] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/echart/echart.js HTTP/1.1" 304 0
+[2023-09-19 11:50:20,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 11:50:21,238] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 11:50:21 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary1/ POST
+[2023-09-19 11:50:21,251] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary1/ HTTP/1.1" 200 5581
+[2023-09-19 11:50:29,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 67654
+[2023-09-19 11:50:29,674] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 11:50:30,901] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 11:50:30 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-09-19 11:50:30,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 14104
+[2023-09-19 11:53:38,479] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-19 11:53:38,479] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-19 11:53:38,479] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-19 11:53:38,545] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-19 11:53:49,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Summary2/ HTTP/1.1" 200 67654
+[2023-09-19 11:53:49,795] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-19 11:53:49,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-19 11:53:49,889] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-19 11:53:49,905] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-19 11:53:50,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
+[2023-09-19 11:53:51,501] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-19 11:53:51 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/Summary2/ POST
+[2023-09-19 11:53:51,519] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/Summary2/ HTTP/1.1" 200 14104

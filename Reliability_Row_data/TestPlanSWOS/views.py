@@ -9,6 +9,7 @@ import datetime,json,simplejson
 from django.db.models import Max,Min,Sum,Count,Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models.functions import ExtractMonth, ExtractYear
+from functools import reduce
 
 
 # Create your views here.
@@ -136,6 +137,25 @@ def TestPlanSW_summary(request):
         elif i == 'DQA_director':
             canExport = 1
     # print(request.method,request.POST, request.GET, 'yyy')
+    preloadTable = [
+        # {"Year": "2018", "OS_Ver": "RS4", "WinX_Preload": "14", "WinX_S_Preload": "0"},
+        # {"Year": "2018", "OS_Ver": "RS5", "WinX_Preload": "14", "WinX_S_Preload": "0"},
+        # {"Year": "2019", "OS_Ver": "19H1", "WinX_Preload": "14", "WinX_S_Preload": "0"},
+        # {"Year": "2019", "OS_Ver": "19H2", "WinX_Preload": "14", "WinX_S_Preload": "0"},
+    ]
+
+    OSVersion = [
+        {
+            "name": "WinX",
+            "data": [28, 0]
+        },
+        {
+            "name": "WinX_S",
+            "data": [55, 80]
+
+        }
+
+    ]
     # print(request.body)
     # print(request.POST)
 
@@ -148,13 +168,14 @@ def TestPlanSW_summary(request):
         Project_dic = {
 
         }
-        for i in TestProjectSW.objects.all().values('Project').distinct():
+        for i in TestProjectSW.objects.all().order_by("ScheduleBegin").values('Project').distinct():
+            # print(i['Project'].split("_")[1].split(' '),i['Project'].split("_")[1].split(' ')[1:])
             Project_dic[i['Project']] = [
                 TestProjectSW.objects.filter(Project=i["Project"]).annotate(Year=ExtractYear('ScheduleBegin')).values(
                     "Year").order_by("Year").first()["Year"],
                 i['Project'].split("_")[0],
-                i['Project'].split("_")[1].split(' ')[1] if len(i['Project'].split("_")) > 1 and len(
-                    i['Project'].split("_")[1].split(' ')[1]) > 1 else "机种名不合规",
+                reduce(lambda x, y: x + " " + y, i['Project'].split("_")[1].split(' ')[1:]) if len(i['Project'].split("_")) > 1 and len(
+                    i['Project'].split("_")[1].split(' ')) > 1 else "机种名不合规",
                 i['Project'].split("_")[2] if len(i['Project'].split("_")) > 2 else "",
             ]
             # print(TestProjectSW.objects.filter(Project=i["Project"]).values("ScheduleBegin").order_by("ScheduleBegin"))
@@ -188,7 +209,36 @@ def TestPlanSW_summary(request):
                         WinX_num += 1
             i['WinX_Preload'] = WinX_num
             i['WinX_S_Preload'] = WinX_S_num
-        print(Project_NB_OS_mode_info)
+        # print(Project_NB_OS_mode_info)
+        preloadTable = Project_NB_OS_mode_info
+        Year_list = []
+        for i in preloadTable:
+            if i["Year"] not in Year_list:
+                Year_list.append(i["Year"])
+        dataWinx = []
+        data_SWinx = []
+        for i in Year_list:
+            WinX_Year_num = 0
+            WinX_S_Year_num = 0
+            for j in preloadTable:
+                if j["Year"] == i:
+                    WinX_Year_num += j["WinX_Preload"]
+                    WinX_S_Year_num += j["WinX_S_Preload"]
+            dataWinx.append(WinX_Year_num)
+            data_SWinx.append(WinX_S_Year_num)
+        OSVersion = [
+            {
+                "name": "WinX",
+                "data": dataWinx
+            },
+            {
+                "name": "WinX_S",
+                "data": data_SWinx
+
+            }
+
+        ]
+
 
         if request.POST.get("isGetData") == "first":
             Customer = "C38(NB)"
@@ -1844,6 +1894,8 @@ def TestPlanSW_summary(request):
             "Execution_Top10": Execution_Top10,
             "Regression_Top10": Regression_Top10,
             'canExport': canExport,
+            'preloadTable': preloadTable,
+            'OSVersion': OSVersion,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")

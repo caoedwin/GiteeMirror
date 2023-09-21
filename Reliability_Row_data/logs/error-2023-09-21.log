@@ -1,0 +1,44 @@
+[2023-09-21 09:15:25,980] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSWOS/TestPlanSWOS-summary/ HTTP/1.1" 500 59
+[2023-09-21 09:15:41,026] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TestPlanSWOS/TestPlanSWOS-summary/ HTTP/1.1" 500 59
+[2023-09-21 09:27:41,373] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalExperience/Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 72, in process_request
+    HttpResponse.set_cookie(key="Non_login_path", value=request_url, max_age=24 * 60 * 60, expires=None)
+TypeError: set_cookie() missing 1 required positional argument: 'self'
+[2023-09-21 09:27:41,374] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /PersonalExperience/Summary/ HTTP/1.1" 500 74908
+[2023-09-21 09:28:25,642] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalExperience/Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 72, in process_request
+    HttpResponse.set_cookie(self, key="Non_login_path", value=request_url, max_age=24 * 60 * 60, expires=None)
+  File "C:\Python372\mecheck\lib\site-packages\django\http\response.py", line 169, in set_cookie
+    self.cookies[key] = value
+AttributeError: 'RbacMiddleware' object has no attribute 'cookies'
+[2023-09-21 09:28:25,644] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /PersonalExperience/Summary/ HTTP/1.1" 500 80192
+[2023-09-21 09:29:23,637] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalExperience/Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 72, in process_request
+    HttpResponse.set_cookie(key="Non_login_path", value=request_url, max_age=24 * 60 * 60, expires=None)
+TypeError: set_cookie() missing 1 required positional argument: 'self'
+[2023-09-21 09:29:23,638] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /PersonalExperience/Summary/ HTTP/1.1" 500 74908
+[2023-09-21 09:32:46,607] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalExperience/Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 74, in process_request
+    response.set_cookie(key="Non_login_path", value=request_url, max_age=24 * 60 * 60, expires=None)
+TypeError: set_cookie() missing 1 required positional argument: 'self'
+[2023-09-21 09:32:46,608] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /PersonalExperience/Summary/ HTTP/1.1" 500 75129

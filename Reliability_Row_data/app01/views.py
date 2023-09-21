@@ -270,6 +270,7 @@ def login(request):
                 request.session['account'] = Account
                 # request.session['Skin'] = "/static/src/blue.jpg"
                 request.session.set_expiry(12*60*60)
+                # print(request.session.get_expiry_age(), 'userinfo')
                 # print('11')
                 Skin = request.COOKIES.get('Skin_raw')
                 # print(Skin)
