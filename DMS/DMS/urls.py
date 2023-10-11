@@ -50,6 +50,8 @@ urlpatterns = [
     path('DeviceCQT88/', include('DeviceCQT88.urls', namespace='DeviceCQT88')),
     path('ComputerMS/', include('ComputerMS.urls', namespace='ComputerMS')),
     path('ChairCabinetMS/', include('ChairCabinetMS.urls', namespace='ChairCabinetMS')),
+    path('WirelessAP/', include('WirelessAP.urls', namespace='WirelessAP')),
+    path('TUMHistory/', include('TUMHistory.urls', namespace='TUMHistory')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

@@ -158,6 +158,8 @@ INSTALLED_APPS = [
     'ComputerMS',
     'ChairCabinetMS',
     'DeviceCQT88',
+    'WirelessAP',
+    'TUMHistory',
 
 ]
 
@@ -374,19 +376,32 @@ CELERY_TIMEZONE = 'Asia/Shanghai'#要与系统时区TIME_ZONE一致
 
 from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
-    # 周期性任务
-    'task-one': {
-        'task': 'app01.tasks.MailhtmlSync',
-        # 'schedule': 60.0, # 每60秒执行一次 86400.0
-        'schedule': crontab(minute='30', hour='8', day_of_week='1,2,3,4,5')#每周的1-5，10点0分执行
+    'task-two': {
+        'task': 'app01.tasks.GetTumdata',
+        # 'schedule': 30.0#86400.0#60.0, # 每60秒执行一次
+        'schedule': crontab(minute='0', hour='2'),  # 每周的1-7，2点0分执行
+        # 'schedule': 60.0,  # 5.0, # 每5秒执行一次
         # 'args': ()
     },
-    # 'task-two': {
-    #     'task': 'app01.tasks.ProjectSync',
-    #     # 'schedule': 30.0#86400.0#60.0, # 每60秒执行一次
-    #     'schedule': crontab(minute='0', hour='8', day_of_week='1,2,3,4,5')#每周的1-5，10点0分执行
+    'task-flag': {
+        'task': 'app01.tasks.Ongoing_flag',
+        'schedule': 60.0,#5.0, # 每5秒执行一次
+        # 'schedule': crontab(minute='30', hour='8', day_of_week='1,2,3,4,5'),#每周的1-5，10点0分执行
+        # 'args': ()
+        },
+    'task-flags': {
+        'task': 'app01.tasks.Ongoing_flags',
+        'schedule': 180.0,#5.0, # 每5秒执行一次
+        # 'schedule': crontab(minute='30', hour='8', day_of_week='1,2,3,4,5'),#每周的1-5，10点0分执行
+        # 'args': ()
+        },
+    # 周期性任务
+    # 'task-one': {
+    #     'task': 'app01.tasks.MailhtmlSync',
+    #     # 'schedule': 60.0, # 每60秒执行一次 86400.0
+    #     'schedule': crontab(minute='30', hour='8', day_of_week='1,2,3,4,5'),#每周的1-5，10点0分执行
     #     # 'args': ()
-    #     }
+    # },
 }
 
 #下面在settings文件中配置celery相关的配置：django-celery

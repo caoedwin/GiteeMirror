@@ -189,6 +189,7 @@ INSTALLED_APPS = [
     'AutoResult',
     'ABOTestPlan',
     'PersonalExperience',
+    'NonDQALesson',
 ]
 
 MIDDLEWARE = [

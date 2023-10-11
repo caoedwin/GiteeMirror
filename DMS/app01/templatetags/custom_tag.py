@@ -227,10 +227,12 @@ def get_menu_html(menu_data):
                         Class = "ti-joomla"
                     elif item['title'] == 'A_L_管理员' or item['title'] == 'D_L_管理员' or item['title'] == 'D_3_管理员' or item['title'] == 'D_A_管理员' or item['title'] == 'D_CT_管理员' or item['title'] == 'CoL_管理員' or item['title'] == 'ChL_管理員':
                         Class = "ti-notepad"
-                    elif item['title'] == 'P_S_個人設備Summary':
+                    elif item['title'] == 'P_S_個人設備Summary' or item['title'] == 'S_TUM_TUMHistory':
                         Class = "ti-bar-chart-alt"
                     elif item['title'] == 'S_A_系统管理':
                         Class = "ti-panel"
+                    elif item['title'] == 'W_L_WirelessAP':
+                        Class = "ti-layout-media-overlay-alt"
                     # else:
                     #     Class = "ti-arrow-circle-right"
 

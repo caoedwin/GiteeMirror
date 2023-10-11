@@ -1,0 +1,645 @@
+[2023-10-10 08:05:30,716] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 09:47:22,615] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 199, in SummaryTUM
+    tasks.GetTumdata()
+  File "C:\Python372\mecheck\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "C:\Python372\mecheck\lib\site-packages\celery\app\task.py", line 392, in __call__
+    return self.run(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 101, in GetTumdata
+    excel_path = Getexcelfiles()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 86, in Getexcelfiles
+    df = pd.read_excel(file_local)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1292, in parse
+    **kwds,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 539, in parse
+    data = self.get_sheet_data(sheet, convert_float)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 572, in get_sheet_data
+    for row_number, row in enumerate(sheet.rows):
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_read_only.py", line 78, in _cells_by_row
+    for idx, row in parser.parse():
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 150, in parse
+    row = self.parse_row(element)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 272, in parse_row
+    self.row_dimensions[attrs['r']] = attrs
+KeyError: 'r'
+[2023-10-10 09:47:22,619] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 09:47:22,619] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 159774
+[2023-10-10 09:50:21,765] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 199, in SummaryTUM
+    tasks.GetTumdata()
+  File "C:\Python372\mecheck\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "C:\Python372\mecheck\lib\site-packages\celery\app\task.py", line 392, in __call__
+    return self.run(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 100, in GetTumdata
+    excel_path = Getexcelfiles()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 85, in Getexcelfiles
+    df = pd.read_excel(file_local)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1292, in parse
+    **kwds,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 539, in parse
+    data = self.get_sheet_data(sheet, convert_float)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 572, in get_sheet_data
+    for row_number, row in enumerate(sheet.rows):
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_read_only.py", line 78, in _cells_by_row
+    for idx, row in parser.parse():
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 150, in parse
+    row = self.parse_row(element)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 272, in parse_row
+    self.row_dimensions[attrs['r']] = attrs
+KeyError: 'r'
+[2023-10-10 09:50:21,769] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 09:50:21,770] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 159796
+[2023-10-10 09:53:01,132] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 199, in SummaryTUM
+    tasks.GetTumdata()
+  File "C:\Python372\mecheck\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "C:\Python372\mecheck\lib\site-packages\celery\app\task.py", line 392, in __call__
+    return self.run(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 101, in GetTumdata
+    excel_path = Getexcelfiles()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 84, in Getexcelfiles
+    f.retrbinary('RETR %s' % file_remote, fp.write)
+  File "C:\Python372\lib\ftplib.py", line 447, in retrbinary
+    callback(data)
+TypeError: write() argument must be str, not bytes
+[2023-10-10 09:53:01,136] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 09:53:01,136] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 117955
+[2023-10-10 10:04:48,228] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 199, in SummaryTUM
+    tasks.GetTumdata()
+  File "C:\Python372\mecheck\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "C:\Python372\mecheck\lib\site-packages\celery\app\task.py", line 392, in __call__
+    return self.run(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 100, in GetTumdata
+    excel_path = Getexcelfiles()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 82, in Getexcelfiles
+    fp = open(file_local, 'wb', encoding='utf-8')
+ValueError: binary mode doesn't take an encoding argument
+[2023-10-10 10:04:48,240] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 10:04:48,241] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 108419
+[2023-10-10 10:09:33,476] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 199, in SummaryTUM
+    tasks.GetTumdata()
+  File "C:\Python372\mecheck\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "C:\Python372\mecheck\lib\site-packages\celery\app\task.py", line 392, in __call__
+    return self.run(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 102, in GetTumdata
+    excel_path = Getexcelfiles()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 87, in Getexcelfiles
+    df = pd.read_excel(file_local)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 1292, in parse
+    **kwds,
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_base.py", line 539, in parse
+    data = self.get_sheet_data(sheet, convert_float)
+  File "C:\Python372\mecheck\lib\site-packages\pandas\io\excel\_openpyxl.py", line 572, in get_sheet_data
+    for row_number, row in enumerate(sheet.rows):
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_read_only.py", line 78, in _cells_by_row
+    for idx, row in parser.parse():
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 150, in parse
+    row = self.parse_row(element)
+  File "C:\Python372\mecheck\lib\site-packages\openpyxl\worksheet\_reader.py", line 272, in parse_row
+    self.row_dimensions[attrs['r']] = attrs
+KeyError: 'r'
+[2023-10-10 10:09:33,480] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 10:09:33,481] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 159779
+[2023-10-10 10:30:09,945] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:07:46,170] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 236, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:07:46,190] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:07:46,192] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160241
+[2023-10-10 14:22:49,281] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 231, in SummaryTUM
+    '%Y-%m-%d %H:%M:%S')
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2023-1-1' does not match format '%Y-%m-%d %H:%M:%S'
+[2023-10-10 14:22:49,283] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:22:49,283] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 103897
+[2023-10-10 14:24:57,930] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 231, in SummaryTUM
+    '%Y-%m-%d %H:%M:%S')
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2023-1-100:00:00.000' does not match format '%Y-%m-%d %H:%M:%S'
+[2023-10-10 14:24:57,933] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:24:57,933] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 104023
+[2023-10-10 14:25:22,178] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 231, in SummaryTUM
+    '%Y-%m-%d %H:%M:%S')
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 362, in _strptime
+    data_string[found.end():])
+ValueError: unconverted data remains: .000
+[2023-10-10 14:25:22,180] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:25:22,181] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 103725
+[2023-10-10 14:25:40,643] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 236, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:25:40,646] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:25:40,646] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160415
+[2023-10-10 14:32:21,417] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 237, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:32:21,420] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:32:21,421] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160270
+[2023-10-10 14:33:25,045] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 238, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:33:25,049] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:33:25,049] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160183
+[2023-10-10 14:39:51,200] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 231, in SummaryTUM
+    "%Y-%m-%d %H:%M:%S.%f")
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2023-1-1' does not match format '%Y-%m-%d %H:%M:%S.%f'
+[2023-10-10 14:39:51,201] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:39:51,201] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 103872
+[2023-10-10 14:43:08,240] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 238, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:43:08,244] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:43:08,245] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160476
+[2023-10-10 14:45:02,383] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 238, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:45:02,387] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:45:02,387] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160620
+[2023-10-10 14:46:16,832] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 231, in SummaryTUM
+    "%Y-%m-%d %H:%M:%S.%f")
+  File "C:\Python372\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python372\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2023-1-1 00:00:01' does not match format '%Y-%m-%d %H:%M:%S.%f'
+[2023-10-10 14:46:16,833] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:46:16,834] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 103974
+[2023-10-10 14:54:38,371] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 238, in SummaryTUM
+    ReturnData=Test_Endperiod).aggregate(
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1408, in get_prep_value
+    value = super().get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1369, in to_python
+    parsed = parse_datetime(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\dateparse.py", line 106, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+[2023-10-10 14:54:38,375] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 14:54:38,376] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 160620
+[2023-10-10 15:43:15,811] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 317, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-10 15:43:15,813] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 15:43:15,813] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 102502
+[2023-10-10 16:08:24,989] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:30:25,946] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 319, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-10 16:30:25,948] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:30:25,948] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 98684
+[2023-10-10 16:37:02,651] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 319, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-10 16:37:02,652] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:37:02,653] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 98718
+[2023-10-10 16:37:27,138] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 320, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-10 16:37:27,141] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:37:27,142] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 98769
+[2023-10-10 16:38:06,240] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 320, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-10 16:38:06,249] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:38:06,252] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 98765
+[2023-10-10 16:40:26,701] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 332, in SummaryTUM
+    T88_chayi_dic[i[0]] = T88_shiji_dic[i[0]] - T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+[2023-10-10 16:40:26,712] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-10 16:40:26,714] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 99085
+[2023-10-11 10:12:04,320] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:13:49,199] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:15:23,851] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:15:40,859] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:19:13,443] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误

@@ -152,3 +152,35 @@ TypeError: set_cookie() missing 1 required positional argument: 'self'
 [2023-09-21 09:45:31,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24152
 [2023-09-21 09:45:31,723] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-21 09:45:31 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalExperience/Summary/ POST
 [2023-09-21 09:45:31,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalExperience/Summary/ HTTP/1.1" 200 5384
+[2023-09-22 08:59:09,244] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-22 08:59:09 None>None None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/api_Per/login/ POST
+[2023-09-22 08:59:09,246] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/api_Per/login/ HTTP/1.1" 200 501
+[2023-09-22 08:59:09,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Perapi/?Customer=&SAPNum=&GroupNum=C1010S3&Status=&DepartmentCode= HTTP/1.1" 200 896
+[2023-09-22 13:35:50,982] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-22 13:35:51,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-22 13:35:51,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/css/login.css?_=2.1 HTTP/1.1" 200 500
+[2023-09-22 13:35:51,160] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/img/logo.png HTTP/1.1" 200 115997
+[2023-09-22 13:35:51,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/particles/particles.js HTTP/1.1" 200 51264
+[2023-09-22 13:35:51,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/js/login.js?_=3.3 HTTP/1.1" 200 669
+[2023-09-22 13:35:51,161] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/particles/app.js HTTP/1.1" 200 3728
+[2023-09-22 13:35:51,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/img/bg.svg HTTP/1.1" 200 9547
+[2023-09-22 13:35:51,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/simpleui-x/fontawesome-free-5.8.1-web/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 74256
+[2023-09-22 13:35:51,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-22 13:35:51,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-22 15:13:53,345] [log.py:228] [log:log_response] [WARNING]- Method Not Allowed: /PersonalInfo/api_Per/login/
+[2023-09-22 15:13:53,350] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /PersonalInfo/api_Per/login/ HTTP/1.1" 405 7610
+[2023-09-22 15:13:53,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+[2023-09-22 15:13:53,458] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+[2023-09-22 15:13:53,459] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+[2023-09-22 15:13:53,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1131
+[2023-09-22 15:13:53,463] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+[2023-09-22 15:13:53,464] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+[2023-09-22 15:13:53,475] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 200 88145
+[2023-09-22 15:13:53,476] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+[2023-09-22 15:13:53,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+[2023-09-22 15:13:53,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+[2023-09-22 15:13:53,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+[2023-09-22 15:13:53,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-22 15:13:53,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-09-22 16:52:40,205] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-09-22 16:52:40 None>None None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /PersonalInfo/api_Per/login/ POST
+[2023-09-22 16:52:40,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/api_Per/login/ HTTP/1.1" 200 501
+[2023-09-22 16:52:40,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalInfo/Perapi/?Customer=&SAPNum=&GroupNum=C1010S3&Status=&DepartmentCode= HTTP/1.1" 200 896

@@ -15,6 +15,7 @@ from DeviceABO.models import DeviceABO
 from DeviceA39.models import DeviceA39
 from ComputerMS.models import ComputerLNV
 from ChairCabinetMS.models import ChairCabinetLNV
+from app01 import tasks
 
 # from app01.templatetags.custom_tag import *
 
@@ -300,6 +301,7 @@ def index(request):
         "Device_C38LNV": "/DeviceLNV/BorrowedDeviceLNV/",
         "Device_A39OBI": "/DeviceA39/BorrowedDeviceA39/",
         "Device_ABO": "/DeviceABO/BorrowedDeviceABO/",
+        "Device_CQT88": "/DeviceCQT88/BorrowedDeviceCQT88/",
         "ComputerMS_LNV": "/ComputerMS/BorrowedComputer/",
         "ChairCabinetMS_LNV": "/ChairCabinetMS/BorrowedChairCabinet/",
                          }
@@ -583,6 +585,7 @@ def Summary(request):
     ]
 
     if request.method == "POST":
+        # tasks.GetTumdata()
         if request.POST.get('isGetData') == "first":
             pass
         if request.POST.get('isGetData') == "SEARCH":

@@ -1,0 +1,258 @@
+[2023-10-09 11:38:43,957] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:38:50,375] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:42:34,749] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:44:12,483] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:44:30,364] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:44:43,664] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:45:38,635] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:46:28,301] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:47:35,886] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 11:47:55,919] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 13:13:26,475] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:10:41,906] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /admin/TUMHistory/unitbudget/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'TUMHistory_unitbudget.Category' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1717, in changelist_view
+    response = self.response_action(request, queryset=cl.get_queryset(request))
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1400, in response_action
+    response = func(self, request, queryset)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\actions.py", line 28, in delete_selected
+    deletable_objects, model_count, perms_needed, protected = modeladmin.get_deleted_objects(queryset, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1823, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\utils.py", line 128, in get_deleted_objects
+    obj = objs[0]
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 302, in __getitem__
+    qs._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'TUMHistory_unitbudget.Category' in 'field list'")
+[2023-10-09 14:10:41,951] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:10:41,954] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /admin/TUMHistory/unitbudget/ HTTP/1.1" 500 259633
+[2023-10-09 14:11:42,088] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /admin/TUMHistory/unitbudget/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'TUMHistory_unitbudget.Category' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\admin\options.py", line 1793, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'TUMHistory_unitbudget.Category' in 'field list'")
+[2023-10-09 14:11:42,108] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/TUMHistory/unitbudget/ HTTP/1.1" 500 239509
+[2023-10-09 14:24:19,341] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:24:21,544] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:30:49,219] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:30:51,668] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:42:27,790] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 99, in SummaryTUM
+    print(i['num_Jan'])
+TypeError: 'Unitbudget' object is not subscriptable
+[2023-10-09 14:42:27,792] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 14:42:27,792] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 92040
+[2023-10-09 16:46:44,969] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 154, in SummaryTUM
+    C38_shiji_dic[i[0]] = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38, InData__range=Test_Endperiod).aggregate(Sum('QTY'))['QTY__sum']
+TypeError: 'tuple' object does not support item assignment
+[2023-10-09 16:46:44,971] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 16:46:44,971] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 95906
+[2023-10-09 16:54:28,904] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 154, in SummaryTUM
+    C38_shiji_dic[i[0]] = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38, InData__range=Test_Endperiod).aggregate(Sum("QTY"))
+TypeError: 'tuple' object does not support item assignment
+[2023-10-09 16:54:28,905] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 16:54:28,905] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 95870
+[2023-10-09 16:55:53,522] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 156, in SummaryTUM
+    C38_shiji_dic[i[0]] = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38, InData__range=Test_Endperiod).aggregate(Sum("QTY"))['QTY__sum']
+TypeError: 'tuple' object does not support item assignment
+[2023-10-09 16:55:53,524] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-09 16:55:53,524] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 96073

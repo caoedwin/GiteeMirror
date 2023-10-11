@@ -2,12 +2,386 @@ from celery.task import task
 # from .views import ImportProjectinfoFromDCT
 from AdapterPowerCode.models import AdapterPowerCodeBR
 from .models import UserInfo
+
 # 自定义要执行的task任务
 #在项目manage.py统计目录下cmd或pycharmTerminal运行celery worker -A mydjango -l info -P eventlet，celery -A mydjango beat -l info
 #窗口不能关闭
 from django.core.mail import send_mail, send_mass_mail
 from django.core.mail import EmailMultiAlternatives
 import datetime
+from django.conf import settings
+
+headermodel_UnitInDQA_Tum = {
+    'ItemID': 'ItemID', 'SiteName': 'SiteName', 'FunctionName': 'FunctionName', 'CustomerCode': 'CustomerCode', 'SN': 'SN',
+    'PN': 'PN', 'CurrentKeeper': 'CurrentKeeper', '當前掛賬人': 'CurrentKeeper_CN',
+    'ApplyReasonCategory': 'ApplyReasonCategory', '領用原因': 'ApplyReason', '入賬日期': 'InData', '歸還期限': 'ReturnOffline', '退庫日期': 'ReturnData',
+    '當前狀態': 'Status',
+    'DeptNo': 'DeptNo', '系統編碼': 'TUMsystemCode', 'CostCenter': 'CostCenter', 'ProjectCode': 'ProjectCode', 'Description': 'Description',
+    'QTY': 'QTY', '機種階段': 'Phase', 'EOP日期': 'EOPDate',
+}
+headermodel_DQAUnit_TUMHistory = {
+    'ItemID': 'ItemID', 'SiteName': 'SiteName', 'FunctionName': 'FunctionName', 'CustomerCode': 'CustomerCode', 'SN': 'SN',
+    'PN': 'PN', 'CurrentKeeper': 'CurrentKeeper', '當前掛賬人': 'CurrentKeeper_CN',
+    'ApplyReasonCategory': 'ApplyReasonCategory', '領用原因': 'ApplyReason', '入賬日期': 'InData', '歸還期限': 'ReturnOffline', '退庫日期': 'ReturnData',
+    '當前狀態': 'Status',
+    'DeptNo': 'DeptNo', '系統編碼': 'TUMsystemCode', 'CostCenter': 'CostCenter', 'ProjectCode': 'ProjectCode', 'Description': 'Description',
+    'QTY': 'QTY', '機種階段': 'Phase', 'EOP日期': 'EOPDate',
+}
+headermodel_MateriaInDQA_Tum = {
+    'SiteName': 'SiteName', 'FunctionName': 'FunctionName', 'CustomerCode': 'CustomerCode',
+    'PN': 'PN', 'CurrentKeeper': 'CurrentKeeper', '當前掛賬人': 'CurrentKeeper_CN',
+    'ApplyReasonCategory': 'ApplyReasonCategory', '領用原因': 'ApplyReason', '入賬日期': 'InData', '歸還期限': 'ReturnOffline', '退庫日期': 'ReturnData',
+    '當前狀態': 'Status',
+    'DeptNo': 'DeptNo', 'ItemNo': 'ItemNo', 'CostCenter': 'CostCenter', 'ProjectCode': 'ProjectCode', 'Description': 'Description',
+    'QTY': 'QTY', 'PhaseName': 'PhaseName', 'EOP日期': 'EOPDate',
+}
+headermodel_DQAMateria_TUMHistory = {
+    'ReturnID': 'ReturnID', 'SiteName': 'SiteName', 'FunctionName': 'FunctionName', 'CustomerCode': 'CustomerCode',
+    'PN': 'PN', 'CurrentKeeper': 'CurrentKeeper', '當前掛賬人': 'CurrentKeeper_CN',
+    'ApplyReasonCategory': 'ApplyReasonCategory', '領用原因': 'ApplyReason', '入賬日期': 'InData', '歸還期限': 'ReturnOffline', '退庫日期': 'ReturnData',
+    '當前狀態': 'Status',
+    'DeptNo': 'DeptNo', 'ItemNo': 'ItemNo', 'CostCenter': 'CostCenter', 'ProjectCode': 'ProjectCode', 'Description': 'Description',
+    'QTY': 'QTY', 'PhaseName': 'PhaseName', 'EOP日期': 'EOPDate',
+}
+import pandas as pd
+from openpyxl import load_workbook
+from TUMHistory.models import *
+from django.db import transaction
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
+import logging
+import datetime
+logger = logging.getLogger('log')# 与loggers里自己定义的名称对应
+
+
+from ftplib import FTP
+def Getexcelfiles():
+    # FTP_Host = "10.129.83.18"
+    FTP_Host = "192.168.1.146"
+    FTP_account = "APIfiles"
+    FTP_PW = "DQA3@2020"
+    file_remote = ''
+    f = FTP(FTP_Host)  # 实例化FTP对象
+    f.login(FTP_account, FTP_PW)  # 登录
+    # 获取当前路径
+    pwd_path = f.pwd()
+    f.nlst()
+    # print("FTP当前路径:", pwd_path, f.nlst())
+
+    '''以二进制形式下载文件'''
+    file_local = ''
+    DATE_NOW = str(datetime.datetime.now().date())
+    # print(DATE_NOW)
+    filestoday = "ItemInfoToQAD_" + DATE_NOW.split("-")[0] + DATE_NOW.split("-")[1] + DATE_NOW.split("-")[2] + ".xlsx"
+    print(filestoday)
+    for file in f.nlst():
+        if file == filestoday:
+            file_local = settings.MEDIA_ROOT.replace('\\','/') + '/Tumfiles/' + file
+            file_remote = file
+    file_local_csv = settings.MEDIA_ROOT.replace('\\','/') + '/Tumfiles/' + "/ItemInfoToQAD.csv"
+    bufsize = 1024  # 设置缓冲器大小
+    fp = open(file_local, 'wb')
+    f.retrbinary('RETR %s' % file_remote, fp.write)
+    fp.close()
+    just_open(file_local)
+    # df = pd.read_excel(file_local)
+    # df.to_csv(file_local_csv, encoding='utf-8')
+    return file_local
+
+from win32com.client import Dispatch
+import pythoncom
+def just_open(filename):
+    print("just open")
+    pythoncom.CoInitialize()
+    xlApp = Dispatch("Excel.Application")
+
+    xlApp.Visible = False
+
+    xlBook = xlApp.Workbooks.Open(filename)
+
+    xlBook.Save()
+
+    xlBook.Close()
+
+@task
+def GetTumdata():
+    # try:
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'TUMInputflag.txt'
+    print(file_flag)
+    with open(file_flag, 'w') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+    # print('GetTumdata')
+    # ftp huoqu excel
+    # excel_path = settings.MEDIA_ROOT.replace('\\','/') + '/Tumfiles/' + "/ItemInfoToQAD_20230922.xlsx"
+    excel_path = Getexcelfiles()
+    #保存到本地数据库
+    # workbook = load_workbook(excel_path, data_only=False)
+    # print(workbook.get_sheet_names())
+    df = pd.read_excel(excel_path, sheet_name=None)
+    print(list(df))
+    all_result = []
+    pool = ThreadPoolExecutor(max_workers=16, thread_name_prefix='DDMSInputTumInfo')
+    df_UnitOTST = ''
+    df_MateriaOTST = ''
+    df_UnitRT = ''
+    df_MateriaRT = ''
+    UnitOTST_dict = []
+    MateriaOTST_dict = []
+    UnitRT_dict = []
+    MateriaRT_dict = []
+    for i in list(df):
+        if "UnitOTST" in i:
+            df_UnitOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+            UnitOTST_dict = df_UnitOTST.to_dict('records')
+
+        elif "MateriaOTST" in i:
+            df_MateriaOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+            MateriaOTST_dict = df_MateriaOTST.to_dict('records')
+
+        elif "UnitRT" in i:
+            df_UnitRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+            UnitRT_dict = df_UnitRT.to_dict('records')
+
+        elif "MateriaRT" in i:
+            df_MateriaRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+            MateriaRT_dict = df_MateriaRT.to_dict('records')
+
+    Result_UnitOTST_fun = pool.submit(UnitOTST_fun, UnitOTST_dict)
+    all_result.append(Result_UnitOTST_fun.result())
+    Result_MateriaOTST_fun = pool.submit(MateriaOTST_fun, MateriaOTST_dict)
+    all_result.append(Result_MateriaOTST_fun.result())
+    Result_UnitRT_fun = pool.submit(UnitRT_fun, UnitRT_dict)
+    all_result.append(Result_UnitRT_fun.result())
+    Result_MateriaRT_fun = pool.submit(MateriaRT_fun, MateriaRT_dict)
+    all_result.append(Result_MateriaRT_fun.result())
+    pool.shutdown()
+    msg = ''
+    for i in all_result:
+        print(str(i))
+        msg += str(i)
+
+
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'TUMInputflag.txt'
+    # print(file_flag)
+    with open(file_flag, 'a') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+        print(msg, file=f)
+    # except Exception as e:
+    #     path = settings.BASE_DIR
+    #     file_flag = path + '/' + 'TUMInputflag.txt'
+    #     with open(file_flag, 'a') as f:  # 设置文件对象
+    #         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+    #         print(str(e), file=f)
+
+
+@task
+def Ongoing_flag():
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'DMSscheduleflags.txt'
+    print(file_flag)
+    with open(file_flag, 'w') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+
+@task
+def Ongoing_flags():
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'DMSscheduleflag.txt'
+    print(file_flag)
+    with open(file_flag, 'w') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+
+def UnitOTST_fun(UnitOTST_dict):
+    print('11', datetime.datetime.now())
+    if UnitInDQA_Tum.objects.all():
+        UnitInDQA_Tum.objects.all().delete()
+    print('12', datetime.datetime.now())
+    rownum = 0
+    n = 1
+    update_list = []#querysetlist
+    for i in UnitOTST_dict:
+        # print(type(i),i)
+        rownum += 1
+        modeldata = {}
+        for key, value in i.items():
+            if key in headermodel_UnitInDQA_Tum.keys():
+                if key == "入賬日期" or key == "歸還期限" or key == "退庫日期" or key == "EOP日期":
+                    if value:
+                        modeldata[headermodel_UnitInDQA_Tum[key]] = value.replace("/", "-")
+                    else:
+                        modeldata[headermodel_UnitInDQA_Tum[key]] = None
+                else:
+                    modeldata[headermodel_UnitInDQA_Tum[key]] = value
+        update_list.append(UnitInDQA_Tum(**modeldata))
+        n = n + 1
+        if n % 50000 == 0:  # 50000写一次并清空列表
+            try:
+                with transaction.atomic():
+                    UnitInDQA_Tum.objects.bulk_create(update_list)
+                    update_list = []
+            except Exception as e:
+                alert = '此数据正被其他使用者编辑中...'
+                logger.info("DDMS_Task-InputTumInfo: UnitOTST_fun->" + str(e))
+    try:
+        with transaction.atomic():
+            UnitInDQA_Tum.objects.bulk_create(update_list)
+            alert = 0
+    except Exception as e:
+        alert = '此数据正被其他使用者编辑中...'
+        logger.info("DDMS_Task-InputTumInfo: UnitOTST_fun->" + str(e))
+    print('13', datetime.datetime.now())
+    return {"UnitOTST": rownum}
+
+def MateriaOTST_fun(MateriaOTST_dict):
+    print('21', datetime.datetime.now())
+    if MateriaInDQA_Tum.objects.all():
+        MateriaInDQA_Tum.objects.all().delete()
+    print('22', datetime.datetime.now())
+    rownum = 0
+    n = 1
+    update_list = []
+    for i in MateriaOTST_dict:
+        # print(type(i),i)
+        rownum += 1
+        modeldata = {}
+        for key, value in i.items():
+            if key in headermodel_MateriaInDQA_Tum.keys():
+                if key == "入賬日期" or key == "歸還期限" or key == "退庫日期" or key == "EOP日期":
+                    if value:
+                        modeldata[headermodel_MateriaInDQA_Tum[key]] = value.replace("/", "-")
+                    else:
+                        modeldata[headermodel_MateriaInDQA_Tum[key]] = None
+                else:
+                    modeldata[headermodel_MateriaInDQA_Tum[key]] = value
+        update_list.append(MateriaInDQA_Tum(**modeldata))
+        n = n + 1
+        if n % 50000 == 0:#50000写一次并清空列表
+            try:
+                with transaction.atomic():
+                    MateriaInDQA_Tum.objects.bulk_create(update_list)
+                    update_list = []
+            except Exception as e:
+                alert = '此数据正被其他使用者编辑中...'
+                logger.info("DDMS_Task-InputTumInfo: MateriaOTST_fun->" + str(e))
+    try:
+        with transaction.atomic():
+            MateriaInDQA_Tum.objects.bulk_create(update_list)
+            alert = 0
+    except Exception as e:
+        alert = '此数据正被其他使用者编辑中...'
+        logger.info("DDMS_Task-InputTumInfo: MateriaOTST_fun->" + str(e))
+    print('23', datetime.datetime.now())
+    # print(rownum)
+    return {"MateriaOTST": rownum}
+
+def UnitRT_fun(UnitRT_dict):
+    print('31', datetime.datetime.now())
+    # if DQAUnit_TUMHistory.objects.all():
+    #     DQAUnit_TUMHistory.objects.all().delete()
+    flag_hasdata = 0
+    if DQAMateria_TUMHistory.objects.all():
+        flag_hasdata = 1
+    print('32', datetime.datetime.now())
+    rownum = 0
+    updatenum = 0
+    n = 1
+    update_list = []
+    for i in UnitRT_dict:
+        # print(type(i),i)
+        rownum += 1
+        modeldata = {}
+        for key, value in i.items():
+            if key in headermodel_DQAUnit_TUMHistory.keys():
+                if key == "入賬日期" or key == "歸還期限" or key == "退庫日期" or key == "EOP日期":
+                    if value:
+                        modeldata[headermodel_DQAUnit_TUMHistory[key]] = value.replace("/", "-")
+                    else:
+                        modeldata[headermodel_DQAUnit_TUMHistory[key]] = None
+                else:
+                    modeldata[headermodel_DQAUnit_TUMHistory[key]] = value
+        check_UnitRT_dict = {"ItemID": modeldata["ItemID"], "SN": modeldata["SN"], "PN": modeldata["PN"]}
+        if flag_hasdata:
+            if not DQAUnit_TUMHistory.objects.only("ItemID", "SN", "PN").filter(**check_UnitRT_dict):
+                updatenum += 1
+                update_list.append(DQAUnit_TUMHistory(**modeldata))
+                n = n + 1
+        else:
+            updatenum += 1
+            update_list.append(DQAUnit_TUMHistory(**modeldata))
+            n = n + 1
+        if n % 50000 == 0:  # 50000写一次并清空列表
+            try:
+                with transaction.atomic():
+                    DQAUnit_TUMHistory.objects.bulk_create(update_list)
+                    update_list = []
+            except Exception as e:
+                alert = '此数据正被其他使用者编辑中...'
+                logger.info("DDMS_Task-InputTumInfo: UnitRT_fun->" + str(e))
+    print('34', datetime.datetime.now())
+    try:
+        with transaction.atomic():
+            DQAUnit_TUMHistory.objects.bulk_create(update_list)
+            alert = 0
+    except Exception as e:
+        alert = '此数据正被其他使用者编辑中...'
+        logger.info("DDMS_Task-InputTumInfo: UnitRT_fun->" + str(e))
+    print('33', datetime.datetime.now())
+    return {"UnitRT": (rownum, updatenum)}
+
+def MateriaRT_fun(MateriaRT_dict):
+    print('41', datetime.datetime.now())
+    flag_hasdata = 0
+    if DQAMateria_TUMHistory.objects.all():
+        flag_hasdata = 1
+    print('42', datetime.datetime.now())
+    rownum = 0
+    updatenum = 0
+    n = 1
+    update_list = []
+    for i in MateriaRT_dict:
+        # print(type(i),i)
+        rownum += 1
+        modeldata = {}
+        for key, value in i.items():
+            if key in headermodel_DQAMateria_TUMHistory.keys():
+                if key == "入賬日期" or key == "歸還期限" or key == "退庫日期" or key == "EOP日期":
+                    if value:
+                        modeldata[headermodel_DQAMateria_TUMHistory[key]] = value.replace("/", "-")
+                    else:
+                        modeldata[headermodel_DQAMateria_TUMHistory[key]] = None
+                else:
+                    modeldata[headermodel_DQAMateria_TUMHistory[key]] = value
+        check_MateriaRT_dict = {"ReturnID": modeldata["ReturnID"], "PN": modeldata["PN"]}
+        if flag_hasdata:
+            if not DQAMateria_TUMHistory.objects.filter(**check_MateriaRT_dict):
+                updatenum += 1
+                update_list.append(DQAMateria_TUMHistory(**modeldata))
+                n = n + 1
+        else:# 减少循环内的查询
+            updatenum += 1
+            update_list.append(DQAMateria_TUMHistory(**modeldata))
+            n = n + 1
+        if n % 50000 == 0:  # 50000写一次并清空列表
+            try:
+                with transaction.atomic():
+                    DQAMateria_TUMHistory.objects.bulk_create(update_list)
+                    update_list = []
+            except Exception as e:
+                alert = '此数据正被其他使用者编辑中...'
+                logger.info("DDMS_Task-InputTumInfo: MateriaRT_fun->" + str(e))
+    try:
+        with transaction.atomic():
+            DQAMateria_TUMHistory.objects.bulk_create(update_list)
+            alert = 0
+    except Exception as e:
+        alert = '此数据正被其他使用者编辑中...'
+        logger.info("DDMS_Task-InputTumInfo: MateriaRT_fun->" + str(e))
+    print('43', datetime.datetime.now())
+    return {"MateriaRT": (rownum, updatenum)}
+
+
+
+
 def mailattach(subject,from_email, to_email, message, attachname):
     # subject 主题 content 内容 to_addr 是一个列表，发送给哪些人
     # msg = EmailMultiAlternatives('邮件标题', '邮件内容', '发送方', ['接收方'])

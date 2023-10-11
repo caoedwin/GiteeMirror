@@ -1,0 +1,911 @@
+[2023-09-25 08:48:27,220] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-09-25 08:48:27,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-25 08:48:30,788] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 08:48:30,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-09-25 08:48:30,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:48:31,194] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:48:31,436] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 08:48:31 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-09-25 08:48:31,446] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1433
+[2023-09-25 08:48:31,662] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-09-25 08:48:31,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-09-25 08:48:46,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-25 08:48:46,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-25 08:48:48,670] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 08:48:54,317] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 08:48:54,328] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-09-25 08:48:55,229] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 37112
+[2023-09-25 08:49:00,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 39122
+[2023-09-25 08:49:00,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:49:07,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 08:54:05,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 08:54:08,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:54:09,089] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:54:09,315] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 08:54:09 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-09-25 08:54:09,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1433
+[2023-09-25 08:54:09,413] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-09-25 08:54:09,414] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-09-25 08:54:15,622] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 08:54:15,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 08:54:16,051] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 08:54:16 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /DeviceCQT88/BorrowedDeviceCQT88/ POST
+[2023-09-25 08:54:16,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 186
+[2023-09-25 08:54:27,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 08:54:52,595] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/14/change/ HTTP/1.1" 200 24944
+[2023-09-25 08:54:52,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:54:55,922] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 08:54:56,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 486583
+[2023-09-25 08:54:56,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:55:29,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/?p=1 HTTP/1.1" 200 420692
+[2023-09-25 08:55:30,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:55:42,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/?p=0 HTTP/1.1" 200 512609
+[2023-09-25 08:55:42,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:55:50,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/3/change/?_changelist_filters=p%3D0 HTTP/1.1" 200 33190
+[2023-09-25 08:55:50,569] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:55:59,134] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 08:55:59,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/3/change/?_changelist_filters=p%3D0 HTTP/1.1" 302 0
+[2023-09-25 08:55:59,776] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/?p=0 HTTP/1.1" 200 512758
+[2023-09-25 08:55:59,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 08:56:07,154] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:56:07,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 08:56:07,453] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 08:56:07 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-09-25 08:56:07,465] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1638
+[2023-09-25 08:56:07,555] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-09-25 08:56:07,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-09-25 08:56:07,593] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:14:01,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 09:14:01,592] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 09:14:03,479] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 09:14:03 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /DeviceCQT88/BorrowedDeviceCQT88/ POST
+[2023-09-25 09:14:03,492] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 186
+[2023-09-25 09:14:15,238] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:38:17,324] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 09:38:17,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 58116
+[2023-09-25 09:38:17,754] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 09:38:17 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /DeviceCQT88/BorrowedDeviceCQT88/ POST
+[2023-09-25 09:38:17,768] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DeviceCQT88/BorrowedDeviceCQT88/ HTTP/1.1" 200 186
+[2023-09-25 09:38:23,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:42:03,896] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:42:04,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:42:04,181] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 09:42:04 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 09:42:04,191] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 09:42:15,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:44:11,231] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:44:11,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:44:12,377] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 09:44:12 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 09:44:12,387] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 09:44:12,966] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:44:59,369] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:44:59,595] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:45:01,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:50:23,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:50:23,332] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:50:26,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:50:46,398] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 09:50:46,416] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 09:50:46,425] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 09:50:46,536] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 09:50:49,101] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 34, in GetTumdata
+    print(df_MateriaOTST)
+UnboundLocalError: local variable 'df_MateriaOTST' referenced before assignment
+[2023-09-25 09:50:49,105] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 09:50:49,106] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 92029
+[2023-09-25 09:56:13,710] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:56:13,921] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 09:56:14,134] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 09:56:14,293] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 09:56:15,131] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 09:56:15,134] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 09:56:16,820] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 09:56:53,600] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 09:56:53 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 09:56:53,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 10:02:07,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:02:07,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:02:07,718] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 10:02:07,773] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 10:02:08,019] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 10:02:08,023] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 10:02:08,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 10:02:44,672] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 10:02:44 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 10:02:44,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 10:07:34,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:07:35,033] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:07:35,073] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 10:07:35,122] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 10:07:35,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 10:07:35,386] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 10:07:36,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 10:08:20,153] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 10:08:20 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 10:08:20,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 10:13:00,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:13:00,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 10:13:00,611] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 10:13:00,743] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 10:13:01,802] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 10:13:01,805] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 10:13:03,066] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 10:13:34,050] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 10:13:34 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 10:13:34,071] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 11:03:05,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:03:05,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:03:05,711] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 11:03:05,762] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 11:03:05,993] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 11:03:05,993] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 11:03:06,703] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:03:55,391] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 90, in GetTumdata
+    MateriaInDQA_Tum.objects.create(**modeldata)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1288, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in as_sql
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1241, in <listcomp>
+    for obj in self.query.objs
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1240, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1182, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\fields\__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ['’‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。']
+[2023-09-25 11:03:55,401] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 11:03:55,402] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 212626
+[2023-09-25 11:15:24,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:15:24,541] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:15:24,784] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 11:15:24,880] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 11:15:25,635] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 11:15:25,637] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 11:15:27,097] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:16:11,878] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'ApplyReason' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 96, in GetTumdata
+    MateriaInDQA_Tum.objects.create(**modeldata)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.DataError: (1406, "Data too long for column 'ApplyReason' at row 1")
+[2023-09-25 11:16:11,891] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 11:16:11,892] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 296371
+[2023-09-25 11:20:10,136] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:20:10,354] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:20:10,380] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 11:20:10,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 11:20:10,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 11:20:10,664] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 11:20:11,334] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:20:49,633] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 11:20:49 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 11:20:49,661] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 11:21:00,434] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 11:21:02,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 486605
+[2023-09-25 11:21:02,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:21:04,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:21:16,063] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:21:18,041] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 696094
+[2023-09-25 11:21:18,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:21:35,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?p=2 HTTP/1.1" 200 600400
+[2023-09-25 11:21:35,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:22:12,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/96/change/?_changelist_filters=p%3D2 HTTP/1.1" 200 27610
+[2023-09-25 11:22:12,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:23:29,021] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?p=2 HTTP/1.1" 200 600400
+[2023-09-25 11:23:29,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:23:38,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?p=0 HTTP/1.1" 200 800120
+[2023-09-25 11:23:39,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:24:14,049] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:24:14,173] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 11:24:14,203] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 11:24:14,241] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 11:24:14,432] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 11:24:14,433] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 11:24:14,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:24:51,614] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 11:24:51 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 11:24:51,626] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 11:27:47,356] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 11:27:48,384] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 697501
+[2023-09-25 11:27:48,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:27:50,152] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 11:27:54,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?o=11.-4 HTTP/1.1" 200 818505
+[2023-09-25 11:27:54,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:27:57,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?o=-11.-4 HTTP/1.1" 200 822530
+[2023-09-25 11:27:57,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:27:58,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/631/change/?_changelist_filters=o%3D-11.-4 HTTP/1.1" 200 27670
+[2023-09-25 11:27:58,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 11:30:44,821] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/?o=-11.-4 HTTP/1.1" 200 822530
+[2023-09-25 11:30:47,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 13:37:14,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 13:37:15,669] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 697501
+[2023-09-25 13:37:15,880] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 13:37:18,096] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 13:37:18,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 13:37:19,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 13:37:19,241] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 13:37:19,282] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 13:37:19,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 13:37:19,434] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 13:37:20,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 13:37:23,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 13:37:38,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 486605
+[2023-09-25 13:37:38,826] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 13:48:55,063] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 302 0
+[2023-09-25 13:48:55,072] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-25 13:48:55,253] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-25 13:48:55,258] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-25 13:48:58,491] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 13:48:58,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-09-25 13:48:58,625] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 13:48:58,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32217
+[2023-09-25 13:48:59,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 13:48:59,058] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 13:48:59 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-09-25 13:48:59,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1638
+[2023-09-25 13:48:59,123] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-09-25 13:48:59,125] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-09-25 13:49:04,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 13:49:04,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 13:49:05,206] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 13:49:09,772] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 13:49:09,818] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 13:49:09,833] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 13:49:09,858] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 13:49:36,299] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 79, in GetTumdata
+    Result_UnitOTST_fun = pool.submit(UnitOTST_fun, UnitOTST_dict)
+  File "C:\Python372\lib\concurrent\futures\thread.py", line 153, in submit
+    raise RuntimeError('cannot schedule new futures after '
+RuntimeError: cannot schedule new futures after interpreter shutdown
+[2023-09-25 13:49:36,303] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 13:49:36,303] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 112272
+[2023-09-25 14:18:57,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:18:57,986] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:18:57,991] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 14:18:58,052] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 14:18:58,361] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 14:18:58,439] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 14:18:58,999] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:19:38,591] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 79, in GetTumdata
+    Result_UnitOTST_fun = pool.submit(UnitOTST_fun, UnitOTST_dict)
+  File "C:\Python372\lib\concurrent\futures\thread.py", line 153, in submit
+    raise RuntimeError('cannot schedule new futures after '
+RuntimeError: cannot schedule new futures after interpreter shutdown
+[2023-09-25 14:19:38,594] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 14:19:38,595] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 112272
+[2023-09-25 14:28:30,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 14:28:30,514] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:28:36,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:28:36,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:28:36,462] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 14:28:36,488] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 14:28:36,740] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 14:28:36,747] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 14:28:37,175] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:36:26,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:36:26,850] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:36:27,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:36:35,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-25 14:36:35,578] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/ HTTP/1.1" 500 59
+[2023-09-25 14:36:35,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-25 14:36:36,330] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-25 14:36:36,370] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/login/?next=/admin/ HTTP/1.1" 500 59
+[2023-09-25 14:36:36,390] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-25 14:36:36,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-25 14:36:37,043] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/login/?next=/admin/ HTTP/1.1" 500 59
+[2023-09-25 14:36:37,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-25 14:36:37,700] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-25 14:36:38,206] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:36:42,178] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 14:36:42,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-09-25 14:36:53,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 14:36:54,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:38:25,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:38:29,112] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 1334997
+[2023-09-25 14:38:29,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 14:38:39,233] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 14:38:46,614] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6475934
+[2023-09-25 14:38:46,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 14:43:53,408] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 14:43:57,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:43:58,094] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 14:43:58,224] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 14:43:58,344] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 14:43:59,273] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 14:43:59,396] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 14:44:00,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:51:05,179] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 15:51:05,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:51:24,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 15:51:24,304] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 15:51:24,304] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 15:51:24,322] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 15:51:24,493] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 15:51:24,547] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 15:51:25,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:52:11,005] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 15:52:11 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 15:52:11,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 15:52:37,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 15:52:45,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6475934
+[2023-09-25 15:52:45,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:53:19,595] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:57:46,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:57:49,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 1339597
+[2023-09-25 15:57:49,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:58:15,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:58:17,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 15:58:17,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:58:34,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:58:34,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 15:58:34,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:59:35,453] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 15:59:35,655] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 15:59:35,704] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:59:35,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:59:43,093] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 15:59:46,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 1339597
+[2023-09-25 15:59:46,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 15:59:49,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:02:19,456] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:02:19,556] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:02:19,582] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:02:19,618] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:02:19,847] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:02:19,907] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:02:20,359] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:00,105] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 16:03:00 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 16:03:00,119] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 16:03:34,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:03:34,847] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:03:34,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:03:34,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:38,938] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:03:39,065] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:03:39,092] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:03:39,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:40,949] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:41,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:03:41,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:03:42,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:43,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:48,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:03:49,017] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:03:49,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:05:28,910] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 16:05:29,273] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:05:36,201] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:05:36,272] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:05:36,317] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:05:36,339] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:05:36,532] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:05:36,541] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:05:36,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:06:10,405] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 16:06:10 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 16:06:10,414] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-25 16:06:48,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:06:48,914] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:06:48,939] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:06:49,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:06:51,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:06:59,920] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6475934
+[2023-09-25 16:06:59,951] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:07:15,075] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:07:17,853] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 1339597
+[2023-09-25 16:07:17,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:11:20,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:11:20,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:11:20,388] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:11:20,422] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:11:20,680] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:11:20,690] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:11:21,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:38:59,360] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:39:00,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:39:01,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:39:02,353] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:39:03,147] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:39:03,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:39:03,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:39:09,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:39:16,166] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6475934
+[2023-09-25 16:39:16,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:39:40,579] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:42:50,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 16:42:54,406] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:42:54,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:42:54,636] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:42:54,729] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:42:55,337] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:42:55,437] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:42:56,170] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:19,973] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:44:23,747] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6475934
+[2023-09-25 16:44:23,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:31,188] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:37,348] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:44:37,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 41747
+[2023-09-25 16:44:37,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:38,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:43,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:44:44,479] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 41747
+[2023-09-25 16:44:44,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:44,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:54,739] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:54,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:44:54,850] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:56,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:44:57,173] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:44:57,229] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:57,343] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:44:59,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:44:59,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:44:59,358] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:44:59,474] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:00,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:00,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:45:00,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:00,658] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:01,551] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:02,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:45:02,862] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:03,135] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:04,446] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:45:04,501] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:05,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:11,957] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:12,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:45:12,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:13,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:13,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:45:13,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:13,947] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:17,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:17,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:45:17,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:17,754] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:18,336] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:18,545] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:45:18,584] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:18,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:19,967] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:20,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:45:20,066] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:21,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:21,491] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:45:21,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:21,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:22,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:22,480] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:45:22,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:22,664] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:23,779] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:23,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 41747
+[2023-09-25 16:45:23,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:25,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:26,048] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 41747
+[2023-09-25 16:45:26,084] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:26,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:26,862] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:45:27,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:45:28,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:45:28,380] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 500 59
+[2023-09-25 16:45:29,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:45:29,168] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:45:29,540] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:46:14,936] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:46:17,639] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:46:18,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:46:18,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-25 16:46:22,363] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-25 16:46:23,042] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:46:23,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:46:26,427] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:46:28,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-25 16:46:31,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:46:34,919] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:47:15,658] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 691, in _read_bytes
+    data = self._rfile.read(num_bytes)
+  File "C:\Python372\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 657, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 699, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,))
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\djangoproject\DMS\app01\tasks.py", line 206, in UnitRT_fun
+    DQAUnit_TUMHistory.objects.bulk_create(update_list)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 465, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1155, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 657, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 699, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,))
+django.db.utils.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 90, in GetTumdata
+    all_result.append(Result_UnitRT_fun.result())
+  File "C:\Python372\lib\concurrent\futures\_base.py", line 432, in result
+    return self.__get_result()
+  File "C:\Python372\lib\concurrent\futures\_base.py", line 384, in __get_result
+    raise self._exception
+  File "C:\Python372\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 210, in UnitRT_fun
+    logger.info("DDMS_Task-InputTumInfo: UnitRT_fun->" + e)
+TypeError: can only concatenate str (not "OperationalError") to str
+[2023-09-25 16:47:15,703] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 16:47:15,707] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 485931
+[2023-09-25 16:47:15,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-25 16:47:15,934] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-25 16:47:56,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 23140
+[2023-09-25 16:47:57,541] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:48:06,648] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:48:06,672] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:48:06,679] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:48:06,681] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:48:07,675] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:48:07,763] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 16:48:07,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 16:48:07,778] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 16:48:07,933] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 16:48:07,985] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 16:48:08,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 16:50:39,726] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\djangoproject\DMS\app01\tasks.py", line 206, in UnitRT_fun
+    DQAUnit_TUMHistory.objects.bulk_create(update_list)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 465, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1155, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python372\mecheck\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\app01\views.py", line 588, in Summary
+    tasks.GetTumdata()
+  File "C:\djangoproject\DMS\app01\tasks.py", line 90, in GetTumdata
+    all_result.append(Result_UnitRT_fun.result())
+  File "C:\Python372\lib\concurrent\futures\_base.py", line 432, in result
+    return self.__get_result()
+  File "C:\Python372\lib\concurrent\futures\_base.py", line 384, in __get_result
+    raise self._exception
+  File "C:\Python372\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\djangoproject\DMS\app01\tasks.py", line 210, in UnitRT_fun
+    logger.info("DDMS_Task-InputTumInfo: UnitRT_fun->" + e)
+TypeError: can only concatenate str (not "InternalError") to str
+[2023-09-25 16:50:39,748] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-25 16:50:39,749] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /Summary/ HTTP/1.1" 500 486398
+[2023-09-25 17:04:01,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 17:04:01,172] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /Summary/ HTTP/1.1" 200 37518
+[2023-09-25 17:04:01,176] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-09-25 17:04:01,196] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-09-25 17:04:01,358] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-09-25 17:04:01,368] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-09-25 17:04:01,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23140
+[2023-09-25 17:23:08,271] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-09-25 17:23:08 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /Summary/ POST
+[2023-09-25 17:23:08,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /Summary/ HTTP/1.1" 200 17477
+[2023-09-26 07:57:48,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-09-26 07:57:48,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-09-26 07:57:48,651] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:57:48,665] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:57:51,794] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-09-26 07:57:51,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-09-26 07:57:52,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36747
+[2023-09-26 07:57:52,434] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:57:52,503] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:57:56,126] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:57:56,209] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:57:56,325] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/ HTTP/1.1" 200 41727
+[2023-09-26 07:57:56,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 07:58:14,236] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:58:14,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:58:26,210] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/ HTTP/1.1" 200 6576835
+[2023-09-26 07:58:26,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 07:59:42,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqaunit_tumhistory/?p=249 HTTP/1.1" 200 6694609
+[2023-09-26 07:59:42,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 07:59:52,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:59:52,832] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:59:55,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 07:59:55,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 07:59:56,567] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/dqamateria_tumhistory/ HTTP/1.1" 200 868994
+[2023-09-26 07:59:56,627] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 08:00:01,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 08:00:02,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/ HTTP/1.1" 200 40174
+[2023-09-26 08:00:02,030] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 08:00:02,057] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 08:00:05,539] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 08:00:05,570] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 08:00:44,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 08:00:44,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 08:00:47,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/? HTTP/1.1" 200 41727
+[2023-09-26 08:00:47,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 08:00:48,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/unitindqa_tum/? HTTP/1.1" 200 41727
+[2023-09-26 08:00:48,522] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 08:00:49,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-09-26 08:00:49,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-09-26 08:00:50,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/? HTTP/1.1" 200 40174
+[2023-09-26 08:00:50,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-09-26 08:00:51,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/TUMHistory/materiaindqa_tum/? HTTP/1.1" 200 40174
+[2023-09-26 08:00:51,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684

@@ -91,6 +91,7 @@ urlpatterns = [
     path('mongotest/', include('mongotest.urls', namespace='mongotest')),
     path('INVGantt/', include('INVGantt.urls', namespace='INVGantt')),
     path('SpecDownload/', include('SpecDownload.urls', namespace='SpecDownload')),
+    path('NonDQALesson/', include('NonDQALesson.urls', namespace='NonDQALesson')),
     path('Issue_Notes/', include('Issue_Notes.urls', namespace='Issue_Notes')),
     path('KnowIssue/', include('KnowIssue.urls', namespace='KnowIssue')),
     path('ABOTestPlan/', include('ABOTestPlan.urls', namespace='ABOTestPlan')),
