@@ -564,16 +564,138 @@ def SummaryMateria(request):
         if i == 'Sys_Admin':
             # editPpriority = 4
             canEdit = 1
-    if request.method == "POST":
-        if request.POST:
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)#用一次后会改变all_queryset本身，下次要出府使用需要重新定义
+    selectProposer = [
+        # {"value": "20795434", "number": "張宵凌"}, {"value": "20720831", "number": "劉婭茹"},
+    ]
+    for i in all_queryset.values("CurrentKeeper", "CurrentKeeper_CN").distinct().order_by("CurrentKeeper"):
+        selectProposer.append({"value": i["CurrentKeeper"], "number": i["CurrentKeeper_CN"]})
 
-            data = {
-                "C38Table": C38Table,
-                "T88Table": T88Table,
-                "sectionCustomer": sectionCustomer,
-                "sectionCategory": sectionCategory,
-                "errMsgNumber": errMsgNumber,
-                "canEdit": canEdit,
-            }
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)
+    sectionProject = [
+        # "GLS4I", "FLMA0", "GLS4A"
+    ]
+    for i in all_queryset.values("ProjectCode").distinct().order_by("ProjectCode"):
+        sectionProject.append(i["ProjectCode"])
+
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)
+    sectionCustomer = [
+        # "C38(AIO)", "A39", "C38(NB)"
+                       ]
+    for i in all_queryset.values("CustomerCode").distinct().order_by("CustomerCode"):
+        sectionCustomer.append(i["CustomerCode"])
+
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)
+    sectionPhase = [
+        # "B(DVT)", "C", "FFRT"
+    ]
+    for i in all_queryset.values("PhaseName").distinct().order_by("PhaseName"):
+        sectionPhase.append(i["PhaseName"])
+
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)
+    sectionPN = [
+        # "GA00000MP20", "DDC00002700", "DD10000WW00"
+    ]
+    for i in all_queryset.values("PN").distinct().order_by("PN"):
+        sectionPN.append(i["PN"])
+
+    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
+    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    all_queryset = queryset_data_OTST.union(queryset_data_RT)
+    sectionStatus = [
+        # "測試中", "已退庫"
+                     ]
+    for i in all_queryset.values("Status").distinct().order_by("Status"):
+        sectionStatus.append(i["Status"])
+
+    # 表格數據
+    mock_data = [
+        # {"id": 1, "SiteName": "CN55", "FunctionName": "QAD", "PN": "GA00000MP20",
+        #  "CurrentKeeper": "C1209AW", "CurrentKeeper_CN": "鄒麗錦", "ApplyReasonCategory": "",
+        #  "ApplyReason": "For EOY10 SDV phase test", "InData": "2023-08-01",
+        #  "ReturnOffline": "", "ReturnData": "2017-01-17 09:50:24.443", "Status": "測試中",
+        #  "DeptNo": "KM0MAQACD0", "ItemNo": "", "CostCenter": "KM0MAQACD0", "ProjectCode": "EOY10",
+        #  "Description": "PWR CORD 0014X1MX0016 3P US LT 10D C38A", "QTY": "", "PhaseName": "B(DVT)",
+        #  "EOPDate": "2021/03/31",
+        #  },
+        # {"id": 2, "SiteName": "CN55", "FunctionName": "QAD", "PN": "GA00000MP20",
+        #  "CurrentKeeper": "C1209AW", "CurrentKeeper_CN": "鄒麗錦", "ApplyReasonCategory": "",
+        #  "ApplyReason": "For EOY10 SDV phase test", "InData": "2023-08-01",
+        #  "ReturnOffline": "", "ReturnData": "2017-01-17 09:50:24.443", "Status": "測試中",
+        #  "DeptNo": "KM0MAQACD0", "ItemNo": "", "CostCenter": "KM0MAQACD0", "ProjectCode": "EOY10",
+        #  "Description": "PWR CORD 0014X1MX0016 3P US LT 10D C38A", "QTY": "", "PhaseName": "B(DVT)",
+        #  "EOPDate": "2021/03/31",
+        #  },
+        # {"id": 3, "SiteName": "CN55", "FunctionName": "QAD", "PN": "GA00000MP20",
+        #  "CurrentKeeper": "C1209AW", "CurrentKeeper_CN": "鄒麗錦", "ApplyReasonCategory": "",
+        #  "ApplyReason": "For EOY10 SDV phase test", "InData": "2023-08-01",
+        #  "ReturnOffline": "", "ReturnData": "2017-01-17 09:50:24.443", "Status": "測試中",
+        #  "DeptNo": "KM0MAQACD0", "ItemNo": "", "CostCenter": "KM0MAQACD0", "ProjectCode": "EOY10",
+        #  "Description": "PWR CORD 0014X1MX0016 3P US LT 10D C38A", "QTY": "", "PhaseName": "B(DVT)",
+        #  "EOPDate": "2021/03/31",
+        #  },
+    ]
+
+    if request.method == "POST":
+        if request.POST.get('isGetData') == 'first':
+            pass
+        if request.POST.get('isGetData') == 'SEARCH':
+            Proposer = request.POST.get('Proposer')
+            Project = request.POST.get('Project')
+            Customer = request.POST.get('Customer')
+            PN = request.POST.get('PN')
+            Phase = request.POST.get('Phase')
+            Status = request.POST.get('Status')
+            check_dic = {}
+            if Customer:
+                check_dic["CustomerCode"] = Customer
+            if Project:
+                check_dic["ProjectCode"] = Project
+            if Phase:
+                check_dic["PhaseName"] = Phase
+            if PN:
+                check_dic["PN"] = PN
+            if Proposer:
+                check_dic["CurrentKeeper"] = Proposer
+            if Status:
+                check_dic["Status"] = Status
+
+            print(check_dic)
+            queryset_data_OTST = MateriaInDQA_Tum.objects.filter(**check_dic)
+            queryset_data_RT = DQAMateria_TUMHistory.objects.filter(**check_dic).defer('ReturnID')
+            all_queryset = queryset_data_OTST.union(queryset_data_RT)
+            for i in all_queryset:
+                mock_data.append(
+                    {
+                         "SiteName": i.SiteName, "FunctionName": i.FunctionName, "PN": i.PN,
+                         "CurrentKeeper": i.CurrentKeeper, "CurrentKeeper_CN": i.CurrentKeeper_CN, "ApplyReasonCategory": i.ApplyReasonCategory,
+                         "ApplyReason": i.ApplyReason, "InData": str(i.InData),
+                         "ReturnOffline": str(i.ReturnOffline), "ReturnData": str(i.ReturnData), "Status": i.Status,
+                         "DeptNo": i.DeptNo, "ItemNo": i.ItemNo, "CostCenter": i.CostCenter, "ProjectCode": i.ProjectCode,
+                         "Description": i.Description, "QTY": i.QTY, "PhaseName": i.PhaseName,
+                         "EOPDate": str(i.EOPDate),
+                    }
+                )
+
+        data = {
+            "content": mock_data,
+            "sectionProject": sectionProject,
+            "selectProposer": selectProposer,
+            "sectionCustomer": sectionCustomer,
+            "sectionPhase": sectionPhase,
+            "sectionPN": sectionPN,
+            "sectionStatus": sectionStatus,
+        }
+        # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'TUMHistory/MateriaHistory.html', locals())

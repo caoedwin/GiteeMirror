@@ -1,0 +1,102 @@
+[2023-10-11 10:24:28,998] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 94407
+[2023-10-11 10:24:29,046] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-11 10:24:34,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23443
+[2023-10-11 10:24:34,289] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 39122
+[2023-10-11 10:24:34,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-11 10:24:47,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/1/change/ HTTP/1.1" 200 25651
+[2023-10-11 10:24:47,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-11 10:25:03,027] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:25:03,043] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/role/1/change/ HTTP/1.1" 302 0
+[2023-10-11 10:25:03,303] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 39242
+[2023-10-11 10:25:03,340] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-11 10:25:08,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38799
+[2023-10-11 10:25:08,963] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38799
+[2023-10-11 10:25:08,972] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-11 10:25:08,998] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-11 10:25:09,172] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-11 10:25:09,312] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23443
+[2023-10-11 10:25:11,432] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-11 10:25:11 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-11 10:25:11,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-11 10:25:13,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2023-10-11 10:25:13,624] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-11 10:25:13,688] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-10-11 10:25:13,694] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-11 10:25:13,697] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-11 10:25:15,636] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-11 10:25:15,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-10-11 10:25:15,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32597
+[2023-10-11 10:25:15,883] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-11 10:25:15,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32597
+[2023-10-11 10:25:15,900] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-11 10:25:15,986] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-11 10:25:16,057] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-11 10:25:16,058] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-10-11 10:25:16,229] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-11 10:25:16,250] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-11 10:25:16 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-10-11 10:25:16,261] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1638
+[2023-10-11 10:25:16,294] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-10-11 10:25:16,295] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-10-11 10:25:31,336] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 38879
+[2023-10-11 10:25:31,394] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 38879
+[2023-10-11 10:25:31,403] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-11 10:25:31,422] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-11 10:25:31,468] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-11 10:25:31,618] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-11 10:25:33,734] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-11 10:25:33 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-11 10:25:33,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-11 10:25:42,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38876
+[2023-10-11 10:25:42,260] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38876
+[2023-10-11 10:25:42,274] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-11 10:25:42,283] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-11 10:25:42,342] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-11 10:25:42,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-11 10:25:45,356] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-11 10:25:45 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-11 10:25:45,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-16 09:58:55,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-10-16 09:58:55,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-10-16 09:58:55,513] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-10-16 09:58:55,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-16 09:58:57,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 302 0
+[2023-10-16 09:58:57,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-16 09:58:57,630] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 09:58:57,662] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-10-16 09:58:57,669] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-16 09:58:59,420] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-16 09:58:59,447] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-10-16 09:58:59,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32597
+[2023-10-16 09:58:59,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 32597
+[2023-10-16 09:58:59,652] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 09:58:59,682] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 09:58:59,787] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 09:58:59,848] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 09:58:59,849] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-10-16 09:59:00,028] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 09:59:00 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /index/ POST
+[2023-10-16 09:59:00,038] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /index/ HTTP/1.1" 200 1638
+[2023-10-16 09:59:00,040] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 09:59:00,073] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/img/UserInfo/Jully_Li.jpg
+[2023-10-16 09:59:00,073] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /media/img/UserInfo/Jully_Li.jpg HTTP/1.1" 404 1803
+[2023-10-16 09:59:07,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38876
+[2023-10-16 09:59:07,100] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 09:59:07,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38876
+[2023-10-16 09:59:07,119] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 09:59:07,268] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 09:59:07,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 09:59:09,516] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 09:59:09 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 09:59:09,532] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-16 10:02:38,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40450
+[2023-10-16 10:02:38,606] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40450
+[2023-10-16 10:02:38,612] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 10:02:38,621] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 10:02:38,674] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 10:02:38,676] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-10-16 10:02:38,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalInfo/PersonalInfo-search/ HTTP/1.1" 200 23520
+[2023-10-16 10:02:38,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 10:03:03,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40429
+[2023-10-16 10:03:03,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40429
+[2023-10-16 10:03:03,422] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 10:03:03,444] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 10:03:03,510] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 10:03:03,514] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-10-16 10:03:03,652] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 10:03:03 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryMateria/ POST
+[2023-10-16 10:03:03,667] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryMateria/ HTTP/1.1" 200 182
+[2023-10-16 10:03:03,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
