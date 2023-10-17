@@ -160,13 +160,9 @@ def SummaryTUM(request):
                                 # print(DateNow_begin)
                                 DateNow = datetime.datetime.strptime(YearNow + i[1], '%Y-%m-%d')
                                 Test_Endperiod = [DateNow_begin, DateNow]
-                                shiji_inDQA = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38,
+                                C38_shiji_dic[i[0]] = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38,
                                                    InData__range=Test_Endperiod).aggregate(Sum("QTY"))['QTY__sum'] if UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_C38,
                                                    InData__range=Test_Endperiod) else 0
-                                shiji_return = DQAUnit_TUMHistory.objects.filter(CustomerCode__in=sectionCustomer_C38,
-                                                   InData__range=Test_Endperiod).aggregate(Sum("QTY"))['QTY__sum'] if DQAUnit_TUMHistory.objects.filter(CustomerCode__in=sectionCustomer_C38,
-                                                   InData__range=Test_Endperiod) else 0
-                                C38_shiji_dic[i[0]] = shiji_inDQA + shiji_return
                                 C38_chayi_dic[i[0]] = C38_shiji_dic[i[0]] - C38_yusuan_dic[i[0]]
                                 C38_shiji_dic_summary_mounth += C38_shiji_dic[i[0]]
                                 C38_yusuan_dic_summary_mounth += C38_yusuan_dic[i[0]]
@@ -337,15 +333,10 @@ def SummaryTUM(request):
                                 # print(DateNow_begin)
                                 DateNow = datetime.datetime.strptime(YearNow + i[1], '%Y-%m-%d')
                                 Test_Endperiod = [DateNow_begin, DateNow]
-                                shiji_inDQA = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_T88,
+                                T88_shiji_dic[i[0]] = UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_T88,
                                                                                    InData__range=Test_Endperiod).aggregate(
                                     Sum("QTY"))['QTY__sum'] if UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_T88,
                                                                                    InData__range=Test_Endperiod) else 0
-                                shiji_return = DQAUnit_TUMHistory.objects.filter(CustomerCode__in=sectionCustomer_T88,
-                                                                                   InData__range=Test_Endperiod).aggregate(
-                                    Sum("QTY"))['QTY__sum'] if UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_T88,
-                                                                                   InData__range=Test_Endperiod) else 0
-                                T88_shiji_dic[i[0]] = shiji_inDQA + shiji_return
                                 T88_chayi_dic[i[0]] = T88_shiji_dic[i[0]] - T88_yusuan_dic[i[0]]
                                 T88_shiji_dic_summary_mounth += T88_shiji_dic[i[0]]
                                 T88_yusuan_dic_summary_mounth += T88_yusuan_dic[i[0]]
