@@ -85,8 +85,8 @@ class LogMiddle(MiddlewareMixin):
                 # message = '%s %s %s>%s %s>%s %s %s %s %s %s' % (dateime, server_name, Account, username, CLIENTNAME, COMPUTERNAME, USERNAME, ip, proxy_ip, request_url, method, content)
                 message = '%s %s>%s %s>%s>%s %s %s %s %s' % (dateime, Account, username, CLIENTNAME, COMPUTERNAME, USERNAME, ip, proxy_ip, request_url, method)
                 logger.info(message)
-        except:
-            logger.critical('系统错误')
+        except Exception as e:
+            logger.critical('系统错误%s' % str(e))
         return response
 
 # def simple_middleware(get_response):  # 自定义类中间件

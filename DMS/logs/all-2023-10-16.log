@@ -419,3 +419,68 @@ TypeError: Object of type date is not JSON serializable
 [2023-10-16 13:22:08,901] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryMateria/ HTTP/1.1" 200 22218
 [2023-10-16 13:22:12,482] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 13:22:12 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryMateria/ POST
 [2023-10-16 13:22:12,498] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryMateria/ HTTP/1.1" 200 118977
+[2023-10-16 13:35:26,231] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /admin/login/
+[2023-10-16 13:35:26,231] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-16 13:35:26,252] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2508
+[2023-10-16 13:35:26,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 13:35:31,838] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /admin/login/
+[2023-10-16 13:35:31,840] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误
+[2023-10-16 13:35:31,859] [basehttp.py:154] [basehttp:log_message] [WARNING]- "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2508
+[2023-10-16 13:35:32,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 13:35:34,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-10-16 13:35:35,234] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 36786
+[2023-10-16 13:35:35,689] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 39122
+[2023-10-16 13:35:35,907] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 13:35:39,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 13:35:40,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 94407
+[2023-10-16 13:35:40,563] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:36:48,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/77/change/ HTTP/1.1" 200 21647
+[2023-10-16 13:36:48,671] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:37:10,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 94407
+[2023-10-16 13:37:10,759] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:37:11,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 14:01:34,158] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:01:34,241] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:01:34,256] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 14:01:34,276] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 14:01:34,424] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 14:01:34,596] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 14:01:37,205] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:01:37 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:01:37,219] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-16 14:02:00,466] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:02:00 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:02:00,479] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:04:19,837] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:04:19 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:04:19,845] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:04:30,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:04:31,069] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:04:31,189] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 14:04:31,296] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 14:04:31,928] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 14:04:32,556] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 14:04:35,400] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:04:35 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:04:35,436] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-16 14:04:36,935] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:04:36 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:04:36,950] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:06:13,938] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:06:13 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:06:13,953] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:06:14,757] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:06:14 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:06:14,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:07:27,949] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:07:27 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:07:27,958] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 182
+[2023-10-16 14:22:01,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40562
+[2023-10-16 14:22:01,136] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 14:22:01,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryMateria/ HTTP/1.1" 200 40562
+[2023-10-16 14:22:01,168] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 14:22:01,343] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 14:22:01,345] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2023-10-16 14:22:01,481] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 14:22:01,501] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:22:01 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryMateria/ POST
+[2023-10-16 14:22:01,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryMateria/ HTTP/1.1" 200 22218
+[2023-10-16 14:23:02,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:23:02,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 38902
+[2023-10-16 14:23:02,353] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-16 14:23:02,367] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-16 14:23:02,538] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-16 14:23:02,662] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 23520
+[2023-10-16 14:23:05,229] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-16 14:23:05 C1010S3>Cao.Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-16 14:23:05,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934

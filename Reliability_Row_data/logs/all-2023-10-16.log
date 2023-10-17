@@ -18,3 +18,21 @@
 [2023-10-16 13:28:43,200] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-10-16 13:28:43 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /NonDQALesson/NonDQALesson-summary/ POST
 [2023-10-16 13:28:43,221] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /NonDQALesson/NonDQALesson-summary/ HTTP/1.1" 200 196
 [2023-10-16 13:28:43,386] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:53:03,668] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-10-16 13:53:03,728] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-10-16 13:53:14,812] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:53:16,300] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-10-16 13:53:16 C1010S3>Edwin None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2023-10-16 13:53:16,322] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-10-16 13:53:18,529] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 43549
+[2023-10-16 13:53:19,128] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:53:31,081] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:53:31,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/ HTTP/1.1" 200 108530
+[2023-10-16 13:53:31,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:53:33,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:53:33,559] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/menu/ HTTP/1.1" 200 45712
+[2023-10-16 13:53:33,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:53:51,590] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/menu/33/change/ HTTP/1.1" 200 20609
+[2023-10-16 13:53:51,707] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2023-10-16 13:55:29,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-10-16 13:55:46,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/permission/92/change/ HTTP/1.1" 200 21181
+[2023-10-16 13:55:46,986] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684

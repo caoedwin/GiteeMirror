@@ -104,75 +104,75 @@ def just_open(filename):
 
 @task
 def GetTumdata():
-    # try:
-    path = settings.BASE_DIR
-    file_flag = path + '/' + 'TUMInputflag.txt'
-    print(file_flag)
-    with open(file_flag, 'w') as f:  # 设置文件对象
-        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
-    # print('GetTumdata')
-    # ftp huoqu excel
-    # excel_path = settings.MEDIA_ROOT.replace('\\','/') + '/Tumfiles/' + "/ItemInfoToQAD_20230922.xlsx"
-    excel_path = Getexcelfiles()
-    #保存到本地数据库
-    # workbook = load_workbook(excel_path, data_only=False)
-    # print(workbook.get_sheet_names())
-    df = pd.read_excel(excel_path, sheet_name=None)
-    print(list(df))
-    all_result = []
-    pool = ThreadPoolExecutor(max_workers=16, thread_name_prefix='DDMSInputTumInfo')
-    df_UnitOTST = ''
-    df_MateriaOTST = ''
-    df_UnitRT = ''
-    df_MateriaRT = ''
-    UnitOTST_dict = []
-    MateriaOTST_dict = []
-    UnitRT_dict = []
-    MateriaRT_dict = []
-    for i in list(df):
-        if "UnitOTST" in i:
-            df_UnitOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
-            UnitOTST_dict = df_UnitOTST.to_dict('records')
+    try:
+        path = settings.BASE_DIR
+        file_flag = path + '/' + 'TUMInputflag.txt'
+        print(file_flag)
+        with open(file_flag, 'w') as f:  # 设置文件对象
+            print('start:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+        # print('GetTumdata')
+        # ftp huoqu excel
+        # excel_path = settings.MEDIA_ROOT.replace('\\','/') + '/Tumfiles/' + "/ItemInfoToQAD_20230922.xlsx"
+        excel_path = Getexcelfiles()
+        #保存到本地数据库
+        # workbook = load_workbook(excel_path, data_only=False)
+        # print(workbook.get_sheet_names())
+        df = pd.read_excel(excel_path, sheet_name=None)
+        print(list(df))
+        all_result = []
+        pool = ThreadPoolExecutor(max_workers=16, thread_name_prefix='DDMSInputTumInfo')
+        df_UnitOTST = ''
+        df_MateriaOTST = ''
+        df_UnitRT = ''
+        df_MateriaRT = ''
+        UnitOTST_dict = []
+        MateriaOTST_dict = []
+        UnitRT_dict = []
+        MateriaRT_dict = []
+        for i in list(df):
+            if "UnitOTST" in i:
+                df_UnitOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+                UnitOTST_dict = df_UnitOTST.to_dict('records')
 
-        elif "MateriaOTST" in i:
-            df_MateriaOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
-            MateriaOTST_dict = df_MateriaOTST.to_dict('records')
+            elif "MateriaOTST" in i:
+                df_MateriaOTST = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+                MateriaOTST_dict = df_MateriaOTST.to_dict('records')
 
-        elif "UnitRT" in i:
-            df_UnitRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
-            UnitRT_dict = df_UnitRT.to_dict('records')
+            elif "UnitRT" in i:
+                df_UnitRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+                UnitRT_dict = df_UnitRT.to_dict('records')
 
-        elif "MateriaRT" in i:
-            df_MateriaRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
-            MateriaRT_dict = df_MateriaRT.to_dict('records')
+            elif "MateriaRT" in i:
+                df_MateriaRT = pd.read_excel(excel_path, header=0, sheet_name=i).fillna('')
+                MateriaRT_dict = df_MateriaRT.to_dict('records')
 
-    Result_UnitOTST_fun = pool.submit(UnitOTST_fun, UnitOTST_dict)
-    all_result.append(Result_UnitOTST_fun.result())
-    Result_MateriaOTST_fun = pool.submit(MateriaOTST_fun, MateriaOTST_dict)
-    all_result.append(Result_MateriaOTST_fun.result())
-    Result_UnitRT_fun = pool.submit(UnitRT_fun, UnitRT_dict)
-    all_result.append(Result_UnitRT_fun.result())
-    Result_MateriaRT_fun = pool.submit(MateriaRT_fun, MateriaRT_dict)
-    all_result.append(Result_MateriaRT_fun.result())
-    pool.shutdown()
-    msg = ''
-    for i in all_result:
-        print(str(i))
-        msg += str(i)
+        Result_UnitOTST_fun = pool.submit(UnitOTST_fun, UnitOTST_dict)
+        all_result.append(Result_UnitOTST_fun.result())
+        Result_MateriaOTST_fun = pool.submit(MateriaOTST_fun, MateriaOTST_dict)
+        all_result.append(Result_MateriaOTST_fun.result())
+        Result_UnitRT_fun = pool.submit(UnitRT_fun, UnitRT_dict)
+        all_result.append(Result_UnitRT_fun.result())
+        Result_MateriaRT_fun = pool.submit(MateriaRT_fun, MateriaRT_dict)
+        all_result.append(Result_MateriaRT_fun.result())
+        pool.shutdown()
+        msg = ''
+        for i in all_result:
+            print(str(i))
+            msg += str(i)
 
 
-    path = settings.BASE_DIR
-    file_flag = path + '/' + 'TUMInputflag.txt'
-    # print(file_flag)
-    with open(file_flag, 'a') as f:  # 设置文件对象
-        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
-        print(msg, file=f)
-    # except Exception as e:
-    #     path = settings.BASE_DIR
-    #     file_flag = path + '/' + 'TUMInputflag.txt'
-    #     with open(file_flag, 'a') as f:  # 设置文件对象
-    #         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
-    #         print(str(e), file=f)
+        path = settings.BASE_DIR
+        file_flag = path + '/' + 'TUMInputflag.txt'
+        # print(file_flag)
+        with open(file_flag, 'a') as f:  # 设置文件对象
+            print('finish:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+            print(msg, file=f)
+    except Exception as e:
+        path = settings.BASE_DIR
+        file_flag = path + '/' + 'TUMInputflag.txt'
+        with open(file_flag, 'a') as f:  # 设置文件对象
+            print('err:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
+            print(str(e), file=f)
 
 
 @task
