@@ -130,3 +130,121 @@
 [2023-10-17 10:03:39,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
 [2023-10-17 10:03:41,992] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-17 10:03:41 C1009I3>Xu.Cassie None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
 [2023-10-17 10:03:42,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2934
+[2023-10-17 10:04:35,935] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:04:36,004] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:04:36,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:04:36,015] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:04:36,085] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:04:36,169] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:04:38,548] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-17 10:04:38 C1009I3>Xu.Cassie None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-17 10:04:38,556] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2952
+[2023-10-17 10:05:42,116] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 302 0
+[2023-10-17 10:05:42,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/jinqiu5.jpg HTTP/1.1" 200 76515
+[2023-10-17 10:05:42,126] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:05:42,138] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/qiu1.jpg HTTP/1.1" 200 611283
+[2023-10-17 10:05:42,139] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/lu.jpg HTTP/1.1" 200 680519
+[2023-10-17 10:49:39,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:49:39,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 302 0
+[2023-10-17 10:49:39,814] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:49:39,823] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:49:39,828] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:49:39,852] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:49:39,976] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:49:40,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:49:46,754] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 326, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-17 10:49:46,766] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误Expecting value: line 1 column 1 (char 0)
+[2023-10-17 10:49:46,776] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 99067
+[2023-10-17 10:49:49,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2023-10-17 10:49:49,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:49:49,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/yellow.jpg HTTP/1.1" 200 81394
+[2023-10-17 10:49:51,888] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2023-10-17 10:49:51,889] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 302 0
+[2023-10-17 10:49:51,894] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:49:51,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:50:00,028] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:50:00,113] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2023-10-17 10:50:00,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 302 0
+[2023-10-17 10:50:00,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:50:00,142] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4823
+[2023-10-17 10:50:00,152] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:50:00,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:50:00,174] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:50:00,314] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:50:00,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:50:08,127] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 326, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-17 10:50:08,134] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误Expecting value: line 1 column 1 (char 0)
+[2023-10-17 10:50:08,137] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 99067
+[2023-10-17 10:50:51,686] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:50:51,760] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:50:51,762] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:50:51,771] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:50:51,837] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:50:51,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:50:56,442] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 327, in SummaryTUM
+    T88_yusuan_dic_summary += T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-17 10:50:56,443] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误Expecting value: line 1 column 1 (char 0)
+[2023-10-17 10:50:56,444] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 99118
+[2023-10-17 10:51:16,810] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:51:16,869] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:51:16,870] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:51:16,880] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:51:16,929] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:51:17,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:51:20,685] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /TUMHistory/SummaryTUM/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\DMS\TUMHistory\views.py", line 410, in SummaryTUM
+    tuihuan_T88_yusuan_dic_summary += tuihuan_T88_yusuan_dic[i[0]]
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[2023-10-17 10:51:20,687] [UserIP.py:89] [UserIP:process_response] [CRITICAL]- 系统错误Expecting value: line 1 column 1 (char 0)
+[2023-10-17 10:51:20,687] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 500 101962
+[2023-10-17 10:51:35,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:51:35,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 10:51:35,529] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 10:51:35,542] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 10:51:35,600] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 10:51:35,712] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 10:51:41,112] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-17 10:51:41 C1009I3>Xu.Cassie None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-17 10:51:41,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2952
