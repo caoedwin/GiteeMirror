@@ -12,7 +12,9 @@ from collections import Counter
 from .models import PerExperience, OSR_OSinfo
 from django.db.models.functions import ExtractYear
 
-
+Approved_Officer_NPI_ME_C38 = '0701114'
+Approved_Officer_NPI_ME_AIO = '0801046'
+ME_funtion = 'Reliability'
 @csrf_exempt
 def NPI_upload(request):
     if not request.session.get('is_login', None):
@@ -63,7 +65,14 @@ def NPI_upload(request):
                         Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow) else ''
                     # 機種名變更可能隨之變動
                     updata_dic['Dalei'] = "NPI"
-                    updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
+                    if ME_funtion == updata_dic['Function']:
+                        CustomerPro = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().Customer
+                        if CustomerPro == "C38(AIO)" or CustomerPro == "T88(AIO)":
+                            updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_AIO
+                        else:
+                            updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_C38
+                    else:
+                        updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
                     # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
                     # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
                     updata_dic['SS_Date'] = request.POST.get('SS_Date')
