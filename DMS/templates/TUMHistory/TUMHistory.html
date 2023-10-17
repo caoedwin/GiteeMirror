@@ -43,7 +43,8 @@
       </div>
            <el-table border stripe :data="C38Table" :span-method="arraySpanMethod" :row-key="getRowKeys"
            :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-           style="border-radius: 10px;word-break: keep-all">
+           v-loading="tableloading"
+             style="border-radius: 10px;word-break: keep-all">
               <el-table-column  prop="Item" label="Item" align="center"></el-table-column>
               <el-table-column  prop="Customer" label="C38NB&C38(AIO)&C85" width="150" align="center"></el-table-column>
               <el-table-column prop="Jan" label="Jan" align="center" ></el-table-column>
@@ -68,7 +69,8 @@
       </div>
            <el-table border stripe :data="T88Table" :span-method="arraySpanMethod" :row-key="getRowKeys"
            :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-           style="border-radius: 10px;word-break: keep-all">
+           v-loading="tableloading"
+             style="border-radius: 10px;word-break: keep-all">
               <el-table-column  prop="Item" label="Item" align="center"></el-table-column>
               <el-table-column  prop="Customer" label="T88 AIO" width="150" align="center"></el-table-column>
               <el-table-column prop="Jan" label="Jan" align="center" ></el-table-column>
@@ -265,6 +267,7 @@
                 },
                 formData:[],
                 elbuttonloading:false,
+                tableloading: false,
             }
         },
 
@@ -275,6 +278,7 @@
         methods: {
             //获取数据
             getdata: function (e) {
+                this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                 axios.post("/TUMHistory/SummaryTUM/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -285,6 +289,7 @@
                     this.canEdit_TUM = res.data.canEdit_TUM;
                     this.sectionCustomer = res.data.sectionCustomer;
                     this.sectionCategory = res.data.sectionCategory;
+                    this.tableloading = false;
 
                 });
             },

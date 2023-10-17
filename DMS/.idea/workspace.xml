@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TUMHistory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/TUMHistory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,27 +48,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="108" />
+          <entry key="html" value="110" />
           <entry key="js" value="2" />
-          <entry key="py" value="207" />
+          <entry key="py" value="209" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="108" />
+          <entry key="HTML" value="110" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="207" />
+          <entry key="Python" value="209" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1171" />
+          <entry key="html" value="1180" />
           <entry key="py" value="4753" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1171" />
+          <entry key="HTML" value="1180" />
           <entry key="Python" value="4753" />
         </counts>
       </usages-collector>
@@ -80,16 +80,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+              <folding>
+                <element signature="e#13196#15858#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TUMHistory/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1486">
-              <caret line="345" column="81" selection-start-line="345" selection-start-column="81" selection-end-line="345" selection-end-column="81" />
+            <state relative-caret-position="346">
+              <caret line="455" selection-start-line="455" selection-end-line="455" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#902#2864#0" />
                 <element signature="e#2880#4842#0" />
-                <element signature="e#5778#7361#0" />
-                <element signature="e#7412#7858#0" />
+                <element signature="e#5597#34388#0" />
+                <element signature="e#34561#36878#0" />
                 <marker date="1697522370764" expanded="false" signature="715:720" ph="..." />
               </folding>
             </state>
@@ -97,15 +109,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TUMHistory/models.py">
+        <entry file="file://$PROJECT_DIR$/templates/ComputerMS/M_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="63" column="24" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="24" />
-              <folding>
-                <element signature="e#93#1356#0" />
-                <element signature="e#6287#8310#0" />
-                <element signature="e#8359#10499#0" />
-              </folding>
+            <state relative-caret-position="498">
+              <caret line="1081" column="33" selection-start-line="1081" selection-start-column="21" selection-end-line="1081" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -123,8 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GetTumdata</find>
-      <find>TUMHistory</find>
       <find>/DeviceLNV/R_Keep/</find>
       <find>canedit</find>
       <find>synchronous</find>
@@ -153,6 +158,8 @@
       <find>None</find>
       <find>CostCenter</find>
       <find>shiji_inDQA + shiji_return</find>
+      <find>tableloading</find>
+      <find>loading</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,8 +217,8 @@
         <option value="$PROJECT_DIR$/templates/TUMHistory/MateriaHistory.html" />
         <option value="$PROJECT_DIR$/app01/tasks.py" />
         <option value="$PROJECT_DIR$/middleware/UserIP.py" />
-        <option value="$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html" />
         <option value="$PROJECT_DIR$/TUMHistory/views.py" />
+        <option value="$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html" />
       </list>
     </option>
   </component>
@@ -1384,11 +1391,11 @@
     <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.22961956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49657536" visible="true" weight="0.22961956" />
       <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.23481782" />
       <window_info id="Favorites" order="2" sideWeight="0.50342464" weight="0.2927989" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.28385416" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.28385416" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1439,19 +1446,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/DeviceCQT88/R_Destine.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="213" column="40" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
-          <caret line="284" column="44" selection-start-line="284" selection-start-column="44" selection-end-line="284" selection-end-column="44" />
-          <caret line="297" column="44" selection-start-line="297" selection-start-column="44" selection-end-line="297" selection-end-column="44" />
-          <caret line="337" column="43" selection-start-line="337" selection-start-column="43" selection-end-line="337" selection-end-column="43" />
-          <caret line="349" column="42" selection-start-line="349" selection-start-column="42" selection-end-line="349" selection-end-column="42" />
-          <caret line="352" column="42" selection-start-line="352" selection-start-column="42" selection-end-line="352" selection-end-column="42" />
-          <caret line="401" column="48" selection-start-line="401" selection-start-column="48" selection-end-line="401" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/DeviceCQT88/R_Borrowed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1802,16 +1796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="63" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/tasks_excel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -1827,8 +1811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TUMHistory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="24" />
+        <state relative-caret-position="76">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
           <folding>
             <element signature="e#93#1356#0" />
             <element signature="e#6287#8310#0" />
@@ -1837,17 +1821,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ComputerMS/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="1081" column="33" selection-start-line="1081" selection-start-column="21" selection-end-line="1081" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TUMHistory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1486">
-          <caret line="345" column="81" selection-start-line="345" selection-start-column="81" selection-end-line="345" selection-end-column="81" />
+        <state relative-caret-position="346">
+          <caret line="455" selection-start-line="455" selection-end-line="455" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#902#2864#0" />
             <element signature="e#2880#4842#0" />
-            <element signature="e#5778#7361#0" />
-            <element signature="e#7412#7858#0" />
+            <element signature="e#5597#34388#0" />
+            <element signature="e#34561#36878#0" />
             <marker date="1697522370764" expanded="false" signature="715:720" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/TUMHistory/TUMHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+          <folding>
+            <element signature="e#13196#15858#0#HTML" />
           </folding>
         </state>
       </provider>
