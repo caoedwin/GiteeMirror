@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/TUMHistory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/TUMHistory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DMS/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/celerybeat-schedule.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/logs/all-2023-10-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/logs/all-2023-10-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/logs/error-2023-10-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/logs/error-2023-10-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/logs/info-2023-10-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/logs/info-2023-10-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/templates/TUMHistory/TUMHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/templates/TUMHistory/TUMHistory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalExperience/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalExperience/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2023-10-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-10-17.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-10-17.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-10-17.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,33 +109,7 @@
     <favorites_list name="DDIS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PersonalExperience/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="64" column="118" lean-forward="true" selection-start-line="64" selection-start-column="118" selection-end-line="64" selection-end-column="118" />
-              <folding>
-                <element signature="e#4645#8682#0" />
-                <element signature="e#8726#13836#0" />
-                <element signature="e#13884#24846#0" />
-                <element signature="e#24890#29246#0" />
-                <element signature="e#29287#39594#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app01/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="174" column="12" selection-start-line="174" selection-start-column="4" selection-end-line="174" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -853,7 +833,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.18" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.18" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
@@ -872,7 +852,7 @@
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" />
       <window_info anchor="bottom" id="Version Control" order="17" weight="0.3297587" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.36595175" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.36595175" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -1297,9 +1277,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonalExperience/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="64" column="118" lean-forward="true" selection-start-line="64" selection-start-column="118" selection-end-line="64" selection-end-column="118" />
+        <state relative-caret-position="61">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
+            <element signature="e#673#4601#0" />
             <element signature="e#4645#8682#0" />
             <element signature="e#8726#13836#0" />
             <element signature="e#13884#24846#0" />

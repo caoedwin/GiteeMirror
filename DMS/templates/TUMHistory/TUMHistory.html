@@ -34,7 +34,7 @@
     </template>
 
       <div class="selectMsg" >
-            <el-button v-cloak @click="addData()" v-if="canEdit===1" style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">錄入</el-button>
+            <el-button v-cloak @click="addData()" v-if="canEdit_TUM===1" style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">錄入</el-button>
             <el-button v-cloak @click="synchronous()" :loading="elbuttonloading" v-if="canEdit===1" style="height:40px;border-color:black;color:black;margin-left: 20px;background-color:#7fa0ff">同步</el-button>
       </div>
     <div class="tableAround" v-cloak >
@@ -234,6 +234,7 @@
                 sectionCategory: [],
                 sectionYear: [],
                 canEdit: 0,
+                canEdit_TUM: 0,
                 form: {
                     Customer: '',
                     Year: '',
@@ -281,6 +282,7 @@
                     this.C38Table = res.data.C38Table;
                     this.T88Table = res.data.T88Table;
                     this.canEdit = res.data.canEdit;
+                    this.canEdit_TUM = res.data.canEdit_TUM;
                     this.sectionCustomer = res.data.sectionCustomer;
                     this.sectionCategory = res.data.sectionCategory;
 

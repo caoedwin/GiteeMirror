@@ -76,8 +76,8 @@ def SummaryTUM(request):
         "領用", "退還"
     ]
     errMsgNumber = ""
-    canEdit = 1
     canEdit = 0
+    canEdit_TUM = 0
     roles = []
     onlineuser = request.session.get('account')
     # print(UserInfo.objects.get(account=onlineuser))
@@ -87,6 +87,8 @@ def SummaryTUM(request):
         if i == 'Sys_Admin':
             # editPpriority = 4
             canEdit = 1
+        elif i == "AdapterPowerCord_LNV_Admin":
+            canEdit_TUM = 1
     if request.method == "POST":
         if request.POST:
             try:
@@ -490,6 +492,7 @@ def SummaryTUM(request):
                 "sectionCategory": sectionCategory,
                 "errMsgNumber": errMsgNumber,
                 "canEdit": canEdit,
+                "canEdit_TUM": canEdit_TUM,
             }
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'TUMHistory/TUMHistory.html', locals())
