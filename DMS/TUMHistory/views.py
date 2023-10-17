@@ -343,7 +343,7 @@ def SummaryTUM(request):
                                                                                    InData__range=Test_Endperiod) else 0
                                 shiji_return = DQAUnit_TUMHistory.objects.filter(CustomerCode__in=sectionCustomer_T88,
                                                                                    InData__range=Test_Endperiod).aggregate(
-                                    Sum("QTY"))['QTY__sum'] if UnitInDQA_Tum.objects.filter(CustomerCode__in=sectionCustomer_T88,
+                                    Sum("QTY"))['QTY__sum'] if DQAUnit_TUMHistory.objects.filter(CustomerCode__in=sectionCustomer_T88,
                                                                                    InData__range=Test_Endperiod) else 0
                                 T88_shiji_dic[i[0]] = shiji_inDQA + shiji_return
                                 T88_chayi_dic[i[0]] = T88_shiji_dic[i[0]] - T88_yusuan_dic[i[0]]

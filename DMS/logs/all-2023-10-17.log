@@ -248,3 +248,11 @@ TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
 [2023-10-17 10:51:35,712] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
 [2023-10-17 10:51:41,112] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-17 10:51:41 C1009I3>Xu.Cassie None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
 [2023-10-17 10:51:41,120] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2952
+[2023-10-17 13:08:31,455] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 13:08:31,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TUMHistory/SummaryTUM/ HTTP/1.1" 200 32387
+[2023-10-17 13:08:31,540] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2023-10-17 13:08:31,553] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2023-10-17 13:08:31,703] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2023-10-17 13:08:31,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16908
+[2023-10-17 13:08:44,904] [UserIP.py:87] [UserIP:process_response] [INFO]- 2023-10-17 13:08:44 C1009I3>Xu.Cassie None>LAPTOP-EJP4HNEV>543 127.0.0.1 127.0.0.1 /TUMHistory/SummaryTUM/ POST
+[2023-10-17 13:08:44,923] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /TUMHistory/SummaryTUM/ HTTP/1.1" 200 2949
