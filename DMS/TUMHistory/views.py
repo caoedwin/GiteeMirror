@@ -696,7 +696,7 @@ def SummaryMateria(request):
             for i in all_queryset:
                 mock_data.append(
                     {
-                         "SiteName": i.SiteName, "FunctionName": i.FunctionName, "PN": i.PN,
+                         "SiteName": i.SiteName, "FunctionName": i.FunctionName, "CustomerCode": i.CustomerCode, "PN": i.PN,
                          "CurrentKeeper": i.CurrentKeeper, "CurrentKeeper_CN": i.CurrentKeeper_CN, "ApplyReasonCategory": i.ApplyReasonCategory,
                          "ApplyReason": i.ApplyReason, "InData": str(i.InData),
                          "ReturnOffline": str(i.ReturnOffline), "ReturnData": str(i.ReturnData), "Status": i.Status,

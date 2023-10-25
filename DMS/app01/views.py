@@ -33,7 +33,7 @@ from app01 import tasks
 # logger.warning('Warning')
 # logger.error('Error')
 # logger.critical('Critical')
-
+import pprint
 def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', DepartmentCode=''):
     url = r'http://127.0.0.1:8002/PersonalInfo/api_Per/login/'
     url2 = r'http://127.0.0.1:8002/PersonalInfo/Perapi/?'
@@ -60,7 +60,7 @@ def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', Departmen
     if json.loads(r.text)["token"]:
         Auth_token = "Bearer " + json.loads(r.text)["token"]
         try:
-            GroupNum = "C1010S3"
+            # GroupNum = "C1010S3"
             headers = \
                 {
                     "Authorization": Auth_token
@@ -78,7 +78,9 @@ def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', Departmen
             # time.sleep(0.1)
             print("Got nothing, try request agian")
             return 0
-        print(getTestSpec.json())
+        # print(getTestSpec.json())
+        # pprint.pprint(getTestSpec.json())
+        # print(type(getTestSpec.json()), len(getTestSpec.json()))
     # print(type(getTestSpec.json()), getTestSpec.json())
     #     for i in getTestSpec.json():
     #         print(i)

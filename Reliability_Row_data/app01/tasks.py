@@ -23,6 +23,11 @@ def Ongoing_flag():
 def ProjectSync():
     print("Start")
     importPrjResult = ImportProjectinfoFromDCT()
+    path = settings.BASE_DIR
+    file_flag = path + '/' + 'ProjectSync.txt'
+    # print(file_flag)
+    with open(file_flag, 'w') as f:  # 设置文件对象
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), importPrjResult, file=f)
     if importPrjResult:
         return "OK"
     else:

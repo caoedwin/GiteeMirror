@@ -15,6 +15,7 @@ from django.db.models.functions import ExtractYear
 Approved_Officer_NPI_ME_C38 = '0701114'
 Approved_Officer_NPI_ME_AIO = '0801046'
 ME_funtion = 'Reliability'
+Approved_Officer_INV_NB = "0576972"
 @csrf_exempt
 def NPI_upload(request):
     if not request.session.get('is_login', None):

@@ -311,7 +311,7 @@
             //获取数据
             getdata: function (e) {
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("//PersonalExperience/OSR-upload/", Qs.stringify(data), {
+                axios.post("/PersonalExperience/OSR-upload/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.customerOptions=res.data.select;
@@ -389,7 +389,7 @@
                         this.formData.append('OSR', this.$refs[formName].model.OSR);
                         this.formData.append("action", 'SubmitOSR');
                         {#console.log(this.formData);#}
-                        axios.post("//PersonalExperience/OSR-upload/", this.formData, {
+                        axios.post("/PersonalExperience/OSR-upload/", this.formData, {
                             headers: {
                                 'Content-Type': 'multipart/form-data',
                                 'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -444,7 +444,7 @@
                                 this.formData.append('Comments', this.$refs[formName].model.Comments);
                                 this.formData.append("action", 'addSubmit');
                                 {#console.log(this.formData);#}
-                                axios.post("//PersonalExperience/OSR-upload/", this.formData, {
+                                axios.post("/PersonalExperience/OSR-upload/", this.formData, {
                                     headers: {
                                         'Content-Type': 'multipart/form-data',
                                         'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
@@ -477,7 +477,7 @@
                             this.formData.append('Comments', this.$refs[formName].model.Comments);
                             this.formData.append("action", 'addSubmit');
                             {#console.log(this.formData);#}
-                            axios.post("//PersonalExperience/OSR-upload/", this.formData, {
+                            axios.post("/PersonalExperience/OSR-upload/", this.formData, {
                                 headers: {
                                     'Content-Type': 'multipart/form-data',
                                     'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()

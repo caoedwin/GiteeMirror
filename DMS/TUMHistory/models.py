@@ -139,7 +139,7 @@ class DQAMateria_TUMHistory(models.Model):
     ApplyReasonCategory = models.CharField(max_length=60, null=True, blank=True, verbose_name='ApplyReasonCategory')
     ApplyReason = models.CharField(max_length=1024, null=True, blank=True, verbose_name='領用原因')
     InData = models.DateField(max_length=60, null=True, blank=True, verbose_name='入賬日期')
-    ReturnOffline = models.DateTimeField(max_length=60, null=True, blank=True, verbose_name='歸還期限')
+    ReturnOffline = models.DateField(max_length=60, null=True, blank=True, verbose_name='歸還期限')
     ReturnData = models.DateTimeField(max_length=60, null=True, blank=True, verbose_name='退庫日期')
     Status = models.CharField(max_length=60, null=True, blank=True, verbose_name='當前狀態')
     DeptNo = models.CharField(max_length=60, null=True, blank=True, verbose_name='DeptNo')

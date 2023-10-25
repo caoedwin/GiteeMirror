@@ -196,6 +196,7 @@ def SummaryTUM(request):
                     tuihuan_Jun_Unitbudget_Num = \
                     Unitbudget.objects.filter(Customer__in=sectionCustomer_C38, Year=Year_now, Category="退還").aggregate(
                         Sum('Jun'))['Jun__sum']
+
                     tuihuan_Jul_Unitbudget_Num = \
                     Unitbudget.objects.filter(Customer__in=sectionCustomer_C38, Year=Year_now, Category="退還").aggregate(
                         Sum('Jul'))['Jul__sum']

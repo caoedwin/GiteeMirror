@@ -104,21 +104,21 @@
         <div class="customerContent">
         <label for="customer" v-cloak>Customer </label>
           <el-select  v-model="customer" width="80%" style="margin-right: 20px;width:200px">
-                <el-option v-for="item in selectOptions[0]" :label="item.label" :value="item.value"  ></el-option>
+                <el-option v-for="item in selectOptions[0]" :label="item.label" :value="item.value"></el-option>
           </el-select><br>
           <div class="inputError" v-cloak v-show="customerError">客戶別未選擇</div>
         </div>
         <div class="categoryContent">
         <label for="category" v-cloak>Category </label>
           <el-select  v-model="category" width="80%" style="margin-right: 20px;width:200px" v-cloak>
-                <el-option v-for="item in selectOptions[1]" :label="item.categoty" :value="item.categoty"  ></el-option>
+                <el-option v-for="item in selectOptions[1]" :label="item.categoty" :value="item.categoty"></el-option>
           </el-select><br>
           <div class="inputError" v-cloak v-show="categoryError">不能为空</div>
         </div>
         <div class="functionContent">
         <label for="fc" v-cloak>Function </label>
           <el-select  v-model="fc" width="80%" style="margin-right: 40px;width:200px" v-cloak>
-                <el-option v-for="item in selectOptions[2]" :label="item.fc" :value="item.fc"  ></el-option>
+                <el-option v-for="item in selectOptions[2]" :label="item.fc" :value="item.fc"></el-option>
           </el-select><br>
           <div class="inputError" v-cloak v-show="functionError">不能为空</div>
         </div>
@@ -135,6 +135,8 @@
                                     <el-option label="A39" value="A39"></el-option>
                                     <el-option label="C38(AIO)" value="C38(AIO)"></el-option>
                                     <el-option label="T88(AIO)" value="T88(AIO)"></el-option>
+                                    <el-option label="T88(NB)" value="T88(NB)"></el-option>
+                                    <el-option label="ABO" value="ABO"></el-option>
                                     <el-option label="C38(NB)-SMB" value="C38(NB)-SMB"></el-option>
                               </el-select>
                           </el-form-item>
@@ -200,6 +202,8 @@
                                     <el-option label="A39" value="A39"></el-option>
                                     <el-option label="C38(AIO)" value="C38(AIO)"></el-option>
                                     <el-option label="T88(AIO)" value="T88(AIO)"></el-option>
+                                    <el-option label="T88(NB)" value="T88(NB)"></el-option>
+                                    <el-option label="ABO" value="ABO"></el-option>
                                     <el-option label="C38(NB)-SMB" value="C38(NB)-SMB"></el-option>
                       </el-select>
                   <span v-else="showEdit[scope.$index]"  >${ scope.row.Customer }</span>
@@ -275,10 +279,10 @@
 <script src="/static/js/vue.min.js"></script>
 <script src="/static/js/qs.js"></script>
 <script src="/static/js/xlsx/FileSaver.min.js"></script>
-<script  src="/static/js/Element/table.js"></script>
-<script  src="/static/js/Element/main.js"></script>
+<script src="/static/js/Element/table.js"></script>
+<script src="/static/js/Element/main.js"></script>
 <script src="/static/js/Element/input.js"></script>
-<script  src="/static/js/Element/table-column.js"></script>
+<script src="/static/js/Element/table-column.js"></script>
 <script src="/static/js/Element/icon.js"></script>
 <script src="/static/js/Element/dialog.js"></script>
 <script src="/static/js/Element/form.js"></script>
