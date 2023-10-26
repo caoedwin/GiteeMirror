@@ -69,7 +69,9 @@ def ImportProjectinfoFromDCT():
         print("try request agian")
         return 0
     # print(type(getTestSpec.json()), getTestSpec.json())
+    numb = 0
     for i in getTestSpec.json():
+        numb += 1
         # print(i,i['Size'])
         localPrjCre = {"Customer": i['Customer'],
                        "Year": i['Year'],
@@ -230,7 +232,7 @@ def ImportProjectinfoFromDCT():
     # print(samePrj)
     # print(nosamePjr)
     # print(numpro)
-    return 1
+    return numb
 
 
 

@@ -192,7 +192,7 @@ def OSR_upload(request):
                     ]
     for i in OSR_OSinfo.objects.all():
         sectionPhase.append(i.OSinfo)
-    CanEdit = 1
+    CanEdit = 0
     DQAPLNum = request.session.get('account')
     for i in ProjectinfoinDCT.objects.all():
         datastr = i.SS.split(' ')[0].split('/')
