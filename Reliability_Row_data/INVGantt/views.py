@@ -2154,8 +2154,8 @@ def INVGantt_top(request):
             print(yearlist1,"1")
             for i in yearlist1:
                 print(i.Test_End, i.TestEndYear)
-            Yearqura = yearlist1.values('TestEndYear').annotate(dcount=Count('TestEndYear'))
-            print(Yearqura)
+            Yearqura = yearlist1.values('TestEndYear').annotate(dcount=Count('TestEndYear')).order_by('TestEndYear')
+            print(Yearqura,'Yearqura')
             Yearlist = []
             for i in Yearqura:
                 if i["TestEndYear"]:
@@ -2170,7 +2170,7 @@ def INVGantt_top(request):
                                                      Test_Start__range=Test_Endperiod).count()
                     # print(round(FailNo / PassNo, 2),format(round(FailNo / PassNo, 2), '.2%'))
                     if PassNo:
-                        Failure = format(round(FailNo / PassNo, 2), '.0%')
+                        Failure = format(round(FailNo / (PassNo + FailNo), 2), '.0%')
                     else:
                         Failure = format(round(0), '.0%')
                     mock_data5.append(
@@ -2184,7 +2184,7 @@ def INVGantt_top(request):
                     FailNo = INVGantt.objects.filter(Status="Fail", Test_Start__range=Test_Endperiod).count()
                     # print(round(FailNo / PassNo, 2),format(round(FailNo / PassNo, 2), '.2%'))
                     if PassNo:
-                        Failure = format(round(FailNo / PassNo, 2), '.0%')
+                        Failure = format(round(FailNo / (PassNo + FailNo), 2), '.0%')
                     else:
                         Failure = format(round(0), '.0%')
                     mock_data5.append(

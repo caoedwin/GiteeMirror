@@ -367,9 +367,9 @@ SAFE_URL = [
 # CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 #下面在settings文件中配置celery相关的配置：无需django-celery
-CELERY_BROKER_URL = 'redis://:DCT2019@localhost:6379/'
+CELERY_BROKER_URL = 'redis://:DCT2019@127.0.0.1:6379/'
 
-CELERY_RESULT_BACKEND = 'redis://DCT2019@localhost:6379/'
+CELERY_RESULT_BACKEND = 'redis://DCT2019@127.0.0.1:6379/'
 
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'#要与系统时区TIME_ZONE一致
