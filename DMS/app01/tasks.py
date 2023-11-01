@@ -105,8 +105,9 @@ def just_open(filename):
 @task
 def GetTumdata():
     try:
+        DATE_NOW = str(datetime.datetime.now().date())
         path = settings.BASE_DIR
-        file_flag = path + '/' + 'TUMInputflag.txt'
+        file_flag = path + '/logs/' + 'TUMInputflag-%s.txt' % (DATE_NOW.split("-")[0] + DATE_NOW.split("-")[1] + DATE_NOW.split("-")[2])
         print(file_flag)
         with open(file_flag, 'w') as f:  # 设置文件对象
             print('start:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)

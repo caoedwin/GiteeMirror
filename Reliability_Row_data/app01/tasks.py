@@ -22,9 +22,10 @@ def Ongoing_flag():
 @task
 def ProjectSync():
     print("Start")
+    DATE_NOW = str(datetime.datetime.now().date())
     importPrjResult = ImportProjectinfoFromDCT()
     path = settings.BASE_DIR
-    file_flag = path + '/' + 'ProjectSync.txt'
+    file_flag = path + '/logs/' + 'ProjectSync.txt-%s' % (DATE_NOW.split("-")[0] + DATE_NOW.split("-")[1] + DATE_NOW.split("-")[2])
     # print(file_flag)
     with open(file_flag, 'w') as f:  # 设置文件对象
         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), importPrjResult, file=f)
