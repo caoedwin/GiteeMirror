@@ -110,15 +110,35 @@ class PortraitsAdmin(admin.ModelAdmin):
     search_fields = ('img', 'single',)  # 搜索字段
     # date_hierarchy = 'Start_time'  # 详细时间分层筛选
 
+from django.utils.safestring import mark_safe
 @admin.register(PersonalInfo)
 class PersonalInfoAdmin(admin.ModelAdmin):
+    def upload_img(self, obj):
+        img = ''
+        try:
+            for imgurls in obj.Portrait.all():
+                # print(imgurls)
+                # imgurls.append(imgurls.img)
+                img = mark_safe('<img src="/media/%s" width="50px" />' % (imgurls.img,))
+        except Exception as e:
+            print(e)
+            img = ''
+        print(img)
+        return img
+        # return '， '.join(img)
+
+    upload_img.short_description = 'Thumb'
+    upload_img.allow_tags = True
 
     list_display = ('Status', 'RegistrationDate', 'QuitDate', 'PlanQuitDate', 'QuitReason', 'QuitDetail', 'Whereabouts', 'NewCompany', 'Aalary', 'LastAchievements',
                     'Customer', 'Department', 'DepartmentCode', 'GroupNum', 'SAPNum', 'CNName', 'EngName', 'Sex', 'PositionNow', 'LastPromotionData',
                     'RegistPosition', 'PositionTimes', 'Experience', 'GraduationYear', 'Education', 'School', 'Major', 'MajorAscription', 'ENLevel', 'IdCard',
                     'NativeProvince', 'NativeCity', 'NativeCounty', 'ResidenceProvince', 'ResidenceCity', 'ResidenceCounty', 'MobileNum',
                     # 'Portrait',
+                    'upload_img',
                     )
+    readonly_fields = ['upload_img']
+
     # 列表里显示想要显示的字段
     list_per_page = 500
     # 满50条数据就自动分页

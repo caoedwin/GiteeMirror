@@ -162,15 +162,13 @@ def GetTumdata():
             msg += str(i)
 
 
-        path = settings.BASE_DIR
-        file_flag = path + '/' + 'TUMInputflag.txt'
-        # print(file_flag)
+
         with open(file_flag, 'a') as f:  # 设置文件对象
             print('finish:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
             print(msg, file=f)
     except Exception as e:
-        path = settings.BASE_DIR
-        file_flag = path + '/' + 'TUMInputflag.txt'
+        # path = settings.BASE_DIR
+        # file_flag = path + '/' + 'TUMInputflag.txt'
         with open(file_flag, 'a') as f:  # 设置文件对象
             print('err:', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), file=f)
             print(str(e), file=f)
