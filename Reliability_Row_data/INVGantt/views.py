@@ -2206,6 +2206,7 @@ def INVGantt_top(request):
                         "data": datalist  # 对应机种顺序
                     },
                 )
+            mock_data5 = sorted(mock_data5, key=lambda x: x['Year'], reverse=True)
 
         if request.POST.get("isGetData") == "SEARCH1":
             Customer = request.POST.get("Customer")
@@ -2427,7 +2428,7 @@ def INVGantt_top(request):
             # print(yearlist1,"1")
             # for i in yearlist1:
             #     print(i.Test_End, i.TestEndYear)
-            Yearqura = yearlist1.values('TestEndYear').annotate(dcount=Count('TestEndYear'))
+            Yearqura = yearlist1.values('TestEndYear').annotate(dcount=Count('TestEndYear')).order_by('TestEndYear')
             # print(Yearqura)
             Yearlist = []
             for i in Yearqura:
@@ -2475,7 +2476,7 @@ def INVGantt_top(request):
                         "data": datalist  # 对应机种顺序
                     },
                 )
-
+            mock_data5 = sorted(mock_data5, key=lambda x: x['Year'], reverse=True)
         data = {
             "err_ok": "0",
             "content1": mock_data1,
