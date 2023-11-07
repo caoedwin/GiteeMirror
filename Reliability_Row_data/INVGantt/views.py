@@ -2297,9 +2297,16 @@ def INVGantt_top(request):
             mock_data3_all = []
             if Customer != "All":#因为不同Customer之间keypart名称有重复的，而Project_name没有重复的，所以不能像search1一样
                 for i in keypartlist:
-                    PassNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status__in=["Pass", 'Conditional Pass']).count()
-                    FailNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status="Fail").count()
-                    OngoingNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status__in=["Testing", 'Pending']).count()
+                    if Year:
+                        PassNo = INVGantt.objects.filter(Customer=Customer, Year=Year, TP_Cat=i, Status__in=["Pass", 'Conditional Pass']).count()
+                        FailNo = INVGantt.objects.filter(Customer=Customer, Year=Year, TP_Cat=i, Status="Fail").count()
+                        OngoingNo = INVGantt.objects.filter(Customer=Customer, Year=Year, TP_Cat=i, Status__in=["Testing", 'Pending']).count()
+                    else:
+                        PassNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i,
+                                                         Status__in=["Pass", 'Conditional Pass']).count()
+                        FailNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status="Fail").count()
+                        OngoingNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i,
+                                                            Status__in=["Testing", 'Pending']).count()
                     # PlanningNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status="Planning").count()
                     mock_data2_all.append({"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                            "Total": PassNo + FailNo + OngoingNo})
@@ -2307,10 +2314,15 @@ def INVGantt_top(request):
                                            "Total": PassNo + FailNo + OngoingNo})
             else:
                 for i in keypartlist:
-                    PassNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Pass", 'Conditional Pass']).count()
-                    FailNo = INVGantt.objects.filter(TP_Cat=i, Status="Fail").count()
-                    OngoingNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Testing", 'Pending']).count()
-                    # PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning").count()
+                    if Year:
+                        PassNo = INVGantt.objects.filter(TP_Cat=i, Year=Year, Status__in=["Pass", 'Conditional Pass']).count()
+                        FailNo = INVGantt.objects.filter(TP_Cat=i, Year=Year, Status="Fail").count()
+                        OngoingNo = INVGantt.objects.filter(TP_Cat=i, Year=Year, Status__in=["Testing", 'Pending']).count()
+                        # PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning").count()
+                    else:
+                        PassNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Pass", 'Conditional Pass']).count()
+                        FailNo = INVGantt.objects.filter(TP_Cat=i, Status="Fail").count()
+                        OngoingNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Testing", 'Pending']).count()
                     mock_data2_all.append({"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                            "Total": PassNo + FailNo + OngoingNo})
                     mock_data3_all.append({"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
