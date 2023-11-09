@@ -1107,7 +1107,7 @@ def INVGantt_summary(request):
     if request.method == 'POST':
         if request.POST.get("isGetData") == "first":
             Year = str(datetime.datetime.now().year)
-            # print(Year)
+            print(Year)
             # Search1 default
             Customer_key = []
             Customerlist = INVGantt.objects.all().values("Customer").distinct().order_by("Customer")
@@ -1128,7 +1128,13 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(Customer=i["Customer"], Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     #Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                    PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning").count()
+                    # PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning",
+                    #                                     Test_Start__range=Test_Endperiod).count() + INVGantt.objects.filter(Customer=i["Customer"], Status="Planning",
+                    #                                     Test_Start__in=[None]).count()
+                    PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning",
+                                                         Year=Year).count()#Planning的大多沒有開始和結束時間
+
+                    # print(PlanningNo, i["Customer"],Test_Endperiod)
                     mock_data1.append({"Customer": i["Customer"], "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1140,7 +1146,8 @@ def INVGantt_summary(request):
                 OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'],
                                                     Test_Start__range=Test_Endperiod).count()
                 # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                PlanningNo = INVGantt.objects.filter(Status="Planning").count()
+                PlanningNo = INVGantt.objects.filter(Status="Planning",
+                                                        Year=Year).count()
                 mock_data1.append(
                     {"Customer": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo, "Planning": PlanningNo,
                      "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1215,7 +1222,7 @@ def INVGantt_summary(request):
                         OngoingNo = INVGantt.objects.filter(Project_Name=i, Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
                         # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                        PlanningNo = INVGantt.objects.filter(Project_Name=i, Status="Planning").count()
+                        PlanningNo = INVGantt.objects.filter(Project_Name=i, Status="Planning", Year=Year).count()
                         mock_data3.append(
                             {"Project": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                              "Planning": PlanningNo,
@@ -1229,7 +1236,7 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(Customer=Customer, Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                    PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning").count()
+                    PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning", Year=Year).count()
                     mock_data3.append({"Project": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1269,7 +1276,7 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                    PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning").count()
+                    PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning", Year=Year).count()
                     mock_data4.append(
                         {"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                          "Planning": PlanningNo,
@@ -1283,7 +1290,7 @@ def INVGantt_summary(request):
                 OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'],
                                                     Test_Start__range=Test_Endperiod).count()
                 # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                PlanningNo = INVGantt.objects.filter(Status="Planning").count()
+                PlanningNo = INVGantt.objects.filter(Status="Planning", Year=Year).count()
                 mock_data4.append({"KeyPart": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                    "Planning": PlanningNo,
                                    "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1355,7 +1362,8 @@ def INVGantt_summary(request):
                         OngoingNo = INVGantt.objects.filter(Customer=i["Customer"], Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
                         # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                        PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning").count()
+                        PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning",
+                                                        Year=Year).count()
                         # print(INVGantt.objects.filter(Customer=i["Customer"], Status="Planning").count())
                         mock_data1.append(
                             {"Customer": i["Customer"], "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
@@ -1369,7 +1377,8 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                    PlanningNo = INVGantt.objects.filter(Status="Planning").count()
+                    PlanningNo = INVGantt.objects.filter(Status="Planning",
+                                                        Year=Year).count()
                     mock_data1.append({"Customer": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1382,7 +1391,7 @@ def INVGantt_summary(request):
                         # print(i["Customer"], PassNo)
                         FailNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Fail", Test_Start__range=Test_Endperiod).count()
                         OngoingNo = INVGantt.objects.filter(Customer=i["Customer"], Status__in=["Testing", 'Pending'], Test_Start__range=Test_Endperiod).count()
-                        PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning", Test_Start__range=Test_Endperiod).count()
+                        PlanningNo = INVGantt.objects.filter(Customer=i["Customer"], Status="Planning", Year=Year).count()
                         # print(INVGantt.objects.filter(Customer=i["Customer"], Status="Planning").count())
                         mock_data1.append({"Customer": i["Customer"], "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo, "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1392,7 +1401,7 @@ def INVGantt_summary(request):
                     # print(i["Customer"], PassNo)
                     FailNo = INVGantt.objects.filter(Status="Fail", Test_Start__range=Test_Endperiod).count()
                     OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'], Test_Start__range=Test_Endperiod).count()
-                    PlanningNo = INVGantt.objects.filter(Status="Planning", Test_Start__range=Test_Endperiod).count()
+                    PlanningNo = INVGantt.objects.filter(Status="Planning", Year=Year).count()
                     mock_data1.append({"Customer": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo, "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
             else:
@@ -1485,7 +1494,7 @@ def INVGantt_summary(request):
                             OngoingNo = INVGantt.objects.filter(Project_Name=i, Status__in=["Testing", 'Pending'],
                                                                 Test_Start__range=Test_Endperiod).count()
                             # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                            PlanningNo = INVGantt.objects.filter(Project_Name=i, Status="Planning").count()
+                            PlanningNo = INVGantt.objects.filter(Project_Name=i, Status="Planning", Year=Year).count()
                             mock_data3.append(
                                 {"Project": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                  "Planning": PlanningNo,
@@ -1499,7 +1508,7 @@ def INVGantt_summary(request):
                         OngoingNo = INVGantt.objects.filter(Customer=Customer, Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
                         # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                        PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning").count()
+                        PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning", Year=Year).count()
                         mock_data3.append({"Project": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                            "Planning": PlanningNo,
                                            "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1520,7 +1529,7 @@ def INVGantt_summary(request):
                             OngoingNo = INVGantt.objects.filter(Project_Name=i, Status__in=["Testing", 'Pending'],
                                                                 Test_Start__range=Test_Endperiod).count()
                             PlanningNo = INVGantt.objects.filter(Project_Name=i, Status="Planning",
-                                                                 Test_Start__range=Test_Endperiod).count()
+                                                                 Year=Year).count()
                             mock_data3.append(
                                 {"Project": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                  "Planning": PlanningNo,
@@ -1532,7 +1541,7 @@ def INVGantt_summary(request):
                         FailNo = INVGantt.objects.filter(Customer=Customer, Status="Fail", Test_Start__range=Test_Endperiod).count()
                         OngoingNo = INVGantt.objects.filter(Customer=Customer, Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
-                        PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning", Test_Start__range=Test_Endperiod).count()
+                        PlanningNo = INVGantt.objects.filter(Customer=Customer, Status="Planning", Year=Year).count()
                         mock_data3.append({"Project": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                            "Planning": PlanningNo,
                                            "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -1604,7 +1613,7 @@ def INVGantt_summary(request):
                         OngoingNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
                         # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                        PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning").count()
+                        PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning", Year=Year).count()
                         mock_data4.append(
                             {"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                              "Planning": PlanningNo,
@@ -1618,7 +1627,7 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     # Planning状态的没有schedule日期，不能把Test_Start__range作为搜索条件，需要加到当年的里面去
-                    PlanningNo = INVGantt.objects.filter(Status="Planning").count()
+                    PlanningNo = INVGantt.objects.filter(Status="Planning", Year=Year).count()
 
                     mock_data4.append({"KeyPart": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
@@ -1639,7 +1648,7 @@ def INVGantt_summary(request):
                         OngoingNo = INVGantt.objects.filter(TP_Cat=i, Status__in=["Testing", 'Pending'],
                                                             Test_Start__range=Test_Endperiod).count()
                         PlanningNo = INVGantt.objects.filter(TP_Cat=i, Status="Planning",
-                                                             Test_Start__range=Test_Endperiod).count()
+                                                             Year=Year).count()
                         mock_data4.append(
                             {"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                              "Planning": PlanningNo,
@@ -1653,7 +1662,7 @@ def INVGantt_summary(request):
                     OngoingNo = INVGantt.objects.filter(Status__in=["Testing", 'Pending'],
                                                         Test_Start__range=Test_Endperiod).count()
                     PlanningNo = INVGantt.objects.filter(Status="Planning",
-                                                         Test_Start__range=Test_Endperiod).count()
+                                                         Year=Year).count()
                     mock_data4.append({"KeyPart": "Total", "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                        "Planning": PlanningNo,
                                        "Total": PassNo + FailNo + OngoingNo + PlanningNo})
@@ -2155,7 +2164,7 @@ def INVGantt_top(request):
             for i in yearlist1:
                 print(i.Test_End, i.TestEndYear)
             Yearqura = yearlist1.values('TestEndYear').annotate(dcount=Count('TestEndYear')).order_by('TestEndYear')
-            print(Yearqura,'Yearqura')
+            print(Yearqura)
             Yearlist = []
             for i in Yearqura:
                 if i["TestEndYear"]:
@@ -2206,7 +2215,7 @@ def INVGantt_top(request):
                         "data": datalist  # 对应机种顺序
                     },
                 )
-            mock_data5 = sorted(mock_data5, key=lambda x: x['Year'], reverse=True)
+            mock_data5 = sorted(mock_data5, key=lambda x: x["Year"], reverse=True)
 
         if request.POST.get("isGetData") == "SEARCH1":
             Customer = request.POST.get("Customer")
@@ -2277,6 +2286,7 @@ def INVGantt_top(request):
         if request.POST.get("isGetData") == "SEARCH2":
             Customer = request.POST.get("Customer")
             Year = request.POST.get("Date")
+            # print(Customer, Year)
             keypartlist = []
             if Customer != "All":
                 if Year:
@@ -2308,6 +2318,7 @@ def INVGantt_top(request):
                         FailNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status="Fail").count()
                         OngoingNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i,
                                                             Status__in=["Testing", 'Pending']).count()
+                    # print(i, PassNo)
                     # PlanningNo = INVGantt.objects.filter(Customer=Customer, TP_Cat=i, Status="Planning").count()
                     mock_data2_all.append({"KeyPart": i, "Pass": PassNo, "Fail": FailNo, "Ongoing": OngoingNo,
                                            "Total": PassNo + FailNo + OngoingNo})
@@ -2476,7 +2487,8 @@ def INVGantt_top(request):
                         "data": datalist  # 对应机种顺序
                     },
                 )
-            mock_data5 = sorted(mock_data5, key=lambda x: x['Year'], reverse=True)
+            mock_data5 = sorted(mock_data5, key=lambda x: x["Year"], reverse=True)
+
         data = {
             "err_ok": "0",
             "content1": mock_data1,
