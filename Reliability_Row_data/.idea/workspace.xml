@@ -6,16 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/DMScelerybeat.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DMScelerybeat.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/DMSceleryworker.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DMSceleryworker.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/DMSscheduleflag.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DMSscheduleflag.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/DMSscheduleflags.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/DMSscheduleflags.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/TUMInputflag.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/TUMInputflag.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DMS/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/celerybeat-schedule.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/INVGantt/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2023-11-07.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-11-07.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2023-11-07.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-11-07.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/app01/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/app01/tasks.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,9 +16,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DDIS$downunpkg_elementui.coverage" NAME="downunpkg_elementui Coverage Results" MODIFIED="1574067780683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/static/download_UPK" />
     <SUITE FILE_PATH="coverage/Reliability_Row_data$models.coverage" NAME="models Coverage Results" MODIFIED="1569572801964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Package" />
     <SUITE FILE_PATH="coverage/DDIS$views.coverage" NAME="views Coverage Results" MODIFIED="1639011179220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CQM" />
-    <SUITE FILE_PATH="coverage/DDIS$downunpkg_elementui.coverage" NAME="downunpkg_elementui Coverage Results" MODIFIED="1574067780683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/static/download_UPK" />
     <SUITE FILE_PATH="coverage/DDIS$Test__TestPlanSW.coverage" NAME="Test: TestPlanSW Coverage Results" MODIFIED="1591243910303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="DatabaseView">
@@ -52,7 +43,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="14" />
-          <entry key="project.open.time.0" value="6" />
+          <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -64,7 +55,7 @@
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,7 +63,7 @@
           <entry key="css" value="4" />
           <entry key="html" value="453" />
           <entry key="js" value="7" />
-          <entry key="py" value="566" />
+          <entry key="py" value="567" />
           <entry key="pyi" value="1" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="1" />
@@ -83,7 +74,7 @@
           <entry key="CSS" value="4" />
           <entry key="HTML" value="453" />
           <entry key="JavaScript" value="7" />
-          <entry key="Python" value="566" />
+          <entry key="Python" value="567" />
           <entry key="PythonStub" value="1" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="1" />
@@ -110,59 +101,7 @@
     <favorites_list name="DDIS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PersonalInfo/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="120" column="45" lean-forward="true" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#321#1143#0" />
-                <element signature="e#1221#2000#0" />
-                <element signature="e#2074#2784#0" />
-                <element signature="e#2856#3579#0" />
-                <element signature="e#3653#4137#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app01/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="248" column="33" lean-forward="true" selection-start-line="248" selection-start-column="33" selection-end-line="248" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="129" column="12" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="12" />
-              <folding>
-                <element signature="e#7366#10745#0" />
-                <element signature="e#10793#12294#0" />
-                <element signature="e#12331#14369#0" />
-                <element signature="e#14409#15705#0" />
-                <element signature="e#15742#17875#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -291,8 +230,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="85" />
+    <option name="x" value="9" />
+    <option name="y" value="84" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
   </component>
@@ -343,8 +282,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DMS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -860,10 +799,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1508" height="900" extended-state="6" />
+    <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.18" />
+      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" weight="0.18220085" />
+      <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.497979" weight="0.36461127" />
+      <window_info anchor="bottom" id="Structure" order="5" sideWeight="0.502994" weight="0.23458445" />
+      <window_info anchor="bottom" id="Python Console" order="6" sideWeight="0.49636218" weight="0.47453085" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49717057" weight="0.32573727" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39814815" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" content_ui="combo" x="713" y="421" width="202" height="56" id="TODO" order="11" type="WINDOWED" weight="0.32956153" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50317967" weight="0.2989276" />
+      <window_info anchor="bottom" id="SciView" order="14" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
+      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="bottom" id="Messages" order="16" />
+      <window_info anchor="bottom" id="Version Control" order="17" weight="0.3297587" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.36528498" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="337" height="637" id="Documentation" order="4" side_tool="true" weight="0.3293092" />
+      <window_info anchor="right" id="Favorites" order="5" sideWeight="0.5277311" weight="0.27931035" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
+      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.18220085" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
@@ -889,7 +857,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="337" height="637" id="Documentation" order="4" side_tool="true" weight="0.3293092" />
       <window_info anchor="right" id="Favorites" order="5" sideWeight="0.5277311" weight="0.27931035" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1021,16 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="131" column="21" selection-start-line="131" selection-start-column="12" selection-end-line="131" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#1228#2053#0" />
-            <element signature="e#6412#10316#0" />
-            <element signature="e#10318#10372#0" />
-            <element signature="e#13431#13572#0" />
-            <element signature="e#13627#14595#0" />
-            <element signature="e#14714#18690#0" />
-            <element signature="e#18692#18727#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,9 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,9 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="296" column="89" selection-start-line="296" selection-start-column="89" selection-end-line="296" selection-end-column="89" />
-          <folding>
-            <element signature="e#24805#24853#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,9 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1145,21 +1094,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SpecDownload/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="254" column="30" lean-forward="true" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1167,12 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3154">
           <caret line="199" column="81" lean-forward="true" selection-start-line="199" selection-start-column="81" selection-end-line="199" selection-end-column="81" />
-          <folding>
-            <element signature="n#style#0;n#el-select#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-select#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,11 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="195" column="44" selection-start-line="195" selection-start-column="44" selection-end-line="195" selection-end-column="44" />
-          <folding>
-            <element signature="e#815#5252#0" />
-            <element signature="e#5296#9333#0" />
-            <element signature="e#10297#14411#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,9 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="962" column="29" selection-start-line="962" selection-start-column="24" selection-end-line="962" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,32 +1170,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="129" column="12" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="12" />
-          <folding>
-            <element signature="e#7366#10745#0" />
-            <element signature="e#10793#12294#0" />
-            <element signature="e#12331#14369#0" />
-            <element signature="e#14409#15705#0" />
-            <element signature="e#15742#17875#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="794" column="27" lean-forward="true" selection-start-line="794" selection-start-column="27" selection-end-line="794" selection-end-column="36" />
-          <folding>
-            <element signature="e#30433#37901#0" />
-            <element signature="e#306340#442414#0" />
-            <element signature="e#442457#604333#0" />
-            <element signature="e#606248#623594#0" />
-            <element signature="e#623638#625437#0" />
-            <element signature="e#625477#868885#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,16 +1188,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="120" column="45" lean-forward="true" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
+        <state relative-caret-position="532">
+          <caret line="120" column="45" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#321#1143#0" />
@@ -1307,15 +1208,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="248" column="33" lean-forward="true" selection-start-line="248" selection-start-column="33" selection-end-line="248" selection-end-column="33" />
+        <state relative-caret-position="4674">
+          <caret line="248" column="33" selection-start-line="248" selection-start-column="33" selection-end-line="248" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2451">
+          <caret line="129" column="12" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="12" />
+          <folding>
+            <element signature="e#7366#10745#0" />
+            <element signature="e#10793#12294#0" />
+            <element signature="e#12331#14369#0" />
+            <element signature="e#14409#15705#0" />
+            <element signature="e#15742#17875#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="1628" column="42" lean-forward="true" selection-start-line="1628" selection-start-column="42" selection-end-line="1628" selection-end-column="42" />
+        <state relative-caret-position="226">
+          <caret line="1627" column="83" selection-start-line="1627" selection-start-column="83" selection-end-line="1627" selection-end-column="83" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
             <element signature="e#491#12152#0" />
@@ -1332,15 +1254,7 @@
             <element signature="e#58900#59744#0" />
             <element signature="e#59982#75215#0" />
             <element signature="e#106485#145194#0" />
-            <element signature="e#143376#143550#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>

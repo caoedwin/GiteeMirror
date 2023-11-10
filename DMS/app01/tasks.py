@@ -417,7 +417,7 @@ def sendmass_email(messages):
     send_mass_mail(messages, fail_silently=False)  # fail_silentl运行异常的时候是否报错，默认为True不报错
 
 @task
-def ProjectSync():
+def AdapterPowerCodeBRSync():
     print("Start")
     mock_data = []
     mock_datalist = AdapterPowerCodeBR.objects.all()
@@ -602,21 +602,21 @@ def MailhtmlSync():
 from celery import shared_task,task
 
 
-@shared_task()
-def add(x,y):
-    # return x + y
-    print (x + y)
-
-@shared_task()
-def mul(x,y):
-    print ("%d * %d = %d" %(x,y,x*y))
-    return x*y
-
-@shared_task()
-def sub(x,y):
-    print ("%d - %d = %d"%(x,y,x-y))
-    return x - y
-
-@task(ignore_result=True,max_retries=1,default_retry_delay=10)
-def just_print():
-    print ("Print from celery task")
+# @shared_task()
+# def add(x,y):
+#     # return x + y
+#     print (x + y)
+#
+# @shared_task()
+# def mul(x,y):
+#     print ("%d * %d = %d" %(x,y,x*y))
+#     return x*y
+#
+# @shared_task()
+# def sub(x,y):
+#     print ("%d - %d = %d"%(x,y,x-y))
+#     return x - y
+#
+# @task(ignore_result=True,max_retries=1,default_retry_delay=10)
+# def just_print():
+#     print ("Print from celery task")
