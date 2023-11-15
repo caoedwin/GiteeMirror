@@ -1,5 +1,4 @@
 from celery.task import task
-from .views import ImportProjectinfoFromDCT
 from app01.models import UserInfo
 from TestPlanSW.models import TestProjectSW, TestPlanSW
 from CQM.models import CQM
@@ -7,6 +6,9 @@ from DriverTool.models import DriverList_M, ToolList_M
 import datetime
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from requests_ntlm import HttpNtlmAuth
+import datetime,json,requests,time,simplejson
+from app01.models import UserInfo,lesson_learn,Imgs,files,ProjectinfoinDCT,Role,Permission,Menu
 
 # 自定义要执行的task任务
 #在项目manage.py统计目录下cmd或pycharmTerminal运行celery worker -A mydjango -l info -P eventlet，celery -A mydjango beat -l info
@@ -25,7 +27,7 @@ def ProjectSync():
     DATE_NOW = str(datetime.datetime.now().date())
     importPrjResult = ImportProjectinfoFromDCT()
     path = settings.BASE_DIR
-    file_flag = path + '/logs/' + 'ProjectSync.txt-%s' % (DATE_NOW.split("-")[0] + DATE_NOW.split("-")[1] + DATE_NOW.split("-")[2])
+    file_flag = path + '/logs/' + 'ProjectSync-%s.txt' % (DATE_NOW.split("-")[0] + DATE_NOW.split("-")[1] + DATE_NOW.split("-")[2])
     # print(file_flag)
     with open(file_flag, 'w') as f:  # 设置文件对象
         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), importPrjResult, file=f)
@@ -33,6 +35,201 @@ def ProjectSync():
         return "OK"
     else:
         return "Fail"
+
+def ImportProjectinfoFromDCT():
+
+    url = r'http://192.168.1.10/dct/api/ClientSvc/getAllProjectInfo'
+    requests.adapters.DEFAULT_RETRIES = 1
+    # s = requests.session()
+    # s.keep_alive = False  # 关闭多余连接
+    # getTestSpec=requests.get(url)
+    headers = {'Connection': 'close'}
+    try:
+        r = requests.get(url, headers=headers)
+        getTestSpec = requests.get(url)
+        # print (getTestSpec.url)
+    except:
+        # time.sleep(0.1)
+        print("Can't connect to DCT Sercer")
+        return 0
+    targetURL = getTestSpec.url
+    # url=r"http://127.0.0.1"
+
+    url.split('\n')[0]
+    # print url
+    # 输入用户名和密码python requests实现windows身份验证登录
+    try:
+        getTestSpec = requests.get(targetURL, auth=HttpNtlmAuth('DCT\\administrator', 'DQA3`2018'))
+    except:
+        # time.sleep(0.1)
+        print("try request agian")
+        return 0
+    # print(type(getTestSpec.json()), getTestSpec.json())
+    numb = 0
+    for i in getTestSpec.json():
+        numb += 1
+        # print(i,i['Size'])
+        localPrjCre = {"Customer": i['Customer'],
+                       "Year": i['Year'],
+                       "ComPrjCode": i['ComPrjCode'],
+                       "PrjEngCode1": i['PrjEngCode1'],
+                       "PrjEngCode2": i['PrjEngCode2'],
+                       "ProjectName": i['ProjectName'],
+                       "Size": i['Size'], "CPU": i['CPU'],
+                       "Platform": i['Platform'],
+                       "VGA": i['VGA'],
+                       "OSSupport": i['OSSupport'],
+                       "Type": i['Type'],
+                       "PPA": i['PPA'],
+                       "PQE": i['PQE'],
+                       "SS": i['SS'],
+                       "LD": i['LD'].split("-")[0],
+                       "LDNum": i['LD'].split("-")[1] if len(i['LD'].split("-"))==2 else "",
+                       "DQAPL": i['DQAPL'].split("-")[0],
+                       "DQAPLNum": i['DQAPL'].split("-")[1] if len(i['DQAPL'].split("-"))==2 else "",
+                       "ModifiedDate": i['ModifyDate']
+                       }
+        # print(localPrjCre)
+        if ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']):
+            ProjectinfoinDCT.objects.filter(ComPrjCode=i['ComPrjCode']).update(**localPrjCre)
+        else:
+            ProjectinfoinDCT.objects.create(**localPrjCre)
+
+    # print(getTestSpec.text)
+    # print("Project數量：", numb)
+
+    # ProjectNameList = []
+    # for i in Package_M.objects.all().values('Project').distinct():
+    #     # print(i['Project'])
+    #     ProjectNameList.append(i['Project'])
+    # for i in Bouncing_M.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in CDM.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in DriverList_M.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in ToolList_M.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in MQM.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in TestProjectME.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in TestProjectSW.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in CQMProject.objects.all().values('Project').distinct():
+    #     ProjectNameList.append(i['Project'])
+    # for i in INVGantt.objects.all().values('Project_Name').distinct():
+    #     ProjectNameList.append(i['Project_Name'])
+    #
+    # # print(ProjectNameList)
+    # ProjectNameList = list(set(ProjectNameList))
+    # # print(ProjectNameList)
+    # sameandlocal=[]
+    # samePrj=[]
+    # nosamePjr = []
+    # numpro = 0
+    # for i in ProjectNameList:
+    #     numpro += 1
+    #     project = "ProjectCode=" + i
+    #     url = r'http://192.168.1.10/dct/api/ClientSvc/getProjectInfo'
+    #     requests.adapters.DEFAULT_RETRIES = 1
+    #     # s = requests.session()
+    #     # s.keep_alive = False  # 关闭多余连接
+    #     # getTestSpec=requests.get(url)
+    #     headers = {'Connection': 'close'}
+    #     try:
+    #         r = requests.get(url, headers=headers)
+    #         getTestSpec = requests.get(url, project)
+    #         # print (getTestSpec.url)
+    #     except:
+    #         # time.sleep(0.1)
+    #         print("Can't connect to DCT Sercer")
+    #         return 0
+    #     targetURL = getTestSpec.url
+    #     # url=r"http://127.0.0.1"
+    #
+    #     url.split('\n')[0]
+    #     # print url
+    #     # 输入用户名和密码python requests实现windows身份验证登录
+    #     try:
+    #         getTestSpec = requests.get(targetURL, auth=HttpNtlmAuth('DCT\\administrator', 'DQA3`2018'))
+    #     except:
+    #         # time.sleep(0.1)
+    #         print("try request agian")
+    #         return 0
+    #
+    #     # print 1
+    #     # print getTestSpec.url
+    #     # newjson = getTestSpec.json()
+    #     # print(newjson)
+    #     newstr = getTestSpec.text.replace('<br>', ' ')
+    #     # print (newstr)
+    #     newstr1 = newstr.replace('":"', '*!')
+    #     # print(newstr1)
+    #     newstr2 = newstr1.replace('", "', '!*')
+    #     newstr2 = newstr2.replace('","', '!*')
+    #     newstr2 = newstr2.replace('" , "', '!*')
+    #     # print(newstr2)
+    #     newstr3 = newstr2.replace('{"', '/!')
+    #     # print(newstr3)
+    #     newstr4 = newstr3.replace('"  }', '!/')
+    #     # print(newstr4)
+    #     newstr5 = newstr4.replace('"', '')
+    #     # print(newstr5)
+    #     newstr6 = newstr5.replace('*!', '":"')
+    #     # print(newstr6)
+    #     newstr7 = newstr6.replace('!*', '","')
+    #     # print(newstr7)
+    #     newstr8 = newstr7.replace('/!', '{"')
+    #     # print(newstr8)
+    #     newstr9 = newstr8.replace('!/', '"}')
+    #     # print("9", newstr9, type(newstr9))
+    #     if not ProjectinfoinDCT.objects.filter(ComPrjCode=i).first():
+    #         # print("j9", json.loads(newstr9))
+    #         if json.loads(newstr9)['ComPrjCode']:
+    #             samePrj.append(i)
+    #             localPrjCre = {"Customer": json.loads(newstr9)['Customer'],
+    #                         "Year": json.loads(newstr9)['Year'],
+    #                            "ComPrjCode": json.loads(newstr9)['ComPrjCode'],
+    #                            "PrjEngCode1": json.loads(newstr9)['PrjEngCode1'],
+    #                            "PrjEngCode2": json.loads(newstr9)['PrjEngCode2'],
+    #                            "ProjectName": json.loads(newstr9)['ProjectName'],
+    #                            "Size": json.loads(newstr9)['Size'], "CPU": json.loads(newstr9)['CPU'],
+    #                            "Platform": json.loads(newstr9)['Platform'],
+    #                            "VGA": json.loads(newstr9)['VGA'],
+    #                            "OSSupport": json.loads(newstr9)['OSSupport'],
+    #                            "SS": json.loads(newstr9)['SS'],
+    #                            "LD": json.loads(newstr9)['LD'], "DQAPL": json.loads(newstr9)['DQAPL'],
+    #                            "ModifiedDate": json.loads(newstr9)['ModifyDate']
+    #                            }
+    #             ProjectinfoinDCT.objects.create(**localPrjCre)
+    #         else:
+    #             nosamePjr.append(i)
+    #     else:
+    #         sameandlocal.append(i)
+    #         # print("j92", json.loads(newstr9))
+    #         if json.loads(newstr9)['ComPrjCode']:
+    #             localPrjUpdate = {"Customer": json.loads(newstr9)['Customer'],
+    #                         "Year": json.loads(newstr9)['Year'],
+    #                            "ComPrjCode": json.loads(newstr9)['ComPrjCode'],
+    #                            "PrjEngCode1": json.loads(newstr9)['PrjEngCode1'],
+    #                            "PrjEngCode2": json.loads(newstr9)['PrjEngCode2'],
+    #                            "ProjectName": json.loads(newstr9)['ProjectName'],
+    #                            "Size": json.loads(newstr9)['Size'], "CPU": json.loads(newstr9)['CPU'],
+    #                            "Platform": json.loads(newstr9)['Platform'],
+    #                            "VGA": json.loads(newstr9)['VGA'],
+    #                            "OSSupport": json.loads(newstr9)['OSSupport'],
+    #                            "SS": json.loads(newstr9)['SS'],
+    #                            "LD": json.loads(newstr9)['LD'], "DQAPL": json.loads(newstr9)['DQAPL'],
+    #                               "ModifiedDate": json.loads(newstr9)['ModifyDate']}
+    #             ProjectinfoinDCT.objects.filter(ComPrjCode=i).update(**localPrjUpdate)
+
+
+    # print(sameandlocal)
+    # print(samePrj)
+    # print(nosamePjr)
+    # print(numpro)
+    return numb
 
 @task
 def MailhtmlSync():

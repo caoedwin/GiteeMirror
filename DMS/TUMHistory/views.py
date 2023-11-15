@@ -583,8 +583,8 @@ def SummaryMateria(request):
         if i == 'Sys_Admin':
             # editPpriority = 4
             canEdit = 1
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))#__icontains不接受 array 就像查询集中的那样address__icontains= ["word1", "word2", "word3"]
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)#用一次后会改变all_queryset本身，下次要出府使用需要重新定义
     selectProposer = [
         # {"value": "20795434", "number": "張宵凌"}, {"value": "20720831", "number": "劉婭茹"},
@@ -592,8 +592,8 @@ def SummaryMateria(request):
     for i in all_queryset.values("CurrentKeeper", "CurrentKeeper_CN").distinct().order_by("CurrentKeeper"):
         selectProposer.append({"value": i["CurrentKeeper"], "number": i["CurrentKeeper_CN"]})
 
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)
     sectionProject = [
         # "GLS4I", "FLMA0", "GLS4A"
@@ -601,8 +601,8 @@ def SummaryMateria(request):
     for i in all_queryset.values("ProjectCode").distinct().order_by("ProjectCode"):
         sectionProject.append(i["ProjectCode"])
 
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)
     sectionCustomer = [
         # "C38(AIO)", "A39", "C38(NB)"
@@ -610,8 +610,8 @@ def SummaryMateria(request):
     for i in all_queryset.values("CustomerCode").distinct().order_by("CustomerCode"):
         sectionCustomer.append(i["CustomerCode"])
 
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)
     sectionPhase = [
         # "B(DVT)", "C", "FFRT"
@@ -619,8 +619,8 @@ def SummaryMateria(request):
     for i in all_queryset.values("PhaseName").distinct().order_by("PhaseName"):
         sectionPhase.append(i["PhaseName"])
 
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)
     sectionPN = [
         # "GA00000MP20", "DDC00002700", "DD10000WW00"
@@ -628,8 +628,8 @@ def SummaryMateria(request):
     for i in all_queryset.values("PN").distinct().order_by("PN"):
         sectionPN.append(i["PN"])
 
-    queryset_data_OTST = MateriaInDQA_Tum.objects.all()
-    queryset_data_RT = DQAMateria_TUMHistory.objects.all().defer('ReturnID')
+    queryset_data_OTST = MateriaInDQA_Tum.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+    queryset_data_RT = DQAMateria_TUMHistory.objects.exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
     all_queryset = queryset_data_OTST.union(queryset_data_RT)
     sectionStatus = [
         # "測試中", "已退庫"
@@ -690,8 +690,8 @@ def SummaryMateria(request):
                 check_dic["Status"] = Status
 
             print(check_dic)
-            queryset_data_OTST = MateriaInDQA_Tum.objects.filter(**check_dic)
-            queryset_data_RT = DQAMateria_TUMHistory.objects.filter(**check_dic).defer('ReturnID')
+            queryset_data_OTST = MateriaInDQA_Tum.objects.filter(**check_dic).exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000"))
+            queryset_data_RT = DQAMateria_TUMHistory.objects.filter(**check_dic).exclude(Q(PN__contains="PK1000") | Q(PN__contains="GA0000")).defer('ReturnID')
             all_queryset = queryset_data_OTST.union(queryset_data_RT)
             for i in all_queryset:
                 mock_data.append(
