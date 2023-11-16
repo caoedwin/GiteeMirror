@@ -621,7 +621,7 @@ def Summary(request):
     if request.method == "POST":
         try:
             if request.POST.get('isGetData') == 'first':
-                for i in PerExperience.objects.filter(Proposer_Num=account_login):
+                for i in PerExperience.objects.filter(Proposer_Num=account_login).exclude(Status__in=["待簽核"]):
                     mock_data.append(
                         {"id": i.id, "Approved_Officer": PersonalInfo.objects.filter(
                             Q(GroupNum=i.Approved_Officer) | Q(SAPNum=i.Approved_Officer)).first().CNName if
@@ -653,7 +653,7 @@ def Summary(request):
                 Project = request.POST.get('Project')
                 if Project:
                     check_dic["Project"] = Project
-                data_qure = PerExperience.objects.filter(**check_dic)
+                data_qure = PerExperience.objects.filter(**check_dic).exclude(Status__in=["待簽核"])
                 for i in data_qure:
                     mock_data.append(
                         {"id": i.id, "Approved_Officer": PersonalInfo.objects.filter(

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TUMHistory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/TUMHistory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/AutoResult/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/AutoResult/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-11-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2023-11-09.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-11-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2023-11-09.log" afterDir="false" />
     </list>
@@ -39,7 +41,7 @@
     <session id="336981479">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="16" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.2" value="4" />
@@ -80,30 +82,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TUMHistory/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="685" column="36" lean-forward="true" selection-start-line="685" selection-start-column="36" selection-end-line="685" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#902#2864#0" />
-                <element signature="e#2880#4842#0" />
-                <element signature="e#5482#37576#0" />
-                <element signature="e#5597#34388#0" />
-                <element signature="e#34561#36878#0" />
-                <element signature="e#37876#39838#0" />
-                <element signature="e#39854#41816#0" />
-                <element signature="e#41839#41914#0" />
-                <element signature="e#41937#41963#0" />
-                <element signature="e#44861#46665#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1370,13 +1349,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.22908013" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" weight="0.22908013" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.197733" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.197733" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1400,7 +1378,7 @@
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.19791667" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.197733" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1411,7 +1389,7 @@
       <window_info anchor="bottom" id="SciView" order="9" sideWeight="0.50407606" side_tool="true" weight="0.19791667" />
       <window_info anchor="bottom" id="Database" order="10" sideWeight="0.50158983" side_tool="true" weight="0.24333926" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959514" weight="0.41927084" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32493702" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32493702" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50407606" side_tool="true" weight="0.27734375" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1762,8 +1740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TUMHistory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="685" column="36" lean-forward="true" selection-start-line="685" selection-start-column="36" selection-end-line="685" selection-end-column="36" />
+        <state relative-caret-position="176">
+          <caret line="578" column="38" selection-start-line="578" selection-start-column="38" selection-end-line="578" selection-end-column="38" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#902#2864#0" />
