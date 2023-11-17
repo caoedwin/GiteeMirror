@@ -367,9 +367,9 @@ SAFE_URL = [
 # CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 #下面在settings文件中配置celery相关的配置：无需django-celery
-CELERY_BROKER_URL = 'redis://:DCT2019@127.0.0.1:6379/'
-
-CELERY_RESULT_BACKEND = 'redis://DCT2019@127.0.0.1:6379/'
+CELERY_BROKER_URL = 'redis://:DCT2019@127.0.0.1:6379/3'
+#Redis 16个库任你选,同一台机器启动多个celery，BROKER_URL必须不同才行。Redus在Celery体系中充当消息中间件（message broker）作用，如果都放在一个redis库中，当两个celery都启动时，读取任务会将另一个项目的任务也读取过来，直接报错。
+CELERY_RESULT_BACKEND = 'redis://DCT2019@127.0.0.1:6379/4'
 
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'#要与系统时区TIME_ZONE一致
