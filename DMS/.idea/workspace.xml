@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/DDIScelerybeat.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/DDIScelerybeat.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/DDISceleryworker.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/DDISceleryworker.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/INVGantt/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DMS$tests.coverage" NAME="tests Coverage Results" MODIFIED="1695602889732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app01" />
     <SUITE FILE_PATH="coverage/DMS$tasks.coverage" NAME="tasks Coverage Results" MODIFIED="1615337691199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app01" />
+    <SUITE FILE_PATH="coverage/DMS$excelTrans.coverage" NAME="excelTrans Coverage Results" MODIFIED="1700727265124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/PythonProject/DDISExcel" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -52,26 +51,26 @@
         <counts>
           <entry key="html" value="116" />
           <entry key="js" value="2" />
-          <entry key="py" value="237" />
+          <entry key="py" value="239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="116" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="237" />
+          <entry key="Python" value="239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1207" />
-          <entry key="py" value="4912" />
+          <entry key="py" value="4933" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1207" />
-          <entry key="Python" value="4912" />
+          <entry key="Python" value="4933" />
         </counts>
       </usages-collector>
     </session>
@@ -80,17 +79,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DMS/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="371" column="57" selection-start-line="371" selection-start-column="57" selection-end-line="371" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,11 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ReturnData</find>
-      <find>T88_yusuan_dic</find>
-      <find>yusuan</find>
-      <find>C38_yusuan_dic_summary</find>
-      <find>NoneType</find>
       <find>keys</find>
       <find>DQAUnit_TUMHistory</find>
       <find>axios</find>
@@ -133,6 +117,11 @@
       <find>LNVTUMINFOTotal</find>
       <find>PK1000</find>
       <find>mock_data</find>
+      <find>path</find>
+      <find>enableProgress</find>
+      <find>print</find>
+      <find>doexcel</find>
+      <find>mythread1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/SigninABO.html" />
         <option value="$PROJECT_DIR$/templates/SigninLNV.html" />
         <option value="$PROJECT_DIR$/templates/ChairCabinetMS/BG_Borrow.html" />
         <option value="$PROJECT_DIR$/templates/DeviceLNV/BorrowedDeviceLNV.html" />
@@ -192,6 +180,7 @@
         <option value="$PROJECT_DIR$/app01/tasks.py" />
         <option value="$PROJECT_DIR$/TUMHistory/views.py" />
         <option value="$PROJECT_DIR$/DMS/settings.py" />
+        <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
       </list>
     </option>
   </component>
@@ -1098,7 +1087,7 @@
       <path value="$PROJECT_DIR$/static/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="9" />
     <option name="y" value="84" />
     <option name="width" value="1944" />
@@ -1132,7 +1121,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/PythonProject/DDISExcel/excelTrans.py" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1164,6 +1153,28 @@
   </component>
   <component name="RunManager" selected="Django server.DMS">
     <configuration name="login.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DMS/templates/login.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="excelTrans" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DMS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="C:/PythonProject/DDISExcel" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:/PythonProject/DDISExcel/excelTrans.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="tasks" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -1239,9 +1250,11 @@
       <item itemvalue="JavaScript Debug.login.html" />
       <item itemvalue="Python.tasks" />
       <item itemvalue="Python.tests" />
+      <item itemvalue="Python.excelTrans" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.excelTrans" />
         <item itemvalue="Python.tests" />
         <item itemvalue="JavaScript Debug.login.html" />
         <item itemvalue="Python.tasks" />
@@ -1361,15 +1374,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
+    <frame x="-7" y="-7" width="1721" height="927" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.22908013" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" weight="0.22908013" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.197733" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.3979849" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32761088" />
@@ -1392,7 +1405,7 @@
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.197733" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.197733" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1419,7 +1432,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/TestPlanSW_Summary(1).html" />
     <entry file="file://$PROJECT_DIR$/templates/SigninCQT88.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1531,13 +1543,6 @@
     </entry>
     <entry file="file://C:/PythonProject/DDISExcel/excelmain.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/PythonProject/DDISExcel/excelTrans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="578" column="77" lean-forward="true" selection-start-line="578" selection-start-column="77" selection-end-line="578" selection-end-column="77" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DMS/celery.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1723,8 +1728,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DMS/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="371" column="57" selection-start-line="371" selection-start-column="57" selection-end-line="371" selection-end-column="57" />
+        <state relative-caret-position="559">
+          <caret line="372" lean-forward="true" selection-start-line="372" selection-end-line="372" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python372/mecheck/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5486" selection-start-line="5486" selection-end-line="5486" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonProject/DDISExcel/excelTrans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+          <folding>
+            <element signature="e#557#1023#0" />
+            <element signature="e#1060#1856#0" />
+            <element signature="e#1896#2037#0" />
+            <element signature="e#2076#2397#0" />
+            <element signature="e#2434#2615#0" />
+            <element signature="e#2655#3065#0" />
+            <element signature="e#5095#16254#0" />
+            <element signature="e#16296#27437#0" />
+          </folding>
         </state>
       </provider>
     </entry>

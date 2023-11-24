@@ -1175,15 +1175,21 @@ def INVGantt_summary(request):
                 for i in Mounthlist:
                     data2dict = {"Month": i}
                     for j in selectItem:
+                        # data2dict[j] = INVGantt.objects.filter(Customer=j, Month=i,
+                        #                                        Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
                         data2dict[j] = INVGantt.objects.filter(Customer=j, Month=i,
-                                                               Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                                                               Test_Start__range=Test_Endperiod).count()
+                    # data2dict["Total"] = INVGantt.objects.filter(Month=i,
+                    #                                                             Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
                     data2dict["Total"] = INVGantt.objects.filter(Month=i,
-                                                                                Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                                                                 Test_Start__range=Test_Endperiod).count()
                     mock_data2.append(data2dict)
                 data2dict = {"Month": "Total"}
                 for j in selectItem:
-                    data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
-                data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    # data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).count()
+                # data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).count()
                 mock_data2.append(data2dict)
 
                 INV_data["Month_key"] = Mounthlist
@@ -1438,7 +1444,7 @@ def INVGantt_summary(request):
                         "data": datalist#对应机种顺序
                     },
                 )
-        if request.POST.get("isGetData") == "SEARCH2":
+        if request.POST.get("isGetData") == "SEARCH2":# 改为计算planning状态的，只影响当月的
             Year = request.POST.get("Date")#Search2里面Year不能为空，为空就没有数据
             Mounthlist = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             if Year:
@@ -1446,15 +1452,19 @@ def INVGantt_summary(request):
                 for i in Mounthlist:
                     data2dict = {"Month": i}
                     for j in selectItem:
-                        data2dict[j] = INVGantt.objects.filter(Customer=j, Month=i, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                        # data2dict[j] = INVGantt.objects.filter(Customer=j, Month=i, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                        data2dict[j] = INVGantt.objects.filter(Customer=j, Month=i, Test_Start__range=Test_Endperiod).count()
                         # print(data2dict,"1")
-                    data2dict["Total"] = INVGantt.objects.filter(Month=i, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    # data2dict["Total"] = INVGantt.objects.filter(Month=i, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    data2dict["Total"] = INVGantt.objects.filter(Month=i, Test_Start__range=Test_Endperiod).count()
                     # print(data2dict,"2")
                     mock_data2.append(data2dict)
                 data2dict = {"Month": "Total"}
                 for j in selectItem:
-                    data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
-                data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    # data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                    data2dict[j] = INVGantt.objects.filter(Customer=j, Test_Start__range=Test_Endperiod).count()
+                # data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).exclude(Status="Planning").count()
+                data2dict["Total"] = INVGantt.objects.filter(Test_Start__range=Test_Endperiod).count()
                 # print(data2dict,"3")
                 mock_data2.append(data2dict)
 
