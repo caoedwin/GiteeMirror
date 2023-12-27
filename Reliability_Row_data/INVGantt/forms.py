@@ -122,7 +122,8 @@ class INVGantt_F(forms.Form):
     Issue_Link = forms.CharField(label="Issue_Link", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Remark = forms.CharField(label="Remark", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Attend_Time = forms.CharField(label="Attend_Time", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
-    Get_INV = forms.CharField(label="Get_INV", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    ReTest_Attend_Time = forms.CharField(label="ReTest_Attend_Time", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
+    TestOwner = forms.CharField(label="TestOwner", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Month = forms.CharField(label="Month", max_length=100, widget=forms.Select(choices=Month_list,attrs={'id': 'Month', 'class': 'form-control-new'}))
     # Test_Start = forms.CharField(label="Test_Start", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control-new'}))
     Test_Start = forms.DateField(label="Test_Start", required=True, widget=forms.DateTimeInput(

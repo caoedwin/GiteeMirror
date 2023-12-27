@@ -312,10 +312,16 @@
                 <span v-else="showEdit[scope.$index]">${ attend_time[scope.$index+(currentPage-1)*pageSize] }</span>
        </template>
         </el-table-column>
-        <el-table-column label="Get_INV" align="center" width="100">
+        <el-table-column label="ReTest_Attend_Time" align="center" width="110">
             <template slot-scope="scope">
-            <el-input class="edit-cell" v-if="showEdit[scope.$index] "    v-model="scope.row.Get_INV"></el-input>
-                <span v-else="showEdit[scope.$index] ">${ get_inv[scope.$index+(currentPage-1)*pageSize] }</span>
+            <el-input class="edit-cell" v-if="showEdit[scope.$index]"    v-model="scope.row.ReTest_Attend_Time"></el-input>
+                <span v-else="showEdit[scope.$index]">${ ReTest_Attend_Time[scope.$index+(currentPage-1)*pageSize] }</span>
+       </template>
+        </el-table-column>
+        <el-table-column label="TestOwner" align="center" width="100">
+            <template slot-scope="scope">
+            <el-input class="edit-cell" v-if="showEdit[scope.$index] "    v-model="scope.row.TestOwner"></el-input>
+                <span v-else="showEdit[scope.$index] ">${ TestOwner[scope.$index+(currentPage-1)*pageSize] }</span>
        </template>
         </el-table-column>
         <el-table-column label="Month" align="center" width="90">
@@ -462,7 +468,8 @@ $(document).ready(function() {
              issue_link:[],
              remark:[],
              attend_time:[],
-             get_inv:[],
+             ReTest_Attend_Time:[],
+             TestOwner:[],
              month:[],
              test_start:[],
              test_end:[],
@@ -563,7 +570,8 @@ $(document).ready(function() {
                         this.issue_link[i] = this.tableContent[i].Issue_Link;
                         this.remark[i] = this.tableContent[i].Remark;
                         this.attend_time[i] = this.tableContent[i].Attend_Time;
-                        this.get_inv[i] = this.tableContent[i].Get_INV;
+                        this.ReTest_Attend_Time[i] = this.tableContent[i].ReTest_Attend_Time;
+                        this.TestOwner[i] = this.tableContent[i].TestOwner;
                         this.month[i] = this.tableContent[i].Month;
                         this.test_start[i] = this.tableContent[i].Test_Start;
                         this.test_end[i] = this.tableContent[i].Test_End;
@@ -626,7 +634,8 @@ $(document).ready(function() {
                         this.issue_link[i] = this.tableContent[i].Issue_Link;
                         this.remark[i] = this.tableContent[i].Remark;
                         this.attend_time[i] = this.tableContent[i].Attend_Time;
-                        this.get_inv[i] = this.tableContent[i].Get_INV;
+                        this.ReTest_Attend_Time[i] = this.tableContent[i].ReTest_Attend_Time;
+                        this.TestOwner[i] = this.tableContent[i].TestOwner;
                         this.month[i] = this.tableContent[i].Month;
                         this.test_start[i] = this.tableContent[i].Test_Start;
                         this.test_end[i] = this.tableContent[i].Test_End;
@@ -664,7 +673,8 @@ $(document).ready(function() {
             this.tableContent[index].Issue_Link=this.issue_link[index];
             this.tableContent[index].Remark=this.remark[index];
             this.tableContent[index].Attend_Time=this.attend_time[index];
-            this.tableContent[index].Get_INV=this.get_inv[index];
+            this.tableContent[index].ReTest_Attend_Time=this.ReTest_Attend_Time[index];
+            this.tableContent[index].TestOwner=this.TestOwner[index];
             this.tableContent[index].Month=this.month[index];
             this.tableContent[index].Test_Start=this.test_start[index];
             this.tableContent[index].Test_End=this.test_end[index];

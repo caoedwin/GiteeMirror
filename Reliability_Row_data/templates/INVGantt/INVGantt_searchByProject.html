@@ -267,7 +267,8 @@ input:focus{
                   <el-table-column prop="Issue_Link" label="Issue_Link" align="center" width="160" sortable='custom'></el-table-column>
                   <el-table-column prop="Remark" label="Remark" align="center" width="80" sortable='custom'></el-table-column>
                   <el-table-column prop="Attend_Time" label="Attend_Time" align="center" width="160" sortable='custom'></el-table-column>
-                  <el-table-column prop="Get_INV" label="Get_INV" align="center" width="160" sortable='custom'></el-table-column>
+                  <el-table-column prop="ReTest_Attend_Time" label="ReTest_Attend_Time" align="center" width="160" sortable='custom'></el-table-column>
+                  <el-table-column prop="TestOwner" label="TestOwner" align="center" width="160" sortable='custom'></el-table-column>
                   <el-table-column prop="Month" label="Month" align="center" width="88" sortable='custom'></el-table-column>
                   <el-table-column prop="Test_Start" label="Test_Start" align="center" width="120" sortable='custom'></el-table-column>
                   <el-table-column prop="Test_End" label="Test_End" align="center" width="120" sortable='custom'></el-table-column>
@@ -435,7 +436,10 @@ $(document).ready(function() {
                 }else if (column.prop === 'Attend_Time') {
                     this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
                     console.log(this.dataList);
-                }else if (column.prop === 'Get_INV') {
+                }else if (column.prop === 'ReTest_Attend_Time') {
+                    this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    console.log(this.dataList);
+                }else if (column.prop === 'TestOwner') {
                     this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
                     console.log(this.dataList);
                 }else if (column.prop === 'Month') {

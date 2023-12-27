@@ -83,7 +83,8 @@ def INVGantt_upload(request):
                               'Compal_TP_PN': request.POST.get('Compal_TP_PN'),
                               'Issue_Link': request.POST.get('Issue_Link'),
                               'Remark': request.POST.get('Remark'), 'Attend_Time': request.POST.get('Attend_Time'),
-                              'Get_INV': request.POST.get('Get_INV'), 'Month': request.POST.get('Month'),
+                                'ReTest_Attend_Time': request.POST.get('ReTest_Attend_Time'),
+                              'TestOwner': request.POST.get('TestOwner'), 'Month': request.POST.get('Month'),
                               'Test_Start': request.POST.get('Test_Start'),
                               'Test_End': request.POST.get('Test_End'),
                               'Editor': request.session.get('user_name'),
@@ -327,7 +328,7 @@ def INVGantt_search(request):
                                   "Unit_Qty":i.Unit_Qty, "TP_Kinds":i.TP_Kinds, "Qualify_Cycles":i.Qualify_Cycles, "Status":i.Status,
                                   "TP_Cat":i.TP_Cat, "Trial_Run_Type":i.Trial_Run_Type, "TP_Vendor":i.TP_Vendor, "TP_Key_Parameter":i.TP_Key_Parameter,
                                   "Lenovo_TP_PN":i.Lenovo_TP_PN,"Compal_TP_PN":i.Compal_TP_PN, "Issue_Link":i.Issue_Link,
-                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "Get_INV":i.Get_INV, "Month":i.Month,
+                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "ReTest_Attend_Time":i.ReTest_Attend_Time, "TestOwner":i.TestOwner, "Month":i.Month,
                                   "Test_Start":str(i.Test_Start), "Test_End":str(i.Test_End),
                                   "Editor":i.Editor, "Edittime":str(i.Edittime), })
         data = {
@@ -577,7 +578,7 @@ def INVGantt_searchByProject(request):
                      "TP_Cat": i.TP_Cat, "Trial_Run_Type": i.Trial_Run_Type, "TP_Vendor": i.TP_Vendor,
                      "TP_Key_Parameter": i.TP_Key_Parameter,
                      "Lenovo_TP_PN": i.Lenovo_TP_PN, "Compal_TP_PN": i.Compal_TP_PN, "Issue_Link": i.Issue_Link,
-                     "Remark": i.Remark, "Attend_Time": i.Attend_Time, "Get_INV": i.Get_INV, "Month": i.Month,
+                     "Remark": i.Remark, "Attend_Time": i.Attend_Time, "ReTest_Attend_Time": i.ReTest_Attend_Time, "TestOwner": i.TestOwner, "Month": i.Month,
                      "Test_Start": str(i.Test_Start), "Test_End": str(i.Test_End),
                      "Editor": i.Editor, "Edittime": str(i.Edittime), })
         data = {
@@ -819,7 +820,7 @@ def INVGantt_edit(request):
                                   "Year":i.Year,"Unit_Qty":i.Unit_Qty, "TP_Kinds":i.TP_Kinds, "Qualify_Cycles":i.Qualify_Cycles, "Status":i.Status,
                                   "TP_Cat":i.TP_Cat, "Trial_Run_Type":i.Trial_Run_Type, "TP_Vendor":i.TP_Vendor, "TP_Key_Parameter":i.TP_Key_Parameter,
                                   "Lenovo_TP_PN":i.Lenovo_TP_PN,"Compal_TP_PN":i.Compal_TP_PN, "Issue_Link":i.Issue_Link,
-                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "Get_INV":i.Get_INV, "Month":i.Month,
+                                  "Remark":i.Remark, "Attend_Time":i.Attend_Time, "ReTest_Attend_Time": i.ReTest_Attend_Time, "TestOwner": i.TestOwner, "Month":i.Month,
                                   "Test_Start":str(i.Test_Start), "Test_End":str(i.Test_End),
                                   "Editor":i.Editor, "Edittime":str(i.Edittime), })
             # print(mock_data)
@@ -854,7 +855,7 @@ def INVGantt_edit(request):
                      "TP_Cat": i.TP_Cat, "Trial_Run_Type": i.Trial_Run_Type, "TP_Vendor": i.TP_Vendor,
                      "TP_Key_Parameter": i.TP_Key_Parameter,
                      "Lenovo_TP_PN": i.Lenovo_TP_PN, "Compal_TP_PN": i.Compal_TP_PN, "Issue_Link": i.Issue_Link,
-                     "Remark": i.Remark, "Attend_Time": i.Attend_Time, "Get_INV": i.Get_INV, "Month": i.Month,
+                     "Remark": i.Remark, "Attend_Time": i.Attend_Time, "ReTest_Attend_Time": i.ReTest_Attend_Time, "TestOwner": i.TestOwner, "Month": i.Month,
                      "Test_Start": str(i.Test_Start), "Test_End": str(i.Test_End),
                      "Editor": i.Editor, "Edittime": str(i.Edittime), })
         data = {

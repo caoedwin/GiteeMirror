@@ -1,0 +1,32 @@
+[2023-12-27 08:47:37,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+[2023-12-27 08:47:37,892] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2023-12-27 08:47:37,903] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-12-27 08:47:37,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4026
+[2023-12-27 08:47:37,957] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-12-27 08:47:37,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-12-27 08:47:38,022] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2023-12-27 08:47:38,025] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4735
+[2023-12-27 08:47:44,744] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 08:47:44 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2023-12-27 08:47:44,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 302 0
+[2023-12-27 08:47:44,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2023-12-27 08:47:45,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 49239
+[2023-12-27 08:47:45,317] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-12-27 08:47:46,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /DriverTool/ToolList_edit/ HTTP/1.1" 200 41877
+[2023-12-27 08:47:46,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-12-27 08:47:47,152] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 08:47:47 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /DriverTool/ToolList_edit/ POST
+[2023-12-27 08:47:47,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/ToolList_edit/ HTTP/1.1" 200 4932
+[2023-12-27 08:47:56,534] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 08:47:56 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /DriverTool/ToolList_edit/ POST
+[2023-12-27 08:47:56,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /DriverTool/ToolList_edit/ HTTP/1.1" 200 7173
+[2023-12-27 10:53:13,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /NonDQALesson/NonDQALesson-summary/ HTTP/1.1" 200 50437
+[2023-12-27 10:53:13,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/form.js HTTP/1.1" 304 0
+[2023-12-27 10:53:13,875] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/dialog.js HTTP/1.1" 304 0
+[2023-12-27 10:53:13,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/pagination.js HTTP/1.1" 304 0
+[2023-12-27 10:53:14,145] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 10:53:14 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /NonDQALesson/NonDQALesson-summary/ POST
+[2023-12-27 10:53:14,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479
+[2023-12-27 10:53:14,156] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /NonDQALesson/NonDQALesson-summary/ HTTP/1.1" 200 196
+[2023-12-27 10:53:55,539] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 10:53:55 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /NonDQALesson/NonDQALesson-summary/ POST
+[2023-12-27 10:53:55,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /NonDQALesson/NonDQALesson-summary/ HTTP/1.1" 200 877
+[2023-12-27 11:50:02,258] [UserIP.py:90] [UserIP:process_response] [INFO]- 2023-12-27 11:50:02 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2023-12-27 11:50:02,266] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-12-27 11:50:02,731] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 43576
+[2023-12-27 11:50:02,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24479

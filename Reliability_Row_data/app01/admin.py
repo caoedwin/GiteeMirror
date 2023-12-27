@@ -37,7 +37,7 @@ admin.site.register(files_QIL)
 @admin.register(INVGantt)
 class INVGanttAdmin(admin.ModelAdmin):
     list_display = ('Customer', 'INV_Number', 'INV_Model', 'Project_Name', "Year", "Unit_Qty", "TP_Kinds", "Qualify_Cycles", "Status", "TP_Cat", "Trial_Run_Type", "TP_Vendor",
-                    "TP_Key_Parameter", "Lenovo_TP_PN", "Compal_TP_PN", "Issue_Link", "Remark", "Attend_Time", "Get_INV", "Month", "Test_Start", "Test_End",
+                    "TP_Key_Parameter", "Lenovo_TP_PN", "Compal_TP_PN", "Issue_Link", "Remark", "Attend_Time", "ReTest_Attend_Time", "TestOwner", "Month", "Test_Start", "Test_End",
                     "Editor", "Edittime")
     # 列表里显示想要显示的字段
     list_per_page = 500
@@ -45,7 +45,7 @@ class INVGanttAdmin(admin.ModelAdmin):
     ordering = ('-INV_Model',)
     # 后台数据列表排序方式
     list_display_links = ('Customer', 'INV_Number', 'INV_Model', 'Project_Name', "Year", "Unit_Qty", "TP_Kinds", "Qualify_Cycles", "Status", "TP_Cat", "Trial_Run_Type", "TP_Vendor",
-                    "TP_Key_Parameter", "Lenovo_TP_PN", "Compal_TP_PN", "Issue_Link", "Remark", "Attend_Time", "Get_INV", "Month", "Test_Start", "Test_End",
+                    "TP_Key_Parameter", "Lenovo_TP_PN", "Compal_TP_PN", "Issue_Link", "Remark", "Attend_Time", "ReTest_Attend_Time", "TestOwner", "Month", "Test_Start", "Test_End",
                     "Editor", "Edittime")
     # 设置哪些字段可以点击进入编辑界面
     # list_editable = ('Object',)
