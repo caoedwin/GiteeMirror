@@ -385,7 +385,7 @@
             <el-button type="text" size="small"     @click.native="saveRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]{% comment %}&&canEdit{% endcomment %}">保存</el-button>
             <el-button type="text" size="small"     @click.native="cancelRow(scope.$index, scope.row)"     v-if="showBtn[scope.$index]{% comment %}&&canEdit{% endcomment %}">取消</el-button>
 
-            <el-button type="text" size="small"     @click.native="editRow(scope.$index, scope.row)"    v-if="!showBtn[scope.$index]">编辑</el-button>
+            <el-button type="text" size="small"     @click.native="editRow(scope.$index, scope.row)"    v-if="!showBtn[scope.$index]&&canEdit">编辑</el-button>
 {#            <el-button type="text" size="small"     @click.native="historyRow(scope.$index, scope.row);dialogTableVisible = true"    v-if="!showBtn[scope.$index]">历史</el-button>#}
         </template>
     </el-table-column>
@@ -545,6 +545,7 @@ $(document).ready(function() {
                this.tableContent = res.data.content;
                this.totalNum=this.tableContent.length;
                this.statu=res.data.orr.statu;
+               this.canEdit=res.data.canEdit;
 {% comment %}               this.canEdit=res.data['canEdit'];
                console.log(this.canEdit){% endcomment %}
                 if(res.data['canEdit'] ||res.data['canEdit'] === 0){
@@ -592,6 +593,7 @@ $(document).ready(function() {
              }else{
                  this.showTips = false ;
              }
+             console.log(this.showTips,'this.showTips',!this.canEdit)
           }else{
               this.showTips = false ;
           }

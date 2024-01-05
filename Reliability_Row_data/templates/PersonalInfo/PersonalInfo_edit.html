@@ -707,6 +707,10 @@ label{
                 <el-table-column  prop="HukouProvinces" label="戶口省份"  ></el-table-column>
                 <el-table-column  prop="HukouCity" label="戶口縣市"  ></el-table-column>
                 <el-table-column  prop="PhoneNumber" label="手機號碼"  ></el-table-column>
+                <el-table-column  prop="transferDate" label="轉職日期"  ></el-table-column>
+                <el-table-column  prop="OldCustomer" label="原客户"  ></el-table-column>
+                <el-table-column  prop="OldDepartmentCode" label="原課別"  ></el-table-column>
+
     </el-table>
       <div class="block">
         <el-pagination  @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[10, 50, 100, 200]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="totalNum">

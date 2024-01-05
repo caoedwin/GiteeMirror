@@ -5,7 +5,9 @@ import datetime,os
 from .forms import DriverList
 from .forms import ToolList
 from .models import DriverList_M,ToolList_M
+from CQM.models import CQMProject
 from app01.models import ProjectinfoinDCT, UserInfo
+from LessonProjectME.models import TestProjectLL
 # from .models import DriverList_M
 # from .models import ToolList_M
 from django.http import HttpResponse
@@ -200,6 +202,7 @@ def DriverList_edit(request):
     image = [
         # {"Image": "v24.1 GMl"}, {"Image": "v22.0 GMl"}
     ]
+    canEdit = 0
 
     for i in DriverList_M.objects.all().values('Customer').distinct().order_by('Customer'):
         Customerlist=[]
@@ -244,6 +247,26 @@ def DriverList_edit(request):
             Phase=request.POST.get('Phase')
             Driver=request.POST.get('Driver')
             Image=request.POST.get('Image')
+            check_Owner_dic = {"Customer": Customer, "Project": Project}
+            Projectinfo_CQM = CQMProject.objects.filter(**check_Owner_dic)
+            Projectinfo_LL = TestProjectLL.objects.filter(**check_Owner_dic)
+            current_user = request.session.get('user_name')
+            if Projectinfo_CQM:
+                for i in Projectinfo_CQM:
+                    for k in i.Owner.all():
+                        # print(i.username,current_user)
+                        # print(type(i.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
+            if canEdit == 0 and Projectinfo_LL:
+                for i in Projectinfo_LL:
+                    for k in i.Owner.all():
+                        # print(i.username,current_user)
+                        # print(type(i.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
             dic={}
             if Customer:
                 dic['Customer']=Customer
@@ -357,6 +380,7 @@ def DriverList_edit(request):
             "select": selectItem,
             "selectedDriver": dr,
             "selectedImage": image,
+            "canEdit": canEdit,
             # "status":status
         }
         # print(data)
@@ -699,6 +723,7 @@ def ToolList_edit(request):
         #                     {"Project": "ELMV3", "Phase0": ["B(FVT)", "C(SIT)", "INV"]},
         #                     {"Project": "ELMV4", "Phase0": ["B(FVT)", "C(SIT)", "INV"]}]
     }
+    canEdit = 0
     for i in ToolList_M.objects.all().values('Customer').distinct().order_by('Customer'):
         Customerlist=[]
         # print(type(i))
@@ -719,6 +744,27 @@ def ToolList_edit(request):
             Customer=request.POST.get('Customer')
             Project=request.POST.get('Project')
             Phase=request.POST.get('Phase')
+            check_Owner_dic = {"Customer": Customer, "Project": Project}
+            Projectinfo_CQM = CQMProject.objects.filter(**check_Owner_dic)
+            Projectinfo_LL = TestProjectLL.objects.filter(**check_Owner_dic)
+            current_user = request.session.get('user_name')
+            if Projectinfo_CQM:
+                for i in Projectinfo_CQM:
+                    for k in i.Owner.all():
+                        # print(i.username,current_user)
+                        # print(type(i.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
+            if canEdit == 0 and Projectinfo_LL:
+                for i in Projectinfo_LL:
+                    for k in i.Owner.all():
+                        # print(i.username,current_user)
+                        # print(type(i.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
+
             dic = {}
             if Customer:
                 dic['Customer'] = Customer
@@ -800,7 +846,8 @@ def ToolList_edit(request):
         data = {
             "err_ok": "0",
             "content":mock_data,
-            "select":selectItem
+            "select":selectItem,
+            "canEdit": canEdit,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")

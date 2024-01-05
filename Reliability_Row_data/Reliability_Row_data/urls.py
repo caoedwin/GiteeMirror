@@ -97,6 +97,7 @@ urlpatterns = [
     path('ABOTestPlan/', include('ABOTestPlan.urls', namespace='ABOTestPlan')),
     path('PersonalInfo/', include('PersonalInfo.urls', namespace='PersonnalInfo')),
     path('PersonalExperience/', include('PersonalExperience.urls', namespace='PersonalExperience')),
+    path('LowLightList/', include('LowLightList.urls', namespace='LowLightList')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

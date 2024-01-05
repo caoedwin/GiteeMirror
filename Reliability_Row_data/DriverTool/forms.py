@@ -11,6 +11,8 @@ class DriverList(forms.Form):
         ('C38(AIO)', 'C38(AIO)'),
         ('T88(AIO)', 'T88(AIO)'),
         ('A39', 'A39'),
+        ('T88(NB)', 'T88(NB)'),
+        ('ABO', 'ABO'),
         ('Others', 'Others'),
     )
     Phase_list = (
@@ -39,6 +41,8 @@ class ToolList(forms.Form):
         ('C38(AIO)', 'C38(AIO)'),
         ('T88(AIO)', 'T88(AIO)'),
         ('A39', 'A39'),
+        ('T88(NB)', 'T88(NB)'),
+        ('ABO', 'ABO'),
         ('Others', 'Others'),
     )
     Phase_list = (

@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LowLightList/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/LowLightList/LowLightList_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriverTool/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/DriverTool/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriverTool/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DriverTool/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/INVGantt/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reliability_Row_data/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reliability_Row_data/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reliability_Row_data/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reliability_Row_data/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/all-2023-12-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2023-12-27.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/b_upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/b_upload.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2023-12-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2023-12-27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/INVGanttChart.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/INVGanttChart.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/DriverTool/ToolList_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DriverTool/ToolList_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PersonalInfo/PersonalInfo_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PersonalInfo/PersonalInfo_edit.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,20 +64,20 @@
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="5" />
-          <entry key="project.open.time.6" value="5" />
+          <entry key="project.open.time.4" value="5" />
+          <entry key="project.open.time.5" value="6" />
+          <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="5" />
-          <entry key="html" value="459" />
+          <entry key="css" value="6" />
+          <entry key="html" value="470" />
           <entry key="js" value="7" />
-          <entry key="py" value="595" />
+          <entry key="py" value="625" />
           <entry key="pyi" value="1" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="1" />
@@ -71,10 +85,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
-          <entry key="HTML" value="459" />
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="470" />
           <entry key="JavaScript" value="7" />
-          <entry key="Python" value="595" />
+          <entry key="Python" value="625" />
           <entry key="PythonStub" value="1" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="1" />
@@ -83,18 +97,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="5" />
-          <entry key="css" value="1" />
+          <entry key="css" value="789" />
           <entry key="dummy" value="5" />
-          <entry key="html" value="10372" />
-          <entry key="py" value="19890" />
+          <entry key="html" value="10437" />
+          <entry key="py" value="20379" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="10372" />
+          <entry key="CSS" value="789" />
+          <entry key="HTML" value="10437" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="19895" />
+          <entry key="Python" value="20384" />
         </counts>
       </usages-collector>
     </session>
@@ -103,21 +117,12 @@
     <favorites_list name="DDIS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="149" column="22" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/INVGantt/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2173">
-              <caret line="125" column="123" selection-start-line="125" selection-start-column="107" selection-end-line="125" selection-end-column="123" />
+            <state relative-caret-position="228">
+              <caret line="126" column="13" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -125,25 +130,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-316">
-              <caret line="352" column="4" selection-start-line="352" selection-start-column="4" selection-end-line="352" selection-end-column="4" />
+            <state relative-caret-position="-443">
+              <caret line="860" column="52" selection-start-line="860" selection-start-column="52" selection-end-line="860" selection-end-column="52" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <element signature="e#12201#19198#0" />
-                <element signature="e#19256#35044#0" />
-                <element signature="e#35091#50080#0" />
-                <element signature="e#50130#107527#0" />
-                <element signature="e#107573#146282#0" />
+                <element signature="e#525#14892#0" />
+                <element signature="e#7070#14822#0" />
+                <element signature="e#12299#19343#0" />
+                <element signature="e#19401#35237#0" />
+                <element signature="e#37591#46327#0" />
+                <element signature="e#48023#49930#0" />
+                <element signature="e#50420#107817#0" />
+                <element signature="e#107863#146572#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app01/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="47" column="145" selection-start-line="47" selection-start-column="145" selection-end-line="47" selection-end-column="145" />
             </state>
           </provider>
         </entry>
@@ -152,34 +151,7 @@
         <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_upload.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/b_upload.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="67" column="1" lean-forward="true" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="676" column="61" selection-start-line="676" selection-start-column="61" selection-end-line="676" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_search.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="178" column="32" lean-forward="true" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="32" />
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -187,8 +159,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_searchByProject.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="441" column="52" selection-start-line="441" selection-start-column="52" selection-end-line="441" selection-end-column="52" />
+            <state relative-caret-position="109">
+              <caret line="421" column="116" lean-forward="true" selection-start-line="421" selection-start-column="116" selection-end-line="421" selection-end-column="116" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LowLightList/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="24" column="17" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LowLightList/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="74" column="33" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="74" selection-end-column="33" />
+              <folding>
+                <element signature="e#1#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="547" column="45" selection-start-line="547" selection-start-column="45" selection-end-line="547" selection-end-column="45" />
+              <folding>
+                <element signature="e#26282#27225#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,36 +212,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>submit</find>
-      <find>spec</find>
-      <find>axios</find>
-      <find>selectOptions</find>
-      <find>phase</find>
-      <find>Phase</find>
-      <find>can</find>
-      <find>维护</find>
-      <find>mock_data5</find>
-      <find>role</find>
-      <find>Portraits</find>
-      <find>upload_img</find>
-      <find>detail</find>
-      <find>Imageurl</find>
-      <find>img</find>
-      <find>Yearqura</find>
-      <find>INV_Quantity</find>
-      <find>imgurls</find>
-      <find>ImportProjectinfoFromDCT</find>
-      <find>selectCustomerYear</find>
-      <find>titleTable</find>
-      <find>entr</find>
-      <find>INV</find>
-      <find>get_inv</find>
-      <find>Get_INV</find>
-      <find>Attend_time</find>
-      <find>Attend_Time</find>
-      <find>input-group-prepend  Label</find>
       <find>form-control-new</find>
       <find>input-group-text</find>
+      <find>get_inv</find>
+      <find>.second-part .input-group-text</find>
+      <find>try</find>
+      <find>enableProgress</find>
+      <find>doexcel</find>
+      <find>columnsRename</find>
+      <find>Attend_Time</find>
+      <find>CQM_M_lists</find>
+      <find>CQM_F</find>
+      <find>request.POST.get('Customer')</find>
+      <find>err_ok</find>
+      <find>Check_dic_ProjectCQM</find>
+      <find>C38</find>
+      <find>Personallink</find>
+      <find>ExpectedDepartureDate</find>
+      <find>PhoneNumber</find>
+      <find>OldDepartmentCode</find>
+      <find>showEdit</find>
+      <find>axios</find>
+      <find>CQMProject</find>
+      <find>roles</find>
+      <find>canedit</find>
+      <find>showBtn</find>
+      <find>transferDate</find>
+      <find>canEdit</find>
+      <find>showTips</find>
+      <find>showTip</find>
+      <find>canEdit_Pro</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -248,15 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/index 20230828 Non v-pre.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/CQM/views.py" />
-        <option value="$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_edit.html" />
-        <option value="$USER_HOME$/Desktop/Summary.html" />
-        <option value="$PROJECT_DIR$/PersonalExperience/models.py" />
-        <option value="$PROJECT_DIR$/app01/models.py" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/PersonalExperience/My_approve.html" />
         <option value="$PROJECT_DIR$/templates/PersonalExperience/My_application.html" />
         <option value="$PROJECT_DIR$/middleware/UserIP.py" />
         <option value="$PROJECT_DIR$/CQM/serializers.py" />
@@ -265,12 +261,10 @@
         <option value="$PROJECT_DIR$/PersonalInfo/urls.py" />
         <option value="$PROJECT_DIR$/TestPlanSW/views.py" />
         <option value="$PROJECT_DIR$/templates/PersonalExperience/NPI_upload.html" />
-        <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
         <option value="$PROJECT_DIR$/templates/TestPlanSWOS/TestPlanSW_Summary.html" />
         <option value="$PROJECT_DIR$/TestPlanSWOS/views.py" />
         <option value="$PROJECT_DIR$/middleware/checkper.py" />
         <option value="$PROJECT_DIR$/templates/PersonalExperience/Summary.html" />
-        <option value="$PROJECT_DIR$/Reliability_Row_data/urls.py" />
         <option value="$PROJECT_DIR$/NonDQALesson/urls.py" />
         <option value="$PROJECT_DIR$/NonDQALesson/admin.py" />
         <option value="$PROJECT_DIR$/NonDQALesson/models.py" />
@@ -285,20 +279,31 @@
         <option value="$PROJECT_DIR$/PersonalInfo/admin.py" />
         <option value="$PROJECT_DIR$/AutoResult/views.py" />
         <option value="$PROJECT_DIR$/PersonalExperience/views.py" />
-        <option value="$PROJECT_DIR$/Reliability_Row_data/settings.py" />
         <option value="$PROJECT_DIR$/app01/views20200715Lesonchange.py" />
-        <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
         <option value="$USER_HOME$/Downloads/python-mysql_test20190308.py" />
         <option value="$PROJECT_DIR$/templates/basebootstrap20210128.html" />
         <option value="$PROJECT_DIR$/INVGantt/forms.py" />
         <option value="$PROJECT_DIR$/app01/admin.py" />
-        <option value="$PROJECT_DIR$/INVGantt/views.py" />
         <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_upload.html" />
-        <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html" />
         <option value="$PROJECT_DIR$/INVGantt/models.py" />
         <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_search.html" />
         <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_searchByProject.html" />
+        <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
         <option value="$PROJECT_DIR$/static/css/b_upload.css" />
+        <option value="$PROJECT_DIR$/DriverTool/forms.py" />
+        <option value="$PROJECT_DIR$/Reliability_Row_data/settings.py" />
+        <option value="$PROJECT_DIR$/LowLightList/models.py" />
+        <option value="$PROJECT_DIR$/templates/LowLightList/LowLightList_edit.html" />
+        <option value="$PROJECT_DIR$/Reliability_Row_data/urls.py" />
+        <option value="$PROJECT_DIR$/LowLightList/urls.py" />
+        <option value="$PROJECT_DIR$/LowLightList/views.py" />
+        <option value="$PROJECT_DIR$/templates/PersonalInfo/PersonalInfo_edit.html" />
+        <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
+        <option value="$PROJECT_DIR$/templates/DriverTool/ToolList_edit.html" />
+        <option value="$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html" />
+        <option value="$PROJECT_DIR$/DriverTool/views.py" />
+        <option value="$PROJECT_DIR$/INVGantt/views.py" />
+        <option value="$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html" />
       </list>
     </option>
   </component>
@@ -322,7 +327,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="384" />
+    <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
@@ -348,12 +353,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
+              <item name="app01" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
@@ -370,7 +381,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -392,11 +402,11 @@
       <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSW" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\djangoproject\Reliability_Row_data\LowLightList" />
       <recent name="C:\djangoproject\Reliability_Row_data\templates\TestPlanSWOS" />
       <recent name="C:\djangoproject\Reliability_Row_data\PersonalInfo" />
       <recent name="C:\djangoproject\Reliability_Row_data\app01\templatetags" />
       <recent name="C:\djangoproject\Reliability_Row_data\templates" />
-      <recent name="C:\djangoproject\Reliability_Row_data\templates\PersonalExperience" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -901,7 +911,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32894737" />
-      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.17378232" />
+      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.16175586" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
@@ -909,24 +919,24 @@
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.497979" weight="0.36398965" />
       <window_info anchor="bottom" id="Structure" order="5" sideWeight="0.502994" weight="0.23458445" />
       <window_info anchor="bottom" id="Python Console" order="6" sideWeight="0.49636218" weight="0.47409326" />
-      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49717057" visible="true" weight="0.32512954" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49717057" weight="0.32512954" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39814815" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" content_ui="combo" x="713" y="421" width="202" height="56" id="TODO" order="11" type="WINDOWED" weight="0.32956153" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32956153" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50317967" weight="0.2989276" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50317967" weight="0.29792747" />
       <window_info anchor="bottom" id="SciView" order="14" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" />
-      <window_info anchor="bottom" id="Version Control" order="17" weight="0.3297587" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" weight="0.23834197" />
+      <window_info anchor="bottom" id="Version Control" order="17" weight="0.32901555" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.40025908" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="337" height="637" id="Documentation" order="4" side_tool="true" weight="0.3293092" />
-      <window_info anchor="right" id="Favorites" order="5" sideWeight="0.5277311" weight="0.27931035" />
+      <window_info anchor="right" id="Favorites" order="5" sideWeight="0.5277311" side_tool="true" weight="0.27901384" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -957,103 +967,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NonDQALesson/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NonDQALesson/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NonDQALesson/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NonDQALesson/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="296" column="89" selection-start-line="296" selection-start-column="89" selection-end-line="296" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NonDQALesson/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/NonDQALesson/NonDQALesson_Summary.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="556" column="31" selection-start-line="556" selection-start-column="25" selection-end-line="556" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/templatetags/custom_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="199" column="48" lean-forward="true" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/UserIP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/permissions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/authentication.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/JWTauth.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/serializers.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpecDownload/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="254" column="30" lean-forward="true" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/SpecDownload/SpecDwonload_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3154">
@@ -1090,13 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="154" column="43" lean-forward="true" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1155,13 +1061,6 @@
     <entry file="file://$PROJECT_DIR$/Reliability_Row_data/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="509" column="33" lean-forward="true" selection-start-line="509" selection-start-column="33" selection-end-line="509" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/views20200715Lesonchange.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1173,45 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="552" column="4" selection-start-line="552" selection-start-column="4" selection-end-line="552" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="5556" column="102" selection-start-line="5556" selection-start-column="88" selection-end-line="5556" selection-end-column="102" />
-          <folding>
-            <element signature="e#21783#42420#0" />
-            <element signature="e#30433#37901#0" />
-            <element signature="e#42472#147445#0" />
-            <element signature="e#147495#157420#0" />
-            <element signature="e#157468#190184#0" />
-            <element signature="e#190227#306297#0" />
-            <element signature="e#368913#378716#0" />
-            <element signature="e#368961#370472#0" />
-            <element signature="e#371288#375899#0" />
-            <element signature="e#378751#388786#0" />
-            <element signature="e#388858#390186#0" />
-            <element signature="e#390286#393263#0" />
-            <element signature="e#442457#604333#0" />
-            <element signature="e#606248#623594#0" />
-            <element signature="e#623638#625437#0" />
-            <element signature="e#625477#868885#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2337">
-          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/PythonProject/DDISExcel/excelTrans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="604" lean-forward="true" selection-start-line="604" selection-end-line="604" />
         </state>
       </provider>
     </entry>
@@ -1229,9 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INVGantt/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4161">
@@ -1240,49 +1097,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/INVGantt/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="352" column="4" selection-start-line="352" selection-start-column="4" selection-end-line="352" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#12201#19198#0" />
-            <element signature="e#19256#35044#0" />
-            <element signature="e#35091#50080#0" />
-            <element signature="e#50130#107527#0" />
-            <element signature="e#107573#146282#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="47" column="145" selection-start-line="47" selection-start-column="145" selection-end-line="47" selection-end-column="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="676" column="61" selection-start-line="676" selection-start-column="61" selection-end-line="676" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_searchByProject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="441" column="52" selection-start-line="441" selection-start-column="52" selection-end-line="441" selection-end-column="52" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_top.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1291,38 +1106,265 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_search.html">
+    <entry file="file://C:/PythonProject/DDISExcel/excelTrans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="178" column="32" lean-forward="true" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="32" />
+        <state relative-caret-position="-424">
+          <caret line="516" column="46" lean-forward="true" selection-start-line="516" selection-start-column="46" selection-end-line="516" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
+    <entry file="file://$PROJECT_DIR$/app01/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="149" column="22" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="22" />
+        <state relative-caret-position="646">
+          <caret line="47" column="145" selection-start-line="47" selection-start-column="145" selection-end-line="47" selection-end-column="145" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DriverTool/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="178" column="32" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/INVGantt/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2173">
-          <caret line="125" column="123" selection-start-line="125" selection-start-column="107" selection-end-line="125" selection-end-column="123" />
+        <state relative-caret-position="1235">
+          <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/b_upload.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2470">
+          <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/b_upload.css">
+    <entry file="file://$PROJECT_DIR$/CQM/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#146#1181#0" />
+            <element signature="e#5016#5470#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/LowLightList/LowLightList_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LowLightList/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CQM/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="93" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#422#1161#0" />
+            <element signature="e#1461#1988#0" />
+            <element signature="e#10605#35999#0" />
+            <element signature="e#36101#55152#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="195" column="41" lean-forward="true" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="41" />
+          <folding>
+            <element signature="e#7366#10745#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reliability_Row_data/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LowLightList/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="40" column="84" selection-start-line="40" selection-start-column="84" selection-end-line="40" selection-end-column="84" />
+          <folding>
+            <element signature="e#27806#29595#0" />
+            <element signature="e#32837#34743#0" />
+            <element signature="e#36050#37956#0" />
+            <element signature="e#49685#51591#0" />
+            <element signature="e#55505#57536#0" />
+            <element signature="e#58951#60982#0" />
+            <element signature="e#78309#80369#0" />
+            <element signature="e#81821#83881#0" />
+            <element signature="e#97661#99721#0" />
+            <element signature="e#101173#103233#0" />
+            <element signature="e#106913#109077#0" />
+            <element signature="e#110650#112814#0" />
+            <element signature="e#140913#143077#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PersonalInfo/PersonalInfo_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="196" column="65" lean-forward="true" selection-start-line="196" selection-start-column="65" selection-end-line="196" selection-end-column="65" />
+          <folding>
+            <element signature="n#el-dialog#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DriverTool/ToolList_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="94" column="65" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DriverTool/DriverList_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="118" column="147" selection-start-line="118" selection-start-column="147" selection-end-line="118" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DriverTool/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="25" column="121" lean-forward="true" selection-start-line="25" selection-start-column="121" selection-end-line="25" selection-end-column="121" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_searchByProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="421" column="116" lean-forward="true" selection-start-line="421" selection-start-column="116" selection-end-line="421" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DriverTool/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
-          <caret line="67" column="1" lean-forward="true" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+          <caret line="747" column="40" selection-start-line="747" selection-start-column="30" selection-end-line="747" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="126" column="13" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LowLightList/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="74" selection-end-column="33" />
+          <folding>
+            <element signature="e#1#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INVGantt/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="860" column="52" selection-start-line="860" selection-start-column="52" selection-end-line="860" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#525#14892#0" />
+            <element signature="e#7070#14822#0" />
+            <element signature="e#12299#19343#0" />
+            <element signature="e#19401#35237#0" />
+            <element signature="e#37591#46327#0" />
+            <element signature="e#48023#49930#0" />
+            <element signature="e#50420#107817#0" />
+            <element signature="e#107863#146572#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/INVGantt/INVGantt_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="547" column="45" selection-start-line="547" selection-start-column="45" selection-end-line="547" selection-end-column="45" />
+          <folding>
+            <element signature="e#26282#27225#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>

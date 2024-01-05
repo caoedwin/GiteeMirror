@@ -5,6 +5,7 @@ import datetime,json,simplejson,requests,time
 from .forms import INVGantt_F
 from .models import INVGantt
 from app01.models import ProjectinfoinDCT, UserInfo
+from CQM.models import CQMProject
 from django.db.models import Max,Min,Sum,Count,Q
 from django.db.models.functions import ExtractYear, ExtractMonth, TruncMonth
 # Create your views here.
@@ -20,86 +21,100 @@ def INVGantt_upload(request):
     repeatcontend = [
     ]
     err_ok = 0  # excel上传1为重复
+    err_msg = ''
     canEdit = 0
     result = 0  # 为1 forms 上传重复
     INVGantt_F_list = INVGantt_F(request.POST)
     if request.method == 'POST':
-        canEdit = 1  # 机种权限 1有权限,前端是用的{{}}传值的，法国在上面，一进upload界面就提示没有权限
+        # canEdit = 1  # 机种权限 1有权限,前端是用的{{}}传值的，法国在上面，一进upload界面就提示没有权限
         if 'Upload' in request.POST.keys():
             # print(request.POST)
             if INVGantt_F_list.is_valid():
                 # print("yes")
-                Check_dic = {
-                              'Customer': request.POST.get('Customer'),
-                                'INV_Number': request.POST.get('INV_Number'),
-                              'INV_Model': request.POST.get('INV_Model'),
-                              'Project_Name': request.POST.get('Project_Name'),
-                              # 'Year': request.POST.get('Year'), 'Unit_Qty': request.POST.get('Unit_Qty'),
-                              # 'TP_Kinds': request.POST.get('TP_Kinds'),
-                              # 'Qualify_Cycles': request.POST.get('Qualify_Cycles'),
-                              'Status': request.POST.get('Status'),
-                              'TP_Cat': request.POST.get('TP_Cat'),
-                              'Trial_Run_Type': request.POST.get('Trial_Run_Type'),
-                              'TP_Vendor': request.POST.get('TP_Vendor'),
-                              'TP_Key_Parameter': request.POST.get('TP_Key_Parameter'),
-                              'Lenovo_TP_PN': request.POST.get('Lenovo_TP_PN'),
-                              'Compal_TP_PN': request.POST.get('Compal_TP_PN'),
+                Check_dic_Project = {'Customer': request.POST.get('Customer'), 'Project__icontains': request.POST.get('Project_Name'), }
+                # print(Check_dic_ProjectCQM)
+                Projectinfo = CQMProject.objects.filter(**Check_dic_Project).first()
+                Projectinfo = CQMProject.objects.filter(**Check_dic_Project).first()
+                current_user = request.session.get('user_name')
+                if Projectinfo:
+                    for k in Projectinfo.Owner.all():
+                        # print(i.username,current_user)
+                        # print(type(i.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
+                if canEdit:
+                    Check_dic = {
+                                  'Customer': request.POST.get('Customer'),
+                                    'INV_Number': request.POST.get('INV_Number'),
+                                  'INV_Model': request.POST.get('INV_Model'),
+                                  'Project_Name': request.POST.get('Project_Name'),
+                                  # 'Year': request.POST.get('Year'), 'Unit_Qty': request.POST.get('Unit_Qty'),
+                                  # 'TP_Kinds': request.POST.get('TP_Kinds'),
+                                  # 'Qualify_Cycles': request.POST.get('Qualify_Cycles'),
+                                  'Status': request.POST.get('Status'),
+                                  'TP_Cat': request.POST.get('TP_Cat'),
+                                  'Trial_Run_Type': request.POST.get('Trial_Run_Type'),
+                                  'TP_Vendor': request.POST.get('TP_Vendor'),
+                                  'TP_Key_Parameter': request.POST.get('TP_Key_Parameter'),
+                                  'Lenovo_TP_PN': request.POST.get('Lenovo_TP_PN'),
+                                  'Compal_TP_PN': request.POST.get('Compal_TP_PN'),
 
-                             }
-                # if request.POST.get('Customer'):
-                #     Check_dic['Customer'] = request.POST.get('Customer')
-                # if request.POST.get('INV_Number'):
-                #     Check_dic['INV_Number'] = request.POST.get('INV_Number')
-                # if request.POST.get('INV_Model'):
-                #     Check_dic['INV_Model'] = request.POST.get('INV_Model')
-                # if request.POST.get('Project_Name'):
-                #     Check_dic['Project_Name'] = request.POST.get('Project_Name')
-                # if request.POST.get('TP_Cat'):
-                #     Check_dic['TP_Cat'] = request.POST.get('TP_Cat')
-                # if request.POST.get('Trial_Run_Type'):
-                #     Check_dic['Trial_Run_Type'] = request.POST.get('Trial_Run_Type')
-                # if request.POST.get('TP_Vendor'):
-                #     Check_dic['TP_Vendor'] = request.POST.get('TP_Vendor')
-                # if request.POST.get('TP_Key_Parameter'):
-                #     Check_dic['TP_Key_Parameter'] = request.POST.get('TP_Key_Parameter')
-                # if request.POST.get('Lenovo_TP_PN'):
-                #     Check_dic['Lenovo_TP_PN'] = request.POST.get('Lenovo_TP_PN')
-                # if request.POST.get('Compal_TP_PN'):
-                #     Check_dic['Compal_TP_PN'] = request.POST.get('Compal_TP_PN')
+                                 }
+                    # if request.POST.get('Customer'):
+                    #     Check_dic['Customer'] = request.POST.get('Customer')
+                    # if request.POST.get('INV_Number'):
+                    #     Check_dic['INV_Number'] = request.POST.get('INV_Number')
+                    # if request.POST.get('INV_Model'):
+                    #     Check_dic['INV_Model'] = request.POST.get('INV_Model')
+                    # if request.POST.get('Project_Name'):
+                    #     Check_dic['Project_Name'] = request.POST.get('Project_Name')
+                    # if request.POST.get('TP_Cat'):
+                    #     Check_dic['TP_Cat'] = request.POST.get('TP_Cat')
+                    # if request.POST.get('Trial_Run_Type'):
+                    #     Check_dic['Trial_Run_Type'] = request.POST.get('Trial_Run_Type')
+                    # if request.POST.get('TP_Vendor'):
+                    #     Check_dic['TP_Vendor'] = request.POST.get('TP_Vendor')
+                    # if request.POST.get('TP_Key_Parameter'):
+                    #     Check_dic['TP_Key_Parameter'] = request.POST.get('TP_Key_Parameter')
+                    # if request.POST.get('Lenovo_TP_PN'):
+                    #     Check_dic['Lenovo_TP_PN'] = request.POST.get('Lenovo_TP_PN')
+                    # if request.POST.get('Compal_TP_PN'):
+                    #     Check_dic['Compal_TP_PN'] = request.POST.get('Compal_TP_PN')
 
 
-                Create_dic = {
-                              'Customer': request.POST.get('Customer'), 'INV_Number': request.POST.get('INV_Number'),
-                              'INV_Model': request.POST.get('INV_Model'),
-                              'Project_Name': request.POST.get('Project_Name'),
-                              'Year': request.POST.get('Year'), 'Unit_Qty': request.POST.get('Unit_Qty'),
-                              'TP_Kinds': request.POST.get('TP_Kinds'),
-                              'Qualify_Cycles': request.POST.get('Qualify_Cycles'),
-                              'Status': request.POST.get('Status'), 'TP_Cat': request.POST.get('TP_Cat'),
-                              'Trial_Run_Type': request.POST.get('Trial_Run_Type'),
-                              'TP_Vendor': request.POST.get('TP_Vendor'),
-                              'TP_Key_Parameter': request.POST.get('TP_Key_Parameter'),
-                              'Lenovo_TP_PN': request.POST.get('Lenovo_TP_PN'),
-                              'Compal_TP_PN': request.POST.get('Compal_TP_PN'),
-                              'Issue_Link': request.POST.get('Issue_Link'),
-                              'Remark': request.POST.get('Remark'), 'Attend_Time': request.POST.get('Attend_Time'),
-                                'ReTest_Attend_Time': request.POST.get('ReTest_Attend_Time'),
-                              'TestOwner': request.POST.get('TestOwner'), 'Month': request.POST.get('Month'),
-                              'Test_Start': request.POST.get('Test_Start'),
-                              'Test_End': request.POST.get('Test_End'),
-                              'Editor': request.session.get('user_name'),
-                              'Edittime': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-                # print(Create_dic)
-
-                if INVGantt.objects.filter(**Check_dic).first():
-                    UpdateResult = "数据已存在数据库中"
-                    # print(UpdateResult)
-                    repeatcontend.append({})
-                    # message_err=1
-                    result = 1
-                else:
-                    # print("Create")
-                    INVGantt.objects.create(**Create_dic)
+                    Create_dic = {
+                                  'Customer': request.POST.get('Customer'), 'INV_Number': request.POST.get('INV_Number'),
+                                  'INV_Model': request.POST.get('INV_Model'),
+                                  'Project_Name': request.POST.get('Project_Name'),
+                                  'Year': request.POST.get('Year'), 'Unit_Qty': request.POST.get('Unit_Qty'),
+                                  'TP_Kinds': request.POST.get('TP_Kinds'),
+                                  'Qualify_Cycles': request.POST.get('Qualify_Cycles'),
+                                  'Status': request.POST.get('Status'), 'TP_Cat': request.POST.get('TP_Cat'),
+                                  'Trial_Run_Type': request.POST.get('Trial_Run_Type'),
+                                  'TP_Vendor': request.POST.get('TP_Vendor'),
+                                  'TP_Key_Parameter': request.POST.get('TP_Key_Parameter'),
+                                  'Lenovo_TP_PN': request.POST.get('Lenovo_TP_PN'),
+                                  'Compal_TP_PN': request.POST.get('Compal_TP_PN'),
+                                  'Issue_Link': request.POST.get('Issue_Link'),
+                                  'Remark': request.POST.get('Remark'), 'Attend_Time': request.POST.get('Attend_Time'),
+                                    'ReTest_Attend_Time': request.POST.get('ReTest_Attend_Time'),
+                                  'TestOwner': request.POST.get('TestOwner'), 'Month': request.POST.get('Month'),
+                                  'Test_Start': request.POST.get('Test_Start'),
+                                  'Test_End': request.POST.get('Test_End'),
+                                  'Editor': request.session.get('user_name'),
+                                  'Edittime': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+                    # print(Create_dic)
+                    if Projectinfo:
+                        if INVGantt.objects.filter(**Check_dic).first():
+                            UpdateResult = "数据已存在数据库中"
+                            # print(UpdateResult)
+                            repeatcontend.append({})
+                            # message_err=1
+                            result = 1
+                        else:
+                            # print("Create")
+                            INVGantt.objects.create(**Create_dic)
             else:
                 # print("no")
                 cleandata = INVGantt_F_list.errors
@@ -119,108 +134,143 @@ def INVGantt_upload(request):
                  # 'Issue_Link': 'Issue_Link', 'Remark': 'Remark',
                  # 'Attend_Time': 'Attend_Time', 'Get_INV': 'Get_INV', 'Month': 'Month', 'Test_Start': 'Test_Start', 'Test_End': 'Test_End',
                  }]
-            for i in simplejson.loads(xlsxlist):
-                # print(i)
-                Check_dic_Gantt = {}
-                if 'Customer' in i.keys():
-                    Customer = i['Customer']
-                    Check_dic_Gantt['Customer'] = Customer
-                else:
-                    Check_dic_Gantt['Customer'] = ''#空字符搜索与没有此关键字的搜索结果完全不一样，并且数据库中这些字段都是字符型数据
-                # if 'INV_Number' in i.keys():
-                #     INV_Number = i['INV_Number']
-                #     Check_dic_Gantt['INV_Number'] = INV_Number
-                # else:
-                #     Check_dic_Gantt['INV_Number'] = ''
-                if 'INV_Model' in i.keys():
-                    INV_Model = i['INV_Model']
-                    Check_dic_Gantt['INV_Model'] = INV_Model
-                else:
-                    Check_dic_Gantt['INV_Model'] = ''
-                if 'Project_Name' in i.keys():
-                    Project_Name = i['Project_Name']
-                    Check_dic_Gantt['Project_Name'] = Project_Name
-                else:
-                    Check_dic_Gantt['Project_Name'] = ''
-                if 'Unit_Origin' in i.keys():
-                    Unit_Origin = i['Unit_Origin']
-                    Check_dic_Gantt['Unit_Origin'] = Unit_Origin
-                else:
-                    Check_dic_Gantt['Unit_Origin'] = ''
-                if 'Qualify_Cycles' in i.keys():
-                    Qualify_Cycles = i['Qualify_Cycles']
-                    Check_dic_Gantt['Qualify_Cycles'] = Qualify_Cycles
-                else:
-                    Check_dic_Gantt['Qualify_Cycles'] = ''
-                # if 'Status' in i.keys():
-                #     Statuss = i['Status']
-                #     Check_dic_Gantt['Status'] = Statuss
-                # else:
-                #     Check_dic_Gantt['Status'] = ''
-                if 'TP_Cat' in i.keys():
-                    TP_Cat = i['TP_Cat']
-                    Check_dic_Gantt['TP_Cat'] = TP_Cat
-                else:
-                    Check_dic_Gantt['TP_Cat'] = ''
-                if 'Trial_Run_Type' in i.keys():
-                    Trial_Run_Type = i['Trial_Run_Type']
-                    Check_dic_Gantt['Trial_Run_Type'] = Trial_Run_Type
-                else:
-                    Check_dic_Gantt['Trial_Run_Type'] = ''
-                if 'TP_Vendor' in i.keys():
-                    TP_Vendor = i['TP_Vendor']
-                    Check_dic_Gantt['TP_Vendor'] = TP_Vendor
-                else:
-                    Check_dic_Gantt['TP_Vendor'] = ''
-                if 'TP_Key_Parameter' in i.keys():
-                    TP_Key_Parameter = i['TP_Key_Parameter']
-                    Check_dic_Gantt['TP_Key_Parameter'] = TP_Key_Parameter
-                else:
-                    Check_dic_Gantt['TP_Key_Parameter'] = ''
-                if 'Lenovo_TP_PN' in i.keys():
-                    Lenovo_TP_PN = i['Lenovo_TP_PN']
-                    Check_dic_Gantt['Lenovo_TP_PN'] = Lenovo_TP_PN
-                else:
-                    Check_dic_Gantt['Lenovo_TP_PN'] = ''
-                if 'Compal_TP_PN' in i.keys():
-                    Compal_TP_PN = i['Compal_TP_PN']
-                    Check_dic_Gantt['Compal_TP_PN'] = Compal_TP_PN
-                else:
-                    Check_dic_Gantt['Compal_TP_PN'] = ''
-                if 'Test_Start' in i.keys():
-                    Test_Start = i['Test_Start']
-                    Check_dic_Gantt['Test_Start'] = Test_Start
-                else:
-                    Check_dic_Gantt['Test_Start'] = None#日期格式为空NULL不能用空字符
-                if 'Test_End' in i.keys():
-                    Test_End = i['Test_End']
-                    Check_dic_Gantt['Test_End'] = Test_End
-                else:
-                    Check_dic_Gantt['Test_End'] = None
 
-                if INVGantt.objects.filter(**Check_dic_Gantt).first():
-                    # err_ok = 1
-                    INVGanttList.append(Check_dic_Gantt)
-                    Update_dic_Gantt = {}
-                    for j in i.keys():
-                        Update_dic_Gantt[j] = i[j]
-                    Update_dic_Gantt['Editor'] = request.session.get('user_name')
-                    Update_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    # print(Update_dic_Gantt)
-                    if INVGantt.objects.filter(**Check_dic_Gantt):
-                        INVGantt.objects.filter(**Check_dic_Gantt).update(**Update_dic_Gantt)
+            num = 1
+            for i in simplejson.loads(xlsxlist):
+                if num > 1:
+                    if 'Customer' in i.keys() and 'Project' in i.keys():
+                        if i['Customer'] != Customer or i['Project'] != Project:
+                            err_msg = "第%s行数据Customer或者Project与其他行不一致" % num
+                            break
                 else:
-                    Create_dic_Gantt = {}
-                    for j in i.keys():
-                        Create_dic_Gantt[j] = i[j]
-                    Create_dic_Gantt['Editor'] = request.session.get('user_name')
-                    Create_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    # print(Create_dic_Gantt)
-                    INVGantt.objects.create(**Create_dic_Gantt)
-            # print(INVGanttList)
+                    if 'Customer' in i.keys():
+                        Customer = i['Customer']
+                    if 'Project_Name' in i.keys():
+                        Project1 = i['Project_Name']
+                    if 'INV_Model' in i.keys():
+                        Project = i['INV_Model']
+                    if 'Phase' in i.keys():
+                        Phase = i['Phase']
+                num += 1
+
+            Check_dic_Project = {'Customer': Customer, 'Project__icontains': Project, }
+            # print(Check_dic_ProjectCQM)
+            Projectinfo = CQMProject.objects.filter(**Check_dic_Project).first()
+            # print(Projectinfo)
+            current_user = request.session.get('user_name')
+            if not err_msg:
+                if Projectinfo:
+                    for k in Projectinfo.Owner.all():
+                        # print(k.username,current_user)
+                        # print(type(k.username),type(current_user))
+                        if k.username == current_user:
+                            canEdit = 1
+                            break
+            # print(canEdit)
+            if canEdit:
+                for i in simplejson.loads(xlsxlist):
+                    # print(i)
+                    Check_dic_Gantt = {}
+                    if 'Customer' in i.keys():
+                        Customer = i['Customer']
+                        Check_dic_Gantt['Customer'] = Customer
+                    else:
+                        Check_dic_Gantt['Customer'] = ''#空字符搜索与没有此关键字的搜索结果完全不一样，并且数据库中这些字段都是字符型数据
+                    # if 'INV_Number' in i.keys():
+                    #     INV_Number = i['INV_Number']
+                    #     Check_dic_Gantt['INV_Number'] = INV_Number
+                    # else:
+                    #     Check_dic_Gantt['INV_Number'] = ''
+                    if 'INV_Model' in i.keys():
+                        INV_Model = i['INV_Model']
+                        Check_dic_Gantt['INV_Model'] = INV_Model
+                    else:
+                        Check_dic_Gantt['INV_Model'] = ''
+                    if 'Project_Name' in i.keys():
+                        Project_Name = i['Project_Name']
+                        Check_dic_Gantt['Project_Name'] = Project_Name
+                    else:
+                        Check_dic_Gantt['Project_Name'] = ''
+                    if 'Unit_Origin' in i.keys():
+                        Unit_Origin = i['Unit_Origin']
+                        Check_dic_Gantt['Unit_Origin'] = Unit_Origin
+                    else:
+                        Check_dic_Gantt['Unit_Origin'] = ''
+                    if 'Qualify_Cycles' in i.keys():
+                        Qualify_Cycles = i['Qualify_Cycles']
+                        Check_dic_Gantt['Qualify_Cycles'] = Qualify_Cycles
+                    else:
+                        Check_dic_Gantt['Qualify_Cycles'] = ''
+                    # if 'Status' in i.keys():
+                    #     Statuss = i['Status']
+                    #     Check_dic_Gantt['Status'] = Statuss
+                    # else:
+                    #     Check_dic_Gantt['Status'] = ''
+                    if 'TP_Cat' in i.keys():
+                        TP_Cat = i['TP_Cat']
+                        Check_dic_Gantt['TP_Cat'] = TP_Cat
+                    else:
+                        Check_dic_Gantt['TP_Cat'] = ''
+                    if 'Trial_Run_Type' in i.keys():
+                        Trial_Run_Type = i['Trial_Run_Type']
+                        Check_dic_Gantt['Trial_Run_Type'] = Trial_Run_Type
+                    else:
+                        Check_dic_Gantt['Trial_Run_Type'] = ''
+                    if 'TP_Vendor' in i.keys():
+                        TP_Vendor = i['TP_Vendor']
+                        Check_dic_Gantt['TP_Vendor'] = TP_Vendor
+                    else:
+                        Check_dic_Gantt['TP_Vendor'] = ''
+                    if 'TP_Key_Parameter' in i.keys():
+                        TP_Key_Parameter = i['TP_Key_Parameter']
+                        Check_dic_Gantt['TP_Key_Parameter'] = TP_Key_Parameter
+                    else:
+                        Check_dic_Gantt['TP_Key_Parameter'] = ''
+                    if 'Lenovo_TP_PN' in i.keys():
+                        Lenovo_TP_PN = i['Lenovo_TP_PN']
+                        Check_dic_Gantt['Lenovo_TP_PN'] = Lenovo_TP_PN
+                    else:
+                        Check_dic_Gantt['Lenovo_TP_PN'] = ''
+                    if 'Compal_TP_PN' in i.keys():
+                        Compal_TP_PN = i['Compal_TP_PN']
+                        Check_dic_Gantt['Compal_TP_PN'] = Compal_TP_PN
+                    else:
+                        Check_dic_Gantt['Compal_TP_PN'] = ''
+                    if 'Test_Start' in i.keys():
+                        Test_Start = i['Test_Start']
+                        Check_dic_Gantt['Test_Start'] = Test_Start
+                    else:
+                        Check_dic_Gantt['Test_Start'] = None#日期格式为空NULL不能用空字符
+                    if 'Test_End' in i.keys():
+                        Test_End = i['Test_End']
+                        Check_dic_Gantt['Test_End'] = Test_End
+                    else:
+                        Check_dic_Gantt['Test_End'] = None
+
+                    if INVGantt.objects.filter(**Check_dic_Gantt).first():
+                        # err_ok = 1
+                        INVGanttList.append(Check_dic_Gantt)
+                        Update_dic_Gantt = {}
+                        for j in i.keys():
+                            Update_dic_Gantt[j] = i[j]
+                        Update_dic_Gantt['Editor'] = request.session.get('user_name')
+                        Update_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        # print(Update_dic_Gantt)
+                        if INVGantt.objects.filter(**Check_dic_Gantt):
+                            INVGantt.objects.filter(**Check_dic_Gantt).update(**Update_dic_Gantt)
+                    else:
+                        Create_dic_Gantt = {}
+                        for j in i.keys():
+                            Create_dic_Gantt[j] = i[j]
+                        Create_dic_Gantt['Editor'] = request.session.get('user_name')
+                        Create_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        # print(Create_dic_Gantt)
+                        INVGantt.objects.create(**Create_dic_Gantt)
+                # print(INVGanttList)
             datajason = {
                 'err_ok': err_ok,
-                "canEdit": 1,#用的xlsx_pop.js如果不反悔caneEdit,不会出现山川成功弹框和重复数据的弹框
+                'err_msg': err_msg,
+                "canEdit": canEdit,#用的xlsx_pop.js如果不反悔caneEdit,不会出现山川成功弹框和重复数据的弹框
                 # 'content': INVGanttList
             }
             # print(datajason)
@@ -643,6 +693,9 @@ def INVGantt_edit(request):
     # print(selectItem)
     roles = []
     onlineuser = request.session.get('account')
+    canEdit = 0
+    current_user = request.session.get('user_name')
+
     if request.method == 'POST':
         if request.POST.get('isGetData') == "SEARCHALERT":
             Customer = request.POST.get('Customer')
@@ -802,6 +855,18 @@ def INVGantt_edit(request):
                         })
             # print(sear)
         if request.POST.get('isGetData') == 'SEARCH':
+            Check_dic_Project = {'Customer': request.POST.get('Customer'),
+                                 'Project__icontains': request.POST.get('COMPRJCODE'), }
+
+            Projectinfo = CQMProject.objects.filter(**Check_dic_Project).first()
+            if Projectinfo:
+                for k in Projectinfo.Owner.all():
+                    # print(i.username,current_user)
+                    # print(type(i.username),type(current_user))
+                    if k.username == current_user:
+                        canEdit = 1
+                        break
+
             Check_dic_Project = {'Customer': request.POST.get('Customer'), 'INV_Model': request.POST.get('COMPRJCODE'),}
 
             Customer=request.POST.get('Customer')
@@ -867,6 +932,7 @@ def INVGantt_edit(request):
             "orn": aa,
             # "history": history,
             "sear": searchalert,
+            "canEdit": canEdit,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
