@@ -19,7 +19,7 @@ from django.db.models.functions import Trunc
 # Create your views here.
 @csrf_exempt
 def SummaryTUM(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "TUMHistory/Unit"
@@ -79,7 +79,7 @@ def SummaryTUM(request):
     canEdit = 0
     canEdit_TUM = 0
     roles = []
-    onlineuser = request.session.get('account')
+    onlineuser = request.session.get('account_DMS')
     # print(UserInfo.objects.get(account=onlineuser))
     for i in UserInfo.objects.get(account=onlineuser).role.all():
         roles.append(i.name)
@@ -515,7 +515,7 @@ def SummaryTUM(request):
 
 @csrf_exempt
 def SummaryMateria(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "TUMHistory/Materia"
@@ -575,7 +575,7 @@ def SummaryMateria(request):
     canEdit = 1
     canEdit = 0
     roles = []
-    onlineuser = request.session.get('account')
+    onlineuser = request.session.get('account_DMS')
     # print(UserInfo.objects.get(account=onlineuser))
     for i in UserInfo.objects.get(account=onlineuser).role.all():
         roles.append(i.name)

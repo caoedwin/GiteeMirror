@@ -31,7 +31,7 @@ headermodel_ChairCabinet = {
 
 @csrf_exempt
 def BorrowedChairCabinet(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/BorrowedDevice"
@@ -219,7 +219,7 @@ def BorrowedChairCabinet(request):
             # print(BorrowedID.split(','))
             updatedic = {
                 # 'ProjectCode': request.POST.get('Project'), 'Phase': request.POST.get('Phase'),
-                         'BrwStatus': '申請確認中', 'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'),
+                         'BrwStatus': '申請確認中', 'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'),
                          'linshi_Area': linshi_Area, 'linshi_Purpose': linshi_Purpose,
                          # 'OAP': request.session.get('CNname'), 'OAPcode': request.session.get('account'),
                          # 'Plandate': request.POST.get('Predict_return'),
@@ -313,7 +313,7 @@ def BorrowedChairCabinet(request):
 
 @csrf_exempt
 def R_Borrowed(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/R_Borrowed"
@@ -341,7 +341,7 @@ def R_Borrowed(request):
         # {"value": "20795434", "number": "張宵凌"}, {"value": "20720831", "number": "劉婭茹"},
     ]
     for i in UserInfo.objects.all().values("CNname", "account").distinct().order_by("account"):
-        if i["account"] != request.session.get('account'):
+        if i["account"] != request.session.get('account_DMS'):
             selectNumber.append({"value": i["account"], "number": i["CNname"]})
     #既然是转账，就无需转给自己
 
@@ -352,8 +352,8 @@ def R_Borrowed(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname'),
-                                                         OAPcode=request.session.get('account'), BrwStatus__in=['使用中', '閑置中'])
+                mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname_DMS'),
+                                                         OAPcode=request.session.get('account_DMS'), BrwStatus__in=['使用中', '閑置中'])
                 for i in mock_datalist:
 
                     Years = ''
@@ -416,8 +416,8 @@ def R_Borrowed(request):
                 # mock_data
                 checkAdaPow = {
                     'BrwStatus__in': ['使用中', '閑置中'],
-                    "OAP": request.session.get('CNname'),
-                    "OAPcode": request.session.get('account'),
+                    "OAP": request.session.get('CNname_DMS'),
+                    "OAPcode": request.session.get('account_DMS'),
                 }
                 print(checkAdaPow)
                 if checkAdaPow:
@@ -493,12 +493,12 @@ def R_Borrowed(request):
                     check_dic["NID"] = UnifiedNumber
 
                 if check_dic:
-                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname'),
-                                                               OAPcode=request.session.get('account'),
+                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname_DMS'),
+                                                               OAPcode=request.session.get('account_DMS'),
                                                                BrwStatus__in=['使用中', '閑置中']).filter(**check_dic)
                 else:
-                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname'),
-                                                               OAPcode=request.session.get('account'),
+                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname_DMS'),
+                                                               OAPcode=request.session.get('account_DMS'),
                                                                BrwStatus__in=['使用中', '閑置中'])
                 for i in mock_datalist:
 
@@ -567,7 +567,7 @@ def R_Borrowed(request):
 
 @csrf_exempt
 def R_Destine(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/R_Destine"
@@ -594,8 +594,8 @@ def R_Destine(request):
             # print(request.body)
             if 'first' in str(request.body):
                 # mock_data
-                mock_datalist = ChairCabinetLNV.objects.filter(Usrname=request.session.get('CNname'),
-                                                               BR_per_code=request.session.get('account'),
+                mock_datalist = ChairCabinetLNV.objects.filter(Usrname=request.session.get('CNname_DMS'),
+                                                               BR_per_code=request.session.get('account_DMS'),
                                                                BrwStatus__in=['申請確認中', '申請核准中'])
                 for i in mock_datalist:
 
@@ -676,8 +676,8 @@ def R_Destine(request):
                             alert = '此数据%s正被其他使用者编辑中...' % i
 
                     # mock_data
-                    mock_datalist = ChairCabinetLNV.objects.filter(Usrname=request.session.get('CNname'),
-                                                               BR_per_code=request.session.get('account'),
+                    mock_datalist = ChairCabinetLNV.objects.filter(Usrname=request.session.get('CNname_DMS'),
+                                                               BR_per_code=request.session.get('account_DMS'),
                                                                BrwStatus__in=['申請確認中', '申請核准中'])
                     for i in mock_datalist:
 
@@ -732,7 +732,7 @@ def R_Destine(request):
 
 @csrf_exempt
 def BG_Borrow(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/R_Destine"
@@ -759,8 +759,8 @@ def BG_Borrow(request):
                 # mock_data
                 checkAdaPow = {
                     'BrwStatus': '申請確認中',
-                    "OAP": request.session.get('CNname'),
-                    "OAPcode": request.session.get('account'),
+                    "OAP": request.session.get('CNname_DMS'),
+                    "OAPcode": request.session.get('account_DMS'),
                 }
                 if checkAdaPow:
                     mock_datalist = ChairCabinetLNV.objects.filter(**checkAdaPow)
@@ -850,8 +850,8 @@ def BG_Borrow(request):
                     # mock_data
                     checkAdaPow = {
                         'BrwStatus': '申請確認中',
-                        "OAP": request.session.get('CNname'),
-                        "OAPcode": request.session.get('account'),
+                        "OAP": request.session.get('CNname_DMS'),
+                        "OAPcode": request.session.get('account_DMS'),
                     }
                     if checkAdaPow:
                         mock_datalist = ChairCabinetLNV.objects.filter(**checkAdaPow)
@@ -908,7 +908,7 @@ def BG_Borrow(request):
 
 @csrf_exempt
 def M_Borrow(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/M_Borrow"
@@ -1165,7 +1165,7 @@ def M_Borrow(request):
 
 @csrf_exempt
 def R_Transfer(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/R_Transfer"
@@ -1191,8 +1191,8 @@ def R_Transfer(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname'),
-                                                            OAPcode=request.session.get('account'),
+                mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname_DMS'),
+                                                            OAPcode=request.session.get('account_DMS'),
                                                                BrwStatus__in=["轉帳確認中", '接收確認中'])
                 for i in mock_datalist:
 
@@ -1271,8 +1271,8 @@ def R_Transfer(request):
                             alert = '此数据%s正被其他使用者编辑中...' % i
 
                     # mock_data
-                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname'),
-                                                                   OAPcode=request.session.get('account'),
+                    mock_datalist = ChairCabinetLNV.objects.filter(OAP=request.session.get('CNname_DMS'),
+                                                                   OAPcode=request.session.get('account_DMS'),
                                                                    BrwStatus__in=["轉帳確認中", '接收確認中'])
                     for i in mock_datalist:
 
@@ -1326,7 +1326,7 @@ def R_Transfer(request):
 
 @csrf_exempt
 def R_Receive(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/R_Receive"
@@ -1353,7 +1353,7 @@ def R_Receive(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                checkAdaPow = {'BrwStatus': '轉帳確認中', "Receive_per_code": request.session.get('account')}
+                checkAdaPow = {'BrwStatus': '轉帳確認中', "Receive_per_code": request.session.get('account_DMS')}
                 if checkAdaPow:
                     mock_datalist = ChairCabinetLNV.objects.filter(**checkAdaPow)
                 else:
@@ -1424,7 +1424,7 @@ def R_Receive(request):
                 except:
                     alert = '此数据%s正被其他使用者编辑中...' % request.POST.get('ID')
                 # mock_data
-                checkAdaPow = {'BrwStatus': '轉帳確認中', "Receive_per_code": request.session.get('account')}
+                checkAdaPow = {'BrwStatus': '轉帳確認中', "Receive_per_code": request.session.get('account_DMS')}
                 if checkAdaPow:
                     mock_datalist = ChairCabinetLNV.objects.filter(**checkAdaPow)
                 else:
@@ -1490,7 +1490,7 @@ def R_Receive(request):
 
 @csrf_exempt
 def M_Transfer(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/M_Keep"
@@ -1791,7 +1791,7 @@ def M_Transfer(request):
 
 @csrf_exempt
 def M_edit(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "ChairCabinetLNV/M_upload"

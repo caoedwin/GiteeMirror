@@ -38,13 +38,11 @@ class RbacMiddleware(MiddlewareMixin):
             # print (re.match(url, request_url))
             if re.match(url, request_url):
                 if re.match(url, request_url):
-                    if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url:
+                    if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and request_url in str(url):
                         # print(path, 'path')
-                        response.set_cookie('current_page', value=request_url)
-                        # print(request.session.get('Non_login_path'))
+                        response.set_cookie('current_page_DMS', value=request_url)
                         request.session.set_expiry(
                             7 * 12 * 60 * 60)  # None：会使用全局的session配置。在settings.py中可以设置SESSION_COOKIE_AGE来配置全局的过期时间。默认是1209600秒，也就是2周的时间。
-                        # print(request.COOKIES['current_page'])
 
                     return response
 
@@ -63,16 +61,14 @@ class RbacMiddleware(MiddlewareMixin):
             # print(re.match(url, request_url))
             if re.match(url_pattern, request_url):
                 flag = True
-                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url:
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url  and request_url in str(url):
                     # print(path, 'path')
-                    response.set_cookie('current_page', value=request_url)
-                    # print(request.session.get('Non_login_path'))
+                    response.set_cookie('current_page_DMS', value=request_url)
                     request.session.set_expiry(
                         7 * 12 * 60 * 60)
-                    # print(request.COOKIES['current_page'])
                 break
         if flag:
-            return None
+            return response
         else:
             # 如果是调试模式，显示可访问url
             if settings.DEBUG:

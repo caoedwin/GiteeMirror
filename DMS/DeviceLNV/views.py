@@ -42,7 +42,7 @@ headermodel_Device = {
 
 @csrf_exempt
 def BorrowedDeviceLNV(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/BorrowedDevice"
@@ -419,7 +419,7 @@ def BorrowedDeviceLNV(request):
             # print(json.loads(BorrowedID))
             # print(BorrowedID.split(','))
             updatedic = {'ProjectCode': request.POST.get('Project'), 'Phase': request.POST.get('Phase'),
-                         'BrwStatus': '預定確認中', 'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'),
+                         'BrwStatus': '預定確認中', 'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'),
                          'Plandate': request.POST.get('Predict_return'), 'Btime': None, 'Rtime': None, }
             # print(updatedic)
             for i in BorrowedID.split(','):
@@ -555,7 +555,7 @@ def BorrowedDeviceLNV(request):
 
 @csrf_exempt
 def R_Borrowed(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/R_Borrowed"
@@ -650,8 +650,8 @@ def R_Borrowed(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname'),
-                                                         BR_per_code=request.session.get('account'), BrwStatus='已借出')
+                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname_DMS'),
+                                                         BR_per_code=request.session.get('account_DMS'), BrwStatus='已借出')
                 # if checkAdaPow:
                 #     # print(checkAdaPow)
                 #     # mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
@@ -773,7 +773,7 @@ def R_Borrowed(request):
                     DevVendorOptions5[i.DevVendor] = DeviceDevsizeListvalue
                 # print(DevVendorOptions5)
             if request.POST.get('isGetData') == 'SEARCH5':
-                checkAdaPowfirst = {'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BrwStatus': '已借出'}
+                checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '已借出'}
                 checkAdaPow = {}
                 IntfCtgry = request.POST.get('IntfCtgry')
                 # if IntfCtgry and IntfCtgry != "All":
@@ -893,7 +893,7 @@ def R_Borrowed(request):
                 # print(json.loads(BorrowedID))
                 # print(BorrowedID.split(','))
                 updatedic = {'ProjectCode': request.POST.get('Project'), 'Phase': request.POST.get('Phase'),
-                             'BrwStatus': '續借確認中', 'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'),
+                             'BrwStatus': '續借確認中', 'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'),
                              'Plandate': request.POST.get('Predict_return'), 'Btime': None,
                              'Rtime': None, }
                 # print(updatedic)
@@ -913,8 +913,8 @@ def R_Borrowed(request):
                         alert = '此数据%s正被其他使用者编辑中...' % i
 
                 # mock_data
-                checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                    'BR_per_code': request.session.get('account'), 'BrwStatus': '已借出'}
+                checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                    'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '已借出'}
                 checkAdaPow = {}
                 IntfCtgry = request.POST.get('IntfCtgry')
                 # if IntfCtgry and IntfCtgry != "All":
@@ -1058,8 +1058,8 @@ def R_Borrowed(request):
 
 
                     # mock_data
-                    checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                        'BR_per_code': request.session.get('account'), 'BrwStatus': '已借出'}
+                    checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                        'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '已借出'}
                     checkAdaPow = {}
                     IntfCtgry = responseData['IntfCtgry']
                     # if IntfCtgry and IntfCtgry != "All":
@@ -1190,7 +1190,7 @@ def R_Borrowed(request):
 
 @csrf_exempt
 def R_Return(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/R_Return"
@@ -1284,7 +1284,7 @@ def R_Return(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname'), BR_per_code=request.session.get('account'), BrwStatus='歸還確認中')
+                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'), BrwStatus='歸還確認中')
                 # mock_data
                 # if checkAdaPow:
                 #     # print(checkAdaPow)
@@ -1407,7 +1407,7 @@ def R_Return(request):
                     DevVendorOptions5[i.DevVendor] = DeviceDevsizeListvalue
                 # print(DevVendorOptions5)
             if request.POST.get('isGetData') == 'SEARCH5':
-                checkAdaPowfirst = {'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BrwStatus': '歸還確認中'}
+                checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '歸還確認中'}
                 checkAdaPow = {}
                 IntfCtgry = request.POST.get('IntfCtgry')
                 # if IntfCtgry and IntfCtgry != "All":
@@ -1548,8 +1548,8 @@ def R_Return(request):
                             alert = '此数据%s正被其他使用者编辑中...' % i
 
                     # mock_data
-                    checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                        'BR_per_code': request.session.get('account'), 'BrwStatus': '歸還確認中'}
+                    checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                        'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '歸還確認中'}
                     checkAdaPow = {}
                     IntfCtgry = responseData['IntfCtgry']
                     # if IntfCtgry and IntfCtgry != "All":
@@ -1683,7 +1683,7 @@ def R_Return(request):
 
 @csrf_exempt
 def R_Keep(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/R_Keep"
@@ -1777,8 +1777,8 @@ def R_Keep(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname'),
-                                                         BR_per_code=request.session.get('account'), BrwStatus='續借確認中')
+                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname_DMS'),
+                                                         BR_per_code=request.session.get('account_DMS'), BrwStatus='續借確認中')
                 # mock_data
                 # if checkAdaPow:
                 #     # print(checkAdaPow)
@@ -1901,8 +1901,8 @@ def R_Keep(request):
                     DevVendorOptions5[i.DevVendor] = DeviceDevsizeListvalue
                 # print(DevVendorOptions5)
             if request.POST.get('isGetData') == 'SEARCH5':
-                checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                    'BR_per_code': request.session.get('account'), 'BrwStatus': '續借確認中'}
+                checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                    'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '續借確認中'}
                 checkAdaPow = {}
                 IntfCtgry = request.POST.get('IntfCtgry')
                 # if IntfCtgry and IntfCtgry != "All":
@@ -2052,8 +2052,8 @@ def R_Keep(request):
                             alert = '此数据%s正被其他使用者编辑中...' % i
 
                     # mock_data
-                    checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                        'BR_per_code': request.session.get('account'), 'BrwStatus': '續借確認中'}
+                    checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                        'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '續借確認中'}
                     checkAdaPow = {}
                     IntfCtgry = responseData['IntfCtgry']
                     # if IntfCtgry and IntfCtgry != "All":
@@ -2187,7 +2187,7 @@ def R_Keep(request):
 
 @csrf_exempt
 def R_Destine(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/R_Destine"
@@ -2282,7 +2282,7 @@ def R_Destine(request):
             # print(request.body)
             if 'first' in str(request.body):
                 # mock_data
-                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname'), BR_per_code=request.session.get('account'), BrwStatus='預定確認中')
+                mock_datalist = DeviceLNV.objects.filter(Usrname=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'), BrwStatus='預定確認中')
                 # if checkAdaPow:
                 #     # print(checkAdaPow)
                 #     # mock_datalist = DeviceLNV.objects.filter(**checkAdaPow)
@@ -2404,7 +2404,7 @@ def R_Destine(request):
                     DevVendorOptions5[i.DevVendor] = DeviceDevsizeListvalue
                 # print(DevVendorOptions5)
             if 'SEARCH' in str(request.body):
-                checkAdaPowfirst = {'Usrname': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BrwStatus': '預定確認中'}
+                checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '預定確認中'}
                 checkAdaPow = {}
                 IntfCtgry = request.POST.get('IntfCtgry')
                 # if IntfCtgry and IntfCtgry != "All":
@@ -2556,8 +2556,8 @@ def R_Destine(request):
                             alert = '此数据%s正被其他使用者编辑中...' % i
 
                     # mock_data
-                    checkAdaPowfirst = {'Usrname': request.session.get('CNname'),
-                                        'BR_per_code': request.session.get('account'), 'BrwStatus': '預定確認中'}
+                    checkAdaPowfirst = {'Usrname': request.session.get('CNname_DMS'),
+                                        'BR_per_code': request.session.get('account_DMS'), 'BrwStatus': '預定確認中'}
                     checkAdaPow = {}
                     IntfCtgry = responseData['IntfCtgry']
                     # if IntfCtgry and IntfCtgry != "All":
@@ -2693,7 +2693,7 @@ def R_Destine(request):
 
 @csrf_exempt
 def M_Borrow(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/M_Borrow"
@@ -3043,7 +3043,7 @@ def M_Borrow(request):
 
 @csrf_exempt
 def M_Return(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/R_Destine"
@@ -3419,7 +3419,7 @@ def M_Return(request):
 
 @csrf_exempt
 def M_Keep(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/M_Keep"
@@ -3792,7 +3792,7 @@ def M_Keep(request):
 
 @csrf_exempt
 def M_Category(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/M_upload"
@@ -5667,7 +5667,7 @@ def M_Category(request):
 
 @csrf_exempt
 def M_edit(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "DeviceLNV/M_upload"

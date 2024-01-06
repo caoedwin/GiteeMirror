@@ -55,7 +55,7 @@ def login(request):
         # print(request.COOKIES['current_page'])
         # # print(request.COOKIES['Non_login_path'])
         try:
-            return redirect(request.COOKIES['current_page'])
+            return redirect(request.COOKIES['current_page_DDIS'])
         except:
             return redirect('/index/')
 

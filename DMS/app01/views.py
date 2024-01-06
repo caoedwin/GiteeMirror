@@ -89,10 +89,13 @@ def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', Departmen
 @csrf_exempt
 def login(request):
     # 不允许重复登录
-    if request.session.get('is_login', None):
+    # print(request.COOKIES)
+    print(request.session.get('is_login_DMS', None))
+    if request.session.get('is_login_DMS', None):
         # return redirect('/index/')
+        print(request.COOKIES)
         try:
-            return redirect(request.COOKIES['current_page'])
+            return redirect(request.COOKIES['current_page_DMS'])
         except:
             return redirect('/AdapterPowerCode/BorrowedAdapter/')
     # print(request.method)
@@ -118,11 +121,11 @@ def login(request):
             # print (user.password)
             if user.password == Password:
                 # 往session字典内写入用户状态和数据,你完全可以往里面写任何数据，不仅仅限于用户相关！
-                request.session['is_login'] = True
-                request.session['user_id'] = user.id
-                request.session['user_name'] = user.username
-                request.session['CNname'] = user.CNname
-                request.session['account'] = Account
+                request.session['is_login_DMS'] = True
+                request.session['user_id_DSM'] = user.id
+                request.session['user_name_DMS'] = user.username
+                request.session['CNname_DMS'] = user.CNname
+                request.session['account_DMS'] = Account
                 # request.session['Skin'] = "/static/src/blue.jpg"
                 request.session.set_expiry(12*60*60)
                 # print('11')
@@ -135,7 +138,7 @@ def login(request):
                 init_permission(request, user_obj)  # 调用init_permission，初始化权限
                 # print('21')
                 # print(settings.MEDIA_ROOT,settings.MEDIA_URL)
-                return redirect('/index/')
+                render(request, 'login.html', locals())
             else:
                 message = "密码不正确！"
         else:
@@ -299,7 +302,7 @@ def signinCQT88(request):
 
 @csrf_exempt
 def index(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         return redirect('/login/')
     Syswangzhinamedic = {
         "AdapterPowerCord_LNV": "/AdapterPowerCode/BorrowedAdapter/",
@@ -362,22 +365,22 @@ def index(request):
 @csrf_exempt
 def logout(request):
     # print('t')
-    # print (request.session.get('is_login', None))
-    if not request.session.get('is_login', None):
+    # print (request.session.get('is_login_DMS', None))
+    if not request.session.get('is_login_DMS', None):
         # 如果本来就未登录，也就没有登出一说
         # print('logout')
         return redirect("/login/")
     #flush()方法是比较安全的一种做法，而且一次性将session中的所有内容全部清空，确保不留后患。但也有不好的地方，那就是如果你在session中夹带了一点‘私货’，会被一并删除，这一点一定要注意
-    request.session.flush()
+    # request.session.flush()
     # 或者使用下面的方法
-    # del request.session['is_login']
-    # del request.session['user_id']
-    # del request.session['user_name']
+    del request.session['is_login_DMS']
+    del request.session['user_id_DSM']
+    del request.session['user_name_DMS']
     return redirect("/login/")
 
 @csrf_exempt
 def Change_Password(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # 如果本来就未登录，也就没有登出一说
         return redirect("/login/")
     # print (request.method)
@@ -385,13 +388,13 @@ def Change_Password(request):
         OldPassword=request.POST.get('OldPassword')
         Password = request.POST.get('Password')
         Passwordc = request.POST.get('Confirm')
-        user=request.session.get('user_name')
+        user=request.session.get('user_name_DMS')
         userpass=UserInfo.objects.get(username=user).password
         # print(OldPassword,userpass)
         if OldPassword==userpass:
             if Password==Passwordc:
-                # print(request.session.get('user_name', None))
-                updatep = UserInfo.objects.filter(username=request.session.get('user_name', None))
+                # print(request.session.get('user_name_DMS', None))
+                updatep = UserInfo.objects.filter(username=request.session.get('user_name_DMS', None))
                 # print (updatep)
                 # for e in updatep:
                 #    print (e.password)
@@ -408,7 +411,7 @@ def Change_Password(request):
 
 @csrf_exempt
 def UserInfoedit(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         return redirect('/login/')
     # tableData=[{"systName":"AdapterAndPowercode-LNV","wangzhi":"https://www.baidu.com/","region":"昆山","adminCN":"王君","pic":"","EnglishName":"Jun_Wang","groupNumber":"C111B1J","phoneNumber":"21831"},
     #            {"systName": "Device-LNV","wangzhi":"https://www.tmall.com/", "region": "昆山", "adminCN": "曹泽","pic":"","EnglishName":"Edwin_Cao","groupNumber":"C1010s3","phoneNumber":"21831"},
@@ -517,7 +520,7 @@ def UserInfoedit(request):
 
 @csrf_exempt
 def Change_Skin(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         return redirect('/login/')
     # print(request.method)
     Skin = request.COOKIES.get('Skin_raw')
@@ -556,7 +559,7 @@ def Change_Skin(request):
 
 @csrf_exempt
 def Summary(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         return redirect('/login/')
     # print(request.method)
     selectItem = [
@@ -966,7 +969,7 @@ def Summary(request):
 
 @csrf_exempt
 def Summary_ABO(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         return redirect('/login/')
     # print(request.method)
     selectItem = [

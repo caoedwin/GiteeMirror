@@ -211,7 +211,7 @@ headermodel_Adapter = {
 
 @csrf_exempt
 def BorrowedAdapter(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/BorrowedAdapter"
@@ -487,7 +487,7 @@ def BorrowedAdapter(request):
             # print(json.loads(BorrowedID))
             # print(BorrowedID.split(','))
             updatedic = {'Project_Code': request.POST.get('Project'), 'Phase': request.POST.get('Phase'),
-                         'BR_Status': '預定確認', 'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'),
+                         'BR_Status': '預定確認', 'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'),
                          'Predict_return': request.POST.get('Predict_return'), 'Borrow_date': None, 'Return_date': None, }
             # print(updatedic)
             for i in BorrowedID.split(','):
@@ -588,7 +588,7 @@ def BorrowedAdapter(request):
 
 @csrf_exempt
 def R_Borrowed(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/R_Borrowed"
@@ -663,7 +663,7 @@ def R_Borrowed(request):
             if request.POST.get('isGetData') == 'first':
                 # mock_data
                 # print(request.session.get('CNname'),request.session.get('account'))
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='已借出')
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'), BR_Status='已借出')
                 # print(mock_datalist)
                 for i in mock_datalist:
                     Photolist = []
@@ -729,7 +729,7 @@ def R_Borrowed(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '已借出'}
+                checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '已借出'}
                 Changjiasearch = request.POST.get('Changjia')
                 # print(len(Changjiasearch))
                 if Changjiasearch and Changjiasearch != "All":
@@ -814,7 +814,7 @@ def R_Borrowed(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'RENEW':
-                checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '已借出'}
+                checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '已借出'}
                 Changjiasearch = request.POST.get('Changjia')
                 if Changjiasearch and Changjiasearch != "All":
                     checkAdaPow['Changjia'] = Changjiasearch
@@ -832,7 +832,7 @@ def R_Borrowed(request):
                 # print(json.loads(BorrowedID))
                 # print(BorrowedID.split(','))
                 updatedic = {'Project_Code': request.POST.get('Project'), 'Phase': request.POST.get('Phase'),
-                             'BR_Status': '續借確認', 'BR_per': request.session.get('CNname'),'BR_per_code': request.session.get('account'),
+                             'BR_Status': '續借確認', 'BR_per': request.session.get('CNname_DMS'),'BR_per_code': request.session.get('account_DMS'),
                              'Predict_return': request.POST.get('Predict_return'), 'Borrow_date': None,
                              'Return_date': None, }
                 # print(updatedic)
@@ -929,7 +929,7 @@ def R_Borrowed(request):
                 if 'Returning' in str(request.body):
 
                     responseData = json.loads(request.body)
-                    checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '已借出'}
+                    checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '已借出'}
                     Changjiasearch = responseData['Changjia']
                     if Changjiasearch and Changjiasearch != "All":
                         checkAdaPow['Changjia'] = Changjiasearch
@@ -1035,7 +1035,7 @@ def R_Borrowed(request):
 
 @csrf_exempt
 def R_Return(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/R_Return"
@@ -1108,7 +1108,7 @@ def R_Return(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='歸還確認')
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'), BR_Status='歸還確認')
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -1173,7 +1173,7 @@ def R_Return(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '歸還確認'}
+                checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '歸還確認'}
                 Changjiasearch = request.POST.get('Changjia')
                 if Changjiasearch and Changjiasearch != "All":
                     checkAdaPow['Changjia'] = Changjiasearch
@@ -1267,7 +1267,7 @@ def R_Return(request):
                 if 'CancelReturn' in str(request.body):
 
                     responseData = json.loads(request.body)
-                    checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '歸還確認'}
+                    checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '歸還確認'}
                     Changjiasearch = responseData['Changjia']
                     if Changjiasearch and Changjiasearch != "All":
                         checkAdaPow['Changjia'] = Changjiasearch
@@ -1373,7 +1373,7 @@ def R_Return(request):
 
 @csrf_exempt
 def R_Keep(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/R_Keep"
@@ -1446,7 +1446,7 @@ def R_Keep(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'),BR_Status='續借確認')
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'),BR_Status='續借確認')
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -1511,7 +1511,7 @@ def R_Keep(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '續借確認'}
+                checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '續借確認'}
                 Changjiasearch = request.POST.get('Changjia')
                 if Changjiasearch and Changjiasearch != "All":
                     checkAdaPow['Changjia'] = Changjiasearch
@@ -1605,7 +1605,7 @@ def R_Keep(request):
                 if 'CancelRenew' in str(request.body):
 
                     responseData = json.loads(request.body)
-                    checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '續借確認'}
+                    checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '續借確認'}
                     Changjiasearch = responseData['Changjia']
                     if Changjiasearch and Changjiasearch != "All":
                         checkAdaPow['Changjia'] = Changjiasearch
@@ -1716,7 +1716,7 @@ def R_Keep(request):
 
 @csrf_exempt
 def R_Destine(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/R_Destine"
@@ -1789,7 +1789,7 @@ def R_Destine(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname'), BR_per_code=request.session.get('account'), BR_Status='預定確認')
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_per=request.session.get('CNname_DMS'), BR_per_code=request.session.get('account_DMS'), BR_Status='預定確認')
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -1854,7 +1854,7 @@ def R_Destine(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '預定確認'}
+                checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '預定確認'}
                 Changjiasearch = request.POST.get('Changjia')
                 if Changjiasearch and Changjiasearch != "All":
                     checkAdaPow['Changjia'] = Changjiasearch
@@ -1947,7 +1947,7 @@ def R_Destine(request):
                 # print('2')
                 if 'CancelBook' in str(request.body):
                     responseData = json.loads(request.body)
-                    checkAdaPow = {'BR_per': request.session.get('CNname'), 'BR_per_code': request.session.get('account'), 'BR_Status': '預定確認'}
+                    checkAdaPow = {'BR_per': request.session.get('CNname_DMS'), 'BR_per_code': request.session.get('account_DMS'), 'BR_Status': '預定確認'}
                     Changjiasearch = responseData['Changjia']
                     if Changjiasearch and Changjiasearch != "All":
                         checkAdaPow['Changjia'] = Changjiasearch
@@ -2057,7 +2057,7 @@ def R_Destine(request):
 
 @csrf_exempt
 def M_Borrow(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/M_Borrow"
@@ -2101,7 +2101,7 @@ def M_Borrow(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='預定確認', OAPcode=request.session.get('account'),)
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='預定確認', OAPcode=request.session.get('account_DMS'),)
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -2166,7 +2166,7 @@ def M_Borrow(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_Status': '預定確認', 'OAPcode': request.session.get('account')}
+                checkAdaPow = {'BR_Status': '預定確認', 'OAPcode': request.session.get('account_DMS')}
                 if request.POST.get('BorrowerNum'):
                     checkAdaPow['BR_per_code'] = request.POST.get('BorrowerNum')
                 # Changjiasearch = request.POST.get('Changjia')
@@ -2370,7 +2370,7 @@ def M_Borrow(request):
 
 @csrf_exempt
 def M_Return(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/R_Destine"
@@ -2414,7 +2414,7 @@ def M_Return(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='歸還確認', OAPcode=request.session.get('account'),)
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='歸還確認', OAPcode=request.session.get('account_DMS'),)
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -2479,7 +2479,7 @@ def M_Return(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_Status': '歸還確認', 'OAPcode': request.session.get('account')}
+                checkAdaPow = {'BR_Status': '歸還確認', 'OAPcode': request.session.get('account_DMS')}
                 if request.POST.get('BorrowerNum'):
                     checkAdaPow['BR_per_code'] = request.POST.get('BorrowerNum')
                 # Changjiasearch = request.POST.get('Changjia')
@@ -2676,7 +2676,7 @@ def M_Return(request):
 
 @csrf_exempt
 def M_upload(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/M_upload"
@@ -2684,7 +2684,7 @@ def M_upload(request):
 
 @csrf_exempt
 def M_edit(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/M_upload"
@@ -3578,7 +3578,7 @@ def M_edit(request):
 
 @csrf_exempt
 def M_Keep(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/M_Keep"
@@ -3622,7 +3622,7 @@ def M_Keep(request):
         if request.POST:
             if request.POST.get('isGetData') == 'first':
                 # mock_data
-                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='續借確認', OAPcode=request.session.get('account'),)
+                mock_datalist = AdapterPowerCodeBR.objects.filter(BR_Status='續借確認', OAPcode=request.session.get('account_DMS'),)
                 for i in mock_datalist:
                     Photolist = []
                     for h in i.Photo.all():
@@ -3687,7 +3687,7 @@ def M_Keep(request):
                 jieyongyuding = mock_datalist.filter(BR_Status="預定確認").count()  # 預定確認中
                 guihuanqueren = mock_datalist.filter(BR_Status="歸還確認").count()  # 歸還確認中
             if request.POST.get('isGetData') == 'SEARCH':
-                checkAdaPow = {'BR_Status': '續借確認', 'OAPcode': request.session.get('account')}
+                checkAdaPow = {'BR_Status': '續借確認', 'OAPcode': request.session.get('account_DMS')}
                 if request.POST.get('BorrowerNum'):
                     checkAdaPow['BR_per_code'] = request.POST.get('BorrowerNum')
                 # Changjiasearch = request.POST.get('Changjia')
@@ -3892,7 +3892,7 @@ def M_Keep(request):
 
 @csrf_exempt
 def Summary(request):
-    if not request.session.get('is_login', None):
+    if not request.session.get('is_login_DMS', None):
         # print(request.session.get('is_login', None))
         return redirect('/login/')
     weizhi = "AdapterPowerCode/Summary"
