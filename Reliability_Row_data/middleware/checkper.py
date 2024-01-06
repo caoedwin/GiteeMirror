@@ -25,6 +25,7 @@ class RbacMiddleware(MiddlewareMixin):
     """
     def process_request(self, request):
         # print ('test')
+        response = self.get_response(request)
         request_url = request.path_info
         # print(request)
         permission_url = request.session.get(settings.SESSION_PERMISSION_URL_KEY)
@@ -37,14 +38,15 @@ class RbacMiddleware(MiddlewareMixin):
             # print("request:",request_url)
             # print (re.match(url, request_url))
             if re.match(url, request_url):
-                if '/login/' not in request_url and '/logout/' not in request_url and request_url in str(settings.PERMISSION_MENU_KEY):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url:
                     # print(path, 'path')
-                    request.session['Non_login_path'] = request_url
+                    response.set_cookie('current_page', value=request_url)
                     # print(request.session.get('Non_login_path'))
                     request.session.set_expiry(
-                        12 * 60 * 60)  # None：会使用全局的session配置。在settings.py中可以设置SESSION_COOKIE_AGE来配置全局的过期时间。默认是1209600秒，也就是2周的时间。
+                        7 * 12 * 60 * 60)  # None：会使用全局的session配置。在settings.py中可以设置SESSION_COOKIE_AGE来配置全局的过期时间。默认是1209600秒，也就是2周的时间。
+                    # print(request.COOKIES['current_page'])
 
-                return None
+                return response
 
         # 如果未取到permission_url, 重定向至登录；为了可移植性，将登录url写入配置
         if not permission_url:
@@ -57,21 +59,22 @@ class RbacMiddleware(MiddlewareMixin):
         for url in permission_url:
             url_pattern = settings.REGEX_URL.format(url=url)
             # print (url_pattern)
-            # print ("perurl:", url)
+            # print ("perurl:", url, request_url)
             # print ("request:", request_url)
             # print(re.match(url, request_url))
             if re.match(url_pattern, request_url):
                 flag = True
-                if '/login/' not in request_url and '/logout/' not in request_url  and request_url in str(settings.PERMISSION_MENU_KEY):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url:
                     # print(path, 'path')
-                    request.session['Non_login_path'] = request_url
+                    response.set_cookie('current_page', value=request_url)
                     # print(request.session.get('Non_login_path'))
                     request.session.set_expiry(
-                        12 * 60 * 60)
+                        7 * 12 * 60 * 60)
+                    # print(request.COOKIES['current_page'])
                 break
         if flag:
             # print("yes")
-            return None
+            return response
         else:
             # 如果是调试模式，显示可访问url
             if settings.DEBUG:

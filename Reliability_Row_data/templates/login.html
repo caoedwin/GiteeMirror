@@ -75,8 +75,8 @@
     <div class="card card-login mx-auto mt-5" style="background-color:rgba(255,255,255,0.3);">
       <div class="card-header" style="color:#FFF;">登錄</div>
       <div class="card-body"style="background-color: rgba(255,255,255,0.3);">
-        <form class='form-Test' action="/login/" method="POST">
-            <form method="post" action="./?next={{ request.path }}">
+{#        <form class='form-Test' action="/login/" method="POST">#}
+            <form method="post" action="./?next={{ redirect_to }}">
           <div class="form-group">
             <div><span>Account:</span></div>
             

@@ -91,7 +91,10 @@ def login(request):
     # 不允许重复登录
     if request.session.get('is_login', None):
         # return redirect('/index/')
-        return redirect('/AdapterPowerCode/BorrowedAdapter/')
+        try:
+            return redirect(request.COOKIES['current_page'])
+        except:
+            return redirect('/AdapterPowerCode/BorrowedAdapter/')
     # print(request.method)
     # print('test')
 

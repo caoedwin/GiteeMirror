@@ -49,7 +49,16 @@ from .tasks import ProjectSync
 def login(request):
     # 不允许重复登录
     if request.session.get('is_login', None):
-        return redirect('/index/')
+        # print(request.GET.get('next'), '11', request.POST.get('next', '/'))
+        # print(request.session, 'ses')
+        # print(request.COOKIES, 'coo')
+        # print(request.COOKIES['current_page'])
+        # # print(request.COOKIES['Non_login_path'])
+        try:
+            return redirect(request.COOKIES['current_page'])
+        except:
+            return redirect('/index/')
+
     # print(request.method)
     fbclid = request.GET.get('fbclid')
     # print(request.GET.get('next'), fbclid, '11', request.POST.get('next', '/'))
@@ -522,15 +531,15 @@ def FilesDownload(request):
     if request.method == "GET":
         # print(request.GET)
         if request.GET.get("action") == "first":
-            # Mailhtml()
-            # MailOAtest()
-            # print('mailend')
-            importPrjResult = ImportProjectinfoFromDCT()
-            if importPrjResult:
-                data['result'] = 1
-            else:
-                data['result'] = 0
-            # print(data)
+            # # Mailhtml()
+            # # MailOAtest()
+            # # print('mailend')
+            # importPrjResult = ImportProjectinfoFromDCT()
+            # if importPrjResult:
+            #     data['result'] = 1
+            # else:
+            #     data['result'] = 0
+            # # print(data)
             return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'FilesDownload.html', locals())
 
@@ -547,12 +556,12 @@ def Navigation(request):
     if request.method == "GET":
         # print(request.GET)
         if request.GET.get("action") == "first":
-            importPrjResult = ImportProjectinfoFromDCT()
-            if importPrjResult:
-                data['result'] = 1
-            else:
-                data['result'] = 0
-            # print(data)
+            # importPrjResult = ImportProjectinfoFromDCT()
+            # if importPrjResult:
+            #     data['result'] = 1
+            # else:
+            #     data['result'] = 0
+            # # print(data)
             return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'Navigation.html', locals())
 
