@@ -47,8 +47,8 @@ class LogMiddle(MiddlewareMixin):
                 proxy_ip = None
                 # useraccount = request.user
                 # print(useraccount.id)
-                username = request.session.get('user_name')
-                Account = request.session.get('account')
+                username = request.session.get('user_name_DMS')
+                Account = request.session.get('account_DMS')
                 # print(username,Account)
                 server_name = request.META.get('SERVER_NAME')
                 COMPUTERNAME = None

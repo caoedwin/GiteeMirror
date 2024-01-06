@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Data{% endblock %}</title>
         {{ lesson_form.media }}
-        {% block css1 %}
+        {% block css1 %}on
         <link rel="stylesheet" href="/static/download_UPK/element-ui@2.12.0/lib/theme-chalk/index.css">
         <link href="/static/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
         <link href="/static/css/lib/chartist/chartist.min.css" rel="stylesheet">
@@ -124,7 +124,7 @@
                               <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-header" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#0c0c0c">
 {#                                      <i class="ti-user"></i>#}
-                                      Online：{{ request.session.user_name }}
+                                      Online：{{ request.session.user_name_DMS }}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-left" aria-labelledby="userDropdown">
                                       <a class="dropdown-item" href="/Change_Password/">Change Password</a>
@@ -168,7 +168,7 @@
                     <div class="col-lg-6 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 >Hello {{ request.session.user_name }}, Welcome Here</h1>
+                                <h1 >Hello {{ request.session.user_name_DMS }}, Welcome Here</h1>
                             </div>
                         </div>
                     </div>
