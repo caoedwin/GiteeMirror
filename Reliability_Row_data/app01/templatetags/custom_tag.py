@@ -221,7 +221,7 @@ def get_menu_html(menu_data):
                         Class = "ti-light-bulb"
                     if item['title'] == 'Automation效益':
                         Class = "ti-panel"
-                    if item['title'] == 'ABO':
+                    if item['title'] == 'ABO' or item['title'] == 'LowLight':
                         Class = "ti-view-list-alt"
                     if item['title'] == 'Input':
                         Class = "ti-view-list-alt"

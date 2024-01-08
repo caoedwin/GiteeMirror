@@ -2234,13 +2234,13 @@ def PersonalInfo_edit(request):
                                             # value = value.replace('/', '-')
                                             # value = value.replace('.', '-')
                                             if len(value.split("/")) == 3:
-                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + \
-                                                                                           value.split("/")[0] + "-" + \
-                                                                                           value.split("/")[1]
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[0] + "-" + \
+                                                                                           value.split("/")[1] + "-" + \
+                                                                                           value.split("/")[2]
                                             else:
-                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[2] + "-" + \
-                                                                                           value.split("-")[0] + "-" + \
-                                                                                           value.split("-")[1]
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[0] + "-" + \
+                                                                                           value.split("-")[1] + "-" + \
+                                                                                           value.split("-")[2]
                                         else:
                                             modeldata[headermodel_PersonalInfo[key]] = value
                                 modeldata['Year'] = responseData['historyYear']
@@ -2278,13 +2278,13 @@ def PersonalInfo_edit(request):
                                             # value = value.replace('/', '-')
                                             # value = value.replace('.', '-')
                                             if len(value.split("/")) == 3:
-                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[2] + "-" + \
-                                                                                           value.split("/")[0] + "-" + \
-                                                                                           value.split("/")[1]
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("/")[0] + "-" + \
+                                                                                           value.split("/")[1] + "-" + \
+                                                                                           value.split("/")[2]
                                             else:
-                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[2] + "-" + \
-                                                                                           value.split("-")[0] + "-" + \
-                                                                                           value.split("-")[1]
+                                                modeldata[headermodel_PersonalInfo[key]] = value.split("-")[0] + "-" + \
+                                                                                           value.split("-")[1] + "-" + \
+                                                                                           value.split("-")[2]
                                         else:
                                             modeldata[headermodel_PersonalInfo[key]] = value
                                 Check_dic = {

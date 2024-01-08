@@ -692,7 +692,7 @@ def INVGantt_edit(request):
         selectItem.append(i['Customer'])
     # print(selectItem)
     roles = []
-    onlineuser = request.session.get('account')
+    odatetimenlineuser = request.session.get('account')
     canEdit = 0
     current_user = request.session.get('user_name')
 
@@ -903,7 +903,7 @@ def INVGantt_edit(request):
                 Update_dic_Gantt[j] = resdata[j]
             Update_dic_Gantt['Editor'] = request.session.get('user_name')
             Update_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(Update_dic_Gantt)
+            # print(Update_dic_Gantt)
             INVGantt.objects.filter(id=resdata['id']).update(**Update_dic_Gantt)
             check_dic = {}
             if Customer:
