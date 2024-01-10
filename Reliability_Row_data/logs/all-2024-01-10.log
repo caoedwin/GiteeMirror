@@ -1,0 +1,30 @@
+[2024-01-10 15:49:51,785] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-10 15:49:51,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-10 15:49:51,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24774
+[2024-01-10 15:50:06,366] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 24774
+[2024-01-10 15:50:06,529] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24774
+[2024-01-10 15:52:13,996] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-10 15:52:13 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-10 15:52:14,005] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-10 15:52:14,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-10 15:52:14,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 55734
+[2024-01-10 15:52:14,667] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-10 15:52:14 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-10 15:52:14,672] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-10 15:52:14,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-10 15:52:18,349] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 579, in logout
+    del request.session['is_login']
+  File "C:\Python372\mecheck\lib\site-packages\django\contrib\sessions\backends\base.py", line 62, in __delitem__
+    del self._session[key]
+KeyError: 'is_login'
+[2024-01-10 15:52:18,352] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /logout/ HTTP/1.1" 500 86177
+[2024-01-10 15:52:18,407] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2024-01-10 15:52:18,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665

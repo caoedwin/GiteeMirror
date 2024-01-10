@@ -97,7 +97,7 @@ def login(request):
         try:
             return redirect(request.COOKIES['current_page_DMS'])
         except:
-            return redirect('/AdapterPowerCode/BorrowedAdapter/')
+            return redirect('/index/')
     # print(request.method)
     # print('test')
 
@@ -371,11 +371,11 @@ def logout(request):
         # print('logout')
         return redirect("/login/")
     #flush()方法是比较安全的一种做法，而且一次性将session中的所有内容全部清空，确保不留后患。但也有不好的地方，那就是如果你在session中夹带了一点‘私货’，会被一并删除，这一点一定要注意
-    # request.session.flush()
+    request.session.flush()
     # 或者使用下面的方法
-    del request.session['is_login_DMS']
-    del request.session['user_id_DSM']
-    del request.session['user_name_DMS']
+    # del request.session['is_login_DMS']
+    # del request.session['user_id_DSM']
+    # del request.session['user_name_DMS']
     return redirect("/login/")
 
 @csrf_exempt

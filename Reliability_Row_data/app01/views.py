@@ -574,11 +574,11 @@ def logout(request):
         # print('logout')
         return redirect("/login/")
     #flush()方法是比较安全的一种做法，而且一次性将session中的所有内容全部清空，确保不留后患。但也有不好的地方，那就是如果你在session中夹带了一点‘私货’，会被一并删除，这一点一定要注意
-    # request.session.flush()#不用是为了保留Non_login_path
+    request.session.flush()
     # 或者使用下面的方法
-    del request.session['is_login']
-    del request.session['user_id']
-    del request.session['user_name']
+    # del request.session['is_login']
+    # del request.session['user_id']
+    # del request.session['user_name']
     return redirect("/login/")
 
 @csrf_exempt
