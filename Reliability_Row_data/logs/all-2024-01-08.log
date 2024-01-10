@@ -866,3 +866,243 @@ TypeError: Object of type datetime is not JSON serializable
 [2024-01-08 14:25:15,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1461
 [2024-01-08 14:25:21,100] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 14:25:21 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
 [2024-01-08 14:25:21,111] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:38:51,265] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-08 16:38:52,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 61963
+[2024-01-08 16:38:52,393] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:39:58,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-08 16:39:59,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 278708
+[2024-01-08 16:39:59,283] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:40:11,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/1/change/ HTTP/1.1" 200 30828
+[2024-01-08 16:40:11,825] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+[2024-01-08 16:40:11,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:40:37,749] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:40:37 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/userinfo/1/change/ POST
+[2024-01-08 16:40:37,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/1/change/ HTTP/1.1" 302 0
+[2024-01-08 16:40:38,698] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 278854
+[2024-01-08 16:40:38,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:40:43,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 16:40:43,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 16:40:43,554] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:40:43,574] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 303386
+[2024-01-08 16:40:43,615] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24774
+[2024-01-08 16:40:48,641] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:40:48 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 16:40:48,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 16:40:48,678] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 16:40:48,697] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 55700
+[2024-01-08 16:40:48,763] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:40:48,795] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:40:48,915] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:40:48,920] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:40:49,031] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:40:49 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:40:49,040] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:40:49,055] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-08 16:41:02,526] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:41:02 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:41:02,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:41:15,020] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:41:15 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:41:15,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:41:38,845] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/1/change/ HTTP/1.1" 200 30846
+[2024-01-08 16:41:38,887] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:41:44,294] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:41:44 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/userinfo/1/change/ POST
+[2024-01-08 16:41:44,302] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/1/change/ HTTP/1.1" 302 0
+[2024-01-08 16:41:45,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 278845
+[2024-01-08 16:41:45,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:41:50,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 16:41:50,293] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 16:41:50,330] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:41:50,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24774
+[2024-01-08 16:41:52,109] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:41:52 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 16:41:52,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 16:41:52,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 16:41:52,144] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 16585
+[2024-01-08 16:41:52,189] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:41:52,231] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:41:52,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16585
+[2024-01-08 16:42:04,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16585
+[2024-01-08 16:42:06,769] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/21/change/ HTTP/1.1" 200 25084
+[2024-01-08 16:42:06,791] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:42:26,396] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:42:26 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/role/21/change/ POST
+[2024-01-08 16:42:26,402] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/role/21/change/ HTTP/1.1" 302 0
+[2024-01-08 16:42:27,342] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 62131
+[2024-01-08 16:42:27,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:42:31,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/11/change/ HTTP/1.1" 200 25159
+[2024-01-08 16:42:31,872] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:42:38,997] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:42:38 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/role/11/change/ POST
+[2024-01-08 16:42:39,001] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/role/11/change/ HTTP/1.1" 302 0
+[2024-01-08 16:42:40,001] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 62161
+[2024-01-08 16:42:40,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:42:45,665] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 16:42:45,680] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 16:42:45,717] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:42:45,746] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16575
+[2024-01-08 16:42:47,934] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:42:47 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 16:42:47,940] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 16:42:47,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 16:42:47,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 47806
+[2024-01-08 16:42:48,044] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:42:48,053] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:42:48,183] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:42:48,189] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:42:48,310] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:42:48 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:42:48,319] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:42:48,323] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16890
+[2024-01-08 16:42:58,641] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LowLightList/LowLightList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LowLightList\views.py", line 101, in LowLightList_edit
+    for i in LowLightList.objects.filter(**check_LowL_dic):
+UnboundLocalError: local variable 'check_LowL_dic' referenced before assignment
+[2024-01-08 16:42:58,644] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:42:58 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:42:58,645] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 500 86108
+[2024-01-08 16:44:16,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 47806
+[2024-01-08 16:44:16,526] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:44:16,541] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:44:16,592] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:44:16,665] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:44:16,693] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:44:16 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:44:16,698] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:44:16,706] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16890
+[2024-01-08 16:44:23,583] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:44:23 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:44:23,589] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:44:56,333] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:44:56 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:44:56,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 98
+[2024-01-08 16:50:40,577] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:50:40 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:50:40,583] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:50:47,470] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:50:47 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:50:47,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 98
+[2024-01-08 16:51:03,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 47806
+[2024-01-08 16:51:03,751] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:51:03,760] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:51:03,818] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:51:03,820] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:51:03,961] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16890
+[2024-01-08 16:51:03,963] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:03 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:51:03,968] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:51:10,780] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:10 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:51:10,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1462
+[2024-01-08 16:51:15,841] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:15 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:51:15,846] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1463
+[2024-01-08 16:51:24,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16890
+[2024-01-08 16:51:30,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/1/change/ HTTP/1.1" 200 30837
+[2024-01-08 16:51:30,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:51:33,906] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:33 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/userinfo/1/change/ POST
+[2024-01-08 16:51:33,912] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/1/change/ HTTP/1.1" 302 0
+[2024-01-08 16:51:34,321] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 278836
+[2024-01-08 16:51:34,357] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:51:38,516] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 16:51:38,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 16:51:38,556] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:51:38,577] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 16880
+[2024-01-08 16:51:40,463] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:40 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 16:51:40,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 16:51:40,478] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 16:51:40,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 14443
+[2024-01-08 16:51:40,555] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:51:40,594] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:51:40,630] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14443
+[2024-01-08 16:51:50,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14443
+[2024-01-08 16:51:52,864] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/2/change/ HTTP/1.1" 200 25125
+[2024-01-08 16:51:52,892] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:51:58,962] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:51:58 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/role/2/change/ POST
+[2024-01-08 16:51:58,967] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/role/2/change/ HTTP/1.1" 302 0
+[2024-01-08 16:51:59,493] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/role/ HTTP/1.1" 200 62191
+[2024-01-08 16:51:59,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 16:52:03,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 16:52:03,477] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 16:52:03,516] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:52:03,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14433
+[2024-01-08 16:52:04,893] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:52:04 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 16:52:04,899] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 16:52:04,907] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 16:52:04,918] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 45664
+[2024-01-08 16:52:04,983] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:52:04,992] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:52:05,036] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:52:05,037] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:52:05,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14748
+[2024-01-08 16:52:05,147] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:52:05 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:52:05,150] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:52:11,532] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:52:11 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:52:11,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1463
+[2024-01-08 16:52:22,591] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/? HTTP/1.1" 200 45664
+[2024-01-08 16:52:22,657] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 16:52:22,667] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 16:52:22,771] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 16:52:22,771] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 16:52:22,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14748
+[2024-01-08 16:52:22,879] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:52:22 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:52:22,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 16:52:44,642] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:52:44 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:52:44,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1463
+[2024-01-08 16:53:19,631] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 16:53:19 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 16:53:19,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 1464
+[2024-01-08 17:00:58,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14748
+[2024-01-08 17:01:05,058] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/1/change/ HTTP/1.1" 200 30828
+[2024-01-08 17:01:05,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 17:01:13,973] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 17:01:13 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /admin/app01/userinfo/1/change/ POST
+[2024-01-08 17:01:13,980] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /admin/app01/userinfo/1/change/ HTTP/1.1" 302 0
+[2024-01-08 17:01:14,759] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/app01/userinfo/ HTTP/1.1" 200 278832
+[2024-01-08 17:01:14,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/jsi18n/ HTTP/1.1" 200 7684
+[2024-01-08 17:01:18,444] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2024-01-08 17:01:18,467] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-08 17:01:18,506] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 17:01:18,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 14738
+[2024-01-08 17:01:23,199] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 17:01:23 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-08 17:01:23,205] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-08 17:01:23,230] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-08 17:01:23,257] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 55700
+[2024-01-08 17:01:23,329] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-08 17:01:23,350] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-08 17:01:23,409] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-08 17:01:23,412] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-08 17:01:23,516] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-08 17:01:23 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-08 17:01:23,521] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-08 17:01:23,544] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-09 08:03:06,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /LowLightList/LowLightList_edit/ HTTP/1.1" 200 55700
+[2024-01-09 08:03:06,567] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-09 08:03:06,588] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-09 08:03:06,748] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-09 08:03:06,752] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-09 08:03:06,885] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:03:06 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /LowLightList/LowLightList_edit/ POST
+[2024-01-09 08:03:06,890] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 200 5010
+[2024-01-09 08:03:06,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-09 08:03:44,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /CQM/CQM_edit/ HTTP/1.1" 200 68483
+[2024-01-09 08:03:44,244] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-09 08:03:44,296] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-09 08:03:44,446] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-09 08:03:44,563] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:03:44 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:03:44,575] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 166
+[2024-01-09 08:03:44,611] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-09 08:03:55,799] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:03:55 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:03:55,818] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 136268
+[2024-01-09 08:04:00,294] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:04:00 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:04:00,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 19018
+[2024-01-09 08:04:16,701] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:04:16 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:04:16,707] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 136268
+[2024-01-09 08:04:50,356] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:04:50 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:04:50,366] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 12677
+[2024-01-09 08:05:04,344] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:05:04 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:05:04,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 136268
+[2024-01-09 08:05:07,726] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:05:07 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:05:07,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 61059
+[2024-01-09 08:05:17,618] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:05:17 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:05:17,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 136268
+[2024-01-09 08:05:35,689] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-09 08:05:35 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /CQM/CQM_edit/ POST
+[2024-01-09 08:05:35,695] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /CQM/CQM_edit/ HTTP/1.1" 200 7785
+[2024-01-09 08:11:51,664] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/ HTTP/1.1" 200 113961
+[2024-01-09 08:11:51,684] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing.css HTTP/1.1" 304 0
+[2024-01-09 08:11:51,687] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/bouncing_edit.css HTTP/1.1" 200 6053
+[2024-01-09 08:11:51,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/Element/form.js HTTP/1.1" 304 0
+[2024-01-09 08:11:51,750] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1800
+[2024-01-09 08:11:51,760] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/lib/bootstrap.min.js.map HTTP/1.1" 404 1806
+[2024-01-09 08:11:51,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/axios.min.map HTTP/1.1" 404 1773
+[2024-01-09 08:11:51,806] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /static/js/xlsx/FileSaver.min.js.map HTTP/1.1" 404 1809
+[2024-01-09 08:11:51,987] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 24784
+[2024-01-09 08:11:52,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=first HTTP/1.1" 200 2997
+[2024-01-09 08:53:56,937] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getCategory&customer=C38(NB)&project=Debug&phase=1 HTTP/1.1" 200 828
+[2024-01-09 08:54:01,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /TestPlanSW/TestPlanSW-edit/?action=getContent&customer=C38(NB)&project=Debug&phase=1&category=Accessories%20for%20compatibility%20test%20 HTTP/1.1" 200 15054

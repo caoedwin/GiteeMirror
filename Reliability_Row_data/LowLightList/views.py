@@ -85,8 +85,9 @@ def LowLightList_edit(request):
         if request.POST.get('isGetData') == 'SEARCH':
             Customer = request.POST.get('Customer')
             ProjectCompal = request.POST.get('ProjectcodeCompal')
+            check_LowL_dic = {"Customer": Customer, "ProjectCompal": ProjectCompal}
             if editPpriority == 1:
-                check_LowL_dic = {"Customer": Customer, "ProjectCompal": ProjectCompal}
+
                 # print(check_LowL_dic)
                 check_Owner_dic = {"Customer": Customer, "Project": ProjectCompal}
                 Projectinfo = CQMProject.objects.filter(**check_Owner_dic).first()
@@ -168,7 +169,7 @@ def LowLightList_edit(request):
                 upload_LowL_dic['Owner'] = Owner
             if Mitigation_plan:
                 upload_LowL_dic['Mitigation_plan'] = Mitigation_plan
-            print(upload_LowL_dic,id)
+            # print(upload_LowL_dic,id)
             if upload_LowL_dic:
                 LowLightList.objects.filter(id=id).update(**upload_LowL_dic)
 

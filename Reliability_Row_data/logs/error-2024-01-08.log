@@ -374,3 +374,17 @@ Traceback (most recent call last):
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type datetime is not JSON serializable
 [2024-01-08 13:23:06,215] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 500 124079
+[2024-01-08 16:42:58,641] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /LowLightList/LowLightList_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\LowLightList\views.py", line 101, in LowLightList_edit
+    for i in LowLightList.objects.filter(**check_LowL_dic):
+UnboundLocalError: local variable 'check_LowL_dic' referenced before assignment
+[2024-01-08 16:42:58,645] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /LowLightList/LowLightList_edit/ HTTP/1.1" 500 86108

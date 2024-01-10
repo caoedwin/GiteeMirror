@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/INVGantt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/INVGantt/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/LowLightList/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/LowLightList/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalInfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/templatetags/custom_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/templatetags/custom_tag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-06.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-06.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-08.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-08.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2024-01-08.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/error-2024-01-08.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-08.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-08.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/LowLightList/LowLightList_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/LowLightList/LowLightList_edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,25 +42,25 @@
     <session id="336981479">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="20" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.2" value="4" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="117" />
+          <entry key="html" value="118" />
           <entry key="js" value="2" />
           <entry key="py" value="255" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="117" />
+          <entry key="HTML" value="118" />
           <entry key="JavaScript" value="2" />
           <entry key="Python" value="255" />
         </counts>
@@ -84,7 +83,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -97,8 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>領用</find>
-      <find>已退庫</find>
       <find>canEdit</find>
       <find>None</find>
       <find>CostCenter</find>
@@ -127,6 +124,8 @@
       <find>user_name</find>
       <find>CNname</find>
       <find>session</find>
+      <find>edit</find>
+      <find>updateData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1092,9 +1091,9 @@
       <path value="$PROJECT_DIR$/static/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
   </component>
@@ -1104,6 +1103,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1116,17 +1116,22 @@
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="DeviceABO" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reliability_Row_data" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1379,10 +1384,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1721" height="927" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" weight="0.23211065" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.17329377" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1437,13 +1441,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WirelessAP/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="8" column="71" lean-forward="true" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceLNV/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1660,9 +1657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="33" column="26" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1684,9 +1678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1694,9 +1685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="47" column="26" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1704,9 +1692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="5671" column="34" lean-forward="true" selection-start-line="5671" selection-start-column="34" selection-end-line="5671" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1742,16 +1727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="126" column="59" lean-forward="true" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
-          <folding>
-            <element signature="e#1435#3220#0" />
-            <element signature="e#5465#7162#0" />
-            <element signature="e#7205#8902#0" />
-            <element signature="e#8945#10642#0" />
-            <element signature="e#10687#12388#0" />
-            <element signature="e#23647#25179#0" />
-            <element signature="e#25220#43235#0" />
-            <element signature="e#43280#48982#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1773,6 +1748,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="153" column="106" selection-start-line="153" selection-start-column="99" selection-end-line="153" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceABO/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="1951" column="50" lean-forward="true" selection-start-line="1951" selection-start-column="50" selection-end-line="1951" selection-end-column="50" />
         </state>
       </provider>
     </entry>

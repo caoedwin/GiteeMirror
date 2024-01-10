@@ -204,10 +204,10 @@ label{
         <template>
             <el-form ref="form"  :model="form" :rules="rules"  :label-position="labelPosition" label-width="180px">
                   <el-form-item label="Lowlight item" prop="Lowlight_item">
-                      <el-input  v-model="form.Lowlight_item" ></el-input>
+                      <el-input type="textarea" v-model="form.Lowlight_item" ></el-input>
                   </el-form-item>
                   <el-form-item label="Root cause" prop="Root_cause">
-                      <el-input  v-model="form.Root_cause" ></el-input>
+                      <el-input type="textarea" v-model="form.Root_cause" ></el-input>
                   </el-form-item>
                   <el-form-item label="LD" prop="LD">
                       <el-input  v-model="form.LD" ></el-input>
@@ -227,7 +227,7 @@ label{
                       <el-input  v-model="form.Owner" ></el-input>
                   </el-form-item>
                   <el-form-item label="Mitigation_plan" prop="Mitigation_plan">
-                      <el-input  v-model="form.Mitigation_plan" ></el-input>
+                      <el-input type="textarea" v-model="form.Mitigation_plan" ></el-input>
                   </el-form-item>
                 <div class="el-form-item__content" style="margin-left: 220px;">
                   <el-form-item>
@@ -241,7 +241,7 @@ label{
         <template>
             <el-form ref="form"  :model="form" :rules="rules"  :label-position="labelPosition" label-width="180px">
                   <el-form-item label="Mitigation_plan" prop="Mitigation_plan">
-                      <el-input  v-model="form.Mitigation_plan" ></el-input>
+                      <el-input type="textarea" v-model="form.Mitigation_plan" ></el-input>
                   </el-form-item>
                 <div class="el-form-item__content" style="margin-left: 220px;">
                   <el-form-item>
@@ -570,7 +570,7 @@ label{
                         this.formData.append('Owner', this.$refs.form.model.Owner)
                         this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
                         this.formData.append("action", 'onSubmit');
-                        console.log(this.formData)
+                        {#console.log(this.formData)#}
                         axios.post("/LowLightList/LowLightList_edit/", this.formData, {
                             headers: {
                                 'Content-Type': 'multipart/form-data',
@@ -658,7 +658,7 @@ label{
                     this.formData.append('ID', this.ID)
                     this.formData.append('Owner', this.$refs.form.model.Owner)
                     this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
-                    this.formData.append("action", 'onSubmit2');
+                    this.formData.append("action", 'onSubmit1');
                     console.log(this.formData)
                     axios.post("/LowLightList/LowLightList_edit/", this.formData, {
                         headers: {
@@ -697,7 +697,7 @@ label{
                     this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
                     this.formData.append('ID', this.ID)
                     this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
-                    this.formData.append("action", 'onSubmit3');
+                    this.formData.append("action", 'onSubmit1');
                     console.log(this.formData)
                     axios.post("/LowLightList/LowLightList_edit/", this.formData, {
                         headers: {
