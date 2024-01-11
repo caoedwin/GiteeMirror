@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMS/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/checkper.py" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/app01/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-09.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-09.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/Reliability_Row_data/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-01-10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-01-10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/middleware/checkper.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/middleware/checkper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pyvue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pyvue/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pyvue/backend01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pyvue/backend01/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,39 +46,39 @@
     <session id="336981479">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
-          <entry key="project.open.time.0" value="21" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.0" value="23" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="118" />
           <entry key="js" value="2" />
-          <entry key="py" value="256" />
+          <entry key="py" value="259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="118" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="256" />
+          <entry key="Python" value="259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1215" />
-          <entry key="py" value="5026" />
+          <entry key="py" value="5036" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1215" />
-          <entry key="Python" value="5026" />
+          <entry key="Python" value="5036" />
         </counts>
       </usages-collector>
     </session>
@@ -81,24 +87,7 @@
     <favorites_list name="DMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app01/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
-              <folding>
-                <element signature="e#5619#7316#0" />
-                <element signature="e#7359#9056#0" />
-                <element signature="e#9099#10796#0" />
-                <element signature="e#10841#12542#0" />
-                <element signature="e#12581#15673#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,7 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>canEdit</find>
       <find>None</find>
       <find>CostCenter</find>
       <find>shiji_inDQA + shiji_return</find>
@@ -138,9 +126,10 @@
       <find>user_id</find>
       <find>user_name</find>
       <find>CNname</find>
-      <find>session</find>
       <find>edit</find>
       <find>updateData</find>
+      <find>current_page_DMS</find>
+      <find>session</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,9 +175,7 @@
         <option value="$PROJECT_DIR$/TUMHistory/views20211017lingyongchayi.py" />
         <option value="$PROJECT_DIR$/templates/index20210317图片上悬浮信息.html" />
         <option value="$PROJECT_DIR$/app01/tasks.py" />
-        <option value="$PROJECT_DIR$/DMS/settings.py" />
         <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
-        <option value="$PROJECT_DIR$/middleware/checkper.py" />
         <option value="$PROJECT_DIR$/AdapterPowerCode/views.py" />
         <option value="$PROJECT_DIR$/ChairCabinetMS/views.py" />
         <option value="$PROJECT_DIR$/ComputerMS/views.py" />
@@ -199,6 +186,8 @@
         <option value="$PROJECT_DIR$/TUMHistory/views.py" />
         <option value="$PROJECT_DIR$/middleware/UserIP.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/middleware/checkper.py" />
+        <option value="$PROJECT_DIR$/DMS/settings.py" />
         <option value="$PROJECT_DIR$/app01/views.py" />
       </list>
     </option>
@@ -1131,17 +1120,6 @@
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="app01" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMS" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMS" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="DeviceABO" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -1405,13 +1383,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.17329377" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" weight="0.17329377" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.43324938" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.43324938" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3979849" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1431,11 +1408,11 @@
       <window_info anchor="right" id="Find" order="4" weight="0.32711965" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.23211065" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.17329377" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" visible="true" weight="0.43324938" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.43324938" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3979849" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1639,13 +1616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DMS/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="372" lean-forward="true" selection-start-line="372" selection-end-line="372" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python372/mecheck/Lib/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1737,13 +1707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/checkper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/templatetags/custom_tag.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -1772,16 +1735,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/checkper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DMS/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="333" column="36" lean-forward="true" selection-start-line="333" selection-start-column="36" selection-end-line="333" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+        <state relative-caret-position="608">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
-            <element signature="e#5619#7316#0" />
-            <element signature="e#7359#9056#0" />
-            <element signature="e#9099#10796#0" />
-            <element signature="e#10841#12542#0" />
-            <element signature="e#12581#15673#0" />
+            <element signature="e#3259#5549#0" />
+            <element signature="e#5592#7289#0" />
+            <element signature="e#7332#9029#0" />
+            <element signature="e#9072#10769#0" />
+            <element signature="e#10814#12515#0" />
+            <element signature="e#12554#15646#0" />
+            <element signature="e#15686#16204#0" />
+            <element signature="e#16253#17531#0" />
+            <element signature="e#17577#23773#0" />
+            <element signature="e#23818#25354#0" />
+            <element signature="e#25395#43414#0" />
+            <element signature="e#43459#49165#0" />
+            <element signature="e#49281#49390#0" />
           </folding>
         </state>
       </provider>

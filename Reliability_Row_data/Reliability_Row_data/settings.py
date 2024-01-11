@@ -441,7 +441,7 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 #不加的话当用数据库存储session会报无法序列化的错误
 
 SESSION_SAVE_EVERY_REQUEST=True
-SESSION_COOKIE_AGE = 12 *60 * 60#setting中设置session的cookie失效时间12h
+SESSION_COOKIE_AGE = 5 * 12 * 60 * 60#setting中设置session的cookie失效时间12h
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'#'django.contrib.sessions.backends.cache'#设置session存储方式为缓存
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 

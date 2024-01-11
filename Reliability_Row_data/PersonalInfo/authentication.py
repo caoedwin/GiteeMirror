@@ -6,7 +6,7 @@ from rest_framework import exceptions
 
 from django.utils.translation import gettext_lazy as _
 
-from app01.models import UserInfo,Role
+from app01.models import UserInfo, Role
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):

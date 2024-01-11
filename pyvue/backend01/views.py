@@ -125,7 +125,7 @@ class BooksViewSet(viewsets.ModelViewSet):
     queryset = Books.objects.all().order_by('-author')
     serializer_class = BooksSerializer
     renderer_classes = (CustomJsonRender,)
-    # permission_classes = [MyPermission, ]
+    # permission_classes = [MyPermission, ]#可以参考DDIS里面的CQM和PersonalInfo接口，和DMS里面的app01里面的ImportPersonalInfo登录获取token后获取数据
     pagination_class = MyFormatResultsSetPagination
     filter_backends = (rest_framework.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter,)
     filter_class = bookFilter

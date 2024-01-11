@@ -49,7 +49,7 @@ def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', Departmen
             }
         body = \
             {
-                "username":"API_CQM","password":"Qs!3m6Tc7"
+                "username": "API_CQM", "password": "Qs!3m6Tc7"
             }
         r = requests.post(url, headers=headers, data=json.dumps(body))
     except:
