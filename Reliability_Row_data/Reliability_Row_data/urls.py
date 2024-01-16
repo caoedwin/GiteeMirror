@@ -34,7 +34,9 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 from rest_framework.documentation import include_docs_urls
+import notifications.urls
 urlpatterns = [
+    path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
     path('admin/', admin.site.urls),
     # 实现了users和groups的API开发，但是我们可以发现，我们没有用户登录退出的按钮，以及权限设置（只有超级用户登录之后才可以看到列表和详情，非登录状态会显示没有权限查看）接下来我们对这两个地方进行优化：
     #

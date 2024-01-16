@@ -164,6 +164,7 @@ INSTALLED_APPS = [
     # 2.authtoken表中存放的token值没有过期时间字段，如果token值一旦泄露，非常危险。
     # 3.随着用户的增多，token值会占用服务器大量空间，同时也会加大数据库的查询压力，性能下降
     'djcelery', #此处是新加入的djcelery
+    'notifications',#需要用django自带的用户模型
     # 'app01.apps.App01Config',
     'app01',
     # 'app01.templatetags',
@@ -311,6 +312,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 # must inherit from AbstractUsers (django)
 # AUTH_USER_MODEL = 'custom_auth.users'
+# AUTH_USER_MODEL = 'app01.UserInfo'#自定义用户模型必须要继承AbstractUser类，或AbstractBaseUser类（AbstractBaseUser的子类有一些必须定义的关键的字段和方法），或者 使用OneToOneField，
 REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

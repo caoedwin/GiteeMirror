@@ -38,7 +38,7 @@ class RbacMiddleware(MiddlewareMixin):
             # print("request:",request_url)
             # print (re.match(url, request_url))
             if re.match(url, request_url):
-                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and request_url in str(url):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and request_url in str(url):
                     # print(path, 'path')
                     response.set_cookie('current_page_DDIS', value=request_url)
                     # request.session.set_expiry(
@@ -62,14 +62,14 @@ class RbacMiddleware(MiddlewareMixin):
             # print(re.match(url, request_url))
             if re.match(url_pattern, request_url):
                 flag = True
-                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and request_url in str(url):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and '/notifications' not in request_url and request_url in str(url):
                     # print(path, 'path')
                     response.set_cookie('current_page_DDIS', value=request_url)
                     # request.session.set_expiry(
                     #     7 * 12 * 60 * 60)
                 break
         if flag:
-            # print("yes")
+            # print(request_url)
             return response
         else:
             # 如果是调试模式，显示可访问url

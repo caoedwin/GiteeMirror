@@ -148,6 +148,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'djcelery', #此处是新加入的djcelery
+    'notifications',
     # 'app01.apps.App01Config',
     'app01',
     'AdapterPowerCode',
