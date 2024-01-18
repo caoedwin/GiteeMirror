@@ -164,8 +164,9 @@ INSTALLED_APPS = [
     # 2.authtoken表中存放的token值没有过期时间字段，如果token值一旦泄露，非常危险。
     # 3.随着用户的增多，token值会占用服务器大量空间，同时也会加大数据库的查询压力，性能下降
     'djcelery', #此处是新加入的djcelery
-    'notifications',#需要用django自带的用户模型
+    # 'notifications',#需要用django自带的用户模型
     # 'app01.apps.App01Config',
+    'channels',  # 【channels】（第1步）pip install -U channels 安装
     'app01',
     # 'app01.templatetags',
     'DjangoUeditor', #注册APP应用
@@ -226,7 +227,17 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Reliability_Row_data.wsgi.application'
-
+# 【channels】（第3步）设置为指向路由对象作为根应用程序
+ASGI_APPLICATION = "Reliability_Row_data.routing.application"
+# 【channels】后端
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ["redis://:DCT2019@localhost:6379/14"],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

@@ -1,8 +1,8 @@
 {% load custom_tag %}
 {% load staticfiles %}
 <!-- 引入notifications的模板标签 -->
-{% load notifications_tags %}
-{% notifications_unread as unread_count %}
+{#{% load notifications_tags %}#}
+{#{% notifications_unread as unread_count %}#}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +29,7 @@
         <link href="/static/css/lib/helper.css" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
         <link href="/static/css/uploadbutton.css" rel="stylesheet">
+            <link href="/static/toastr-master/build/toastr.min.css" rel="stylesheet">
 {#        <link href="/static/css/docs.464d6cc.css" rel="stylesheet">#}
         {% endblock %}
         {% comment %}<style>
@@ -456,6 +457,62 @@
 {#        <script src="/static/js/element-ui.89ed192.js"></script>#}
 {#        {% block scripts_inbase %}#}
             <script src="/static/js/xlsx/xlsx.core.min.js"></script>
+
+
+<script src="/static/toastr-master/build/toastr.min.js"></script>
+
+<script>
+    let ws_scheme = window.location.protocol === "https:" ? "wss" : "ws";
+    let ws = new WebSocket(ws_scheme + '://' + window.location.host + '/ws/msg/ITNest/');
+
+    ws.onopen = function () {
+        console.log('WebSocket建立连接');
+    };
+
+    ws.onmessage = function (e) {
+        console.log('WebSocket接收消息：');
+        let data = JSON.parse(e.data);
+        console.log(data);
+        let message = data['message'];
+        if (message.level === 1) {
+            toastr.options = { // toastr配置
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "30000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.error(message.content, '警告');
+        } else {
+            toastr.options = { // toastr配置
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.info(message.content, '信息')
+        }
+    };
+    ws.onclose = function (e) {
+        console.error('WebSocket关闭连接');
+    };
+</script>
+
 
 {#        {% endblock %}#}
         {% block scripts %}

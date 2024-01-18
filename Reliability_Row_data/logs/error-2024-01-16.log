@@ -1842,3 +1842,4 @@ Traceback (most recent call last):
     raise errorclass(errno, errval)
 django.db.utils.InternalError: (1054, "Unknown column 'notifications_notification.receiver_content_type_id' in 'field list'")
 [2024-01-16 09:02:57,632] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /admin/notifications/notification/ HTTP/1.1" 500 260756
+[2024-01-16 16:34:34,204] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /login/ HTTP/1.1" 500 59

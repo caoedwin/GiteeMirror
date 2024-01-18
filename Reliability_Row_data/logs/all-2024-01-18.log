@@ -1,0 +1,680 @@
+[2024-01-18 08:32:42,978] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-01-18 08:53:07,215] [autoreload.py:597] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-01-18 09:02:44,492] [autoreload.py:217] [autoreload:trigger_reload] [INFO]- C:\Python372\mecheck\Lib\site-packages\typing_extensions.py changed, reloading.
+[2024-01-18 09:02:46,353] [autoreload.py:597] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-01-18 09:19:10,706] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+[2024-01-18 09:19:10,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-18 09:19:11,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+[2024-01-18 09:19:11,874] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 4665
+[2024-01-18 09:19:18,732] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 09:19:18 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /login/ POST
+[2024-01-18 09:19:18,771] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /login/?next= HTTP/1.1" 302 0
+[2024-01-18 09:19:18,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2024-01-18 09:19:19,315] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 199, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:19:19,335] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 232166
+[2024-01-18 09:19:19,527] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:19:19,530] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 232599
+[2024-01-18 09:36:51,881] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:36:51,884] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET / HTTP/1.1" 500 232753
+[2024-01-18 09:36:52,095] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:36:52,097] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 232593
+[2024-01-18 09:39:16,617] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 199, in index
+    return render(request, 'index.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:39:16,623] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 232166
+[2024-01-18 09:39:16,709] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:39:16,710] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 232599
+[2024-01-18 09:39:41,866] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:39:41,868] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET / HTTP/1.1" 500 232753
+[2024-01-18 09:39:42,079] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1020, in find_library
+    return parser.libraries[name]
+KeyError: 'notifications_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1077, in load
+    lib = find_library(parser, name)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\defaulttags.py", line 1024, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'notifications_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+custom_tag
+custom_tag20230828 Non v-pre
+custom_tag20230828 Non v-pre horizontal
+custom_tagbootstrap20210128
+custom_taglinshi
+custom_tagvue20210128v_pre
+i18n
+l10n
+log
+rest_framework
+simpletags
+static
+staticfiles
+tz
+[2024-01-18 09:39:42,080] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /favicon.ico HTTP/1.1" 500 232593
+[2024-01-18 09:40:03,115] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 25193
+[2024-01-18 09:40:03,247] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 25193
+[2024-01-18 09:40:10,279] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /FilesDownload/ HTTP/1.1" 200 31824
+[2024-01-18 09:40:10,285] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_01.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,286] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_02.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,288] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/ElementUI.css HTTP/1.1" 304 0
+[2024-01-18 09:40:10,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_04.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,296] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_03.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_08.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_07.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_06.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_09.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,311] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/src/gallery_10.jpg HTTP/1.1" 304 0
+[2024-01-18 09:40:10,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 25193
+[2024-01-18 10:30:01,071] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 25193
+[2024-01-18 10:30:01,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 25193
+[2024-01-18 10:30:55,124] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /PersonalExperience/Summary/ HTTP/1.1" 200 41095
+[2024-01-18 10:30:55,450] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 25193
+[2024-01-18 10:30:55,496] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 10:30:55 C1010S3>Edwin None>LAPTOP-GQJTF2B7>0A098 127.0.0.1 127.0.0.1 /PersonalExperience/Summary/ POST
+[2024-01-18 10:30:55,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /PersonalExperience/Summary/ HTTP/1.1" 200 4672
+[2024-01-18 15:58:34,954] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET / 200 [0.09, 127.0.0.1:51623]
+[2024-01-18 15:58:35,065] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.03, 127.0.0.1:51623]
+[2024-01-18 16:13:04,967] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET / 200 [0.08, 127.0.0.1:57895]
+[2024-01-18 16:13:05,114] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:57895]
+[2024-01-18 16:13:15,529] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/Infos-upload/ 200 [0.02, 127.0.0.1:57912]
+[2024-01-18 16:13:15,540] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/css/b_upload.css 304 [0.00, 127.0.0.1:57912]
+[2024-01-18 16:13:15,550] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/js/xlsx/xlsx_pop1.js 200 [0.00, 127.0.0.1:57912]
+[2024-01-18 16:13:15,566] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/js/xlsx/xlsx_pop2.js 200 [0.00, 127.0.0.1:57912]
+[2024-01-18 16:13:15,568] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/js/xlsx/xlsx_pop3.js 200 [0.00, 127.0.0.1:57914]
+[2024-01-18 16:13:15,569] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/js/xlsx/xlsx_pop4.js 200 [0.01, 127.0.0.1:57915]
+[2024-01-18 16:13:15,741] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:57915]
+[2024-01-18 16:13:19,246] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/PersonalInfo-search/ 200 [0.05, 127.0.0.1:57915]
+[2024-01-18 16:13:19,839] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:13:19 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2024-01-18 16:13:19,855] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalInfo/PersonalInfo-search/ 200 [0.38, 127.0.0.1:57915]
+[2024-01-18 16:13:19,882] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.40, 127.0.0.1:57914]
+[2024-01-18 16:18:12,702] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/PersonalInfo-search/ 200 [0.02, 127.0.0.1:65105]
+[2024-01-18 16:18:12,781] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:65108]
+[2024-01-18 16:18:13,121] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/ITNest/ [127.0.0.1:65108]
+[2024-01-18 16:18:13,263] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:18:13 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2024-01-18 16:18:13,268] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalInfo/PersonalInfo-search/ 200 [0.31, 127.0.0.1:65105]
+[2024-01-18 16:18:13,281] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.31, 127.0.0.1:65106]
+[2024-01-18 16:40:43,250] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/PersonalInfo-search/ 200 [0.03, 127.0.0.1:57499]
+[2024-01-18 16:40:43,259] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/toastr-master/build/toastr.min.css 200 [0.00, 127.0.0.1:57499]
+[2024-01-18 16:40:43,263] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/toastr-master/build/toastr.min.js 200 [0.00, 127.0.0.1:57500]
+[2024-01-18 16:40:43,326] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:57502]
+[2024-01-18 16:40:43,777] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:40:43 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2024-01-18 16:40:43,792] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalInfo/PersonalInfo-search/ 200 [0.31, 127.0.0.1:57500]
+[2024-01-18 16:40:43,817] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.33, 127.0.0.1:57499]
+[2024-01-18 16:40:44,103] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/ITNest/ [127.0.0.1:57502]
+[2024-01-18 16:41:53,279] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/PersonalInfo-search/ 200 [0.04, 127.0.0.1:50819]
+[2024-01-18 16:41:53,339] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:50822]
+[2024-01-18 16:41:53,422] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/ITNest/ [127.0.0.1:50822]
+[2024-01-18 16:41:53,758] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:41:53 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2024-01-18 16:41:53,774] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalInfo/PersonalInfo-search/ 200 [0.34, 127.0.0.1:50819]
+[2024-01-18 16:41:53,787] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.34, 127.0.0.1:50820]
+[2024-01-18 16:41:54,298] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/ITNest/ [127.0.0.1:50822]
+[2024-01-18 16:47:34,836] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalInfo/PersonalInfo-search/ 200 [0.06, 127.0.0.1:52818]
+[2024-01-18 16:47:34,914] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:52821]
+[2024-01-18 16:47:35,184] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/ITNest/ [127.0.0.1:52821]
+[2024-01-18 16:47:35,470] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:47:35 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalInfo/PersonalInfo-search/ POST
+[2024-01-18 16:47:35,475] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalInfo/PersonalInfo-search/ 200 [0.30, 127.0.0.1:52818]
+[2024-01-18 16:47:35,504] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.33, 127.0.0.1:52819]
+[2024-01-18 16:54:35,050] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalExperience/NPI-upload/ 200 [0.15, 127.0.0.1:63476]
+[2024-01-18 16:54:35,061] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/css/b_upload.css 304 [0.00, 127.0.0.1:63476]
+[2024-01-18 16:54:35,133] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:63479]
+[2024-01-18 16:54:35,276] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/ITNest/ [127.0.0.1:63479]
+[2024-01-18 16:54:35,373] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:54:35 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2024-01-18 16:54:35,383] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalExperience/NPI-upload/ 200 [0.06, 127.0.0.1:63476]
+[2024-01-18 16:54:35,428] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.10, 127.0.0.1:63477]
+[2024-01-18 16:54:40,282] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalExperience/NPI-upload/ 200 [0.08, 127.0.0.1:63477]
+[2024-01-18 16:54:40,286] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/ITNest/ [127.0.0.1:63479]
+[2024-01-18 16:54:40,290] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/css/b_upload.css 304 [0.00, 127.0.0.1:63477]
+[2024-01-18 16:54:40,326] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:63490]
+[2024-01-18 16:54:40,329] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/ITNest/ [127.0.0.1:63490]
+[2024-01-18 16:54:40,431] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:54:40 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2024-01-18 16:54:40,441] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalExperience/NPI-upload/ 200 [0.03, 127.0.0.1:63477]
+[2024-01-18 16:54:40,479] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.06, 127.0.0.1:63476]
+[2024-01-18 16:54:50,514] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalExperience/NPI-upload/ 200 [0.07, 127.0.0.1:63476]
+[2024-01-18 16:54:50,519] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/ITNest/ [127.0.0.1:63490]
+[2024-01-18 16:54:50,525] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/css/b_upload.css 304 [0.00, 127.0.0.1:63476]
+[2024-01-18 16:54:50,564] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/ITNest/ [127.0.0.1:63502]
+[2024-01-18 16:54:50,569] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/ITNest/ [127.0.0.1:63502]
+[2024-01-18 16:54:50,657] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-01-18 16:54:50 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2024-01-18 16:54:50,666] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalExperience/NPI-upload/ 200 [0.03, 127.0.0.1:63476]
+[2024-01-18 16:54:50,714] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.07, 127.0.0.1:63477]

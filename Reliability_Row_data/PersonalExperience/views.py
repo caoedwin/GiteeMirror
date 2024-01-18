@@ -11,7 +11,8 @@ from operator import itemgetter, attrgetter
 from collections import Counter
 from .models import PerExperience, OSR_OSinfo
 from django.db.models.functions import ExtractYear
-from notifications.signals import notify
+from app01 import consumers
+# from notifications.signals import notify
 Approved_Officer_NPI_ME_C38 = '0701114'
 Approved_Officer_NPI_ME_AIO = '0801046'
 ME_funtion = 'Reliability'
@@ -39,79 +40,80 @@ def NPI_upload(request):
     # print(request.body)
     # print(request.POST)
     if request.method == "POST":
-        # try:
-        if request.POST.get('action') == 'addSubmit':
-            # print(request.POST.get('Project'))
-            updata_dic = {}
-            updata_dic['Proposer_Num'] = request.session.get('account')
-            # updata_dic['Proposer_NameE'] = request.session.get('user_name')
-            PersonalInfos = PersonalInfo.objects.filter(Q(GroupNum=updata_dic['Proposer_Num']) | Q(SAPNum=updata_dic['Proposer_Num'])).first()
-            # print(PersonalInfos)
-            updata_dic['Project'] = request.POST.get('Project')
-            updata_dic['Role'] = request.POST.get('Role')
-            updata_dic['Function'] = request.POST.get('Function')
-            updata_dic['SubFunction_Com'] = request.POST.get('SubFunction')
-            updata_dic['Phase'] = request.POST.get('Phase')
-            if PerExperience.objects.filter(**updata_dic):
-                errMsgNumber = "您已申请过：Project:%s-Phase:%s-Function:%s-SubFunction:%s-Role:%s" % (updata_dic['Project'], updata_dic['Phase'],
-                                                                                         updata_dic['Function'], updata_dic['SubFunction_Com'],
-                                                                                         updata_dic['Role'])
-            else:
-                # 填寫人信息
-                updata_dic['Proposer_Name'] = PersonalInfos.CNName
-                updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
-                updata_dic['Item'] = PersonalInfos.PositionNow
-                YearNow = datetime.datetime.now().strftime("%Y")
-                updata_dic['Positions_Name'] = Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow).first().\
-                    Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow) else ''
-                # 機種名變更可能隨之變動
-                updata_dic['Dalei'] = "NPI"
-                if ME_funtion == updata_dic['Function']:
-                    CustomerPro = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().Customer
-                    if CustomerPro == "C38(AIO)" or CustomerPro == "T88(AIO)":
-                        updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_AIO
+        consumers.send_group_msg('ITNest', {'content': '正在安装系统', 'level': 2})
+        try:
+            if request.POST.get('action') == 'addSubmit':
+                # print(request.POST.get('Project'))
+                updata_dic = {}
+                updata_dic['Proposer_Num'] = request.session.get('account')
+                # updata_dic['Proposer_NameE'] = request.session.get('user_name')
+                PersonalInfos = PersonalInfo.objects.filter(Q(GroupNum=updata_dic['Proposer_Num']) | Q(SAPNum=updata_dic['Proposer_Num'])).first()
+                # print(PersonalInfos)
+                updata_dic['Project'] = request.POST.get('Project')
+                updata_dic['Role'] = request.POST.get('Role')
+                updata_dic['Function'] = request.POST.get('Function')
+                updata_dic['SubFunction_Com'] = request.POST.get('SubFunction')
+                updata_dic['Phase'] = request.POST.get('Phase')
+                if PerExperience.objects.filter(**updata_dic):
+                    errMsgNumber = "您已申请过：Project:%s-Phase:%s-Function:%s-SubFunction:%s-Role:%s" % (updata_dic['Project'], updata_dic['Phase'],
+                                                                                             updata_dic['Function'], updata_dic['SubFunction_Com'],
+                                                                                             updata_dic['Role'])
+                else:
+                    # 填寫人信息
+                    updata_dic['Proposer_Name'] = PersonalInfos.CNName
+                    updata_dic['Department_Code'] = PersonalInfos.DepartmentCode
+                    updata_dic['Item'] = PersonalInfos.PositionNow
+                    YearNow = datetime.datetime.now().strftime("%Y")
+                    updata_dic['Positions_Name'] = Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow).first().\
+                        Positions_Name if Positions.objects.filter(Item=PersonalInfos.PositionNow,Year=YearNow) else ''
+                    # 機種名變更可能隨之變動
+                    updata_dic['Dalei'] = "NPI"
+                    if ME_funtion == updata_dic['Function']:
+                        CustomerPro = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().Customer
+                        if CustomerPro == "C38(AIO)" or CustomerPro == "T88(AIO)":
+                            updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_AIO
+                        else:
+                            updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_C38
                     else:
-                        updata_dic['Approved_Officer'] = Approved_Officer_NPI_ME_C38
-                else:
-                    updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
-                # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
-                # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
-                updata_dic['SS_Date'] = request.POST.get('SS_Date')
-                # 流程變更
-                updata_dic['Status'] = "待簽核"
+                        updata_dic['Approved_Officer'] = ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum
+                    # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first())
+                    # print(ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum)
+                    updata_dic['SS_Date'] = request.POST.get('SS_Date')
+                    # 流程變更
+                    updata_dic['Status'] = "待簽核"
 
-                updata_dic['Comments'] = request.POST.get('Comments')
-                updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
-                if updata_dic['Approved_Officer']:
-                    PerExperience.objects.create(**updata_dic)
-                    # notify.send(actor, recipient, verb, target, action_object)
-                    # 其中的参数释义：
-                    #
-                    # actor：发送通知的对象
-                    # recipient：接收通知的对象
-                    # verb：动词短语
-                    # target：链接到动作的对象（可选）
-                    # action_object：执行通知的对象（可选）
-                    # 有点绕，举个栗子：杜赛(actor),在Django搭建个人博客(target),中对你(recipient),发表了(verb),评论(action_object)。
-                    print(type(UserInfo.objects.filter(account=request.session.get('account'))))
-                    print(type(UserInfo.objects.get(account=request.session.get('account'))))
-                    print(request.user,type(request.user))
-                    notify.send(
-                        # request.session.get('account'),
-                        # sender=UserInfo.objects.get(account=request.session.get('account')),
-                        sender=UserInfo.objects.get(account=request.session.get('account')),
-                        recipient=UserInfo.objects.filter(account=ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum).first(),
-                        # recipient=UserInfo.objects.get(account=ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum),
-                        verb='需要签核',
-                        # target="人员测试履历",# target：链接到动作的对象（可选）
-                        # target=PerExperience.objects.filter(Project=updata_dic['Project'], Role=updata_dic['Role'], Function=updata_dic['Function'], SubFunction_Com=updata_dic['SubFunction_Com'], Phase=updata_dic['Phase']),# target：链接到动作的对象（可选）
-                        # action_object=,# action_object：执行通知的对象（可选）
-                    )
-                    print(request.session.get('account'))
-                else:
-                    errMsgNumber = "Project:%s DQAPL的工号缺失" % updata_dic['Project']
-        # except Exception as e:
-        #     errMsgNumber = str(e)
+                    updata_dic['Comments'] = request.POST.get('Comments')
+                    updata_dic['EditTime'] = datetime.datetime.now().strftime("%Y-%m-%d")
+                    if updata_dic['Approved_Officer']:
+                        PerExperience.objects.create(**updata_dic)
+                        # notify.send(actor, recipient, verb, target, action_object)
+                        # 其中的参数释义：
+                        #
+                        # actor：发送通知的对象
+                        # recipient：接收通知的对象
+                        # verb：动词短语
+                        # target：链接到动作的对象（可选）
+                        # action_object：执行通知的对象（可选）
+                        # 有点绕，举个栗子：杜赛(actor),在Django搭建个人博客(target),中对你(recipient),发表了(verb),评论(action_object)。
+                        # print(type(UserInfo.objects.filter(account=request.session.get('account'))))
+                        # print(type(UserInfo.objects.get(account=request.session.get('account'))))
+                        # print(request.user,type(request.user))
+                        # notify.send(
+                        #     # request.session.get('account'),
+                        #     # sender=UserInfo.objects.get(account=request.session.get('account')),
+                        #     sender=UserInfo.objects.get(account=request.session.get('account')),
+                        #     recipient=UserInfo.objects.filter(account=ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum).first(),
+                        #     # recipient=UserInfo.objects.get(account=ProjectinfoinDCT.objects.filter(ComPrjCode=request.POST.get('Project')).first().DQAPLNum),
+                        #     verb='需要签核',
+                        #     # target="人员测试履历",# target：链接到动作的对象（可选）
+                        #     # target=PerExperience.objects.filter(Project=updata_dic['Project'], Role=updata_dic['Role'], Function=updata_dic['Function'], SubFunction_Com=updata_dic['SubFunction_Com'], Phase=updata_dic['Phase']),# target：链接到动作的对象（可选）
+                        #     # action_object=,# action_object：执行通知的对象（可选）
+                        # )
+                        # print(request.session.get('account'))
+                    else:
+                        errMsgNumber = "Project:%s DQAPL的工号缺失" % updata_dic['Project']
+        except Exception as e:
+            errMsgNumber = str(e)
 
         data = {
             "sectionProject": sectionProject,

@@ -24,10 +24,10 @@ from django.views.static import serve
 from django.conf import settings
 #导入配置文件里的文件上传配置
 from app01 import views
-import notifications.urls
+# import notifications.urls
 
 urlpatterns = [
-    path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
+    # path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
     path('admin/', admin.site.urls),
     # path('ueditor/', include('DjangoUeditor.urls')), #添加DjangoUeditor的URL
     path(r'login/', views.login),
