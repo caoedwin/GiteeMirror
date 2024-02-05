@@ -40,7 +40,7 @@ def NPI_upload(request):
     # print(request.body)
     # print(request.POST)
     if request.method == "POST":
-        consumers.send_group_msg('ITNest', {'content': '正在安装系统', 'level': 2})
+        consumers.send_group_msg('Reliability_Row_data', {'content': '正在安装系统', 'level': 2})
         try:
             if request.POST.get('action') == 'addSubmit':
                 # print(request.POST.get('Project'))

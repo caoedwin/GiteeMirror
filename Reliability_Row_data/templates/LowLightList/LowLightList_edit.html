@@ -469,10 +469,10 @@ label{
                       this.customerError= true;
                       return false;
                  }
-                if(this.$refs.ProjectcodeCompal.value ==""){
+                {% comment %}if(this.$refs.ProjectcodeCompal.value ==""){
                       this.departmentError= true;
                       return false;
-                 }
+                 }{% endcomment %}
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 let Customer = this.$refs.Customer.value;

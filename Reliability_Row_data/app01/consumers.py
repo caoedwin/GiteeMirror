@@ -116,8 +116,8 @@ def send_group_msg(room_name, message):
     # 从Channels的外部发送消息给Channel
     """
     from assets import consumers
-    consumers.send_group_msg('ITNest', {'content': '这台机器硬盘故障了', 'level': 1})
-    consumers.send_group_msg('ITNest', {'content': '正在安装系统', 'level': 2})
+    consumers.send_group_msg('Reliability_Row_data', {'content': '这台机器硬盘故障了', 'level': 1})
+    consumers.send_group_msg('Reliability_Row_data', {'content': '正在安装系统', 'level': 2})
     :param room_name:
     :param message:
     :return:

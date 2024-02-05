@@ -115,25 +115,17 @@
      color: #595d60!important;
   }
 
+
   .backgroundStyle{
       background-image: url("/static/src/test20.jpg"),url("/static/src/test12.jpg");
       background-repeat: no-repeat,no-repeat;
       /*图片从左往右移动的百分比大小，从上往下百分比大小，重复方式 换成数值同样如此，在这里没有调整大小的方法*!*/
-      background-position: 0% 20%, 50% 18%;
+      background-position: 0% 18%, 50% 18%;
       /*从左到右，从上到下的缩放比例，单位px则为px缩放*/
-      background-size: 47% 95%,100% 95%;
+      background-size: 45% 95%,100% 95%;
   }
 
-  {#.backgroundStyle{#}
-      {#background: url("/static/src/test22.jpg") left no-repeat,#}
-      {#            url("/static/src/test8.jpg") right no-repeat;#}
-  {#    background-image: url("/static/src/test15.jpg");#}
-  {#    background-repeat: no-repeat;#}
-  {#    /*图片从左往右移动的百分比大小，从上往下百分比大小，重复方式 换成数值同样如此，在这里没有调整大小的方法*!*/#}
-  {#    background-position: 0% 50%;#}
-  {#    /*从左到右，从上到下的缩放比例，单位px则为px缩放*/#}
-  {#    background-size: 100%,50%;#}
-  {#}#}
+
 
 
  td>div>a{
@@ -150,7 +142,7 @@
 {% block content1 %}
 {% endblock %}
 {% block content %}
-<div id="app" class="backgroundStyle">
+<div id="app" class="backgroundStyle" style="height: 642px">
 {#<div class="container-fluid">#}
 <div class="container-fluid">
 {#   <section class="content-box box-5 boxstyle-1" style="background-position: center;background-size:cover">#}
@@ -455,7 +447,7 @@
                 </table>
             </div>
             <div id="testDriver" style="margin-left: 60px;display: none">
-                <table id="tableDriver" class="table table-bordered" style="margin-left: 29px;margin-top: 332px;">
+                <table id="tableDriver" class="table table-bordered" style="margin-left: 29px;margin-top: 430px;">
                     <tr><td class="ColorSetXQM1">
                       <el-tooltip placement="left" effect="light">
                         <div slot="content">專案Driver的<br />編輯，搜索，<br />上傳</div>
@@ -519,7 +511,7 @@
                         Test Plan
                     </td>
 {#                    <td style="text-align: center;vertical-align:middle;background: url('/static/src/3.jpg') no-repeat top;background-size:100% 100%" rowspan="6">Test Plan</td>#}
-                    <td style="text-align: center;vertical-align:middle;background-color: #CCEEFF;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="2">Lesson Learn</td>
+                    <td style="text-align: center;vertical-align:middle;background-color: #CCEEFF;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="3">Lesson Learn</td>
                     <td id="QILStyle" class="ColorSetLesson" onclick="alertQIL()">QIL</td>
                 </tr>
                 <tr>
@@ -534,49 +526,73 @@
 {#                        <div slot="content">機構專案TestPlan的編輯，<br/>搜索，Summary，上傳</div>#}
 {#                        <div>ME</div></el-tooltip>#}
                     </td>
+                    <td class="ColorSetLesson">
+                        <a style="color: #595d60;font-size: 16px;" href="/NonDQALesson/NonDQALesson-summary/" target="_blank">RD/PE/JQE-Lesson</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="SWStyle" class="ColorSet" onclick="alertSW()">SW</td>
                     <td style="text-align: center;vertical-align:middle;background-color: #84bbdc;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="2">Issue List</td>
                     <td id="INStyle" class="ColorSetIssue" onclick="alertIN()">Issue Notes</td>
                 </tr>
                 <tr>
-
-                    <td id="SWStyle" class="ColorSet" onclick="alertSW()">SW</td>
-                    <td id="KIStyle" class="ColorSetIssue" onclick="alertKI()">Known Issue</td>
-                </tr>
-                <tr>
                     <td id="SWORStyle" class="ColorSet" onclick="alertSWOR()">SW-OR</td>
-                    <td style="text-align: center;vertical-align:middle;background-color: #3D82AB;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="2">Department</td>
-                    <td class="ColorSetDep">
-                        <a style="color: #595d60;font-size: 16px;" href="/PersonalInfo/PublicArea/" target="_blank">Public Area</a>
-                    </td>
+
+                    <td id="KIStyle" class="ColorSetIssue" onclick="alertKI()">Known Issue</td>
+
                 </tr>
                 <tr>
                     <td id="INVStyle" class="ColorSet" onclick="alertINV()">INV</td>
-                    <td id="InfoStyle" class="ColorSetDep" onclick="alertInfo()">PersonalInfo</td>
+                    <td style="text-align: center;vertical-align:middle;background-color: #3D82AB;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="3">Department</td>
+                    <td class="ColorSetDep">
+                        <a style="color: #595d60;font-size: 16px;" href="/PersonalInfo/PublicArea/" target="_blank">Public Area</a>
+                    </td>
+
                 </tr>
                 <tr>
                     <td id="MQMStyle" class="ColorSetXQM" onclick="alertMQM()">MQM</td>
-                    <td style="text-align: center;vertical-align:middle;background-color: #45BB89;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="4">XQM</td>
-                    <td style="text-align: center;vertical-align:middle;background-color: #84bbdc;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="3">Reliability Data</td>
-                    <td id="PGVStyle" class="ColorSetRea" onclick="alertPGV()">PackageGValue</td>
+                    <td style="text-align: center;vertical-align:middle;background-color: #45BB89;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="6">XQM</td>
+
+                    <td id="InfoStyle" class="ColorSetDep" onclick="alertInfo()">PersonalInfo</td>
+
                 </tr>
                 <tr>
                     <td id="CQMStyle" class="ColorSetXQM" onclick="alertCQM()">CQM</td>
-                    <td id="CDMStyle" class="ColorSetRea" onclick="alertCDM()">CDM</td>
+                    <td id="ExpStyle" class="ColorSetDep" onclick="alertExp()">PersonalExperience</td>
+
+
                 </tr>
                 <tr>
                     <td id="OBIStyle" class="ColorSetXQM" onclick="alertOBI()">OBIResult</td>
-                    <td id="BougStyle" class="ColorSetRea" onclick="alertBoug()">Bouncing</td>
+                    <td style="text-align: center;vertical-align:middle;background-color: #84bbdc;font-family: Calibri;font-size: 24px;color: #FFFFFF;text-shadow:3px 3px 3px #080808" rowspan="3">Reliability Data</td>
+                    <td id="PGVStyle" class="ColorSetRea" onclick="alertPGV()">PackageGValue</td>
+
+
                 </tr>
                 <tr>
                     <td id="DriverStyle" class="ColorSetXQM" onclick="alertDriver()">DriverTool</td>
-{#                    <td style="text-align: center"></td>#}
+                    <td id="CDMStyle" class="ColorSetRea" onclick="alertCDM()">CDM</td>
+
+                </tr>
+                <tr>
+                    <td class="ColorSetXQM"></td>
+                    <td id="BougStyle" class="ColorSetRea" onclick="alertBoug()">Bouncing</td>
+
+                </tr>
+
+                <tr>
+                    <td class="ColorSetXQM"></td>
                     <td style="text-align: center;background-color: #3f7799;">
                         <a style="color: black;font-size: 24px;color: #FFFFFF!important;font-family: Calibri;text-shadow:3px 3px 3px #080808;" {% comment %}href="/ProjectInfoSearch/"{% endcomment %} target="_blank">ProjectInfo</a>
                     </td>
                     <td class="ColorSetPro">
                         <a style="color: #465158;font-size: 17px;" href="/ProjectInfoSearch/" target="_blank">Search</a>
                     </td>
+
                 </tr>
+
+
             </table>
             </div>
         </div>
@@ -681,7 +697,7 @@
                 </table>
             </div>
             <div id="testIN" style="margin-right: 70px;display: none">
-                <table id="tableIN" class="table table-bordered" style="margin-left: -29px;margin-top: 100px;">
+                <table id="tableIN" class="table table-bordered" style="margin-left: -29px;margin-top: 152px;">
                     <tr><td class="ColorSetIssue1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">Issue Notes<br />的新增，編<br />輯，搜索</div>
@@ -709,7 +725,7 @@
                 </table>
             </div>
             <div id="testKI" style="margin-right: 70px;display: none;">
-                <table id="tableKI" class="table table-bordered" style="margin-left: -29px;margin-top: 152px;">
+                <table id="tableKI" class="table table-bordered" style="margin-left: -29px;margin-top: 201px;">
                     <tr><td class="ColorSetIssue1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">Known Issue<br />的新增，編<br />輯，搜索</div>
@@ -736,21 +752,8 @@
                     </td></tr>
                 </table>
             </div>
-{#            <div id="testArea" style="margin-right: 60px;display: none;">#}
-{#                <table id="tableArea" class="table table-bordered" style="margin-left: -30px;margin-top: 203px;">#}
-{#                    <tr><td class="ColorSetDep1" style="text-align: left">#}
-{#                        <a style="color: black" href="/TestPlanME/TestPlanME-edit/" target="_blank">Add</a>#}
-{#                    </td></tr>#}
-{#                    <tr><td class="ColorSetDep1" style="text-align: left">#}
-{#                        <a style="color: black" href="/TestPlanME/TestPlanME-edit/" target="_blank">Edit</a>#}
-{#                    </td></tr>#}
-{#                    <tr><td class="ColorSetDep1" style="text-align: left">#}
-{#                        <a style="color: black" href="/TestPlanME/TestPlanME-edit/" target="_blank">Search</a>#}
-{#                    </td></tr>#}
-{#                </table>#}
-{#            </div>#}
             <div id="testInfo" style="margin-right: 70px;display: none;">
-                <table id="tableInfo" class="table table-bordered" style="margin-left: -30px;margin-top: 253px;">
+                <table id="tableInfo" class="table table-bordered" style="margin-left: -30px;margin-top: 301px;">
                     <tr><td class="ColorSetDep1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">管理員維護</div>
@@ -817,8 +820,60 @@
                     </td></tr>
                 </table>
             </div>
+            <div id="testExp" style="margin-right: 70px;display: none;">
+                <table id="tableExp" class="table table-bordered" style="margin-left: -30px;margin-top: 351px;">
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">人員測試履<br />歷Summary</div>
+                        <div>
+                        <a href="/PersonalInfo/Infos-upload/" target="_blank">Summary</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">我的簽核</div>
+                        <div>
+                        <a href="/PersonalInfo/PersonalInfo-edit/" target="_blank">我的簽核</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">我的申請</div>
+                        <div>
+                        <a href="/PersonalInfo/ManPower-edit/" target="_blank">我的申請</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">OS Refresh<br />錄入</div>
+                        <div>
+                        <a href="/PersonalInfo/PersonalInfo-search/" target="_blank">OSR-Input</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">NPI錄入</div>
+                        <div>
+                        <a href="/PersonalInfo/ManPower-search/" target="_blank">NPI-Input</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                    <tr><td class="ColorSetDep1" style="text-align: left">
+                      <el-tooltip placement="right" effect="light">
+                        <div slot="content">INV錄入</div>
+                        <div>
+                        <a href="/PersonalInfo/Summary1/" target="_blank">INV-Input</a>
+                        </div>
+                      </el-tooltip>
+                    </td></tr>
+                </table>
+            </div>
             <div id="testPGV" style="margin-right: 70px;display: none;">
-                <table id="tablePGV" class="table table-bordered" style="margin-left: -30px;margin-top: 303px;">
+                <table id="tablePGV" class="table table-bordered" style="margin-left: -30px;margin-top: 402px;">
                     <tr><td class="ColorSetRea1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">Package G<br>Value的新<br>增，修改，<br>搜索，導出</div>
@@ -854,7 +909,7 @@
                 </table>
             </div>
             <div id="testCDM" style="margin-right: 70px;display: none;">
-                <table id="tableCDM" class="table table-bordered" style="margin-left: -30px;margin-top: 353px;">
+                <table id="tableCDM" class="table table-bordered" style="margin-left: -30px;margin-top: 452px;">
                     <tr><td class="ColorSetRea1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">CDM的新<br>增，修改，<br>搜索，導出</div>
@@ -890,7 +945,7 @@
                 </table>
             </div>
             <div id="testBoug" style="margin-right: 70px;display: none;">
-                <table id="tableBoug" class="table table-bordered" style="margin-left: -30px;margin-top: 391px;">
+                <table id="tableBoug" class="table table-bordered" style="margin-left: -30px;margin-top: 489px;">
                     <tr><td class="ColorSetRea1" style="text-align: left">
                       <el-tooltip placement="right" effect="light">
                         <div slot="content">Bouncing的<br>新增，修改，<br>搜索，導出</div>
@@ -953,10 +1008,10 @@
     <script src="/static/js/axios.min.js"></script>
     <script src="/static/js/vue.min.js"></script>
     <script src="/static/js/Element/index.js"></script>
-    <script  src="/static/js/Element/table.js"></script>
-    <script  src="/static/js/Element/main.js"></script>
+    <script src="/static/js/Element/table.js"></script>
+    <script src="/static/js/Element/main.js"></script>
     <script src="/static/js/Element/input.js"></script>
-    <script  src="/static/js/Element/table-column.js"></script>
+    <script src="/static/js/Element/table-column.js"></script>
     <script src="/static/js/Element/icon.js"></script>
     <script src="/static/js/Element/date-picker.js"></script>
     <script src="/static/js/Element/dialog.js"></script>
@@ -1009,6 +1064,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*Automation*/
         function alertAuto() {
@@ -1053,6 +1110,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*INV*/
         function alertINV() {
@@ -1097,6 +1156,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*SW-OR*/
         function alertSWOR() {
@@ -1141,6 +1202,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*SW*/
         function alertSW() {
@@ -1185,6 +1248,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*MQM*/
         function alertMQM() {
@@ -1229,6 +1294,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*CQM*/
         function alertCQM() {
@@ -1273,6 +1340,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*OBIDevice*/
         function alertOBI() {
@@ -1317,6 +1386,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*DriverTool*/
         function alertDriver() {
@@ -1361,6 +1432,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*QIL*/
         function alertQIL() {
@@ -1405,6 +1478,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*SW&ME*/
         function alertSM() {
@@ -1449,7 +1524,10 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
+
         /*Issue Notes*/
         function alertIN() {
             var showState = document.getElementById("testIN").style.display;
@@ -1493,6 +1571,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*Know Issue*/
         function alertKI() {
@@ -1537,6 +1617,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
 
         /*PersonalInfo*/
@@ -1582,6 +1664,54 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
+        };
+        /*PersonalTestExperience*/
+        function alertExp() {
+            var showState = document.getElementById("testExp").style.display;
+            if(showState == 'none'){
+                $("#testExp").css('display','block');
+                $("#ExpStyle").css('box-shadow','0px 4px 20px 0px #888888');
+                $("#tableExp").css('box-shadow','4px 4px 12px 0px #888888');
+            }else{
+                $("#testExp").css('display','none');
+                document.getElementById("ExpStyle").style.cssText = "";
+            }
+            $("#testME").css('display','none');
+            document.getElementById("MEStyle").style.cssText = "";
+            $("#testAuto").css('display','none');
+            document.getElementById("AutoStyle").style.cssText = "";
+            $("#testINV").css('display','none');
+            document.getElementById("INVStyle").style.cssText = "";
+            $("#testSWOR").css('display','none');
+            document.getElementById("SWORStyle").style.cssText = "";
+            $("#testSW").css('display','none');
+            document.getElementById("SWStyle").style.cssText = "";
+            $("#testMQM").css('display','none');
+            document.getElementById("MQMStyle").style.cssText = "";
+            $("#testCQM").css('display','none');
+            document.getElementById("CQMStyle").style.cssText = "";
+            $("#testOBI").css('display','none');
+            document.getElementById("OBIStyle").style.cssText = "";
+            $("#testDriver").css('display','none');
+            document.getElementById("DriverStyle").style.cssText = "";
+            $("#testQIL").css('display','none');
+            document.getElementById("QILStyle").style.cssText = "";
+            $("#testSM").css('display','none');
+            document.getElementById("SMStyle").style.cssText = "";
+            $("#testIN").css('display','none');
+            document.getElementById("INStyle").style.cssText = "";
+            $("#testKI").css('display','none');
+            document.getElementById("KIStyle").style.cssText = "";
+            $("#testPGV").css('display','none');
+            document.getElementById("PGVStyle").style.cssText = "";
+            $("#testCDM").css('display','none');
+            document.getElementById("CDMStyle").style.cssText = "";
+            $("#testBoug").css('display','none');
+            document.getElementById("BougStyle").style.cssText = "";
+            $("#testInfo").css('display','none');
+            document.getElementById("InfoStyle").style.cssText = "";
         };
         /*Package G Value*/
         function alertPGV() {
@@ -1626,6 +1756,8 @@
             document.getElementById("CDMStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*CDM*/
         function alertCDM() {
@@ -1670,6 +1802,8 @@
             document.getElementById("PGVStyle").style.cssText = "";
             $("#testBoug").css('display','none');
             document.getElementById("BougStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
         /*Bouncing*/
         function alertBoug() {
@@ -1714,6 +1848,8 @@
             document.getElementById("PGVStyle").style.cssText = "";
             $("#testCDM").css('display','none');
             document.getElementById("CDMStyle").style.cssText = "";
+            $("#testExp").css('display','none');
+            document.getElementById("ExpStyle").style.cssText = "";
         };
       new Vue ({
           el: "#app",

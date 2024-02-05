@@ -193,6 +193,7 @@ INSTALLED_APPS = [
     'PersonalExperience',
     'NonDQALesson',
     'LowLightList',
+    'IssuesBreakdown',
 ]
 
 MIDDLEWARE = [

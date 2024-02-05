@@ -17,7 +17,7 @@ def LowLightList_edit(request):
     # print(Skin)
     if not Skin:
         Skin = "/static/src/blue.jpg"
-    weizhi = "Reliability Test Data/CQM_edit"
+    weizhi = "Reliability Test Data/LowLight_edit"
     ProjectCodeOption = {
         # "C38(NB)": [{"Projectcode": "ILYE3"},
         #             {"Projectcode": "JLV31"},
@@ -71,7 +71,7 @@ def LowLightList_edit(request):
             if editPpriority != 1 and editPpriority != 2:
                 editPpriority = 3
 
-    editpermission = editPpriority
+
     # print(request.POST)
     # print(request.body)
     if request.method == "POST":
@@ -84,26 +84,32 @@ def LowLightList_edit(request):
 
         if request.POST.get('isGetData') == 'SEARCH':
             Customer = request.POST.get('Customer')
+            check_LowL_dic = {"Customer": Customer}
             ProjectCompal = request.POST.get('ProjectcodeCompal')
-            check_LowL_dic = {"Customer": Customer, "ProjectCompal": ProjectCompal}
-            if editPpriority == 1:
+            if ProjectCompal:
+                check_LowL_dic["ProjectCompal"] = ProjectCompal
+                if editPpriority == 1:
 
-                # print(check_LowL_dic)
-                check_Owner_dic = {"Customer": Customer, "Project": ProjectCompal}
-                Projectinfo = CQMProject.objects.filter(**check_Owner_dic).first()
-                current_user = request.session.get('user_name')
-                if Projectinfo:
-                    for k in Projectinfo.Owner.all():
-                        # print(k.username)
-                        if k.username == current_user:
-                            uploadpermission = 1
-                            break
+                    # print(check_LowL_dic)
+                    check_Owner_dic = {"Customer": Customer, "Project": ProjectCompal}
+                    Projectinfo = CQMProject.objects.filter(**check_Owner_dic).first()
+                    current_user = request.session.get('user_name')
+                    if Projectinfo:
+                        for k in Projectinfo.Owner.all():
+                            # print(k.username)
+                            if k.username == current_user:
+                                uploadpermission = 1
+                                break
+                    if not uploadpermission:
+                        editPpriority = 0
+            else:
+                editPpriority = 0
 
             for i in LowLightList.objects.filter(**check_LowL_dic):
                 mock_data.append(
                     {
                         "id": i.id, "Customer": i.Customer, "ProjectcodeCompal": i.ProjectCompal,
-                        "ProjectcodeCustomer": ProjectinfoinDCT.objects.filter(ComPrjCode=i.ProjectCompal).first().PrjEngCode1 if ProjectinfoinDCT.objects.filter(ComPrjCode=i.ProjectCompal) else "DCT Web上没有此Project的信息",
+                        "ProjectcodeCustomer": ProjectinfoinDCT.objects.filter(ComPrjCode=i.ProjectCompal).first().PrjEngCode2 if ProjectinfoinDCT.objects.filter(ComPrjCode=i.ProjectCompal) else "DCT Web上没有此Project的信息",
                         "Lowlight_item": i.Lowlight_item,
                         "Root_cause": i.Root_Cause,
                         "LD": i.LD, "Owner": i.Owner, "Mitigation_plan": i.Mitigation_plan,
@@ -143,7 +149,7 @@ def LowLightList_edit(request):
                     {
                         "id": i.id, "Customer": i.Customer, "ProjectcodeCompal": i.ProjectCompal,
                         "ProjectcodeCustomer": ProjectinfoinDCT.objects.filter(
-                            ComPrjCode=i.ProjectCompal).first().PrjEngCode1 if ProjectinfoinDCT.objects.filter(
+                            ComPrjCode=i.ProjectCompal).first().PrjEngCode2 if ProjectinfoinDCT.objects.filter(
                             ComPrjCode=i.ProjectCompal) else "DCT Web上没有此Project的信息",
                         "Lowlight_item": i.Lowlight_item,
                         "Root_cause": i.Root_Cause,
@@ -181,7 +187,7 @@ def LowLightList_edit(request):
                     {
                         "id": i.id, "Customer": i.Customer, "ProjectcodeCompal": i.ProjectCompal,
                         "ProjectcodeCustomer": ProjectinfoinDCT.objects.filter(
-                            ComPrjCode=i.ProjectCompal).first().PrjEngCode1 if ProjectinfoinDCT.objects.filter(
+                            ComPrjCode=i.ProjectCompal).first().PrjEngCode2 if ProjectinfoinDCT.objects.filter(
                             ComPrjCode=i.ProjectCompal) else "DCT Web上没有此Project的信息",
                         "Lowlight_item": i.Lowlight_item,
                         "Root_cause": i.Root_Cause,
@@ -189,7 +195,7 @@ def LowLightList_edit(request):
                         "editor": i.editor, "edit_time": str(i.edit_time),
                     }
                 )
-
+        editpermission = editPpriority
         data = {
             "errMsg": errMsg,
             "ProjectCodeOption": ProjectCodeOption,

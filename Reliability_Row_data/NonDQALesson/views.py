@@ -47,34 +47,13 @@ def NonDQALesson_summary(request):
     canEdit = 0
     roles = []
     onlineuser = request.session.get('account')
+    Edit_account = "0701114"#beller
     # print(UserInfo.objects.get(account=onlineuser))
     for i in UserInfo.objects.get(account=onlineuser).role.all():
         roles.append(i.name)
     # print(roles)
-    editPpriority = 100
-    for i in roles:
-        if 'admin' in i:
-            editPpriority = 4
-            canEdit = 1
-        # elif 'PM' in i:
-        #     if editPpriority != 4:
-        #         editPpriority = 1
-        # elif 'RD' in i:
-        #     if editPpriority != 4 and editPpriority != 1:
-        #         editPpriority = 2
-        elif 'DQA' in i:
-            canEdit = 1
-            # if 'DQA_SW' in i:
-            #     if editPpriority != 4 and editPpriority != 1:
-            #         editPpriority = 5
-            # if 'DQA_ME' in i:
-            #     if editPpriority != 4 and editPpriority != 1:
-            #         editPpriority = 6
-        # elif "JQE" in i:
-        #     editPpriority = 3
-        # else:
-        #     editPpriority = 0
-    # print(request.method)
+    if onlineuser == Edit_account:
+        canEdit = 1
     Customerlist = []
     for i in NonDQALesson.objects.all().values("Customer").distinct().order_by("Customer"):
         Customerlist.append({"label": i["Customer"], "value": i["Customer"]})

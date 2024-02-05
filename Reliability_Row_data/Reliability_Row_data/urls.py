@@ -100,6 +100,7 @@ urlpatterns = [
     path('PersonalInfo/', include('PersonalInfo.urls', namespace='PersonnalInfo')),
     path('PersonalExperience/', include('PersonalExperience.urls', namespace='PersonalExperience')),
     path('LowLightList/', include('LowLightList.urls', namespace='LowLightList')),
+    path('IssuesBreakdown/', include('IssuesBreakdown.urls', namespace='IssuesBreakdown')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

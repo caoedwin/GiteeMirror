@@ -1578,61 +1578,61 @@
                    }
                    var fileReader = new FileReader ();
                    fileReader.onload = function (ev) {
-                     try {
-                     _this.loading=true;
-                     var data = ev.target.result,
-                      workbook = XLSX.read(data, {
-                        type: 'binary'
-                     }), // 以二进制流方式读取得到整份excel表格对象
-                      persons = []; // 存储获取到的数据
-                   } catch (e) {
-                     _this.loading=false;
-                     return;
-                  }
-                  for (var sheet in workbook.Sheets) {
-                if (workbook.Sheets.hasOwnProperty(sheet)) {
-                    var fromTo = workbook.Sheets[sheet]['!ref'];
-                    // console.log(fromTo);
-                    var datas = workbook.Sheets[sheet];
-                    // 如果有不规范数据可以在这里进行处理datas
-                    persons = persons.concat(XLSX.utils.sheet_to_json(datas));
-                    //console.log(typeof (persons),'111')
-                    //break; // 只读了第一张表
-                }
-            }
-                 // 数据保存在result
-                  let result=JSON.stringify(persons);
-                  //console.log(typeof (result),'2222')
-                  //console.log(typeof ({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result}),'233')
-                       console.log({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},'333333')
-                   //将之前张开的树形结构收起
-                      //_this.reset();
-                   //2.上傳數據
-                    axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
-                    headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-                }).then((res) => {
-                    console.log(res.data,"first");//上传成功的操作
-                    _this.uploadFile=null;
-                    _this.fileName=first;
-                   _this.loading=false;
-                    //上传成功的操作
-                   _this.$message({
-                       message:'上傳成功',
-                       type:'success',
-                   })
-                    //接受数据的初始化
-                    try{
-                    }catch(e)
-                    {
-                       console.log("错误异常"+e);
-                    }
-                }).catch(function (e) {
-                        _this.loading=false;
-                        _this.uploadFile=null;
-                        var warning =confirm("上傳異常");
-                        console.log("上傳錯誤信息"+e);
-                    });
-           };
+                             try {
+                                 _this.loading=true;
+                                 var data = ev.target.result,
+                                  workbook = XLSX.read(data, {
+                                    type: 'binary'
+                                 }), // 以二进制流方式读取得到整份excel表格对象
+                                  persons = []; // 存储获取到的数据
+                               } catch (e) {
+                                 _this.loading=false;
+                                 return;
+                              }
+                              for (var sheet in workbook.Sheets) {
+                                    if (workbook.Sheets.hasOwnProperty(sheet)) {
+                                        var fromTo = workbook.Sheets[sheet]['!ref'];
+                                        // console.log(fromTo);
+                                        var datas = workbook.Sheets[sheet];
+                                        // 如果有不规范数据可以在这里进行处理datas
+                                        persons = persons.concat(XLSX.utils.sheet_to_json(datas));
+                                        //console.log(typeof (persons),'111')
+                                        //break; // 只读了第一张表
+                                    }
+                                }
+                             // 数据保存在result
+                              let result=JSON.stringify(persons);
+                              //console.log(typeof (result),'2222')
+                              //console.log(typeof ({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result}),'233')
+                                   console.log({"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},'333333')
+                               //将之前张开的树形结构收起
+                                  //_this.reset();
+                               //2.上傳數據
+                                axios.post("/TestPlanSWOS/TestPlanSWOS-edit/" ,{"customer":_this.showCustomer,"project":_this.showProject,"phase":_this.showPhase,'category':_this.showCategory,"ExcelData":result},{
+                                headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+                            }).then((res) => {
+                                console.log(res.data,"first");//上传成功的操作
+                                _this.uploadFile=null;
+                                _this.fileName=first;
+                               _this.loading=false;
+                                //上传成功的操作
+                               _this.$message({
+                                   message:'上傳成功',
+                                   type:'success',
+                               })
+                                //接受数据的初始化
+                                try{
+                                }catch(e)
+                                {
+                                   console.log("错误异常"+e);
+                                }
+                            }).catch(function (e) {
+                                    _this.loading=false;
+                                    _this.uploadFile=null;
+                                    var warning =confirm("上傳異常");
+                                    console.log("上傳錯誤信息"+e);
+                                });
+                    };
                    try{
                    //console.log(fileReader.onload());
                    fileReader.readAsBinaryString(files);

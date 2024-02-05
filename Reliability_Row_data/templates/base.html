@@ -463,8 +463,8 @@
 
 <script>
     let ws_scheme = window.location.protocol === "https:" ? "wss" : "ws";
-    let ws = new WebSocket(ws_scheme + '://' + window.location.host + '/ws/msg/ITNest/');
-
+    let ws = new WebSocket(ws_scheme + '://' + window.location.host + '/ws/msg/Reliability_Row_data/');
+    console.log(ws_scheme,ws);
     ws.onopen = function () {
         console.log('WebSocket建立连接');
     };
