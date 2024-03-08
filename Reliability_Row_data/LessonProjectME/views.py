@@ -123,6 +123,7 @@ def Lesson_project(request):
                     Lessonlist.append(i.id)
                 # print (Lessonlist)
                 existlesson = []
+                # print(Projectinfos.lessonlearn_project_set)
                 for i in Projectinfos.lessonlearn_project_set.all():
                     # print(i)
                     existlesson.append(i.lesson.id)

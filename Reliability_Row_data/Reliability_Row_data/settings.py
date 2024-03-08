@@ -194,6 +194,8 @@ INSTALLED_APPS = [
     'NonDQALesson',
     'LowLightList',
     'IssuesBreakdown',
+    'ABOProjectLessonL',
+    'ABOQIL',
 ]
 
 MIDDLEWARE = [

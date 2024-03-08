@@ -14,13 +14,17 @@ class IssuesBreakdown(models.Model):
         ('ABO', 'ABO'),
         ('Others', 'Others'),
     )
-    # Phase_list = (
-    #     ('', ''),
-    #     ('SIT', 'SIT'),
-    #     ('FVT', 'FVT'),
-    #     ('OOC', 'OOC'),
-    #     ('INV', 'INV'),
-    # )
+    Category_list = (
+        ('', ''),
+        ('New found_Unidentified', 'New found_Unidentified'),
+        ('New found_MWD', 'New found_MWD'),
+        ('New found_New Implement', 'New found_New Implement'),
+        ('New found_Stress', 'New found_Stress'),
+        ('Regression Fail', 'Regression Fail'),
+        ('UE', 'UE'),
+        ('Adhoc', 'Adhoc'),
+        ('Late found', 'Late found'),
+    )
     Customer = models.CharField('Customer', choices=Customer_list, max_length=100)
     Project = models.CharField('Project', max_length=100)
     FFRT_Entry_unclose_issue = models.CharField('FFRT Entry unclose issue', max_length=10, blank=True, null=True)
@@ -31,7 +35,7 @@ class IssuesBreakdown(models.Model):
     fourth_FFRT = models.CharField('4th FFRT', max_length=21, blank=True, null=True)
     fifth_FFRT = models.CharField('5th FFRT', max_length=21, blank=True, null=True)
     sixth_FFRT = models.CharField('6th FFRT', max_length=21, blank=True, null=True)
-    issue_def = models.CharField('分類', max_length=50, blank=True, null=True)
+    issue_def = models.CharField('分類', choices=Category_list, max_length=50, blank=True, null=True)
     Remark = models.TextField('Remark', max_length=5000, blank=True, null=True)
     FFRT = models.CharField('FFRT', max_length=20, blank=True, null=True)
     Defect_ID = models.CharField('Defect ID', max_length=20, blank=True, null=True)
@@ -51,7 +55,7 @@ class IssuesBreakdown(models.Model):
     Age = models.CharField('Age', max_length=10, blank=True, null=True)
 
     class Meta:
-        verbose_name = 'LowLightList'  # 不写verbose_name, admin中默认的注册名会加s
+        verbose_name = 'IssuesBreakdown'  # 不写verbose_name, admin中默认的注册名会加s
         verbose_name_plural = verbose_name
 
     def __str__(self):

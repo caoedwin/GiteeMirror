@@ -24,7 +24,7 @@ def get_structure_data(request):
     all_menu_dict = {}
     # print("all menue:",all_menu)
     for item in all_menu:
-        item['status'] = False#False,False表示不显示，True表示显示，初始默认不显示，后面判断有权限在改成True，要想不管有没有权限都显示，直接全设为True
+        item['status'] = False  # False,False表示不显示，True表示显示，初始默认不显示，后面判断有权限在改成True，要想不管有没有权限都显示，直接全设为True
         item['open'] = False
         item['children'] = []
         all_menu_dict[item['id']] = item
@@ -87,6 +87,7 @@ def get_structure_data(request):
     # print(len(menu_data))
     # testdic = {"a":1,"b":2}
     # print(testdic.items())
+    # print(menu_data)
 
     for i in menu_data:
         # print(len(i),i)
@@ -97,11 +98,11 @@ def get_structure_data(request):
         #     if "children" in j.keys():
         #         print(len(j['children']), j['children'])
         if i['children']:
-            if "children" in i['children'][0].keys():#edwin：对有三级菜单，按照第三季级菜单的个数对二级菜单排序，只有二级的不需要排序
+            if "children" in i['children'][0].keys():  # edwin：对有三级菜单，按照第三季级菜单的个数对二级菜单排序，只有二级的不需要排序
                 i["children"].sort(key=lambda x: len(x["children"]))
                 # for m in i["children"]:
                 #     print(len(m["children"]), m["children"])
-                for j in i['children']:#第三级菜单则按照title字母顺序排序
+                for j in i['children']:  # 第三级菜单则按照title字母顺序排序
                     if j['children']:
                         if "children" in j['children'][0].keys():  # edwin：对有四级菜单，按照第三季级菜单的个数对二级菜单排序，只有二级的不需要排序
                             j["children"].sort(key=lambda x: len(x["children"]))
@@ -144,10 +145,10 @@ def get_menu_html(menu_data):
     # print("menu_data:",menu_data)
     menu_html = ''
     for item in menu_data:
-        if not item['status']: # 如果用户权限不在某个菜单下，即item['status']=False, 不显示
+        if not item['status']:  # 如果用户权限不在某个菜单下，即item['status']=False, 不显示
             continue
         else:
-            if item.get('url'): # 说明循环到了菜单最里层的url
+            if item.get('url'):  # 说明循环到了菜单最里层的url
                 menu_html += url_str.format(permission_url=item['url'],
                                             # active="rbac-active" if item['open'] else "",
                                             permission_title=item['title'].split("_")[-1],
@@ -160,15 +161,15 @@ def get_menu_html(menu_data):
                 if item.get('children'):
                     # print(item['title'])
                     sub_menu = get_menu_html(item['children'])
-                    Class=""
-                    if item['title']=='Lesson Learn':
-                        Class="ti-file"
-                    if item['title'] == 'SW&ME':
-                        Class ="ti-agenda"
+                    Class = ""
+                    if item['title'] == 'Lesson Learn' or item['title'] == 'Lesson Learn-ABO':
+                        Class = "ti-file"
+                    if item['title'] == 'SW&ME' or item['title'] == 'SW&ME-ABO' or item['title'] == 'IssuesBreakdown':
+                        Class = "ti-agenda"
                     if item['title'] == 'Compatibility':
-                        Class ="ti-layout-grid4-alt"
-                    if item['title'] == 'QIL':
-                        Class ="ti-layout-grid2-alt"
+                        Class = "ti-layout-grid4-alt"
+                    if item['title'] == 'QIL' or item['title'] == 'QIL-ABO':
+                        Class = "ti-layout-grid2-alt"
                     if item['title'] == 'Reliability Test Data':
                         Class = "ti-archive"
                     if item['title'] == 'Package G Value':
@@ -178,7 +179,7 @@ def get_menu_html(menu_data):
                     if item['title'] == 'CDM':
                         Class = "ti-view-list-alt"
                     if item['title'] == 'XQM':
-                        Class ="ti-files"
+                        Class = "ti-files"
                     if item['title'] == 'CQM':
                         Class = "ti-target"
                     if item['title'] == 'MQM':
@@ -196,21 +197,21 @@ def get_menu_html(menu_data):
                     if item['title'] == 'ME':
                         Class = "ti-layout-media-overlay-alt"
                     if item['title'] == 'SW':
-                        Class ="ti-layout-width-default"
+                        Class = "ti-layout-width-default"
                     if item['title'] == 'SW-OR':
-                        Class ="ti-layout-width-default"
+                        Class = "ti-layout-width-default"
                     if item['title'] == 'INV':
-                        Class ="ti-layout-list-large-image"
+                        Class = "ti-layout-list-large-image"
                     if item['title'] == 'SpecDownload' or item['title'] == 'RD/PE/JQE-Lesson':
-                        Class ="ti-layout-accordion-list"
+                        Class = "ti-layout-accordion-list"
                     if item['title'] == 'Issue Notes':
-                        Class ="ti-layout-column3"
+                        Class = "ti-layout-column3"
                     if item['title'] == 'Issue List':
-                        Class ="ti-bookmark"
+                        Class = "ti-bookmark"
                     if item['title'] == 'Known Issue':
-                        Class ="ti-envelope"
+                        Class = "ti-envelope"
                     if item['title'] == 'DepartmentManage':
-                        Class ="ti-cloud"
+                        Class = "ti-cloud"
                     if item['title'] == 'PersonalInfo':
                         Class = "ti-id-badge"
                     if item['title'] == '公共區域':
@@ -232,13 +233,12 @@ def get_menu_html(menu_data):
                     if item['title'] == '人員測試履歷':
                         Class = "ti-view-list-alt"
 
-                    menu_html += option_str.format(Class=Class,menu_title=item['title'].split("_")[-1],
+                    menu_html += option_str.format(Class=Class, menu_title=item['title'].split("_")[-1],
                                                    sub_menu=sub_menu)  # ,
                     # display="" if item['open'] else "rbac-hide",
                     # status="open" if item['open'] else "close")
                 else:
                     sub_menu = ""
-
 
                 # print(menu_html)
                 # print('================================================================================================')
@@ -268,8 +268,8 @@ def rbac_css():
     rabc要用到的css文件路径，并读取返回；注意返回字符串用mark_safe，否则传到模板会转义
     :return: 
     """
-    css_path = os.path.join('app01', 'style_script','rbac.css')
-    css = open(css_path,'r',encoding='utf-8').read()
+    css_path = os.path.join('app01', 'style_script', 'rbac.css')
+    css = open(css_path, 'r', encoding='utf-8').read()
     return mark_safe(css)
 
 
@@ -282,6 +282,3 @@ def rbac_js():
     js_path = os.path.join('app01', 'style_script', 'rbac.js')
     js = open(js_path, 'r', encoding='utf-8').read()
     return mark_safe(js)
-
-
-

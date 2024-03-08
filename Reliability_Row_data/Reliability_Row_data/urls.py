@@ -101,6 +101,8 @@ urlpatterns = [
     path('PersonalExperience/', include('PersonalExperience.urls', namespace='PersonalExperience')),
     path('LowLightList/', include('LowLightList.urls', namespace='LowLightList')),
     path('IssuesBreakdown/', include('IssuesBreakdown.urls', namespace='IssuesBreakdown')),
+    path('ABOProjectLessonL/', include('ABOProjectLessonL.urls', namespace='ABOProjectLessonL')),
+    path('ABOQIL/', include('ABOQIL.urls', namespace='ABOQIL')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

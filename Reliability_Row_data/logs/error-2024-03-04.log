@@ -1,0 +1,112 @@
+[2024-03-04 13:54:01,815] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 643, in IssuesBreakdown_Summary
+    start_date = datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: module 'datetime' has no attribute 'strptime'
+[2024-03-04 13:54:01,825] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.33, 127.0.0.1:52206]
+[2024-03-04 13:55:17,402] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 644, in IssuesBreakdown_Summary
+    start_date = datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: module 'datetime' has no attribute 'strptime'
+[2024-03-04 13:55:17,409] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.66, 127.0.0.1:52294]
+[2024-03-04 13:56:25,303] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 644, in IssuesBreakdown_Summary
+    start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: 'NoneType' object has no attribute 'replace'
+[2024-03-04 13:56:25,306] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.36, 127.0.0.1:58961]
+[2024-03-04 13:56:49,645] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 644, in IssuesBreakdown_Summary
+    start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: 'NoneType' object has no attribute 'replace'
+[2024-03-04 13:56:49,656] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.94, 127.0.0.1:57780]
+[2024-03-04 14:03:11,928] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 651, in IssuesBreakdown_Summary
+    start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: 'NoneType' object has no attribute 'replace'
+[2024-03-04 14:03:11,938] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.79, 127.0.0.1:58368]
+[2024-03-04 14:07:13,091] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 652, in IssuesBreakdown_Summary
+    start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
+AttributeError: 'NoneType' object has no attribute 'replace'
+[2024-03-04 14:07:13,095] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.38, 127.0.0.1:58745]
+[2024-03-04 14:19:04,818] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 665, in IssuesBreakdown_Summary
+    {"id": id_num, "FFRT": FFRTnum, "Date": str(datetime.datetime.strptime(j, "%Y-%m-%d")),
+TypeError: strptime() argument 1 must be str, not datetime.datetime
+[2024-03-04 14:19:04,824] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.25, 127.0.0.1:51531]
+[2024-03-04 14:47:07,266] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 779, in IssuesBreakdown_Summary
+    labelname, propName = Projectcode
+ValueError: too many values to unpack (expected 2)
+[2024-03-04 14:47:07,274] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_Summary/ 500 [0.38, 127.0.0.1:56589]

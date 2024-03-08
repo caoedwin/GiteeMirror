@@ -34,7 +34,8 @@ headermodel_MajorIfo = {
     '專業 for 公式查找': 'MajorForExcel',
 }
 headermodel_PersonalInfo = {
-    '狀態': 'Status', '報到日期': 'RegistrationDate', '轉職日期': 'transferDate', '原客户': 'OldCustomer', '原課別': 'OldDepartmentCode', '離職日期': 'QuitDate', '預計離職日期': 'PlanQuitDate', '離職原因': 'QuitReason',
+    '狀態': 'Status', '報到日期': 'RegistrationDate', '轉職日期': 'transferDate', '原客户': 'OldCustomer',
+    '原課別': 'OldDepartmentCode', '離職日期': 'QuitDate', '預計離職日期': 'PlanQuitDate', '離職原因': 'QuitReason',
     '離職詳情': 'QuitDetail', '離職去向': 'Whereabouts', '新公司名稱': 'NewCompany', '薪資': 'Aalary', '最近一次績效': 'LastAchievements',
     '客戶': 'Customer', '部門': 'Department', '課別': 'DepartmentCode', '集團員工': 'GroupNum', 'SAP員工': 'SAPNum',
     '中文姓名': 'CNName',
@@ -817,7 +818,7 @@ def PersonalInfo_search(request):
             for i in PersonalInfoHisByPer.objects.filter(GroupNum=GroupNumSearch).values("DepartmentCode", "CNName",
                                                                                          "PositionOld", "PositionNow",
                                                                                          "LastPromotionData").order_by(
-                    "LastPromotionData"):
+                "LastPromotionData"):
                 num += 1
                 print(i)
                 tableData.append(
@@ -2431,7 +2432,8 @@ def PersonalInfo_edit(request):
                                 Photolist.append(
                                     {'name': '', 'url': '/media/' + h.img.name})  # fileListO需要的是对象列表而不是字符串列表
                             mock_data.append(
-                                {"id": i.id, "Status": i.Status, "RegistrationDate": str(i.RegistrationDate) if i.RegistrationDate else '',
+                                {"id": i.id, "Status": i.Status,
+                                 "RegistrationDate": str(i.RegistrationDate) if i.RegistrationDate else '',
                                  "transferDate": str(i.transferDate) if i.transferDate else '',
                                  "OldCustomer": i.OldCustomer,
                                  "OldDepartmentCode": i.OldDepartmentCode,
@@ -2446,7 +2448,8 @@ def PersonalInfo_edit(request):
                                  "GroupEmployees": i.GroupNum,
                                  "SAPEmployees": i.SAPNum, "ChineseName": i.CNName, "EnglishName": i.EngName,
                                  "Gender": i.Sex,
-                                 "CurrentTitle": i.PositionNow, "LastPromotionDate": str(i.LastPromotionData) if i.LastPromotionData else '',
+                                 "CurrentTitle": i.PositionNow,
+                                 "LastPromotionDate": str(i.LastPromotionData) if i.LastPromotionData else '',
                                  "EntryTitle": i.RegistPosition, "PromotionNumber": i.PositionTimes,
                                  "WorkExperience": i.Experience, "GraduationYear": i.GraduationYear,
                                  "Education": i.Education, "School": i.School,
@@ -2874,8 +2877,9 @@ def ManPower_edit(request):
                 ManID = request.POST.get("id")
                 MainPowerupdate = {"Customer": request.POST.get("Customer"),
                                    "DepartmentCode": request.POST.get("Department_Code"),
-                                   "CHU": request.POST.get("Chu"), "BU": request.POST.get("Ministry") if request.POST.get("Ministry")!="null" else "",
-                                   "KE": request.POST.get("Section") if request.POST.get("Section")!="null" else "",
+                                   "CHU": request.POST.get("Chu"),
+                                   "BU": request.POST.get("Ministry") if request.POST.get("Ministry") != "null" else "",
+                                   "KE": request.POST.get("Section") if request.POST.get("Section") != "null" else "",
                                    "Item": request.POST.get("Item"), "Positions_Name": request.POST.get("Title"),
                                    "CodeNoH01": request.POST.get("CodeNoH01"),
                                    "CodeNoH02": request.POST.get("CodeNoH02"),
@@ -4584,7 +4588,8 @@ def Summary1(request):
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch).values("Customer").distinct().order_by(
                         "Customer"):
                     monthDiagram_legend_data.append(i['Customer'])
-                    Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i["Customer"]).first().DepartmentCode[:7]
+                    Department_Codechu = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Customer=i[
+                        "Customer"]).first().DepartmentCode[:7]
                     # print(Department_Codechu)
                     zaizhidic = {"Chu": i["Customer"], "Program": "人數"}
                     overtimedic = {"Chu": i["Customer"], "Program": "加班時數"}
@@ -4592,11 +4597,12 @@ def Summary1(request):
                     overtimePdic = {"Chu": i["Customer"], "Program": "平均加班(A)"}
                     leavePdic = {"Chu": i["Customer"], "Program": "平均請假(B)"}
                     effectivePdic = {"Chu": i["Customer"], "Program": "有效加班\n(C=A-B)"}
-                    All_WorkOvertime = WorkOvertime.objects.filter(Year=YearSearch, Department_Code__contains=Department_Codechu).values(
-                                                                        "Mounth").distinct().annotate(
+                    All_WorkOvertime = WorkOvertime.objects.filter(Year=YearSearch,
+                                                                   Department_Code__contains=Department_Codechu).values(
+                        "Mounth").distinct().annotate(
                         Sum("Total"))
                     All_LeaveInfo = LeaveInfo.objects.filter(Year=YearSearch,
-                                                                   Department_Code__contains=Department_Codechu).values(
+                                                             Department_Code__contains=Department_Codechu).values(
                         "Mounth").distinct().annotate(
                         Sum("Total"))
                     # print(All_WorkOvertime)
@@ -4611,21 +4617,25 @@ def Summary1(request):
                             # print(DateNow_begin)
                             DateNow = datetime.datetime.strptime(YearSearch + j[1], '%Y-%m-%d')
                             Test_Endperiod = [DateNow_begin, DateNow]
-                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],Year=YearSearch,
-                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
+                                                                                RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],Year=YearSearch,
-                                                                                    transferDate__gte=DateNow,
-                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],Year=YearSearch,
-                                                                                    transferDate__gte=DateNow,
-                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # overtimedic
-                            
+
                             overtimedic[j[0]] = 0.00
                             for n in All_WorkOvertime:
                                 if n['Mounth'] == j[1].split("-")[1]:
@@ -4636,7 +4646,7 @@ def Summary1(request):
                             #     overtimedic[j[0]] = WorkOvertime.objects.filter(Year=YearSearch,
                             #                                                    Department_Code__contains=Department_Codechu,
                             #                                                    Mounth=j[1].split("-")[1]).aggregate(Sum("Total"))["Total__sum"]
-                            
+
                             # print(overtimedic[j[0]], 'yyy')
                             # WorkOvertimeQuerySet = WorkOvertime.objects.filter(Year=YearSearch,
                             #                                                    Mounth=j[1].split("-")[1]).annotate(
@@ -4735,7 +4745,7 @@ def Summary1(request):
             else:
                 continue
             break
-            #python里面for...else...表示如果这个循环正常的走完了则会执行else里面的代码，异常退出则不会执行，我们对内层循环做判断，符合条件了break则内存循环异常退出，对应的else也不会执行，然后再下一行是break完成外层循环的退出
+            # python里面for...else...表示如果这个循环正常的走完了则会执行else里面的代码，异常退出则不会执行，我们对内层循环做判断，符合条件了break则内存循环异常退出，对应的else也不会执行，然后再下一行是break完成外层循环的退出
         for j in mounthname:
             if j in overtimedic.keys():
                 overtimePdic[j] = round(overtimedic[j] / zaizhidic[j], 1)
@@ -4758,7 +4768,7 @@ def Summary1(request):
                     hang_Sum += i[j]
                     mounthnum2 += 1
             if i["Program"] == "人數":
-                i["Average"] =round(hang_Sum / mounthnum2)
+                i["Average"] = round(hang_Sum / mounthnum2)
             else:
                 i["Average"] = round(hang_Sum / mounthnum2, 1)
         for i in overtimeTable1:
@@ -4777,7 +4787,7 @@ def Summary1(request):
                         'name': i["Chu"],
                         'type': 'line',
                         # 'stack': 'Total',#堆叠数据累加
-                        "smooth": 'true',#平滑曲线
+                        "smooth": 'true',  # 平滑曲线
                         'data': monthDiagram1Data_data,  # 對應月份 從一月到十二月
                         'label': {
                             'show': 'true',
@@ -5292,17 +5302,21 @@ def Summary2(request):
                             zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"], transferDate__gte=DateNow,
-                                                                       RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 Customer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"], transferDate__gte=DateNow,
-                                                                       RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"],
+                                                                                    transferDate__gte=DateNow,
+                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
                                 OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
-                                                                         RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
-                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(
+                                Customer=i["Customer"],
+                                RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='',
+                                                                     transferDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -5418,20 +5432,26 @@ def Summary2(request):
                             zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
                                 Customer=i["Customer"], Year=YearSearch, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
-                                                                                    transferDate__gte=DateNow,
-                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"], Year=YearSearch,
-                                                                                    transferDate__gte=DateNow,
-                                                                                    RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                Customer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],
+                                                                                             Year=YearSearch,
+                                                                                             transferDate__gte=DateNow,
+                                                                                             RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
+                                OldCustomer=i["Customer"], Year=YearSearch, transferDate__gte=DateNow,
+                                QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
-                                                                                  Year=YearSearch,
-                                                                                  RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
-                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(
+                                Customer=i["Customer"],
+                                Year=YearSearch,
+                                RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='',
+                                                                     transferDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()
@@ -5513,6 +5533,9 @@ def Summary2(request):
                         everylizhi = monthSummaryValue
                     elif i["Classify"] == "在職":
                         everyzaizhi = monthSummaryValue
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                    elif i["Classify"] == "預算":
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
             # monthDiagram1Data&monthDiagram2Data
             for i in monthTable:
                 if i["Classify"] == "在職" and i["Customer"] != "合計":
@@ -5852,9 +5875,9 @@ def Summary2(request):
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -5862,8 +5885,8 @@ def Summary2(request):
                             #                                                      Major=i["Major"],
                             #                                                      Customer=j, Status="在職").count()
                             professionTableData[j] = PersonalInfo.objects.filter(
-                                                                                 Major=i["Major"],
-                                                                                 Customer=j, Status="在職").count()
+                                Major=i["Major"],
+                                Customer=j, Status="在職").count()
                             professionSummary += professionTableData[j]
                         professionTableData["professionSummary"] = professionSummary
                         professionTable.append(professionTableData)
@@ -5919,9 +5942,9 @@ def Summary2(request):
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -5942,10 +5965,10 @@ def Summary2(request):
             #         "Profession": "TBC",
             #     }
             if MajorIfo.objects.filter(
-                                       Major="TBC").first():
+                    Major="TBC").first():
                 professionTableData_TBC = {
                     "daLei": MajorIfo.objects.filter(
-                                                     Major="TBC").first().Categories,
+                        Major="TBC").first().Categories,
                     "Profession": "TBC",
                 }
                 # print(TBCnum)
@@ -5979,7 +6002,7 @@ def Summary2(request):
             #     'type': 'bar',
             #     'data': [229, 228, 221, 216, 208, 205]  # 對應学科类别
             # },
-            #professionDiagram1Data
+            # professionDiagram1Data
             ProfessionCategory = MajorIfo.objects.all().values("Categories").distinct().order_by("Categories")
             for i in ProfessionCategory:
                 profession_xAxis_data.append(i["Categories"])
@@ -6021,7 +6044,7 @@ def Summary2(request):
                 Customer_region = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_region.append(i["Customer"])
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "NativeProvince").distinct().order_by("NativeProvince"):
@@ -6112,9 +6135,11 @@ def Summary2(request):
                                 OldCustomer=i["Customer"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
-                                                                         RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
-                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfo.objects.filter(Q(transferDate__isnull=True)).filter(
+                                Customer=i["Customer"],
+                                RegistrationDate__range=Test_Endperiod).count() + PersonalInfo.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='',
+                                                                     transferDate__range=Test_Endperiod).count()
                             # lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
                             #                                              QuitDate__lte=DateNow).count()
                             lizhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -6244,10 +6269,12 @@ def Summary2(request):
                                 QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
-                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(Customer=i["Customer"],
-                                                                                  Year=YearSearch,
-                                                                                  RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
-                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='', transferDate__range=Test_Endperiod).count()
+                            ruzhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Q(transferDate__isnull=True)).filter(
+                                Customer=i["Customer"],
+                                Year=YearSearch,
+                                RegistrationDate__range=Test_Endperiod).count() + PersonalInfoHisByYear.objects.exclude(
+                                Q(transferDate__isnull=True)).filter(Customer=i["Customer"], OldCustomer='',
+                                                                     transferDate__range=Test_Endperiod).count()
                             lizhidic[j[0]] = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
                                                                                   Year=YearSearch,
                                                                                   QuitDate__range=Test_Endperiod).count()
@@ -6334,6 +6361,9 @@ def Summary2(request):
                         everylizhi = monthSummaryValue
                     elif i["Classify"] == "在職":
                         everyzaizhi = monthSummaryValue
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                    elif i["Classify"] == "預算":
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
             # monthDiagram1Data&monthDiagram2Data
             for i in monthTable:
                 if i["Classify"] == "在職" and i["Customer"] != "合計":
@@ -6397,7 +6427,6 @@ def Summary2(request):
                                 monthDiagram2Data_LIZHILV.append('')
                         monthDiagram2Data["LIZHILV"] = monthDiagram2Data_LIZHILV
 
-
             # By职称
             if not YearSearch or YearSearch == YearNow:
                 # legendData = ["DQA"]
@@ -6439,7 +6468,7 @@ def Summary2(request):
                 titleDiagramname = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     selectItem.append(i["Customer"])
                     legendData.append(i["Customer"])
                 PositionQuerySet = PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
@@ -6498,7 +6527,8 @@ def Summary2(request):
 
             # By年资
             # seniorityDiagramname = ['0.25年以下', '0.25~1年', '1~2年', '2~3年', '3~5年', '5~10年', '10~15年', "15~20年", '20年以上']
-            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '0.25~1年', '0.25年以下', ]
+            seniorityDiagramname = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '0.25~1年',
+                                    '0.25年以下', ]
             if not YearSearch or YearSearch == YearNow:
                 # legendDataseniority = ["DQA"]
                 legendDataseniority = []
@@ -6616,7 +6646,7 @@ def Summary2(request):
                 Total_Summary = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Education").distinct().order_by(
-                        "Education"):
+                    "Education"):
                     educationDiagramname.append(i["Education"])
                     educationTable_data = {"Education": i["Education"]}
                     educationSummary = 0
@@ -6749,15 +6779,15 @@ def Summary2(request):
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
                             professionTableData[j] = PersonalInfo.objects.filter(
-                                                                                 Major=i["Major"],
-                                                                                 Customer=j, Status="在職").count()
+                                Major=i["Major"],
+                                Customer=j, Status="在職").count()
                             professionSummary += professionTableData[j]
                         professionTableData["professionSummary"] = professionSummary
                         professionTable.append(professionTableData)
@@ -6785,14 +6815,14 @@ def Summary2(request):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
-                         "Major").distinct().order_by("Major"):
+                        "Major").distinct().order_by("Major"):
                     # if i["Education"] == "本科":
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -6806,10 +6836,10 @@ def Summary2(request):
                     else:
                         print("專業信息裏面沒有：", i["Major"])
                     if MajorIfo.objects.filter(
-                                               Major="TBC").first():
+                            Major="TBC").first():
                         professionTableData_TBC = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major="TBC").first().Categories,
+                                Major="TBC").first().Categories,
                             "Profession": "TBC",
                         }
                         # print(TBCnum)
@@ -6885,7 +6915,7 @@ def Summary2(request):
                 Customer_region = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_region.append(i["Customer"])
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status="在職").values(
                         "NativeProvince").distinct().order_by("NativeProvince"):
@@ -6934,13 +6964,16 @@ def Summary2(request):
                 # mounthlist = ["Jan", "Fer", "Mar", "Apr", "May", "Jun",
                 #               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "monthSummary"]
                 mounthnow = datetime.datetime.now().month
-                for i in Departments.objects.filter(Year=YearNow, Customer=Customer).exclude(Department_Code__contains="000").annotate(
+                for i in Departments.objects.filter(Year=YearNow, Customer=Customer).exclude(
+                        Department_Code__contains="000").annotate(
                         Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
                                                                                   "Department_Codebu").distinct():
                     # print(i)
                     buinfo = i["Department_Codebu"]
-                    if Departments.objects.filter(Year=YearNow, Department_Code__contains=i["Department_Codebu"]).first().BU:
-                        buinfo = Departments.objects.filter(Year=YearNow, Department_Code__contains=i["Department_Codebu"]).first().BU
+                    if Departments.objects.filter(Year=YearNow,
+                                                  Department_Code__contains=i["Department_Codebu"]).first().BU:
+                        buinfo = Departments.objects.filter(Year=YearNow,
+                                                            Department_Code__contains=i["Department_Codebu"]).first().BU
                     yusuandic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "預算"}
                     zaizhidic = {"Customer": i["Customer"], "Bubie": buinfo, "Classify": "在職"}
                     # ruzhidic = {"Bubie": i["DepartmentCode"], "Classify": "入職"}
@@ -6951,9 +6984,13 @@ def Summary2(request):
                         if mounthnum > mounthnow:
                             break
                         else:
-                            print(MainPower.objects.filter(Year=YearNow, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0])))
+                            print(MainPower.objects.filter(Year=YearNow, Customer=i["Customer"],
+                                                           DepartmentCode__contains=i["Department_Codebu"]).aggregate(
+                                Sum(j[0])))
                             yusuandic[j[0]] = \
-                                MainPower.objects.filter(Year=YearNow, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0]))[
+                                MainPower.objects.filter(Year=YearNow, Customer=i["Customer"],
+                                                         DepartmentCode__contains=i["Department_Codebu"]).aggregate(
+                                    Sum(j[0]))[
                                     j[0] + "__sum"]
                             if not yusuandic[j[0]]:
                                 yusuandic[j[0]] = 0
@@ -6962,17 +6999,25 @@ def Summary2(request):
                             # print(DateNow_begin)
                             DateNow = datetime.datetime.strptime(YearNow + j[1], '%Y-%m-%d')
                             Test_Endperiod = [DateNow_begin, DateNow]
-                            zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                            zaizhimounth = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                       DepartmentCode__contains=i["Department_Codebu"],
                                                                        RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
-                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                                QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Now = PersonalInfo.objects.filter(Customer=i["Customer"],
+                                                                                    DepartmentCode__contains=i[
+                                                                                        "Department_Codebu"],
                                                                                     transferDate__gte=DateNow,
                                                                                     RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
-                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
-                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"], OldDepartmentCode__contains=i["Department_Codebu"],
+                                Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"],
+                                transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                            zaizhimounthTransefer_Old = PersonalInfo.objects.filter(OldCustomer=i["Customer"],
+                                                                                    OldDepartmentCode__contains=i[
+                                                                                        "Department_Codebu"],
                                                                                     transferDate__gte=DateNow,
                                                                                     RegistrationDate__lte=DateNow).count() - PersonalInfo.objects.filter(
-                                OldCustomer=i["Customer"], OldDepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
+                                OldCustomer=i["Customer"], OldDepartmentCode__contains=i["Department_Codebu"],
+                                transferDate__gte=DateNow, QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
                             # ruzhidic[j[0]] = PersonalInfo.objects.filter(Customer=i["Customer"],
@@ -7022,7 +7067,8 @@ def Summary2(request):
                                   ("Jul", "-7-31"), ("Aug", "-8-31"), ("Sep", "-9-30"), ("Oct", "-10-31"),
                                   ("Nov", "-11-30"), ("Dec", "-12-31"), ]
                 mounthnow = 12  # datetime.datetime.now().month
-                for i in Departments.objects.filter(Year=YearSearch, Customer=Customer).exclude(Department_Code__contains="000").annotate(
+                for i in Departments.objects.filter(Year=YearSearch, Customer=Customer).exclude(
+                        Department_Code__contains="000").annotate(
                         Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
                                                                                   "Department_Codebu").distinct():
                     # print(i)
@@ -7042,7 +7088,9 @@ def Summary2(request):
                             break
                         else:
                             yusuandic[j[0]] = \
-                                MainPower.objects.filter(Year=YearSearch, Customer=i["Customer"], DepartmentCode__contains=i["Department_Codebu"]).aggregate(Sum(j[0]))[
+                                MainPower.objects.filter(Year=YearSearch, Customer=i["Customer"],
+                                                         DepartmentCode__contains=i["Department_Codebu"]).aggregate(
+                                    Sum(j[0]))[
                                     j[0] + "__sum"]
                             if not yusuandic[j[0]]:
                                 yusuandic[j[0]] = 0
@@ -7052,20 +7100,29 @@ def Summary2(request):
                             # print(DateNow_begin)
                             DateNow = datetime.datetime.strptime(YearSearch + j[1], '%Y-%m-%d')
                             Test_Endperiod = [DateNow_begin, DateNow]
-                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"],
+                            zaizhimounth = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"], Year=YearSearch,
+                                                                                DepartmentCode__contains=i[
+                                                                                    "Department_Codebu"],
                                                                                 RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
+                                Customer=i["Customer"], Year=YearSearch,
+                                DepartmentCode__contains=i["Department_Codebu"], QuitDate__lte=DateNow).count()
                             zaizhimounthTransefer_Now = PersonalInfoHisByYear.objects.filter(Customer=i["Customer"],
-                                                                                             Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"],
+                                                                                             Year=YearSearch,
+                                                                                             DepartmentCode__contains=i[
+                                                                                                 "Department_Codebu"],
                                                                                              transferDate__gte=DateNow,
                                                                                              RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                Customer=i["Customer"], Year=YearSearch, DepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
+                                Customer=i["Customer"], Year=YearSearch,
+                                DepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
                                 QuitDate__lte=DateNow).count()
                             zaizhimounthTransefer_Old = PersonalInfoHisByYear.objects.filter(OldCustomer=i["Customer"],
-                                                                                             Year=YearSearch, OldDepartmentCode__contains=i["Department_Codebu"],
+                                                                                             Year=YearSearch,
+                                                                                             OldDepartmentCode__contains=
+                                                                                             i["Department_Codebu"],
                                                                                              transferDate__gte=DateNow,
                                                                                              RegistrationDate__lte=DateNow).count() - PersonalInfoHisByYear.objects.filter(
-                                OldCustomer=i["Customer"], Year=YearSearch, OldDepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
+                                OldCustomer=i["Customer"], Year=YearSearch,
+                                OldDepartmentCode__contains=i["Department_Codebu"], transferDate__gte=DateNow,
                                 QuitDate__lte=DateNow).count()
                             # print(zaizhimounthTransefer)
                             zaizhidic[j[0]] = zaizhimounth - zaizhimounthTransefer_Now + zaizhimounthTransefer_Old
@@ -7115,6 +7172,9 @@ def Summary2(request):
                         everylizhi = monthSummaryValue
                     elif i["Classify"] == "在職":
                         everyzaizhi = monthSummaryValue
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                    elif i["Classify"] == "預算":
+                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
 
         data = {
             "monthTable": monthTable,
@@ -7408,14 +7468,15 @@ def Summary3(request):
                          "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
                                                                   Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
                              Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
-                         Per.PositionNow, Positions_SearchYear),
+                             Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
                          "DepartureReasons": Per.Whereabouts,
-                         "QuitReason": Per.QuitReason,}
+                         "QuitReason": Per.QuitReason, }
                     )
             else:
-                for Per in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).order_by("-QuitDate"):
+                for Per in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).order_by(
+                        "-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
                     Positions_SearchYear = Per.QuitDate.strftime('%Y')
@@ -7429,11 +7490,11 @@ def Summary3(request):
                          "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
                                                                   Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
                              Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
-                         Per.PositionNow, Positions_SearchYear),
+                             Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
                          "DepartureReasons": Per.Whereabouts,
-                         "QuitReason": Per.QuitReason,}
+                         "QuitReason": Per.QuitReason, }
                     )
 
             # 離職去向分析
@@ -7537,7 +7598,7 @@ def Summary3(request):
                 #     "3个月以下", "3个月~1年", "1~2年", "2~3年", "3~5年", "5~10年", "10~15年", "15~20年", "20年以上"
                 # ]
                 titleSeniorityData = ['20年以上', "15~20年", '10~15年', '5~10年', '3~5年', '2~3年', '1~2年', '3个月~1年',
-                                    '3个月以下', ]
+                                      '3个月以下', ]
                 for j in titleDiagram2Data_Position:
                     titleTable1_dict = {}
                     number025 = 0
@@ -8233,15 +8294,15 @@ def Summary3(request):
                 #                                                             "Major").distinct().count(),
                 #       MajorIfo.objects.all().values("Education", "Major").count())
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values(
-                                                                               "Major").distinct().order_by(
+                        "Major").distinct().order_by(
                     "Major"):
                     # if i["Education"] == "本科":
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -8280,9 +8341,9 @@ def Summary3(request):
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -8310,10 +8371,10 @@ def Summary3(request):
                         #     professionTableData["professionSummary"] = professionSummary
                         #     TBCnum.append(professionTableData)
             if MajorIfo.objects.filter(
-                                       Major="TBC").first():
+                    Major="TBC").first():
                 professionTableData_TBC = {
                     "daLei": MajorIfo.objects.filter(
-                                                     Major="TBC").first().Categories,
+                        Major="TBC").first().Categories,
                     "Profession": "TBC",
                 }
                 # print(TBCnum)
@@ -8367,7 +8428,7 @@ def Summary3(request):
                         'type': 'bar',
                         'data': CustomerCategorytotallist  # 對應学科类别
                     }
-                    )
+                )
 
             # 地區
             if not YearSearch or YearSearch == YearNow:
@@ -8422,14 +8483,15 @@ def Summary3(request):
                 if PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
                         "QuitDate"):
                     Search_start = \
-                    PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
-                        "QuitDate").first()["QuitDate"].strftime("%Y-%m-%d")
+                        PersonalInfoHisByYear.objects.exclude(QuitDate=None).values("QuitDate").distinct().order_by(
+                            "QuitDate").first()["QuitDate"].strftime("%Y-%m-%d")
                 Search_Endperiod = [Search_start, datetime.datetime.now().strftime("%Y-%m-%d")]
             # print(Search_Endperiod)
 
             # 离职人员信息
             if not YearSearch or YearSearch == YearNow:
-                for Per in PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod).order_by("-QuitDate"):
+                for Per in PersonalInfo.objects.filter(Status__in=["離職"], QuitDate__range=Search_Endperiod).order_by(
+                        "-QuitDate"):
                     Seniority = round(
                         float(str((Per.QuitDate - Per.RegistrationDate)).split(' ')[0]) / 365, 1)
                     Positions_SearchYear = Per.QuitDate.strftime('%Y')
@@ -8442,7 +8504,7 @@ def Summary3(request):
                          "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
                                                                   Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
                              Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
-                         Per.PositionNow, Positions_SearchYear),
+                             Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
                          "DepartureReasons": Per.Whereabouts,
@@ -8465,11 +8527,11 @@ def Summary3(request):
                          "CurrentTitle": Positions.objects.filter(Item=Per.PositionNow,
                                                                   Year=Positions_SearchYear).first().Positions_Name if Positions.objects.filter(
                              Item=Per.PositionNow, Year=Positions_SearchYear) else "项次：%s 沒有%s年對應的職稱信息" % (
-                         Per.PositionNow, Positions_SearchYear),
+                             Per.PositionNow, Positions_SearchYear),
                          "DepartureDate": Per.QuitDate.strftime('%Y-%m-%d'),
                          # "LastPerformance": "B",
                          "DepartureReasons": Per.Whereabouts,
-                         "QuitReason": Per.QuitReason,}
+                         "QuitReason": Per.QuitReason, }
                     )
             # print(perinTable)
 
@@ -8894,14 +8956,14 @@ def Summary3(request):
                 selectItem_seniorityTable = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     selectItem_seniorityTable.append(i["Customer"])
                 seniorityTable1_Positioncode = []
                 seniorityTable1_Position = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "PositionNow").distinct().order_by(
-                        "PositionNow"):
+                    "PositionNow"):
                     # selectItem.append(i["Customer"])#前端是用的同一个
                     seniorityTable1_Positioncode.append(i["PositionNow"])
                     seniorityTable1_Position.append(
@@ -9075,10 +9137,10 @@ def Summary3(request):
             else:
                 if PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
                                                         QuitDate__range=Search_Endperiod).values(
-                        "QuitReason").distinct():
+                    "QuitReason").distinct():
                     for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"],
                                                                   QuitDate__range=Search_Endperiod).values(
-                            "QuitReason").distinct().order_by("QuitReason"):
+                        "QuitReason").distinct().order_by("QuitReason"):
                         reasonTable_dict = {"reason": i["QuitReason"]}
                         reasonsSummary = 0
                         reasonTable_dict['reasonSummary'] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
@@ -9133,12 +9195,12 @@ def Summary3(request):
                 educationSummary_Total = 0
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Education").distinct().order_by(
-                        "Education"):
+                    "Education"):
                     educationTable_dict = {"Education": i["Education"]}
                     educationSummary = 0
                     for j in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                             "Customer").distinct().order_by(
-                            "Customer"):
+                        "Customer"):
                         educationTable_dict[j["Customer"]] = PersonalInfoHisByYear.objects.filter(Year=YearSearch,
                                                                                                   Status__in=["離職"],
                                                                                                   Education=i[
@@ -9279,15 +9341,15 @@ def Summary3(request):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
                 for i in PersonalInfo.objects.filter(Status__in=["離職"]).values(
-                                                                               "Major").distinct().order_by(
-                        "Major"):
+                        "Major").distinct().order_by(
+                    "Major"):
                     # if i["Education"] == "本科":
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -9318,7 +9380,7 @@ def Summary3(request):
                 Customer_major = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
                         "Customer").distinct().order_by(
-                        "Customer"):
+                    "Customer"):
                     Customer_major.append(i["Customer"])
                 TBCnum = []
                 for i in PersonalInfoHisByYear.objects.filter(Year=YearSearch, Status__in=["離職"]).values(
@@ -9327,9 +9389,9 @@ def Summary3(request):
                     if MajorIfo.objects.filter(Major=i["Major"]).first():
                         professionTableData = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major=i["Major"]).first().Categories,
+                                Major=i["Major"]).first().Categories,
                             "Profession": MajorIfo.objects.filter(
-                                                                  Major=i["Major"]).first().Major,
+                                Major=i["Major"]).first().Major,
                         }
                         professionSummary = 0
                         for j in Customer_major:
@@ -9358,10 +9420,10 @@ def Summary3(request):
                         #     professionTableData["professionSummary"] = professionSummary
                         #     TBCnum.append(professionTableData)
                     if MajorIfo.objects.filter(
-                                               Major="TBC").first():
+                            Major="TBC").first():
                         professionTableData_TBC = {
                             "daLei": MajorIfo.objects.filter(
-                                                             Major="TBC").first().Categories,
+                                Major="TBC").first().Categories,
                             "Profession": "TBC",
                         }
                         # print(TBCnum)
@@ -9731,16 +9793,20 @@ def Summary3(request):
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'PersonalInfo/Summary3.html', locals())
 
+
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from .authentication import MyJWTAuthentication
 from .permissions import MyPermission
 from .serializers import PersonalInfoserilizer
+
+
 class PerSeriView(APIView):
     authentication_classes = [MyJWTAuthentication, SessionAuthentication, BasicAuthentication]
     # authentication_classes = [MyAuth]	# 局部认证(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
     permission_classes = [MyPermission]  # 局部配置(全局在setting里面设置),不写默认用全局（全局需要用DRF写用户的注册登陆接口，可以另外创建一个用于DRF的用户module）
+
     # 所有用户都可以访问
     # def get(self, request, *args, **kwargs):
     #     return APIResponse(0, '自定义读 OK')
@@ -9769,6 +9835,7 @@ class PerSeriView(APIView):
         jsondata = JSONRenderer().render(ser.data)
         return HttpResponse(jsondata, content_type='application/json', status=200)
         # return Response('测试认证组件')
+
 
 @csrf_exempt
 def PublicArea(request):
@@ -10061,6 +10128,7 @@ def PublicArea(request):
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'PublicArea/PublicArea_Edit.html', locals())
+
 
 @csrf_exempt
 def codeareacheck(code):
@@ -13282,4 +13350,3 @@ def codeareadata():
             pass
         else:
             local_identity.objects.create(**updatadic)
-

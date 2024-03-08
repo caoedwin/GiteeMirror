@@ -17,20 +17,20 @@ def init_permission(request, user_obj):
     for item in permission_item_list:
         permission_url_list.append(item['perms__url'])
     #显示全部菜单第一步：permission_menu_list统计成所有菜单。
-        # if item['perms__menu_id']:
-        #     temp = {"title": item['perms__Menu_title'],
-        #             "url": item["perms__url"],
-        #             "menu_id": item["perms__menu_id"]}
-        #     permission_menu_list.append(temp)
-    for item in UserInfo.objects.filter(account="C1010S3").first().role.values('perms__url',
-                                                 'perms__Menu_title',
-                                                 'perms__menu_id').distinct():
         if item['perms__menu_id']:
             temp = {"title": item['perms__Menu_title'],
                     "url": item["perms__url"],
                     "menu_id": item["perms__menu_id"]}
-            # print(item["perms__menu_id"])
             permission_menu_list.append(temp)
+    # for item in UserInfo.objects.filter(account="C1010S3").first().role.values('perms__url',
+    #                                              'perms__Menu_title',
+    #                                              'perms__menu_id').distinct():
+    #     if item['perms__menu_id']:
+    #         temp = {"title": item['perms__Menu_title'],
+    #                 "url": item["perms__url"],
+    #                 "menu_id": item["perms__menu_id"]}
+    #         # print(item["perms__menu_id"])
+    #         permission_menu_list.append(temp)
 
     for item in user_obj.role.values('perms__url',
                                                  'perms__Menu_title',

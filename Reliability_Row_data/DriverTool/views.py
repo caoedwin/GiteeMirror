@@ -1,18 +1,19 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-import datetime,os
+import datetime, os
 
 from .forms import DriverList
 from .forms import ToolList
-from .models import DriverList_M,ToolList_M
+from .models import DriverList_M, ToolList_M
 from CQM.models import CQMProject
 from app01.models import ProjectinfoinDCT, UserInfo
 from LessonProjectME.models import TestProjectLL
 # from .models import DriverList_M
 # from .models import ToolList_M
 from django.http import HttpResponse
-import datetime,json,simplejson,requests,time
+import datetime, json, simplejson, requests, time
 from requests_ntlm import HttpNtlmAuth
+
 
 # Create your views here.
 @csrf_exempt
@@ -23,13 +24,15 @@ def DriverList_upload(request):
     # print(Skin)
     if not Skin:
         Skin = "/static/src/blue.jpg"
-        weizhi="XQM/DriverList_upload"
+        weizhi = "XQM/DriverList_upload"
     DriverList_M_lists = DriverList(request.POST)
-    result='00'
-    Existlist=[{'Customer': 'Customer', 'Project': 'Project','Phase0': 'Phase', 'Name': 'Driver/Utility/Firmware/Application Name',
-                     'Function': 'Function', 'Vendor': 'Vendor', 'Version': 'Version', 'Bios': 'Bios', 'Image': 'Image', 'Driver': 'Driver'}]
-    DriverList_M_dic={}
-    result=4
+    result = '00'
+    Existlist = [{'Customer': 'Customer', 'Project': 'Project', 'Phase0': 'Phase',
+                  'Name': 'Driver/Utility/Firmware/Application Name',
+                  'Function': 'Function', 'Vendor': 'Vendor', 'Version': 'Version', 'Bios': 'Bios', 'Image': 'Image',
+                  'Driver': 'Driver'}]
+    DriverList_M_dic = {}
+    result = 4
 
     if request.method == "POST":
         if 'type' in request.POST:
@@ -61,7 +64,7 @@ def DriverList_upload(request):
                 else:
                     Function = ''
                 if 'Vendor' in i.keys():
-                    Vendor=i['Vendor']
+                    Vendor = i['Vendor']
                 else:
                     Vendor = ''
                 if 'Version' in i.keys():
@@ -82,23 +85,24 @@ def DriverList_upload(request):
                     Driver = ''
                 # print(len(Version))
                 # print(Driver)
-                check_dic = {'Customer': Customer, 'Project':Project,'Phase0':Phase0, 'Name': Name,
-                     'Function': Function, 'Vendor': Vendor, 'Version':Version, 'BIOS': Bios, 'Image': Image,'Driver': Driver}
+                check_dic = {'Customer': Customer, 'Project': Project, 'Phase0': Phase0, 'Name': Name,
+                             'Function': Function, 'Vendor': Vendor, 'Version': Version, 'BIOS': Bios, 'Image': Image,
+                             'Driver': Driver}
                 check_list = DriverList_M.objects.filter(**check_dic)
                 if check_list:
-                   err_ok=1
-                   DriverList_M_dic['Customer']=Customer
-                   DriverList_M_dic['Project'] = Project
-                   DriverList_M_dic['Phase0'] = Phase0
-                   DriverList_M_dic['Name'] = Name
-                   DriverList_M_dic['Function'] = Function
-                   DriverList_M_dic['Vendor'] = Vendor
-                   DriverList_M_dic['Version'] = Version
-                   DriverList_M_dic['BIOS'] = Bios
-                   DriverList_M_dic['Image'] = Image
-                   DriverList_M_dic['Driver'] = Driver
-                   Existlist.append(DriverList_M_dic)
-                   continue
+                    err_ok = 1
+                    DriverList_M_dic['Customer'] = Customer
+                    DriverList_M_dic['Project'] = Project
+                    DriverList_M_dic['Phase0'] = Phase0
+                    DriverList_M_dic['Name'] = Name
+                    DriverList_M_dic['Function'] = Function
+                    DriverList_M_dic['Vendor'] = Vendor
+                    DriverList_M_dic['Version'] = Version
+                    DriverList_M_dic['BIOS'] = Bios
+                    DriverList_M_dic['Image'] = Image
+                    DriverList_M_dic['Driver'] = Driver
+                    Existlist.append(DriverList_M_dic)
+                    continue
                 else:
                     DriverList_Mmodule = DriverList_M()
                     DriverList_Mmodule.Customer = Customer
@@ -115,8 +119,8 @@ def DriverList_upload(request):
                     DriverList_Mmodule.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     DriverList_Mmodule.save()
             datajason = {
-            'err_ok': err_ok,
-            'content': Existlist
+                'err_ok': err_ok,
+                'content': Existlist
             }
             # print(datajason)
             return HttpResponse(json.dumps(datajason), content_type="application/json")
@@ -133,8 +137,9 @@ def DriverList_upload(request):
                 Image = DriverList_M_lists.cleaned_data['Image']
                 Driver = DriverList_M_lists.cleaned_data['Driver']
 
-                check_dic = {'Customer': Customer, 'Project': Project, 'Phase0': Phase0,'Name': Name, 'Function': Function,
-                            'Vendor': Vendor, 'Version': Version, 'BIOS': Bios, 'Image': Image, 'Driver': Driver}
+                check_dic = {'Customer': Customer, 'Project': Project, 'Phase0': Phase0, 'Name': Name,
+                             'Function': Function,
+                             'Vendor': Vendor, 'Version': Version, 'BIOS': Bios, 'Image': Image, 'Driver': Driver}
                 if DriverList_M.objects.filter(**check_dic):
                     result = 1
                 else:
@@ -157,7 +162,9 @@ def DriverList_upload(request):
                 cleanData = DriverList_M_lists.errors
         DriverList_M_lists = DriverList()
         return render(request, 'DriverTool/DriverList_upload.html', locals())
-    return render(request, 'DriverTool/DriverList_upload.html',locals())
+    return render(request, 'DriverTool/DriverList_upload.html', locals())
+
+
 @csrf_exempt
 def DriverList_edit(request):
     if not request.session.get('is_login', None):
@@ -166,7 +173,7 @@ def DriverList_edit(request):
     # print(Skin)
     if not Skin:
         Skin = "/static/src/blue.jpg"
-    weizhi="XQM/DriverList_edit"
+    weizhi = "XQM/DriverList_edit"
     # status='0'
     mock_data = [
         # {'id': 1, "Name": "Intel Serial I/O driver", "Function": "I/O", "Vendor": "Intel","Version": "Inbox","Project": "EL451_S540-14IWL", "Driver": "V1.11", "Image": "v25 GML"},
@@ -205,20 +212,19 @@ def DriverList_edit(request):
     canEdit = 0
 
     for i in DriverList_M.objects.all().values('Customer').distinct().order_by('Customer'):
-        Customerlist=[]
+        Customerlist = []
         # print(type(i))
         for j in DriverList_M.objects.filter(Customer=i['Customer']).values('Project').distinct().order_by('Project'):
             Projectlist = {}
 
-            dic={'Customer':i['Customer'],'Project':j['Project']}
-            Phaselist=[]
+            dic = {'Customer': i['Customer'], 'Project': j['Project']}
+            Phaselist = []
             for l in DriverList_M.objects.filter(**dic).values('Phase0').distinct().order_by('Phase0'):
                 Phaselist.append(l['Phase0'])
-            Projectlist['Project']=j["Project"]
-            Projectlist['Phase0']=Phaselist
+            Projectlist['Project'] = j["Project"]
+            Projectlist['Phase0'] = Phaselist
             Customerlist.append(Projectlist)
-        selectItem[i['Customer']]=Customerlist
-
+        selectItem[i['Customer']] = Customerlist
 
     if request.method == "POST":
 
@@ -232,21 +238,22 @@ def DriverList_edit(request):
         # test = request.POST
         # for i in test:
         #     print(test[i])
-        if request.POST.get('isGetData')=='PHASE':
-            dic_phase={'Customer':request.POST.get('Customer'),'Project':request.POST.get('Project'),'Phase0':request.POST.get('Phase')}
+        if request.POST.get('isGetData') == 'PHASE':
+            dic_phase = {'Customer': request.POST.get('Customer'), 'Project': request.POST.get('Project'),
+                         'Phase0': request.POST.get('Phase')}
             # print(dic_phase)
             for i in DriverList_M.objects.filter(**dic_phase).values('Driver').distinct().order_by('Driver'):
                 # print(i)
-                dr.append({'Driver' : i['Driver']})
+                dr.append({'Driver': i['Driver']})
             for i in DriverList_M.objects.filter(**dic_phase).values('Image').distinct().order_by('Image'):
                 # print(i)
-                image.append({'Image' : i['Image']})
+                image.append({'Image': i['Image']})
         if request.POST.get('isGetData') == 'SEARCH':
-            Customer= request.POST.get('Customer')
-            Project=request.POST.get('Project')
-            Phase=request.POST.get('Phase')
-            Driver=request.POST.get('Driver')
-            Image=request.POST.get('Image')
+            Customer = request.POST.get('Customer')
+            Project = request.POST.get('Project')
+            Phase = request.POST.get('Phase')
+            Driver = request.POST.get('Driver')
+            Image = request.POST.get('Image')
             check_Owner_dic = {"Customer": Customer, "Project": Project}
             Projectinfo_CQM = CQMProject.objects.filter(**check_Owner_dic)
             Projectinfo_LL = TestProjectLL.objects.filter(**check_Owner_dic)
@@ -267,27 +274,28 @@ def DriverList_edit(request):
                         if k.username == current_user:
                             canEdit = 1
                             break
-            dic={}
+            dic = {}
             if Customer:
-                dic['Customer']=Customer
+                dic['Customer'] = Customer
             if Project:
-                dic['Project']=Project
+                dic['Project'] = Project
             if Phase:
-                dic['Phase0']=Phase
+                dic['Phase0'] = Phase
             if Driver:
-                dic['Driver']=Driver
+                dic['Driver'] = Driver
                 # print(Driver,len(Driver))
             if Image:
-                dic['Image']=Image
+                dic['Image'] = Image
             for i in DriverList_M.objects.filter(**dic):
-                mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor":i.Vendor,
-                                  "Version": i.Version,"Project":i.Project, "Bios": i.BIOS, "Driver": i.Driver, "Image": i.Image,'Customer':i.Customer,'Phase':i.Phase0,})
+                mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor": i.Vendor,
+                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver,
+                                  "Image": i.Image, 'Customer': i.Customer, 'Phase': i.Phase0, })
 
         if request.POST.get('isGetData') == 'SAVE':
             # print(request.POST)
-            id=request.POST.get('rows[id]')
-            DriverList_Mmodule=DriverList_M.objects.get(id=id)
-            DriverList_Mmodule.Customer=request.POST.get('rows[Customer]')
+            id = request.POST.get('rows[id]')
+            DriverList_Mmodule = DriverList_M.objects.get(id=id)
+            DriverList_Mmodule.Customer = request.POST.get('rows[Customer]')
             DriverList_Mmodule.Project = request.POST.get('rows[Project]')
             DriverList_Mmodule.Phase0 = request.POST.get('rows[Phase]')
             DriverList_Mmodule.Name = request.POST.get('rows[Name]')
@@ -319,7 +327,8 @@ def DriverList_edit(request):
                 dic['Image'] = Image
             for i in DriverList_M.objects.filter(**dic):
                 mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor": i.Vendor,
-                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver, "Image": i.Image,
+                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver,
+                                  "Image": i.Image,
                                   'Customer': i.Customer, 'Phase': i.Phase0, })
         if request.POST.get('isGetData') == 'DELETE':
             # print(request.POST)
@@ -344,7 +353,8 @@ def DriverList_edit(request):
                 dic['Image'] = Image
             for i in DriverList_M.objects.filter(**dic):
                 mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor": i.Vendor,
-                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver, "Image": i.Image,
+                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver,
+                                  "Image": i.Image,
                                   'Customer': i.Customer, 'Phase': i.Phase0, })
         if 'MUTICANCEL' in str(request.body):
             responseData = json.loads(request.body)
@@ -371,7 +381,8 @@ def DriverList_edit(request):
             # print(dic)
             for i in DriverList_M.objects.filter(**dic):
                 mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor": i.Vendor,
-                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver, "Image": i.Image,
+                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver,
+                                  "Image": i.Image,
                                   'Customer': i.Customer, 'Phase': i.Phase0, })
             # status='1'
         data = {
@@ -396,7 +407,7 @@ def DriverList_search(request):
     # print(Skin)
     if not Skin:
         Skin = "/static/src/blue.jpg"
-    weizhi="XQM/DriverList_search"
+    weizhi = "XQM/DriverList_search"
 
     mock_data = [
         # {"Name": "Intel Serial I/O driver", "Function": "I/O", "Vendor": "Intel", "Version": "Inbox","Project": "EL451_S540-14IWL", "Driver": "v1.11", "Image": "v25 GM1"},
@@ -415,27 +426,27 @@ def DriverList_search(request):
         #           "Other":[{"Project":"ELMV2", "Phase0":["B(FVT)","C(SIT)","INV"]},{"Project":"ELMV3","Phase0":["B(FVT)","C(SIT)","INV"]}, {"Project":"ELMV4","Phase0":["B(FVT)","C(SIT)","INV"]}]
     }
     sear = []
-    #dr=[{"Driver":"v0.8"},{"Driver":"v1.0"},{"Driver":"v1.11"}],
-    dr=[
+    # dr=[{"Driver":"v0.8"},{"Driver":"v1.0"},{"Driver":"v1.11"}],
+    dr = [
         # {"Driver":"v0.8"},{"Driver":"v1.0"},{"Driver":"v1.11"}
     ]
-    image=[
+    image = [
         # {"Image":"v24.1 GMl"},{"Image":"v22.0 GMl"}
     ]
     for i in DriverList_M.objects.all().values('Customer').distinct().order_by('Customer'):
-        Customerlist=[]
+        Customerlist = []
         # print(type(i))
         for j in DriverList_M.objects.filter(Customer=i['Customer']).values('Project').distinct().order_by('Project'):
             Projectlist = {}
 
-            dic={'Customer':i['Customer'],'Project':j['Project']}
-            Phaselist=[]
+            dic = {'Customer': i['Customer'], 'Project': j['Project']}
+            Phaselist = []
             for l in DriverList_M.objects.filter(**dic).values('Phase0').distinct().order_by('Phase0'):
                 Phaselist.append(l['Phase0'])
-            Projectlist['Project']=j["Project"]
-            Projectlist['Phase0']=Phaselist
+            Projectlist['Project'] = j["Project"]
+            Projectlist['Phase0'] = Phaselist
             Customerlist.append(Projectlist)
-        selectItem[i['Customer']]=Customerlist
+        selectItem[i['Customer']] = Customerlist
     canExport = 0
     roles = []
     onlineuser = request.session.get('account')
@@ -463,7 +474,8 @@ def DriverList_search(request):
             Customer = request.POST.get('Customer')
             Prolist = []
             if Customer:
-                for i in DriverList_M.objects.filter(Customer=Customer).values("Project").distinct().order_by("Project"):
+                for i in DriverList_M.objects.filter(Customer=Customer).values("Project").distinct().order_by(
+                        "Project"):
                     Prolist.append(i["Project"])
             else:
                 for i in DriverList_M.objects.all().values("Project").distinct().order_by("Project"):
@@ -525,7 +537,8 @@ def DriverList_search(request):
                 dic['Image'] = Image
             for i in DriverList_M.objects.filter(**dic):
                 mock_data.append({'id': i.id, "Name": i.Name, "Function0": i.Function, "Vendor": i.Vendor,
-                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver, "Image": i.Image,
+                                  "Version": i.Version, "Project": i.Project, "Bios": i.BIOS, "Driver": i.Driver,
+                                  "Image": i.Image,
                                   'Customer': i.Customer, 'Phase': i.Phase0, })
         # if request.POST.get('isGetData') == 'SEARCH':
         #     Customer = request.POST.get('Customer')
@@ -549,20 +562,20 @@ def DriverList_search(request):
         #                           "Version": i.Version, "Project": i.Project, "Driver": i.Driver, "Image": i.Image,
         #                           'Customer': i.Customer, 'Phase': i.Phase0, })
 
-
         data = {
             "err_ok": "0",
             "content": mock_data,
             "select": selectItem,
-            #"select0":selectList,
+            # "select0":selectList,
             "sear": sear,
-            "selectedDriver":dr,
-            "selectedImage":image,
+            "selectedDriver": dr,
+            "selectedImage": image,
             'canExport': canExport,
         }
         return HttpResponse(json.dumps(data), content_type="application/json")
 
     return render(request, 'DriverTool/DriverList_search.html', locals())
+
 
 @csrf_exempt
 def ToolList_upload(request):
@@ -575,8 +588,8 @@ def ToolList_upload(request):
     weizhi = "XQM/ToolList_upload"
     ToolList_upload = ToolList(request.POST)
     ToolList_M_lists = [{'Customer': 'Customer', 'Project': 'Project',
-                     'Phase0': 'Phase', 'Vendor': 'Vendor', 'Version': 'Version',
-                     'ToolName': 'ToolName', 'TestCase': 'TestCase'}]
+                         'Phase0': 'Phase', 'Vendor': 'Vendor', 'Version': 'Version',
+                         'ToolName': 'ToolName', 'TestCase': 'TestCase'}]
     result = '00'
     ToolList_M_dic = {}
     result = 4
@@ -589,25 +602,25 @@ def ToolList_upload(request):
             for i in simplejson.loads(xlsxlist):
                 n += 1
                 if 'Customer' in i.keys():
-                    Customer=i['Customer']
+                    Customer = i['Customer']
                 else:
-                    Customer=''
+                    Customer = ''
                 if 'Project' in i.keys():
-                    Project=i['Project']
+                    Project = i['Project']
                 else:
-                    Project=''
+                    Project = ''
                 if 'Phase' in i.keys():
-                    Phase0=i['Phase']
+                    Phase0 = i['Phase']
                 else:
-                    Phase0=''
+                    Phase0 = ''
                 if 'Vendor' in i.keys():
-                    Vendor=i['Vendor']
+                    Vendor = i['Vendor']
                 else:
-                    Vendor=''
+                    Vendor = ''
                 if 'Version' in i.keys():
-                    Version=i['Version']
+                    Version = i['Version']
                 else:
-                    Version=''
+                    Version = ''
                 if 'ToolName' in i.keys():
                     ToolName = i['ToolName']
                 else:
@@ -658,10 +671,10 @@ def ToolList_upload(request):
                 Version = ToolList_upload.cleaned_data['Version']
                 ToolName = ToolList_upload.cleaned_data['ToolName']
                 TestCase = ToolList_upload.cleaned_data['TestCase']
-                check_dic={'Customer':Customer,'Project':Project,'Phase0':Phase0,'Vendor':Vendor,
-                           'Version':Version,'ToolName':ToolName,'TestCase':TestCase}
+                check_dic = {'Customer': Customer, 'Project': Project, 'Phase0': Phase0, 'Vendor': Vendor,
+                             'Version': Version, 'ToolName': ToolName, 'TestCase': TestCase}
                 if ToolList_M.objects.filter(**check_dic):
-                    result=1
+                    result = 1
                 else:
                     ToolList_Mmodule = ToolList_M()
                     ToolList_Mmodule.Customer = Customer
@@ -677,14 +690,15 @@ def ToolList_upload(request):
                     message_CDM = "Upload Successfully"
                     result = 0
                 return render(request, 'DriverTool/ToolList_upload.html',
-                                  {'weizhi': weizhi, 'Skin': Skin, 'ToolList_upload':ToolList(),
-                                   'result': result})
+                              {'weizhi': weizhi, 'Skin': Skin, 'ToolList_upload': ToolList(),
+                               'result': result})
             else:
                 cleanData = ToolList_upload.errors
         return render(request, 'DriverTool/ToolList_upload.html',
                       {'weizhi': weizhi, 'Skin': Skin, 'ToolList_upload': ToolList(), 'result': result})
 
     return render(request, 'DriverTool/ToolList_upload.html', locals())
+
 
 @csrf_exempt
 def ToolList_edit(request):
@@ -695,7 +709,7 @@ def ToolList_edit(request):
     if not Skin:
         Skin = "/static/src/blue.jpg"
     weizhi = "Reliability Test Data/ToolList_edit"
-    mock_data=[
+    mock_data = [
         # {'id':1,"ToolName":"STPM","TestCase":"Stress","Vendor":"Compal initernal","Project":"EL451_S540-14IWL","Version":"V2.5.0.0"},
         #        {'id':2,"ToolName": "3DMark11", "TestCase": "Stress", "Vendor": "FutureMark", "Project": "EL451_S540-14IWL", "Version": "v1.0.132"},
         #        {'id':3,"ToolName": "3DMark", "TestCase": "Stress Performance", "Vendor": "FutureMark", "Project": "EL451_S540-14IWL", "Version": "v2.8.6546"},
@@ -725,25 +739,25 @@ def ToolList_edit(request):
     }
     canEdit = 0
     for i in ToolList_M.objects.all().values('Customer').distinct().order_by('Customer'):
-        Customerlist=[]
+        Customerlist = []
         # print(type(i))
         for j in ToolList_M.objects.filter(Customer=i['Customer']).values('Project').distinct().order_by('Project'):
             Projectlist = {}
 
-            dic={'Customer':i['Customer'],'Project':j['Project']}
-            Phaselist=[]
+            dic = {'Customer': i['Customer'], 'Project': j['Project']}
+            Phaselist = []
             for l in ToolList_M.objects.filter(**dic).values('Phase0').distinct().order_by('Phase0'):
                 Phaselist.append(l['Phase0'])
-            Projectlist['Project']=j["Project"]
-            Projectlist['Phase0']=Phaselist
+            Projectlist['Project'] = j["Project"]
+            Projectlist['Phase0'] = Phaselist
             Customerlist.append(Projectlist)
-        selectItem[i['Customer']]=Customerlist
+        selectItem[i['Customer']] = Customerlist
     if request.method == "POST":
         # print (request.POST,request.method)
-        if request.POST.get('isGetData')=='SEARCH':
-            Customer=request.POST.get('Customer')
-            Project=request.POST.get('Project')
-            Phase=request.POST.get('Phase')
+        if request.POST.get('isGetData') == 'SEARCH':
+            Customer = request.POST.get('Customer')
+            Project = request.POST.get('Project')
+            Phase = request.POST.get('Phase')
             check_Owner_dic = {"Customer": Customer, "Project": Project}
             Projectinfo_CQM = CQMProject.objects.filter(**check_Owner_dic)
             Projectinfo_LL = TestProjectLL.objects.filter(**check_Owner_dic)
@@ -773,12 +787,13 @@ def ToolList_edit(request):
             if Phase:
                 dic['Phase0'] = Phase
             for i in ToolList_M.objects.filter(**dic):
-                mock_data.append({'id':i.id,'ToolName':i.ToolName,'TestCase':i.TestCase,'Vendor':i.Vendor,
-                                  'Project':i.Project,'Version':i.Version,'Customer':i.Customer,'Phase':i.Phase0})
-        if request.POST.get('isGetData')=='SAVE':
+                mock_data.append({'id': i.id, 'ToolName': i.ToolName, 'TestCase': i.TestCase, 'Vendor': i.Vendor,
+                                  'Project': i.Project, 'Version': i.Version, 'Customer': i.Customer,
+                                  'Phase': i.Phase0})
+        if request.POST.get('isGetData') == 'SAVE':
             # print(request.POST)
-            id=request.POST.get('rows[id]')
-            editdata=ToolList_M.objects.get(id=id)
+            id = request.POST.get('rows[id]')
+            editdata = ToolList_M.objects.get(id=id)
             # editdata.Customer=request.POST.get('row[Customer]')
             editdata.Project = request.POST.get('rows[Project]')
             editdata.Phase0 = request.POST.get('rows[Phase]')
@@ -801,10 +816,10 @@ def ToolList_edit(request):
             if Phase:
                 dic['Phase0'] = Phase
             for i in ToolList_M.objects.filter(**dic):
-                mock_data.append({'id':i.id,'ToolName': i.ToolName, 'TestCase': i.TestCase, 'Vendor': i.Vendor,
+                mock_data.append({'id': i.id, 'ToolName': i.ToolName, 'TestCase': i.TestCase, 'Vendor': i.Vendor,
                                   'Project': i.Project, 'Version': i.Version, 'Customer': i.Customer,
                                   'Phase': i.Phase0})
-        if request.POST.get('isGetData')=="DELETE":
+        if request.POST.get('isGetData') == "DELETE":
             # print(request.POST)
             # print(request.POST.get('id'))
             ToolList_M.objects.get(id=request.POST.get('id')).delete()
@@ -845,13 +860,14 @@ def ToolList_edit(request):
 
         data = {
             "err_ok": "0",
-            "content":mock_data,
-            "select":selectItem,
+            "content": mock_data,
+            "select": selectItem,
             "canEdit": canEdit,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'DriverTool/ToolList_edit.html', locals())
+
 
 @csrf_exempt
 def ToolList_search(request):
@@ -874,23 +890,23 @@ def ToolList_search(request):
         #          {"ToolName": "EC Tool", "TestCase": "N/A", "Vendor": "", "Project": "EL451_S540-14IWL","Version": "v08.00e"}
     ]
     sear = []
-    selectItem={
+    selectItem = {
         # "C38(NB)":["EL531", "EL532", "EL533", "EL534"],"C38(AIO)":["FL535", "FL536", "FL537", "FL538"],"A39":["FL531", "FL532", "FL533", "FL534"],"Other":["ELMV2", "ELMV3", "ELMV4"]
-                }
+    }
     for i in ToolList_M.objects.all().values('Customer').distinct().order_by('Customer'):
-        Customerlist=[]
+        Customerlist = []
         # print(type(i))
         for j in ToolList_M.objects.filter(Customer=i['Customer']).values('Project').distinct().order_by('Project'):
             Projectlist = {}
 
-            dic={'Customer':i['Customer'],'Project':j['Project']}
-            Phaselist=[]
+            dic = {'Customer': i['Customer'], 'Project': j['Project']}
+            Phaselist = []
             for l in ToolList_M.objects.filter(**dic).values('Phase0').distinct().order_by('Phase0'):
                 Phaselist.append(l['Phase0'])
-            Projectlist['Project']=j["Project"]
-            Projectlist['Phase0']=Phaselist
+            Projectlist['Project'] = j["Project"]
+            Projectlist['Phase0'] = Phaselist
             Customerlist.append(Projectlist)
-        selectItem[i['Customer']]=Customerlist
+        selectItem[i['Customer']] = Customerlist
     canExport = 0
     roles = []
     onlineuser = request.session.get('account')
@@ -981,8 +997,8 @@ def ToolList_search(request):
         #                           'Project':i.Project,'Version':i.Version,'Customer':i.Customer,'Phase':i.Phase0})
         data = {
             "err_ok": "0",
-            "content":mock_data,
-            "select":selectItem,
+            "content": mock_data,
+            "select": selectItem,
             "sear": sear,
             'canExport': canExport,
         }

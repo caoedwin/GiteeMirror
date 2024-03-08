@@ -216,6 +216,7 @@ def UnitOTST_fun(UnitOTST_dict):
         if n % 50000 == 0:  # 50000写一次并清空列表
             try:
                 with transaction.atomic():
+                    # 批量增加
                     UnitInDQA_Tum.objects.bulk_create(update_list)
                     update_list = []
             except Exception as e:

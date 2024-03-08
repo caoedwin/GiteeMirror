@@ -1,0 +1,198 @@
+[2024-02-22 10:28:49,517] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 223, in IssuesBreakdown_edit
+    print(i.username,current_user)
+UnboundLocalError: local variable 'i' referenced before assignment
+[2024-02-22 10:28:49,523] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.18, 127.0.0.1:49967]
+[2024-02-22 10:33:37,121] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 236, in IssuesBreakdown_edit
+    CustomerSearch = responseData['Customer']
+KeyError: 'Customer'
+[2024-02-22 10:33:37,127] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.26, 127.0.0.1:50379]
+[2024-02-22 10:47:02,379] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 252, in IssuesBreakdown_edit
+    ProjectSearch = responseData['Project']
+KeyError: 'Project'
+[2024-02-22 10:47:02,382] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.06, 127.0.0.1:51844]
+[2024-02-22 11:56:27,162] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 281, in IssuesBreakdown_edit
+    modeldata[headermodel_IssuesBreakdown[key]] = value
+KeyError: 'FFRT_Entry_unclose_issue'
+[2024-02-22 11:56:27,168] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.22, 127.0.0.1:62764]
+[2024-02-22 12:57:35,887] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 405, in IssuesBreakdown_edit
+    print(create_list, err_msg)
+UnboundLocalError: local variable 'err_msg' referenced before assignment
+[2024-02-22 12:57:35,892] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.71, 127.0.0.1:62666]
+[2024-02-22 13:20:34,573] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 407, in IssuesBreakdown_edit
+    IssuesBreakdown.objects.bulk_create(create_list)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 455, in bulk_create
+    self._populate_pk_values(objs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 418, in _populate_pk_values
+    if obj.pk is None:
+AttributeError: 'dict' object has no attribute 'pk'
+[2024-02-22 13:20:34,583] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.25, 127.0.0.1:55334]
+[2024-02-22 13:32:17,479] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 408, in IssuesBreakdown_edit
+    IssuesBreakdown.objects.bulk_create(i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 455, in bulk_create
+    self._populate_pk_values(objs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 418, in _populate_pk_values
+    if obj.pk is None:
+AttributeError: 'str' object has no attribute 'pk'
+[2024-02-22 13:32:17,486] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.25, 127.0.0.1:63580]
+[2024-02-22 13:32:46,935] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 408, in IssuesBreakdown_edit
+    IssuesBreakdown.objects.create(i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: create() takes 1 positional argument but 2 were given
+[2024-02-22 13:32:46,949] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.42, 127.0.0.1:63621]
+[2024-02-22 13:33:27,462] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 409, in IssuesBreakdown_edit
+    IssuesBreakdown.objects.create(i)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: create() takes 1 positional argument but 2 were given
+[2024-02-22 13:33:27,468] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.25, 127.0.0.1:62889]
+[2024-02-22 13:58:59,880] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 267, in IssuesBreakdown_edit
+    CustomerSearch = responseData['Customer']
+KeyError: 'Customer'
+[2024-02-22 13:58:59,884] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.29, 127.0.0.1:52871]
+[2024-02-22 14:01:58,699] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /IssuesBreakdown/IssuesBreakdown_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\IssuesBreakdown\views.py", line 267, in IssuesBreakdown_edit
+    CustomerSearch = responseData['Customer']
+KeyError: 'Customer'
+[2024-02-22 14:01:58,705] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /IssuesBreakdown/IssuesBreakdown_edit/ 500 [0.15, 127.0.0.1:53268]
+[2024-02-22 14:02:16,718] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 1783, in PersonalInfo_edit
+    YearSearch = responseData['Year']
+KeyError: 'Year'
+[2024-02-22 14:02:16,724] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /PersonalInfo/PersonalInfo-edit/ 500 [0.11, 127.0.0.1:53276]
+[2024-02-22 14:03:52,187] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /PersonalInfo/PersonalInfo-edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\PersonalInfo\views.py", line 1783, in PersonalInfo_edit
+    YearSearch = responseData['Year']
+KeyError: 'Year'
+[2024-02-22 14:03:52,200] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /PersonalInfo/PersonalInfo-edit/ 500 [0.40, 127.0.0.1:63003]

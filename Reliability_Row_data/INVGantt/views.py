@@ -9,6 +9,17 @@ from CQM.models import CQMProject
 from django.db.models import Max,Min,Sum,Count,Q
 from django.db.models.functions import ExtractYear, ExtractMonth, TruncMonth
 # Create your views here.
+
+headermodel_INVGantt = {
+    'Customer': 'Customer', 'INV_Number': 'INV_Number', 'INV_Model': 'INV_Model', 'Project_Name': 'Project_Name', 'Unit_Origin': 'Unit_Origin',
+    'Unit_Qty': 'Unit_Qty', 'TP_Kinds': 'TP_Kinds', 'Qualify_Cycles': 'Qualify_Cycles',
+    'Status': 'Status', 'TP_Cat': 'TP_Cat', 'Trial_Run_Type': 'Trial_Run_Type', 'TP_Vendor': 'TP_Vendor', 'TP_Key_Parameter': 'TP_Key_Parameter',
+    'Lenovo_TP_PN': 'Lenovo_TP_PN', 'Compal_TP_PN': 'Compal_TP_PN', 'Issue_Link': 'Issue_Link', 'Remark': 'Remark', 'Attend_Time': 'Attend_Time',
+    'ReTest_Attend_Time': 'ReTest_Attend_Time',
+    'TestOwner': 'TestOwner', 'Year': 'Year', 'Month': 'Month', 'Test_Start': 'Test_Start',
+    'Test_End': 'Test_End',
+}
+
 @csrf_exempt
 def INVGantt_upload(request):
     if not request.session.get('is_login', None):
@@ -22,7 +33,7 @@ def INVGantt_upload(request):
     ]
     err_ok = 0  # excel上传1为重复
     err_msg = ''
-    canEdit = 0
+    canEdit = 1
     result = 0  # 为1 forms 上传重复
     INVGantt_F_list = INVGantt_F(request.POST)
     if request.method == 'POST':
@@ -260,8 +271,10 @@ def INVGantt_upload(request):
                             INVGantt.objects.filter(**Check_dic_Gantt).update(**Update_dic_Gantt)
                     else:
                         Create_dic_Gantt = {}
-                        for j in i.keys():
-                            Create_dic_Gantt[j] = i[j]
+                        for key, value in i.items():
+                            if key in headermodel_INVGantt.keys():
+                                # print(headermodel_IssuesBreakdown[key],value)
+                                Create_dic_Gantt[headermodel_INVGantt[key]] = value
                         Create_dic_Gantt['Editor'] = request.session.get('user_name')
                         Create_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         # print(Create_dic_Gantt)

@@ -467,7 +467,7 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
         fgColor="00FFFFFF",  # 前景色，16进制rgb
         bgColor="00FFFFFF",  # 背景色，16进制rgb
     )
-    print(save_data)
+
     for i in save_data:
         worksheet.cell(i["row"] + 2, i["lienum"] + 1).value = i["value"]
     # ws['A1'].alignment = Alignment(wrap_text=True)
@@ -475,7 +475,6 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
     for row in worksheet:
         cellnum = 0
         for cell in row:
-            # print(cell.value)
             if cell.value == "P":
                 cell.fill = fill_P
             elif cell.value == "B":
@@ -502,9 +501,7 @@ def save_exel(folder_path_Sys,save_data,upload_zhushi,upload_zhushi_delete,src_f
         else:
             worksheet[lie_num + hangnum].comment = None
     # 保存公式最好放在保存前最后一步
-    # print(excel_fx,'fx')
     for i in excel_fx:
-        # print(i)
         worksheet.cell(row=i[0], column=i[1], value=i[2])
     workbook.save(src_file)
     # print(src_file, folder_path_Sys)
@@ -749,7 +746,6 @@ def ABOTestPlan_edit(request):
                     folder_path_Sys = folder_path_Sys.replace("\\", "/").replace("//", "/")
                     # folder_path = settings.MEDIA_ROOT + '/ABOTestPlan/'  # 指定文件夹路径
                     shutil.copy(filepathsearch, folder_path_Sys)
-                    # print(folder_path_Sys)
                     if folder_path_Sys:
                         if os.path.exists(folder_path_Sys):
                             readdata = read_excel(folder_path_Sys)
@@ -759,7 +755,6 @@ def ABOTestPlan_edit(request):
                             showinfo = folder_path_Sys.replace(settings.MEDIA_ROOT.replace('\\', '/') + '/ABOTestPlanSys/', "")
                             request.session['sessionABOEdit'] = folder_path_Sys
                             request.session.set_expiry(12 * 60 * 60)
-                            # print(showinfo,1)
                 except Exception as e:
                     print(e)
                     errMsg = str(e)

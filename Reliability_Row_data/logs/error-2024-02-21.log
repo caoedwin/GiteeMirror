@@ -1,0 +1,288 @@
+[2024-02-21 11:47:18,837] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 946, in Lesson_edit
+    return render(request, 'Lesson_edit.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 259, in rbac_menu
+    menu_data = get_structure_data(request)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 90, in get_structure_data
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 90, in <lambda>
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+TypeError: unhashable type: 'slice'
+[2024-02-21 11:47:18,841] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /Lesson_edit/ 500 [0.25, 127.0.0.1:55309]
+[2024-02-21 11:47:19,078] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 259, in rbac_menu
+    menu_data = get_structure_data(request)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 90, in get_structure_data
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 90, in <lambda>
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+TypeError: unhashable type: 'slice'
+[2024-02-21 11:47:19,080] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /favicon.ico 500 [0.12, 127.0.0.1:55309]
+[2024-02-21 11:48:02,378] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /Lesson_edit/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\views.py", line 946, in Lesson_edit
+    return render(request, 'Lesson_edit.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_data = get_structure_data(request)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 91, in get_structure_data
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 91, in <lambda>
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+TypeError: unhashable type: 'slice'
+[2024-02-21 11:48:02,382] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /Lesson_edit/ 500 [0.23, 127.0.0.1:55389]
+[2024-02-21 11:48:02,629] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 14, in __call__
+    response = self.process_request(request)
+  File "C:\djangoproject\Reliability_Row_data\middleware\checkper.py", line 86, in process_request
+    return render(request, 'NoPerm.html', locals())
+  File "C:\Python372\mecheck\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Python372\mecheck\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 260, in rbac_menu
+    menu_data = get_structure_data(request)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 91, in get_structure_data
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+  File "C:\djangoproject\Reliability_Row_data\app01\templatetags\custom_tag.py", line 91, in <lambda>
+    menu_data.sort(key=lambda x: x[:2], reverse=True)
+TypeError: unhashable type: 'slice'
+[2024-02-21 11:48:02,631] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /favicon.ico 500 [0.13, 127.0.0.1:55389]
+[2024-02-21 14:01:44,078] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:01:44,081] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.16, 127.0.0.1:64989]
+[2024-02-21 14:01:46,217] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:01:46,220] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.08, 127.0.0.1:64989]
+[2024-02-21 14:04:58,581] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:04:58,587] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.14, 127.0.0.1:58461]
+[2024-02-21 14:06:05,653] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:06:05,659] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.14, 127.0.0.1:58585]
+[2024-02-21 14:11:26,159] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:11:26,162] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.09, 127.0.0.1:52069]
+[2024-02-21 14:11:28,485] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:11:28,489] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.08, 127.0.0.1:52069]
+[2024-02-21 14:15:29,518] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 788, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:15:29,524] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.17, 127.0.0.1:52707]
+[2024-02-21 14:23:21,261] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 788, in ABOLesson_project
+    for i in Projectinfos.ABOlessonlearn_Project_set.all():
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:23:21,263] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.10, 127.0.0.1:65489]
+[2024-02-21 14:24:06,545] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 787, in ABOLesson_project
+    print(Projectinfos.ABOlessonlearn_Project_set)
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:24:06,551] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.16, 127.0.0.1:50007]
+[2024-02-21 14:25:22,033] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ABOProjectLessonL/Lesson_ProjectResult/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ABOProjectLessonL\views.py", line 800, in ABOLesson_project
+    if Projectinfos.ABOlessonlearn_Project_set.filter(lesson__Category=Category):
+AttributeError: 'ABOTestProjectLL' object has no attribute 'ABOlessonlearn_Project_set'
+[2024-02-21 14:25:22,039] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /ABOProjectLessonL/Lesson_ProjectResult/?action=search&customer=T88(NB)&project=test1&Category=Compatibility&csrfmiddlewaretoken=HjxamwXfW7hQcrErYGLErFT3Lnc5jSzlSouoTFzvKok98DhY1JzYN1rNh6xHs668 500 [0.17, 127.0.0.1:50138]
