@@ -593,12 +593,21 @@ def IssuesBreakdown_Summary(request):
             Customer = request.POST.get('Customer')
             Projectcode = request.POST.get('Projectcode')
             # mock_data1
-            mock_data1.append({"id": 1, "Project": "LD", Projectcode: ProjectinfoinDCT.objects.filter(
-                ComPrjCode=Projectcode).first().LD if ProjectinfoinDCT.objects.filter(
-                ComPrjCode=Projectcode) else "DCT 没有该机种的ProjectInfo"})
-            mock_data1.append({"id": 2, "Project": "TL", Projectcode: ProjectinfoinDCT.objects.filter(
-                ComPrjCode=Projectcode).first().DQAPL if ProjectinfoinDCT.objects.filter(
-                ComPrjCode=Projectcode) else "DCT 没有该机种的ProjectInfo"})
+            LD_Character = "DCT 没有该机种的ProjectInfo"
+            TL_Character = "DCT 没有该机种的ProjectInfo"
+            if ProjectinfoinDCT.objects.filter(
+                    ComPrjCode=Projectcode):
+                LD_Character = ProjectinfoinDCT.objects.filter(
+                    ComPrjCode=Projectcode).first().LD
+                TL_Character = ProjectinfoinDCT.objects.filter(
+                    ComPrjCode=Projectcode).first().DQAPL
+            elif len(Projectcode) >= 5:
+                LD_Character = ProjectinfoinDCT.objects.filter(
+                    ComPrjCode=Projectcode[:5]).first().LD
+                TL_Character = ProjectinfoinDCT.objects.filter(
+                    ComPrjCode=Projectcode[:5]).first().DQAPL
+            mock_data1.append({"id": 1, "Project": "LD", Projectcode: LD_Character})
+            mock_data1.append({"id": 2, "Project": "TL", Projectcode: TL_Character})
             FFRT_Date = []
             # IssuesBreakdown.objects.all().values("first_FFRT").distinct()[0]前提是所有的first_FFRT等6个日期范围所有数据都一样
             if IssuesBreakdown.objects.all().values("first_FFRT").distinct():
@@ -654,8 +663,9 @@ def IssuesBreakdown_Summary(request):
             id_num = 1
             for i in FFRT_Date:
                 # print(i, i[1], type(i[1]))
-                start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0], "%Y-%m-%d")
-                end_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[1], "%Y-%m-%d")
+                start_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[0].replace('/', '-'),
+                                                        "%Y-%m-%d")
+                end_date = datetime.datetime.strptime(i[1].replace(" ", "").split("~")[1].replace('/', '-'), "%Y-%m-%d")
                 result = get_dates(start_date, end_date)
                 FFRTnum = i[0]
                 for j in result:
