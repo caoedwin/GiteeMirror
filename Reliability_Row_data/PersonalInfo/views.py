@@ -5535,7 +5535,10 @@ def Summary2(request):
                         everyzaizhi = monthSummaryValue
                         i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
                     elif i["Classify"] == "預算":
-                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                        if i["Customer"] == "合計":
+                            i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                        else:
+                            i["monthSummary"] = "%.0f" % (monthSummaryValue / 12)
             # monthDiagram1Data&monthDiagram2Data
             for i in monthTable:
                 if i["Classify"] == "在職" and i["Customer"] != "合計":
@@ -6363,7 +6366,10 @@ def Summary2(request):
                         everyzaizhi = monthSummaryValue
                         i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
                     elif i["Classify"] == "預算":
-                        i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                        if i["Customer"] == "合計":
+                            i["monthSummary"] = "%.0f" % (monthSummaryValue / (mounthnum - 1))
+                        else:
+                            i["monthSummary"] = "%.0f" % (monthSummaryValue / 12)
             # monthDiagram1Data&monthDiagram2Data
             for i in monthTable:
                 if i["Classify"] == "在職" and i["Customer"] != "合計":
@@ -6966,8 +6972,8 @@ def Summary2(request):
                 mounthnow = datetime.datetime.now().month
                 for i in Departments.objects.filter(Year=YearNow, Customer=Customer).exclude(
                         Department_Code__contains="000").annotate(
-                        Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
-                                                                                  "Department_Codebu").distinct():
+                    Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
+                                                                              "Department_Codebu").distinct():
                     # print(i)
                     buinfo = i["Department_Codebu"]
                     if Departments.objects.filter(Year=YearNow,
@@ -7069,8 +7075,8 @@ def Summary2(request):
                 mounthnow = 12  # datetime.datetime.now().month
                 for i in Departments.objects.filter(Year=YearSearch, Customer=Customer).exclude(
                         Department_Code__contains="000").annotate(
-                        Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
-                                                                                  "Department_Codebu").distinct():
+                    Department_Codebu=Substr('Department_Code', 1, 8)).values("Customer",
+                                                                              "Department_Codebu").distinct():
                     # print(i)
                     buinfo = i["Department_Codebu"]
                     if Departments.objects.filter(Year=YearSearch,
