@@ -609,55 +609,56 @@ def IssuesBreakdown_Summary(request):
             mock_data1.append({"id": 1, "Project": "LD", Projectcode: LD_Character})
             mock_data1.append({"id": 2, "Project": "TL", Projectcode: TL_Character})
             FFRT_Date = []
-            # IssuesBreakdown.objects.all().values("first_FFRT").distinct()[0]前提是所有的first_FFRT等6个日期范围所有数据都一样
-            if IssuesBreakdown.objects.all().values("first_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("first_FFRT").distinct()[0][
+            # IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("first_FFRT").distinct()[0]前提是所有的first_FFRT等6个日期范围所有数据都一样
+            dic_search_IssuesB = {"Customer": Customer, "Project": Projectcode}
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("first_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("first_FFRT").distinct()[0][
                     "first_FFRT"]:
                     mock_data1.append({"id": 3, "Project": "1st FFRT",
-                                       Projectcode: IssuesBreakdown.objects.all().values("first_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("first_FFRT").distinct()[0][
                                            "first_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT1", IssuesBreakdown.objects.all().values("first_FFRT").distinct()[0]["first_FFRT"]))
-            if IssuesBreakdown.objects.all().values("second_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("second_FFRT").distinct()[0][
+                        ("FFRT1", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("first_FFRT").distinct()[0]["first_FFRT"]))
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("second_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("second_FFRT").distinct()[0][
                     "second_FFRT"]:
                     mock_data1.append({"id": 4, "Project": "2nd FFRT",
-                                       Projectcode: IssuesBreakdown.objects.all().values("second_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("second_FFRT").distinct()[0][
                                            "second_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT2", IssuesBreakdown.objects.all().values("second_FFRT").distinct()[0]["second_FFRT"]))
-            if IssuesBreakdown.objects.all().values("third_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("third_FFRT").distinct()[0][
+                        ("FFRT2", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("second_FFRT").distinct()[0]["second_FFRT"]))
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("third_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("third_FFRT").distinct()[0][
                     "third_FFRT"]:
                     mock_data1.append({"id": 5, "Project": '3rd FFRT',
-                                       Projectcode: IssuesBreakdown.objects.all().values("third_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("third_FFRT").distinct()[0][
                                            "third_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT3", IssuesBreakdown.objects.all().values("third_FFRT").distinct()[0]["third_FFRT"]))
-            if IssuesBreakdown.objects.all().values("fourth_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("fourth_FFRT").distinct()[0][
+                        ("FFRT3", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("third_FFRT").distinct()[0]["third_FFRT"]))
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fourth_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fourth_FFRT").distinct()[0][
                     "fourth_FFRT"]:
                     mock_data1.append({"id": 6, "Project": '4th FFRT',
-                                       Projectcode: IssuesBreakdown.objects.all().values("fourth_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fourth_FFRT").distinct()[0][
                                            "fourth_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT4", IssuesBreakdown.objects.all().values("fourth_FFRT").distinct()[0]["fourth_FFRT"]))
-            if IssuesBreakdown.objects.all().values("fifth_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("fifth_FFRT").distinct()[0][
+                        ("FFRT4", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fourth_FFRT").distinct()[0]["fourth_FFRT"]))
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fifth_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fifth_FFRT").distinct()[0][
                     "fifth_FFRT"]:
                     mock_data1.append({"id": 7, "Project": '5th FFRT',
-                                       Projectcode: IssuesBreakdown.objects.all().values("fifth_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fifth_FFRT").distinct()[0][
                                            "fifth_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT5", IssuesBreakdown.objects.all().values("fifth_FFRT").distinct()[0]["fifth_FFRT"]))
-            if IssuesBreakdown.objects.all().values("sixth_FFRT").distinct():
-                if IssuesBreakdown.objects.all().values("sixth_FFRT").distinct()[0][
+                        ("FFRT5", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("fifth_FFRT").distinct()[0]["fifth_FFRT"]))
+            if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("sixth_FFRT").distinct():
+                if IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("sixth_FFRT").distinct()[0][
                     "sixth_FFRT"]:
                     mock_data1.append({"id": 8, "Project": '6th FFRT',
-                                       Projectcode: IssuesBreakdown.objects.all().values("sixth_FFRT").distinct()[0][
+                                       Projectcode: IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("sixth_FFRT").distinct()[0][
                                            "sixth_FFRT"]})
                     FFRT_Date.append(
-                        ("FFRT6", IssuesBreakdown.objects.all().values("sixth_FFRT").distinct()[0]["sixth_FFRT"]))
+                        ("FFRT6", IssuesBreakdown.objects.filter(**dic_search_IssuesB).values("sixth_FFRT").distinct()[0]["sixth_FFRT"]))
 
             # mock_data2
             id_num = 1

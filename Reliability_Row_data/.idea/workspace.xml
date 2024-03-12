@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/IssuesBreakdown/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/IssuesBreakdown/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PersonalInfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalInfo/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/all-2024-03-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2024-03-12.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info-2024-03-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2024-03-12.log" afterDir="false" />
@@ -61,7 +62,7 @@
           <entry key="css" value="7" />
           <entry key="html" value="521" />
           <entry key="js" value="10" />
-          <entry key="py" value="925" />
+          <entry key="py" value="929" />
           <entry key="pyi" value="1" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="1" />
@@ -72,7 +73,7 @@
           <entry key="CSS" value="7" />
           <entry key="HTML" value="521" />
           <entry key="JavaScript" value="10" />
-          <entry key="Python" value="925" />
+          <entry key="Python" value="929" />
           <entry key="PythonStub" value="1" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="1" />
@@ -84,7 +85,7 @@
           <entry key="css" value="789" />
           <entry key="dummy" value="5" />
           <entry key="html" value="10667" />
-          <entry key="py" value="24886" />
+          <entry key="py" value="24925" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -92,7 +93,7 @@
           <entry key="CSS" value="789" />
           <entry key="HTML" value="10667" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="24891" />
+          <entry key="Python" value="24930" />
         </counts>
       </usages-collector>
     </session>
@@ -103,29 +104,15 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
+        <entry file="file://$PROJECT_DIR$/IssuesBreakdown/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="6367" column="47" selection-start-line="6367" selection-start-column="20" selection-end-line="6367" selection-end-column="47" />
+            <state relative-caret-position="173">
+              <caret line="519" column="17" lean-forward="true" selection-start-line="519" selection-start-column="17" selection-end-line="519" selection-end-column="17" />
               <folding>
-                <element signature="e#21787#43130#0" />
-                <element signature="e#43182#150410#0" />
-                <element signature="e#43557#44457#0" />
-                <element signature="e#44478#45115#0" />
-                <element signature="e#45132#46318#0" />
-                <element signature="e#49175#52455#0" />
-                <element signature="e#52530#53793#0" />
-                <element signature="e#53868#62637#0" />
-                <element signature="e#62709#85475#0" />
-                <element signature="e#85549#105161#0" />
-                <element signature="e#150460#160385#0" />
-                <element signature="e#160433#193188#0" />
-                <element signature="e#193231#309585#0" />
-                <element signature="e#320054#330282#0" />
-                <element signature="e#330317#339881#0" />
-                <element signature="e#330368#331894#0" />
-                <element signature="e#331937#332366#0" />
-                <element signature="e#332607#337396#0" />
+                <element signature="e#2083#2854#0" />
+                <element signature="e#2872#10900#0" />
+                <element signature="e#14534#15713#0" />
+                <element signature="e#29998#30769#0" />
               </folding>
             </state>
           </provider>
@@ -145,8 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>labelname</find>
-      <find>showDataArea</find>
       <find>selectall2</find>
       <find>option3</find>
       <find>option</find>
@@ -175,6 +160,8 @@
       <find>PERMISSION_MENU_KEY1</find>
       <find>split(&quot;~&quot;)</find>
       <find>elif i[&quot;Classify&quot;] == &quot;預算&quot;:</find>
+      <find>mock_data1</find>
+      <find>IssuesBreakdown.objects.all().values</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -235,8 +222,8 @@
         <option value="$PROJECT_DIR$/templates/ABOQIL/ABOQIL_searchbyproject.html" />
         <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
         <option value="$PROJECT_DIR$/ABOProjectLessonL/models.py" />
-        <option value="$PROJECT_DIR$/IssuesBreakdown/views.py" />
         <option value="$PROJECT_DIR$/PersonalInfo/views.py" />
+        <option value="$PROJECT_DIR$/IssuesBreakdown/views.py" />
       </list>
     </option>
   </component>
@@ -298,7 +285,7 @@
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="PersonalInfo" type="462c0819:PsiDirectoryNode" />
+              <item name="IssuesBreakdown" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -851,7 +838,7 @@
       <window_info anchor="bottom" id="Messages" order="16" />
       <window_info anchor="bottom" id="Version Control" order="17" weight="0.32901555" />
       <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.50317967" weight="0.29792747" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="19" sideWeight="0.5006605" visible="true" weight="0.2681347" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="19" sideWeight="0.5006605" weight="0.2681347" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -865,9 +852,9 @@
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.497979" weight="0.36398965" />
-      <window_info anchor="bottom" id="Favorites" order="5" sideWeight="0.5277311" weight="0.2784974" />
-      <window_info anchor="bottom" id="Structure" order="6" sideWeight="0.502994" weight="0.23458445" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.497979" weight="0.20854922" />
+      <window_info anchor="bottom" id="Favorites" order="5" sideWeight="0.5277311" weight="0.27720207" />
+      <window_info anchor="bottom" id="Structure" order="6" sideWeight="0.502994" weight="0.23445596" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49636218" weight="0.47409326" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49717057" weight="0.32512954" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39814815" />
@@ -878,9 +865,9 @@
       <window_info anchor="bottom" id="SciView" order="14" sideWeight="0.4993395" side_tool="true" weight="0.394387" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" />
-      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.50317967" weight="0.29792747" />
-      <window_info anchor="bottom" id="Version Control" order="18" weight="0.32901555" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="19" sideWeight="0.5006605" weight="0.23834197" />
+      <window_info anchor="bottom" id="Version Control" order="17" weight="0.32901555" />
+      <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.50317967" weight="0.29792747" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="19" sideWeight="0.5006605" weight="0.2681347" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -1146,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IssuesBreakdown/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="34" column="84" lean-forward="true" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TestPlanSW/TestPlanSW_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1356,23 +1336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IssuesBreakdown/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="614" column="34" lean-forward="true" selection-start-line="614" selection-start-column="34" selection-end-line="614" selection-end-column="34" />
-          <folding>
-            <element signature="e#2083#2854#0" />
-            <element signature="e#2872#10900#0" />
-            <element signature="e#14534#15713#0" />
-            <element signature="e#29998#30769#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PersonalInfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="6367" column="47" selection-start-line="6367" selection-start-column="20" selection-end-line="6367" selection-end-column="47" />
+        <state relative-caret-position="171">
+          <caret line="7170" column="21" lean-forward="true" selection-start-line="7170" selection-start-column="21" selection-end-line="7170" selection-end-column="21" />
           <folding>
             <element signature="e#21787#43130#0" />
             <element signature="e#43182#150410#0" />
@@ -1387,11 +1354,37 @@
             <element signature="e#150460#160385#0" />
             <element signature="e#160433#193188#0" />
             <element signature="e#193231#309585#0" />
+            <element signature="e#319820#372476#0" />
             <element signature="e#320054#330282#0" />
             <element signature="e#330317#339881#0" />
             <element signature="e#330368#331894#0" />
             <element signature="e#331937#332366#0" />
             <element signature="e#332607#337396#0" />
+            <element signature="e#372543#428253#0" />
+            <element signature="e#372865#382729#0" />
+            <element signature="e#382764#392801#0" />
+            <element signature="e#428588#437000#0" />
+            <element signature="e#437036#445667#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IssuesBreakdown/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IssuesBreakdown/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="519" column="17" lean-forward="true" selection-start-line="519" selection-start-column="17" selection-end-line="519" selection-end-column="17" />
+          <folding>
+            <element signature="e#2083#2854#0" />
+            <element signature="e#2872#10900#0" />
+            <element signature="e#14534#15713#0" />
+            <element signature="e#29998#30769#0" />
           </folding>
         </state>
       </provider>
