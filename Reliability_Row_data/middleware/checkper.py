@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import HttpResponse, redirect,render
+from django.shortcuts import HttpResponse, redirect, render
 import re
 
 
@@ -23,6 +23,7 @@ class RbacMiddleware(MiddlewareMixin):
     """
     检查用户的url请求是否是其权限范围内
     """
+
     def process_request(self, request):
         # print ('test')
         response = self.get_response(request)
@@ -38,7 +39,8 @@ class RbacMiddleware(MiddlewareMixin):
             # print("request:",request_url)
             # print (re.match(url, request_url))
             if re.match(url, request_url):
-                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and request_url in str(url):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and request_url in str(
+                        url):
                     # print(path, 'path')
                     response.set_cookie('current_page_DDIS', value=request_url)
                     # request.session.set_expiry(
@@ -62,7 +64,8 @@ class RbacMiddleware(MiddlewareMixin):
             # print(re.match(url, request_url))
             if re.match(url_pattern, request_url):
                 flag = True
-                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and '/notifications' not in request_url and request_url in str(url):
+                if '/login/' not in request_url and '/logout/' not in request_url and '/index/' not in request_url and '/admin' not in request_url and '/notifications' not in request_url and request_url in str(
+                        url):
                     # print(path, 'path')
                     response.set_cookie('current_page_DDIS', value=request_url)
                     # request.session.set_expiry(
@@ -74,7 +77,7 @@ class RbacMiddleware(MiddlewareMixin):
         else:
             # 如果是调试模式，显示可访问url
             if settings.DEBUG:
-                info ='<br/>' + ( '<br/>'.join(permission_url))
+                info = '<br/>' + ('<br/>'.join(permission_url))
                 # return HttpResponse('无权限，请尝试访问以下地址：%s' %info)
                 # return HttpResponse('您的账户无权限访问')
                 Skin = request.COOKIES.get('Skin_raw')
@@ -82,7 +85,7 @@ class RbacMiddleware(MiddlewareMixin):
                 if not Skin:
                     Skin = "/static/src/blue.jpg"
                 # weizhi = "Lesson-Learn/Reliability/Upload"
-                message= '您的账户无权限访问'
+                message = '您的账户无权限访问'
                 return render(request, 'NoPerm.html', locals())
             else:
                 # return HttpResponse('无权限访问')

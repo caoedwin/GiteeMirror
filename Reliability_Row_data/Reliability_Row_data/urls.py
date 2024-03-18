@@ -103,6 +103,7 @@ urlpatterns = [
     path('IssuesBreakdown/', include('IssuesBreakdown.urls', namespace='IssuesBreakdown')),
     path('ABOProjectLessonL/', include('ABOProjectLessonL.urls', namespace='ABOProjectLessonL')),
     path('ABOQIL/', include('ABOQIL.urls', namespace='ABOQIL')),
+    path('ProjectComparison/', include('ProjectComparison.urls', namespace='ProjectComparison')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

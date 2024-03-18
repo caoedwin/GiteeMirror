@@ -174,7 +174,7 @@ def get_menu_html(menu_data):
                         Class = "ti-archive"
                     if item['title'] == 'Package G Value':
                         Class = "ti-layout"
-                    if item['title'] == 'Bouncing':
+                    if item['title'] == 'Bouncing' or item['title'] == 'ProjectComparison':
                         Class = "ti-panel"
                     if item['title'] == 'CDM':
                         Class = "ti-view-list-alt"

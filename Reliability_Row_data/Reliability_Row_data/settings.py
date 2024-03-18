@@ -196,6 +196,7 @@ INSTALLED_APPS = [
     'IssuesBreakdown',
     'ABOProjectLessonL',
     'ABOQIL',
+    'ProjectComparison',
 ]
 
 MIDDLEWARE = [

@@ -13,4 +13,5 @@ urlpatterns = [
     path('ABOQIL_projectresult/', views.ABOQIL_projectresult, name='ABOQIL_projectresult'),
     path('ABOQIL_searchbyproject/', views.ABOQIL_searchbyproject, name='ABOQIL_searchbyproject'),
 
+
 ]
