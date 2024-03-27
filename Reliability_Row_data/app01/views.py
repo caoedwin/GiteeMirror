@@ -24,7 +24,7 @@ from requests_ntlm import HttpNtlmAuth
 from INVGantt.models import INVGantt
 from django.http import HttpResponseRedirect
 # from app01.templatetags.custom_tag import *
-from .tasks import ProjectSync
+from .tasks import ProjectSync, ImportProjectinfoFromDCT
 
 # class TestUEditorForm(forms.Form):
 #     content = UEditorField('Solution/Action', width=800, height=500,
@@ -534,12 +534,12 @@ def FilesDownload(request):
             # # Mailhtml()
             # # MailOAtest()
             # # print('mailend')
-            # importPrjResult = ImportProjectinfoFromDCT()
-            # if importPrjResult:
-            #     data['result'] = 1
-            # else:
-            #     data['result'] = 0
-            # # print(data)
+            importPrjResult = ImportProjectinfoFromDCT()
+            if importPrjResult:
+                data['result'] = 1
+            else:
+                data['result'] = 0
+            # print(data)
             return HttpResponse(json.dumps(data), content_type="application/json")
     return render(request, 'FilesDownload.html', locals())
 

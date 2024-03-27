@@ -197,6 +197,7 @@ INSTALLED_APPS = [
     'ABOProjectLessonL',
     'ABOQIL',
     'ProjectComparison',
+    'ABODriverTool',
 ]
 
 MIDDLEWARE = [

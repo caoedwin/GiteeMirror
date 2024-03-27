@@ -192,11 +192,11 @@ def ProjectComparison_Edit(request):
                     # current_user = request.session.get('user_name')
                     current_account = request.session.get('account')
                     ProjectComparison_admin_user = "0301507" #Canny
-                    # if Projectinfo:
-                    #     for k in Projectinfo.Owner.all():
-                    #         # print(k.username,current_user)
-                    #         # print(type(k.username),type(current_user))
-                    #         if k.username == current_user:
+                    # if Projectinfo:s
+                    #                     #     for k in Projectinfo.Owner.all():
+                    #                     #         # print(k.username,current_user)
+                    #                     #         # print(type(k.username),type(current_user))
+                    #                     #         if k.username == current_uer:
                     #             canEdit = 1
                     #             break
                     if current_account == ProjectComparison_admin_user:

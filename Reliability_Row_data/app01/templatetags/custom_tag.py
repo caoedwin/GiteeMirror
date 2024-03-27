@@ -184,7 +184,7 @@ def get_menu_html(menu_data):
                         Class = "ti-target"
                     if item['title'] == 'MQM':
                         Class = "ti-bar-chart-alt"
-                    if item['title'] == 'DriverToolList':
+                    if 'DriverToolList' in item['title']:
                         Class = "ti-layout-cta-right"
                     if item['title'] == 'Others':
                         Class = "ti-map"
