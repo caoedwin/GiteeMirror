@@ -13,14 +13,11 @@ from django.forms.models import model_to_dict
 headermodel_ProjectPlan = {
     'Year': 'Year', 'DataType': 'DataType', 'CG': 'CG',
     'Compal Model': 'Compal_Model', 'Customer Model': 'Customer_Model',
-    """Marketing type
-(Commercial / Consumer)""": 'Marketing_type',
-    """Status:
-Planning  =P
-Executing=E""": 'Status', 'Customer': 'Customer',
-    """Product Type
-(NB/PAD/AIO/IPC)""": 'Product_Type', 'Jan': 'Jan', 'Feb': 'Feb', 'Mar': 'Mar', 'Apr': 'Apr', 'May': 'May', 'Jun': 'Jun', 'Jul': 'Jul', 'Aug': 'Aug', 'Sep': 'Sep',
-'Oct': 'Oct', 'Nov': 'Nov',  'Dec': 'Dec',
+    "Marketing type\r\n(Commercial / Consumer)": 'Marketing_type',
+    """Status:\r\nPlanning  =P\r\nExecuting=E""": 'Status', 'Customer': 'Customer',
+    """Product Type\r\n(NB/PAD/AIO/IPC)""": 'Product_Type', 'Jan': 'Jan', 'Feb': 'Feb', 'Mar': 'Mar', 'Apr': 'Apr',
+    'May': 'May', 'Jun': 'Jun', 'Jul': 'Jul', 'Aug': 'Aug', 'Sep': 'Sep',
+    'Oct': 'Oct', 'Nov': 'Nov', 'Dec': 'Dec',
 }
 
 
@@ -33,139 +30,182 @@ def ProjectComparison_Edit(request):
     if not Skin:
         Skin = "/static/src/blue.jpg"
     weizhi = "DDIS/ProjectComparison_edit"
-    mock_data = [
-        # {"id": 1, "Project": "FLMA0", "FFRT_Entry_unclose_issue": "67", "SIT_Exit_unclose_issue": "41",
-        #  "first_FFRT": "2023-12-05~2023-12-18", "second_FFRT": "2023-12-19~2023-12-25",
-        #  "third_FFRT": "2023-12-19~2023-12-25", "fourth_FFRT": "", "fifth_FFRT": "",
-        #  "sixth_FFRT": "", "issue_def": "New found_Unidentified", "Remark": "Copilot PCR new feature issue",
-        #  "FFRT": "FFRT1", "Defect_ID": "398743",
-        #  "Title": "[S590-14&16IRU_SIT_UMA] Copilot PCR, Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl (F/R: 2/2u, 4/4c)",
-        #  "Create_date": "2023-12-20", "Update_date": "2023-12-25", "Status": "Postpone",
-        #  "Severity": "3", "Category": "OS", "Component": "OS",
-        #  "BIOS_KBC": "PFCN08WW", "Comments": "", "Author": "Vickie_Wang@compal.com",
-        #  "Assign_to": "liulan4", "Description": "Test configuration: Image: V8"
-        #                                         "OS: Win11 23H2 build 22631.2715"
-        #                                         "Driver: V1.00"
-        #                                         "BIOS/EC: PFCN08WW/PFEC08WW, 2023/12/14"
-        #                                         "Edge: V120.0.2210.77"
-        #                                         "Detect by:"
-        #                                         "Ad-hoc"
-        #                                         "Fail scope:"
-        #                                         "Tested unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "Failed unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "F/R: 2/2u, 4/4c"
-        #                                         "Observed symptom:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl"
-        #                                         "Error code/ message:"
-        #                                         "None"
-        #                                         "Expected behavior:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press once Right Ctrl."
-        #                                         "How to recover:"
-        #                                         "None.",
-        #  "Reproduce_steps": "",
-        #  "Age": "4",
-        #
-        #  },
-        # {"id": 2, "Project": "FLMA0", "FFRT_Entry_unclose_issue": "67", "SIT_Exit_unclose_issue": "41",
-        #  "first_FFRT": "2023-12-05~2023-12-18", "second_FFRT": "2023-12-19~2023-12-25",
-        #  "third_FFRT": "2023-12-19~2023-12-25", "fourth_FFRT": "", "fifth_FFRT": "",
-        #  "sixth_FFRT": "", "issue_def": "New found_Unidentified", "Remark": "Copilot PCR new feature issue",
-        #  "FFRT": "FFRT1", "Defect_ID": "398744",
-        #  "Title": "[S590-14&16IRU_SIT_UMA] Copilot PCR, Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl (F/R: 2/2u, 4/4c)",
-        #  "Create_date": "2023-12-20", "Update_date": "2023-12-25", "Status": "Postpone",
-        #  "Severity": "3", "Category": "OS", "Component": "OS",
-        #  "BIOS_KBC": "PFCN08WW", "Comments": "", "Author": "Vickie_Wang@compal.com",
-        #  "Assign_to": "liulan4", "Description": "Test configuration: Image: V8"
-        #                                         "OS: Win11 23H2 build 22631.2715"
-        #                                         "Driver: V1.00"
-        #                                         "BIOS/EC: PFCN08WW/PFEC08WW, 2023/12/14"
-        #                                         "Edge: V120.0.2210.77"
-        #                                         "Detect by:"
-        #                                         "Ad-hoc"
-        #                                         "Fail scope:"
-        #                                         "Tested unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "Failed unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "F/R: 2/2u, 4/4c"
-        #                                         "Observed symptom:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl"
-        #                                         "Error code/ message:"
-        #                                         "None"
-        #                                         "Expected behavior:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press once Right Ctrl."
-        #                                         "How to recover:"
-        #                                         "None.",
-        #  "Reproduce_steps": "",
-        #  "Age": "4",
-        #
-        #  },
-        # {"id": 3, "Project": "FLMA0", "FFRT_Entry_unclose_issue": "67", "SIT_Exit_unclose_issue": "41",
-        #  "first_FFRT": "2023-12-05~2023-12-18", "second_FFRT": "2023-12-19~2023-12-25",
-        #  "third_FFRT": "2023-12-19~2023-12-25", "fourth_FFRT": "", "fifth_FFRT": "",
-        #  "sixth_FFRT": "", "issue_def": "New found_Unidentified", "Remark": "Copilot PCR new feature issue",
-        #  "FFRT": "FFRT1", "Defect_ID": "398745",
-        #  "Title": "[S590-14&16IRU_SIT_UMA] Copilot PCR, Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl (F/R: 2/2u, 4/4c)",
-        #  "Create_date": "2023-12-20", "Update_date": "2023-12-25", "Status": "Postpone",
-        #  "Severity": "3", "Category": "OS", "Component": "OS",
-        #  "BIOS_KBC": "PFCN08WW", "Comments": "", "Author": "Vickie_Wang@compal.com",
-        #  "Assign_to": "liulan4", "Description": "Test configuration: Image: V8"
-        #                                         "OS: Win11 23H2 build 22631.2715"
-        #                                         "Driver: V1.00"
-        #                                         "BIOS/EC: PFCN08WW/PFEC08WW, 2023/12/14"
-        #                                         "Edge: V120.0.2210.77"
-        #                                         "Detect by:"
-        #                                         "Ad-hoc"
-        #                                         "Fail scope:"
-        #                                         "Tested unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "Failed unit: 2units(14-I7U16WFS05#38, 16-I5U08WFS02#02)"
-        #                                         "F/R: 2/2u, 4/4c"
-        #                                         "Observed symptom:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press twice Right Ctrl"
-        #                                         "Error code/ message:"
-        #                                         "None"
-        #                                         "Expected behavior:"
-        #                                         "Press Right Ctrl(Copilot Key) to launch Copilot window, then enter/resume MS/S4 or launch other windows, close Copilot window need press once Right Ctrl."
-        #                                         "How to recover:"
-        #                                         "None.",
-        #  "Reproduce_steps": "",
-        #  "Age": "4",
+    weizhi = "PersonalInfo/PersonalInfo_edit"
 
-        # },
+    yearOptions = [
+        # "2020", "2021", "2023"
+    ]
+    for i in ProjectPlan.objects.all().values("Year").distinct().order_by("Year"):
+        yearOptions.append(i["Year"])
+
+    datatypeOption = [
+        # "Acutal", "w/o OOC", "with OOC"
+    ]
+    for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
+        datatypeOption.append(i["DataType"])
+
+    mock_data = [
+        # {"id": "1", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
+        #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
+        #  "Feb": "SIT",
+        #  "Mar": "", "Apr": "", "May": "", "Jun": "", "July": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": ""},
+        # {"id": "2", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
+        #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
+        #  "Feb": "SIT",
+        #  "Mar": "", "Apr": "", "May": "", "Jun": "", "July": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": ""},
+        # {"id": "3", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
+        #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
+        #  "Feb": "SIT",
+        #  "Mar": "", "Apr": "", "May": "", "Jun": "", "July": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": ""}
     ]
 
     errMsg = ''
 
-    deletepermission = 0  # 1:能删除
-
-    err_msg = ''
-
-    canEdit = 0  # 1:能编辑 0:不能编辑
-
-    # roles = []
-    # onlineuser = request.session.get('account')
-    # # print(UserInfo.objects.get(account=onlineuser))
-    # for i in UserInfo.objects.get(account=onlineuser).role.all():
-    #     roles.append(i.name)
-    # # print(roles)
-    # editPpriority = 0
-    # for i in roles:
-    #     if 'DQA_SW' in i or 'admin' == i:
-    #         editPpriority = 1
-    #     elif 'LD' in i:
-    #         if editPpriority != 1:
-    #             editPpriority = 2
-    #     elif 'RD' in i:
-    #         if editPpriority != 1 and editPpriority != 2:
-    #             editPpriority = 3
-
-    print(request.POST)
+    permission = 0  # 1:有權限
+    roles = []
+    onlineuser = request.session.get('account')
+    # onlineuser = '0502413'
+    onlineuserDepartment = ''
+    # print(onlineuser,UserInfo.objects.get(account=onlineuser))
+    if UserInfo.objects.filter(account=onlineuser).first():
+        for i in UserInfo.objects.filter(account=onlineuser).first().role.all():
+            roles.append(i.name)
+    for i in roles:
+        if 'admin' in i or 'DQA_LNV_ProjectCom_admin' in i:
+            permission = 1
+    # print(request.POST)
     # print(request.body)
     if request.method == "POST":
-        canEdit = 0
         if request.POST.get('isGetData') == 'first':
             pass
 
         if request.POST.get('isGetData') == 'SEARCH':
-            pass
+            # mock_data
+            Check_dic_ProjectPlan = {}
+            YearSearch = request.POST.get('Year')
+            DataTypeSearch = request.POST.get('DataType')
+            if YearSearch:
+                Check_dic_ProjectPlan["Year"] = YearSearch
+            if DataTypeSearch:
+                Check_dic_ProjectPlan["DataType"] = DataTypeSearch
+            # print(Check_dic_ProjectPlan)
+            for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                # print(i)
+                mock_data.append(
+                    {
+                        "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                        "CG": i.CG,
+                        "Compal_Model": i.Compal_Model,
+                        "Customer_Model": i.Customer_Model,
+                        "Marketing_type": i.Marketing_type,
+                        "Status": i.Status,
+                        "Customer": i.Customer,
+                        "Product_Type": i.Product_Type,
+                        "Jan": i.Jan if i.Jan != None else '',
+                        "Feb": i.Feb if i.Feb != None else '',
+                        "Mar": i.Mar if i.Mar != None else '',
+                        "Apr": i.Apr if i.Apr != None else '',
+                        "May": i.May if i.May != None else '',
+                        "Jun": i.Jun if i.Jun != None else '',
+                        "July": i.Jul if i.Jul != None else '',
+                        "Aug": i.Aug if i.Aug != None else '',
+                        "Sep": i.Sep if i.Sep != None else '',
+                        "Oct": i.Oct if i.Oct != None else '',
+                        "Nov": i.Nov if i.Nov != None else '',
+                        "Dec": i.Dec if i.Dec != None else '',
+                    }
+                )
+        elif request.POST.get('action') == 'onSubmit':
+            ID = request.POST.get('ID')
+            Year = request.POST.get('Year')
+            DataType = request.POST.get('DataType')
+            CG = request.POST.get('CG')
+            Compal_Model = request.POST.get('Compal_Model')
+            Customer_Model = request.POST.get('Customer_Model')
+            Marketing_type = request.POST.get('Marketing_type')
+            Status = request.POST.get('Status')
+            Customer = request.POST.get('Customer')
+            Product_Type = request.POST.get('Product_Type')
+            Jan = request.POST.get('Jan')
+            Feb = request.POST.get('Feb')
+            Mar = request.POST.get('Mar')
+            Apr = request.POST.get('Apr')
+            May = request.POST.get('May')
+            Jun = request.POST.get('Jun')
+            Jul = request.POST.get('July')
+            Aug = request.POST.get('Aug')
+            Sep = request.POST.get('Sep')
+            Oct = request.POST.get('Oct')
+            Nov = request.POST.get('Nov')
+            Dec = request.POST.get('Dec')
+            update_dic = {
+                "Year": Year, "DataType": DataType,
+                "CG": CG,
+                "Compal_Model": Compal_Model,
+                "Customer_Model": Customer_Model,
+                "Marketing_type": Marketing_type,
+                "Status": Status,
+                "Customer": Customer,
+                "Product_Type": Product_Type,
+                "Jan": Jan,
+                "Feb": Feb,
+                "Mar": Mar,
+                "Apr": Apr,
+                "May": May,
+                "Jun": Jun,
+                "Jul": Jul,
+                "Aug": Aug,
+                "Sep": Sep,
+                "Oct": Oct,
+                "Nov": Nov,
+                "Dec": Dec,
+            }
+            try:
+                with transaction.atomic():
+                    ProjectPlan.objects.filter(id=ID).update(**update_dic)
+            except Exception as e:
+                # alert = '此数据正被其他使用者编辑中...'
+                alert = str(e)
+                print(alert)
+
+            # mock_data
+            Check_dic_ProjectPlan = {}
+            YearSearch = request.POST.get('searchYear')
+            DataTypeSearch = request.POST.get('searchDataType')
+            if YearSearch:
+                Check_dic_ProjectPlan["Year"] = YearSearch
+            if DataTypeSearch:
+                Check_dic_ProjectPlan["DataType"] = DataTypeSearch
+            # print(Check_dic_ProjectPlan)
+            for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                # print(i)
+                mock_data.append(
+                    {
+                        "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                        "CG": i.CG,
+                        "Compal_Model": i.Compal_Model,
+                        "Customer_Model": i.Customer_Model,
+                        "Marketing_type": i.Marketing_type,
+                        "Status": i.Status,
+                        "Customer": i.Customer,
+                        "Product_Type": i.Product_Type,
+                        "Jan": i.Jan if i.Jan != None else '',
+                        "Feb": i.Feb if i.Feb != None else '',
+                        "Mar": i.Mar if i.Mar != None else '',
+                        "Apr": i.Apr if i.Apr != None else '',
+                        "May": i.May if i.May != None else '',
+                        "Jun": i.Jun if i.Jun != None else '',
+                        "July": i.Jul if i.Jul != None else '',
+                        "Aug": i.Aug if i.Aug != None else '',
+                        "Sep": i.Sep if i.Sep != None else '',
+                        "Oct": i.Oct if i.Oct != None else '',
+                        "Nov": i.Nov if i.Nov != None else '',
+                        "Dec": i.Dec if i.Dec != None else '',
+                    }
+                )
         else:
             try:
                 request.body
@@ -173,13 +213,69 @@ def ProjectComparison_Edit(request):
                 pass
             else:
                 if 'MUTIDELETE' in str(request.body):
-                    pass
+                    responseData = json.loads(request.body)
+                    # for i in responseData['params']:
+                    #     ProjectPlan.objects.get(id=i).delete()
+                    try:
+                        with transaction.atomic():
+                            ProjectPlan.objects.filter(id__in=responseData['params']).delete()
+                    except Exception as e:
+                        # alert = '此数据正被其他使用者编辑中...'
+                        alert = str(e)
+                        print(alert)
+                    # mock_data
+                    yearOptions = [
+                        # "2020", "2021", "2023"
+                    ]
+                    for i in ProjectPlan.objects.all().values("Year").distinct().order_by("Year"):
+                        yearOptions.append(i["Year"])
 
-                if 'upload' in str(request.body):
+                    datatypeOption = [
+                        # "Acutal", "w/o OOC", "with OOC"
+                    ]
+                    for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
+                        datatypeOption.append(i["DataType"])
+                    Check_dic_ProjectPlan = {}
+                    YearSearch = request.POST.get('Year')
+                    DataTypeSearch = request.POST.get('DataType')
+                    if YearSearch:
+                        Check_dic_ProjectPlan["Year"] = YearSearch
+                    if DataTypeSearch:
+                        Check_dic_ProjectPlan["DataType"] = DataTypeSearch
+                    # print(Check_dic_ProjectPlan)
+                    for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                        # print(i)
+                        mock_data.append(
+                            {
+                                "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                                "CG": i.CG,
+                                "Compal_Model": i.Compal_Model,
+                                "Customer_Model": i.Customer_Model,
+                                "Marketing_type": i.Marketing_type,
+                                "Status": i.Status,
+                                "Customer": i.Customer,
+                                "Product_Type": i.Product_Type,
+                                "Jan": i.Jan if i.Jan != None else '',
+                                "Feb": i.Feb if i.Feb != None else '',
+                                "Mar": i.Mar if i.Mar != None else '',
+                                "Apr": i.Apr if i.Apr != None else '',
+                                "May": i.May if i.May != None else '',
+                                "Jun": i.Jun if i.Jun != None else '',
+                                "July": i.Jul if i.Jul != None else '',
+                                "Aug": i.Aug if i.Aug != None else '',
+                                "Sep": i.Sep if i.Sep != None else '',
+                                "Oct": i.Oct if i.Oct != None else '',
+                                "Nov": i.Nov if i.Nov != None else '',
+                                "Dec": i.Dec if i.Dec != None else '',
+                            }
+                        )
+
+                elif 'upload' in str(request.body):
 
                     responseData = json.loads(request.body)
                     # print(responseData['historyYear'],type(responseData['historyYear']))
                     YearSearch = responseData['Year']
+                    YearSearch_backup = ''
                     DataTypeSearch = responseData['DataType']
 
                     xlsxlist = json.loads(responseData['ExcelData'])
@@ -190,19 +286,20 @@ def ProjectComparison_Edit(request):
                     # Projectinfo = CQMProject.objects.filter(**Check_dic_Project).first()
                     # print(Projectinfo)
                     # current_user = request.session.get('user_name')
-                    current_account = request.session.get('account')
-                    ProjectComparison_admin_user = "0301507" #Canny
-                    # if Projectinfo:s
-                    #                     #     for k in Projectinfo.Owner.all():
-                    #                     #         # print(k.username,current_user)
-                    #                     #         # print(type(k.username),type(current_user))
-                    #                     #         if k.username == current_uer:
-                    #             canEdit = 1
-                    #             break
-                    if current_account == ProjectComparison_admin_user:
-                        canEdit = 1
+                    # current_account = request.session.get('account')
+                    # ProjectComparison_admin_user = "0301507" #Canny
+                    # # if Projectinfo:s
+                    # #                     #     for k in Projectinfo.Owner.all():
+                    # #                     #         # print(k.username,current_user)
+                    # #                     #         # print(type(k.username),type(current_user))
+                    # #                     #         if k.username == current_uer:
+                    # #             canEdit = 1
+                    # #             break
+                    # if current_account == ProjectComparison_admin_user:
+                    #     canEdit = 1
                     # print(canEdit)
-                    if canEdit:
+                    # try:
+                    if permission:
                         rownum = 0
                         startupload = 0
                         # print(xlsxlist)
@@ -300,13 +397,17 @@ def ProjectComparison_Edit(request):
                                 break
 
                             create_list.append(ProjectPlan(**modeldata))  # object(**dict)
+                            if rownum == 1:
+                                YearSearch_backup = modeldata['Year']
+                                # print(modeldata['Year'])
                         # print(err_msg, startupload)
                         # print(create_list,)
+                        # print(startupload)
+                        # print(rownum, type(rownum))
                         if startupload:
                             try:
                                 with transaction.atomic():
                                     ProjectPlan.objects.bulk_create(create_list)
-                                    update_list = []
                             except Exception as e:
                                 # alert = '此数据正被其他使用者编辑中...'
                                 alert = str(e)
@@ -314,7 +415,24 @@ def ProjectComparison_Edit(request):
 
                     # print('IssuesBreakdown')
                     # mock_data
-                    Check_dic_ProjectPlan = {"Year": YearSearch, "DataType": DataTypeSearch}
+                    yearOptions = [
+                        # "2020", "2021", "2023"
+                    ]
+                    for i in ProjectPlan.objects.all().values("Year").distinct().order_by("Year"):
+                        yearOptions.append(i["Year"])
+
+                    datatypeOption = [
+                        # "Acutal", "w/o OOC", "with OOC"
+                    ]
+                    for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
+                        datatypeOption.append(i["DataType"])
+                    Check_dic_ProjectPlan = {}
+                    if YearSearch:
+                        Check_dic_ProjectPlan["Year"] = YearSearch
+                    elif YearSearch_backup:
+                        Check_dic_ProjectPlan["Year"] = YearSearch_backup
+                    if DataTypeSearch:
+                        Check_dic_ProjectPlan["DataType"] = DataTypeSearch
                     for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
                         # print(i)
                         mock_data.append(
@@ -327,24 +445,29 @@ def ProjectComparison_Edit(request):
                                 "Status": i.Status,
                                 "Customer": i.Customer,
                                 "Product_Type": i.Product_Type,
-                                "Jan": i.Jan,
-                                "Feb": i.Feb,
-                                "Mar": i.Mar,
-                                "Apr": i.Apr,
-                                "May": i.May,
-                                "Jun": i.Jun,
-                                "Jul": i.Jul,
-                                "Aug": i.Aug,
-                                "Sep": i.Sep,
-                                "Oct": i.Oct,
-                                "Nov": i.Nov,
-                                "Dec": i.Dec,
+                                "Jan": i.Jan if i.Jan != None else '',
+                                "Feb": i.Feb if i.Feb != None else '',
+                                "Mar": i.Mar if i.Mar != None else '',
+                                "Apr": i.Apr if i.Apr != None else '',
+                                "May": i.May if i.May != None else '',
+                                "Jun": i.Jun if i.Jun != None else '',
+                                "July": i.Jul if i.Jul != None else '',
+                                "Aug": i.Aug if i.Aug != None else '',
+                                "Sep": i.Sep if i.Sep != None else '',
+                                "Oct": i.Oct if i.Oct != None else '',
+                                "Nov": i.Nov if i.Nov != None else '',
+                                "Dec": i.Dec if i.Dec != None else '',
                             }
                         )
+                    # except Exception as e:
+                    #     err_msg = str(e)
+
         data = {
-            "errMsg": err_msg,
+            "errMsg": errMsg,
+            "yearOptions": yearOptions,
+            "datatypeOption": datatypeOption,
             "content": mock_data,
-            "permission": canEdit,
+            "permission": permission,
 
         }
         # print(data)
@@ -361,7 +484,6 @@ def ProjectComparison_Summary(request):
     if not Skin:
         Skin = "/static/src/blue.jpg"
     weizhi = "DDIS/ProjectComparison_Summary"
-
 
     if request.method == "POST":
         if request.POST.get('isGetData') == 'first':

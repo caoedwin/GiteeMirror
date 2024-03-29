@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}IssuesBreakdown_edit{% endblock %}
+{% block title %}PersonalInfo_edit{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/index.css">
     <style>
@@ -34,10 +34,17 @@
             color: crimson;
             background-color: beige;
             width: 50%;
-            margin-left: 100px;
+            margin-left: 80px;
             margin-top: 20px;
             position: relative;
         }
+
+        /*.el-table .cell {
+          white-space: pre-line;
+          text-align: left;
+        }
+
+         */
 
         .inputError:before {
             display: block;
@@ -153,11 +160,6 @@
             font-family: 微软雅黑;
         }
 
-        .el-table .cell {
-            white-space: pre-line;
-            text-align: left;
-        }
-
 
     </style>
 {% endblock %}
@@ -167,31 +169,27 @@
         <div class="selectMsg">
 
             <div class="customerContent">
-                <label for="customer">Customer</label>
-                <select ref="Customer" @change="changeCustomer" v-model="customer"
-                        style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
-                    <option value="C38(NB)">C38(NB)</option>
-                    <option value="C38(AIO)">C38(AIO)</option>
-                    <option value="C85">C85</option>
-                    <option value="T88(AIO)">T88(AIO)</option>
-                    {#                       <option v-for="(item,key,index) in customerOptions" >${ key }</option>#}
+                <label for="customer">Year</label>
+                <select ref="Year" v-model="year" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
+                    <option v-for="(item,key,index) in yearOptions">${ item }</option>
                 </select>
                 <div class="inputError" v-cloak v-show="customerError">不能為空</div>
             </div>
             <div class="departmentContent">
-                <label for="department">ProjectCode</label>
-                <el-select ref="ProjectcodeCompal" v-model="ProjectcodeCompal" filterable clearable>
-                    <el-option
-                            v-for="item in SectionProjectcode"
-                            :key="item.Projectcode"
-                            :label="item.Projectcode"
-                            :value="item.Projectcode">
-                    </el-option>
-                </el-select>
-                {#                  <select  ref="Department" v-model="department" style="height:40px;border-radius:5px 5px 5px 5px;width:120px;">#}
-                {#                       <option v-for="(item,key,index) in ProjectCodeOption">${ item.Department }</option>#}
-                {#                  </select>#}
-                {#                  <div class="inputError" v-cloak  v-show="departmentError">不能為空</div>#}
+                <label for="department">DataType</label>
+                {#                  <el-select ref="ProjectcodeCompal" v-model="ProjectcodeCompal" filterable clearable>#}
+                {#                        <el-option#}
+                {#                            v-for="item in SectionProjectcode"#}
+                {#                            :key="item.Projectcode"#}
+                {#                            :label="item.Projectcode"#}
+                {#                            :value="item.Projectcode">#}
+                {#                        </el-option>#}
+                {#                  </el-select>#}
+                <select ref="DataType" v-model="datatype"
+                        style="height:40px;border-radius:5px 5px 5px 5px;width:120px;">
+                    <option v-for="(item,key,index) in datatypeOption">${ item }</option>
+                </select>
+                <div class="inputError" v-cloak v-show="departmentError">不能為空</div>
             </div>
             <div style="margin-left: 100px;">
                 <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px">搜索
@@ -199,11 +197,10 @@
                 <el-button @click="exportExcel" type="info" v-cloak style="height:40px">導出</el-button>
                 {#                     <el-button  type="danger" v-if="uploadpermission===1" v-cloak @click="addData" style="margin-left: 20px;">Upload</el-button>#}
                 <el-button @click="deleteData()" type="danger" v-if="permission===1" v-cloak
-                           style="margin-left: 20px;width: 80px;">清空
+                           style="margin-left: 20px;width: 80px;">刪除
                 </el-button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="/static/src/modelfiles/FFRT issues breakdown.xlsx"
-                   style="color: orange;font-size: 16px">模板下载<img
+                <a href="/static/src/modelfiles/ProjectComparison.xlsx" style="color: orange;font-size: 16px">模板下载<img
                         src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
             </div>
 
@@ -217,101 +214,92 @@
             <span class="showFileName" v-cloak>${ fileName }</span>
         </div>
 
-        <el-dialog :visible.sync="appendss" :close-on-click-modal="false">
+        <el-dialog :visible.sync="update" :close-on-click-modal="false">
             <template>
                 <el-form ref="form" :model="form" :rules="rules" :label-position="labelPosition" label-width="180px">
-                    <el-form-item label="Customer" prop="Customer">
-                        <el-select v-model="form.Customer" placeholder="請選擇" @change="changeProjectcode">
-                            <el-option label="C38(NB)" value="C38(NB)"></el-option>
-                            <el-option label="C38(AIO)" value="C38(AIO)"></el-option>
-                            <el-option label="C85" value="C85"></el-option>
-                            <el-option label="T88(AIO)" value="T88(AIO)"></el-option>
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item label="Projectcode(Compal)" prop="ProjectcodeCompal">
-                        <el-select v-model="form.ProjectcodeCompal" clearable filterable placeholder="請選擇">
+                    <el-form-item label="Year" prop="Year">
+                        <el-select v-model="form.Year" placeholder="请选择">
                             <el-option
-                                    v-for="item in SectionProjectcode"
-                                    :key="item.Projectcode"
-                                    :label="item.Projectcode"
-                                    :value="item.Projectcode">
+                                    v-for="item in yearOptions"
+                                    :key="item"
+                                    :label="item"
+                                    :value="item">
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="Lowlight item" prop="Lowlight_item">
-                        <el-input v-model="form.Lowlight_item"></el-input>
+                    <el-form-item label="DataType" prop="DataType">
+                        <el-select v-model="form.DataType" placeholder="请选择">
+                            <el-option
+                                    v-for="item in datatypeOption"
+                                    :key="item"
+                                    :label="item"
+                                    :value="item">
+                            </el-option>
+                        </el-select>
                     </el-form-item>
-                    <el-form-item label="Root cause" prop="Root_cause">
-                        <el-input v-model="form.Root_cause"></el-input>
+                    <el-form-item label="CG" prop="CG">
+                        <el-input v-model="form.CG"></el-input>
                     </el-form-item>
-                    <el-form-item label="LD" prop="LD">
-                        <el-input v-model="form.LD"></el-input>
+                    <el-form-item label="Compal Model" prop="Compal_Model">
+                        <el-input v-model="form.Compal_Model"></el-input>
                     </el-form-item>
-                    <el-form-item label="Owner" prop="Owner">
-                        <el-input v-model="form.Owner"></el-input>
+                    <el-form-item label="Customer Model" prop="Customer_Model">
+                        <el-input v-model="form.Customer_Model"></el-input>
                     </el-form-item>
-                    <el-form-item label="Mitigation_plan" prop="Mitigation_plan">
-                        <el-input v-model="form.Mitigation_plan"></el-input>
+                    <el-form-item label="Status" prop="Status">
+                        <el-input v-model="form.Status"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Customer" prop="Customer">
+                        <el-input v-model="form.Customer"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Project Type" prop="Product_Type">
+                        <el-input v-model="form.Product_Type"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Jan" prop="Jan">
+                        <el-input v-model="form.Jan"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Feb" prop="Feb">
+                        <el-input v-model="form.Feb"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Mar" prop="Mar">
+                        <el-input v-model="form.Mar"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Apr" prop="Apr">
+                        <el-input v-model="form.Apr"></el-input>
+                    </el-form-item>
+                    <el-form-item label="May" prop="May">
+                        <el-input v-model="form.May"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Jun" prop="Jun">
+                        <el-input v-model="form.Jun"></el-input>
+                    </el-form-item>
+                    <el-form-item label="July" prop="July">
+                        <el-input v-model="form.July"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Aug" prop="Aug">
+                        <el-input v-model="form.Aug"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Sep" prop="Sep">
+                        <el-input v-model="form.Sep"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Oct" prop="Oct">
+                        <el-input v-model="form.Oct"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Nov" prop="Nov">
+                        <el-input v-model="form.Nov"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Dec" prop="Dec">
+                        <el-input v-model="form.Dec"></el-input>
                     </el-form-item>
                     <div class="el-form-item__content" style="margin-left: 220px;">
                         <el-form-item>
-                            <el-button type="primary" @click="onAppend('form')">確定</el-button>
+                            <el-button type="primary" @click="updateData('form')">確定</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
             </template>
         </el-dialog>
-        <el-dialog :visible.sync="update1" :close-on-click-modal="false">
-            <template>
-                <el-form ref="form" :model="form" :rules="rules" :label-position="labelPosition" label-width="180px">
-                    <el-form-item label="Lowlight item" prop="Lowlight_item">
-                        <el-input v-model="form.Lowlight_item"></el-input>
-                    </el-form-item>
-                    <el-form-item label="Root cause" prop="Root_cause">
-                        <el-input v-model="form.Root_cause"></el-input>
-                    </el-form-item>
-                    <el-form-item label="LD" prop="LD">
-                        <el-input v-model="form.LD"></el-input>
-                    </el-form-item>
-                    <div class="el-form-item__content" style="margin-left: 220px;">
-                        <el-form-item>
-                            <el-button type="primary" @click="updateData1('form')">確定</el-button>
-                        </el-form-item>
-                    </div>
-                </el-form>
-            </template>
-        </el-dialog>
-        <el-dialog :visible.sync="update2" :close-on-click-modal="false">
-            <template>
-                <el-form ref="form" :model="form" :rules="rules" :label-position="labelPosition" label-width="180px">
-                    <el-form-item label="Owner" prop="Owner">
-                        <el-input v-model="form.Owner"></el-input>
-                    </el-form-item>
-                    <el-form-item label="Mitigation_plan" prop="Mitigation_plan">
-                        <el-input v-model="form.Mitigation_plan"></el-input>
-                    </el-form-item>
-                    <div class="el-form-item__content" style="margin-left: 220px;">
-                        <el-form-item>
-                            <el-button type="primary" @click="updateData2('form')">確定</el-button>
-                        </el-form-item>
-                    </div>
-                </el-form>
-            </template>
-        </el-dialog>
-        <el-dialog :visible.sync="update3" :close-on-click-modal="false">
-            <template>
-                <el-form ref="form" :model="form" :rules="rules" :label-position="labelPosition" label-width="180px">
-                    <el-form-item label="Mitigation_plan" prop="Mitigation_plan">
-                        <el-input v-model="form.Mitigation_plan"></el-input>
-                    </el-form-item>
-                    <div class="el-form-item__content" style="margin-left: 220px;">
-                        <el-form-item>
-                            <el-button type="primary" @click="updateData3('form')">確定</el-button>
-                        </el-form-item>
-                    </div>
-                </el-form>
-            </template>
-        </el-dialog>
+
         <div class="tableAround">
 
             <el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input>
@@ -319,42 +307,47 @@
             {#    <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>#}
             <el-table id="out-table" ref="tableRef" height="700" border stripe
                       :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)"
-                      style="min-width: 100%;border-radius: 10px;" @selection-change="handleSelectionChange"
+                      style="min-width: 100%;border-radius: 10px" @selection-change="handleSelectionChange"
                       :row-key="getRowKeys"
                       :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
                       v-loading="tableloading"
                       element-loading-text="數據更新中，請稍後"
                       border>
-                {#              <el-table-column type="selection" width="50"></el-table-column>#}
-                <el-table-column type="index" :index="indexMethod"></el-table-column>
-                <el-table-column prop="Project" label="Project" align="center" width="100"></el-table-column>
-                {#              <el-table-column  prop="FFRT_Entry_unclose_issue" label="FFRT Entry unclose issue" align="center" width="155"></el-table-column>#}
-                {#              <el-table-column  prop="SIT_Exit_unclose_issue" label="SIT Exit unclose issue" align="center" width="135"></el-table-column>#}
-                {#              <el-table-column  prop="first_FFRT" label="1st FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="second_FFRT" label="2nd FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="third_FFRT" label="3rd FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="fourth_FFRT" label="4th FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="fifth_FFRT" label="5th FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="sixth_FFRT" label="6th FFRT" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="issue_def" label="分類" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="Remark" label="Remark" align="center" width="120"></el-table-column>#}
-                {#              <el-table-column  prop="FFRT" label="FFRT" align="center" width="120"></el-table-column>#}
-                <el-table-column prop="Defect_ID" label="Defect ID" align="center" width="120"></el-table-column>
-                <el-table-column prop="Title" label="Title" align="center" width="280"></el-table-column>
-                <el-table-column prop="Create_date" label="Create date" align="center" width="120"></el-table-column>
-                <el-table-column prop="Update_date" label="Update date" align="center" width="120"></el-table-column>
-                <el-table-column prop="Status" label="Status" align="center" width="120"></el-table-column>
-                <el-table-column prop="Severity" label="Severity" align="center" width="120"></el-table-column>
-                <el-table-column prop="Category" label="Category" align="center" width="120"></el-table-column>
-                <el-table-column prop="Component" label="Component" align="center" width="120"></el-table-column>
-                <el-table-column prop="BIOS_KBC" label="BIOS/KBC" align="center" width="120"></el-table-column>
-                <el-table-column prop="Comments" label="Comments" align="center" width="300"></el-table-column>
-                <el-table-column prop="Author" label="Author" align="center" width="120"></el-table-column>
-                <el-table-column prop="Assign_to" label="Assign to" align="center" width="120"></el-table-column>
-                <el-table-column prop="Description" label="Description" align="center" width="300"></el-table-column>
-                <el-table-column prop="Reproduce_steps" label="Reproduce steps" align="center"
-                                 width="300"></el-table-column>
-                <el-table-column prop="Age" label="Age" align="center"></el-table-column>
+                <el-table-column type="selection" width="50" align="center" fixed
+                                 :reserve-selection="true"></el-table-column>
+                <el-table-column label="Edit" align="center" fixed>
+                    <template slot-scope="scope">
+                        <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"
+                                   @click="alertID(scope.row.id,scope.row)"></el-button>
+                    </template>
+                </el-table-column>
+                <el-table-column type="index" :index="indexMethod" align="center" fixed></el-table-column>
+                <el-table-column prop="Year" label="Year" align="center" width="100" fixed></el-table-column>
+                <el-table-column prop="DataType" label="DataType" align="center" width="150" fixed></el-table-column>
+                <el-table-column prop="CG" label="CG" align="center" width="130"></el-table-column>
+                <el-table-column prop="Compal_Model" label="Compal Model" align="center" width="140"></el-table-column>
+                <el-table-column prop="Customer_Model" label="Customer Model" align="center"
+                                 width="180"></el-table-column>
+                <el-table-column prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center"
+                                 width="140"></el-table-column>
+                <el-table-column prop="Status" label="Status: Planning=P Executing=E" align="center"
+                                 width="140"></el-table-column>
+                <el-table-column prop="Customer" label="Customer" align="center" width="120"></el-table-column>
+                <el-table-column prop="Product_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center"
+                                 width="120"></el-table-column>
+                <el-table-column prop="Jan" label="Jan" align="center" width="120"></el-table-column>
+                <el-table-column prop="Feb" label="Feb" align="center" width="120"></el-table-column>
+                <el-table-column prop="Mar" label="Mar" align="center" width="120"></el-table-column>
+                <el-table-column prop="Apr" label="Apr" align="center" width="120"></el-table-column>
+                <el-table-column prop="May" label="May" align="center" width="120"></el-table-column>
+                <el-table-column prop="Jun" label="Jun" align="center" width="120"></el-table-column>
+                <el-table-column prop="July" label="July" align="center" width="120"></el-table-column>
+                <el-table-column prop="Aug" label="Aug" align="center" width="120"></el-table-column>
+                <el-table-column prop="Sep" label="Sep" align="center" width="120"></el-table-column>
+                <el-table-column prop="Oct" label="Oct" align="center" width="120"></el-table-column>
+                <el-table-column prop="Nov" label="Nov" align="center" width="120"></el-table-column>
+                <el-table-column prop="Dec" label="Dec" align="center"></el-table-column>
+
 
             </el-table>
             <div class="block">
@@ -393,9 +386,12 @@
                     search: '',
                     loading: false,
                     SectionProjectcode: [],
+                    yearOptions: [],
+                    datatypeOption: [],
                     ProjectCodeOption: [],
                     ProjectcodeCompal: "",
-                    customer: '',
+                    datatype: '',
+                    year: '',
                     editpermission: 0,
                     permission: 0,
                     customerOptions: {},
@@ -404,24 +400,37 @@
                     departmentOptions: [],
                     departmentError: false,
                     tableContent: [],
-                    update1: false,
-                    update2: false,
-                    update3: false,
+                    update: false,
                     ID: "",
                     labelPosition: 'right',
                     tableloading: false,
                     elbuttonloading: false,
                     form: {
+                        Year: '',
+                        DataType: '',
+                        CG: '',
+                        Compal_Model: '',
+                        Customer_Model: '',
+                        Marketing_type: '',
+                        Status: '',
                         Customer: '',
-                        ProjectcodeCompal: '',
-                        Lowlight_item: '',
-                        Root_cause: '',
-                        LD: '',
-                        Owner: '',
-                        Mitigation_plan: '',
+                        Product_Type: '',
+                        Jan: '',
+                        Feb: '',
+                        Mar: '',
+                        Apr: '',
+                        May: '',
+                        Jun: '',
+                        July: '',
+                        Aug: '',
+                        Sep: '',
+                        Oct: '',
+                        Nov: '',
+                        Dec: '',
 
                     },
                     formData: [],
+                    editID: '',
                     multiDeleteVisible: false,
                     multipleSelection: [],
                     //表格信息顯示
@@ -431,15 +440,21 @@
                     appendss: false,
                     //分页
                     currentPage: 1,//默认显示第一页
-                    pageSize: 20,//默认每页显示100条
+                    pageSize: 100,//默认每页显示100条
                     totalNum: null,
                     errMsg: null,
                     rules: {
-                        Customer: [
+                        Year: [
                             {required: true, message: "不能為空", trigger: ['blur', 'change']}
                         ],
-                        ProjectcodeCompal: [
-                            {required: true, message: "不能為空", trigger: ['blur', 'change']}
+                        {% comment %}DataType: [
+                           { required: true, message: "不能為空", trigger:['blur','change'] }
+                        ],{% endcomment %}
+                        CG: [
+                            {required: true, message: "不能為空", trigger: ['blur', 'blur']}
+                        ],
+                        Customer: [
+                            {required: true, message: "不能為空", trigger: ['blur', 'blur']}
                         ],
                     },
 
@@ -454,16 +469,15 @@
                 getdata: function (e) {
                     this.elbuttonloading = true;
                     this.tableloading = true;
-                    this.Titleoptions1 = [];
                     let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
                     axios.post("/ProjectComparison/ProjectComparison_Edit/", Qs.stringify(data), {
                         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                     }).then((res) => {
-                        this.ProjectCodeOption = res.data.ProjectCodeOption;
+                        this.yearOptions = res.data.yearOptions;
+                        this.datatypeOption = res.data.datatypeOption;
                         this.permission = res.data.permission;
                         this.tableContent = res.data.content;
                         this.totalNum = this.tableContent.length;
-                        //console.log(this.totalNum)
                         this.elbuttonloading = false;
                         this.tableloading = false;
                         this.$nextTick(() => {
@@ -550,24 +564,24 @@
                 //上传搜索项：以此选项搜索符合条件的内容
                 find: function () {
 
-                    if (this.$refs.Customer.value === "") {
+                    if (this.$refs.Year.value === "") {
                         this.customerError = true;
                         return false;
                     }
-                    {% comment %}
-                    if(this.$refs.ProjectcodeCompal.value ==""){
+
+                    {% comment %}if(this.$refs.DataType.value ==""){
                           this.departmentError= true;
                           return false;
-                    }
-                    {% endcomment %}
+                    }{% endcomment %}
+
                     this.elbuttonloading = true;
                     this.tableloading = true;
-                    let Customer = this.$refs.Customer.value;
-                    let Projectcode = this.$refs.ProjectcodeCompal.value;
+                    let Year = this.$refs.Year.value;
+                    let DataType = this.$refs.DataType.value;
                     let data = {
                         "isGetData": "SEARCH",
-                        "Customer": Customer,
-                        "Projectcode": Projectcode,
+                        "Year": Year,
+                        "DataType": DataType,
                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                     }
                     axios.post("/ProjectComparison/ProjectComparison_Edit/", Qs.stringify(data), {
@@ -578,13 +592,15 @@
                         this.permission = res.data.permission;
                         this.elbuttonloading = false;
                         this.tableloading = false;
+                        this.yearOptions = res.data.yearOptions;
+                        this.datatypeOption = res.data.datatypeOption;
                         this.$nextTick(() => {
                             this.$refs.tableRef.doLayout()
                         })
                     })
 
                     this.customerError = false;
-                    //this.departmentError= false;
+                    this.departmentError = false;
 
                 },
 
@@ -674,12 +690,12 @@
                             //将之前张开的树形结构收起
                             //_this.reset();
                             //2.上傳數據
-                            let Customer = _this.$refs.Customer.value;
-                            let Projectcode = _this.$refs.ProjectcodeCompal.value;
+                            let Year = _this.$refs.Year.value;
+                            let DataType = _this.$refs.DataType.value;
                             axios.post("/ProjectComparison/ProjectComparison_Edit/", {
                                 "isGetData": "upload",
-                                "Customer": Customer,
-                                "Projectcode": Projectcode,
+                                "Year": Year,
+                                "DataType": DataType,
                                 "ExcelData": result
                             }, {
                                 headers: {'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -692,6 +708,8 @@
                                 })
                                 _this.errMsg = res.data.errMsg;
                                 _this.permission = res.data.permission;
+                                _this.yearOptions = res.data.yearOptions;
+                                _this.datatypeOption = res.data.datatypeOption;
                                 _this.uploadFile = null;
                                 _this.fileName = first;
                                 //_this.loading=false;
@@ -744,43 +762,39 @@
                 },
 
 
-                addData() {
-                    this.appendss = true;
-                    {% comment %}
-                        let msg = {
-                          "isGetData" : "addData", "Customer":Customer, "ProjectcodeCompal":ProjectcodeCompal,
-                      }
-                       axios.post("/ProjectComparison/ProjectComparison_Edit/",Qs.stringify(msg),{
-                                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
-                            } ).then((res) => {
-                                this.ProjectCodeOption=res.data.ProjectCodeOption;
-                       })
-                     {% endcomment %}
-                },
-
                 deleteData() {
-                    let Customer = this.$refs.Customer.value;
-                    let Projectcode = this.$refs.ProjectcodeCompal.value;
-                    var warning = confirm('此操作将永久删除该机种所有数据, 是否继续?')
+                    let Year = this.$refs.Year.value;
+                    let DataType = this.$refs.DataType.value;
+                    var warning = confirm('此操作将永久删除该条数据, 是否继续?')
                     if (warning) {
+                        let checkArr = this.multipleSelection;
+                        let params = [];
+                        let self = this;
+                        checkArr.forEach(function (item) {
+                            params.push(item.id);
+                        });
                         let data = {
                             "isGetData": "MUTIDELETE",
-                            "Customer": Customer,
-                            "Projectcode": Projectcode,
+                            "Year": Year,
+                            "DataType": DataType,
+                            "params": params,
                             "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                         };
                         axios.post('/ProjectComparison/ProjectComparison_Edit/', data).then((res) => {
-
+                            this.$refs.tableRef.clearSelection();
                             this.tableContent = res.data.content;
                             this.totalNum = this.tableContent.length;
+                            this.yearOptions = res.data.yearOptions;
+                            this.datatypeOption = res.data.datatypeOption;
                             this.$nextTick(() => {
                                 this.$refs.tableRef.doLayout()
-                            })
-                            this.$message({
+                            });
+                            self.$message({
                                 message: '删除成功',
                                 type: 'success'
                             });
                             this.permission = res.data.permission;
+
                         })
                     } else {
                         return false;
@@ -788,71 +802,36 @@
 
                 },
 
-                onAppend() {
-                    this.$refs['form'].validate((valid) => {
-                        if (valid) {
-                            if (this.formData.length === 0) {
-                                this.formData = new FormData();
-                            }
-                            this.formData.append('searchCustomer', this.$refs.Customer.value)
-                            this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
-                            this.formData.append('Customer', this.$refs.form.model.Customer)
-                            this.formData.append('ProjectcodeCompal', this.$refs.form.model.ProjectcodeCompal)
-                            this.formData.append('Lowlight_item', this.$refs.form.model.Lowlight_item)
-                            this.formData.append('Root_cause', this.$refs.form.model.Root_cause)
-                            this.formData.append('LD', this.$refs.form.model.LD)
-                            this.formData.append('Owner', this.$refs.form.model.Owner)
-                            this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
-                            this.formData.append("action", 'onSubmit');
-                            console.log(this.formData)
-                            axios.post("/ProjectComparison/ProjectComparison_Edit/", this.formData, {
-                                headers: {
-                                    'Content-Type': 'multipart/form-data',
-                                    'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                                } //改变头格式，原生默认上传json格式
-                            }).then((res) => {
-                                this.tableContent = res.data.content;
-                                this.totalNum = this.tableContent.length;
-                                this.errMsg = res.data.errMsg;
-                                this.formData = new FormData();
-                                if (this.errMsg) {
-                                    this.$alert(this.errMsg, '提示', {
-                                        type: 'warning',
-                                    });
-                                    this.appendss = true;
-                                } else {
-                                    try {
-                                        this.$refs.form.resetFields();
-                                    } catch (e) {
 
-                                    }
-                                    this.appendss = false;
-                                    this.$nextTick(() => {
-                                        this.$refs.tableRef.doLayout()
-                                    })
-                                }
-
-                            })
-
-                        } else {
-                            console.log('error submit!!');
-                            return false;
-                        }
-                    })
-                },
-
-                updateData1() {
+                updateData() {
                     if (this.formData.length === 0) {
                         this.formData = new FormData();
                     }
-                    this.formData.append('searchCustomer', this.$refs.Customer.value)
-                    this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
-                    this.formData.append('ID', this.ID)
-                    this.formData.append('Lowlight_item', this.$refs.form.model.Lowlight_item)
-                    this.formData.append('Root_cause', this.$refs.form.model.Root_cause)
-                    this.formData.append('LD', this.$refs.form.model.LD)
-                    this.formData.append("action", 'onSubmit1');
-                    console.log(this.formData)
+                    this.formData.append('searchYear', this.$refs.Year.value)
+                    this.formData.append('searchDataType', this.$refs.DataType.value)
+                    this.formData.append('ID', this.editID)
+                    this.formData.append('Year', this.$refs.form.model.Year)
+                    this.formData.append('DataType', this.$refs.form.model.DataType)
+                    this.formData.append('CG', this.$refs.form.model.CG)
+                    this.formData.append('Compal_Model', this.$refs.form.model.Compal_Model)
+                    this.formData.append('Customer_Model', this.$refs.form.model.Customer_Model)
+                    this.formData.append('Marketing_type', this.$refs.form.model.Marketing_type)
+                    this.formData.append('Status', this.$refs.form.model.Status)
+                    this.formData.append('Customer', this.$refs.form.model.Customer)
+                    this.formData.append('Product_Type', this.$refs.form.model.Product_Type)
+                    this.formData.append('Jan', this.$refs.form.model.Jan)
+                    this.formData.append('Feb', this.$refs.form.model.Feb)
+                    this.formData.append('Mar', this.$refs.form.model.Mar)
+                    this.formData.append('Apr', this.$refs.form.model.Apr)
+                    this.formData.append('May', this.$refs.form.model.May)
+                    this.formData.append('Jun', this.$refs.form.model.Jun)
+                    this.formData.append('July', this.$refs.form.model.July)
+                    this.formData.append('Aug', this.$refs.form.model.Aug)
+                    this.formData.append('Sep', this.$refs.form.model.Sep)
+                    this.formData.append('Oct', this.$refs.form.model.Oct)
+                    this.formData.append('Nov', this.$refs.form.model.Nov)
+                    this.formData.append('Dec', this.$refs.form.model.Dec)
+                    this.formData.append("action", 'onSubmit');
                     axios.post("/ProjectComparison/ProjectComparison_Edit/", this.formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
@@ -861,20 +840,23 @@
                     }).then((res) => {
                         this.tableContent = res.data.content;
                         this.totalNum = this.tableContent.length;
+                        this.$nextTick(() => {
+                            this.$refs.tableRef.doLayout()
+                        })
                         this.errMsg = res.data.errMsg;
                         this.formData = new FormData();
                         if (this.errMsg) {
                             this.$alert(this.errMsg, '提示', {
                                 type: 'warning',
                             });
-                            this.update1 = true;
+                            this.update = true;
                         } else {
                             try {
                                 this.$refs.form.resetFields();
                             } catch (e) {
 
                             }
-                            this.update1 = false;
+                            this.update = false;
                             this.$nextTick(() => {
                                 this.$refs.tableRef.doLayout()
                             })
@@ -883,84 +865,87 @@
                     })
                 },
 
-                updateData2() {
-                    if (this.formData.length === 0) {
-                        this.formData = new FormData();
+                {% comment %}
+                 alertID:function(id,row){
+                    if(this.permission === 1){
+                        this.update=true;
+                        let Year = this.$refs.Year.value;
+                        let DataType=this.$refs.DataType.value;
+                        let msg = {
+                          "isGetData" : "edit" , "Year":Year, "DataType":DataType, "ID":id
+                       }
+                       axios.post("/ProjectComparison/ProjectComparison_Edit/",Qs.stringify(msg,{indices:false}),{
+                                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
+                            } ).then((res) => {
+                             this.form.Year=row.Year;
+                             this.form.DataType=row.DataType;
+                             this.form.CG=row.CG;
+                             this.form.Compal_Model=row.Compal_Model;
+                             this.form.Customer_Model=row.Customer_Model;
+                             this.form.Marketing_type=row.Marketing_type;
+                             this.form.Status=row.Status;
+                             this.form.Customer=row.Customer;
+                             this.form.Product_Type=row.Product_Type;
+                             this.form.Jan=row.Jan;
+                             this.form.Feb=row.Feb;
+                             this.form.Mar=row.Mar;
+                             this.form.Apr=row.Apr;
+                             this.form.May=row.May;
+                             this.form.Jun=row.Jun;
+                             this.form.July=row.July;
+                             this.form.Aug=row.Aug;
+                             this.form.Sep=row.Sep;
+                             this.form.Oct=row.Oct;
+                             this.form.Nov=row.Nov;
+                             this.form.Dec=row.Dec;
+                             this.editID = id;
+
+                       })
+                        }else{
+                               this.update=false;
+                               this.$message({
+                                  showClose: true,
+                                  message: '無編輯權限！',
+                                  type: 'warning'
+                                });
+                       }
+                },
+                {% endcomment %}
+                alertID: function (id, row) {
+                    if (this.permission === 1) {
+                        this.update = true;
+                        this.form.Year = row.Year;
+                        this.form.DataType = row.DataType;
+                        this.form.CG = row.CG;
+                        this.form.Compal_Model = row.Compal_Model;
+                        this.form.Customer_Model = row.Customer_Model;
+                        this.form.Marketing_type = row.Marketing_type;
+                        this.form.Status = row.Status;
+                        this.form.Customer = row.Customer;
+                        this.form.Product_Type = row.Product_Type;
+                        this.form.Jan = row.Jan;
+                        this.form.Feb = row.Feb;
+                        this.form.Mar = row.Mar;
+                        this.form.Apr = row.Apr;
+                        this.form.May = row.May;
+                        this.form.Jun = row.Jun;
+                        this.form.July = row.July;
+                        this.form.Aug = row.Aug;
+                        this.form.Sep = row.Sep;
+                        this.form.Oct = row.Oct;
+                        this.form.Nov = row.Nov;
+                        this.form.Dec = row.Dec;
+                        this.editID = id;
+                    } else {
+                        this.update = false;
+                        this.$message({
+                            showClose: true,
+                            message: '無編輯權限！',
+                            type: 'warning'
+                        });
                     }
-                    this.formData.append('searchCustomer', this.$refs.Customer.value);
-                    this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value);
-                    this.formData.append('ID', this.ID);
-                    this.formData.append('Owner', this.$refs.form.model.Owner);
-                    this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan);
-                    this.formData.append("action", 'onSubmit2');
-                    console.log(this.formData)
-                    axios.post("/ProjectComparison/ProjectComparison_Edit/", this.formData, {
-                        headers: {
-                            'Content-Type': 'multipart/form-data',
-                            'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                        } //改变头格式，原生默认上传json格式
-                    }).then((res) => {
-                        this.tableContent = res.data.content;
-                        this.errMsg = res.data.errMsg;
-                        this.formData = new FormData();
-                        if (this.errMsg) {
-                            this.$alert(this.errMsg, '提示', {
-                                type: 'warning',
-                            });
-                            this.update2 = true;
-                        } else {
-                            try {
-                                this.$refs.form.resetFields();
-                            } catch (e) {
-
-                            }
-                            this.update2 = false;
-                            this.$nextTick(() => {
-                                this.$refs.tableRef.doLayout()
-                            })
-                        }
-
-                    })
                 },
 
-                updateData3() {
-                    if (this.formData.length === 0) {
-                        this.formData = new FormData();
-                    }
-                    this.formData.append('searchCustomer', this.$refs.Customer.value)
-                    this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
-                    this.formData.append('ID', this.ID)
-                    this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
-                    this.formData.append("action", 'onSubmit3');
-                    console.log(this.formData)
-                    axios.post("/ProjectComparison/ProjectComparison_Edit/", this.formData, {
-                        headers: {
-                            'Content-Type': 'multipart/form-data',
-                            'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                        } //改变头格式，原生默认上传json格式
-                    }).then((res) => {
-                        this.tableContent = res.data.content;
-                        this.errMsg = res.data.errMsg;
-                        this.formData = new FormData();
-                        if (this.errMsg) {
-                            this.$alert(this.errMsg, '提示', {
-                                type: 'warning',
-                            });
-                            this.update3 = true;
-                        } else {
-                            try {
-                                this.$refs.form.resetFields();
-                            } catch (e) {
-
-                            }
-                            this.update3 = false;
-                            this.$nextTick(() => {
-                                this.$refs.tableRef.doLayout()
-                            })
-                        }
-
-                    })
-                },
 
                 //分页
                 handleSizeChange(val) {
@@ -993,9 +978,16 @@
                     return this.datas.length//必须是el-table里面绑定的数据变量
                 }
             },
+            watch: {
+                datas() {
+                    this.currentPage = 1;
+            }
+    },
         })
     </script>
 {% endblock %}
+
+
 
 
 
