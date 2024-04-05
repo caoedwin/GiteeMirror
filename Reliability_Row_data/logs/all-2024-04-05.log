@@ -1,0 +1,348 @@
+[2024-04-05 07:49:36,955] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET / 302 [0.06, 127.0.0.1:62938]
+[2024-04-05 07:49:36,960] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:62938]
+[2024-04-05 07:49:37,706] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:62938]
+[2024-04-05 07:49:37,709] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:62938]
+[2024-04-05 07:52:13,339] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 07:52:13 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-05 07:52:13,346] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.05, 127.0.0.1:63195]
+[2024-04-05 07:52:13,382] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.03, 127.0.0.1:63195]
+[2024-04-05 07:52:13,443] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:63195]
+[2024-04-05 07:52:13,536] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:63200]
+[2024-04-05 07:52:13,607] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:63200]
+[2024-04-05 07:52:13,743] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 07:52:13 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 07:52:13,753] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:63195]
+[2024-04-05 07:52:13,770] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:63196]
+[2024-04-05 07:52:47,416] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 07:52:47 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 07:52:47,427] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:63196]
+[2024-04-05 07:56:06,556] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:63200]
+[2024-04-05 07:58:40,893] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET / 200 [0.08, 127.0.0.1:57123]
+[2024-04-05 07:58:40,993] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:57131]
+[2024-04-05 07:58:41,058] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:57131]
+[2024-04-05 07:58:41,065] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:57123]
+[2024-04-05 07:59:17,271] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:57226]
+[2024-04-05 07:59:17,307] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:57131]
+[2024-04-05 07:59:17,328] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:57229]
+[2024-04-05 07:59:17,330] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:57229]
+[2024-04-05 07:59:17,490] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 07:59:17 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 07:59:17,498] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:57226]
+[2024-04-05 07:59:17,537] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.05, 127.0.0.1:57227]
+[2024-04-05 07:59:25,735] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 07:59:25 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 07:59:25,757] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.07, 127.0.0.1:57227]
+[2024-04-05 08:40:29,747] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:59181]
+[2024-04-05 08:44:16,730] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:57229]
+[2024-04-05 08:44:26,727] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET / 200 [0.04, 127.0.0.1:59328]
+[2024-04-05 08:44:26,878] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:59333]
+[2024-04-05 08:44:26,880] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:59333]
+[2024-04-05 08:44:26,897] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:59328]
+[2024-04-05 08:44:32,167] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:59348]
+[2024-04-05 08:44:32,201] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:59333]
+[2024-04-05 08:44:32,222] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:59351]
+[2024-04-05 08:44:32,225] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:59351]
+[2024-04-05 08:44:32,382] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 08:44:32 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 08:44:32,396] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:59348]
+[2024-04-05 08:44:32,436] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.07, 127.0.0.1:59349]
+[2024-04-05 10:38:00,851] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:38:00 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:38:00,873] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:60974]
+[2024-04-05 10:43:28,823] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:28 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:28,841] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:58779]
+[2024-04-05 10:43:34,600] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:34 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:34,617] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:58779]
+[2024-04-05 10:43:37,204] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:37 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:37,210] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:58779]
+[2024-04-05 10:43:39,595] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:39 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:39,614] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:58779]
+[2024-04-05 10:43:43,073] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:43 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:43,089] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:58779]
+[2024-04-05 10:43:46,067] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:46,075] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:58779]
+[2024-04-05 10:43:49,476] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:49 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:49,493] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:58779]
+[2024-04-05 10:43:52,604] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:52 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:52,621] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:58779]
+[2024-04-05 10:43:55,310] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:43:55 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:43:55,327] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:58779]
+[2024-04-05 10:46:46,425] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /PersonalExperience/NPI-upload/ 200 [0.06, 127.0.0.1:62074]
+[2024-04-05 10:46:46,433] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/css/b_upload.css 304 [0.00, 127.0.0.1:62074]
+[2024-04-05 10:46:46,434] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/images/Func.png 304 [0.00, 127.0.0.1:62076]
+[2024-04-05 10:46:46,435] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/js/xlsx/xlsx_pop.js 304 [0.00, 127.0.0.1:62078]
+[2024-04-05 10:46:46,460] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:59351]
+[2024-04-05 10:46:46,476] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/download_UPK/element-ui@2.12.0/lib/theme-chalk/fonts/element-icons.woff 304 [0.00, 127.0.0.1:62078]
+[2024-04-05 10:46:46,521] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:62081]
+[2024-04-05 10:46:46,523] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:62081]
+[2024-04-05 10:46:46,692] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:46:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /PersonalExperience/NPI-upload/ POST
+[2024-04-05 10:46:46,704] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /PersonalExperience/NPI-upload/ 200 [0.04, 127.0.0.1:62078]
+[2024-04-05 10:46:46,739] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.06, 127.0.0.1:62076]
+[2024-04-05 10:51:41,359] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53496]
+[2024-04-05 10:51:41,377] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:62081]
+[2024-04-05 10:51:41,419] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:53499]
+[2024-04-05 10:51:41,425] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:53499]
+[2024-04-05 10:51:41,545] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:51:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:51:41,552] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:53496]
+[2024-04-05 10:51:41,565] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:53497]
+[2024-04-05 10:51:46,267] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:51:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:51:46,286] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53497]
+[2024-04-05 10:52:10,904] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:10 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:10,927] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53497]
+[2024-04-05 10:52:11,577] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:11 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:11,598] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53497]
+[2024-04-05 10:52:11,766] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:11 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:11,776] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53497]
+[2024-04-05 10:52:11,937] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:11 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:11,945] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:12,123] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:12 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:12,133] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:12,323] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:12 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:12,333] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:39,912] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:39 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:39,932] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53497]
+[2024-04-05 10:52:40,598] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:40 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:40,607] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:40,799] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:40 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:40,805] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:40,990] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:40 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:40,998] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53497]
+[2024-04-05 10:52:41,193] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:41,204] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:41,378] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:41,388] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:41,569] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:41,576] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:53497]
+[2024-04-05 10:52:41,782] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:41,791] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53497]
+[2024-04-05 10:52:41,984] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:41 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:41,992] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:52:56,114] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:52:56 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:52:56,125] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53497]
+[2024-04-05 10:53:06,797] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:53:06 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:53:06,805] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:53:12,387] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:53:12 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:53:12,405] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53497]
+[2024-04-05 10:53:21,536] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:53:21 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:53:21,558] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:53497]
+[2024-04-05 10:53:30,705] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:53:30 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:53:30,713] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.10, 127.0.0.1:53497]
+[2024-04-05 10:54:10,676] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:54:10 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:54:10,697] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53497]
+[2024-04-05 10:57:20,025] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:20 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:20,040] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53679]
+[2024-04-05 10:57:20,723] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:20 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:20,739] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53679]
+[2024-04-05 10:57:20,892] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:20 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:20,898] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:21,093] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:21 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:21,097] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:21,266] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:21 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:21,272] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:21,637] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:21 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:21,643] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:21,852] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:21 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:21,858] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:22,066] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:22 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:22,073] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:22,266] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:22 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:22,273] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:53679]
+[2024-04-05 10:57:22,715] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:22 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:22,721] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:23,155] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:23,161] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:23,497] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:23,512] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:23,729] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:23,748] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53679]
+[2024-04-05 10:57:24,006] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:24 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:24,013] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:24,381] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:24 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:24,398] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:24,871] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:24 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:24,878] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:53679]
+[2024-04-05 10:57:25,187] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:25 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:25,202] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:25,944] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:25 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:25,951] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:26,145] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:26 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:26,151] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:26,660] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:26 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:26,666] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:26,907] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:26 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:26,912] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:27,512] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:27 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:27,530] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:27,743] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:27 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:27,750] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:28,164] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:28 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:28,170] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:28,366] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:28 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:28,373] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:28,922] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:28 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:28,931] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:29,141] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:29 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:29,148] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:29,525] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:29 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:29,533] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:53679]
+[2024-04-05 10:57:29,717] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:29 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:29,723] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:57:30,407] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:30 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:30,423] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:53679]
+[2024-04-05 10:57:30,794] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:57:30 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:57:30,800] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:53679]
+[2024-04-05 10:58:34,270] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:58:34 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:58:34,275] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:61274]
+[2024-04-05 10:59:38,997] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:49823]
+[2024-04-05 10:59:39,003] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:53499]
+[2024-04-05 10:59:39,076] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:49826]
+[2024-04-05 10:59:39,078] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49826]
+[2024-04-05 10:59:39,195] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 10:59:39 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 10:59:39,201] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:49823]
+[2024-04-05 10:59:39,219] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:49824]
+[2024-04-05 11:00:25,453] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:49824]
+[2024-04-05 11:00:25,458] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49826]
+[2024-04-05 11:00:25,545] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:49861]
+[2024-04-05 11:00:25,546] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49861]
+[2024-04-05 11:00:25,653] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:00:25 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:00:25,660] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:49824]
+[2024-04-05 11:00:25,674] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:49823]
+[2024-04-05 11:00:46,793] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:00:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:00:46,813] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:49823]
+[2024-04-05 11:00:56,705] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:00:56 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:00:56,714] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:49823]
+[2024-04-05 11:01:01,585] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:01:01 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:01:01,600] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:49823]
+[2024-04-05 11:01:34,841] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /logout/ 302 [0.01, 127.0.0.1:49823]
+[2024-04-05 11:01:34,845] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:34,851] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49861]
+[2024-04-05 11:01:34,882] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:34,886] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:44,611] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:44,665] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:44,668] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49823]
+[2024-04-05 11:01:46,353] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:01:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-05 11:01:46,367] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.06, 127.0.0.1:49823]
+[2024-04-05 11:01:46,377] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.01, 127.0.0.1:49823]
+[2024-04-05 11:01:46,407] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:49823]
+[2024-04-05 11:01:46,490] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:49921]
+[2024-04-05 11:01:46,491] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49921]
+[2024-04-05 11:01:46,632] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:01:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:01:46,636] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:49823]
+[2024-04-05 11:01:46,668] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.05, 127.0.0.1:49909]
+[2024-04-05 11:01:49,209] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /admin/ 302 [0.06, 127.0.0.1:49909]
+[2024-04-05 11:01:49,247] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/login/?next=/admin/ 200 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:01:49,260] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49921]
+[2024-04-05 11:01:49,349] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:49909]
+[2024-04-05 11:01:51,591] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:01:51 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2024-04-05 11:01:51,596] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/login/?next=/admin/ 302 [0.15, 127.0.0.1:49909]
+[2024-04-05 11:01:52,092] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/ 200 [0.49, 127.0.0.1:49909]
+[2024-04-05 11:01:52,099] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/simpleui-x/css/index.css?_=3.2 304 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:01:52,103] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/simpleui-x/js/index.js?_=2022.4.9 304 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:01:52,219] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:01:56,499] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/role/ 200 [0.49, 127.0.0.1:49909]
+[2024-04-05 11:01:56,513] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.50, 127.0.0.1:49823]
+[2024-04-05 11:01:56,548] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:49909]
+[2024-04-05 11:02:05,168] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/userinfo/ 200 [0.56, 127.0.0.1:49909]
+[2024-04-05 11:02:05,191] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.58, 127.0.0.1:49823]
+[2024-04-05 11:02:05,222] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:49909]
+[2024-04-05 11:02:38,555] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:02:38 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-05 11:02:38,561] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:02:38,601] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:49909]
+[2024-04-05 11:02:38,660] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:49986]
+[2024-04-05 11:02:38,661] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49986]
+[2024-04-05 11:02:38,778] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:02:38 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:02:38,785] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:02:38,809] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:02:49,412] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /logout/ 302 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:02:49,416] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:02:49,418] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:49986]
+[2024-04-05 11:02:49,443] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:02:49,446] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:03:05,137] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:03:05 C140QUN>Sun. Lora None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-05 11:03:05,142] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:03:05,170] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:03:05,185] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:03:05,215] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:50018]
+[2024-04-05 11:03:05,217] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:50018]
+[2024-04-05 11:03:05,239] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:03:38,963] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:04:10,015] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /admin/app01/role/4/change/ 302 [0.02, 127.0.0.1:49909]
+[2024-04-05 11:04:10,048] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/login/?next=/admin/app01/role/4/change/ 200 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:04:10,077] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /admin/ 302 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:04:10,110] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/login/?next=/admin/ 200 [0.03, 127.0.0.1:49909]
+[2024-04-05 11:04:10,146] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:04:11,965] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:04:11 C140QUN>Sun. Lora None>None>None 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2024-04-05 11:04:11,968] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/login/?next=/admin/ 302 [0.13, 127.0.0.1:49909]
+[2024-04-05 11:04:12,396] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/ 200 [0.43, 127.0.0.1:49909]
+[2024-04-05 11:04:12,478] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:04:16,051] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/role/ 200 [0.42, 127.0.0.1:49909]
+[2024-04-05 11:04:16,086] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.45, 127.0.0.1:50060]
+[2024-04-05 11:04:16,119] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:49909]
+[2024-04-05 11:04:21,513] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/role/4/change/ 200 [0.19, 127.0.0.1:49909]
+[2024-04-05 11:04:21,530] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:49909]
+[2024-04-05 11:04:21,531] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/js/SelectBox.js 304 [0.01, 127.0.0.1:50060]
+[2024-04-05 11:04:21,533] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/js/SelectFilter2.js 304 [0.01, 127.0.0.1:51025]
+[2024-04-05 11:04:21,570] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/icon-unknown.svg 304 [0.00, 127.0.0.1:51025]
+[2024-04-05 11:04:21,572] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/search.svg 304 [0.00, 127.0.0.1:50060]
+[2024-04-05 11:04:21,573] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/icon-unknown-alt.svg 304 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:04:21,574] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/selector-icons.svg 304 [0.00, 127.0.0.1:51027]
+[2024-04-05 11:04:51,470] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:04:51 C140QUN>Sun. Lora None>None>None 127.0.0.1 127.0.0.1 /admin/app01/role/4/change/ POST
+[2024-04-05 11:04:51,479] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/app01/role/4/change/ 302 [0.04, 127.0.0.1:51027]
+[2024-04-05 11:04:51,922] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/role/ 200 [0.44, 127.0.0.1:51027]
+[2024-04-05 11:04:51,961] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:51027]
+[2024-04-05 11:05:06,187] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/userinfo/ 200 [0.49, 127.0.0.1:51027]
+[2024-04-05 11:05:06,219] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.52, 127.0.0.1:49909]
+[2024-04-05 11:05:06,227] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:51027]
+[2024-04-05 11:05:15,816] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /logout/ 302 [0.03, 127.0.0.1:51027]
+[2024-04-05 11:05:15,821] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:51027]
+[2024-04-05 11:05:15,826] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:50018]
+[2024-04-05 11:05:15,845] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:51027]
+[2024-04-05 11:05:15,848] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:51027]
+[2024-04-05 11:05:19,981] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:05:19 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-05 11:05:19,986] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.01, 127.0.0.1:51027]
+[2024-04-05 11:05:20,006] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.02, 127.0.0.1:51027]
+[2024-04-05 11:05:20,047] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:51027]
+[2024-04-05 11:05:20,083] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:51072]
+[2024-04-05 11:05:20,085] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51072]
+[2024-04-05 11:05:20,220] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:05:20 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:05:20,223] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:51027]
+[2024-04-05 11:05:20,253] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:49909]
+[2024-04-05 11:05:36,133] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.00, 127.0.0.1:49909]
+[2024-04-05 11:05:36,136] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.00, 127.0.0.1:51027]
+[2024-04-05 11:05:36,138] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.01, 127.0.0.1:51102]
+[2024-04-05 11:05:36,153] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:51102]
+[2024-04-05 11:06:13,009] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.04, 127.0.0.1:51102]
+[2024-04-05 11:06:13,013] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51072]
+[2024-04-05 11:06:13,081] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:51102]
+[2024-04-05 11:06:13,089] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.00, 127.0.0.1:51102]
+[2024-04-05 11:06:13,145] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:51144]
+[2024-04-05 11:06:13,146] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51144]
+[2024-04-05 11:06:13,219] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.00, 127.0.0.1:51102]
+[2024-04-05 11:06:13,273] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.00, 127.0.0.1:51102]
+[2024-04-05 11:06:13,378] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:06:13 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:06:13,386] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:51102]
+[2024-04-05 11:06:13,423] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.06, 127.0.0.1:51027]
+[2024-04-05 11:07:32,463] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.08, 127.0.0.1:51267]
+[2024-04-05 11:07:32,549] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:51267]
+[2024-04-05 11:07:32,586] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.00, 127.0.0.1:51267]
+[2024-04-05 11:07:32,638] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:51270]
+[2024-04-05 11:07:32,877] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.00, 127.0.0.1:51267]
+[2024-04-05 11:07:32,880] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.01, 127.0.0.1:51268]
+[2024-04-05 11:07:32,881] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51270]
+[2024-04-05 11:07:32,886] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:07:32 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:07:32,891] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:51271]
+[2024-04-05 11:07:32,902] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.03, 127.0.0.1:51272]
+[2024-04-05 11:08:01,861] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.07, 127.0.0.1:51316]
+[2024-04-05 11:08:01,925] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:51316]
+[2024-04-05 11:08:01,947] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.00, 127.0.0.1:51316]
+[2024-04-05 11:08:01,985] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:51319]
+[2024-04-05 11:08:02,023] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51319]
+[2024-04-05 11:08:02,056] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.00, 127.0.0.1:51316]
+[2024-04-05 11:08:02,103] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.00, 127.0.0.1:51316]
+[2024-04-05 11:08:02,197] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:08:02 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:08:02,201] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.03, 127.0.0.1:51316]
+[2024-04-05 11:08:02,218] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:51317]
+[2024-04-05 11:08:24,954] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.07, 127.0.0.1:51355]
+[2024-04-05 11:08:25,014] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:51355]
+[2024-04-05 11:08:25,026] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.00, 127.0.0.1:51355]
+[2024-04-05 11:08:25,078] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:51357]
+[2024-04-05 11:08:25,117] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:51357]
+[2024-04-05 11:08:25,150] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.00, 127.0.0.1:51355]
+[2024-04-05 11:08:25,198] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.00, 127.0.0.1:51355]
+[2024-04-05 11:08:25,284] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-05 11:08:25 C100KEZ>Zhang. Grace None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-05 11:08:25,289] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.01, 127.0.0.1:51355]
+[2024-04-05 11:08:25,303] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:51354]

@@ -74,8 +74,10 @@ def ProjectComparison_Edit(request):
         for i in UserInfo.objects.filter(account=onlineuser).first().role.all():
             roles.append(i.name)
     for i in roles:
-        if 'admin' in i or 'DQA_LNV_ProjectCom_admin' in i:
+        if 'admin' == i or 'DQA_LNV_ProjectCom_admin' in i:
             permission = 1
+    # print(roles)
+    # print(permission)
     # print(request.POST)
     # print(request.body)
     if request.method == "POST":

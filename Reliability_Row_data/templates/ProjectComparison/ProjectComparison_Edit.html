@@ -185,10 +185,13 @@
                 {#                            :value="item.Projectcode">#}
                 {#                        </el-option>#}
                 {#                  </el-select>#}
-                <select ref="DataType" v-model="datatype"
-                        style="height:40px;border-radius:5px 5px 5px 5px;width:120px;">
-                    <option v-for="(item,key,index) in datatypeOption">${ item }</option>
-                </select>
+                <el-select ref="DataType" v-model="datatype"
+                           style="height:40px;border-radius:5px 5px 5px 5px;width:120px;" clearable>
+                    <el-option v-for="item in datatypeOption"
+                               :label="item"
+                               :value="item">
+                    </el-option>
+                </el-select>
                 <div class="inputError" v-cloak v-show="departmentError">不能為空</div>
             </div>
             <div style="margin-left: 100px;">
@@ -313,9 +316,9 @@
                       v-loading="tableloading"
                       element-loading-text="數據更新中，請稍後"
                       border>
-                <el-table-column type="selection" width="50" align="center" fixed
+                <el-table-column v-if="permission===1" type="selection" width="50" align="center" fixed
                                  :reserve-selection="true"></el-table-column>
-                <el-table-column label="Edit" align="center" fixed>
+                <el-table-column v-if="permission===1" label="Edit" align="center" fixed>
                     <template slot-scope="scope">
                         <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"
                                    @click="alertID(scope.row.id,scope.row)"></el-button>
@@ -981,8 +984,8 @@
             watch: {
                 datas() {
                     this.currentPage = 1;
-            }
-    },
+                }
+            },
         })
     </script>
 {% endblock %}
