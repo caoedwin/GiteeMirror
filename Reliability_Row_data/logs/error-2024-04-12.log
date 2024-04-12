@@ -1,0 +1,14 @@
+[2024-04-12 15:12:13,310] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectComparison/ProjectComparison_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ProjectComparison\views.py", line 858, in ProjectComparison_Summary
+    mockdatas = mockdatas_count(YearNow)
+TypeError: mockdatas_count() missing 1 required positional argument: 'Customer_list'
+[2024-04-12 15:12:13,314] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 500 [0.26, 127.0.0.1:58607]

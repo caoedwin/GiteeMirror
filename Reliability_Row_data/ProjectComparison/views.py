@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 import datetime, os
 from django.http import HttpResponse
-import datetime, json, simplejson
+import datetime, json, simplejson, pprint
 from .models import ProjectPlan
 from CQM.models import CQMProject
 from app01.models import UserInfo, ProjectinfoinDCT, Role
@@ -282,6 +282,7 @@ def ProjectComparison_Edit(request):
 
                     xlsxlist = json.loads(responseData['ExcelData'])
                     # print(xlsxlist)
+                    # pprint.pprint(xlsxlist)
                     # 验证，先验证再上传,必须要先验证，如果边验证边上传，一旦报错，下次再传就无法通过同机种验证
                     # Check_dic_Project = {'Customer': CustomerSearch, 'Project': ProjectSearch, }
                     # # print(Check_dic_ProjectCQM)
@@ -477,7 +478,7 @@ def ProjectComparison_Edit(request):
     return render(request, 'ProjectComparison/ProjectComparison_Edit.html', locals())
 
 
-def mockdatas_count(Year):
+def mockdatas_count(Year, Customer_list):
     mock_data1 = []
     mock_data2 = []
     mock_data3 = []
@@ -486,87 +487,87 @@ def mockdatas_count(Year):
     DataTypeSearh = "Acutal"
     Phase = "FVT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data2.append(mock_data_FVT_dic)
 
     DataTypeSearh = "Acutal"
     Phase = "SIT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data2.append(mock_data_FVT_dic)
 
     DataTypeSearh = "Acutal"
     Phase = "OOC"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data2.append(mock_data_FVT_dic)
 
@@ -574,87 +575,87 @@ def mockdatas_count(Year):
     DataTypeSearh = "w/o OOC"
     Phase = "FVT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data3.append(mock_data_FVT_dic)
 
     DataTypeSearh = "w/o OOC"
     Phase = "SIT"
     mock_data_FVT_dic = {"id": 2, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data3.append(mock_data_FVT_dic)
 
     DataTypeSearh = "w/o OOC"
     Phase = "OOC"
     mock_data_FVT_dic = {"id": 3, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data3.append(mock_data_FVT_dic)
 
@@ -662,87 +663,87 @@ def mockdatas_count(Year):
     DataTypeSearh = "with OOC"
     Phase = "FVT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data4.append(mock_data_FVT_dic)
 
     DataTypeSearh = "with OOC"
     Phase = "SIT"
     mock_data_FVT_dic = {"id": 2, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data4.append(mock_data_FVT_dic)
 
     DataTypeSearh = "with OOC"
     Phase = "OOC"
     mock_data_FVT_dic = {"id": 3, "Phase": Phase,
-                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jan=Phase).count(),
-                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Feb": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Feb=Phase).count(),
-                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Mar": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Mar=Phase).count(),
-                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Apr": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Apr=Phase).count(),
-                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "May": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            May=Phase).count(),
-                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Jun": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Jun=Phase).count(),
-                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "July": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                             Jul=Phase).count(),
-                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Aug": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Aug=Phase).count(),
-                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Sep": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Sep=Phase).count(),
-                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Oct": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Oct=Phase).count(),
-                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Nov": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Nov=Phase).count(),
-                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh,
+                         "Dec": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
                                                            Dec=Phase).count()}
     mock_data4.append(mock_data_FVT_dic)
 
@@ -853,7 +854,8 @@ def ProjectComparison_Summary(request):
         if request.POST.get('isGetData') == 'first':
             YearNow = str(datetime.datetime.now().year)
             # Year = request.POST.get('Year')
-            mockdatas = mockdatas_count(YearNow)
+            Customer_list = ['C38', 'T12', 'T89', 'T12',]
+            mockdatas = mockdatas_count(YearNow, Customer_list)
             mock_data1 = mockdatas[0]
             mock_data2 = mockdatas[1]
             mock_data3 = mockdatas[2]
@@ -861,7 +863,8 @@ def ProjectComparison_Summary(request):
         if request.POST.get('isGetData') == 'SEARCH':
             # YearNow = str(datetime.datetime.now().year)
             Year = request.POST.get('Year')
-            mockdatas = mockdatas_count(Year)
+            Customer_list = ['C38', 'T12', 'T89', 'T12', ]
+            mockdatas = mockdatas_count(Year, Customer_list)
             mock_data1 = mockdatas[0]
             mock_data2 = mockdatas[1]
             mock_data3 = mockdatas[2]

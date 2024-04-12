@@ -1,0 +1,63 @@
+[2024-04-12 13:23:29,467] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 302 [0.04, 127.0.0.1:62168]
+[2024-04-12 13:23:29,479] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:62168]
+[2024-04-12 13:23:29,508] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.00, 127.0.0.1:62168]
+[2024-04-12 13:23:29,513] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:62168]
+[2024-04-12 13:23:31,058] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:23:31 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-04-12 13:23:31,066] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.02, 127.0.0.1:62168]
+[2024-04-12 13:23:31,087] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.02, 127.0.0.1:62168]
+[2024-04-12 13:23:31,127] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.04, 127.0.0.1:62168]
+[2024-04-12 13:23:31,203] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:62176]
+[2024-04-12 13:23:31,245] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:62176]
+[2024-04-12 13:23:31,468] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:23:31 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-04-12 13:23:31,473] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.07, 127.0.0.1:62168]
+[2024-04-12 13:23:31,497] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.07, 127.0.0.1:62169]
+[2024-04-12 13:23:33,573] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:62169]
+[2024-04-12 13:23:33,596] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:62176]
+[2024-04-12 13:23:33,638] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:62185]
+[2024-04-12 13:23:33,640] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:62185]
+[2024-04-12 13:23:33,762] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:23:33 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 13:23:33,770] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.02, 127.0.0.1:62169]
+[2024-04-12 13:23:33,811] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.05, 127.0.0.1:62168]
+[2024-04-12 13:23:46,639] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:23:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 13:23:46,648] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.07, 127.0.0.1:62168]
+[2024-04-12 13:26:15,696] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:26:15 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 13:26:15,703] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.09, 127.0.0.1:62271]
+[2024-04-12 13:27:07,381] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:27:07 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 13:27:07,397] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.06, 127.0.0.1:62271]
+[2024-04-12 13:31:20,765] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 13:31:20 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 13:31:20,782] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.08, 127.0.0.1:62385]
+[2024-04-12 14:58:13,755] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 14:58:13 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Edit/ POST
+[2024-04-12 14:58:13,763] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Edit/ 200 [0.05, 127.0.0.1:58299]
+[2024-04-12 15:11:44,799] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.06, 127.0.0.1:58578]
+[2024-04-12 15:11:44,884] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:58581]
+[2024-04-12 15:11:44,922] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:58581]
+[2024-04-12 15:11:45,129] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 15:11:45 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-04-12 15:11:45,136] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.07, 127.0.0.1:58578]
+[2024-04-12 15:11:45,173] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.09, 127.0.0.1:58579]
+[2024-04-12 15:11:50,559] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 15:11:50 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-04-12 15:11:50,572] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.14, 127.0.0.1:58579]
+[2024-04-12 15:12:12,934] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.05, 127.0.0.1:58607]
+[2024-04-12 15:12:12,975] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:58610]
+[2024-04-12 15:12:13,014] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:58610]
+[2024-04-12 15:12:13,310] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /ProjectComparison/ProjectComparison_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\ProjectComparison\views.py", line 858, in ProjectComparison_Summary
+    mockdatas = mockdatas_count(YearNow)
+TypeError: mockdatas_count() missing 1 required positional argument: 'Customer_list'
+[2024-04-12 15:12:13,313] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 15:12:13 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-04-12 15:12:13,314] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 500 [0.26, 127.0.0.1:58607]
+[2024-04-12 15:12:13,343] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.28, 127.0.0.1:58608]
+[2024-04-12 15:13:19,935] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.05, 127.0.0.1:58634]
+[2024-04-12 15:13:20,034] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:58643]
+[2024-04-12 15:13:20,075] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:58643]
+[2024-04-12 15:13:20,170] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-04-12 15:13:20 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-04-12 15:13:20,177] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.06, 127.0.0.1:58634]
+[2024-04-12 15:13:20,191] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.07, 127.0.0.1:58641]
