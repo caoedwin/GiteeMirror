@@ -4,9 +4,9 @@
     <list default="true" id="d4498ca8-abfd-4b77-a2c5-6b17d22175cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/PersonalExperience/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/PersonalExperience/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-03-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-03-12.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-03-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-03-12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-04-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/all-2024-04-12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-04-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/logs/info-2024-04-12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/PersonalInfo_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Reliability_Row_data/templates/PersonalInfo/PersonalInfo_edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,25 +40,25 @@
     <session id="336981479">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="32" />
-          <entry key="project.open.time.0" value="32" />
+          <entry key="project.closed" value="34" />
+          <entry key="project.open.time.0" value="34" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="46" />
+          <entry key="project.opened" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="120" />
+          <entry key="html" value="122" />
           <entry key="js" value="2" />
           <entry key="py" value="271" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="120" />
+          <entry key="HTML" value="122" />
           <entry key="JavaScript" value="2" />
           <entry key="Python" value="271" />
         </counts>
@@ -94,10 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ApplyReasonCategory</find>
-      <find>style</find>
-      <find>.el-pagination</find>
-      <find>debug</find>
       <find>CELERY</find>
       <find>task</find>
       <find>LNVTUMINFOTotal</find>
@@ -124,6 +120,10 @@
       <find>閑置</find>
       <find>IdleState</find>
       <find>sectionIdleState</find>
+      <find>export</find>
+      <find>out-table</find>
+      <find>el-table__fixed</find>
+      <find>tableContent</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1118,7 +1118,7 @@
               <item name="DMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMS" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ComputerMS" type="462c0819:PsiDirectoryNode" />
+              <item name="DeviceLNV" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1384,12 +1384,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="927" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.17329377" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4959217" visible="true" weight="0.17329377" />
       <window_info id="Favorites" order="1" sideWeight="0.5040783" side_tool="true" weight="0.22961956" />
       <window_info id="Structure" order="2" sideWeight="0.50363636" side_tool="true" weight="0.22961956" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.43324938" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4959239" weight="0.41813603" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3979849" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1440,13 +1441,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DeviceLNV/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WirelessAP/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1754,6 +1748,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="2157" column="8" selection-start-line="2157" selection-start-column="8" selection-end-line="2157" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DeviceLNV/M_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="1763" column="18" lean-forward="true" selection-start-line="1763" selection-start-column="18" selection-end-line="1763" selection-end-column="18" />
         </state>
       </provider>
     </entry>

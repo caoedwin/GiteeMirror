@@ -105,6 +105,7 @@ urlpatterns = [
     path('ABOQIL/', include('ABOQIL.urls', namespace='ABOQIL')),
     path('ProjectComparison/', include('ProjectComparison.urls', namespace='ProjectComparison')),
     path('ABODriverTool/', include('ABODriverTool.urls', namespace='ABODriverTool')),
+    path('CapitalExpenditure/', include('CapitalExpenditure.urls', namespace='CapitalExpenditure')),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

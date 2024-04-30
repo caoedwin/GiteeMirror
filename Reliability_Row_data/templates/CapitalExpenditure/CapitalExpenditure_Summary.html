@@ -1,0 +1,337 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}perIn_search{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/index.css">
+<style>
+
+/* 解决el-table 表线不齐 */
+body .el-table th.gutter {
+    display: table-cell !important;
+}
+
+body .el-table colgroup.gutter {
+    display: table-cell !important;
+}
+
+label{
+    color:white;
+}
+ .selectMsg{
+     font-size:16px;
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .selectMsg label{
+      font-weight: 800;
+      color:aliceblue;
+  }
+
+  .tableAround{
+    padding: 20px;
+    -moz-box-shadow: 0px 0px 10px #333333;
+    -webkit-box-shadow: 0px 0px 10px #333333;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+}
+.demo-fit{
+   display:inline-block;
+   vertical-align: top;
+   width:123px;
+   height:186px;
+   border:1px solid black;
+
+}
+.cardInformation{
+   display:inline-block;!important
+   margin-left:20px;
+}
+.cardInformation label{
+   margin-bottom: -25px;
+}
+.cardInformation tr td{
+   width: 300px;
+}
+tbody tr td:last-child {
+   text-align:left;
+}
+.el-pagination__total,.el-pagination__jump{
+        color:white;
+}
+.el-table .my-cell {
+    vertical-align: top
+  }
+#sh {
+        font-size:18px;
+        font-family:微软雅黑;
+        border: 2px solid #9f9ca1;
+}
+#sh::-webkit-input-placeholder{
+        color:#2f97a8;
+        font-family:微软雅黑;
+}
+#sh::-moz-placeholder{
+        color:#2f97a8;
+        font-family:微软雅黑;
+}
+#sh:-ms-input-placeholder{
+        color:#2f97a8;
+    font-family: 微软雅黑;
+}
+
+.showDataArea{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    -moz-box-shadow: 0px 0px 10px #333333;
+    -webkit-box-shadow: 0px 0px 10px #333333;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 20px 0 20px 0;
+    width: 100%;
+
+}
+
+.inputError{
+    text-align: center;
+    color: crimson;
+    background-color: beige;
+    width: 50%;
+    margin-left: 60px;
+    margin-top: 20px;
+    position: relative;
+}
+
+  .inputError:before{
+    display:block;
+    content:'';
+    border-width:8px 8px 8px 8px;
+    border-style:solid;
+    border-color:transparent transparent beige transparent;
+
+    /* 定位 */
+    position:absolute;
+    left:50%;
+    top:-16px;
+}
+
+
+ .Quatity {
+    height: 500px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+  .customerContent,.departmentContent{
+     margin-left: 20px;
+  }
+
+</style>
+
+{% endblock %}
+{% block content %}
+<div id="app">
+    <!--搜索框-->
+    <div class="selectMsg" >
+           <div class="customerContent">
+                 <label for="year">Year</label>
+                 <select  ref="Year"  v-model="year" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
+                       <option v-for="(item,key,index) in yearOptions" >${ item }</option>
+                 </select>
+                 <div class="inputError" v-cloak v-show="customerError">不能為空</div>
+           </div>
+           <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
+        <br/>
+
+    </div>
+
+    <div class="showDataArea" style="white-space: nowrap;">
+        <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } Act - Plan</div>
+          <template v-cloak>
+              <el-table  border :data="tableContent1" style="width: 100%;" id="out-table1"
+              v-loading="tableloading"
+              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+              element-loading-text="數據更新中，請稍後"
+              >
+                <el-table-column prop="Phase" label="Phase" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jan" label="Jan" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Feb" label="Feb" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Mar" label="Mar" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Apr" label="Apr" align="center" width="130"></el-table-column>
+                <el-table-column  prop="May" label="May" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jun" label="Jun" align="center" width="130"></el-table-column>
+                <el-table-column  prop="July" label="July" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Aug" label="Aug" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Sep" label="Sep" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Oct" label="Oct" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Nov" label="Nov" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Dec" label="Dec" align="center"></el-table-column>
+              </el-table>
+          </template>
+
+    </div>
+    <div class="showDataArea" style="white-space: nowrap;">
+          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } Projet Acutal</div>
+          <template v-cloak>
+              <el-table  border :data="tableContent2" style="width: 100%;" id="out-table2"
+              v-loading="tableloading"
+              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+              element-loading-text="數據更新中，請稍後"
+              >
+                <el-table-column prop="Phase" label="Phase" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jan" label="Jan" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Feb" label="Feb" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Mar" label="Mar" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Apr" label="Apr" align="center" width="130"></el-table-column>
+                <el-table-column  prop="May" label="May" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jun" label="Jun" align="center" width="130"></el-table-column>
+                <el-table-column  prop="July" label="July" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Aug" label="Aug" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Sep" label="Sep" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Oct" label="Oct" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Nov" label="Nov" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Dec" label="Dec" align="center"></el-table-column>
+              </el-table>
+          </template>
+    </div>
+    <div class="showDataArea" style="white-space: nowrap;">
+          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } Projet Plan(w/o OOC)</div>
+          <template v-cloak>
+              <el-table  border :data="tableContent3" style="width: 100%;" id="out-table3"
+              v-loading="tableloading"
+              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+              element-loading-text="數據更新中，請稍後"
+              >
+                <el-table-column prop="Phase" label="Phase" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jan" label="Jan" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Feb" label="Feb" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Mar" label="Mar" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Apr" label="Apr" align="center" width="130"></el-table-column>
+                <el-table-column  prop="May" label="May" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jun" label="Jun" align="center" width="130"></el-table-column>
+                <el-table-column  prop="July" label="July" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Aug" label="Aug" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Sep" label="Sep" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Oct" label="Oct" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Nov" label="Nov" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Dec" label="Dec" align="center"></el-table-column>
+              </el-table>
+          </template>
+    </div>
+    <div class="showDataArea" style="white-space: nowrap;">
+          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } Project Plan(with OOC)</div>
+          <template v-cloak>
+              <el-table  border :data="tableContent4" style="width: 100%;" id="out-table4"
+              v-loading="tableloading"
+              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+              element-loading-text="數據更新中，請稍後"
+              >
+                <el-table-column prop="Phase" label="Phase" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jan" label="Jan" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Feb" label="Feb" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Mar" label="Mar" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Apr" label="Apr" align="center" width="130"></el-table-column>
+                <el-table-column  prop="May" label="May" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Jun" label="Jun" align="center" width="130"></el-table-column>
+                <el-table-column  prop="July" label="July" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Aug" label="Aug" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Sep" label="Sep" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Oct" label="Oct" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Nov" label="Nov" align="center" width="130"></el-table-column>
+                <el-table-column  prop="Dec" label="Dec" align="center"></el-table-column>
+              </el-table>
+          </template>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/es6/polyfill.min.js"></script>
+<script src="/static/js/es6/babel.min.js"></script>
+<script src="/static/js/axios.min.js"></script>
+<script src="/static/js/vue.min.js"></script>
+<script src="/static/js/qs.js"></script>
+<script src="/static/js/Element/index.js"></script>
+<script src="/static/js/echart/echart.js"></script>
+<script src="/static/js/xlsx/FileSaver.min.js"></script>
+    <script type="text/babel">
+    new Vue({
+        el: '#app',
+        delimiters: ['${', '}'],
+        data: function () {
+            return {
+                // 搜索条件
+                year:'',
+                customerError:false,
+                departmentError:false,
+                ProjectcodeCompal:"",
+                YearTitle: "",
+                yearOptions:[],
+                elbuttonloading: false,
+                tableloading: false,
+                dialogloading: false,
+                tableContent1:[],
+                tableContent2:[],
+                tableContent3:[],
+                tableContent4:[],
+            }
+        },
+        mounted(){        // 页面渲染后触发该区域内容 即页面初始化
+            this.getdata("first");
+        },
+        methods: {
+            indexMethod(index) {
+                  return index +1;
+            },
+            //获取数据
+            getdata: function (e) {
+                this.elbuttonloading = true;
+                this.tableloading = true;
+                let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
+                axios.post("/ProjectComparison/ProjectComparison_Summary/", Qs.stringify(data), {
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                }).then((res) => {
+                    this.yearOptions=res.data.yearOptions;
+                    this.tableContent1=res.data.content1;
+                    this.tableContent2=res.data.content2;
+                    this.tableContent3=res.data.content3;
+                    this.tableContent4=res.data.content4;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
+                 });
+            },
+
+
+            find:function(){
+                if(this.$refs.Year.value ===""){
+                      this.customerError= true;
+                      return false;
+                }
+
+                this.elbuttonloading = true;
+                this.tableloading = true;
+                let Year=this.$refs.Year.value;
+                this.YearTitle = this.$refs.Year.value;
+                let data ={"isGetData":"SEARCH","Year":Year,
+                           "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+               axios.post("/ProjectComparison/ProjectComparison_Summary/",Qs.stringify(data), {
+               headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                }).then((res) => {
+                    this.tableContent1=res.data.content1;
+                    this.tableContent2=res.data.content2;
+                    this.tableContent3=res.data.content3;
+                    this.tableContent4=res.data.content4;
+                    this.elbuttonloading = false;
+                    this.tableloading = false;
+                    this.customerError= false;
+                })
+
+             },
+
+        },
+    })
+    </script>
+{% endblock %}

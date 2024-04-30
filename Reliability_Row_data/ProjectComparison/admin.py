@@ -7,7 +7,7 @@ from .models import ProjectPlan
 class ProjectPlanAdmin(admin.ModelAdmin):
 
     list_display = (
-        'Year', 'DataType', 'CG', 'Compal_Model', 'Customer_Model', 'Marketing_type',
+        'RD_Project_Plan', 'Year', 'DataType', 'CG', 'Compal_Model', 'Customer_Model', 'Marketing_type',
         'Status', 'Customer', 'Product_Type', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
                     )
@@ -17,7 +17,7 @@ class ProjectPlanAdmin(admin.ModelAdmin):
     ordering = ('-Year',)
     #后台数据列表排序方式
     list_display_links = (
-         'Year', 'DataType', 'CG', 'Compal_Model', 'Customer_Model', 'Marketing_type',
+         'RD_Project_Plan', 'Year', 'DataType', 'CG', 'Compal_Model', 'Customer_Model', 'Marketing_type',
         'Status', 'Customer', 'Product_Type',
                     )
     # 设置哪些字段可以点击进入编辑界面

@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class ProjectPlan(models.Model):
+    RD_Project_Plan = models.CharField('RD_Project_Plan', default='', max_length=12)
     Year = models.CharField('Year', max_length=12)
     DataType = models.CharField('DataType', max_length=12)
     CG = models.CharField('CG', max_length=20)

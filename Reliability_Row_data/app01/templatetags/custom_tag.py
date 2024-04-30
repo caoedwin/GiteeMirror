@@ -204,7 +204,7 @@ def get_menu_html(menu_data):
                         Class = "ti-layout-list-large-image"
                     if item['title'] == 'SpecDownload' or item['title'] == 'RD/PE/JQE-Lesson':
                         Class = "ti-layout-accordion-list"
-                    if item['title'] == 'Issue Notes':
+                    if item['title'] == 'Issue Notes' or item['title'] == 'CapitalExpenditure':
                         Class = "ti-layout-column3"
                     if item['title'] == 'Issue List':
                         Class = "ti-bookmark"

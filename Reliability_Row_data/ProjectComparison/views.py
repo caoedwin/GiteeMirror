@@ -11,7 +11,7 @@ from django.forms.models import model_to_dict
 
 # Create your views here.
 headermodel_ProjectPlan = {
-    'Year': 'Year', 'DataType': 'DataType', 'CG': 'CG',
+    'RD Project Plan': 'RD_Project_Plan', 'Year': 'Year', 'DataType': 'DataType', 'CG': 'CG',
     'Compal Model': 'Compal_Model', 'Customer Model': 'Customer_Model',
     "Marketing type\r\n(Commercial / Consumer)": 'Marketing_type',
     """Status:\r\nPlanning  =P\r\nExecuting=E""": 'Status', 'Customer': 'Customer',
@@ -39,23 +39,23 @@ def ProjectComparison_Edit(request):
         yearOptions.append(i["Year"])
 
     datatypeOption = [
-        # "Acutal", "w/o OOC", "with OOC"
+        # "Actual", "w/o OOC", "with OOC"
     ]
     for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
         datatypeOption.append(i["DataType"])
 
     mock_data = [
-        # {"id": "1", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        # {"id": "1", "Year": "2024", "DataType": "Actual", "CG": "CG13", "Compal_Model": "ILVR4",
         #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
         #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
         #  "Feb": "SIT",
         #  "Mar": "", "Apr": "", "May": "", "Jun": "", "July": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": ""},
-        # {"id": "2", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        # {"id": "2", "Year": "2024", "DataType": "Actual", "CG": "CG13", "Compal_Model": "ILVR4",
         #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
         #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
         #  "Feb": "SIT",
         #  "Mar": "", "Apr": "", "May": "", "Jun": "", "July": "", "Aug": "", "Sep": "", "Oct": "", "Nov": "", "Dec": ""},
-        # {"id": "3", "Year": "2024", "DataType": "Acutal", "CG": "CG13", "Compal_Model": "ILVR4",
+        # {"id": "3", "Year": "2024", "DataType": "Actual", "CG": "CG13", "Compal_Model": "ILVR4",
         #  "Customer_Model": "S590 14Intel MTL H28(Plastic/Metal)",
         #  "Marketing_type": "SMB/Commercial", "Status": "E", "Customer": "C38", "Product_Type": "NB", "Jan": "OOC",
         #  "Feb": "SIT",
@@ -98,7 +98,7 @@ def ProjectComparison_Edit(request):
                 # print(i)
                 mock_data.append(
                     {
-                        "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                        "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
                         "CG": i.CG,
                         "Compal_Model": i.Compal_Model,
                         "Customer_Model": i.Customer_Model,
@@ -122,6 +122,7 @@ def ProjectComparison_Edit(request):
                 )
         elif request.POST.get('action') == 'onSubmit':
             ID = request.POST.get('ID')
+            RD_Project_Plan = request.POST.get('RD_Project_Plan')
             Year = request.POST.get('Year')
             DataType = request.POST.get('DataType')
             CG = request.POST.get('CG')
@@ -144,7 +145,7 @@ def ProjectComparison_Edit(request):
             Nov = request.POST.get('Nov')
             Dec = request.POST.get('Dec')
             update_dic = {
-                "Year": Year, "DataType": DataType,
+                "RD_Project_Plan": RD_Project_Plan, "Year": Year, "DataType": DataType,
                 "CG": CG,
                 "Compal_Model": Compal_Model,
                 "Customer_Model": Customer_Model,
@@ -186,7 +187,7 @@ def ProjectComparison_Edit(request):
                 # print(i)
                 mock_data.append(
                     {
-                        "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                        "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
                         "CG": i.CG,
                         "Compal_Model": i.Compal_Model,
                         "Customer_Model": i.Customer_Model,
@@ -233,7 +234,7 @@ def ProjectComparison_Edit(request):
                         yearOptions.append(i["Year"])
 
                     datatypeOption = [
-                        # "Acutal", "w/o OOC", "with OOC"
+                        # "Actual", "w/o OOC", "with OOC"
                     ]
                     for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
                         datatypeOption.append(i["DataType"])
@@ -249,7 +250,7 @@ def ProjectComparison_Edit(request):
                         # print(i)
                         mock_data.append(
                             {
-                                "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                                "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
                                 "CG": i.CG,
                                 "Compal_Model": i.Compal_Model,
                                 "Customer_Model": i.Customer_Model,
@@ -327,7 +328,18 @@ def ProjectComparison_Edit(request):
                                                             """ % rownum
                                 break
                             if 'DataType' in modeldata.keys():
-                                startupload = 1
+                                if modeldata['DataType'] == 'Actual':
+                                    if 'RD_Project_Plan' in modeldata.keys():
+                                        startupload = 1
+                                    else:
+                                        # canEdit = 0
+                                        startupload = 0
+                                        err_msg = """
+                                                第"%s"條數據，DataType 是Actual时， RD_Project_Plan不能为空
+                                                                    """ % rownum
+                                        break
+                                else:
+                                    startupload = 1
                             else:
                                 # canEdit = 0
                                 startupload = 0
@@ -425,7 +437,7 @@ def ProjectComparison_Edit(request):
                         yearOptions.append(i["Year"])
 
                     datatypeOption = [
-                        # "Acutal", "w/o OOC", "with OOC"
+                        # "Actual", "w/o OOC", "with OOC"
                     ]
                     for i in ProjectPlan.objects.all().values("DataType").distinct().order_by("DataType"):
                         datatypeOption.append(i["DataType"])
@@ -440,7 +452,7 @@ def ProjectComparison_Edit(request):
                         # print(i)
                         mock_data.append(
                             {
-                                "id": i.id, "Year": i.Year, "DataType": i.DataType,
+                                "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
                                 "CG": i.CG,
                                 "Compal_Model": i.Compal_Model,
                                 "Customer_Model": i.Customer_Model,
@@ -483,8 +495,8 @@ def mockdatas_count(Year, Customer_list):
     mock_data2 = []
     mock_data3 = []
     mock_data4 = []
-    # mock_data2 Acutal
-    DataTypeSearh = "Acutal"
+    # mock_data2 Actual
+    DataTypeSearh = "Actual"
     Phase = "FVT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
                          "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
@@ -513,7 +525,7 @@ def mockdatas_count(Year, Customer_list):
                                                            Dec=Phase).count()}
     mock_data2.append(mock_data_FVT_dic)
 
-    DataTypeSearh = "Acutal"
+    DataTypeSearh = "Actual"
     Phase = "SIT"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
                          "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
@@ -542,7 +554,7 @@ def mockdatas_count(Year, Customer_list):
                                                            Dec=Phase).count()}
     mock_data2.append(mock_data_FVT_dic)
 
-    DataTypeSearh = "Acutal"
+    DataTypeSearh = "Actual"
     Phase = "OOC"
     mock_data_FVT_dic = {"id": 1, "Phase": Phase,
                          "Jan": ProjectPlan.objects.filter(Year=Year, DataType=DataTypeSearh, Customer__in=Customer_list,
@@ -849,6 +861,9 @@ def ProjectComparison_Summary(request):
         #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
 
     ]
+    mock_data5 = []
+    mock_data6 = []
+    mock_data7 = []
 
     if request.method == "POST":
         if request.POST.get('isGetData') == 'first':
@@ -869,6 +884,90 @@ def ProjectComparison_Summary(request):
             mock_data2 = mockdatas[1]
             mock_data3 = mockdatas[2]
             mock_data4 = mockdatas[3]
+            Check_dic_ProjectPlan = {'Year': Year, 'Customer__in': Customer_list, "DataType": "Actual"}
+            # print(Check_dic_ProjectPlan)
+            for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                # print(i)
+                mock_data5.append(
+                    {
+                        "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
+                        "CG": i.CG,
+                        "Compal_Model": i.Compal_Model,
+                        "Customer_Model": i.Customer_Model,
+                        "Marketing_type": i.Marketing_type,
+                        "Status": i.Status,
+                        "Customer": i.Customer,
+                        "Product_Type": i.Product_Type,
+                        "Jan": i.Jan if i.Jan != None else '',
+                        "Feb": i.Feb if i.Feb != None else '',
+                        "Mar": i.Mar if i.Mar != None else '',
+                        "Apr": i.Apr if i.Apr != None else '',
+                        "May": i.May if i.May != None else '',
+                        "Jun": i.Jun if i.Jun != None else '',
+                        "July": i.Jul if i.Jul != None else '',
+                        "Aug": i.Aug if i.Aug != None else '',
+                        "Sep": i.Sep if i.Sep != None else '',
+                        "Oct": i.Oct if i.Oct != None else '',
+                        "Nov": i.Nov if i.Nov != None else '',
+                        "Dec": i.Dec if i.Dec != None else '',
+                    }
+                )
+            Check_dic_ProjectPlan = {'Year': Year, 'Customer__in': Customer_list, "DataType": "w/o OOC"}
+            # print(Check_dic_ProjectPlan)
+            for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                # print(i)
+                mock_data6.append(
+                    {
+                        "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
+                        "CG": i.CG,
+                        "Compal_Model": i.Compal_Model,
+                        "Customer_Model": i.Customer_Model,
+                        "Marketing_type": i.Marketing_type,
+                        "Status": i.Status,
+                        "Customer": i.Customer,
+                        "Product_Type": i.Product_Type,
+                        "Jan": i.Jan if i.Jan != None else '',
+                        "Feb": i.Feb if i.Feb != None else '',
+                        "Mar": i.Mar if i.Mar != None else '',
+                        "Apr": i.Apr if i.Apr != None else '',
+                        "May": i.May if i.May != None else '',
+                        "Jun": i.Jun if i.Jun != None else '',
+                        "July": i.Jul if i.Jul != None else '',
+                        "Aug": i.Aug if i.Aug != None else '',
+                        "Sep": i.Sep if i.Sep != None else '',
+                        "Oct": i.Oct if i.Oct != None else '',
+                        "Nov": i.Nov if i.Nov != None else '',
+                        "Dec": i.Dec if i.Dec != None else '',
+                    }
+                )
+            Check_dic_ProjectPlan = {'Year': Year, 'Customer__in': Customer_list, "DataType": "with OOC"}
+            # print(Check_dic_ProjectPlan)
+            for i in ProjectPlan.objects.filter(**Check_dic_ProjectPlan):
+                # print(i)
+                mock_data7.append(
+                    {
+                        "id": i.id, "RD_Project_Plan": i.RD_Project_Plan, "Year": i.Year, "DataType": i.DataType,
+                        "CG": i.CG,
+                        "Compal_Model": i.Compal_Model,
+                        "Customer_Model": i.Customer_Model,
+                        "Marketing_type": i.Marketing_type,
+                        "Status": i.Status,
+                        "Customer": i.Customer,
+                        "Product_Type": i.Product_Type,
+                        "Jan": i.Jan if i.Jan != None else '',
+                        "Feb": i.Feb if i.Feb != None else '',
+                        "Mar": i.Mar if i.Mar != None else '',
+                        "Apr": i.Apr if i.Apr != None else '',
+                        "May": i.May if i.May != None else '',
+                        "Jun": i.Jun if i.Jun != None else '',
+                        "July": i.Jul if i.Jul != None else '',
+                        "Aug": i.Aug if i.Aug != None else '',
+                        "Sep": i.Sep if i.Sep != None else '',
+                        "Oct": i.Oct if i.Oct != None else '',
+                        "Nov": i.Nov if i.Nov != None else '',
+                        "Dec": i.Dec if i.Dec != None else '',
+                    }
+                )
 
 
         data = {
@@ -877,6 +976,9 @@ def ProjectComparison_Summary(request):
             "content2": mock_data2,
             "content3": mock_data3,
             "content4": mock_data4,
+            "content5": mock_data5,
+            "content6": mock_data6,
+            "content7": mock_data7,
 
         }
         # print(data)

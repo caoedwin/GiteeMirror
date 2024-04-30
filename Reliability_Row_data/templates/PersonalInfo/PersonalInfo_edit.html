@@ -986,7 +986,7 @@ label{
                  }else{
                     wb = XLSX.utils.table_to_book(table,{raw: true});
                  }
-                 console.log("wb", wb);
+                 console.log("wb", wb, typeof(wb), typeof(this.tableContent));
                  /* 获取二进制字符串作为输出 */
                  var wbout = XLSX.write(wb, {
                      bookType: "xlsx",

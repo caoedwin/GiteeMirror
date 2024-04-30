@@ -198,6 +198,7 @@ INSTALLED_APPS = [
     'ABOQIL',
     'ProjectComparison',
     'ABODriverTool',
+    'CapitalExpenditure',
 ]
 
 MIDDLEWARE = [
