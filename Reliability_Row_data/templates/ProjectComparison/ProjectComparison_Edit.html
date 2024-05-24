@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}PersonalInfo_edit{% endblock %}
+{% block title %}ProjectComparison_Edit{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/index.css">
     <style>
@@ -202,8 +202,11 @@
                 <el-button @click="deleteData()" type="danger" v-if="permission===1" v-cloak
                            style="margin-left: 20px;width: 80px;">刪除
                 </el-button>
+                <el-button @click="deleteDataALL()" type="danger" v-if="permission===1&this.year!=''" v-cloak
+                           style="margin-left: 20px;width: 100px;">清空当年
+                </el-button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="/static/src/modelfiles/ProjectComparison.xlsx" style="color: orange;font-size: 16px">模板下载<img
+                <a href="/static/src/modelfiles/ProjectComparison.zip" style="color: orange;font-size: 16px">模板下载<img
                         src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
             </div>
 
@@ -239,6 +242,12 @@
                                     :value="item">
                             </el-option>
                         </el-select>
+                    </el-form-item>
+                    <el-form-item label="RD Project Plan" prop="RD_Project_Plan">
+                          <el-select v-model="form.RD_Project_Plan" placeholder="请选择">
+                                <el-option value="Yes">Yes</el-option>
+                                <el-option value="No">No</el-option>
+                          </el-select>
                     </el-form-item>
                     <el-form-item label="CG" prop="CG">
                         <el-input v-model="form.CG"></el-input>
@@ -324,7 +333,8 @@
                                    @click="alertID(scope.row.id,scope.row)"></el-button>
                     </template>
                 </el-table-column>
-                <el-table-column type="index" :index="indexMethod" align="center" fixed></el-table-column>
+                <el-table-column  prop="RD_Project_Plan" label="RD Project Plan" align="center" width="100" fixed></el-table-column>
+                <el-table-column type="index" :index="indexMethod" label="No." align="center" fixed></el-table-column>
                 <el-table-column prop="Year" label="Year" align="center" width="100" fixed></el-table-column>
                 <el-table-column prop="DataType" label="DataType" align="center" width="150" fixed></el-table-column>
                 <el-table-column prop="CG" label="CG" align="center" width="130"></el-table-column>
@@ -411,6 +421,7 @@
                     form: {
                         Year: '',
                         DataType: '',
+                        RD_Project_Plan: '',
                         CG: '',
                         Compal_Model: '',
                         Customer_Model: '',
@@ -448,6 +459,9 @@
                     errMsg: null,
                     rules: {
                         Year: [
+                            {required: true, message: "不能為空", trigger: ['blur', 'change']}
+                        ],
+                        RD_Project_Plan: [
                             {required: true, message: "不能為空", trigger: ['blur', 'change']}
                         ],
                         {% comment %}DataType: [
@@ -805,6 +819,46 @@
 
                 },
 
+                deleteDataALL() {
+                    let Year = this.$refs.Year.value;
+                    {% comment %}let DataType = this.$refs.DataType.value;{% endcomment %}
+                    var warning = confirm('此操作将永久删除该条数据, 是否继续?')
+                    if (warning) {
+                        let checkArr = this.multipleSelection;
+                        {% comment %}let params = [];{% endcomment %}
+                        let self = this;
+                        checkArr.forEach(function (item) {
+                            params.push(item.id);
+                        });
+                        let data = {
+                            "isGetData": "MUTIDELALL",
+                            "Year": Year,
+                            {% comment %}"DataType": DataType,
+                            "params": params,{% endcomment %}
+                            "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                        };
+                        axios.post('/ProjectComparison/ProjectComparison_Edit/', data).then((res) => {
+                            this.$refs.tableRef.clearSelection();
+                            this.tableContent = res.data.content;
+                            this.totalNum = this.tableContent.length;
+                            this.yearOptions = res.data.yearOptions;
+                            this.datatypeOption = res.data.datatypeOption;
+                            this.$nextTick(() => {
+                                this.$refs.tableRef.doLayout()
+                            });
+                            self.$message({
+                                message: '删除成功',
+                                type: 'success'
+                            });
+                            this.permission = res.data.permission;
+
+                        })
+                    } else {
+                        return false;
+                    }
+
+                },
+
 
                 updateData() {
                     if (this.formData.length === 0) {
@@ -816,6 +870,7 @@
                     this.formData.append('Year', this.$refs.form.model.Year)
                     this.formData.append('DataType', this.$refs.form.model.DataType)
                     this.formData.append('CG', this.$refs.form.model.CG)
+                    this.formData.append('RD_Project_Plan', this.$refs.form.model.RD_Project_Plan)
                     this.formData.append('Compal_Model', this.$refs.form.model.Compal_Model)
                     this.formData.append('Customer_Model', this.$refs.form.model.Customer_Model)
                     this.formData.append('Marketing_type', this.$refs.form.model.Marketing_type)
@@ -919,6 +974,7 @@
                         this.update = true;
                         this.form.Year = row.Year;
                         this.form.DataType = row.DataType;
+                        this.form.RD_Project_Plan = row.RD_Project_Plan;
                         this.form.CG = row.CG;
                         this.form.Compal_Model = row.Compal_Model;
                         this.form.Customer_Model = row.Customer_Model;

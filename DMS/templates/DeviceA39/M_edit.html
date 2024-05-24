@@ -1136,7 +1136,7 @@
                         <tr>
                             <td style="text-align: center;height: 200px;width: 240px;font-size: 15px;font-weight: bolder">設備圖片</td>
                             <td style="text-align: center;height: 200px;font-size: 15px;font-weight: bolder" colspan="2">
-                                <img :src="getImgUrl(scope.row.NID)" alt="pic" width="150" height="150" />
+                                <a :href="getImgUrl(scope.row.NID)" download="Device.jpg"><img :src="getImgUrl(scope.row.NID)" alt="pic" width="280" height="240"/></a >
                             </td>
                         </tr>
                         <tr>
@@ -1166,6 +1166,12 @@
                             <td style="height: 40px;font-size: 15px;">${ scope.row.AssetNum }</td>
                             <td style="height: 40px;font-size: 15px;">${ scope.row.DevPrice }</td>
                             <td style="height: 40px;font-size: 15px;">${ scope.row.UsYear }</td>
+                        </tr>
+                         <tr>
+                            <td style="text-align: center;height: 200px;width: 240px;font-size: 15px;font-weight: bolder">載貨單</td>
+                            <td style="text-align: center;height: 200px;font-size: 15px;font-weight: bolder" colspan="2">
+                                <a :href="getImgUrl3(scope.row.NID)" download="载货單.jpg"><img :src="getImgUrl3(scope.row.NID)" alt="pic" width="280" height="240"/></a >
+                            </td>
                         </tr>
                      </table>
                   </div>
@@ -1582,6 +1588,10 @@ ax<script type="text/babel">
             getImgUrl2(val){
                return "/media/DeviceA39/Baoguan/"+val+"_b.jpg";
             },
+            getImgUrl3(val){
+                   {#return "/static/images/user-profile.jpg";#}
+                   return "/media/DeviceLNV/Zaihuo/"+val+".jpg";
+                },
 
             floatdisplay(row, column, cell, event){
                 {#console.log(row,"row");#}
