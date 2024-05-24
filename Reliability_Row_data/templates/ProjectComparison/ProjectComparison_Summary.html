@@ -213,8 +213,15 @@ tbody tr td:last-child {
               </el-table>
 
               <el-collapse v-model="activeNames" @change="handleChange">
-                  <el-collapse-item title="實際專案清單" name="1">
-                      <div style="margin-top: 10px;"><el-button @click="exportExcel" type="primary" v-cloak style="height:40px">導出</el-button></div>
+                  <el-collapse-item name="1">
+                      <template slot="title">
+                          實際專案清單
+                          <div style="margin-left: 30px;" @click.stop="showCollapse">
+                              <el-button @click="exportExcel" type="primary" v-cloak size="small">導出</el-button>
+                          </div>
+                      </template>
+{#                  <el-collapse-item title="實際專案清單" name="1">#}
+{#                      <div style="margin-top: 10px;"><el-button @click="exportExcel" type="primary" v-cloak style="height:40px">導出</el-button></div>#}
                       <el-table {% comment %}height="1500px" {% endcomment %} id="out-table3" border stripe :data="tableContent3.slice((currentPage1-1)*pageSize1,currentPage1*pageSize1)"
                         style="width: 100%;border-radius: 10px;margin-top: 20px;font-size: 12px"
                         :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
@@ -286,12 +293,11 @@ tbody tr td:last-child {
                         v-loading="tableloading" @sort-change='sortChange2'
                         element-loading-text="數據更新中，請稍後"
                         border>
-                          <el-table-column  prop="RD_Project_Plan" label="RD Project Plan" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
                           <el-table-column  type="index" :index="indexMethod" label="No." width="auto" min-width="2%" align="center"></el-table-column>
                           <el-table-column  prop="CG" label="CG" align="center" width="auto" min-width="4%" sortable='custom'></el-table-column>
                           <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="14%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="10%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="17%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="12%" sortable='custom'></el-table-column>
         {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
         {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
         {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
@@ -350,12 +356,11 @@ tbody tr td:last-child {
                         v-loading="tableloading" @sort-change='sortChange3'
                         element-loading-text="數據更新中，請稍後"
                         border>
-                          <el-table-column  prop="RD_Project_Plan" label="RD Project Plan" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
                           <el-table-column  type="index" :index="indexMethod" label="No." width="auto" min-width="2%" align="center"></el-table-column>
                           <el-table-column  prop="CG" label="CG" align="center" width="auto" min-width="4%" sortable='custom'></el-table-column>
                           <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="14%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="10%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="17%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="12%" sortable='custom'></el-table-column>
         {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
         {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
         {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
