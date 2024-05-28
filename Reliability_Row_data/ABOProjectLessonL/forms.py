@@ -11,6 +11,11 @@ class ABOlessonlearn(forms.Form):
         ("Reliability", "Reliability"),
         ("Compatibility", "Compatibility")
     )
+    choosestatus = [
+        # ("", ""),
+        ("active", "active"),
+        ("inactive", "inactive")
+    ]
     Category = forms.CharField(label="Category", max_length=100,required=True,widget=forms.Select(choices=choosecat))
     Object = forms.CharField(label="Object", max_length=100, required=True,widget=forms.TextInput(attrs={'class': 'form-control','size':60}))
     # Phase = forms.ModelChoiceField(queryset=Phase, empty_label='Choose Phase')
@@ -31,6 +36,8 @@ class ABOlessonlearn(forms.Form):
     #                         )
     Action = forms.CharField(label="Action", max_length=10000, required=False, widget=forms.Textarea(
         attrs={'class': 'form-control', 'style': 'height: 150px;width:900px', 'cols': 60, 'rows': 15}))
+    Status = forms.CharField(label="Status", max_length=100, required=True, widget=forms.Select(choices=choosestatus))
+
     def editor_check(self):
         print ('tt')
         value=self.cleaned_data['Solution']

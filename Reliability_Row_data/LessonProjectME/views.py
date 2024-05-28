@@ -119,7 +119,7 @@ def Lesson_project(request):
             # print(canEdit)
             if canEdit:
                 Lessonlist = []
-                for i in lesson_learn.objects.all():
+                for i in lesson_learn.objects.filter(Status="active"):
                     Lessonlist.append(i.id)
                 # print (Lessonlist)
                 existlesson = []

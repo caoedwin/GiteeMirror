@@ -731,10 +731,12 @@ def Summary(request):
             if request.POST.get('isGetData') == 'register':
                 name_role = "DQA_LNV_PerEx_User"
                 name_role_CQABO = "DQA_ABO_User"
+                name_role_A31 = "DQA_A31_User"
+                name_role_A32 = "DQA_A32_User"
                 account_Now_list = list(UserInfo.objects.all().values("account").distinct())
                 # print(account_Now_list)
                 # LNV注册
-                for i in PersonalInfo.objects.filter(Status="在職", Customer='C38').values("GroupNum",
+                for i in PersonalInfo.objects.exclude(status="離職").filter(Status="在職", Customer='C38').values("GroupNum",
                                                                                          "EngName").distinct():
                     if {'account': i["GroupNum"]} in account_Now_list:
                         UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
@@ -753,7 +755,7 @@ def Summary(request):
                         UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
                             Role.objects.filter(name=name_role).first(), )
                 # CQ 注册
-                for i in PersonalInfo.objects.filter(Status="在職", Customer__in=['CQABO']).values("GroupNum",
+                for i in PersonalInfo.objects.exclude(status="離職").filter(Status="在職", Customer__in=['CQABO']).values("GroupNum",
                                                                                                  "EngName").distinct():
                     if {'account': i["GroupNum"]} in account_Now_list:
                         UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
@@ -771,6 +773,44 @@ def Summary(request):
                         UserInfo.objects.create(**createdic)
                         UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
                             Role.objects.filter(name=name_role_CQABO).first(), )
+                # A31 注册
+                for i in PersonalInfo.objects.exclude(status="離職").filter(Status="在職", Customer__in=['A31']).values("GroupNum",
+                                                                                                 "EngName").distinct():
+                    if {'account': i["GroupNum"]} in account_Now_list:
+                        UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
+                            Role.objects.filter(name=name_role_CQABO).first(), )
+                    else:
+                        createdic = {"account": i["GroupNum"], "password": '12345678',
+                                     "username": i["EngName"],
+                                     "email": i["EngName"] + '@compal.com' if '.' not in i["EngName"] else
+                                     i["EngName"].replace(' ', '').split('.')[1] + '_' +
+                                     i["EngName"].replace(' ', '').split('.')[0] + '@compal.com',
+                                     "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
+                                     }
+                        # Role.objects.filter(name=role).first(),
+                        # print(createdic)
+                        UserInfo.objects.create(**createdic)
+                        UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
+                            Role.objects.filter(name=name_role_A31).first(), )
+                # A31 注册
+                for i in PersonalInfo.objects.exclude(status="離職").filter(Status="在職", Customer__in=['A32']).values("GroupNum",
+                                                                                               "EngName").distinct():
+                    if {'account': i["GroupNum"]} in account_Now_list:
+                        UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
+                            Role.objects.filter(name=name_role_CQABO).first(), )
+                    else:
+                        createdic = {"account": i["GroupNum"], "password": '12345678',
+                                     "username": i["EngName"],
+                                     "email": i["EngName"] + '@compal.com' if '.' not in i["EngName"] else
+                                     i["EngName"].replace(' ', '').split('.')[1] + '_' +
+                                     i["EngName"].replace(' ', '').split('.')[0] + '@compal.com',
+                                     "department": 1, "is_active": True, "is_staff": False, "is_SVPuser": False,
+                                     }
+                        # Role.objects.filter(name=role).first(),
+                        # print(createdic)
+                        UserInfo.objects.create(**createdic)
+                        UserInfo.objects.filter(account=i["GroupNum"]).first().role.add(
+                            Role.objects.filter(name=name_role_A32).first(), )
                         
                 for i in PerExperience.objects.filter(Proposer_Num=account_login):
                     mock_data.append(

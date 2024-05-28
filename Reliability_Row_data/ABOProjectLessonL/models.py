@@ -31,6 +31,11 @@ class ABOlesson_learn(models.Model):
         ("Reliability", "Reliability"),
         ("Compatibility", "Compatibility")
     )
+    choosestatus = (
+        ("", ""),
+        ("active", "active"),
+        ("inactive", "inactive")
+    )
     Category = models.CharField(max_length=100, choices=choosecat, default="Reliability")
     Object = models.CharField(max_length=100)
     Symptom = models.CharField(max_length=1000)
@@ -48,6 +53,7 @@ class ABOlesson_learn(models.Model):
     #                         )
     Solution = models.CharField('Solution', max_length=2000)
     Action = models.CharField('Action', max_length=2000,default='', blank=True)
+    Status = models.CharField('Status', choices=choosestatus, max_length=20, default='active', blank=True)
     Photo = models.ManyToManyField(ABOImgs, related_name='imgs', blank=True, verbose_name='图片表')
     video = models.ManyToManyField(ABOfiles, related_name='video', blank=True, verbose_name='视频表')
     editor = models.CharField(max_length=100)

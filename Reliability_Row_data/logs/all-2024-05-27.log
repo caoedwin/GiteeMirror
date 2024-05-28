@@ -1,0 +1,121 @@
+[2024-05-27 12:08:57,510] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET / 200 [0.07, 127.0.0.1:56386]
+[2024-05-27 12:08:57,670] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:56391]
+[2024-05-27 12:08:57,711] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:56391]
+[2024-05-27 12:08:57,720] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.01, 127.0.0.1:56386]
+[2024-05-27 12:27:49,035] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /admin/ 302 [0.07, 127.0.0.1:52172]
+[2024-05-27 12:27:49,094] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/login/?next=/admin/ 200 [0.05, 127.0.0.1:52172]
+[2024-05-27 12:27:49,195] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.02, 127.0.0.1:52172]
+[2024-05-27 12:27:51,701] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-27 12:27:51 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2024-05-27 12:27:51,711] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/login/?next=/admin/ 302 [0.27, 127.0.0.1:52172]
+[2024-05-27 12:27:53,300] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/ 200 [1.59, 127.0.0.1:52172]
+[2024-05-27 12:27:53,455] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:52172]
+[2024-05-27 12:28:00,187] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/PersonalInfo/personalinfo/ 200 [5.24, 127.0.0.1:52172]
+[2024-05-27 12:28:00,238] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [5.28, 127.0.0.1:52174]
+[2024-05-27 12:28:00,285] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.09, 127.0.0.1:52172]
+[2024-05-27 12:28:00,330] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/C121FD9.jpg
+[2024-05-27 12:28:00,332] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/C121FD9.jpg 404 [0.13, 127.0.0.1:52200]
+[2024-05-27 12:28:00,380] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0715026.jpg
+[2024-05-27 12:28:00,381] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0715026.jpg 404 [0.18, 127.0.0.1:52201]
+[2024-05-27 12:28:00,414] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0801046.jpg
+[2024-05-27 12:28:00,416] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0801046.jpg 404 [0.12, 127.0.0.1:52172]
+[2024-05-27 12:28:00,447] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0817872.jpg
+[2024-05-27 12:28:00,448] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0817872.jpg 404 [0.15, 127.0.0.1:52174]
+[2024-05-27 12:28:00,486] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0604313.jpg
+[2024-05-27 12:28:00,487] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0604313.jpg 404 [0.19, 127.0.0.1:52206]
+[2024-05-27 12:28:00,576] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0715859.jpg
+[2024-05-27 12:28:00,578] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0715859.jpg 404 [0.28, 127.0.0.1:52205]
+[2024-05-27 12:28:00,634] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/08Y1548.jpg
+[2024-05-27 12:28:00,635] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/08Y1548.jpg 404 [0.30, 127.0.0.1:52200]
+[2024-05-27 12:28:00,677] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0808393.jpg
+[2024-05-27 12:28:00,680] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0808393.jpg 404 [0.29, 127.0.0.1:52201]
+[2024-05-27 12:28:00,716] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0807401.jpg
+[2024-05-27 12:28:00,717] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0807401.jpg 404 [0.30, 127.0.0.1:52172]
+[2024-05-27 12:28:00,761] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0400971.jpg
+[2024-05-27 12:28:00,763] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0400971.jpg 404 [0.31, 127.0.0.1:52174]
+[2024-05-27 12:28:00,799] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0608572.jpg
+[2024-05-27 12:28:00,800] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0608572.jpg 404 [0.30, 127.0.0.1:52206]
+[2024-05-27 12:28:00,857] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /media/Portraits/VpmeyYc_m_a29d3fe6092b7ee64539ea03f6c4d90d_sx_501938_www790-1372tplv-5mmsx3fu_4CYYHH2.jpeg 200 [0.25, 127.0.0.1:52205]
+[2024-05-27 12:28:00,900] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/C111B1J.jpg
+[2024-05-27 12:28:00,901] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/C111B1J.jpg 404 [0.25, 127.0.0.1:52200]
+[2024-05-27 12:28:00,941] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0576972.jpg
+[2024-05-27 12:28:00,942] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0576972.jpg 404 [0.25, 127.0.0.1:52201]
+[2024-05-27 12:28:01,024] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/C090LX1..jpg
+[2024-05-27 12:28:01,025] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/C090LX1..jpg 404 [0.30, 127.0.0.1:52172]
+[2024-05-27 12:28:01,063] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/C1010QI.jpg
+[2024-05-27 12:28:01,065] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/C1010QI.jpg 404 [0.29, 127.0.0.1:52174]
+[2024-05-27 12:28:01,098] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/0817198.jpg
+[2024-05-27 12:28:01,100] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/0817198.jpg 404 [0.28, 127.0.0.1:52206]
+[2024-05-27 12:28:01,119] [log.py:228] [log:log_response] [WARNING]- Not Found: /media/Portraits/C100KEZ.jpg
+[2024-05-27 12:28:01,121] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /media/Portraits/C100KEZ.jpg 404 [0.25, 127.0.0.1:52205]
+[2024-05-28 09:41:37,925] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET / 302 [0.25, 127.0.0.1:64998]
+[2024-05-28 09:41:37,938] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:64998]
+[2024-05-28 09:41:37,994] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.01, 127.0.0.1:64998]
+[2024-05-28 09:41:38,002] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.00, 127.0.0.1:64998]
+[2024-05-28 09:41:49,514] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 09:41:49 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-05-28 09:41:49,528] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.05, 127.0.0.1:64998]
+[2024-05-28 09:41:49,568] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.04, 127.0.0.1:64998]
+[2024-05-28 09:41:49,604] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.03, 127.0.0.1:64998]
+[2024-05-28 09:41:49,690] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:65011]
+[2024-05-28 09:41:49,790] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:65011]
+[2024-05-28 09:41:50,012] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 09:41:50 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-05-28 09:41:50,020] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.16, 127.0.0.1:64998]
+[2024-05-28 09:41:50,052] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.17, 127.0.0.1:64999]
+[2024-05-28 10:22:56,948] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.01, 127.0.0.1:54895]
+[2024-05-28 10:22:56,952] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.01, 127.0.0.1:54896]
+[2024-05-28 10:22:56,959] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.01, 127.0.0.1:54897]
+[2024-05-28 10:22:56,972] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:54897]
+[2024-05-28 16:01:53,688] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /admin/ 302 [0.16, 127.0.0.1:53174]
+[2024-05-28 16:01:53,767] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/login/?next=/admin/ 200 [0.08, 127.0.0.1:53174]
+[2024-05-28 16:01:53,851] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.03, 127.0.0.1:53174]
+[2024-05-28 16:02:14,782] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:02:14 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2024-05-28 16:02:15,020] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:02:15 None>None None>None>None 127.0.0.1 127.0.0.1 /admin/login/ POST
+[2024-05-28 16:02:15,027] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/login/?next=/admin/ 302 [0.26, 127.0.0.1:53175]
+[2024-05-28 16:02:16,573] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/ 200 [1.54, 127.0.0.1:53175]
+[2024-05-28 16:02:16,696] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.03, 127.0.0.1:53175]
+[2024-05-28 16:02:16,711] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:53175]
+[2024-05-28 16:02:32,492] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/ 200 [0.39, 127.0.0.1:53175]
+[2024-05-28 16:02:32,511] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.40, 127.0.0.1:53223]
+[2024-05-28 16:02:32,526] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:53175]
+[2024-05-28 16:02:32,560] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.04, 127.0.0.1:53223]
+[2024-05-28 16:02:39,163] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/38/change/ 200 [0.15, 127.0.0.1:53223]
+[2024-05-28 16:02:39,189] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:53223]
+[2024-05-28 16:02:39,193] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/icon-changelink.svg 200 [0.02, 127.0.0.1:53175]
+[2024-05-28 16:02:39,197] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/icon-addlink.svg 200 [0.03, 127.0.0.1:53269]
+[2024-05-28 16:02:39,201] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/admin/img/icon-deletelink.svg 200 [0.01, 127.0.0.1:53175]
+[2024-05-28 16:03:43,880] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:03:43 None>None None>None>None 127.0.0.1 127.0.0.1 /admin/app01/menu/38/change/ POST
+[2024-05-28 16:03:43,888] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/app01/menu/38/change/ 302 [0.05, 127.0.0.1:53367]
+[2024-05-28 16:03:44,084] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/ 200 [0.20, 127.0.0.1:53367]
+[2024-05-28 16:03:44,120] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:53367]
+[2024-05-28 16:03:51,492] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/36/change/ 200 [0.16, 127.0.0.1:53367]
+[2024-05-28 16:03:51,548] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:53367]
+[2024-05-28 16:04:11,058] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:04:11 None>None None>None>None 127.0.0.1 127.0.0.1 /admin/app01/menu/36/change/ POST
+[2024-05-28 16:04:11,070] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/app01/menu/36/change/ 302 [0.06, 127.0.0.1:53367]
+[2024-05-28 16:04:11,289] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/ 200 [0.22, 127.0.0.1:53367]
+[2024-05-28 16:04:11,333] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:53367]
+[2024-05-28 16:04:18,840] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 302 [0.03, 127.0.0.1:53367]
+[2024-05-28 16:04:18,874] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.03, 127.0.0.1:53367]
+[2024-05-28 16:04:18,883] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:65011]
+[2024-05-28 16:04:18,916] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:53367]
+[2024-05-28 16:04:18,948] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.02, 127.0.0.1:53367]
+[2024-05-28 16:04:18,963] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:53367]
+[2024-05-28 16:04:23,283] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:04:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-05-28 16:04:23,296] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.06, 127.0.0.1:53367]
+[2024-05-28 16:04:23,329] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/ 302 [0.03, 127.0.0.1:53367]
+[2024-05-28 16:04:23,400] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /ProjectComparison/ProjectComparison_Summary/ 200 [0.07, 127.0.0.1:53367]
+[2024-05-28 16:04:23,430] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.01, 127.0.0.1:53367]
+[2024-05-28 16:04:23,470] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/css/bootstrap.min.css.map 404 [0.00, 127.0.0.1:53367]
+[2024-05-28 16:04:23,482] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/lib/bootstrap.min.js.map 404 [0.01, 127.0.0.1:53367]
+[2024-05-28 16:04:23,522] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:53450]
+[2024-05-28 16:04:23,525] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:53450]
+[2024-05-28 16:04:23,615] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/axios.min.map 404 [0.01, 127.0.0.1:53367]
+[2024-05-28 16:04:23,661] [runserver.py:149] [runserver:log_action] [WARNING]- HTTP GET /static/js/xlsx/FileSaver.min.js.map 404 [0.01, 127.0.0.1:53367]
+[2024-05-28 16:04:23,958] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:04:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /ProjectComparison/ProjectComparison_Summary/ POST
+[2024-05-28 16:04:23,966] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /ProjectComparison/ProjectComparison_Summary/ 200 [0.17, 127.0.0.1:53367]
+[2024-05-28 16:04:23,981] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.15, 127.0.0.1:53435]
+[2024-05-28 16:07:02,960] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:07:02 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /admin/app01/menu/ POST
+[2024-05-28 16:07:02,968] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /admin/app01/menu/ 200 [0.07, 127.0.0.1:50342]
+[2024-05-28 16:07:02,976] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /static/admin/js/cancel.js 200 [0.00, 127.0.0.1:50342]
+[2024-05-28 16:07:05,494] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-05-28 16:07:05 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /admin/app01/menu/ POST
+[2024-05-28 16:07:05,503] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /admin/app01/menu/ 302 [0.08, 127.0.0.1:50342]
+[2024-05-28 16:07:05,780] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/app01/menu/ 200 [0.27, 127.0.0.1:50342]
+[2024-05-28 16:07:05,816] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:50342]

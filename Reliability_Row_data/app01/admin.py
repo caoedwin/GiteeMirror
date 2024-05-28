@@ -858,7 +858,7 @@ class Package_MAdmin(admin.ModelAdmin):
 class lesson_learnAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields' : ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action', 'Photo', 'video', 'editor', 'edit_time')
+            'fields' : ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action', 'Status', 'Photo', 'video', 'editor', 'edit_time')
         }),
         # ('Advanced options',{
         #     'classes': ('collapse',),
@@ -867,7 +867,7 @@ class lesson_learnAdmin(admin.ModelAdmin):
     )
 
     filter_horizontal = ('Photo', 'video',)
-    list_display = ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action','editor', 'edit_time')
+    list_display = ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action', 'Status','editor', 'edit_time')
     # 列表里显示想要显示的字段
     list_per_page = 200
     # 满50条数据就自动分页
@@ -878,8 +878,8 @@ class lesson_learnAdmin(admin.ModelAdmin):
     # list_editable = ('Object',)
     # 筛选器
     # list_filter = ('Customer','Project', 'Unit', 'Phase', 'Tester', 'Testitem','Result', 'Start_time', 'End_time', 'Result_time','Item_Des', 'Comments')  # 过滤器
-    list_filter = ('Object','Symptom', 'Root_Cause')  # 过滤器
-    search_fields = ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action', 'editor', 'edit_time')  # 搜索字段
+    list_filter = ('Object','Symptom', 'Root_Cause', 'Status')  # 过滤器
+    search_fields = ('Category','Object','Symptom', 'Reproduce_Steps', 'Root_Cause', 'Solution','Action', 'Status', 'editor', 'edit_time')  # 搜索字段
     # date_hierarchy = 'Start_time'  # 详细时间分层筛选
 
 @admin.register(Menu)

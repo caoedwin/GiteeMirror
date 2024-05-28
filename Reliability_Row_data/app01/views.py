@@ -677,6 +677,7 @@ def Lesson_upload(request):
             Root_Cause = lesson.cleaned_data['Root_Cause']
             Comments = lesson.cleaned_data['Solution']
             Action = lesson.cleaned_data['Action']
+            Status = lesson.cleaned_data['Status']
             # print(Comments)
             Photo = request.FILES.getlist("myfiles", "")
             print(Photo)
@@ -709,6 +710,7 @@ def Lesson_upload(request):
                 lesson.Root_Cause = Root_Cause
                 lesson.Solution=Comments
                 lesson.Action = Action
+                lesson.Status = Status
                 # lesson.Photo=Photos
                 lesson.editor=request.session.get('user_name')
                 lesson.edit_time=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -821,6 +823,7 @@ def Lesson_edit(request):
                         "Root_Cause": i.Root_Cause,
                         "Solution": i.Solution,
                         "Action": i.Action,
+                        "Status": i.Status,
                         "Photo": Photolist,
                         "file": filelist,
                         "Video": Videolist,
@@ -845,6 +848,7 @@ def Lesson_edit(request):
                 form["Root_Cause"] = editlesson.Root_Cause
                 form["Solution"] = editlesson.Solution
                 form["Action"] = editlesson.Action
+                form["Status"] = editlesson.Status
                 # print(len(editlesson.Photo.all()),len(editlesson.video.all()))
                 for i in editlesson.Photo.all():
                     # print(i.img,type(i.img),)
@@ -875,6 +879,7 @@ def Lesson_edit(request):
                 editlesson.Root_Cause = request.POST.get('Root_Cause')
                 editlesson.Solution = request.POST.get('Solution')
                 editlesson.Action = request.POST.get('Action')
+                editlesson.Status = request.POST.get('Status')
                 # lesson.Photo=Photos
                 editlesson.editor = request.session.get('user_name')
                 editlesson.edit_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -925,6 +930,7 @@ def Lesson_edit(request):
                         "Root_Cause": i.Root_Cause,
                         "Solution": i.Solution,
                         "Action": i.Action,
+                        "Status": i.Status,
                         "Photo": Photolist,
                         "file": filelist,
                         "Video": Videolist,
@@ -1125,6 +1131,7 @@ def Lesson_search(request):
                             "Root_Cause": i.Root_Cause,
                             "Solution": i.Solution,
                             "Action": i.Action,
+                            "Status": i.Status,
                             "Photo": Photolist,
                             "file": filelist,
                             "Video": Videolist,
@@ -1174,6 +1181,7 @@ def Lesson_search(request):
                         "Root_Cause": i.Root_Cause,
                         "Solution": i.Solution,
                         "Action": i.Action,
+                        "Status": i.Status,
                         "Photo": Photolist,
                         "file": filelist,
                         "Video": Videolist,
