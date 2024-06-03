@@ -7,7 +7,7 @@ from .models import CapitalExpenditure
 class CapitalExpenditureAdmin(admin.ModelAdmin):
 
     list_display = (
-        'PlanYear', 'BudgetCode', 'Investment_Nature', 'Attribute_Code', 'Application_Department', 'Device_Name', 'Usage_Description',
+        'PlanYear', 'Customer', 'BudgetCode', 'Investment_Nature', 'Attribute_Code', 'Application_Department', 'Device_Name', 'Usage_Description',
         'Specifications', 'Acceptance_Month', 'Budget_Quantity', 'Estimated_Original_Currency', 'Estimated_Original_Price', 'Equivalent_To_RMB', 'Payment_Terms', 'Depreciation_Months', 'Accounting_Subjects',
         'Automated_Or_Not', 'Project_Code', 'Current_Situation', 'Applicable_Scope', 'Investment_Purpose', 'Investment_Purpose_Des',
         'Potential_Issues', 'Potential_Issues_Des', 'Tighten_Expenses', 'Annual_Increase_PerYear', 'Investment_Benefits_PerYear', 'Cash_Inflows_PerYear',
@@ -19,7 +19,7 @@ class CapitalExpenditureAdmin(admin.ModelAdmin):
     ordering = ('-PlanYear',)
     #后台数据列表排序方式
     list_display_links = (
-         'PlanYear', 'BudgetCode', 'Investment_Nature', 'Attribute_Code', 'Application_Department', 'Device_Name', 'Usage_Description',
+         'PlanYear', 'Customer', 'BudgetCode', 'Investment_Nature', 'Attribute_Code', 'Application_Department', 'Device_Name', 'Usage_Description',
         'Specifications', 'Acceptance_Month', 'Budget_Quantity', 'Estimated_Original_Currency', 'Estimated_Original_Price', 'Equivalent_To_RMB', 'Payment_Terms', 'Depreciation_Months', 'Accounting_Subjects',
         'Automated_Or_Not', 'Project_Code', 'Current_Situation', 'Applicable_Scope', 'Investment_Purpose', 'Investment_Purpose_Des',
         'Potential_Issues', 'Potential_Issues_Des', 'Tighten_Expenses', 'Annual_Increase_PerYear', 'Investment_Benefits_PerYear', 'Cash_Inflows_PerYear',
@@ -30,10 +30,11 @@ class CapitalExpenditureAdmin(admin.ModelAdmin):
     # 筛选器
     list_filter = (
         'PlanYear',
+        'Customer',
         'BudgetCode',
         'Application_Department',
         # ('Customer', UnionFieldListFilter),
         # ('Phase', UnionFieldListFilter),
     )
-    search_fields = ('PlanYear', 'BudgetCode', 'Application_Department',)  # 搜索字段
+    search_fields = ('PlanYear', 'Customer', 'BudgetCode', 'Application_Department',)  # 搜索字段
     # date_hierarchy = 'Start_time'  # 详细时间分层筛选

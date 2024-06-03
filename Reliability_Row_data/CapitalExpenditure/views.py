@@ -11,6 +11,7 @@ from django.forms.models import model_to_dict
 
 # Create your views here.
 headermodel_CapitalExpenditure = {'PlanYear': 'PlanYear',
+  '客戶別': 'Customer',
   '預算編號': 'BudgetCode',
   '投資性質': 'Investment_Nature',
   '屬性代碼': 'Attribute_Code',
@@ -159,7 +160,7 @@ def CapitalExpenditure_Summary(request):
                         # print(i)
                         mock_data.append(
                             {
-                                "id": i.id, "PlanYear": i.PlanYear, "BudgetCode": i.BudgetCode, "Investment_Nature": i.Investment_Nature,
+                                "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode, "Investment_Nature": i.Investment_Nature,
                                 "Attribute_Code": i.Attribute_Code,
                                 "Application_Department": i.Application_Department,
                                 "Device_Name": i.Device_Name,
@@ -292,7 +293,7 @@ def CapitalExpenditure_Summary(request):
                         # print(i)
                         mock_data.append(
                             {
-                                "id": i.id, "PlanYear": i.PlanYear, "BudgetCode": i.BudgetCode,
+                                "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
                                 "Investment_Nature": i.Investment_Nature,
                                 "Attribute_Code": i.Attribute_Code,
                                 "Application_Department": i.Application_Department,

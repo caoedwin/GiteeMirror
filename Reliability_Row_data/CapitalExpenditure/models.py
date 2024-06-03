@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class CapitalExpenditure(models.Model):
     PlanYear = models.CharField('PlanYear', default='', max_length=12)
+    Customer = models.CharField('客戶別', default='', max_length=20)
     BudgetCode = models.CharField('預算編號', max_length=30)
     Investment_Nature = models.CharField('投資性質', max_length=12)
     Attribute_Code = models.CharField('屬性代碼', max_length=20)
