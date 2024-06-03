@@ -262,6 +262,67 @@ tbody tr td:last-child {
     </div>
 {#    <div class="showDataArea" style="white-space: nowrap;">#}
     <div class="tableAround" v-cloak >
+          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 預算專案數量(with OOC)</div>
+          <template v-cloak>
+              <el-table  border :data="tableContent6" style="width: 100%;" id="out-table6"
+              v-loading="tableloading"
+              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
+              element-loading-text="數據更新中，請稍後"
+              >
+                <el-table-column  prop="Phase" label="Phase" align="center" width="auto" min-width="7%"width="80"></el-table-column>
+                <el-table-column  prop="Jan" label="Jan" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Feb" label="Feb" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Mar" label="Mar" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Apr" label="Apr" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="May" label="May" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Jun" label="Jun" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="July" label="July" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Aug" label="Aug" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Sep" label="Sep" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Oct" label="Oct" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Nov" label="Nov" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Dec" label="Dec" align="center" width="auto" min-width="7%"></el-table-column>
+                <el-table-column  prop="Total" label="Total" align="center" width="auto" min-width="7%"></el-table-column>
+              </el-table>
+
+               <el-collapse v-model="activeNames" @change="handleChange">
+                  <el-collapse-item title="預算專案清單(with OOC)" name="3">
+                      <el-table {% comment %}height="1500px" {% endcomment %}id="out-table7" border stripe :data="tableContent7.slice((currentPage3-1)*pageSize3,currentPage3*pageSize3)"
+                        style="width: 100%;border-radius: 10px;margin-top: 20px;font-size: 12px"
+                        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
+                        v-loading="tableloading" @sort-change='sortChange3'
+                        element-loading-text="數據更新中，請稍後"
+                        border>
+                          <el-table-column  type="index" :index="indexMethod" label="No." width="auto" min-width="2%" align="center"></el-table-column>
+                          <el-table-column  prop="CG" label="CG" align="center" width="auto" min-width="4%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="17%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="12%" sortable='custom'></el-table-column>
+        {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
+        {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
+        {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
+                          <el-table-column  prop="Jan" label="Jan" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Feb" label="Feb" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Mar" label="Mar" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Apr" label="Apr" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="May" label="May" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Jun" label="Jun" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="July" label="July" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Aug" label="Aug" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Sep" label="Sep" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Oct" label="Oct" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Nov" label="Nov" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                          <el-table-column  prop="Dec" label="Dec" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+                      </el-table>
+                    <div class="block">
+                        <el-pagination  @size-change="handleSizeChange3" @current-change="handleCurrentChange3" :current-page="currentPage3" :page-sizes="[15, 30, 50]" :page-size="30" layout="total, sizes, prev, pager, next, jumper" :total="totalNum2">
+                        </el-pagination>
+                    </div>
+                  </el-collapse-item>
+                   </el-collapse>
+          </template>
+    </div>
+    <div class="tableAround" v-cloak >
           <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 預算專案數量(w/o OOC)</div>
           <template v-cloak>
               <el-table  border :data="tableContent4" style="width: 100%;" id="out-table4"
@@ -324,67 +385,7 @@ tbody tr td:last-child {
           </template>
     </div>
 {#    <div class="showDataArea" style="white-space: nowrap;">#}
-    <div class="tableAround" v-cloak >
-          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 預算專案數量(with OOC)</div>
-          <template v-cloak>
-              <el-table  border :data="tableContent6" style="width: 100%;" id="out-table6"
-              v-loading="tableloading"
-              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              element-loading-text="數據更新中，請稍後"
-              >
-                <el-table-column  prop="Phase" label="Phase" align="center" width="auto" min-width="7%"width="80"></el-table-column>
-                <el-table-column  prop="Jan" label="Jan" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Feb" label="Feb" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Mar" label="Mar" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Apr" label="Apr" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="May" label="May" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Jun" label="Jun" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="July" label="July" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Aug" label="Aug" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Sep" label="Sep" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Oct" label="Oct" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Nov" label="Nov" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Dec" label="Dec" align="center" width="auto" min-width="7%"></el-table-column>
-                <el-table-column  prop="Total" label="Total" align="center" width="auto" min-width="7%"></el-table-column>
-              </el-table>
 
-               <el-collapse v-model="activeNames" @change="handleChange">
-                  <el-collapse-item title="預算專案清單(with OOC)" name="3">
-                      <el-table {% comment %}height="1500px" {% endcomment %}id="out-table7" border stripe :data="tableContent7.slice((currentPage3-1)*pageSize3,currentPage3*pageSize3)"
-                        style="width: 100%;border-radius: 10px;margin-top: 20px;font-size: 12px"
-                        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
-                        v-loading="tableloading" @sort-change='sortChange3'
-                        element-loading-text="數據更新中，請稍後"
-                        border>
-                          <el-table-column  type="index" :index="indexMethod" label="No." width="auto" min-width="2%" align="center"></el-table-column>
-                          <el-table-column  prop="CG" label="CG" align="center" width="auto" min-width="4%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" width="auto" min-width="17%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="auto" min-width="12%" sortable='custom'></el-table-column>
-        {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
-        {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
-        {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
-                          <el-table-column  prop="Jan" label="Jan" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Feb" label="Feb" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Mar" label="Mar" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Apr" label="Apr" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="May" label="May" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Jun" label="Jun" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="July" label="July" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Aug" label="Aug" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Sep" label="Sep" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Oct" label="Oct" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Nov" label="Nov" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Dec" label="Dec" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-                      </el-table>
-                    <div class="block">
-                        <el-pagination  @size-change="handleSizeChange3" @current-change="handleCurrentChange3" :current-page="currentPage3" :page-sizes="[15, 30, 50]" :page-size="30" layout="total, sizes, prev, pager, next, jumper" :total="totalNum2">
-                        </el-pagination>
-                    </div>
-                  </el-collapse-item>
-                   </el-collapse>
-          </template>
-    </div>
 </div>
 {% endblock %}
 {% block scripts %}

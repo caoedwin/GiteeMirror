@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapitalExpenditure/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CapitalExpenditure/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapitalExpenditure/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CapitalExpenditure/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapitalExpenditure/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CapitalExpenditure/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2024-05-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2024-05-28.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2024-05-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2024-05-28.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectComparison/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectComparison/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2024-05-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2024-05-31.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2024-05-31.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2024-05-31.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/modelfiles/ProjectComparison.zip" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/modelfiles/ProjectComparison.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +63,7 @@
           <entry key="css" value="7" />
           <entry key="html" value="571" />
           <entry key="js" value="10" />
-          <entry key="py" value="1084" />
+          <entry key="py" value="1086" />
           <entry key="pyi" value="1" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="1" />
@@ -75,7 +74,7 @@
           <entry key="CSS" value="7" />
           <entry key="HTML" value="571" />
           <entry key="JavaScript" value="10" />
-          <entry key="Python" value="1084" />
+          <entry key="Python" value="1086" />
           <entry key="PythonStub" value="1" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="1" />
@@ -87,16 +86,16 @@
           <entry key="ProjectComexcelTrans" value="109" />
           <entry key="css" value="789" />
           <entry key="dummy" value="5" />
-          <entry key="html" value="11311" />
-          <entry key="py" value="27258" />
+          <entry key="html" value="11313" />
+          <entry key="py" value="27286" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="789" />
-          <entry key="HTML" value="11311" />
+          <entry key="HTML" value="11313" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="27372" />
+          <entry key="Python" value="27400" />
         </counts>
       </usages-collector>
     </session>
@@ -110,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/CapitalExpenditure/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="70">
-              <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -118,13 +117,55 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjectComparison/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1246">
+              <caret line="745" column="58" selection-start-line="745" selection-start-column="48" selection-end-line="745" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#1077#27759#0" />
+                <element signature="e#1779#3081#0" />
+                <element signature="e#28048#30104#0" />
+                <element signature="e#30712#32768#0" />
+                <element signature="e#33346#35402#0" />
+                <element signature="e#35929#36991#0" />
+                <element signature="e#37076#38138#0" />
+                <element signature="e#41047#41562#0" />
+                <element signature="e#41580#42095#0" />
+                <element signature="e#42114#43378#0" />
+                <element signature="e#43397#43912#0" />
+                <element signature="e#43931#45109#0" />
+                <element signature="e#45128#45643#0" />
+                <element signature="e#45662#46840#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://C:/PythonProject/DDIS_ProjectCompare/ProjectComexcelTrans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-26">
+              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+              <folding>
+                <element signature="e#23#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="211" column="122" lean-forward="true" selection-start-line="211" selection-start-column="122" selection-end-line="211" selection-end-column="122" />
+            <state relative-caret-position="228">
+              <caret line="389" column="14" selection-start-line="389" selection-start-column="14" selection-end-line="389" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#template#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#el-table#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+                <element signature="n#el-collapse#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+                <element signature="n#el-table#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+                <element signature="n#el-collapse#0;n#template#0;n#div#3;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -144,7 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\r\n</find>
       <find>errMsg</find>
       <find>err_msg</find>
       <find>permi</find>
@@ -172,8 +212,9 @@
       <find>less</find>
       <find>Lesson</find>
       <find>action</find>
-      <find>axios</find>
       <find>BudgetCode</find>
+      <find>axios</find>
+      <find>w/o OOC</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -212,11 +253,8 @@
         <option value="$PROJECT_DIR$/app01/templatetags/custom_tag.py" />
         <option value="C:/PythonProject/DDIS_ProjectCompare/excelTrans.py" />
         <option value="C:/PythonProject/DDISExcel/excelTrans.py" />
-        <option value="C:/PythonProject/DDIS_ProjectCompare/ProjectComexcelTrans.py" />
         <option value="$PROJECT_DIR$/templates/CapitalExpenditure/CapitalExpenditure_Summary.html" />
-        <option value="$PROJECT_DIR$/ProjectComparison/views.py" />
         <option value="$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Edit.html" />
-        <option value="$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html" />
         <option value="$PROJECT_DIR$/PersonalExperience/views.py" />
         <option value="$PROJECT_DIR$/app01/models.py" />
         <option value="$PROJECT_DIR$/ABOProjectLessonL/models.py" />
@@ -236,6 +274,9 @@
         <option value="$PROJECT_DIR$/CapitalExpenditure/models.py" />
         <option value="$PROJECT_DIR$/CapitalExpenditure/admin.py" />
         <option value="$PROJECT_DIR$/CapitalExpenditure/views.py" />
+        <option value="$PROJECT_DIR$/ProjectComparison/views.py" />
+        <option value="C:/PythonProject/DDIS_ProjectCompare/ProjectComexcelTrans.py" />
+        <option value="$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html" />
       </list>
     </option>
   </component>
@@ -260,10 +301,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-13" />
-    <option name="y" value="-13" />
-    <option name="width" value="1945" />
-    <option name="height" value="1342" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1618" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectId" id="1Td4In4Uk9cLegXCQfBqS8KHbx0" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -297,7 +338,7 @@
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="CapitalExpenditure" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectComparison" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
@@ -308,7 +349,7 @@
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ABOProjectLessonL" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectComparison" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -857,7 +898,7 @@
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Python Console" order="4" sideWeight="0.49636218" weight="0.3486647" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.497979" visible="true" weight="0.35905045" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.497979" weight="0.35905045" />
       <window_info anchor="bottom" id="Favorites" order="6" sideWeight="0.5277311" weight="0.27625" />
       <window_info anchor="bottom" id="Structure" order="7" sideWeight="0.502994" weight="0.23375" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49717057" weight="0.32512954" />
@@ -870,7 +911,7 @@
       <window_info anchor="bottom" id="Messages" order="15" />
       <window_info anchor="bottom" id="Version Control" order="16" weight="0.3277202" />
       <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.50317967" weight="0.2966321" />
-      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" weight="0.40059346" />
+      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.40059346" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -1054,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/PythonProject/DDIS_ProjectCompare/ProjectComexcelTrans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/PersonalInfo_search(1).html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1121,22 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjectComparison/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#1779#3081#0" />
-            <element signature="e#27806#40533#0" />
-            <element signature="e#40593#57593#0" />
-            <element signature="e#46938#52015#0" />
-            <element signature="e#52083#57082#0" />
-            <element signature="e#57099#57403#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/ProjectComparison_Summary(4).html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1147,7 +1165,7 @@
     <entry file="file://$PROJECT_DIR$/CapitalExpenditure/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -1393,12 +1411,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectComparison/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1246">
+          <caret line="745" column="58" selection-start-line="745" selection-start-column="48" selection-end-line="745" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#1077#27759#0" />
+            <element signature="e#1779#3081#0" />
+            <element signature="e#28048#30104#0" />
+            <element signature="e#30712#32768#0" />
+            <element signature="e#33346#35402#0" />
+            <element signature="e#35929#36991#0" />
+            <element signature="e#37076#38138#0" />
+            <element signature="e#41047#41562#0" />
+            <element signature="e#41580#42095#0" />
+            <element signature="e#42114#43378#0" />
+            <element signature="e#43397#43912#0" />
+            <element signature="e#43931#45109#0" />
+            <element signature="e#45128#45643#0" />
+            <element signature="e#45662#46840#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ProjectComparison/ProjectComparison_Summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="211" column="122" lean-forward="true" selection-start-line="211" selection-start-column="122" selection-end-line="211" selection-end-column="122" />
+        <state relative-caret-position="228">
+          <caret line="389" column="14" selection-start-line="389" selection-start-column="14" selection-end-line="389" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#template#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#el-table#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+            <element signature="n#el-collapse#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+            <element signature="n#el-table#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+            <element signature="n#el-collapse#0;n#template#0;n#div#3;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonProject/DDIS_ProjectCompare/ProjectComexcelTrans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding>
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

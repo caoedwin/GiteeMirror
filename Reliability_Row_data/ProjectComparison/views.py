@@ -689,7 +689,7 @@ def mockdatas_count(Year, Customer_list):
     mock_data1.append(mock_data_FVT_dic)
 
     Phase = "SIT"
-    mock_data_FVT_dic = {"id": 2, "Phase": Phase,
+    mock_data_SIT_dic = {"id": 2, "Phase": Phase,
                          "Jan": mock_data2[1]["Jan"] - mock_data4[1]["Jan"],
                          "Feb": mock_data2[1]["Feb"] - mock_data4[1]["Feb"],
                          "Mar": mock_data2[1]["Mar"] - mock_data4[1]["Mar"],
@@ -704,10 +704,11 @@ def mockdatas_count(Year, Customer_list):
                          "Dec": mock_data2[1]["Dec"] - mock_data4[1]["Dec"],
                          "Total": mock_data2[1]["Total"] - mock_data4[1]["Total"],
                          }
-    mock_data1.append(mock_data_FVT_dic)
+    mock_data1.append(mock_data_SIT_dic)
 
     Phase = "OOC"
-    mock_data_FVT_dic = {"id": 3, "Phase": Phase,
+    print(mock_data2[2]["Jan"], mock_data4[2]["Jan"])
+    mock_data_OOC_dic = {"id": 3, "Phase": Phase,
                          "Jan": mock_data2[2]["Jan"] - mock_data4[2]["Jan"],
                          "Feb": mock_data2[2]["Feb"] - mock_data4[2]["Feb"],
                          "Mar": mock_data2[2]["Mar"] - mock_data4[2]["Mar"],
@@ -722,10 +723,10 @@ def mockdatas_count(Year, Customer_list):
                          "Dec": mock_data2[2]["Dec"] - mock_data4[2]["Dec"],
                          "Total": mock_data2[2]["Total"] - mock_data4[2]["Total"],
                          }
-    mock_data1.append(mock_data_FVT_dic)
+    mock_data1.append(mock_data_OOC_dic)
 
     Phase = "OS-R"
-    mock_data_FVT_dic = {"id": 4, "Phase": Phase,
+    mock_data_OSR_dic = {"id": 4, "Phase": Phase,
                          "Jan": mock_data2[3]["Jan"] - mock_data4[3]["Jan"],
                          "Feb": mock_data2[3]["Feb"] - mock_data4[3]["Feb"],
                          "Mar": mock_data2[3]["Mar"] - mock_data4[3]["Mar"],
@@ -741,7 +742,7 @@ def mockdatas_count(Year, Customer_list):
                          "Total": mock_data2[3]["Total"] - mock_data4[3]["Total"],
                          }
 
-    mock_data1.append(mock_data_FVT_dic)
+    mock_data1.append(mock_data_OSR_dic)
     return [mock_data1, mock_data2, mock_data3, mock_data4]
 
 
