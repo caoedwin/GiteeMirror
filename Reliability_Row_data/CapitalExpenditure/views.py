@@ -3,49 +3,29 @@ from django.views.decorators.csrf import csrf_exempt
 import datetime, os
 from django.http import HttpResponse
 import datetime, json, simplejson, pprint
-from .models import CapitalExpenditure
-from CQM.models import CQMProject
+from .models import CapitalExpenditure, C38CustomerT88AIODepartmentCode
 from app01.models import UserInfo, ProjectinfoinDCT, Role
+from PersonalInfo.models import Departments
 from django.db import transaction
+from django.db.models import F, Sum
+from django.db.models.functions import Lower, Upper, Substr
 from django.forms.models import model_to_dict
 
 # Create your views here.
-headermodel_CapitalExpenditure = {'PlanYear': 'PlanYear',
-  '客戶別': 'Customer',
-  '預算編號': 'BudgetCode',
-  '投資性質': 'Investment_Nature',
-  '屬性代碼': 'Attribute_Code',
-  '申請部門': 'Application_Department',
-  '設備或工程名稱': 'Device_Name',
-  '用途說明': 'Usage_Description',
-  '廠牌規格': 'Specifications',
-  '驗收月份': 'Acceptance_Month',
-  '預算數量': 'Budget_Quantity',
-  '預估總價': 'Estimated_Original_Currency',
-  '__EMPTY': 'Estimated_Original_Price',
-  '折合人民幣': 'Equivalent_To_RMB',
-  '付款條件': 'Payment_Terms',
-  '折舊月數': 'Depreciation_Months',
-  '會計科目': 'Accounting_Subjects',
-  '是否自動化': 'Automated_Or_Not',
-  'Project Code': 'Project_Code',
-  '現狀說明': 'Current_Situation',
-  '適用範圍': 'Applicable_Scope',
-  '投資動機與目的': 'Investment_Purpose',
-  '投資動機與目的其他說明': 'Investment_Purpose_Des',
-  '潛在問題': 'Potential_Issues',
-  '潛在問題的其他說明': 'Potential_Issues_Des',
-  '年節省支出': 'Tighten_Expenses',
-  '年增加收益': 'Annual_Increase_PerYear',
-  '年投資效益': 'Investment_Benefits_PerYear',
-  '年淨現金流入': 'Cash_Inflows_PerYear',
-  '回收年限(月數)': 'Payback_Period',
-  '申購狀況': 'Subscription_Status',
-  '申購數量': 'Subscription_Quantity',
-  '申購金額\r\n(CNY)': 'Subscription_Amount',
-  '入賬金額\r\n(CNY)': 'Entry_Amount',
-},
-
+headermodel_CapitalExpenditure = {
+    'PlanYear': 'PlanYear', '客戶別': 'Customer',
+    '預算編號': 'BudgetCode', '投資性質': 'Investment_Nature', '屬性代碼': 'Attribute_Code', '申請部門': 'Application_Department',
+    '設備或工程名稱': 'Device_Name', '用途說明': 'Usage_Description', '廠牌規格': 'Specifications', '驗收月份': 'Acceptance_Month',
+    '預算數量': 'Budget_Quantity', '預估總價': 'Estimated_Original_Currency', '__EMPTY': 'Estimated_Original_Price',
+    '折合人民幣': 'Equivalent_To_RMB', '付款條件': 'Payment_Terms', '折舊月數': 'Depreciation_Months', '會計科目': 'Accounting_Subjects',
+    '是否自動化': 'Automated_Or_Not', 'Project Code': 'Project_Code', '現狀說明': 'Current_Situation',
+    '適用範圍': 'Applicable_Scope',
+    '投資動機與目的': 'Investment_Purpose', '投資動機與目的其他說明': 'Investment_Purpose_Des',
+    '潛在問題': 'Potential_Issues', '潛在問題的其他說明': 'Potential_Issues_Des',
+    '年節省支出': 'Tighten_Expenses', '年增加收益': 'Annual_Increase_PerYear', '年投資效益': 'Investment_Benefits_PerYear',
+    '年淨現金流入': 'Cash_Inflows_PerYear', '回收年限(月數)': 'Payback_Period', '申購狀況': 'Subscription_Status',
+    '申購數量': 'Subscription_Quantity', '申購金額\r\n(CNY)': 'Subscription_Amount', '入賬金額\r\n(CNY)': 'Entry_Amount',
+}
 
 
 @csrf_exempt
@@ -58,49 +38,91 @@ def CapitalExpenditure_Summary(request):
         Skin = "/static/src/blue.jpg"
     weizhi = "DDIS/CapitalExpenditure_Summary"
 
+    yearOptions = [
+        # "2020", "2021", "2023"
+    ]
+    for i in CapitalExpenditure.objects.all().values('PlanYear').distinct().order_by('PlanYear'):
+        yearOptions.append(i["PlanYear"])
+    CustomerOption = [
+
+    ]
+    YearNow = str(datetime.datetime.now().year)
+    for i in Departments.objects.all().values("Customer").distinct().order_by("Customer"):
+        CustomerOption.append(i['Customer'])
+
+    CustomerToDepartmentSeven = [
+
+    ]
+
     mock_data = [
-
+        # {"id": "1", "PlanYear": "2024", "BudgetCode": "HKMKBAQAA0047789", "Investment_Nature": "A", "Attribute_Code": "1212", "Application_Department": "KMKBAQAA00",
+        #  "Device_Name": "隔音室(屏蔽室)", "Usage_Description": "C38NB專案支援Wi-Fi 7, 目前無Wi-Fi 7 AP 可用於測試,需申購用於Wi-Fi 7的頻寬相關測試.",
+        #  "Specifications": "TP-Link Archer BE900 BE24000四頻網狀WiFi7路由器或等同規格的其他品牌或型號", "Acceptance_Month": "6", "Budget_Quantity": "1", "Estimated_Original_Currency": "CNY",
+        #  "Estimated_Original_Price": "15000", "Equivalent_To_RMB": "15000", "Payment_Terms": "驗收后月結150天付款", "Depreciation_Months": "72", "Accounting_Subjects": "6201E",
+        #  "Automated_Or_Not": "N", "Project_Code": "INRG000000", "Current_Situation": "D", "Applicable_Scope": 1, "Investment_Purpose": "提高品質水准",
+        #  "Investment_Purpose_Des": "", "Potential_Issues": "售後服務不易", "Potential_Issues_Des": "", "Tighten_Expenses": 1, "Annual_Increase_PerYear": 2500, "Investment_Benefits_PerYear": 1,
+        #  "Cash_Inflows_PerYear": 2501, "Payback_Period": 72, "Subscription_Status": "未申購", "Subscription_Quantity": "", "Subscription_Amount": "", "Entry_Amount": ""},
+        # {"id": "2", "PlanYear": "2025", "BudgetCode": "HKMKBAQAA0047789", "Investment_Nature": "A", "Attribute_Code": "1212", "Application_Department": "KMKBAQAA00",
+        #  "Device_Name": "隔音室(屏蔽室)", "Usage_Description": "C38NB專案支援Wi-Fi 7, 目前無Wi-Fi 7 AP 可用於測試,需申購用於Wi-Fi 7的頻寬相關測試.",
+        #  "Specifications": "TP-Link Archer BE900 BE24000四頻網狀WiFi7路由器或等同規格的其他品牌或型號", "Acceptance_Month": "6", "Budget_Quantity": "1", "Estimated_Original_Currency": "CNY",
+        #  "Estimated_Original_Price": "15000", "Equivalent_To_RMB": "15000", "Payment_Terms": "驗收后月結150天付款", "Depreciation_Months": "72", "Accounting_Subjects": "6201E",
+        #  "Automated_Or_Not": "N", "Project_Code": "INRG000000", "Current_Situation": "D", "Applicable_Scope": 1, "Investment_Purpose": "提高品質水准",
+        #  "Investment_Purpose_Des": "", "Potential_Issues": "售後服務不易", "Potential_Issues_Des": "", "Tighten_Expenses": 1, "Annual_Increase_PerYear": 2500, "Investment_Benefits_PerYear": 1,
+        #  "Cash_Inflows_PerYear": 2501, "Payback_Period": 72, "Subscription_Status": "未申購", "Subscription_Quantity": "", "Subscription_Amount": "", "Entry_Amount": ""},
+        # {"id": "3", "PlanYear": "2024", "BudgetCode": "HKMKBAQAA0047789", "Investment_Nature": "A",
+        #  "Attribute_Code": "1212", "Application_Department": "KMKBAQAA00",
+        #  "Device_Name": "隔音室(屏蔽室)", "Usage_Description": "C38NB專案支援Wi-Fi 7, 目前無Wi-Fi 7 AP 可用於測試,需申購用於Wi-Fi 7的頻寬相關測試.",
+        #  "Specifications": "TP-Link Archer BE900 BE24000四頻網狀WiFi7路由器或等同規格的其他品牌或型號", "Acceptance_Month": "6",
+        #  "Budget_Quantity": "1", "Estimated_Original_Currency": "CNY",
+        #  "Estimated_Original_Price": "15000", "Equivalent_To_RMB": "15000", "Payment_Terms": "驗收后月結150天付款",
+        #  "Depreciation_Months": "72", "Accounting_Subjects": "6201E",
+        #  "Automated_Or_Not": "N", "Project_Code": "INRG000000", "Current_Situation": "D", "Applicable_Scope": 1,
+        #  "Investment_Purpose": "提高品質水准",
+        #  "Investment_Purpose_Des": "", "Potential_Issues": "售後服務不易", "Potential_Issues_Des": "", "Tighten_Expenses": 1,
+        #  "Annual_Increase_PerYear": 2500, "Investment_Benefits_PerYear": 1,
+        #  "Cash_Inflows_PerYear": 2501, "Payback_Period": 72, "Subscription_Status": "未申購", "Subscription_Quantity": "",
+        #  "Subscription_Amount": "", "Entry_Amount": ""},
     ]
-    # 表格數據
-    mock_data1 = [
-        # {"id": 1, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 2, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 3, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
 
+    tables = [
+        # {
+        #     "data": [
+        #         {"C38_T89": "數量", "Annual_Budget": "13", "Unsubscribed": '13', "Subscription_In_Progress": '0',
+        #          "During_Acceptance": '0', "Acceptance_Completed": '0'},
+        #         {"C38_T89": "金額(CNY)", "Annual_Budget": "423326", "Unsubscribed": '423326',
+        #          "Subscription_In_Progress": '0',
+        #          "During_Acceptance": '0', "Acceptance_Completed": '0'},
+        #     ],
+        #     "columns": [
+        #         {"prop": "C38_T89", "label": "C38 & T89"},
+        #         {"prop": "Annual_Budget", "label": "年度預算"},
+        #         {"prop": "Unsubscribed", "label": "未申購"},
+        #         {"prop": "Subscription_In_Progress", "label": "申購中"},
+        #         {"prop": "During_Acceptance", "label": "驗收中"},
+        #         {"prop": "Acceptance_Completed", "label": "驗收完成"},
+        #     ]
+        # },
+        # {
+        #     "data": [
+        #         {"T88_AIO": "數量", "Annual_Budget": "13", "Unsubscribed": '13', "Subscription_In_Progress": '0',
+        #          "During_Acceptance": '0', "Acceptance_Completed": '0'},
+        #         {"T88_AIO": "金額(CNY)", "Annual_Budget": "423326", "Unsubscribed": '423326',
+        #          "Subscription_In_Progress": '0',
+        #          "During_Acceptance": '0', "Acceptance_Completed": '0'},
+        #     ],
+        #     "columns": [
+        #         {"prop": "T88_AIO", "label": "T88 AIO"},
+        #         {"prop": "Annual_Budget", "label": "年度預算"},
+        #         {"prop": "Unsubscribed", "label": "未申購"},
+        #         {"prop": "Subscription_In_Progress", "label": "申購中"},
+        #         {"prop": "During_Acceptance", "label": "驗收中"},
+        #         {"prop": "Acceptance_Completed", "label": "驗收完成"},
+        #     ]
+        # }
     ]
-    mock_data2 = [
-        # {"id": 1, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 2, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 3, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
 
-    ]
-    mock_data3 = [
-        # {"id": 1, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 2, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 3, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
+    errMsg = ''
 
-    ]
-    mock_data4 = [
-        # {"id": 1, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 2, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-        # {"id": 3, "Phase": "FVT", "Jan": 0, "Feb": 0, "Mar": 1, "Apr": 2, "May": 3, "Jun": 4,
-        #  "July": 5, "Aug": 6, "Sep": 7, "Oct": 8, "Nov": 9, "Dec": 0},
-
-    ]
-    mock_data5 = []
-    mock_data6 = []
-    mock_data7 = []
     permission = 0  # 1:有權限
     roles = []
     onlineuser = request.session.get('account')
@@ -118,7 +140,577 @@ def CapitalExpenditure_Summary(request):
         if request.POST.get('isGetData') == 'first':
             pass
         if request.POST.get('isGetData') == 'SEARCH':
-            pass
+            # mock_data
+            YearSearch = request.POST.get('Year')
+            Customer = request.POST.get('Customer')
+            yearOptions = [
+                # "2020", "2021", "2023"
+            ]
+            for i in CapitalExpenditure.objects.all().values("PlanYear").distinct().order_by("PlanYear"):
+                yearOptions.append(i["PlanYear"])
+
+            Check_dic_CapitalExpenditure = {}
+            if YearSearch:
+                Check_dic_CapitalExpenditure["PlanYear"] = YearSearch
+            # elif YearSearch_backup:
+            #     Check_dic_CapitalExpenditure["PlanYear"] = YearSearch_backup
+
+            for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
+                # print(i)
+                mock_data.append(
+                    {
+                        "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
+                        "Investment_Nature": i.Investment_Nature,
+                        "Attribute_Code": i.Attribute_Code,
+                        "Application_Department": i.Application_Department,
+                        "Device_Name": i.Device_Name,
+                        "Usage_Description": i.Usage_Description,
+                        "Specifications": i.Specifications,
+                        "Acceptance_Month": i.Acceptance_Month,
+                        "Budget_Quantity": i.Budget_Quantity,
+                        "Estimated_Original_Currency": i.Estimated_Original_Currency,
+                        "Estimated_Original_Price": i.Estimated_Original_Price,
+                        "Equivalent_To_RMB": i.Equivalent_To_RMB,
+                        "Payment_Terms": i.Payment_Terms,
+                        "Depreciation_Months": i.Depreciation_Months,
+                        "Accounting_Subjects": i.Accounting_Subjects,
+                        "Automated_Or_Not": i.Automated_Or_Not,
+                        "Project_Code": i.Project_Code,
+                        "Current_Situation": i.Current_Situation,
+                        "Applicable_Scope": i.Applicable_Scope,
+                        "Investment_Purpose": i.Investment_Purpose,
+                        "Investment_Purpose_Des": i.Investment_Purpose_Des,
+                        "Potential_Issues": i.Potential_Issues,
+                        "Potential_Issues_Des": i.Potential_Issues_Des,
+                        "Tighten_Expenses": i.Tighten_Expenses,
+                        "Annual_Increase_PerYear": i.Annual_Increase_PerYear,
+                        "Investment_Benefits_PerYear": i.Investment_Benefits_PerYear,
+                        "Cash_Inflows_PerYear": i.Cash_Inflows_PerYear,
+                        "Payback_Period": i.Payback_Period,
+                        "Subscription_Status": i.Subscription_Status,
+                        "Subscription_Quantity": i.Subscription_Quantity,
+                        "Subscription_Amount": i.Subscription_Amount,
+                        "Entry_Amount": i.Entry_Amount,
+                    }
+                )
+            # tables
+            for i in CapitalExpenditure.objects.exclude(Application_Department=None).filter(
+                    PlanYear=YearSearch).annotate(
+                first_seven=Substr(Upper('Application_Department'), 1, 7)).values('first_seven').distinct():
+                # print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first())
+                CustomerToDepartmentSeven.append((Departments.objects.filter(Year=YearSearch,
+                                                                             Department_Code__contains=i[
+                                                                                 'first_seven']).first().Customer,
+                                                  i['first_seven']))
+            DepartmentSeven = ''
+            for i in CustomerToDepartmentSeven:
+                if Customer == i[0]:
+                    DepartmentSeven = i[1]
+                    break
+            if Customer == "C38":
+                if C38CustomerT88AIODepartmentCode.objects.filter(Year=YearSearch) and DepartmentSeven:
+                    AIOT88_DeparmentCode = C38CustomerT88AIODepartmentCode.objects.filter(
+                        Year=YearSearch).first().Department_Code
+
+                    if CapitalExpenditure.objects.filter(PlanYear=YearSearch):
+                        tables_dic1 = {
+                            "data": [
+                                {"C38_T89": "數量",
+                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(total=Sum('Budget_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(total=Sum('Budget_Quantity'))[
+                                     'total'] else 0,
+                                 "Unsubscribed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "Subscription_In_Progress":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "During_Acceptance":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "Acceptance_Completed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收完成").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收完成").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0
+                                 },
+                                {"C38_T89": "金額(CNY)",
+                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] else 0,
+                                 "Unsubscribed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "Subscription_In_Progress":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "During_Acceptance":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").exclude(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                           Application_Department__contains=DepartmentSeven,
+                                                                                           Subscription_Status="驗收完成").exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                           Application_Department__contains=DepartmentSeven,
+                                                                                           Subscription_Status="驗收完成").exclude(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] else 0
+                                 },
+                            ],
+                            "columns": [
+                                {"prop": "C38_T89", "label": "C38 & T89"},
+                                {"prop": "Annual_Budget", "label": "年度預算"},
+                                {"prop": "Unsubscribed", "label": "未申購"},
+                                {"prop": "Subscription_In_Progress", "label": "申購中"},
+                                {"prop": "During_Acceptance", "label": "驗收中"},
+                                {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                            ]
+                        }
+
+                        tables_dic2 = {
+                            "data": [
+                                {"T88_AIO": "數量",
+                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(total=Sum('Budget_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(total=Sum('Budget_Quantity'))[
+                                     'total'] else 0,
+                                 "Unsubscribed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "Subscription_In_Progress":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "During_Acceptance":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                 "Acceptance_Completed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收完成").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收完成").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Budget_Quantity'))[
+                                         'total'] else 0
+                                 },
+                                {"C38_T89": "金額(CNY)",
+                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] else 0,
+                                 "Unsubscribed":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="未申購").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "Subscription_In_Progress":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="申購中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "During_Acceptance":
+                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                       Application_Department__contains=DepartmentSeven,
+                                                                       Subscription_Status="驗收中").filter(
+                                         AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                         total=Sum('Equivalent_To_RMB'))[
+                                         'total'] else 0,
+                                 "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                           Application_Department__contains=DepartmentSeven,
+                                                                                           Subscription_Status="驗收完成").filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                           Application_Department__contains=DepartmentSeven,
+                                                                                           Subscription_Status="驗收完成").filter(
+                                     AIOT88_DeparmentCode=AIOT88_DeparmentCode).aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] else 0
+                                 },
+                            ],
+                            "columns": [
+                                {"prop": "T88_AIO", "label": "T88 AIO"},
+                                {"prop": "Annual_Budget", "label": "年度預算"},
+                                {"prop": "Unsubscribed", "label": "未申購"},
+                                {"prop": "Subscription_In_Progress", "label": "申購中"},
+                                {"prop": "During_Acceptance", "label": "驗收中"},
+                                {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                            ]
+                        }
+                        tables.append(tables_dic1)
+                        tables.append(tables_dic2)
+                else:
+                    errMsg = "没有该年的AIO部门代码，请先录入"
+
+            else:
+                tables_dic = {
+                    "data": [
+                        {Customer: "數量",
+                         "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,).aggregate(total=Sum('Budget_Quantity'))[
+                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,).aggregate(total=Sum('Budget_Quantity'))[
+                             'total'] else 0,
+                         "Unsubscribed":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="未申購").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="未申購").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] else 0,
+                         "Subscription_In_Progress":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="申購中").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="申購中").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] else 0,
+                         "During_Acceptance":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收中").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收中").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] else 0,
+                         "Acceptance_Completed":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收完成").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收中").aggregate(
+                                 total=Sum('Budget_Quantity'))[
+                                 'total'] else 0
+                         },
+                        {Customer: "金額(CNY)",
+                         "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).aggregate(
+                             total=Sum('Equivalent_To_RMB'))[
+                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven).aggregate(
+                             total=Sum('Equivalent_To_RMB'))[
+                             'total'] else 0,
+                         "Unsubscribed":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="未申購").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="未申購").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] else 0,
+                         "Subscription_In_Progress":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="申購中").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="申購中").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] else 0,
+                         "During_Acceptance":
+                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收中").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                               Subscription_Status="驗收中").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
+                                 'total'] else 0,
+                         "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                                                   Subscription_Status="驗收完成").aggregate(
+                             total=Sum('Equivalent_To_RMB'))[
+                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                    Application_Department__contains=DepartmentSeven,
+                                                                                   Subscription_Status="驗收完成").aggregate(
+                             total=Sum('Equivalent_To_RMB'))[
+                             'total'] else 0
+                         },
+                    ],
+                    "columns": [
+                        {"prop": Customer, "label": Customer},
+                        {"prop": "Annual_Budget", "label": "年度預算"},
+                        {"prop": "Unsubscribed", "label": "未申購"},
+                        {"prop": "Subscription_In_Progress", "label": "申購中"},
+                        {"prop": "During_Acceptance", "label": "驗收中"},
+                        {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                    ]
+                }
+                tables.append(tables_dic)
+
+        elif request.POST.get('action') == 'onSubmit':
+            ID = request.POST.get('ID')
+            PlanYear = request.POST.get('PlanYear')
+            Customer = request.POST.get('Customer')
+            BudgetCode = request.POST.get('BudgetCode')
+            Investment_Nature = request.POST.get('Investment_Nature')
+            Attribute_Code = request.POST.get('Attribute_Code')
+            Application_Department = request.POST.get('Application_Department')
+            Device_Name = request.POST.get('Device_Name')
+            Usage_Description = request.POST.get('Usage_Description')
+            Specifications = request.POST.get('Specifications')
+            Acceptance_Month = request.POST.get('Acceptance_Month')
+            Budget_Quantity = request.POST.get('Budget_Quantity')
+            Estimated_Original_Currency = request.POST.get('Estimated_Original_Currency')
+            Estimated_Original_Price = request.POST.get('Estimated_Original_Price')
+            Equivalent_To_RMB = request.POST.get('Equivalent_To_RMB')
+            Payment_Terms = request.POST.get('Payment_Terms')
+            Depreciation_Months = request.POST.get('Depreciation_Months')
+            Accounting_Subjects = request.POST.get('Accounting_Subjects')
+            Automated_Or_Not = request.POST.get('Automated_Or_Not')
+            Project_Code = request.POST.get('Project_Code')
+            Current_Situation = request.POST.get('Current_Situation')
+            Applicable_Scope = request.POST.get('Applicable_Scope')
+            Investment_Purpose = request.POST.get('Investment_Purpose')
+            Investment_Purpose_Des = request.POST.get('Investment_Purpose_Des')
+            Potential_Issues = request.POST.get('Potential_Issues')
+            Potential_Issues_Des = request.POST.get('Potential_Issues_Des')
+            Tighten_Expenses = request.POST.get('Tighten_Expenses')
+            Annual_Increase_PerYear = request.POST.get('Annual_Increase_PerYear')
+            Investment_Benefits_PerYear = request.POST.get('Investment_Benefits_PerYear')
+            Cash_Inflows_PerYear = request.POST.get('Cash_Inflows_PerYear')
+            Payback_Period = request.POST.get('Payback_Period')
+            Subscription_Status = request.POST.get('Subscription_Status')
+            Subscription_Quantity = request.POST.get('Subscription_Quantity')
+            Subscription_Amount = request.POST.get('Subscription_Amount')
+            update_dic = {
+                "PlanYear": PlanYear, "Customer": Customer, "BudgetCode": BudgetCode,
+                "Investment_Nature": Investment_Nature,
+                "Attribute_Code": Attribute_Code,
+                "Application_Department": Application_Department,
+                "Device_Name": Device_Name,
+                "Usage_Description": Usage_Description,
+                "Specifications": Specifications,
+                "Acceptance_Month": Acceptance_Month,
+                "Budget_Quantity": Budget_Quantity,
+                "Estimated_Original_Currency": Estimated_Original_Currency,
+                "Estimated_Original_Price": Estimated_Original_Price,
+                "Equivalent_To_RMB": Equivalent_To_RMB,
+                "Payment_Terms": Payment_Terms,
+                "Depreciation_Months": Depreciation_Months,
+                "Accounting_Subjects": Accounting_Subjects,
+                "Automated_Or_Not": Automated_Or_Not,
+                "Project_Code": Project_Code,
+                "Current_Situation": Current_Situation,
+                "Applicable_Scope": Applicable_Scope,
+                "Investment_Purpose": Investment_Purpose,
+                "Investment_Purpose_Des": Investment_Purpose_Des,
+                "Potential_Issues": Potential_Issues,
+                "Potential_Issues_Des": Potential_Issues_Des,
+                "Tighten_Expenses": Tighten_Expenses,
+                "Annual_Increase_PerYear": Annual_Increase_PerYear,
+                "Investment_Benefits_PerYear": Investment_Benefits_PerYear,
+                "Cash_Inflows_PerYear": Cash_Inflows_PerYear,
+                "Payback_Period": Payback_Period,
+                "Subscription_Status": Subscription_Status,
+                "Subscription_Quantity": Subscription_Quantity,
+                "Subscription_Amount": Subscription_Amount,
+            }
+            try:
+                with transaction.atomic():
+                    CapitalExpenditure.objects.filter(id=ID).update(**update_dic)
+            except Exception as e:
+                # alert = '此数据正被其他使用者编辑中...'
+                alert = str(e)
+                print(alert)
+
+            # mock_data
+            YearSearch = request.POST.get('searchYear')
+            yearOptions = [
+                # "2020", "2021", "2023"
+            ]
+            for i in CapitalExpenditure.objects.all().values("PlanYear").distinct().order_by("PlanYear"):
+                yearOptions.append(i["PlanYear"])
+
+            Check_dic_CapitalExpenditure = {}
+            if YearSearch:
+                Check_dic_CapitalExpenditure["PlanYear"] = YearSearch
+            # elif YearSearch_backup:
+            #     Check_dic_CapitalExpenditure["PlanYear"] = YearSearch_backup
+
+            for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
+                # print(i)
+                mock_data.append(
+                    {
+                        "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
+                        "Investment_Nature": i.Investment_Nature,
+                        "Attribute_Code": i.Attribute_Code,
+                        "Application_Department": i.Application_Department,
+                        "Device_Name": i.Device_Name,
+                        "Usage_Description": i.Usage_Description,
+                        "Specifications": i.Specifications,
+                        "Acceptance_Month": i.Acceptance_Month,
+                        "Budget_Quantity": i.Budget_Quantity,
+                        "Estimated_Original_Currency": i.Estimated_Original_Currency,
+                        "Estimated_Original_Price": i.Estimated_Original_Price,
+                        "Equivalent_To_RMB": i.Equivalent_To_RMB,
+                        "Payment_Terms": i.Payment_Terms,
+                        "Depreciation_Months": i.Depreciation_Months,
+                        "Accounting_Subjects": i.Accounting_Subjects,
+                        "Automated_Or_Not": i.Automated_Or_Not,
+                        "Project_Code": i.Project_Code,
+                        "Current_Situation": i.Current_Situation,
+                        "Applicable_Scope": i.Applicable_Scope,
+                        "Investment_Purpose": i.Investment_Purpose,
+                        "Investment_Purpose_Des": i.Investment_Purpose_Des,
+                        "Potential_Issues": i.Potential_Issues,
+                        "Potential_Issues_Des": i.Potential_Issues_Des,
+                        "Tighten_Expenses": i.Tighten_Expenses,
+                        "Annual_Increase_PerYear": i.Annual_Increase_PerYear,
+                        "Investment_Benefits_PerYear": i.Investment_Benefits_PerYear,
+                        "Cash_Inflows_PerYear": i.Cash_Inflows_PerYear,
+                        "Payback_Period": i.Payback_Period,
+                        "Subscription_Status": i.Subscription_Status,
+                        "Subscription_Quantity": i.Subscription_Quantity,
+                        "Subscription_Amount": i.Subscription_Amount,
+                        "Entry_Amount": i.Entry_Amount,
+                    }
+                )
         else:
             try:
                 request.body
@@ -127,11 +719,13 @@ def CapitalExpenditure_Summary(request):
             else:
                 if 'MUTIDELETE' in str(request.body):
                     responseData = json.loads(request.body)
+                    Year = responseData["Year"]
                     # for i in responseData['params']:
-                    #     CapitalExpenditure.objects.get(id=i).delete()
+                    #     ProjectPlan.objects.get(id=i).delete()
+                    # print(Year)
                     try:
                         with transaction.atomic():
-                            CapitalExpenditure.objects.filter(id__in=responseData['params']).delete()
+                            CapitalExpenditure.objects.filter(Year=Year).delete()
                     except Exception as e:
                         # alert = '此数据正被其他使用者编辑中...'
                         alert = str(e)
@@ -140,27 +734,21 @@ def CapitalExpenditure_Summary(request):
                     yearOptions = [
                         # "2020", "2021", "2023"
                     ]
-                    for i in CapitalExpenditure.objects.all().values("Year").distinct().order_by("Year"):
-                        yearOptions.append(i["Year"])
+                    for i in CapitalExpenditure.objects.all().values("PlanYear").distinct().order_by("PlanYear"):
+                        yearOptions.append(i["PlanYear"])
 
-                    datatypeOption = [
-                        # "Actual", "w/o OOC", "with OOC"
-                    ]
-                    for i in CapitalExpenditure.objects.all().values("DataType").distinct().order_by("DataType"):
-                        datatypeOption.append(i["DataType"])
                     Check_dic_CapitalExpenditure = {}
                     YearSearch = request.POST.get('Year')
                     DataTypeSearch = request.POST.get('DataType')
                     if YearSearch:
-                        Check_dic_CapitalExpenditure["Year"] = YearSearch
-                    if DataTypeSearch:
-                        Check_dic_CapitalExpenditure["DataType"] = DataTypeSearch
+                        Check_dic_CapitalExpenditure["PlanYear"] = YearSearch
                     # print(Check_dic_CapitalExpenditure)
                     for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
                         # print(i)
                         mock_data.append(
                             {
-                                "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode, "Investment_Nature": i.Investment_Nature,
+                                "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
+                                "Investment_Nature": i.Investment_Nature,
                                 "Attribute_Code": i.Attribute_Code,
                                 "Application_Department": i.Application_Department,
                                 "Device_Name": i.Device_Name,
@@ -201,7 +789,7 @@ def CapitalExpenditure_Summary(request):
                     YearSearch = responseData['Year']
                     YearSearch_backup = ''
 
-                    xlsxlist = json.loads(responseData['ExcelData'])
+                    xlsxlist = json.loads(responseData['ExcelData'])[2:]
                     # print(xlsxlist)
                     # pprint.pprint(xlsxlist)
                     # 验证，先验证再上传,必须要先验证，如果边验证边上传，一旦报错，下次再传就无法通过同机种验证
@@ -232,6 +820,7 @@ def CapitalExpenditure_Summary(request):
                             # print(type(i),i)
                             rownum += 1
                             modeldata = {}
+                            # print(headermodel_CapitalExpenditure.keys())
                             for key, value in i.items():
                                 if key in headermodel_CapitalExpenditure.keys():
                                     # print(headermodel_CapitalExpenditure[key],value)
@@ -243,16 +832,16 @@ def CapitalExpenditure_Summary(request):
                             else:
                                 # canEdit = 0
                                 startupload = 0
-                                err_msg = """
+                                errMsg = """
                                         第"%s"條數據，PlanYear不能爲空
                                                             """ % rownum
                                 break
                             if 'BudgetCode' in modeldata.keys():
-                                    startupload = 1
+                                startupload = 1
                             else:
                                 # canEdit = 0
                                 startupload = 0
-                                err_msg = """
+                                errMsg = """
                                         第"%s"條數據，BudgetCode不能爲空
                                                             """ % rownum
                                 break
@@ -261,8 +850,8 @@ def CapitalExpenditure_Summary(request):
                             if rownum == 1:
                                 YearSearch_backup = modeldata['PlanYear']
                                 # print(modeldata['Year'])
-                        # print(err_msg, startupload)
-                        # print(create_list,)
+                        # print(errMsg, startupload)
+                        print(create_list, )
                         # print(startupload)
                         # print(rownum, type(rownum))
                         if startupload:
@@ -282,12 +871,11 @@ def CapitalExpenditure_Summary(request):
                     for i in CapitalExpenditure.objects.all().values("PlanYear").distinct().order_by("PlanYear"):
                         yearOptions.append(i["PlanYear"])
 
-
                     Check_dic_CapitalExpenditure = {}
                     if YearSearch:
-                        Check_dic_CapitalExpenditure["Year"] = YearSearch
+                        Check_dic_CapitalExpenditure["PlanYear"] = YearSearch
                     elif YearSearch_backup:
-                        Check_dic_CapitalExpenditure["Year"] = YearSearch_backup
+                        Check_dic_CapitalExpenditure["PlanYear"] = YearSearch_backup
 
                     for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
                         # print(i)
@@ -328,16 +916,15 @@ def CapitalExpenditure_Summary(request):
                             }
                         )
                     # except Exception as e:
-                    #     err_msg = str(e)
+                    #     errMsg = str(e)
         data = {
-            "content1": mock_data1,
-            "content2": mock_data2,
-            "content3": mock_data3,
-            "content4": mock_data4,
-            "content5": mock_data5,
-            "content6": mock_data6,
-            "content7": mock_data7,
-
+            "errMsg": errMsg,
+            "yearOptions": yearOptions,
+            # "datatypeOption": datatypeOption,
+            "content": mock_data,
+            "permission": permission,
+            "tables": tables,
+            "CustomerOption": CustomerOption,
         }
         # print(data)
         return HttpResponse(json.dumps(data), content_type="application/json")

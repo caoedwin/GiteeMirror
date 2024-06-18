@@ -329,7 +329,11 @@ def TestPlanSW_summary(request):
                               'FFRT4': 7,
                               'FFRT5': 8, 'FFRT6': 9, 'Wave': 10, 'Wave2': 11, 'Wave3': 12, 'Wave4': 13,
                               'Wave5': 14, 'OOC': 15, 'OOC2': 16, 'OOC3': 17, 'OOC4': 18, 'OOC5': 19, 'OOC6': 20,
-                              'Others': 21}
+                              'Others': 21,
+                              'Downgrade': 22, 'SIT_U9': 23, 'U9_FFRT': 24, 'U9_FFRT2': 25, 'U9_FFRT3': 26,
+                             'GSKU_FFRT': 27, 'GSKU_FFRT2': 28, 'GSKU_FFRT3': 29,
+                             'DG_FFRT': 30, 'DG_FFRT2': 31, 'DG_FFRT3': 32,
+                              }
             # print(Projectlist_top)
             Phaselist_top.sort(key=lambda x: Phasesortorder[x])
             # print(Phaselist_top)
@@ -1606,10 +1610,13 @@ def TestPlanSW_summary(request):
                 # print(Projectlist_top)
                 Projectlist_top = list(set(Projectlist_top))
                 Phaselist_top = list(set(Phaselist_top))
-                Phasesortorder = {'B(FVT)': 0, 'C(SIT)': 1, 'SIT2': 2, 'GSKU': 3, 'Downgrade': 22, 'FFRT': 4, 'FFRT2': 5, 'FFRT3': 6, 'FFRT4': 7,
+                Phasesortorder = {'B(FVT)': 0, 'C(SIT)': 1, 'SIT2': 2, 'GSKU': 3, 'FFRT': 4, 'FFRT2': 5, 'FFRT3': 6, 'FFRT4': 7,
                                   'FFRT5': 8, 'FFRT6': 9, 'Wave': 10, 'Wave2': 11, 'Wave3': 12, 'Wave4': 13,
                                   'Wave5': 14, 'OOC': 15, 'OOC2': 16, 'OOC3': 17, 'OOC4': 18, 'OOC5': 19, 'OOC6': 20,
-                                  'Others': 21}
+                                  'Others': 21,
+                              'Downgrade': 22, 'SIT_U9': 23, 'U9_FFRT': 24, 'U9_FFRT2': 25, 'U9_FFRT3': 26,
+                             'GSKU_FFRT': 27, 'GSKU_FFRT2': 28, 'GSKU_FFRT3': 29,
+                             'DG_FFRT': 30, 'DG_FFRT2': 31, 'DG_FFRT3': 32,}
                 # print(Projectlist_top)
                 Phaselist_top.sort(key=lambda x: Phasesortorder[x])
                 for i in Projectlist_top:
@@ -2336,7 +2343,7 @@ def TestPlanSW_Edit(request):
         # "Other": [{"project": "OTHER", "phase": [1, 2, 3]}]
     }
     Customer_list = TestProjectSW.objects.all().values('Customer').distinct().order_by('Customer')
-
+    phase_list = ["B(FVT)", "C(SIT)", "SIT2", 'GSKU', "Wave","Wave2","Wave3","Wave4","Wave5","OOC","OOC2","OOC3","OOC4","OOC5","OOC6","FFRT","FFRT2","FFRT3","FFRT4","FFRT5","FFRT6","Others", 'Downgrade','SIT_U9','U9_FFRT','U9_FFRT2','U9_FFRT3','GSKU_FFRT','GSKU_FFRT2','GSKU_FFRT3','DG_FFRT','DG_FFRT2','DG_FFRT3']
     for i in Customer_list:
         Customerlist = []
         for j in TestProjectSW.objects.filter(Customer=i['Customer']).values('Project').distinct().order_by('Project'):
@@ -2344,53 +2351,7 @@ def TestPlanSW_Edit(request):
             phaselist = []
             dic = {'Customer': i['Customer'], 'Project': j['Project']}
             for m in TestProjectSW.objects.filter(**dic).values('Phase').distinct().order_by('Phase'):
-
-                if m['Phase'] == "B(FVT)":
-                    PhaseValue = 0
-                if m['Phase'] == "C(SIT)":
-                    PhaseValue = 1
-                if m['Phase'] == "SIT2":
-                    PhaseValue = 2
-                if m['Phase'] == "GSKU":
-                    PhaseValue = 3
-                if m['Phase'] == "Wave":
-                    PhaseValue = 4
-                if m['Phase'] == "Wave2":
-                    PhaseValue = 5
-                if m['Phase'] == "Wave3":
-                    PhaseValue = 6
-                if m['Phase'] == "Wave4":
-                    PhaseValue = 7
-                if m['Phase'] == "Wave5":
-                    PhaseValue = 8
-                if m['Phase'] == "OOC":
-                    PhaseValue = 9
-                if m['Phase'] == "OOC2":
-                    PhaseValue = 10
-                if m['Phase'] == "OOC3":
-                    PhaseValue = 11
-                if m['Phase'] == "OOC4":
-                    PhaseValue = 12
-                if m['Phase'] == "OOC5":
-                    PhaseValue = 13
-                if m['Phase'] == "OOC6":
-                    PhaseValue = 14
-                if m['Phase'] == "FFRT":
-                    PhaseValue = 15
-                if m['Phase'] == "FFRT2":
-                    PhaseValue = 16
-                if m['Phase'] == "FFRT3":
-                    PhaseValue = 17
-                if m['Phase'] == "FFRT4":
-                    PhaseValue = 18
-                if m['Phase'] == "FFRT5":
-                    PhaseValue = 19
-                if m['Phase'] == "FFRT6":
-                    PhaseValue = 20
-                if m['Phase'] == "Others":
-                    PhaseValue = 21
-                if m['Phase'] == "Downgrade":
-                    PhaseValue = 22
+                PhaseValue = phase_list.index(m['Phase'])
                 phaselist.append(PhaseValue)
             Projectinfo['phase'] = phaselist
             Projectinfo['project'] = j['Project']
@@ -2408,75 +2369,77 @@ def TestPlanSW_Edit(request):
             Phase = request.GET.get('phase')
             # print(type(Phase))
             PhaseinItem = []
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
+            PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '0':
+            #     Phase = 'B(FVT)'
+            #     PhaseinItem = ['B(FVT)']
+            # if Phase == '1':
+            #     Phase = 'C(SIT)'
+            #     PhaseinItem = ['C(SIT)']
+            # if Phase == '2':
+            #     Phase = 'SIT2'
+            #     PhaseinItem = ['C(SIT)']
+            # if Phase == '3':
+            #     Phase = 'GSKU'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '4':
+            #     Phase = 'Wave'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '5':
+            #     Phase = 'Wave2'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '6':
+            #     Phase = 'Wave3'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '7':
+            #     Phase = 'Wave4'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '8':
+            #     Phase = 'Wave5'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '9':
+            #     Phase = 'OOC'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '10':
+            #     Phase = 'OOC2'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '11':
+            #     Phase = 'OOC3'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '12':
+            #     Phase = 'OOC4'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '13':
+            #     Phase = 'OOC5'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '14':
+            #     Phase = 'OOC6'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
+            # if Phase == '15':
+            #     Phase = 'FFRT'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '16':
+            #     Phase = 'FFRT2'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '17':
+            #     Phase = 'FFRT3'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '18':
+            #     Phase = 'FFRT4'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '19':
+            #     Phase = 'FFRT5'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '20':
+            #     Phase = 'FFRT6'
+            #     PhaseinItem = ['FFRT']
+            # if Phase == '21':
+            #     Phase = 'Others'
+            #     PhaseinItem = ['Others']
+            # if Phase == '22':
+            #     Phase = 'Downgrade'
+            #     PhaseinItem = ['C(SIT)', 'FFRT']
 
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
@@ -2620,75 +2583,8 @@ def TestPlanSW_Edit(request):
             # print(Category2)
             # print(Phase, type(Phase))
             #Search的时候不需要知道Items是link那个Item的，读的都是TestPlan里面的测试当下的Item信息，并且创建时可能就没有Link case（比如测试当下的版本不是上传时的最新版本，因为现在只有excel才能创建PLan）
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
+
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -2904,75 +2800,7 @@ def TestPlanSW_Edit(request):
             # print(Category2)
             # print(Phase, type(Phase))
             #Search的时候不需要知道Items是link那个Item的，读的都是TestPlan里面的测试当下的Item信息，并且创建时可能就没有Link case（比如测试当下的版本不是上传时的最新版本，因为现在只有excel才能创建PLan）
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -3208,75 +3036,7 @@ def TestPlanSW_Edit(request):
             Phase = request.POST.get('phase')
             # print(type(Phase))
             #edit时也不需要知道Items是link那个Item的，直接通过id查找的
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
             # update 直接找到这条的ID就可以了，他的关联的Test Item是不会变的。
             # for h in PhaseinItem:
             #     dic_Item = {'Customer': Customer, 'Phase': h}
@@ -3427,76 +3187,7 @@ def TestPlanSW_Edit(request):
             Phase = request.POST.get('Phase')
             # print(Phase)
             #submitFFRTData时也不需要link case，因为肯定只有FFRT，2，3，4，5，6才有这个，并且都是加到Other这个catogory的
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
             # submit目前只有FFRT会有新增，其他的不会有，所以值加到RetestItemSW里面，他没有关联TestItem
             # for h in PhaseinItem:
             #     dic_Item = {'Customer': Customer, 'Phase': h}
@@ -3599,75 +3290,7 @@ def TestPlanSW_Edit(request):
                 check_list_list = []
                 Phase = str(responseData['phase'])
                 # print(Phase, type(Phase))
-                if Phase == '0':
-                    Phase = 'B(FVT)'
-                    # PhaseinItem = ['B(FVT)']
-                if Phase == '1':
-                    Phase = 'C(SIT)'
-                    # PhaseinItem = ['C(SIT)']
-                if Phase == '2':
-                    Phase = 'SIT2'
-                    # PhaseinItem = ['C(SIT)']
-                if Phase == '3':
-                    Phase = 'GSKU'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '4':
-                    Phase = 'Wave'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '5':
-                    Phase = 'Wave2'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '6':
-                    Phase = 'Wave3'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '7':
-                    Phase = 'Wave4'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '8':
-                    Phase = 'Wave5'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '9':
-                    Phase = 'OOC'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '10':
-                    Phase = 'OOC2'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '11':
-                    Phase = 'OOC3'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '12':
-                    Phase = 'OOC4'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '13':
-                    Phase = 'OOC5'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '14':
-                    Phase = 'OOC6'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
-                if Phase == '15':
-                    Phase = 'FFRT'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '16':
-                    Phase = 'FFRT2'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '17':
-                    Phase = 'FFRT3'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '18':
-                    Phase = 'FFRT4'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '19':
-                    Phase = 'FFRT5'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '20':
-                    Phase = 'FFRT6'
-                    # PhaseinItem = ['FFRT']
-                if Phase == '21':
-                    Phase = 'Others'
-                    # PhaseinItem = ['Others']
-                if Phase == '22':
-                    Phase = 'Downgrade'
-                    # PhaseinItem = ['C(SIT)', 'FFRT']
+                Phase = phase_list[int(Phase)]
                 # print(Phase)
                 dic_Project = {'Customer': responseData['customer'],
                                'Project': responseData['project'], 'Phase': Phase}
@@ -5127,75 +4750,8 @@ def TestPlanSW_Edit(request):
             # print(type(Phase))
             Phase = responseData['phase']
 
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
+            PhaseinItem = ['C(SIT)', 'FFRT']
 
             dic_Project_search = {'Customer': responseData['customer'],
                                'Project': responseData['project'], 'Phase': Phase}
@@ -5316,6 +4872,10 @@ def TestPlanSW_search(request):
         Skin = "/static/src/blue.jpg"
     weizhi = "TestPlan/SW/Search"
     # print(Skin)
+    phase_list = ["B(FVT)", "C(SIT)", "SIT2", 'GSKU', "Wave", "Wave2", "Wave3", "Wave4", "Wave5", "OOC", "OOC2", "OOC3",
+                  "OOC4", "OOC5", "OOC6", "FFRT", "FFRT2", "FFRT3", "FFRT4", "FFRT5", "FFRT6", "Others", 'Downgrade',
+                  'SIT_U9', 'U9_FFRT', 'U9_FFRT2', 'U9_FFRT3', 'GSKU_FFRT', 'GSKU_FFRT2', 'GSKU_FFRT3', 'DG_FFRT',
+                  'DG_FFRT2', 'DG_FFRT3']
     newContents = [
         # {"id": 20191264, "caseid": "CTA001", "casename": "BIOS SETUP(NoteBook)", "version": "3.1.5",
         #  "releasedate": "2018/12/21", "owner": "DQA", "priority": "P1", "basetime": 695,
@@ -5450,53 +5010,7 @@ def TestPlanSW_search(request):
             phaselist = []
             dic = {'Customer': i['Customer'], 'Project': j['Project']}
             for m in TestProjectSW.objects.filter(**dic).values('Phase').distinct().order_by('Phase'):
-
-                if m['Phase'] == "B(FVT)":
-                    PhaseValue = 0
-                if m['Phase'] == "C(SIT)":
-                    PhaseValue = 1
-                if m['Phase'] == "SIT2":
-                    PhaseValue = 2
-                if m['Phase'] == "GSKU":
-                    PhaseValue = 3
-                if m['Phase'] == "Wave":
-                    PhaseValue = 4
-                if m['Phase'] == "Wave2":
-                    PhaseValue = 5
-                if m['Phase'] == "Wave3":
-                    PhaseValue = 6
-                if m['Phase'] == "Wave4":
-                    PhaseValue = 7
-                if m['Phase'] == "Wave5":
-                    PhaseValue = 8
-                if m['Phase'] == "OOC":
-                    PhaseValue = 9
-                if m['Phase'] == "OOC2":
-                    PhaseValue = 10
-                if m['Phase'] == "OOC3":
-                    PhaseValue = 11
-                if m['Phase'] == "OOC4":
-                    PhaseValue = 12
-                if m['Phase'] == "OOC5":
-                    PhaseValue = 13
-                if m['Phase'] == "OOC6":
-                    PhaseValue = 14
-                if m['Phase'] == "FFRT":
-                    PhaseValue = 15
-                if m['Phase'] == "FFRT2":
-                    PhaseValue = 16
-                if m['Phase'] == "FFRT3":
-                    PhaseValue = 17
-                if m['Phase'] == "FFRT4":
-                    PhaseValue = 18
-                if m['Phase'] == "FFRT5":
-                    PhaseValue = 19
-                if m['Phase'] == "FFRT6":
-                    PhaseValue = 20
-                if m['Phase'] == "Others":
-                    PhaseValue = 21
-                if m['Phase'] == "Downgrade":
-                    PhaseValue = 22
+                PhaseValue = phase_list.index(m['Phase'])
                 phaselist.append(PhaseValue)
             Projectinfo['phase'] = phaselist
             Projectinfo['project'] = j['Project']
@@ -5515,75 +5029,8 @@ def TestPlanSW_search(request):
             Project = request.GET.get('project')
             Phase = request.GET.get('phase')
             # print(type(Phase))
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
+            PhaseinItem = ['C(SIT)', 'FFRT']
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             Projectinfos = TestProjectSW.objects.filter(**dic_Project).first()
             # func = lambda z: dict([(x, y) for y, x in z.items()])
@@ -5678,75 +5125,7 @@ def TestPlanSW_search(request):
             Category2 = request.GET.get('category')
             # print(Category2)
             #Search的时候不需要知道Items是link那个Item的，度的都是TestPlan里面的测试当下的Item信息
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)
@@ -6246,75 +5625,7 @@ def TestPlanSW_search(request):
             Project = request.POST.get('Project')
             Phase = request.POST.get('Phase')
             Category2 = request.POST.get('category')
-            if Phase == '0':
-                Phase = 'B(FVT)'
-                # PhaseinItem = ['B(FVT)']
-            if Phase == '1':
-                Phase = 'C(SIT)'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '2':
-                Phase = 'SIT2'
-                # PhaseinItem = ['C(SIT)']
-            if Phase == '3':
-                Phase = 'GSKU'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '4':
-                Phase = 'Wave'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '5':
-                Phase = 'Wave2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '6':
-                Phase = 'Wave3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '7':
-                Phase = 'Wave4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '8':
-                Phase = 'Wave5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '9':
-                Phase = 'OOC'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '10':
-                Phase = 'OOC2'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '11':
-                Phase = 'OOC3'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '12':
-                Phase = 'OOC4'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '13':
-                Phase = 'OOC5'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '14':
-                Phase = 'OOC6'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
-            if Phase == '15':
-                Phase = 'FFRT'
-                # PhaseinItem = ['FFRT']
-            if Phase == '16':
-                Phase = 'FFRT2'
-                # PhaseinItem = ['FFRT']
-            if Phase == '17':
-                Phase = 'FFRT3'
-                # PhaseinItem = ['FFRT']
-            if Phase == '18':
-                Phase = 'FFRT4'
-                # PhaseinItem = ['FFRT']
-            if Phase == '19':
-                Phase = 'FFRT5'
-                # PhaseinItem = ['FFRT']
-            if Phase == '20':
-                Phase = 'FFRT6'
-                # PhaseinItem = ['FFRT']
-            if Phase == '21':
-                Phase = 'Others'
-                # PhaseinItem = ['Others']
-            if Phase == '22':
-                Phase = 'Downgrade'
-                # PhaseinItem = ['C(SIT)', 'FFRT']
+            Phase = phase_list[int(Phase)]
             # print(Category2)
             dic_Project = {'Customer': Customer, 'Project': Project, 'Phase': Phase}
             # print(dic_Project)

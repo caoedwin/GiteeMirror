@@ -1,122 +1,50 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}perIn_search{% endblock %}
+{% block title %}PersonalInfo_edit{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
 <style>
-.tableAround{
-padding: 20px;
--moz-box-shadow: 0px 0px 10px #333333;
--webkit-box-shadow: 0px 0px 10px #333333;
-box-shadow: 0px 0px 10px #333333;
-border-radius: 10px;
-background-color: rgba(255,255,255,0.1);
-}
-
-.el-collapse-item__header{
-    background-image: linear-gradient(to right, rgba(0,139,139,0), rgba(0,139,139,1));
-}
-
-/* 解决el-table 表线不齐 */
-body .el-table th.gutter {
-    display: table-cell !important;
-}
-
-body .el-table colgroup.gutter {
-    display: table-cell !important;
+.el-table th .gutter{
+    display: table-cell!important;
 }
 
 label{
     color:white;
 }
+
  .selectMsg{
      font-size:16px;
       padding: 15px;
       display: flex;
       flex-wrap: wrap;
   }
+
   .selectMsg label{
       font-weight: 800;
+      margin-right: 10px;
       color:aliceblue;
   }
 
-  .tableAround{
-    padding: 20px;
-    -moz-box-shadow: 0px 0px 10px #333333;
-    -webkit-box-shadow: 0px 0px 10px #333333;
-    box-shadow: 0px 0px 10px #333333;
-    border-radius: 10px;
-    background-color: rgba(255,255,255,0.1);
-}
-.demo-fit{
-   display:inline-block;
-   vertical-align: top;
-   width:123px;
-   height:186px;
-   border:1px solid black;
-
-}
-.cardInformation{
-   display:inline-block;!important
-   margin-left:20px;
-}
-.cardInformation label{
-   margin-bottom: -25px;
-}
-.cardInformation tr td{
-   width: 300px;
-}
-tbody tr td:last-child {
-   text-align:left;
-}
-.el-pagination__total,.el-pagination__jump{
-        color:white;
-}
-.el-table .my-cell {
-    vertical-align: top
+  .customerContent,.departmentContent,.lessonContent,.groupemployeesContent{
+     margin-left: 20px;
   }
-#sh {
-        font-size:18px;
-        font-family:微软雅黑;
-        border: 2px solid #9f9ca1;
-}
-#sh::-webkit-input-placeholder{
-        color:#2f97a8;
-        font-family:微软雅黑;
-}
-#sh::-moz-placeholder{
-        color:#2f97a8;
-        font-family:微软雅黑;
-}
-#sh:-ms-input-placeholder{
-        color:#2f97a8;
-    font-family: 微软雅黑;
-}
-
-.showDataArea{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-    -moz-box-shadow: 0px 0px 10px #333333;
-    -webkit-box-shadow: 0px 0px 10px #333333;
-    box-shadow: 0px 0px 10px #333333;
-    border-radius: 10px;
-    background-color: rgba(255,255,255,0.1);
-    margin: 20px 0 20px 0;
-    width: 100%;
-
-}
 
 .inputError{
     text-align: center;
     color: crimson;
     background-color: beige;
     width: 50%;
-    margin-left: 60px;
+    margin-left: 80px;
     margin-top: 20px;
     position: relative;
 }
+
+    /*.el-table .cell {
+      white-space: pre-line;
+      text-align: left;
+    }
+
+     */
 
   .inputError:before{
     display:block;
@@ -130,256 +58,303 @@ tbody tr td:last-child {
     left:50%;
     top:-16px;
 }
-
-
- .Quatity {
-    height: 500px;
-    width: 100%;
-    vertical-align: middle;
+  .fileUploadContent{
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+  .fileUploadContent label{
+    display: inline-block;
+    word-break: keep-all;
+    line-height: 30px;
+}
+.el-checkbox__label{
+    font-size: 18px;
+}
+ .fileUploadContent{
+    padding-left: 15px;
+    margin-bottom: 10px;
+  }
+  .inputPackage{
+    background: #2980b9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(41, 128, 185), rgb(109, 213, 250)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(41, 128, 185), rgb(109, 213, 250)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .inputPackage span{
+    position: absolute;
+    line-height: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: aliceblue;
+  }
+  .fileUploadContent .showFileName{
+     line-height: 40px;
+     margin-left: 20px;
+     font-size: 18px;
+     color: aliceblue;
+   }
+  .inputPackage input{
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+  }
+ .selectItem{
+    font-size: 20px;
+    font-weight: bold;
+    color: aliceblue;
+}
+  .tableAround{
+    padding: 20px;
+    -moz-box-shadow: 0px 0px 10px #333333;
+    -webkit-box-shadow: 0px 0px 10px #333333;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+}
+.el-pagination__total,.el-pagination__jump{
+        color:white;
+    }
+.gutter{
+    display:block!important;
+    width:17px!important;
 }
 
-  .customerContent,.departmentContent{
-     margin-left: 20px;
-  }
+[v-cloak]{
+    display: none;
+}
 
+#sh {
+    font-size:18px;
+    font-family:微软雅黑;
+    border: 2px solid #9f9ca1;
+}
 
+#sh::-webkit-input-placeholder{
+        color:#2f97a8;
+    font-family:微软雅黑;
+}
+#sh::-moz-placeholder{
+        color:#2f97a8;
+    font-family:微软雅黑;
+}
+#sh:-ms-input-placeholder{
+        color:#2f97a8;
+    font-family:微软雅黑;
+}
+
+.hidden-column {
+  display: none;
+  /*width: -1px;*/
+}
 
 </style>
-
 {% endblock %}
 {% block content %}
 <div id="app">
-    <!--搜索框-->
+      <!--搜索框-->
     <div class="selectMsg" >
+
            <div class="customerContent">
-                 <label for="year">Year</label>
+                 <label for="customer">PlanYear</label>
                  <select  ref="Year"  v-model="year" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
-                       <option v-for="(item,key,index) in yearOptions" >${ item }</option>
+                    <option v-for="(item,key,index) in yearOptions" >${ item }</option>
                  </select>
                  <div class="inputError" v-cloak v-show="customerError">不能為空</div>
            </div>
-           <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px;margin-left: 20px">搜索</el-button>
-        <br/>
+
+           <div style="margin-left: 100px;">
+                 <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px">搜索</el-button>
+                 <el-button @click="exportExcel"  type="info" v-cloak style="height:40px">導出</el-button>
+{#                     <el-button  type="danger" v-if="uploadpermission===1" v-cloak @click="addData" style="margin-left: 20px;">Upload</el-button>#}
+                 <el-button @click="deleteData()" type="danger" v-if="permission===1" v-cloak style="margin-left: 20px;width: 80px;">刪除</el-button>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a href="/static/src/modelfiles/CapitalExpenditure.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
+           </div>
 
     </div>
+     <div v-cloak class="fileUploadContent" v-if="permission===1">
+         <div class="inputPackage" v-cloak>
+             <span v-cloak>請選擇文件</span>
+             <input v-cloak type="file" id="upload" ref="file" @change="updateFile(event)" v-model="excelFile">
+         </div>
+         <el-button @click="fileUpload" type="warning" style="height:40px" v-cloak> Excel上傳</el-button>
+         <span class="showFileName" v-cloak >${ fileName }</span>
+     </div>
 
-    <div class="showDataArea" style="white-space: nowrap;">
-        <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">實際專案數量-預算專案數量</div>
-          <template v-cloak>
-              <el-table  border :data="tableContent1" style="width: 100%;" id="out-table1"
-              v-loading="tableloading"
-              :header-cell-style="{color:'#333',{% comment %}fontFamily:'MicrosoftYaHeiUI',{% endcomment %}fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              element-loading-text="數據更新中，請稍後"
-              >
-                <el-table-column  prop="Phase" label="Phase" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jan" label="Jan" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Feb" label="Feb" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Mar" label="Mar" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Apr" label="Apr" align="center" width="80"></el-table-column>
-                <el-table-column  prop="May" label="May" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jun" label="Jun" align="center" width="80"></el-table-column>
-                <el-table-column  prop="July" label="July" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Aug" label="Aug" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Sep" label="Sep" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Oct" label="Oct" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Nov" label="Nov" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Dec" label="Dec" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Total" label="Total" align="center" width="80"></el-table-column>
-              </el-table>
-          </template>
+     <el-dialog :visible.sync="update" :close-on-click-modal="false">
+        <template>
+            <el-form ref="form"  :model="form" :label-position="labelPosition" label-width="180px">
+                  <el-form-item label="PlanYear" prop="PlanYear">
+                      <el-select v-model="form.PlanYear" placeholder="请选择">
+                            <el-option
+                                v-for="item in yearOptions"
+                                :key="item"
+                                :label="item"
+                                :value="item">
+                            </el-option>
+                      </el-select>
+                  </el-form-item>
+                  <el-form-item label="預算編號" prop="BudgetCode">
+                      <el-input  v-model="form.BudgetCode" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="投資性質" prop="Investment_Nature">
+                      <el-input  v-model="form.Investment_Nature" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="屬性代碼" prop="Attribute_Code">
+                      <el-input  v-model="form.Attribute_Code" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="申請部門" prop="Application_Department">
+                      <el-input  v-model="form.Application_Department" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="設備或工程名稱" prop="Device_Name">
+                      <el-input  v-model="form.Device_Name" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="用途說明" prop="Usage_Description">
+                      <el-input  v-model="form.Usage_Description" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="廠牌規格" prop="Specifications">
+                      <el-input  v-model="form.Specifications" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="驗收月份" prop="Acceptance_Month">
+                      <el-input  v-model="form.Acceptance_Month" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="預算數量" prop="Budget_Quantity">
+                      <el-input  v-model="form.Budget_Quantity" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="幣別">
+                      <el-select  v-model="form.Estimated_Original_Currency" placeholder="請選擇">
+                        <el-option label="CNY" value="CNY"></el-option>
+                        <el-option label="USD" value="USD"></el-option>
+                        <el-option label="NTD" value="NTD"></el-option>
+                      </el-select>
+                  </el-form-item>
+                  <el-form-item label="金額" prop="Estimated_Original_Price">
+                      <el-input  v-model="form.Estimated_Original_Price" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="申購狀況" prop="Subscription_Status">
+                      <el-input  v-model="form.Subscription_Status" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="申購數量" prop="Subscription_Quantity">
+                      <el-input  v-model="form.Subscription_Quantity" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="申購金額(CNY)" prop="Subscription_Amount">
+                      <el-input  v-model="form.Subscription_Amount" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="入賬金額(CNY)" prop="Entry_Amount">
+                      <el-input  v-model="form.Entry_Amount" ></el-input>
+                  </el-form-item>
+                <div class="el-form-item__content" style="margin-left: 220px;">
+                  <el-form-item>
+                        <el-button type="primary" @click="updateData('form')">確定</el-button>
+                  </el-form-item>
+                </div>
+             </el-form>
+        </template>
+    </el-dialog>
 
-    </div>
-{#    <div class="showDataArea" style="white-space: nowrap;">#}
-    <div class="tableAround" v-cloak >
-          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 實際專案數量</div>
-          <template v-cloak>
-              <el-table  border :data="tableContent2" style="width: 100%;" id="out-table2"
-              v-loading="tableloading"
-              :header-cell-style="{color:'#333',{% comment %}fontFamily:'MicrosoftYaHeiUI',{% endcomment %}fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              element-loading-text="數據更新中，請稍後"
-              >
-                <el-table-column  prop="Phase" label="Phase" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jan" label="Jan" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Feb" label="Feb" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Mar" label="Mar" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Apr" label="Apr" align="center" width="80"></el-table-column>
-                <el-table-column  prop="May" label="May" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jun" label="Jun" align="center" width="80"></el-table-column>
-                <el-table-column  prop="July" label="July" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Aug" label="Aug" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Sep" label="Sep" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Oct" label="Oct" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Nov" label="Nov" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Dec" label="Dec" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Total" label="Total" align="center" width="80"></el-table-column>
-              </el-table>
+  <div class="tableAround">
 
-              <el-collapse v-model="activeNames" @change="handleChange">
-                  <el-collapse-item title="實際專案清單" name="1">
-                      <el-table {% comment %}height="1500px" {% endcomment %}id="out-table3" border stripe :data="tableContent3.slice((currentPage1-1)*pageSize1,currentPage1*pageSize1)"
-                        style="min-width: 100%;border-radius: 10px;margin-top: 20px;font-size: 10px"
-                        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
-                        v-loading="tableloading" @sort-change='sortChange1'
-                        element-loading-text="數據更新中，請稍後"
-                        border>
-                          <el-table-column  prop="RD_Project_Plan" label="RD Project Plan" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  type="index" :index="indexMethod" label="No." align="center"></el-table-column>
-                          <el-table-column  prop="CG" label="CG" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Compal_Model" label="Compal Model" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" min-width="150" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="95" sortable='custom'></el-table-column>
-        {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
-        {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
-        {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
-                          <el-table-column  prop="Jan" label="Jan" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Feb" label="Feb" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Mar" label="Mar" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Apr" label="Apr" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="May" label="May" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Jun" label="Jun" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="July" label="July" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Aug" label="Aug" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Sep" label="Sep" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Oct" label="Oct" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Nov" label="Nov" align="center" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Dec" label="Dec" align="center" sortable='custom'></el-table-column>
+    <el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input><br>
+{#    <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>#}
+    <el-table id="out-table"  ref="tableRef" height="700" border stripe :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)"
+        style="min-width: 100%;border-radius: 10px"  @selection-change="handleSelectionChange" :row-key="getRowKeys"
+        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
+        v-loading="tableloading"
+        element-loading-text="數據更新中，請稍後"
+        >
+              <el-table-column type="selection" width="50" align="center"  :reserve-selection="true"></el-table-column>
+              <el-table-column  label="Edit" align="center">
+                  <template slot-scope="scope">
+                      <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"  @click="alertID(scope.row.id,scope.row)"></el-button>
+                  </template>
+              </el-table-column>
+              <el-table-column type="index" :index="indexMethod" align="center"></el-table-column>
+              <el-table-column  prop="PlanYear" label="PlanYear" align="center" width="100"></el-table-column>
+              <el-table-column  prop="BudgetCode" label="預算編號" align="center" width="150"></el-table-column>
+              <el-table-column  prop="Investment_Nature" label="投資性質" align="center" width="80"></el-table-column>
+              <el-table-column  prop="Attribute_Code" label="屬性代碼" align="center" width="140"></el-table-column>
+              <el-table-column  prop="Application_Department" label="申請部門" align="center" width="180"></el-table-column>
+              <el-table-column  prop="Device_Name" label="設備或工程名稱" width="140"></el-table-column>
+              <el-table-column  prop="Usage_Description" label="用途說明" width="140"></el-table-column>
+              <el-table-column  prop="Specifications" label="廠牌規格" align="center" width="120"></el-table-column>
+              <el-table-column  prop="Acceptance_Month" label="驗收月份" align="center" width="120"></el-table-column>
+              <el-table-column  prop="Budget_Quantity" label="預算數量" align="center" width="120"></el-table-column>
+              <el-table-column  label="預估總價" align="center" width="120">
+                <el-table-column  label="原幣" align="center" width="120">
+                    <el-table-column  prop="Estimated_Original_Currency" label="幣別" align="center" width="120">
+                    </el-table-column>
+                    <el-table-column  prop="Estimated_Original_Price" label="金額" align="center" width="120">
+                    </el-table-column>
+                </el-table-column>
+              </el-table-column>
+{#              <el-table-column  prop="Equivalent_To_RMB" label="折合人民幣" class-name="hidden-column" width="-1"></el-table-column>#}
+{#              <el-table-column  prop="Payment_Terms" label="付款條件" class-name="hidden-column" width="-1"></el-table-column>#}
+{#              <el-table-column  prop="Depreciation_Months" label="折舊月數" class-name="hidden-column" width="-1"></el-table-column>#}
+{#              <el-table-column  prop="Accounting_Subjects" label="會計科目" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Automated_Or_Not" label="是否自動化" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Project_Code" label="Project Code" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Current_Situation" label="現狀說明" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Applicable_Scope" label="適用範圍" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Investment_Purpose" label="投資動機與目的" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Investment_Purpose_Des" label="投資動機與目的其他說明" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Potential_Issues" label="潛在問題" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Potential_Issues_Des" label="潛在問題的其他說明" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Tighten_Expenses" label="年節省支出" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Annual_Increase_PerYear" label="年增加收益" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Investment_Benefits_PerYear" label="年投資效益" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Cash_Inflows_PerYear" label="年淨現金流入" class-name="hidden-column"></el-table-column>#}
+{#              <el-table-column  prop="Payback_Period" label="回收年限(月數)" class-name="hidden-column"></el-table-column>#}
+              <el-table-column  prop="Subscription_Status" label="申購狀況" align="center" width="120"></el-table-column>
+              <el-table-column  prop="Subscription_Quantity" label="申購數量" align="center" width="120"></el-table-column>
+              <el-table-column  prop="Subscription_Amount" label="申購金額(CNY)" align="center" width="120"></el-table-column>
+              <el-table-column  prop="Entry_Amount" label="入賬金額(CNY)" align="center"></el-table-column>
+              <el-table-column  prop="Equivalent_To_RMB" label="折合人民幣" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Payment_Terms" label="付款條件" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Depreciation_Months" label="折舊月數" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Accounting_Subjects" label="會計科目" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Automated_Or_Not" label="是否自動化" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Project_Code" label="Project Code" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Current_Situation" label="現狀說明" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Applicable_Scope" label="適用範圍" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Investment_Purpose" label="投資動機與目的" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Investment_Purpose_Des" label="投資動機與目的其他說明" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Potential_Issues" label="潛在問題" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Potential_Issues_Des" label="潛在問題的其他說明" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Tighten_Expenses" label="年節省支出" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Annual_Increase_PerYear" label="年增加收益" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Investment_Benefits_PerYear" label="年投資效益" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Cash_Inflows_PerYear" label="年淨現金流入" class-name="hidden-column" width="-1"></el-table-column>
+              <el-table-column  prop="Payback_Period" label="回收年限(月數)" class-name="hidden-column" width="-1"></el-table-column>
+    </el-table>
+      <div class="block">
+        <el-pagination  @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[20, 50, 100, 200]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="total_computed">
+        </el-pagination>
+      </div>
+  </div>
+  <div class="tableAround" v-cloak>
+    <el-table
+      :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
+      style="min-width: 100%;border-radius: 10px;margin-bottom: 20px;"
+      border stripe
+      v-for="(table, index) in tables"
+      :key="index"
+      :data="table.data"
+      style="width: 100%">
+      <el-table-column
+        align="center"
+        v-for="(column, cIndex) in table.columns"
+        :key="cIndex"
+        :prop="column.prop"
+        :label="column.label">
+      </el-table-column>
+    </el-table>
 
-                      </el-table>
-                    <div class="block">
-                        <el-pagination  @size-change="handleSizeChange1" @current-change="handleCurrentChange1" :current-page="currentPage1" :page-sizes="[15, 30, 50]" :page-size="30" layout="total, sizes, prev, pager, next, jumper" :total="totalNum1">
-                        </el-pagination>
-                    </div>
-              </el-collapse-item>
-               </el-collapse>
-          </template>
-
-    </div>
-{#    <div class="showDataArea" style="white-space: nowrap;">#}
-    <div class="tableAround" v-cloak >
-          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 預算專案數量(w/o OOC)</div>
-          <template v-cloak>
-              <el-table  border :data="tableContent4" style="width: 100%;" id="out-table4"
-              v-loading="tableloading"
-              :header-cell-style="{color:'#333',{% comment %}fontFamily:'MicrosoftYaHeiUI',{% endcomment %}fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              element-loading-text="數據更新中，請稍後"
-              >
-                <el-table-column  prop="Phase" label="Phase" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jan" label="Jan" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Feb" label="Feb" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Mar" label="Mar" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Apr" label="Apr" align="center" width="80"></el-table-column>
-                <el-table-column  prop="May" label="May" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jun" label="Jun" align="center" width="80"></el-table-column>
-                <el-table-column  prop="July" label="July" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Aug" label="Aug" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Sep" label="Sep" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Oct" label="Oct" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Nov" label="Nov" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Dec" label="Dec" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Total" label="Total" align="center" width="80"></el-table-column>
-              </el-table>
-
-              <el-collapse v-model="activeNames" @change="handleChange">
-                  <el-collapse-item title="預算專案清單(w/o OOC)" name="2">
-                      <el-table  {% comment %}height="1500px" {% endcomment %}id="out-table5" border stripe :data="tableContent5.slice((currentPage2-1)*pageSize2,currentPage2*pageSize2)"
-                        style="min-width: 100%;border-radius: 10px;margin-top: 20px;font-size: 10px"
-                        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
-                        v-loading="tableloading" @sort-change='sortChange2'
-                        element-loading-text="數據更新中，請稍後"
-                        border>
-                          <el-table-column  type="index" :index="indexMethod" label="No." align="center"></el-table-column>
-                          <el-table-column  prop="CG" label="CG" align="center" width="50" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" width="160" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="100" sortable='custom'></el-table-column>
-        {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140"></el-table-column>#}
-        {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120"></el-table-column>#}
-        {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120"></el-table-column>#}
-                          <el-table-column  prop="Jan" label="Jan" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Feb" label="Feb" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Mar" label="Mar" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Apr" label="Apr" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="May" label="May" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Jun" label="Jun" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="July" label="July" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Aug" label="Aug" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Sep" label="Sep" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Oct" label="Oct" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Nov" label="Nov" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Dec" label="Dec" align="center" width="60" sortable='custom'></el-table-column>
-
-                      </el-table>
-                    <div class="block">
-                        <el-pagination  @size-change="handleSizeChange2" @current-change="handleCurrentChange2" :current-page="currentPage2" :page-sizes="[15, 30, 50]" :page-size="30" layout="total, sizes, prev, pager, next, jumper" :total="totalNum2">
-                        </el-pagination>
-                    </div>
-              </el-collapse-item>
-               </el-collapse>
-          </template>
-    </div>
-{#    <div class="showDataArea" style="white-space: nowrap;">#}
-    <div class="tableAround" v-cloak >
-          <div style="width: 100%;margin-bottom: 10px;color: #FF9933;font-size: 18px;">${ this.YearTitle } 預算專案數量(with OOC)</div>
-          <template v-cloak>
-              <el-table  border :data="tableContent6" style="width: 100%;" id="out-table6"
-              v-loading="tableloading"
-              :header-cell-style="{color:'#333',fontFamily:'MicrosoftYaHeiUI',fontSize:'15px',fontWeight:900,background:'#CCDDFF','border-bottom':'1px solid rgb(103, 194, 58)'}"
-              element-loading-text="數據更新中，請稍後"
-              >
-                <el-table-column  prop="Phase" label="Phase" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jan" label="Jan" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Feb" label="Feb" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Mar" label="Mar" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Apr" label="Apr" align="center" width="80"></el-table-column>
-                <el-table-column  prop="May" label="May" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Jun" label="Jun" align="center" width="80"></el-table-column>
-                <el-table-column  prop="July" label="July" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Aug" label="Aug" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Sep" label="Sep" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Oct" label="Oct" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Nov" label="Nov" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Dec" label="Dec" align="center" width="80"></el-table-column>
-                <el-table-column  prop="Total" label="Total" align="center" width="80"></el-table-column>
-              </el-table>
-
-               <el-collapse v-model="activeNames" @change="handleChange">
-                  <el-collapse-item title="預算專案清單(with OOC)" name="3">
-                      <el-table {% comment %}height="1500px" {% endcomment %}id="out-table7" border stripe :data="tableContent7.slice((currentPage3-1)*pageSize3,currentPage3*pageSize3)"
-                        style="min-width: 100%;border-radius: 10px;margin-top: 20px;font-size: 10px"
-                        :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
-                        v-loading="tableloading" @sort-change='sortChange3'
-                        element-loading-text="數據更新中，請稍後"
-                        border>
-                          <el-table-column  type="index" :index="indexMethod" label="No." align="center"></el-table-column>
-                          <el-table-column  prop="CG" label="CG" align="center" width="50" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Compal_Model" label="Compal Model" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Customer_Model" label="Customer Model" width="160" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Marketing_type" label="Marketing type(Commerical/Consumer)" align="center" width="100" sortable='custom'></el-table-column>
-        {#                  <el-table-column  prop="Status" label="Status: Planning=P Executing=E" align="center" width="140" sortable='custom'></el-table-column>#}
-        {#                  <el-table-column  prop="Customer" label="Customer" align="center" width="120" sortable='custom'></el-table-column>#}
-        {#                  <el-table-column  prop="Project_Type" label="Project Type(NB/PAD/AIO/IPC)" align="center" width="120" sortable='custom'></el-table-column>#}
-                          <el-table-column  prop="Jan" label="Jan" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Feb" label="Feb" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Mar" label="Mar" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Apr" label="Apr" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="May" label="May" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Jun" label="Jun" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="July" label="July" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Aug" label="Aug" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Sep" label="Sep" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Oct" label="Oct" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Nov" label="Nov" align="center" width="60" sortable='custom'></el-table-column>
-                          <el-table-column  prop="Dec" label="Dec" align="center" width="60" sortable='custom'></el-table-column>
-                      </el-table>
-                    <div class="block">
-                        <el-pagination  @size-change="handleSizeChange3" @current-change="handleCurrentChange3" :current-page="currentPage3" :page-sizes="[15, 30, 50]" :page-size="30" layout="total, sizes, prev, pager, next, jumper" :total="totalNum2">
-                        </el-pagination>
-                    </div>
-                  </el-collapse-item>
-                   </el-collapse>
-          </template>
-    </div>
-</div>
+  </div>
+  </div>
 {% endblock %}
 {% block scripts %}
 <script src="/static/js/es6/polyfill.min.js"></script>
@@ -388,112 +363,186 @@ tbody tr td:last-child {
 <script src="/static/js/vue.min.js"></script>
 <script src="/static/js/qs.js"></script>
 <script src="/static/js/Element/index.js"></script>
-<script src="/static/js/echart/echart.js"></script>
 <script src="/static/js/xlsx/FileSaver.min.js"></script>
-    <script type="text/babel">
+<script src="/static/js/Element/table.js"></script>
+<script src="/static/js/Element/main.js"></script>
+<script src="/static/js/Element/input.js"></script>
+<script src="/static/js/Element/table-column.js"></script>
+<script src="/static/js/Element/icon.js"></script>
+<script src="/static/js/Element/image.js"></script>
+<script src="/static/js/Element/message.js"></script>
+<script type="text/babel">
     new Vue({
         el: '#app',
         delimiters: ['${', '}'],
         data: function () {
             return {
-                // 搜索条件
-                activeNames:['1','2','3'],
-                year:'',
-                currentPage1: 1,
-                pageSize1:30,
-                currentPage2: 1,
-                pageSize2:30,
-                currentPage3: 1,
-                pageSize3:30,
-                totalNum1:null,
-                totalNum2:null,
-                totalNum3:null,
-                customerError:false,
-                departmentError:false,
-                ProjectcodeCompal:"",
-                YearTitle: "",
+                excelFile:null,
+                uploadFile:null,
+                fileName:"未選擇文件",
+                search:'',
+                loading:false,
+                SectionProjectcode:[],
                 yearOptions:[],
-                elbuttonloading: false,
+                datatypeOption:[],
+                ProjectCodeOption:[],
+                ProjectcodeCompal:"",
+                datatype:'',
+                year:'',
+                editpermission: 0,
+                permission: 0,
+                customerOptions:{},
+                customerError:false,
+                department:'',
+                departmentOptions:[],
+                departmentError:false,
+                tableContent:[],
+                update:false,
+                ID:"",
+                labelPosition:'right',
                 tableloading: false,
-                dialogloading: false,
-                tableContent1:[],
-                tableContent2:[],
-                tableContent3:[],
-                tableContent4:[],
-                tableContent5:[],
-                tableContent6:[],
-                tableContent7:[],
+                elbuttonloading: false,
+                form: {
+                    PlanYear: '',
+                    BudgetCode: '',
+                    Investment_Nature: '',
+                    Attribute_Code: '',
+                    Application_Department: '',
+                    Device_Name: '',
+                    Usage_Description: '',
+                    Specifications: '',
+                    Acceptance_Month: '',
+                    Budget_Quantity: '',
+                    Estimated_Original_Currency: '',
+                    Estimated_Original_Price: '',
+                    Subscription_Status: '',
+                    Subscription_Quantity: '',
+                    Subscription_Amount: '',
+                    Entry_Amount: '',
+
+                },
+                formData:[],
+                editID: '',
+                multiDeleteVisible:false,
+                multipleSelection: [],
+                //表格信息顯示
+                showCustomer:'',
+                showDepartment:'',
+                //新增信息
+                appendss:false,
+                //分页
+                currentPage: 1,//默认显示第一页
+                pageSize:20,//默认每页显示100条
+                totalNum: null,
+                errMsg:null,
+                tables:[],
+
             }
         },
         mounted(){        // 页面渲染后触发该区域内容 即页面初始化
             this.getdata("first");
         },
         methods: {
-            handleChange(val) {               //折疊面板變化
-                console.log(val);
-            },
-            indexMethod(index) {
-                  return index +1;
-            },
-             //分页
-             handleSizeChange1(val) {
-                console.log(`每页 ${val} 条`);
-                this.pageSize1 = val;
-
-             },
-             handleCurrentChange1(val) {
-              console.log(`当前页: ${val}`);
-              this.currentPage1 = val;
-             },
-
-             handleSizeChange2(val) {
-                console.log(`每页 ${val} 条`);
-                this.pageSize2 = val;
-
-             },
-             handleCurrentChange2(val) {
-              console.log(`当前页: ${val}`);
-              this.currentPage2 = val;
-             },
-
-
-             handleSizeChange3(val) {
-                console.log(`每页 ${val} 条`);
-                this.pageSize3 = val;
-
-             },
-             handleCurrentChange3(val) {
-              console.log(`当前页: ${val}`);
-              this.currentPage3 = val;
-             },
-
             //获取数据
             getdata: function (e) {
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 let data = {"isGetData": e, "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()};
-                axios.post("/ProjectComparison/ProjectComparison_Summary/", Qs.stringify(data), {
+                axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/", Qs.stringify(data), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
-                    this.tableContent1=res.data.content1;
-                    this.tableContent2=res.data.content2;
-                    this.tableContent3=res.data.content3;
-                    this.totalNum1=this.tableContent3.length;
-                    this.tableContent4=res.data.content4;
-                    this.tableContent5=res.data.content5;
-                    this.totalNum2=this.tableContent5.length;
-                    this.tableContent6=res.data.content6;
-                    this.tableContent7=res.data.content7;
-                    this.totalNum3=this.tableContent7.length;
+                    this.yearOptions = res.data.yearOptions;
+                    this.datatypeOption = res.data.datatypeOption;
+                    this.permission=res.data.permission;
+                    this.tables=res.data.tables;
+                    this.tableContent=res.data.content;
+                    this.totalNum=this.tableContent.length;
                     this.elbuttonloading = false;
                     this.tableloading = false;
-                    this.customerError= false;
-                    this.yearOptions=res.data.yearOptions;
-                });
+                    this.$nextTick(() => {
+                       this.$refs.tableRef.doLayout()
+                    })
+                 });
             },
 
+            exportExcel: function () {
+             /* 从表生成工作簿对象 */
+             {#console.log(document.querySelector("#out-table"));#}
+             let temp = [];
+             temp.push(Number(this.currentPage));
+             temp.push(Number(this.pageSize));
+             {#console.log(temp);#}
+             this.currentPage = 1;
+             this.pageSize = this.tableContent.length;
+             {#console.log(temp, this.defaultPage1, this.pageSize);#}
+             setTimeout(() => {
+                 let table = document.querySelector("#out-table").cloneNode(true);
+                 let fix = table.querySelector(".el-table__fixed");
+                 let wb;
+                 if(fix){
+                    wb = XLSX.utils.table_to_book(table.removeChild(fix),{raw: true});
+                    table.appendChild(fix);
+                 }else{
+                    wb = XLSX.utils.table_to_book(table,{raw: true});
+                 }
+                 console.log("wb", wb);
+                 /* 获取二进制字符串作为输出 */
+                 var wbout = XLSX.write(wb, {
+                     bookType: "xlsx",
+                     bookSST: true,
+                     type: "array"
+                 });
+                 console.log("wbout", wbout);
+                 try {
+                     saveAs(
+                         //Blob 对象表示一个不可变、原始数据的类文件对象。
+                         //Blob 表示的不一定是JavaScript原生格式的数据。
+                         //File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。
+                         //返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
+                         new Blob([wbout], {type: "application/octet-stream"}),
+                         //设置导出文件名称
+                         "sheetjs.xlsx"
+                     );
 
+                 } catch (e) {
+                     if (typeof console !== "undefined") console.log(e, wbout);
+                 }
+                 this.currentPage = temp[0];
+                 this.pageSize = temp[1];//edwin:要想导出后回到当前页而不是第一页，<el-pagination里面的:page-size="100"，而不能是:page-size="pageSize"
+                 temp = [];
+                 return wbout;
+             }, 100);
+         },
+
+
+            //级联
+            changeCustomer:function () {
+                 if(this.$refs.Customer.value ===""){
+                      this.departmentOptions=[""];
+                      return false;
+                 }
+                 this.SectionProjectcode=this.ProjectCodeOption[this.$refs.Customer.value];
+                 this.ProjectcodeCompal="";
+             },
+
+            changeProjectcode:function () {
+                 this.SectionProjectcode=this.ProjectCodeOption[this.form.Customer];
+            },
+
+    {% comment %}
+            changeLesson:function(index){
+                if(this.$refs.Lesson.value ==""){
+                      this.groupemployeesOptions=[""];
+                      return false;
+                 }
+                 this.groupemployeesOptions=this.lessonOptions[this.$refs.Lesson.value];
+                 this.groupemployees="";
+                 console.log(this.groupemployeesOptions);
+            },
+    {% endcomment %}
+            //上传搜索项：以此选项搜索符合条件的内容
             find:function(){
+
                 if(this.$refs.Year.value ===""){
                       this.customerError= true;
                       return false;
@@ -501,207 +550,439 @@ tbody tr td:last-child {
 
                 this.elbuttonloading = true;
                 this.tableloading = true;
-                let Year=this.$refs.Year.value;
-                this.YearTitle = this.$refs.Year.value;
-                let data ={"isGetData":"SEARCH","Year":Year,
-                           "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
-               axios.post("/ProjectComparison/ProjectComparison_Summary/",Qs.stringify(data), {
-               headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+                let Year = this.$refs.Year.value;
+                let data ={"isGetData":"SEARCH","Year":Year,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+                axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/",Qs.stringify(data), {
+                headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
-                    this.tableContent1=res.data.content1;
-                    this.tableContent2=res.data.content2;
-                    this.tableContent3=res.data.content3;
-                    this.tableContent4=res.data.content4;
-                    this.tableContent5=res.data.content5;
-                    this.tableContent6=res.data.content6;
-                    this.tableContent7=res.data.content7;
-                    this.elbuttonloading = false;
-                    this.tableloading = false;
-                    this.customerError= false;
+                  this.tableContent=res.data.content;
+                  this.totalNum=this.tableContent.length;
+                  this.tables=res.data.tables;
+                  this.permission=res.data.permission;
+                  this.elbuttonloading = false;
+                  this.tableloading = false;
+                  this.yearOptions = res.data.yearOptions;
+                  this.$nextTick(() => {
+                       this.$refs.tableRef.doLayout()
+                  })
                 })
 
+                  this.customerError= false;
+
+             },
+
+            indexMethod(index) {
+                  return index +1;
             },
 
-            sortChange1: function(column){
-            this.currentPage1 = 1 // return to the first page after sorting
-                if (column.prop === 'RD_Project_Plan') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                } else if (column.prop === 'CG') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Compal_Model') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer_Model') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Marketing_type') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Status') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Project_Type') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jan') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Feb') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Mar') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Apr') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'May') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jun') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'July') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Aug') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Sep') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Oct') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Nov') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Dec') {
-                    this.dataList1 = this.tableContent3.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else{
-                    this.dataList1 = this.tableContent3.sort(this.sortFun("CG", column.order === 'ascending'));
-                }
+            handleSelectionChange(rows) {
+                this.multipleSelection = rows;
+            },
 
-                    this.showed_data1 = this.tableContent3.slice(0, this.pageSize1) // 排序完显示到第一页
+            getRowKeys (row) {
+              return row.id
+            },
 
-        },
 
-            sortChange2: function(column){
-            this.currentPage2 = 1 // return to the first page after sorting
-            if (column.prop === 'CG') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Compal_Model') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer_Model') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Marketing_type') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Status') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Project_Type') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jan') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Feb') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Mar') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Apr') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'May') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jun') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'July') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Aug') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Sep') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Oct') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Nov') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Dec') {
-                    this.dataList2 = this.tableContent5.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else{
-                    this.dataList2 = this.tableContent5.sort(this.sortFun("CG", column.order === 'ascending'));
-                }
-
-                    this.showed_data2 = this.tableContent5.slice(0, this.pageSize2) // 排序完显示到第一页
-
-        },
-
-            sortChange3: function(column){
-            this.currentPage3 = 1 // return to the first page after sorting
-            if (column.prop === 'CG') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Compal_Model') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer_Model') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Marketing_type') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Status') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Customer') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Project_Type') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jan') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Feb') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Mar') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Apr') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'May') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Jun') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'July') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Aug') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Sep') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Oct') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Nov') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else if (column.prop === 'Dec') {
-                    this.dataList3 = this.tableContent7.sort(this.sortFun(column.prop, column.order === 'ascending'));
-                }else{
-                    this.dataList3 = this.tableContent7.sort(this.sortFun("CG", column.order === 'ascending'));
-                }
-
-                    this.showed_data3 = this.tableContent7.slice(0, this.pageSize3) // 排序完显示到第一页
-
-        },
-
-            //排序方法
-            sortFun: function(attr, rev) {            //第一个参数传入info里的prop表示排的是哪一列，第二个参数是升还是降排序
-           if (rev == undefined) {
-               rev = 1;
-           } else {
-               rev = (rev) ? 1 : -1;
-           }
-                return function (a, b) {
-                    a = a[attr];
-                    b = b[attr];
-                    if (a < b) {
-                        return rev * -1;
+            updateFile:function(e){
+                const first="未選擇文件";
+                let newValue= e.target.files;
+                if(newValue){
+                 let file=document.getElementById('upload');
+                 let filename= file.files[0].name;
+                 let fileType=filename.substr(filename.lastIndexOf(".")+1);
+                 console.log(fileType.toLowerCase());
+                 if((fileType.toLowerCase() === 'xlsx')||(fileType.toLowerCase() === 'xls')){
+                      //console.log(this.excelFile);
+                     this.fileName=filename;
+                     this.uploadFile=file.files[0];
+                 }else{
+                     alert("上傳類型不為'xlsx'或'xls'");
+                       try{
+                         }catch(e){
+                             console.log(e);
+                         }
+                 }
+             }else{
+                 this.uploadFile=null;
+                 this.fileName=first;
+             }
+      },
+            fileUpload:function(){
+              const first="未選擇文件";
+              if(this.uploadFile){
+                  //1.解析Excel
+                   let outputResult;
+                   let _this= this;
+                   let files = this.uploadFile;
+                   let undefined_to_null=function(value){
+                       if(value === undefined){
+                           value=null;
+                       }
+                       //console.log(value,value === undefined,value == undefined);
+                       return value;
+                   }
+                   var fileReader = new FileReader ();
+                   const loading = this.$loading({
+                              lock: true,
+                              text: 'Loading',
+                              spinner: 'el-icon-loading',
+                              background: 'rgba(0,0,0,0.7)'
+                   });
+                   fileReader.onload = function (ev) {
+                     try {
+                    // _this.loading=true;
+                     var data = ev.target.result,
+                      workbook = XLSX.read(data, {
+                        type: 'binary'
+                     }), // 以二进制流方式读取得到整份excel表格对象
+                      persons = []; // 存储获取到的数据
+                   } catch (e) {
+                     //_this.loading=false;
+                         loading.close();
+                     return;
+                  }
+                  for (var sheet in workbook.Sheets) {
+                    if (workbook.Sheets.hasOwnProperty(sheet)) {
+                        var fromTo = workbook.Sheets[sheet]['!ref'];
+                        // console.log(fromTo);
+                        var datas = workbook.Sheets[sheet];
+                        // 如果有不规范数据可以在这里进行处理datas
+                        persons = persons.concat(XLSX.utils.sheet_to_json(datas));
+                        //break; // 只读了第一张表
                     }
-                    if (a > b) {
-                        return rev * 1;
+            }
+                 // 数据保存在result
+                  let result=JSON.stringify(persons);
+                   //将之前张开的树形结构收起
+                      //_this.reset();
+                   //2.上傳數據
+                  let Year = _this.$refs.Year.value;
+                  axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/" ,{"isGetData":"upload","Year":Year,"ExcelData":result},{
+                  headers:{ 'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式 ==>'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+                }).then((res) => {
+                    //console.log(res.data,"first");//上传成功的操作
+                        _this.tableContent=res.data.content;
+                        _this.totalNum=_this.tableContent.length;
+                        _this.tables=res.data.tables;
+                        _this.$nextTick(() => {
+                           _this.$refs.tableRef.doLayout()
+                        })
+                        _this.errMsg=res.data.errMsg;
+                        _this.permission=res.data.permission;
+                        _this.yearOptions = res.data.yearOptions;
+                        _this.datatypeOption = res.data.datatypeOption;
+                        _this.uploadFile=null;
+                        _this.fileName=first;
+                   //_this.loading=false;
+                        loading.close();
+                    //上传成功的操作
+                        if(_this.errMsg){
+                            _this.$alert(_this.errMsg, '提示', {
+                                  type: 'warning',
+                                })
+                        }else {
+                            _this.$message({
+                                message: '上傳成功',
+                                type: 'success',
+                            })
+                        }
+                    //接受数据的初始化
+                    try{
+                    }catch(e)
+                    {
+                       console.log("错误异常"+e);
                     }
-                    return 0;
-                }
+                }).catch(function (e) {
+                        //_this.loading=false;
+                        loading.close();
+                        _this.uploadFile=null;
+                        var warning =confirm("上傳異常");
+                        console.log("上傳錯誤信息"+e);
+                    });
+           };
+                   try{
+                   //console.log(fileReader.onload());
+                   fileReader.readAsBinaryString(files);
+                   //console.log(fileReader.readAsBinaryString(files));
+                   }
+                   catch(e){
+                         //this.loading=false;
+                       loading.close();
+                         console.log(e);
+                         alert("文件上傳異常") ;
+                         return;
+                    }
+                  //console.log(outputResult);
+
+             }else{
+              //this.loading=false;
+                  loading.close();
+              alert("未選擇文件");
+              return false;
+          }
+              this.excelFile='';
+      },
+
+            deleteData(){
+                 let Year = this.$refs.Year.value;
+                 var warning=confirm('此操作将永久删除该条数据, 是否继续?')
+                 if(warning) {
+                     {#this.multiDeleteVisible = false;#}
+                     let checkArr = this.multipleSelection;
+                     let params = [];
+                     checkArr.forEach(function (item) {
+                         params.push(item.id);
+                     });
+                     let data = {
+                         "isGetData": "MUTIDELETE",
+                         "Year": Year,
+                         "params": params,
+                         "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                     };
+                     axios.post('/CapitalExpenditure/CapitalExpenditure_Summary/', data).then((res) =>{
+                             this.tableContent = res.data.content;
+                             this.totalNum=this.tableContent.length;
+                             this.yearOptions = res.data.yearOptions;
+                             this.tables=res.data.tables;
+                             this.$nextTick(() => {
+                                 this.$refs.tableRef.doLayout()
+                             })
+                             this.$message({
+                                 message: '删除成功',
+                                 type: 'success'
+                             });
+                            this.permission=res.data.permission;
+                     })
+                 }else{
+                     return false;
+                 }
+
+            },
+
+            onAppend() {
+                this.$refs['form'].validate((valid) => {
+                    if (valid) {
+                        if (this.formData.length === 0) {
+                            this.formData = new FormData();
+                        }
+                        this.formData.append('searchCustomer', this.$refs.Customer.value)
+                        this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
+                        this.formData.append('Customer', this.$refs.form.model.Customer)
+                        this.formData.append('ProjectcodeCompal', this.$refs.form.model.ProjectcodeCompal)
+                        this.formData.append('Lowlight_item', this.$refs.form.model.Lowlight_item)
+                        this.formData.append('Root_cause', this.$refs.form.model.Root_cause)
+                        this.formData.append('LD', this.$refs.form.model.LD)
+                        this.formData.append('Owner', this.$refs.form.model.Owner)
+                        this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
+                        this.formData.append("action", 'onSubmit');
+                        console.log(this.formData)
+                        axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/", this.formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                            } //改变头格式，原生默认上传json格式
+                        }).then((res) => {
+                            this.tableContent = res.data.content;
+                            this.totalNum = this.tableContent.length;
+                            this.tables=res.data.tables;
+                            this.errMsg=res.data.errMsg;
+                            this.formData = new FormData();
+                            if(this.errMsg){
+                              this.$alert(this.errMsg, '提示', {
+                                    type: 'warning',
+                              });
+                              this.appendss = true;
+                            }else{
+                              try {
+                                   this.$refs.form.resetFields();
+                              } catch (e) {
+
+                              }
+                              this.appendss = false;
+                              this.$nextTick(() => {
+                                    this.$refs.tableRef.doLayout()
+                              })
+                            }
+
+                        })
+
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                })
+            },
+
+            updateData() {
+                    if (this.formData.length === 0) {
+                        this.formData = new FormData();
+                    }
+                    this.formData.append('searchYear', this.$refs.Year.value)
+                    this.formData.append('ID', this.editID)
+                    this.formData.append('PlanYear', this.$refs.form.model.PlanYear)
+                    this.formData.append('BudgetCode', this.$refs.form.model.BudgetCode)
+                    this.formData.append('Investment_Nature', this.$refs.form.model.Investment_Nature)
+                    this.formData.append('Attribute_Code', this.$refs.form.model.Attribute_Code)
+                    this.formData.append('Application_Department', this.$refs.form.model.Application_Department)
+                    this.formData.append('Device_Name', this.$refs.form.model.Device_Name)
+                    this.formData.append('Usage_Description', this.$refs.form.model.Usage_Description)
+                    this.formData.append('Specifications', this.$refs.form.model.Specifications)
+                    this.formData.append('Acceptance_Month', this.$refs.form.model.Acceptance_Month)
+                    this.formData.append('Budget_Quantity', this.$refs.form.model.Budget_Quantity)
+                    this.formData.append('Estimated_Original_Currency', this.$refs.form.model.Estimated_Original_Currency)
+                    this.formData.append('Estimated_Original_Price', this.$refs.form.model.Estimated_Original_Price)
+                    this.formData.append('Subscription_Status', this.$refs.form.model.Subscription_Status)
+                    this.formData.append('Subscription_Quantity', this.$refs.form.model.Subscription_Quantity)
+                    this.formData.append('Subscription_Amount', this.$refs.form.model.Subscription_Amount)
+                    this.formData.append('Entry_Amount', this.$refs.form.model.Entry_Amount)
+                    this.formData.append("action", 'onSubmit');
+                    axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/", this.formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                            'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                        } //改变头格式，原生默认上传json格式
+                    }).then((res) => {
+                        this.tableContent = res.data.content;
+                        this.totalNum = this.tableContent.length;
+                        this.tables=res.data.tables;
+                        this.$nextTick(() => {
+                           this.$refs.tableRef.doLayout()
+                        })
+                        this.errMsg=res.data.errMsg;
+                        this.formData = new FormData();
+                        if(this.errMsg){
+                          this.$alert(this.errMsg, '提示', {
+                                type: 'warning',
+                          });
+                          this.update = true;
+                        }else{
+                          try {
+                                  this.$refs.form.resetFields();
+                          } catch (e) {
+
+                          }
+                          this.update = false;
+                          this.$nextTick(() => {
+                                this.$refs.tableRef.doLayout()
+                          })
+                        }
+
+                    })
+            },
+
+            {% comment %}
+             alertID:function(id,row){
+                if(this.permission === 1){
+                    this.update=true;
+                    let Year = this.$refs.Year.value;
+                    let DataType=this.$refs.DataType.value;
+                    let msg = {
+                      "isGetData" : "edit" , "Year":Year, "DataType":DataType, "ID":id
+                   }
+                   axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/",Qs.stringify(msg,{indices:false}),{
+                            headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()} //改变头格式，原生默认上传json格式
+                        } ).then((res) => {
+                         this.form.Year=row.Year;
+                         this.form.DataType=row.DataType;
+                         this.form.CG=row.CG;
+                         this.form.Compal_Model=row.Compal_Model;
+                         this.form.Customer_Model=row.Customer_Model;
+                         this.form.Marketing_type=row.Marketing_type;
+                         this.form.Status=row.Status;
+                         this.form.Customer=row.Customer;
+                         this.form.Project_Type=row.Project_Type;
+                         this.form.Jan=row.Jan;
+                         this.form.Feb=row.Feb;
+                         this.form.Mar=row.Mar;
+                         this.form.Apr=row.Apr;
+                         this.form.May=row.May;
+                         this.form.Jun=row.Jun;
+                         this.form.July=row.July;
+                         this.form.Aug=row.Aug;
+                         this.form.Sep=row.Sep;
+                         this.form.Oct=row.Oct;
+                         this.form.Nov=row.Nov;
+                         this.form.Dec=row.Dec;
+                         this.editID = id;
+
+                   })
+                    }else{
+                           this.update=false;
+                           this.$message({
+                              showClose: true,
+                              message: '無編輯權限！',
+                              type: 'warning'
+                            });
+                   }
+            },
+            {% endcomment %}
+            alertID:function(id,row){
+                if(this.permission === 1){
+                     this.update=true;
+                     this.form.PlanYear=row.PlanYear;
+                     this.form.BudgetCode=row.BudgetCode;
+                     this.form.Investment_Nature=row.Investment_Nature;
+                     this.form.Attribute_Code=row.Attribute_Code;
+                     this.form.Application_Department=row.Application_Department;
+                     this.form.Device_Name=row.Device_Name;
+                     this.form.Usage_Description=row.Usage_Description;
+                     this.form.Specifications=row.Specifications;
+                     this.form.Acceptance_Month=row.Acceptance_Month;
+                     this.form.Budget_Quantity=row.Budget_Quantity;
+                     this.form.Estimated_Original_Currency=row.Estimated_Original_Currency;
+                     this.form.Estimated_Original_Price=row.Estimated_Original_Price;
+                     this.form.Subscription_Status=row.Subscription_Status;
+                     this.form.Subscription_Quantity=row.Subscription_Quantity;
+                     this.form.Subscription_Amount=row.Subscription_Amount;
+                     this.form.Entry_Amount=row.Entry_Amount;
+                     this.editID = id;
+                    }else{
+                           this.update=false;
+                           this.$message({
+                              showClose: true,
+                              message: '無編輯權限！',
+                              type: 'warning'
+                            });
+                   }
+            },
+
+
+            //分页
+            handleSizeChange(val) {
+                    console.log(`每页 ${val} 条`);
+                    this.pageSize = val;
+            },
+            handleCurrentChange(val) {
+                  console.log(`当前页: ${val}`);
+                  this.currentPage = val;
+                  //console.log(this.tableContent.slice((this.currentPage-1)*this.pageSize,this.currentPage*this.pageSize));
             },
 
         },
+        computed:{
+                datas(){//必须是el-table里面绑定的数据变量,不能与axios接受的变量名一样
+                    //console.log(111)
+                    const search=this.search;
+                    if(search){
+                        return this.tableContent.filter(data=>{//axios返回时接受数据的变量
+                            return Object.keys(data).some(key=>{
+                                return String(data[key]).toLowerCase().indexOf(search.toLowerCase())>-1
+                            })
+                        })
+                    }
+                    return this.tableContent//axios返回时接受数据的变量
+                },
+                total_computed () {
+                    this.Totalsize = this.datas.length;//edwin:export数据的个数
+                    console.log(this.Totalsize);
+                    return this.datas.length//必须是el-table里面绑定的数据变量
+                }
+            },
         watch: {
-                dataList1() {
-                    this.showed_data1 = this.tableContent3.slice((this.currentPage1 - 1) * this.pageSize1, this.currentPage1 * this.pageSize1);
-                    this.currentPage1 = 1;
-                },
-                dataList2() {
-                    this.showed_data2 = this.tableContent5.slice((this.currentPage2 - 1) * this.pageSize2, this.currentPage2 * this.pageSize2);
-                    this.currentPage2 = 1;
-                },
-                dataList3() {
-                    this.showed_data3 = this.tableContent7.slice((this.currentPage3 - 1) * this.pageSize3, this.currentPage3 * this.pageSize3);
-                    this.currentPage3 = 1;
-                },
+                datas() {
+                        this.currentPage = 1;
+                }
         },
     })
     </script>

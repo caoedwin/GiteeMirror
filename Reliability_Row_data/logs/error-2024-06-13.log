@@ -1,0 +1,469 @@
+[2024-06-13 08:42:54,396] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 268, in CapitalExpenditure_Summary
+    if key in headermodel_CapitalExpenditure.keys():
+AttributeError: 'tuple' object has no attribute 'keys'
+[2024-06-13 08:42:54,406] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.09, 127.0.0.1:50385]
+[2024-06-13 09:48:06,504] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 268, in CapitalExpenditure_Summary
+    print(headermodel_CapitalExpenditure.keys())
+AttributeError: 'tuple' object has no attribute 'keys'
+[2024-06-13 09:48:06,513] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.38, 127.0.0.1:64724]
+[2024-06-13 09:53:17,183] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 245, in CapitalExpenditure_Summary
+    print(headermodel_CapitalExpenditure.keys())
+AttributeError: 'tuple' object has no attribute 'keys'
+[2024-06-13 09:53:17,191] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.46, 127.0.0.1:58500]
+[2024-06-13 10:01:04,905] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 246, in CapitalExpenditure_Summary
+    for key, value in i.items():
+AttributeError: 'str' object has no attribute 'items'
+[2024-06-13 10:01:04,912] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.41, 127.0.0.1:57614]
+[2024-06-13 10:03:57,954] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 303, in CapitalExpenditure_Summary
+    for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Year' into field. Choices are: Acceptance_Month, Accounting_Subjects, Annual_Increase_PerYear, Applicable_Scope, Application_Department, Attribute_Code, Automated_Or_Not, BudgetCode, Budget_Quantity, Cash_Inflows_PerYear, Current_Situation, Customer, Depreciation_Months, Device_Name, Entry_Amount, Equivalent_To_RMB, Estimated_Original_Currency, Estimated_Original_Price, Investment_Benefits_PerYear, Investment_Nature, Investment_Purpose, Investment_Purpose_Des, Payback_Period, Payment_Terms, PlanYear, Potential_Issues, Potential_Issues_Des, Project_Code, Specifications, Subscription_Amount, Subscription_Quantity, Subscription_Status, Tighten_Expenses, Usage_Description, id
+[2024-06-13 10:03:57,958] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.18, 127.0.0.1:57914]
+[2024-06-13 10:25:37,390] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1735, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1473, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Year' into field. Choices are: Acceptance_Month, Accounting_Subjects, Annual_Increase_PerYear, Applicable_Scope, Application_Department, Attribute_Code, Automated_Or_Not, BudgetCode, Budget_Quantity, Cash_Inflows_PerYear, Current_Situation, Customer, Depreciation_Months, Device_Name, Entry_Amount, Equivalent_To_RMB, Estimated_Original_Currency, Estimated_Original_Price, Investment_Benefits_PerYear, Investment_Nature, Investment_Purpose, Investment_Purpose_Des, Payback_Period, Payment_Terms, PlanYear, Potential_Issues, Potential_Issues_Des, Project_Code, Specifications, Subscription_Amount, Subscription_Quantity, Subscription_Status, Tighten_Expenses, Usage_Description, id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 204, in CapitalExpenditure_Summary
+    for i in CapitalExpenditure.objects.all().values("Year").distinct().order_by("Year"):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 750, in values
+    clone = self._values(*fields, **expressions)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 745, in _values
+    clone.query.set_values(fields)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1987, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1758, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Year' into field. Choices are: Acceptance_Month, Accounting_Subjects, Annual_Increase_PerYear, Applicable_Scope, Application_Department, Attribute_Code, Automated_Or_Not, BudgetCode, Budget_Quantity, Cash_Inflows_PerYear, Current_Situation, Customer, Depreciation_Months, Device_Name, Entry_Amount, Equivalent_To_RMB, Estimated_Original_Currency, Estimated_Original_Price, Investment_Benefits_PerYear, Investment_Nature, Investment_Purpose, Investment_Purpose_Des, Payback_Period, Payment_Terms, PlanYear, Potential_Issues, Potential_Issues_Des, Project_Code, Specifications, Subscription_Amount, Subscription_Quantity, Subscription_Status, Tighten_Expenses, Usage_Description, id
+[2024-06-13 10:25:37,408] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.53, 127.0.0.1:58394]
+[2024-06-13 13:07:10,815] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 49, in CapitalExpenditure_Summary
+    for i in CapitalExpenditure.objects.annotate(first_seven=Substr(Lower('Application_Department'), 1, 7)).distinct('first_seven'):
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 268, in __iter__
+    self._fetch_all()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 1052, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\compiler.py", line 472, in as_sql
+    distinct_params,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\backends\base\operations.py", line 171, in distinct_sql
+    raise NotSupportedError('DISTINCT ON fields is not supported by this database backend')
+django.db.utils.NotSupportedError: DISTINCT ON fields is not supported by this database backend
+[2024-06-13 13:07:10,822] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.12, 127.0.0.1:61136]
+[2024-06-13 13:08:13,070] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 51, in CapitalExpenditure_Summary
+    CustomerOption.append(Departments.objects.filter(Department_Code__contains=i['first_seven'])).first().Customer
+AttributeError: 'NoneType' object has no attribute 'first'
+[2024-06-13 13:08:13,078] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.12, 127.0.0.1:54178]
+[2024-06-13 13:19:15,592] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 51, in CapitalExpenditure_Summary
+    CustomerOption.append(Departments.objects.filter(Department_Code__contains=i['first_seven'])).first().Customer
+AttributeError: 'NoneType' object has no attribute 'first'
+[2024-06-13 13:19:15,594] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.05, 127.0.0.1:61384]
+[2024-06-13 13:19:59,525] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'],CustomerOption.append(Departments.objects.filter(Department_Code__contains=i['first_seven'])))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:19:59,533] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.13, 127.0.0.1:61464]
+[2024-06-13 13:20:45,373] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'],Departments.objects.filter(Department_Code__contains=i['first_seven']))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:20:45,382] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.15, 127.0.0.1:61531]
+[2024-06-13 13:26:01,907] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:26:01,916] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.15, 127.0.0.1:60477]
+[2024-06-13 13:27:32,603] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:27:32,612] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.12, 127.0.0.1:57909]
+[2024-06-13 13:27:58,295] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first().Customer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:27:58,302] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.14, 127.0.0.1:57948]
+[2024-06-13 13:28:22,254] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 50, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first().Customer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:28:22,262] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.13, 127.0.0.1:58931]
+[2024-06-13 13:28:54,157] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 51, in CapitalExpenditure_Summary
+    CustomerOption.append(Departments.objects.filter(Department_Code__contains=i['first_seven']).first().Customer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:28:54,166] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.13, 127.0.0.1:58996]
+[2024-06-13 13:32:32,471] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 53, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first().Customer)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:32:32,479] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.14, 127.0.0.1:60397]
+[2024-06-13 13:39:55,386] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 53, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).Customer)
+AttributeError: 'QuerySet' object has no attribute 'Customer'
+[2024-06-13 13:39:55,392] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.12, 127.0.0.1:63614]
+[2024-06-13 13:41:12,552] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 53, in CapitalExpenditure_Summary
+    print(i['first_seven'], Departments.objects.filter(Department_Code__contains=i['first_seven']).first())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1101, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[2024-06-13 13:41:12,560] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP GET /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.13, 127.0.0.1:63742]
+[2024-06-13 15:28:51,266] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /CapitalExpenditure/CapitalExpenditure_Summary/
+Traceback (most recent call last):
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python372\mecheck\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\djangoproject\Reliability_Row_data\CapitalExpenditure\views.py", line 387, in CapitalExpenditure_Summary
+    Application_Department__contains=DepartmentSeven,).aggregate(total=Sum('Budget_Quantity'))[
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python372\mecheck\lib\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Year' into field. Choices are: Acceptance_Month, Accounting_Subjects, Annual_Increase_PerYear, Applicable_Scope, Application_Department, Attribute_Code, Automated_Or_Not, BudgetCode, Budget_Quantity, Cash_Inflows_PerYear, Current_Situation, Customer, Depreciation_Months, Device_Name, Entry_Amount, Equivalent_To_RMB, Estimated_Original_Currency, Estimated_Original_Price, Investment_Benefits_PerYear, Investment_Nature, Investment_Purpose, Investment_Purpose_Des, Payback_Period, Payment_Terms, PlanYear, Potential_Issues, Potential_Issues_Des, Project_Code, Specifications, Subscription_Amount, Subscription_Quantity, Subscription_Status, Tighten_Expenses, Usage_Description, id
+[2024-06-13 15:28:51,276] [runserver.py:154] [runserver:log_action] [ERROR]- HTTP POST /CapitalExpenditure/CapitalExpenditure_Summary/ 500 [0.43, 127.0.0.1:62095]

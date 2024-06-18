@@ -126,6 +126,8 @@ def INVGantt_upload(request):
                         else:
                             # print("Create")
                             INVGantt.objects.create(**Create_dic)
+                else:
+                    err_msg = "您没有该机种的上传权限，请确认您是该机种的Owner（CQM Owner维护）"
             else:
                 # print("no")
                 cleandata = INVGantt_F_list.errors
@@ -280,6 +282,8 @@ def INVGantt_upload(request):
                         # print(Create_dic_Gantt)
                         INVGantt.objects.create(**Create_dic_Gantt)
                 # print(INVGanttList)
+            else:
+                err_msg = "您没有该机种的上传权限，请确认您是该机种的Owner（CQM Owner维护）"
             datajason = {
                 'err_ok': err_ok,
                 'err_msg': err_msg,
