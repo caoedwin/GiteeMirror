@@ -34,6 +34,9 @@ def INVGantt_upload(request):
     err_ok = 0  # excel上传1为重复
     err_msg = ''
     canEdit = 1
+    INV_admin = "0576972"
+    if request.session.get('account') == INV_admin:
+        canEdit = 1
     result = 0  # 为1 forms 上传重复
     INVGantt_F_list = INVGantt_F(request.POST)
     if request.method == 'POST':
@@ -181,8 +184,10 @@ def INVGantt_upload(request):
                             break
             # print(canEdit)
             if canEdit:
+                hang = 0
                 for i in simplejson.loads(xlsxlist):
                     # print(i)
+                    hang += 1
                     Check_dic_Gantt = {}
                     if 'Customer' in i.keys():
                         Customer = i['Customer']
@@ -259,13 +264,15 @@ def INVGantt_upload(request):
                         Check_dic_Gantt['Test_End'] = Test_End
                     else:
                         Check_dic_Gantt['Test_End'] = None
-
+                    # print(hang, i)
                     if INVGantt.objects.filter(**Check_dic_Gantt).first():
                         # err_ok = 1
+                        print(hang,i)
                         INVGanttList.append(Check_dic_Gantt)
                         Update_dic_Gantt = {}
                         for j in i.keys():
-                            Update_dic_Gantt[j] = i[j]
+                            if j in INVGantt._meta.fields:
+                                Update_dic_Gantt[j] = i[j]
                         Update_dic_Gantt['Editor'] = request.session.get('user_name')
                         Update_dic_Gantt['Edittime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         # print(Update_dic_Gantt)
