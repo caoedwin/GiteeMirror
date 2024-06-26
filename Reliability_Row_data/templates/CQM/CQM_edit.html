@@ -154,32 +154,32 @@
             <template slot-scope="scope">
             {% comment %}<el-input class="edit-cell" v-if="showEdit[scope.$index] && (statu === 4 || statu === 5)&&canEdit"    v-model="scope.row.Material_Group"></el-input>{% endcomment %}
                 <el-select class="edit-cell"  v-if="showEdit[scope.$index] && (statu === 4 || statu === 5)&&canEdit"  v-model="scope.row.Material_Group">
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Active_Pen"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Adapter"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Battery"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Camera"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Card_Reader"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="CPU"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="EMMC"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Finger_Print"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="HDD"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Keyboard"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="LAN"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Memory"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="ODD"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Panel"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Power_Cord"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Speaker"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="SSD"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Touch_Pad"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="TPM"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="TCM"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="UFS"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="VRAM"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="VGA"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="WLAN"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="WWAN"></el-option>
-                    <el-option v-if="showCustomer==='C38(NB)'" value="Others"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Active_Pen"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Adapter"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Battery"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Camera"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Card_Reader"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="CPU"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="EMMC"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Finger_Print"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="HDD"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Keyboard"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="LAN"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Memory"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="ODD"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Panel"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Power_Cord"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Speaker"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="SSD"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Touch_Pad"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="TPM"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="TCM"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="UFS"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="VRAM"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="VGA"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="WLAN"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="WWAN"></el-option>
+                    <el-option v-if="showCustomer==='C38(NB)'||showCustomer==='T89(NB)'" value="Others"></el-option>
 
                     <el-option v-if="showCustomer==='C38(AIO)'" value="Adapter"></el-option>
                     <el-option v-if="showCustomer==='C38(AIO)'" value="Camera"></el-option>

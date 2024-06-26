@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}PersonalInfo_edit{% endblock %}
+{% block title %}CapitalExpenditure{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
 <style>
@@ -163,6 +163,14 @@ label{
                  <select  ref="Year"  v-model="year" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
                     <option v-for="(item,key,index) in yearOptions" >${ item }</option>
                  </select>
+                 <div class="inputError" v-cloak v-show="yearError">不能為空</div>
+           </div>
+
+           <div class="customerContent">
+                 <label for="customer">Customer</label>
+                 <select  ref="Customer"  v-model="customer" style="height:40px;width:100px;border-radius:5px 5px 5px 5px;">
+                    <option v-for="(item,key,index) in customerOptions" >${ item }</option>
+                 </select>
                  <div class="inputError" v-cloak v-show="customerError">不能為空</div>
            </div>
 
@@ -170,9 +178,11 @@ label{
                  <el-button :loading="elbuttonloading" @click="find" v-cloak type="primary" style="height:40px">搜索</el-button>
                  <el-button @click="exportExcel"  type="info" v-cloak style="height:40px">導出</el-button>
 {#                     <el-button  type="danger" v-if="uploadpermission===1" v-cloak @click="addData" style="margin-left: 20px;">Upload</el-button>#}
-                 <el-button @click="deleteData()" type="danger" v-if="permission===1" v-cloak style="margin-left: 20px;width: 80px;">刪除</el-button>
+                 <el-button @click="deleteData()" type="danger" v-if="permission===1 && this.$refs.Year.value != ''" v-cloak style="margin-left: 20px;width: 80px;">刪除</el-button>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <a href="/static/src/modelfiles/CapitalExpenditure.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
+                 <a href="/static/src/modelfiles/PersonInfo.xlsx" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
+                 &nbsp;&nbsp;
+                 <el-button @click="addDepartment()"  type="success" v-cloak style="height:40px">部門代碼錄入</el-button>
            </div>
 
     </div>
@@ -184,6 +194,28 @@ label{
          <el-button @click="fileUpload" type="warning" style="height:40px" v-cloak> Excel上傳</el-button>
          <span class="showFileName" v-cloak >${ fileName }</span>
      </div>
+    <el-dialog :visible.sync="add" :close-on-click-modal="false">
+        <template>
+            <el-form ref="form1"  :model="form1" :rules="rules" :label-position="labelPosition" label-width="100px">
+                  <el-form-item label="年份" prop="Year1">
+                    <el-date-picker
+                      v-model="form1.Year1"
+                      type="year"
+                      value-format="yyyy"
+                      placeholder="选择年">
+                    </el-date-picker>
+                  </el-form-item>
+                  <el-form-item label="部門代碼" prop="DepartmentCode">
+                      <el-input  v-model="form1.DepartmentCode" ></el-input>
+                  </el-form-item>
+                <div class="el-form-item__content" style="margin-left: 220px;">
+                  <el-form-item>
+                        <el-button type="primary" @click="addData('form1')">確定</el-button>
+                  </el-form-item>
+                </div>
+            </el-form>
+        </template>
+    </el-dialog>
 
      <el-dialog :visible.sync="update" :close-on-click-modal="false">
         <template>
@@ -235,6 +267,57 @@ label{
                   <el-form-item label="金額" prop="Estimated_Original_Price">
                       <el-input  v-model="form.Estimated_Original_Price" ></el-input>
                   </el-form-item>
+                  <el-form-item label="折合人民幣" prop="Equivalent_To_RMB">
+                      <el-input  v-model="form.Equivalent_To_RMB" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="付款條件" prop="Payment_Terms">
+                      <el-input  v-model="form.Payment_Terms" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="折舊月數" prop="Depreciation_Months">
+                      <el-input  v-model="form.Depreciation_Months" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="會計科目" prop="Accounting_Subjects">
+                      <el-input  v-model="form.Accounting_Subjects" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="是否自動化" prop="Automated_Or_Not">
+                      <el-input  v-model="form.Automated_Or_Not" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="Project Code" prop="Project_Code">
+                      <el-input  v-model="form.Project_Code" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="現狀說明" prop="Current_Situation">
+                      <el-input  v-model="form.Current_Situation" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="適用範圍" prop="Applicable_Scope">
+                      <el-input  v-model="form.Applicable_Scope" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="投資動機與目的" prop="Investment_Purpose">
+                      <el-input  v-model="form.Investment_Purpose" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="投資動機與目的其他說明" prop="Investment_Purpose_Des">
+                      <el-input  v-model="form.Investment_Purpose_Des" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="潛在問題" prop="Potential_Issues">
+                      <el-input  v-model="form.Potential_Issues" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="潛在問題的其他說明" prop="Potential_Issues_Des">
+                      <el-input  v-model="form.Potential_Issues_Des" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="年節省支出" prop="Tighten_Expenses">
+                      <el-input  v-model="form.Tighten_Expenses" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="年增加收益" prop="Annual_Increase_PerYear">
+                      <el-input  v-model="form.Annual_Increase_PerYear" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="年投資效益" prop="Investment_Benefits_PerYear">
+                      <el-input  v-model="form.Investment_Benefits_PerYear" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="年淨現金流入" prop="Cash_Inflows_PerYear">
+                      <el-input  v-model="form.Cash_Inflows_PerYear" ></el-input>
+                  </el-form-item>
+                  <el-form-item label="回收年限(月數)" prop="Payback_Period">
+                      <el-input  v-model="form.Payback_Period" ></el-input>
+                  </el-form-item>
                   <el-form-item label="申購狀況" prop="Subscription_Status">
                       <el-input  v-model="form.Subscription_Status" ></el-input>
                   </el-form-item>
@@ -261,33 +344,33 @@ label{
     <el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input><br>
 {#    <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>#}
     <el-table id="out-table"  ref="tableRef" height="700" border stripe :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)"
-        style="min-width: 100%;border-radius: 10px"  @selection-change="handleSelectionChange" :row-key="getRowKeys"
+        style="min-width: 100%;border-radius: 10px"  @selection-change="handleSelectionChange" :row-key="getRowKeys" @sort-change='sortChange'
         :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
         v-loading="tableloading"
         element-loading-text="數據更新中，請稍後"
         >
-              <el-table-column type="selection" width="50" align="center"  :reserve-selection="true"></el-table-column>
-              <el-table-column  label="Edit" align="center">
+{#              <el-table-column type="selection" width="50" align="center"  :reserve-selection="true"></el-table-column>#}
+              <el-table-column  label="Edit" align="center" width="auto" min-width="3%">
                   <template slot-scope="scope">
                       <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"  @click="alertID(scope.row.id,scope.row)"></el-button>
                   </template>
               </el-table-column>
-              <el-table-column type="index" :index="indexMethod" align="center"></el-table-column>
-              <el-table-column  prop="PlanYear" label="PlanYear" align="center" width="100"></el-table-column>
-              <el-table-column  prop="BudgetCode" label="預算編號" align="center" width="150"></el-table-column>
-              <el-table-column  prop="Investment_Nature" label="投資性質" align="center" width="80"></el-table-column>
-              <el-table-column  prop="Attribute_Code" label="屬性代碼" align="center" width="140"></el-table-column>
-              <el-table-column  prop="Application_Department" label="申請部門" align="center" width="180"></el-table-column>
-              <el-table-column  prop="Device_Name" label="設備或工程名稱" width="140"></el-table-column>
-              <el-table-column  prop="Usage_Description" label="用途說明" width="140"></el-table-column>
-              <el-table-column  prop="Specifications" label="廠牌規格" align="center" width="120"></el-table-column>
-              <el-table-column  prop="Acceptance_Month" label="驗收月份" align="center" width="120"></el-table-column>
-              <el-table-column  prop="Budget_Quantity" label="預算數量" align="center" width="120"></el-table-column>
-              <el-table-column  label="預估總價" align="center" width="120">
-                <el-table-column  label="原幣" align="center" width="120">
-                    <el-table-column  prop="Estimated_Original_Currency" label="幣別" align="center" width="120">
+              <el-table-column type="index" :index="indexMethod" align="center" width="auto" min-width="2%"></el-table-column>
+              <el-table-column  prop="PlanYear" label="PlanYear" align="center" sortable='custom' width="auto" min-width="4%"></el-table-column>
+              <el-table-column  prop="BudgetCode" label="預算編號" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
+              <el-table-column  prop="Investment_Nature" label="投資性質" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
+              <el-table-column  prop="Attribute_Code" label="屬性代碼" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
+              <el-table-column  prop="Application_Department" label="申請部門" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
+              <el-table-column  prop="Device_Name" label="設備或工程名稱" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
+              <el-table-column  prop="Usage_Description" label="用途說明" header-align="center" sortable='custom' width="auto" min-width="10%"></el-table-column>
+              <el-table-column  prop="Specifications" label="廠牌規格" header-align="center" sortable='custom' width="auto" min-width="10%"></el-table-column>
+              <el-table-column  prop="Acceptance_Month" label="驗收月份" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
+              <el-table-column  prop="Budget_Quantity" label="預算數量" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
+              <el-table-column  label="預估總價" align="center" width="auto" min-width="6%">
+                <el-table-column  label="原幣" align="center" width="auto" min-width="6%">
+                    <el-table-column  prop="Estimated_Original_Currency" label="幣別" align="center" width="auto" min-width="3%" sortable='custom'>
                     </el-table-column>
-                    <el-table-column  prop="Estimated_Original_Price" label="金額" align="center" width="120">
+                    <el-table-column  prop="Estimated_Original_Price" label="金額" align="center" width="auto" min-width="3%" sortable='custom'>
                     </el-table-column>
                 </el-table-column>
               </el-table-column>
@@ -308,10 +391,10 @@ label{
 {#              <el-table-column  prop="Investment_Benefits_PerYear" label="年投資效益" class-name="hidden-column"></el-table-column>#}
 {#              <el-table-column  prop="Cash_Inflows_PerYear" label="年淨現金流入" class-name="hidden-column"></el-table-column>#}
 {#              <el-table-column  prop="Payback_Period" label="回收年限(月數)" class-name="hidden-column"></el-table-column>#}
-              <el-table-column  prop="Subscription_Status" label="申購狀況" align="center" width="120"></el-table-column>
-              <el-table-column  prop="Subscription_Quantity" label="申購數量" align="center" width="120"></el-table-column>
-              <el-table-column  prop="Subscription_Amount" label="申購金額(CNY)" align="center" width="120"></el-table-column>
-              <el-table-column  prop="Entry_Amount" label="入賬金額(CNY)" align="center"></el-table-column>
+              <el-table-column  prop="Subscription_Status" label="申購狀況" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+              <el-table-column  prop="Subscription_Quantity" label="申購數量" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+              <el-table-column  prop="Subscription_Amount" label="申購金額(CNY)" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+              <el-table-column  prop="Entry_Amount" label="入賬金額(CNY)" align="center" width="auto" min-width="6%" sortable='custom'></el-table-column>
               <el-table-column  prop="Equivalent_To_RMB" label="折合人民幣" class-name="hidden-column" width="-1"></el-table-column>
               <el-table-column  prop="Payment_Terms" label="付款條件" class-name="hidden-column" width="-1"></el-table-column>
               <el-table-column  prop="Depreciation_Months" label="折舊月數" class-name="hidden-column" width="-1"></el-table-column>
@@ -339,7 +422,7 @@ label{
     <el-table
       :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
       style="min-width: 100%;border-radius: 10px;margin-bottom: 20px;"
-      border stripe
+      border
       v-for="(table, index) in tables"
       :key="index"
       :data="table.data"
@@ -384,24 +467,40 @@ label{
                 loading:false,
                 SectionProjectcode:[],
                 yearOptions:[],
+                customerOptions:[],
                 datatypeOption:[],
                 ProjectCodeOption:[],
                 ProjectcodeCompal:"",
                 datatype:'',
                 year:'',
+                customer:'',
                 editpermission: 0,
                 permission: 0,
                 customerOptions:{},
                 customerError:false,
+                yearError:false,
                 department:'',
                 departmentOptions:[],
                 departmentError:false,
                 tableContent:[],
                 update:false,
+                add:false,
                 ID:"",
                 labelPosition:'right',
                 tableloading: false,
                 elbuttonloading: false,
+                form1:{
+                    DepartmentCode: '',
+                    Year1: ''
+                },
+                rules:{
+                      Year1: [
+                        {required: true, message: '请选择年份', trigger: 'change' }
+                      ],
+                      DepartmentCode: [
+                          { required: true, message: '请填写部門代碼', trigger: 'blur' }
+                      ]
+                },
                 form: {
                     PlanYear: '',
                     BudgetCode: '',
@@ -419,9 +518,27 @@ label{
                     Subscription_Quantity: '',
                     Subscription_Amount: '',
                     Entry_Amount: '',
+                    Equivalent_To_RMB: '',
+                    Payment_Terms: '',
+                    Depreciation_Months: '',
+                    Accounting_Subjects: '',
+                    Automated_Or_Not: '',
+                    Project_Code: '',
+                    Current_Situation: '',
+                    Applicable_Scope: '',
+                    Investment_Purpose: '',
+                    Investment_Purpose_Des: '',
+                    Potential_Issues: '',
+                    Potential_Issues_Des: '',
+                    Tighten_Expenses: '',
+                    Annual_Increase_PerYear: '',
+                    Investment_Benefits_PerYear: '',
+                    Cash_Inflows_PerYear: '',
+                    Payback_Period: '',
 
                 },
                 formData:[],
+                formData1:[],
                 editID: '',
                 multiDeleteVisible:false,
                 multipleSelection: [],
@@ -452,6 +569,7 @@ label{
                     headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
                     this.yearOptions = res.data.yearOptions;
+                    this.customerOptions = res.data.customerOptions;
                     this.datatypeOption = res.data.datatypeOption;
                     this.permission=res.data.permission;
                     this.tables=res.data.tables;
@@ -515,20 +633,6 @@ label{
          },
 
 
-            //级联
-            changeCustomer:function () {
-                 if(this.$refs.Customer.value ===""){
-                      this.departmentOptions=[""];
-                      return false;
-                 }
-                 this.SectionProjectcode=this.ProjectCodeOption[this.$refs.Customer.value];
-                 this.ProjectcodeCompal="";
-             },
-
-            changeProjectcode:function () {
-                 this.SectionProjectcode=this.ProjectCodeOption[this.form.Customer];
-            },
-
     {% comment %}
             changeLesson:function(index){
                 if(this.$refs.Lesson.value ==""){
@@ -544,14 +648,23 @@ label{
             find:function(){
 
                 if(this.$refs.Year.value ===""){
+                      this.yearError= true;
+                      return false;
+                }else{
+                    this.yearError= false;
+                }
+                if(this.$refs.Customer.value ===""){
                       this.customerError= true;
                       return false;
+                }else{
+                    this.yearError= false;
                 }
 
                 this.elbuttonloading = true;
                 this.tableloading = true;
                 let Year = this.$refs.Year.value;
-                let data ={"isGetData":"SEARCH","Year":Year,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
+                let Customer = this.$refs.Customer.value;
+                let data ={"isGetData":"SEARCH","Year":Year,"Customer":Customer,"csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()}
                 axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/",Qs.stringify(data), {
                 headers:{ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
                 }).then((res) => {
@@ -562,12 +675,14 @@ label{
                   this.elbuttonloading = false;
                   this.tableloading = false;
                   this.yearOptions = res.data.yearOptions;
+                  this.customerOptions = res.data.customerOptions;
                   this.$nextTick(() => {
                        this.$refs.tableRef.doLayout()
                   })
                 })
 
                   this.customerError= false;
+                  this.yearError= false;
 
              },
 
@@ -581,6 +696,65 @@ label{
 
             getRowKeys (row) {
               return row.id
+            },
+
+
+            sortChange: function(column){
+                   this.currentPage = 1; // return to the first page after sorting
+                   if (column.prop === 'PlanYear') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    } else if (column.prop === 'BudgetCode') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    } else if (column.prop === 'Investment_Nature') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Attribute_Code') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Application_Department') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Device_Name') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Usage_Description') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Specifications') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Acceptance_Month') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Budget_Quantity') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Estimated_Original_Currency') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Estimated_Original_Price') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Subscription_Status') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Subscription_Quantity') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Subscription_Amount') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }else if (column.prop === 'Entry_Amount') {
+                        this.dataList = this.tableContent.sort(this.sortFun(column.prop, column.order === 'ascending'));
+                    }
+                    this.showed_data = this.tableContent.slice(0, this.pageSize);// 排序完显示到第一页
+
+            },
+
+           sortFun: function(attr, rev) {            //第一个参数传入info里的prop表示排的是哪一列，第二个参数是升还是降排序
+           if (rev == undefined) {
+               rev = 1;
+           } else {
+               rev = (rev) ? 1 : -1;
+           }
+                return function (a, b) {
+                    a = a[attr];
+                    b = b[attr];
+                    if (a < b) {
+                        return rev * -1;
+                    }
+                    if (a > b) {
+                        return rev * 1;
+                    }
+                    return 0;
+                }
             },
 
 
@@ -671,6 +845,7 @@ label{
                         _this.errMsg=res.data.errMsg;
                         _this.permission=res.data.permission;
                         _this.yearOptions = res.data.yearOptions;
+                        _this.customerOptions = res.data.customerOptions;
                         _this.datatypeOption = res.data.datatypeOption;
                         _this.uploadFile=null;
                         _this.fileName=first;
@@ -724,32 +899,92 @@ label{
               this.excelFile='';
       },
 
+            addDepartment(){
+                this.add=true;
+            },
+
+            addData(formName){
+
+                this.$refs[formName].validate((valid) => {
+                  if (valid) {
+                    if (this.formData1.length === 0) {
+                        this.formData1 = new FormData();
+                    }
+                    this.formData1.append('Year', this.$refs.form1.model.Year1)
+                    this.formData1.append('DepartmentCode', this.$refs.form1.model.DepartmentCode)
+                    this.formData1.append("action", 'addData');
+                    axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/", this.formData1, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                            'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
+                        } //改变头格式，原生默认上传json格式
+                    }).then((res) => {
+                                 this.tableContent = res.data.content;
+                                 this.yearOptions = res.data.yearOptions;
+                                 this.customerOptions = res.data.customerOptions;
+                                 this.errMsg = res.data.errMsg;
+                                 this.totalNum=this.tableContent.length;
+                                 this.tables=res.data.tables;
+                                 this.formData1 = new FormData();
+                                 this.$nextTick(() => {
+                                     this.$refs.tableRef.doLayout()
+                                 })
+                                if(this.errMsg){
+                                    this.$alert(this.errMsg, '提示', {
+                                          type: 'warning',
+                                    })
+                                    this.add=true;
+                                }else {
+                                     try {
+                                        this.$refs.form1.resetFields();
+                                     } catch (e) {
+
+                                     }
+                                    this.$message({
+                                        message: '部門代碼錄入成功！',
+                                        type: 'success',
+                                    })
+                                    this.add=false;
+                                }
+
+                        })
+
+                  } else {
+                    console.log('error submit!!');
+                    return false;
+                  }
+                });
+            },
+
             deleteData(){
                  let Year = this.$refs.Year.value;
-                 var warning=confirm('此操作将永久删除该条数据, 是否继续?')
+                 var warning=confirm('此操作將刪除該年所有数据, 是否继续?')
                  if(warning) {
                      {#this.multiDeleteVisible = false;#}
+                     {% comment %}
                      let checkArr = this.multipleSelection;
                      let params = [];
                      checkArr.forEach(function (item) {
                          params.push(item.id);
                      });
+                     {% endcomment %}
                      let data = {
                          "isGetData": "MUTIDELETE",
                          "Year": Year,
-                         "params": params,
+                         {#"params": params,#}
                          "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
                      };
                      axios.post('/CapitalExpenditure/CapitalExpenditure_Summary/', data).then((res) =>{
                              this.tableContent = res.data.content;
-                             this.totalNum=this.tableContent.length;
                              this.yearOptions = res.data.yearOptions;
+                             this.customerOptions = res.data.customerOptions;
+                             this.totalNum=this.tableContent.length;
                              this.tables=res.data.tables;
                              this.$nextTick(() => {
                                  this.$refs.tableRef.doLayout()
                              })
                              this.$message({
-                                 message: '删除成功',
+                                 message: '刪除成功',
                                  type: 'success'
                              });
                             this.permission=res.data.permission;
@@ -760,65 +995,13 @@ label{
 
             },
 
-            onAppend() {
-                this.$refs['form'].validate((valid) => {
-                    if (valid) {
-                        if (this.formData.length === 0) {
-                            this.formData = new FormData();
-                        }
-                        this.formData.append('searchCustomer', this.$refs.Customer.value)
-                        this.formData.append('searchProjectcodeCompal', this.$refs.ProjectcodeCompal.value)
-                        this.formData.append('Customer', this.$refs.form.model.Customer)
-                        this.formData.append('ProjectcodeCompal', this.$refs.form.model.ProjectcodeCompal)
-                        this.formData.append('Lowlight_item', this.$refs.form.model.Lowlight_item)
-                        this.formData.append('Root_cause', this.$refs.form.model.Root_cause)
-                        this.formData.append('LD', this.$refs.form.model.LD)
-                        this.formData.append('Owner', this.$refs.form.model.Owner)
-                        this.formData.append('Mitigation_plan', this.$refs.form.model.Mitigation_plan)
-                        this.formData.append("action", 'onSubmit');
-                        console.log(this.formData)
-                        axios.post("/CapitalExpenditure/CapitalExpenditure_Summary/", this.formData, {
-                            headers: {
-                                'Content-Type': 'multipart/form-data',
-                                'X-CSRFToken': $("[name='csrfmiddlewaretoken']").val()
-                            } //改变头格式，原生默认上传json格式
-                        }).then((res) => {
-                            this.tableContent = res.data.content;
-                            this.totalNum = this.tableContent.length;
-                            this.tables=res.data.tables;
-                            this.errMsg=res.data.errMsg;
-                            this.formData = new FormData();
-                            if(this.errMsg){
-                              this.$alert(this.errMsg, '提示', {
-                                    type: 'warning',
-                              });
-                              this.appendss = true;
-                            }else{
-                              try {
-                                   this.$refs.form.resetFields();
-                              } catch (e) {
-
-                              }
-                              this.appendss = false;
-                              this.$nextTick(() => {
-                                    this.$refs.tableRef.doLayout()
-                              })
-                            }
-
-                        })
-
-                    } else {
-                        console.log('error submit!!');
-                        return false;
-                    }
-                })
-            },
 
             updateData() {
                     if (this.formData.length === 0) {
                         this.formData = new FormData();
                     }
                     this.formData.append('searchYear', this.$refs.Year.value)
+                    this.formData.append('Customer', this.$refs.Customer.value)
                     this.formData.append('ID', this.editID)
                     this.formData.append('PlanYear', this.$refs.form.model.PlanYear)
                     this.formData.append('BudgetCode', this.$refs.form.model.BudgetCode)
@@ -832,6 +1015,23 @@ label{
                     this.formData.append('Budget_Quantity', this.$refs.form.model.Budget_Quantity)
                     this.formData.append('Estimated_Original_Currency', this.$refs.form.model.Estimated_Original_Currency)
                     this.formData.append('Estimated_Original_Price', this.$refs.form.model.Estimated_Original_Price)
+                    this.formData.append('Equivalent_To_RMB', this.$refs.form.model.Equivalent_To_RMB)
+                    this.formData.append('Payment_Terms', this.$refs.form.model.Payment_Terms)
+                    this.formData.append('Depreciation_Months', this.$refs.form.model.Depreciation_Months)
+                    this.formData.append('Accounting_Subjects', this.$refs.form.model.Accounting_Subjects)
+                    this.formData.append('Automated_Or_Not', this.$refs.form.model.Automated_Or_Not)
+                    this.formData.append('Project_Code', this.$refs.form.model.Project_Code)
+                    this.formData.append('Current_Situation', this.$refs.form.model.Current_Situation)
+                    this.formData.append('Applicable_Scope', this.$refs.form.model.Applicable_Scope)
+                    this.formData.append('Investment_Purpose', this.$refs.form.model.Investment_Purpose)
+                    this.formData.append('Investment_Purpose_Des', this.$refs.form.model.Investment_Purpose_Des)
+                    this.formData.append('Potential_Issues', this.$refs.form.model.Potential_Issues)
+                    this.formData.append('Potential_Issues_Des', this.$refs.form.model.Potential_Issues_Des)
+                    this.formData.append('Tighten_Expenses', this.$refs.form.model.Tighten_Expenses)
+                    this.formData.append('Annual_Increase_PerYear', this.$refs.form.model.Annual_Increase_PerYear)
+                    this.formData.append('Investment_Benefits_PerYear', this.$refs.form.model.Investment_Benefits_PerYear)
+                    this.formData.append('Cash_Inflows_PerYear', this.$refs.form.model.Cash_Inflows_PerYear)
+                    this.formData.append('Payback_Period', this.$refs.form.model.Payback_Period)
                     this.formData.append('Subscription_Status', this.$refs.form.model.Subscription_Status)
                     this.formData.append('Subscription_Quantity', this.$refs.form.model.Subscription_Quantity)
                     this.formData.append('Subscription_Amount', this.$refs.form.model.Subscription_Amount)
@@ -932,6 +1132,23 @@ label{
                      this.form.Budget_Quantity=row.Budget_Quantity;
                      this.form.Estimated_Original_Currency=row.Estimated_Original_Currency;
                      this.form.Estimated_Original_Price=row.Estimated_Original_Price;
+                     this.form.Equivalent_To_RMB=row.Equivalent_To_RMB;
+                     this.form.Payment_Terms=row.Payment_Terms;
+                     this.form.Depreciation_Months=row.Depreciation_Months;
+                     this.form.Accounting_Subjects=row.Accounting_Subjects;
+                     this.form.Automated_Or_Not=row.Automated_Or_Not;
+                     this.form.Project_Code=row.Project_Code;
+                     this.form.Current_Situation=row.Current_Situation;
+                     this.form.Applicable_Scope=row.Applicable_Scope;
+                     this.form.Investment_Purpose=row.Investment_Purpose;
+                     this.form.Investment_Purpose_Des=row.Investment_Purpose_Des;
+                     this.form.Potential_Issues=row.Potential_Issues;
+                     this.form.Potential_Issues_Des=row.Potential_Issues_Des;
+                     this.form.Tighten_Expenses=row.Tighten_Expenses;
+                     this.form.Annual_Increase_PerYear=row.Annual_Increase_PerYear;
+                     this.form.Investment_Benefits_PerYear=row.Investment_Benefits_PerYear;
+                     this.form.Cash_Inflows_PerYear=row.Cash_Inflows_PerYear;
+                     this.form.Payback_Period=row.Payback_Period;
                      this.form.Subscription_Status=row.Subscription_Status;
                      this.form.Subscription_Quantity=row.Subscription_Quantity;
                      this.form.Subscription_Amount=row.Subscription_Amount;
@@ -982,8 +1199,17 @@ label{
         watch: {
                 datas() {
                         this.currentPage = 1;
+                },
+                dataList() {
+                    this.showed_data = this.tableContent.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
                 }
+
         },
     })
     </script>
 {% endblock %}
+
+
+
+
+
