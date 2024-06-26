@@ -178,422 +178,423 @@ def CapitalExpenditure_Summary(request):
                 Check_dic_CapitalExpenditure["Application_Department__contains"] = DepartmentSeven
             # elif YearSearch_backup:
             #     Check_dic_CapitalExpenditure["PlanYear"] = YearSearch_backup
-            print(Check_dic_CapitalExpenditure)
-            for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
-                # print(i)
-                mock_data.append(
-                    {
-                        "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
-                        "Investment_Nature": i.Investment_Nature,
-                        "Attribute_Code": i.Attribute_Code,
-                        "Application_Department": i.Application_Department,
-                        "Device_Name": i.Device_Name,
-                        "Usage_Description": i.Usage_Description,
-                        "Specifications": i.Specifications,
-                        "Acceptance_Month": i.Acceptance_Month,
-                        "Budget_Quantity": i.Budget_Quantity,
-                        "Estimated_Original_Currency": i.Estimated_Original_Currency,
-                        "Estimated_Original_Price": i.Estimated_Original_Price,
-                        "Equivalent_To_RMB": i.Equivalent_To_RMB,
-                        "Payment_Terms": i.Payment_Terms,
-                        "Depreciation_Months": i.Depreciation_Months,
-                        "Accounting_Subjects": i.Accounting_Subjects,
-                        "Automated_Or_Not": i.Automated_Or_Not,
-                        "Project_Code": i.Project_Code,
-                        "Current_Situation": i.Current_Situation,
-                        "Applicable_Scope": i.Applicable_Scope,
-                        "Investment_Purpose": i.Investment_Purpose,
-                        "Investment_Purpose_Des": i.Investment_Purpose_Des,
-                        "Potential_Issues": i.Potential_Issues,
-                        "Potential_Issues_Des": i.Potential_Issues_Des,
-                        "Tighten_Expenses": i.Tighten_Expenses,
-                        "Annual_Increase_PerYear": i.Annual_Increase_PerYear,
-                        "Investment_Benefits_PerYear": i.Investment_Benefits_PerYear,
-                        "Cash_Inflows_PerYear": i.Cash_Inflows_PerYear,
-                        "Payback_Period": i.Payback_Period,
-                        "Subscription_Status": i.Subscription_Status,
-                        "Subscription_Quantity": i.Subscription_Quantity,
-                        "Subscription_Amount": i.Subscription_Amount,
-                        "Entry_Amount": i.Entry_Amount,
-                    }
-                )
-            # tables
-
-            if Customer == "C38":
-                if C38CustomerT88AIODepartmentCode.objects.filter(Year=YearSearch) and DepartmentSeven:
-                    AIOT88_DeparmentCode = C38CustomerT88AIODepartmentCode.objects.filter(
-                        Year=YearSearch).first().Department_Code
-
-                    if CapitalExpenditure.objects.filter(PlanYear=YearSearch):
-                        tables_dic1 = {
-                            "data": [
-                                {"C38_T89": "數量",
-                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                                     'total'] else 0,
-                                 "Unsubscribed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Budget_Quantity'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Budget_Quantity'))[
-                                         'total'] else 0,
-                                 "Subscription_In_Progress":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] else 0,
-                                 "During_Acceptance":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] else 0,
-                                 "Acceptance_Completed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收完成").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收完成").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] else 0
-                                 },
-                                {"C38_T89": "金額(CNY)",
-                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Equivalent_To_RMB'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Equivalent_To_RMB'))[
-                                     'total'] else 0,
-                                 "Unsubscribed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Equivalent_To_RMB'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Equivalent_To_RMB'))[
-                                         'total'] else 0,
-                                 "Subscription_In_Progress":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] else 0,
-                                 "During_Acceptance":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").exclude(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] else 0,
-                                 "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                           Application_Department__contains=DepartmentSeven,
-                                                                                           Subscription_Status="驗收完成").exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Subscription_Amount'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                           Application_Department__contains=DepartmentSeven,
-                                                                                           Subscription_Status="驗收完成").exclude(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Subscription_Amount'))[
-                                     'total'] else 0
-                                 },
-                            ],
-                            "columns": [
-                                {"prop": "C38_T89", "label": "C38 & T89"},
-                                {"prop": "Annual_Budget", "label": "年度預算"},
-                                {"prop": "Unsubscribed", "label": "未申購"},
-                                {"prop": "Subscription_In_Progress", "label": "申購中"},
-                                {"prop": "During_Acceptance", "label": "驗收中"},
-                                {"prop": "Acceptance_Completed", "label": "驗收完成"},
-                            ]
+            # print(Check_dic_CapitalExpenditure)
+            if CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
+                for i in CapitalExpenditure.objects.filter(**Check_dic_CapitalExpenditure):
+                    # print(i)
+                    mock_data.append(
+                        {
+                            "id": i.id, "PlanYear": i.PlanYear, "Customer": i.Customer, "BudgetCode": i.BudgetCode,
+                            "Investment_Nature": i.Investment_Nature,
+                            "Attribute_Code": i.Attribute_Code,
+                            "Application_Department": i.Application_Department,
+                            "Device_Name": i.Device_Name,
+                            "Usage_Description": i.Usage_Description,
+                            "Specifications": i.Specifications,
+                            "Acceptance_Month": i.Acceptance_Month,
+                            "Budget_Quantity": i.Budget_Quantity,
+                            "Estimated_Original_Currency": i.Estimated_Original_Currency,
+                            "Estimated_Original_Price": i.Estimated_Original_Price,
+                            "Equivalent_To_RMB": i.Equivalent_To_RMB,
+                            "Payment_Terms": i.Payment_Terms,
+                            "Depreciation_Months": i.Depreciation_Months,
+                            "Accounting_Subjects": i.Accounting_Subjects,
+                            "Automated_Or_Not": i.Automated_Or_Not,
+                            "Project_Code": i.Project_Code,
+                            "Current_Situation": i.Current_Situation,
+                            "Applicable_Scope": i.Applicable_Scope,
+                            "Investment_Purpose": i.Investment_Purpose,
+                            "Investment_Purpose_Des": i.Investment_Purpose_Des,
+                            "Potential_Issues": i.Potential_Issues,
+                            "Potential_Issues_Des": i.Potential_Issues_Des,
+                            "Tighten_Expenses": i.Tighten_Expenses,
+                            "Annual_Increase_PerYear": i.Annual_Increase_PerYear,
+                            "Investment_Benefits_PerYear": i.Investment_Benefits_PerYear,
+                            "Cash_Inflows_PerYear": i.Cash_Inflows_PerYear,
+                            "Payback_Period": i.Payback_Period,
+                            "Subscription_Status": i.Subscription_Status,
+                            "Subscription_Quantity": i.Subscription_Quantity,
+                            "Subscription_Amount": i.Subscription_Amount,
+                            "Entry_Amount": i.Entry_Amount,
                         }
+                    )
+                # tables
 
-                        tables_dic2 = {
-                            "data": [
-                                {"T88_AIO": "數量",
-                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                                     'total'] else 0,
-                                 "Unsubscribed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Budget_Quantity'))[
+                if Customer == "C38":
+                    if C38CustomerT88AIODepartmentCode.objects.filter(Year=YearSearch) and DepartmentSeven:
+                        AIOT88_DeparmentCode = C38CustomerT88AIODepartmentCode.objects.filter(
+                            Year=YearSearch).first().Department_Code
+
+                        if CapitalExpenditure.objects.filter(PlanYear=YearSearch):
+                            tables_dic1 = {
+                                "data": [
+                                    {"C38_T89": "數量",
+                                     "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(
+                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
                                          'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Budget_Quantity'))[
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(
+                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
                                          'total'] else 0,
-                                 "Subscription_In_Progress":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").filter(
+                                     "Unsubscribed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Budget_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Budget_Quantity'))[
+                                             'total'] else 0,
+                                     "Subscription_In_Progress":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0,
+                                     "During_Acceptance":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0,
+                                     "Acceptance_Completed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收完成").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收完成").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0
+                                     },
+                                    {"C38_T89": "金額(CNY)",
+                                     "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
+                                         total=Sum('Equivalent_To_RMB'))[
                                          'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").filter(
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
+                                         total=Sum('Equivalent_To_RMB'))[
                                          'total'] else 0,
-                                 "During_Acceptance":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").filter(
+                                     "Unsubscribed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Equivalent_To_RMB'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Equivalent_To_RMB'))[
+                                             'total'] else 0,
+                                     "Subscription_In_Progress":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] else 0,
+                                     "During_Acceptance":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").exclude(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] else 0,
+                                     "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                               Application_Department__contains=DepartmentSeven,
+                                                                                               Subscription_Status="驗收完成").exclude(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
+                                         total=Sum('Subscription_Amount'))[
                                          'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").filter(
+                                                                                               Application_Department__contains=DepartmentSeven,
+                                                                                               Subscription_Status="驗收完成").exclude(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] else 0,
-                                 "Acceptance_Completed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收完成").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收完成").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Quantity'))[
+                                         total=Sum('Subscription_Amount'))[
                                          'total'] else 0
-                                 },
-                                {"T88_AIO": "金額(CNY)",
-                                 "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Equivalent_To_RMB'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Equivalent_To_RMB'))[
-                                     'total'] else 0,
-                                 "Unsubscribed":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").filter(
+                                     },
+                                ],
+                                "columns": [
+                                    {"prop": "C38_T89", "label": "C38 & T89"},
+                                    {"prop": "Annual_Budget", "label": "年度預算"},
+                                    {"prop": "Unsubscribed", "label": "未申購"},
+                                    {"prop": "Subscription_In_Progress", "label": "申購中"},
+                                    {"prop": "During_Acceptance", "label": "驗收中"},
+                                    {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                                ]
+                            }
+
+                            tables_dic2 = {
+                                "data": [
+                                    {"T88_AIO": "數量",
+                                     "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).filter(
+                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
+                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).filter(
+                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
+                                         'total'] else 0,
+                                     "Unsubscribed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Budget_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Budget_Quantity'))[
+                                             'total'] else 0,
+                                     "Subscription_In_Progress":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0,
+                                     "During_Acceptance":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0,
+                                     "Acceptance_Completed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收完成").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收完成").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Quantity'))[
+                                             'total'] else 0
+                                     },
+                                    {"T88_AIO": "金額(CNY)",
+                                     "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).filter(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
                                          total=Sum('Equivalent_To_RMB'))[
                                          'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="未申購").filter(
+                                                                                        Application_Department__contains=DepartmentSeven).filter(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
                                          total=Sum('Equivalent_To_RMB'))[
                                          'total'] else 0,
-                                 "Subscription_In_Progress":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").filter(
+                                     "Unsubscribed":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Equivalent_To_RMB'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="未申購").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Equivalent_To_RMB'))[
+                                             'total'] else 0,
+                                     "Subscription_In_Progress":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="申購中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] else 0,
+                                     "During_Acceptance":
+                                         CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                           Application_Department__contains=DepartmentSeven,
+                                                                           Subscription_Status="驗收中").filter(
+                                             Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
+                                             total=Sum('Subscription_Amount'))[
+                                             'total'] else 0,
+                                     "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                               Application_Department__contains=DepartmentSeven,
+                                                                                               Subscription_Status="驗收完成").filter(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
                                          total=Sum('Subscription_Amount'))[
                                          'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="申購中").filter(
+                                                                                               Application_Department__contains=DepartmentSeven,
+                                                                                               Subscription_Status="驗收完成").filter(
                                          Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
                                          total=Sum('Subscription_Amount'))[
-                                         'total'] else 0,
-                                 "During_Acceptance":
-                                     CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                       Application_Department__contains=DepartmentSeven,
-                                                                       Subscription_Status="驗收中").filter(
-                                         Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                         total=Sum('Subscription_Amount'))[
-                                         'total'] else 0,
-                                 "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                           Application_Department__contains=DepartmentSeven,
-                                                                                           Subscription_Status="驗收完成").filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Subscription_Amount'))[
-                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                           Application_Department__contains=DepartmentSeven,
-                                                                                           Subscription_Status="驗收完成").filter(
-                                     Application_Department=AIOT88_DeparmentCode).exclude(BudgetCode="預算外").aggregate(
-                                     total=Sum('Subscription_Amount'))[
-                                     'total'] else 0
-                                 },
-                            ],
-                            "columns": [
-                                {"prop": "T88_AIO", "label": "T88 AIO"},
-                                {"prop": "Annual_Budget", "label": "年度預算"},
-                                {"prop": "Unsubscribed", "label": "未申購"},
-                                {"prop": "Subscription_In_Progress", "label": "申購中"},
-                                {"prop": "During_Acceptance", "label": "驗收中"},
-                                {"prop": "Acceptance_Completed", "label": "驗收完成"},
-                            ]
-                        }
-                        tables.append(tables_dic1)
-                        tables.append(tables_dic2)
+                                         'total'] else 0
+                                     },
+                                ],
+                                "columns": [
+                                    {"prop": "T88_AIO", "label": "T88 AIO"},
+                                    {"prop": "Annual_Budget", "label": "年度預算"},
+                                    {"prop": "Unsubscribed", "label": "未申購"},
+                                    {"prop": "Subscription_In_Progress", "label": "申購中"},
+                                    {"prop": "During_Acceptance", "label": "驗收中"},
+                                    {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                                ]
+                            }
+                            tables.append(tables_dic1)
+                            tables.append(tables_dic2)
+                    else:
+                        errMsg = "没有该年的AIO部门代码，请先录入"
+
                 else:
-                    errMsg = "没有该年的AIO部门代码，请先录入"
-
-            else:
-                tables_dic = {
-                    "data": [
-                        {Customer: "數量",
-                         "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
-                             'total'] else 0,
-                         "Unsubscribed":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Budget_Quantity'))[
+                    tables_dic = {
+                        "data": [
+                            {Customer: "數量",
+                             "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
                                  'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Budget_Quantity'))[
+                                                                                        Application_Department__contains=DepartmentSeven,).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
                                  'total'] else 0,
-                         "Subscription_In_Progress":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
+                             "Unsubscribed":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Budget_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Budget_Quantity'))[
+                                     'total'] else 0,
+                             "Subscription_In_Progress":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] else 0,
+                             "During_Acceptance":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] else 0,
+                             "Acceptance_Completed":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Quantity'))[
+                                     'total'] else 0
+                             },
+                            {Customer: "金額(CNY)",
+                             "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(BudgetCode="預算外").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
                                  'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
+                                                                                        Application_Department__contains=DepartmentSeven).exclude(BudgetCode="預算外").aggregate(
+                                 total=Sum('Equivalent_To_RMB'))[
                                  'total'] else 0,
-                         "During_Acceptance":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
+                             "Unsubscribed":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Equivalent_To_RMB'))[
+                                     'total'] else 0,
+                             "Subscription_In_Progress":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Amount'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Amount'))[
+                                     'total'] else 0,
+                             "During_Acceptance":
+                                 CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Amount'))[
+                                     'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                   Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
+                                     total=Sum('Subscription_Amount'))[
+                                     'total'] else 0,
+                             "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                                       Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
+                                 total=Sum('Subscription_Amount'))[
                                  'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
-                                 'total'] else 0,
-                         "Acceptance_Completed":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
-                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Quantity'))[
+                                                                                        Application_Department__contains=DepartmentSeven,
+                                                                                       Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
+                                 total=Sum('Subscription_Amount'))[
                                  'total'] else 0
-                         },
-                        {Customer: "金額(CNY)",
-                         "Annual_Budget": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(BudgetCode="預算外").aggregate(
-                             total=Sum('Equivalent_To_RMB'))[
-                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven).exclude(BudgetCode="預算外").aggregate(
-                             total=Sum('Equivalent_To_RMB'))[
-                             'total'] else 0,
-                         "Unsubscribed":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Equivalent_To_RMB'))[
-                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="未申購").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Equivalent_To_RMB'))[
-                                 'total'] else 0,
-                         "Subscription_In_Progress":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Amount'))[
-                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="申購中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Amount'))[
-                                 'total'] else 0,
-                         "During_Acceptance":
-                             CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Amount'))[
-                                 'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                               Subscription_Status="驗收中").exclude(BudgetCode="預算外").aggregate(
-                                 total=Sum('Subscription_Amount'))[
-                                 'total'] else 0,
-                         "Acceptance_Completed": CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                                                   Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
-                             total=Sum('Subscription_Amount'))[
-                             'total'] if CapitalExpenditure.objects.filter(PlanYear=YearSearch,
-                                                                                    Application_Department__contains=DepartmentSeven,
-                                                                                   Subscription_Status="驗收完成").exclude(BudgetCode="預算外").aggregate(
-                             total=Sum('Subscription_Amount'))[
-                             'total'] else 0
-                         },
-                    ],
-                    "columns": [
-                        {"prop": Customer, "label": Customer},
-                        {"prop": "Annual_Budget", "label": "年度預算"},
-                        {"prop": "Unsubscribed", "label": "未申購"},
-                        {"prop": "Subscription_In_Progress", "label": "申購中"},
-                        {"prop": "During_Acceptance", "label": "驗收中"},
-                        {"prop": "Acceptance_Completed", "label": "驗收完成"},
-                    ]
-                }
-                tables.append(tables_dic)
+                             },
+                        ],
+                        "columns": [
+                            {"prop": Customer, "label": Customer},
+                            {"prop": "Annual_Budget", "label": "年度預算"},
+                            {"prop": "Unsubscribed", "label": "未申購"},
+                            {"prop": "Subscription_In_Progress", "label": "申購中"},
+                            {"prop": "During_Acceptance", "label": "驗收中"},
+                            {"prop": "Acceptance_Completed", "label": "驗收完成"},
+                        ]
+                    }
+                    tables.append(tables_dic)
 
         elif request.POST.get('action') == 'onSubmit':
             ID = request.POST.get('ID')

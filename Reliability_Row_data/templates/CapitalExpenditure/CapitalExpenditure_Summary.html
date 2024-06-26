@@ -344,7 +344,7 @@ label{
     <el-input type="text" v-model="search" id="sh" placeholder="請輸入關鍵字搜索..."></el-input><br>
 {#    <span  class="selectItem" v-cloak  v-if="showCustomer&&showDepartment&&showLesson">當前表格信息：${ showYear }/${ showCustomer }/${ showDepartment }/${ showLesson }/${ showGroupEmployees } </span>#}
     <el-table id="out-table"  ref="tableRef" height="700" border stripe :data="datas.slice((currentPage -1 )*pageSize,(currentPage)*pageSize)"
-        style="min-width: 100%;border-radius: 10px"  @selection-change="handleSelectionChange" :row-key="getRowKeys" @sort-change='sortChange'
+        style="min-width: 100%;border-radius: 10px;;font-size: 10px"  @selection-change="handleSelectionChange" :row-key="getRowKeys" @sort-change='sortChange'
         :header-cell-style="{'background-color':'#fafafa','font-weight':'800','border-bottom':'1px solid rgb(103, 194, 58)'}"
         v-loading="tableloading"
         element-loading-text="數據更新中，請稍後"
@@ -355,22 +355,22 @@ label{
                       <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"  @click="alertID(scope.row.id,scope.row)"></el-button>
                   </template>
               </el-table-column>
-              <el-table-column type="index" :index="indexMethod" align="center" width="auto" min-width="2%"></el-table-column>
+              <el-table-column type="index" :index="indexMethod" align="center" width="auto" min-width="0.5%"></el-table-column>
               <el-table-column  prop="PlanYear" label="PlanYear" align="center" sortable='custom' width="auto" min-width="4%"></el-table-column>
               <el-table-column  prop="BudgetCode" label="預算編號" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
               <el-table-column  prop="Investment_Nature" label="投資性質" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
               <el-table-column  prop="Attribute_Code" label="屬性代碼" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
               <el-table-column  prop="Application_Department" label="申請部門" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
               <el-table-column  prop="Device_Name" label="設備或工程名稱" align="center" sortable='custom' width="auto" min-width="5%"></el-table-column>
-              <el-table-column  prop="Usage_Description" label="用途說明" header-align="center" sortable='custom' width="auto" min-width="10%"></el-table-column>
+              <el-table-column  prop="Usage_Description" label="用途說明" header-align="center" sortable='custom' width="auto" min-width="11%"></el-table-column>
               <el-table-column  prop="Specifications" label="廠牌規格" header-align="center" sortable='custom' width="auto" min-width="10%"></el-table-column>
               <el-table-column  prop="Acceptance_Month" label="驗收月份" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
               <el-table-column  prop="Budget_Quantity" label="預算數量" align="center" sortable='custom' width="auto" min-width="3%"></el-table-column>
               <el-table-column  label="預估總價" align="center" width="auto" min-width="6%">
                 <el-table-column  label="原幣" align="center" width="auto" min-width="6%">
-                    <el-table-column  prop="Estimated_Original_Currency" label="幣別" align="center" width="auto" min-width="3%" sortable='custom'>
+                    <el-table-column  prop="Estimated_Original_Currency" label="幣別" align="center" width="auto" min-width="4%" sortable='custom'>
                     </el-table-column>
-                    <el-table-column  prop="Estimated_Original_Price" label="金額" align="center" width="auto" min-width="3%" sortable='custom'>
+                    <el-table-column  prop="Estimated_Original_Price" label="金額" align="center" width="auto" min-width="4%" sortable='custom'>
                     </el-table-column>
                 </el-table-column>
               </el-table-column>
@@ -392,7 +392,7 @@ label{
 {#              <el-table-column  prop="Cash_Inflows_PerYear" label="年淨現金流入" class-name="hidden-column"></el-table-column>#}
 {#              <el-table-column  prop="Payback_Period" label="回收年限(月數)" class-name="hidden-column"></el-table-column>#}
               <el-table-column  prop="Subscription_Status" label="申購狀況" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
-              <el-table-column  prop="Subscription_Quantity" label="申購數量" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
+              <el-table-column  prop="Subscription_Quantity" label="申購數量" align="center" width="auto" min-width="3%" sortable='custom'></el-table-column>
               <el-table-column  prop="Subscription_Amount" label="申購金額(CNY)" align="center" width="auto" min-width="5%" sortable='custom'></el-table-column>
               <el-table-column  prop="Entry_Amount" label="入賬金額(CNY)" align="center" width="auto" min-width="6%" sortable='custom'></el-table-column>
               <el-table-column  prop="Equivalent_To_RMB" label="折合人民幣" class-name="hidden-column" width="-1"></el-table-column>
