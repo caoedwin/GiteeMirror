@@ -487,6 +487,9 @@ def CapitalExpenditure_Summary(request):
                         errMsg = "没有该年的AIO部门代码，请先录入"
 
                 else:
+                    print(CapitalExpenditure.objects.filter(PlanYear=YearSearch,
+                                                                                        Application_Department__contains=DepartmentSeven,).exclude(BudgetCode="預算外").aggregate(total=Sum('Budget_Quantity'))[
+                                 'total'],DepartmentSeven)
                     tables_dic = {
                         "data": [
                             {Customer: "數量",
@@ -1256,8 +1259,9 @@ def CapitalExpenditure_Summary(request):
                     YearSearch = responseData['Year']
                     YearSearch_backup = ''
 
-                    xlsxlist = json.loads(responseData['ExcelData'])[2:]
-                    # print(xlsxlist)
+                    # xlsxlist = json.loads(responseData['ExcelData'])[2:]#excel模板有三级表头
+                    xlsxlist = json.loads(responseData['ExcelData'])#tool模板，只有一级表头
+                    print(xlsxlist)
                     # pprint.pprint(xlsxlist)
                     # 验证，先验证再上传,必须要先验证，如果边验证边上传，一旦报错，下次再传就无法通过同机种验证
                     # Check_dic_Project = {'Customer': CustomerSearch, 'Project': ProjectSearch, }
