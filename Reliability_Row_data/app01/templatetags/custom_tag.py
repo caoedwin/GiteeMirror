@@ -162,9 +162,9 @@ def get_menu_html(menu_data):
                     # print(item['title'])
                     sub_menu = get_menu_html(item['children'])
                     Class = ""
-                    if item['title'] == 'Lesson Learn' or item['title'] == 'Lesson Learn-ABO':
+                    if item['title'] == 'Lesson Learn' or item['title'] == 'Lesson Learn-ABO' or item['title'] == 'Lesson Learn-A31' or item['title'] == 'Lesson Learn-A32':
                         Class = "ti-file"
-                    if item['title'] == 'SW&ME' or item['title'] == 'SW&ME-ABO' or item['title'] == 'IssuesBreakdown':
+                    if item['title'] == 'SW&ME' or item['title'] == 'SW&ME-ABO' or item['title'] == 'SW&ME-A31' or item['title'] == 'SW&ME-A32' or item['title'] == 'IssuesBreakdown':
                         Class = "ti-agenda"
                     if item['title'] == 'Compatibility':
                         Class = "ti-layout-grid4-alt"

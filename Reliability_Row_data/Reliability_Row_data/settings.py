@@ -199,6 +199,8 @@ INSTALLED_APPS = [
     'ProjectComparison',
     'ABODriverTool',
     'CapitalExpenditure',
+    'A31LessonLProject',
+    'A32LessonLProject',
 ]
 
 MIDDLEWARE = [
