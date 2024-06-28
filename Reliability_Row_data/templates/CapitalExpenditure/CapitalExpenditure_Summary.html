@@ -182,7 +182,7 @@ label{
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <a href="/static/src/modelfiles/CapitalExpenditure.zip" style="color: orange;font-size: 16px">模板下载<img src="/static/src/back/document_save_2_24px_539656_easyicon.net.png" alt="..."></a>
                  &nbsp;&nbsp;
-                 <el-button @click="addDepartment()"  type="success" v-cloak style="height:40px">部門代碼錄入</el-button>
+                 <el-button @click="addDepartment()"  type="success" v-if="permission===1" v-cloak style="height:40px">部門代碼錄入</el-button>
            </div>
 
     </div>
@@ -350,7 +350,7 @@ label{
         element-loading-text="數據更新中，請稍後"
         >
 {#              <el-table-column type="selection" width="50" align="center"  :reserve-selection="true"></el-table-column>#}
-              <el-table-column  label="Edit" align="center" width="auto" min-width="3%">
+              <el-table-column v-if="permission===1" label="Edit" align="center" width="auto" min-width="3%">
                   <template slot-scope="scope">
                       <el-button style="border:0;color: #D9B300" type="i" class="ti-pencil-alt"  @click="alertID(scope.row.id,scope.row)"></el-button>
                   </template>
