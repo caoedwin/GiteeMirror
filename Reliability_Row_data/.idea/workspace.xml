@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49dc6e49-0cbb-4f1d-b6a9-9b615cad6699" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reliability_Row_data/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reliability_Row_data/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reliability_Row_data/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reliability_Row_data/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/templatetags/custom_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/templatetags/custom_tag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/all-2024-06-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2024-06-27.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info-2024-06-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2024-06-27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DMS/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DMS/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all-2024-06-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all-2024-06-28.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info-2024-06-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info-2024-06-28.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +62,7 @@
           <entry key="css" value="7" />
           <entry key="html" value="608" />
           <entry key="js" value="10" />
-          <entry key="py" value="1161" />
+          <entry key="py" value="1170" />
           <entry key="pyi" value="1" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="1" />
@@ -75,7 +73,7 @@
           <entry key="CSS" value="7" />
           <entry key="HTML" value="608" />
           <entry key="JavaScript" value="10" />
-          <entry key="Python" value="1161" />
+          <entry key="Python" value="1170" />
           <entry key="PythonStub" value="1" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="1" />
@@ -107,19 +105,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/A32LessonLProject/views.py">
+        <entry file="file://$PROJECT_DIR$/app01/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="794" column="63" selection-start-line="794" selection-start-column="63" selection-end-line="794" selection-end-column="63" />
-              <caret line="795" column="64" selection-start-line="795" selection-start-column="64" selection-end-line="795" selection-end-column="64" />
-              <caret line="807" column="58" selection-start-line="807" selection-start-column="58" selection-end-line="807" selection-end-column="58" />
-              <caret line="808" column="68" selection-start-line="808" selection-start-column="68" selection-end-line="808" selection-end-column="68" />
-              <caret line="832" column="58" selection-start-line="832" selection-start-column="58" selection-end-line="832" selection-end-column="58" />
-              <caret line="833" column="68" selection-start-line="833" selection-start-column="68" selection-end-line="833" selection-end-column="68" />
-              <caret line="910" column="64" selection-start-line="910" selection-start-column="64" selection-end-line="910" selection-end-column="64" />
-              <caret line="935" column="64" selection-start-line="935" selection-start-column="64" selection-end-line="935" selection-end-column="64" />
+            <state relative-caret-position="-114">
+              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="115" selection-end-column="69" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#1214#1250#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/middleware/checkper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,10 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.$refs.Year</find>
-      <find>mock_data</find>
-      <find>font-size</find>
-      <find>my-cell</find>
       <find>sh</find>
       <find>edit</find>
       <find>float</find>
@@ -169,6 +169,10 @@
       <find>A31lessonlearn_project_set</find>
       <find>//A31LessonLProject/Lesson_SearchByProject/</find>
       <find>a32lessonlearn_project_set</find>
+      <find>Non_login_path</find>
+      <find>return</find>
+      <find>HTTP_REFERER</find>
+      <find>current_page_DDIS</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -255,9 +259,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="1631" />
-    <option name="height" value="566" />
+    <option name="x" value="-408" />
+    <option name="y" value="162" />
+    <option name="width" value="1947" />
+    <option name="height" value="1227" />
   </component>
   <component name="ProjectId" id="1Td4In4Uk9cLegXCQfBqS8KHbx0" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -290,13 +295,7 @@
             <path>
               <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DDIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reliability_Row_data" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="A32LessonLProject" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -343,7 +342,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CapitalExpenditureexcelTrans">
+  <component name="RunManager" selected="Django server.DDIS">
     <configuration name="下载视频 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DDIS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -815,7 +814,7 @@
     <layout>
       <window_info anchor="top" id="SciView" order="0" sideWeight="0.4993395" side_tool="true" weight="0.39317507" />
       <window_info anchor="top" id="Database" order="1" side_tool="true" weight="0.03125" />
-      <window_info content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.26926133" />
+      <window_info active="true" content_ui="combo" x="597" y="254" width="342" height="317" id="Project" order="0" sideWeight="0.4722689" visible="true" weight="0.26926133" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.49966466" weight="0.43281472" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" weight="0.3293944" />
@@ -834,7 +833,7 @@
       <window_info anchor="bottom" id="Messages" order="15" />
       <window_info anchor="bottom" id="Version Control" order="16" weight="0.3277202" />
       <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.50317967" weight="0.29575163" />
-      <window_info active="true" anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.4003268" />
+      <window_info anchor="bottom" x="29" y="228" width="1479" height="369" id="Run" order="18" sideWeight="0.5006605" visible="true" weight="0.4003268" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -889,28 +888,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CQM/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/CQM/CQM_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1247,13 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/templatetags/custom_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="166" column="142" selection-start-line="166" selection-start-column="142" selection-end-line="166" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/A31LessonLProject/Lesson_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1371,17 +1341,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/A32LessonLProject/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="794" column="63" selection-start-line="794" selection-start-column="63" selection-end-line="794" selection-end-column="63" />
-          <caret line="795" column="64" selection-start-line="795" selection-start-column="64" selection-end-line="795" selection-end-column="64" />
-          <caret line="807" column="58" selection-start-line="807" selection-start-column="58" selection-end-line="807" selection-end-column="58" />
-          <caret line="808" column="68" selection-start-line="808" selection-start-column="68" selection-end-line="808" selection-end-column="68" />
-          <caret line="832" column="58" selection-start-line="832" selection-start-column="58" selection-end-line="832" selection-end-column="58" />
-          <caret line="833" column="68" selection-start-line="833" selection-start-column="68" selection-end-line="833" selection-end-column="68" />
-          <caret line="910" column="64" selection-start-line="910" selection-start-column="64" selection-end-line="910" selection-end-column="64" />
-          <caret line="935" column="64" selection-start-line="935" selection-start-column="64" selection-end-line="935" selection-end-column="64" />
+        <state relative-caret-position="108">
+          <caret line="926" column="29" lean-forward="true" selection-start-line="926" selection-start-column="29" selection-end-line="926" selection-end-column="29" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/templatetags/custom_tag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="170" column="57" lean-forward="true" selection-start-line="170" selection-start-column="57" selection-end-line="170" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/init_permission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/checkper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="115" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#1214#1250#0" />
           </folding>
         </state>
       </provider>

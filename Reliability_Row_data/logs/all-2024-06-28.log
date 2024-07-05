@@ -455,3 +455,75 @@ AttributeError: 'A32TestProjectLL' object has no attribute 'A32lessonlearn_proje
 [2024-06-28 15:45:30,225] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_SearchByProject/?action=search&customer=A32&csrfmiddlewaretoken=IjKBgAg2ZTpq3TeweQWqphthPyKMkWat1tIf54vL2dPr9qQuIkGF6HgWSandDCHt 200 [0.09, 127.0.0.1:64626]
 [2024-06-28 15:45:33,785] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-06-28 15:45:33 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_SearchByProject/ POST
 [2024-06-28 15:45:33,809] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_SearchByProject/ 200 [0.09, 127.0.0.1:64626]
+[2024-06-29 09:34:14,965] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:64628]
+[2024-07-05 10:45:41,904] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_SearchByProject/ 302 [0.26, 127.0.0.1:61807]
+[2024-07-05 10:45:41,944] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.03, 127.0.0.1:61807]
+[2024-07-05 10:45:42,021] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.02, 127.0.0.1:61807]
+[2024-07-05 10:45:42,031] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:61807]
+[2024-07-05 10:45:43,438] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:45:43 None>None None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-07-05 10:45:43,444] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /login/?next= 200 [0.25, 127.0.0.1:61807]
+[2024-07-05 10:45:43,518] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 302 [0.02, 127.0.0.1:61807]
+[2024-07-05 10:45:43,527] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /login/ 200 [0.01, 127.0.0.1:61807]
+[2024-07-05 10:45:46,695] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:45:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /login/ POST
+[2024-07-05 10:45:46,741] [runserver.py:147] [runserver:log_action] [INFO]- HTTP POST /login/?next= 302 [0.15, 127.0.0.1:61807]
+[2024-07-05 10:45:46,776] [runserver.py:147] [runserver:log_action] [INFO]- HTTP GET /login/?next= 302 [0.03, 127.0.0.1:61807]
+[2024-07-05 10:45:46,865] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_SearchByProject/ 200 [0.08, 127.0.0.1:61807]
+[2024-07-05 10:45:46,987] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61815]
+[2024-07-05 10:45:47,006] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61815]
+[2024-07-05 10:45:47,238] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_SearchByProject/?action=get&csrfmiddlewaretoken=dXbPCyMEmJOnitbscmGxNzBE8tPCobDEw79tr21np3eoo0NqGQqMuZojb5s3HRaE 200 [0.05, 127.0.0.1:61807]
+[2024-07-05 10:45:47,303] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.09, 127.0.0.1:61808]
+[2024-07-05 10:46:17,701] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_upload/ 200 [0.21, 127.0.0.1:61808]
+[2024-07-05 10:46:17,707] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61815]
+[2024-07-05 10:46:17,758] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61843]
+[2024-07-05 10:46:17,763] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61843]
+[2024-07-05 10:46:17,818] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.05, 127.0.0.1:61808]
+[2024-07-05 10:47:21,889] [runserver.py:151] [runserver:log_action] [WARNING]- HTTP POST /A32LessonLProject/Lesson_upload/ 413 [0.10, 127.0.0.1:61897]
+[2024-07-05 10:47:21,907] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61843]
+[2024-07-05 10:47:21,979] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.06, 127.0.0.1:61897]
+[2024-07-05 10:47:25,783] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_upload/ 200 [0.10, 127.0.0.1:61897]
+[2024-07-05 10:47:25,821] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61904]
+[2024-07-05 10:47:25,826] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61904]
+[2024-07-05 10:47:25,870] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.04, 127.0.0.1:61897]
+[2024-07-05 10:47:39,669] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:47:39 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_upload/ POST
+[2024-07-05 10:47:39,681] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_upload/ 200 [0.14, 127.0.0.1:61897]
+[2024-07-05 10:47:39,691] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61904]
+[2024-07-05 10:47:39,745] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61921]
+[2024-07-05 10:47:39,749] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61921]
+[2024-07-05 10:47:39,802] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.05, 127.0.0.1:61897]
+[2024-07-05 10:47:45,787] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_search/ 200 [0.08, 127.0.0.1:61897]
+[2024-07-05 10:47:45,794] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61921]
+[2024-07-05 10:47:45,822] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61928]
+[2024-07-05 10:47:45,827] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61928]
+[2024-07-05 10:47:46,039] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:47:46 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_search/ POST
+[2024-07-05 10:47:46,052] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_search/ 200 [0.04, 127.0.0.1:61897]
+[2024-07-05 10:47:46,116] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.10, 127.0.0.1:61898]
+[2024-07-05 10:47:48,239] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:47:48 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_search/ POST
+[2024-07-05 10:47:48,267] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_search/ 200 [0.07, 127.0.0.1:61898]
+[2024-07-05 10:47:48,299] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /media/videos/A32/Lesson/Department.xlsx 200 [0.02, 127.0.0.1:61898]
+[2024-07-05 10:48:23,643] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /A32LessonLProject/Lesson_edit/ 200 [0.06, 127.0.0.1:61898]
+[2024-07-05 10:48:23,648] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61928]
+[2024-07-05 10:48:23,677] [runserver.py:162] [runserver:log_action] [INFO]- WebSocket HANDSHAKING /ws/msg/Reliability_Row_data/ [127.0.0.1:61966]
+[2024-07-05 10:48:23,681] [runserver.py:158] [runserver:log_action] [INFO]- WebSocket CONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61966]
+[2024-07-05 10:48:23,778] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:48:23 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:48:23,790] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.03, 127.0.0.1:61898]
+[2024-07-05 10:48:23,837] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /favicon.ico 200 [0.07, 127.0.0.1:61897]
+[2024-07-05 10:48:25,838] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:48:25 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:48:25,849] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.02, 127.0.0.1:61897]
+[2024-07-05 10:48:25,904] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /media/videos/A32/Lesson/Department.xlsx 200 [0.04, 127.0.0.1:61897]
+[2024-07-05 10:48:27,526] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:48:27 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:48:27,541] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.05, 127.0.0.1:61897]
+[2024-07-05 10:48:34,337] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:48:34 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:48:34,349] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.03, 127.0.0.1:61897]
+[2024-07-05 10:48:36,187] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:48:36 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:48:36,198] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.06, 127.0.0.1:61897]
+[2024-07-05 10:48:44,152] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /media/img/A32/Lesson/sheetjs.xlsx 200 [0.05, 127.0.0.1:61897]
+[2024-07-05 10:56:44,843] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:56:44 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:56:44,858] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.03, 127.0.0.1:62198]
+[2024-07-05 10:56:44,911] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /media/img/A32/Lesson/sheetjs.xlsx 304 [0.04, 127.0.0.1:62198]
+[2024-07-05 10:56:44,946] [runserver.py:145] [runserver:log_action] [INFO]- HTTP GET /media/videos/A32/Lesson/Department.xlsx 304 [0.08, 127.0.0.1:62200]
+[2024-07-05 10:56:51,229] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:56:51 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:56:51,248] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.06, 127.0.0.1:62200]
+[2024-07-05 10:56:53,445] [UserIP.py:90] [UserIP:process_response] [INFO]- 2024-07-05 10:56:53 C1010S3>Edwin None>None>None 127.0.0.1 127.0.0.1 /A32LessonLProject/Lesson_edit/ POST
+[2024-07-05 10:56:53,458] [runserver.py:141] [runserver:log_action] [INFO]- HTTP POST /A32LessonLProject/Lesson_edit/ 200 [0.06, 127.0.0.1:62200]
+[2024-07-05 10:56:53,513] [runserver.py:141] [runserver:log_action] [INFO]- HTTP GET /media/img/A32/Lesson/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE1_pZ5wv2g.png 200 [0.04, 127.0.0.1:62200]
+[2024-07-05 10:58:34,544] [runserver.py:160] [runserver:log_action] [INFO]- WebSocket DISCONNECT /ws/msg/Reliability_Row_data/ [127.0.0.1:61966]

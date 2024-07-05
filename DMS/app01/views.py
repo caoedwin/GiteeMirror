@@ -90,10 +90,10 @@ def ImportPersonalInfo(Customer='', SAPNum='', GroupNum='', Status='', Departmen
 def login(request):
     # 不允许重复登录
     # print(request.COOKIES)
-    print(request.session.get('is_login_DMS', None))
+    print(request.session.get('is_login_DMS', None),"is_login_DMS")
     if request.session.get('is_login_DMS', None):
         # return redirect('/index/')
-        print(request.COOKIES)
+        # print(request.COOKIES)
         try:
             return redirect(request.COOKIES['current_page_DMS'])
         except:
@@ -133,12 +133,23 @@ def login(request):
                 # print(Skin)
                 if not Skin:
                     Skin = "/static/src/blue.jpg"
-                # print(Skin)
-                # print('21')
                 init_permission(request, user_obj)  # 调用init_permission，初始化权限
                 # print('21')
                 # print(settings.MEDIA_ROOT,settings.MEDIA_URL)
-                render(request, 'login.html', locals())
+                # return HttpResponseRedirect(request.session['login_from'])
+                Non_login_path = request.session.get('Non_login_path')
+                print(Non_login_path, 'Non_login_path')
+                if Non_login_path:
+                    # 记住来源的url，如果没有则设置为首页('/')
+                    return redirect(Non_login_path)
+                # print(request.POST.get('next', '/'),'postnext')
+                # if request.GET.get('next'):
+                #     # 记住来源的url，如果没有则设置为首页('/')
+                #     print(request.GET.get('next'), request.META.get('HTTP_REFERER'), 'tttt')
+                #     return redirect(request.GET.get('next'))
+                else:
+                    # return redirect('/index/')
+                    return redirect(request.META.get('HTTP_REFERER'))
             else:
                 message = "密码不正确！"
         else:
